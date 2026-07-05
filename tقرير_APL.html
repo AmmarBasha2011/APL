@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تقرير APL — جميع الاختبارات</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', 'Tahoma', 'Arabic Typesetting', sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #e0e0e0;
+  min-height: 100vh;
+  padding: 40px 20px;
+  line-height: 1.8;
+}
+.container { max-width: 1000px; margin: 0 auto; }
+h1 {
+  text-align: center;
+  font-size: 2.8em;
+  margin-bottom: 8px;
+  background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+.subtitle {
+  text-align: center;
+  color: #888;
+  margin-bottom: 40px;
+  font-size: 1.1em;
+}
+.card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin-bottom: 24px;
+  transition: transform 0.2s;
+}
+.card:hover { transform: translateY(-2px); }
+.card h2 {
+  color: #00d2ff;
+  font-size: 1.4em;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.badge {
+  display: inline-block;
+  padding: 3px 14px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: 600;
+  margin-left: 10px;
+}
+.badge-pass { background: #00c853; color: #003d00; }
+.badge-fail { background: #ff1744; color: #3d0000; }
+.badge-total { background: #2979ff; color: #fff; }
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 8px;
+}
+.stat-box {
+  text-align: center;
+  padding: 18px 10px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.stat-box .num {
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #00d2ff;
+}
+.stat-box .label {
+  font-size: 0.9em;
+  color: #aaa;
+  margin-top: 4px;
+}
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+.app-card {
+  background: rgba(0,210,255,0.06);
+  border: 1px solid rgba(0,210,255,0.12);
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+}
+.app-card .name { font-size: 1.1em; font-weight: 600; margin-bottom: 4px; }
+.app-card .desc { font-size: 0.9em; color: #aaa; margin-bottom: 10px; }
+.app-card .status { color: #00c853; font-weight: 600; }
+.bug-list { list-style: none; }
+.bug-list li {
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 8px;
+  border-right: 3px solid #00d2ff;
+}
+.bug-list li strong { color: #ffab40; }
+.tag {
+  display: inline-block;
+  background: rgba(0,210,255,0.15);
+  color: #00d2ff;
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-size: 0.8em;
+  font-family: 'Courier New', monospace;
+  direction: ltr;
+}
+.footer {
+  text-align: center;
+  color: #555;
+  margin-top: 40px;
+  font-size: 0.9em;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding-top: 20px;
+}
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 16px 0 8px;
+}
+.progress-fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #00c853, #00d2ff);
+  border-radius: 5px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow { from { opacity: 0.8; } to { opacity: 1; } }
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+.feature-tag {
+  background: rgba(0,210,255,0.08);
+  border: 1px solid rgba(0,210,255,0.12);
+  padding: 4px 12px;
+  border-radius: 14px;
+  font-size: 0.85em;
+  color: #ccc;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>تقرير APL</h1>
+<p class="subtitle">لغة البرمجة العربية — تقرير شامل عن الاختبارات والتطبيقات</p>
+
+<!-- ملخص عام -->
+<div class="card">
+  <h2>📊 ملخص عام</h2>
+  <div class="stat-grid">
+    <div class="stat-box">
+      <div class="num">168</div>
+      <div class="label">اختبار وحدة</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">168</div>
+      <div class="label" style="color:#00c853">ناجح</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">0</div>
+      <div class="label" style="color:#ff1744">فاشل</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">6</div>
+      <div class="label">تطبيقات عملية</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">6/6</div>
+      <div class="label" style="color:#00c853">جميعها ناجحة</div>
+    </div>
+  </div>
+  <div class="progress-bar"><div class="progress-fill"></div></div>
+  <p style="text-align:center;color:#888;font-size:0.9em">نجاح بنسبة 100%</p>
+</div>
+
+<!-- اختبارات الوحدة -->
+<div class="card">
+  <h2>🧪 اختبارات الوحدة <span class="badge badge-pass">168/168 نجاح</span></h2>
+  <p>جميع اختبارات المترجم (transpiler) تعمل بنجاح. تشمل المجموعات التالية:</p>
+  <div class="feature-list">
+    <span class="feature-tag">المتغيرات</span>
+    <span class="feature-tag">الطباعة</span>
+    <span class="feature-tag">الإدخال</span>
+    <span class="feature-tag">الشروط (لو/الا لو/الا)</span>
+    <span class="feature-tag">الحلقات (طالما/لكل)</span>
+    <span class="feature-tag">الدوال</span>
+    <span class="feature-tag">اللبمدا (سهم)</span>
+    <span class="feature-tag">الأنواع (صحيح/نص/عشري)</span>
+    <span class="feature-tag">القوائم والمصفوفات</span>
+    <span class="feature-tag">السلاسل النصية</span>
+    <span class="feature-tag">المجموعات (اتحاد/تقاطع/فرق)</span>
+    <span class="feature-tag">العمليات المنطقية (و/أو/ليس)</span>
+    <span class="feature-tag">عامل العضوية (في)</span>
+    <span class="feature-tag">JSON</span>
+    <span class="feature-tag">الوقت والتاريخ</span>
+    <span class="feature-tag">الملفات (فتح/قراءة/كتابة)</span>
+    <span class="feature-tag">HTTP (طلب)</span>
+    <span class="feature-tag">معالجة الأخطاء (حاول/إمسك)</span>
+    <span class="feature-tag">المطابقة (حالة/قيمة)</span>
+    <span class="feature-tag">مع/مثل (with/as)</span>
+    <span class="feature-tag">المولدات (مولد/توقف/اكمل)</span>
+    <span class="feature-tag">الثوابت (صواب/خطأ/لا_شيء)</span>
+    <span class="feature-tag">الثوابت الرياضية (ط/ه)</span>
+    <span class="feature-tag">الدوال الإضافية (كل/أي/خريطة/..)</span>
+    <span class="feature-tag">الزخارف (خاصية/محدد)</span>
+    <span class="feature-tag">الصنف والميراث</span>
+    <span class="feature-tag">الخاص/العام</span>
+    <span class="feature-tag">التأكيد (تأكد)</span>
+    <span class="feature-tag">الخروج (اخرج)</span>
+    <span class="feature-tag">الاستيراد (استورد/من..استورد)</span>
+    <span class="feature-tag">عمليات الملفات (انسخ/انقل/احذف)</span>
+    <span class="feature-tag">الاستدعاء الذاتي (أبدا)</span>
+    <span class="feature-tag">التعليقات</span>
+    <span class="feature-tag">الأخطاء المترجمة</span>
+  </div>
+</div>
+
+<!-- التطبيقات العملية -->
+<div class="card">
+  <h2>🚀 التطبيقات العملية <span class="badge badge-pass">6/6 نجاح</span></h2>
+  <div class="app-grid">
+    <div class="app-card">
+      <div class="name">🔢 فيبوناتشي</div>
+      <div class="desc">توليد سلسلة فيبوناتشي مع عكس النتيجة</div>
+      <div class="status">✓ نجاح</div>
+    </div>
+    <div class="app-card">
+      <div class="name">🌡️ محول الحرارة</div>
+      <div class="desc">تحويل مئوي ↔ فهرنهايت</div>
+      <div class="status">✓ نجاح</div>
+    </div>
+    <div class="app-card">
+      <div class="name">📊 محلل إحصائي</div>
+      <div class="desc">متوسط، تباين، انحراف معياري</div>
+      <div class="status">✓ نجاح</div>
+    </div>
+    <div class="app-card">
+      <div class="name">🎯 تخمين الرقم</div>
+      <div class="desc">لعبة تخمين الرقم العشوائي</div>
+      <div class="status">✓ نجاح</div>
+    </div>
+    <div class="app-card">
+      <div class="name">📝 مدير المهام</div>
+      <div class="desc">قائمة مهام مع حفظ JSON</div>
+      <div class="status">✓ نجاح</div>
+    </div>
+    <div class="app-card">
+      <div class="name">🧮 الآلة الحاسبة</div>
+      <div class="desc">آلة حاسبة مع العمليات الأساسية</div>
+      <div class="status">✓ نجاح</div>
+    </div>
+  </div>
+</div>
+
+<!-- الأخطاء التي تم إصلاحها -->
+<div class="card">
+  <h2>🔧 الأخطاء التي تم إصلاحها</h2>
+  <ul class="bug-list">
+    <li>
+      <strong>معالج `حذف`</strong> — كان يطابق أسماء الدوال التي تبدأ بـ <span class="tag">حذف_مهمة</span> مما يسبب <span class="tag">del مهمة(...)</span> خطأ. الآن يطابق فقط عندما يتبعه مسافة أو نهاية السطر.
+    </li>
+    <li>
+      <strong>معاملات الدوال المترجمة</strong> — الكلمات المفتاحية العربية <span class="tag">ترميز</span> ← <span class="tag">encoding</span>، <span class="tag">تأكد_من_ascii</span> ← <span class="tag">ensure_ascii</span>، <span class="tag">مسافة_بادئة</span> ← <span class="tag">indent</span> تمت إضافتها.
+    </li>
+    <li>
+      <strong>`عشوائي` بدون أقواس</strong> — كان يُستخدم كسطر استيراد دون أقواس مما يسبب <span class="tag">NameError</span>. تمت إزالته من التطبيق.
+    </li>
+    <li>
+      <strong>الشرط الثلاثي</strong> — استخدام <span class="tag">لو</span> بدلاً من <span class="tag">إذا</span> في تعبير <span class="tag">س إذا شرط والا ص</span>. تم التصحيح.
+    </li>
+    <li>
+      <strong>البيئة الزمنية `_RUNTIME`</strong> — كان ينقصها <span class="tag">import sys</span> مما يسبب <span class="tag">NameError</span> عند تشغيل <span class="tag">exec()</span> بمعجم فارغ.
+    </li>
+  </ul>
+</div>
+
+<!-- الميزات -->
+<div class="card">
+  <h2>✨ ميزات لغة APL</h2>
+  <div class="stat-grid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
+    <div class="stat-box">
+      <div class="num" style="font-size:1.6em">70+</div>
+      <div class="label">أمر برمجي</div>
+    </div>
+    <div class="stat-box">
+      <div class="num" style="font-size:1.6em">23</div>
+      <div class="label">رسالة خطأ مترجمة</div>
+    </div>
+    <div class="stat-box">
+      <div class="num" style="font-size:1.6em">9</div>
+      <div class="label">استيراد تلقائي</div>
+    </div>
+    <div class="stat-box">
+      <div class="num" style="font-size:1.6em">30+</div>
+      <div class="label">اختصار دالة</div>
+    </div>
+  </div>
+  <p style="margin-top:16px;color:#aaa">
+    تدعم APL: المتغيرات، الطباعة، الشروط، الحلقات، الدوال، الصنف والميراث، القوائم، السلاسل، JSON، الملفات، HTTP، الأخطاء المترجمة، الزخارف، المولدات، المطابقة، العمليات المنطقية، الثوابت، الرياضيات، الإحصائيات، والعشوائية.
+  </p>
+</div>
+
+<!-- الملفات -->
+<div class="card">
+  <h2>📁 ملفات المشروع</h2>
+  <ul class="bug-list">
+    <li><span class="tag">apl.py</span> — قلب المترجم (transpiler): يحول كود APL إلى Python</li>
+    <li><span class="tag">test_apl.py</span> — 168 اختبار وحدة شامل</li>
+    <li><span class="tag">apl_notepad.py</span> — محرر نصوص APL مع تظليل وإخراج</li>
+    <li><span class="tag">playground.html</span> — محرر APL عبر المتصفح (Pyodide)</li>
+    <li><span class="tag">fibonacci.apl</span> — تطبيق فيبوناتشي</li>
+    <li><span class="tag">temperature.apl</span> — محول درجات الحرارة</li>
+    <li><span class="tag">stats.apl</span> — محلل إحصائي</li>
+    <li><span class="tag">guess.apl</span> — لعبة تخمين الرقم</li>
+    <li><span class="tag">todo.apl</span> — مدير المهام</li>
+    <li><span class="tag">example.apl</span> — أمثلة متنوعة</li>
+    <li><span class="tag">README.md</span> — توثيق كامل بالعربية والإنجليزية</li>
+  </ul>
+</div>
+
+<div class="footer">
+  تم إنشاؤه في يوليو 2026 — APL Programming Language<br>
+  جميع الاختبارات ناجحة ✓
+</div>
+
+</div>
+</body>
+</html>
