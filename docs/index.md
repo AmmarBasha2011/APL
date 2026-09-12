@@ -1,4 +1,4 @@
-# التوثيق الكامل — APL v1.5
+# التوثيق الكامل — APL v1.6
 
 فهرس جميع ملفات التوثيق:
 
@@ -24,48 +24,16 @@
 | 18 | [threading-library.md](threading-library.md) | مكتبة `threading` — تعدد المهام |
 | 19 | [unittest-library.md](unittest-library.md) | مكتبة `unittest` — اختبارات الوحدة |
 | 20 | [csv-library.md](csv-library.md) | مكتبة `csv` — ملفات بيانات |
-| 21 | [error-messages.md](error-messages.md) | رسائل الأخطاء — كل أخطاء Python مترجمة بالعربي |
+| 21 | [logging-library.md](logging-library.md) | مكتبة `logging` — تسجيل الأحداث |
+| 22 | [argparse-library.md](argparse-library.md) | مكتبة `argparse` — تحليل وسائط سطر الأوامر |
+| 23 | [subprocess-library.md](subprocess-library.md) | مكتبة `subprocess` — أوامر النظام |
+| 24 | [configparser-library.md](configparser-library.md) | مكتبة `configparser` — ملفات الإعدادات |
+| 25 | [dataclasses-library.md](dataclasses-library.md) | مكتبة `dataclasses` — فئات بيانات، تعدادات، ABC |
+| 26 | [error-messages.md](error-messages.md) | رسائل الأخطاء — كل أخطاء Python مترجمة بالعربي |
 
 ---
 
-## هيكل التوثيق
-
-```
-docs/
-├── index.md               ← هذا الملف (الفهرس)
-├── architecture.md        ← هيكل المشروع وطريقة العمل
-├── language-reference.md  ← مرجع اللغة الكامل (مع التحسينات الجديدة)
-├── math-library.md        ← مكتبة الرياضيات
-├── random-library.md      ← مكتبة العشوائية
-├── statistics-library.md  ← مكتبة الإحصاء
-├── time-library.md        ← مكتبة الوقت والتاريخ
-├── os-library.md          ← مكتبة نظام التشغيل
-├── re-library.md          ← مكتبة التعابير النمطية
-├── collections-library.md ← المكتبات المخصصة
-├── itertools-library.md   ← أدوات التكرار
-├── json-library.md        ← مكتبة JSON
-├── hashlib-library.md     ← مكتبة التجزئة
-├── flask-library.md       ← إطار عمل Flask
-├── fastapi-library.md     ← إطار عمل FastAPI
-├── requests-library.md    ← HTTP Client
-├── sqlite3-library.md     ← قاعدة بيانات SQLite
-├── asyncio-library.md     ← برمجة غير متزامنة
-├── threading-library.md   ← تعدد المهام
-├── unittest-library.md    ← اختبارات الوحدة
-├── csv-library.md         ← ملفات CSV
-└── error-messages.md      ← رسائل الأخطاء
-```
-
-## التحسينات الجديدة (v1.5)
-
-- **sqlite3** — قاعدة بيانات محلية (أهم إضافة!)
-- **asyncio** — برمجة غير متزامنة كاملة
-- **threading** — تعدد المهام
-- **unittest** — اختبارات وحدة مع تسميات عربية
-- **csv** — قراءة وكتابة ملفات البيانات
-- **تحسينات اللغة** — list comprehensions، type hints، f-strings، multi-line strings، walrus operator، match guards، decorators
-
-## المكتبات المتاحة (20 مكتبة)
+## المكتبات المتاحة (25 مكتبة)
 
 | المكتبة | عدد الدوال | الوصف |
 |---------|-----------|-------|
@@ -87,29 +55,10 @@ docs/
 | `threading` | 20+ | تعدد المهام |
 | `unittest` | 40+ | اختبارات الوحدة |
 | `csv` | 10+ | ملفات بيانات |
+| `logging` | 30+ | تسجيل الأحداث |
+| `argparse` | 30+ | تحليل وسائط سطر الأوامر |
+| `subprocess` | 20+ | أوامر النظام |
+| `configparser` | 20+ | ملفات الإعدادات |
+| `dataclasses` | 30+ | فئات بيانات، تعدادات، ABC |
 
-**إجمالي: ~574 دالة ومفتاح بالعربي**
-
-## كيف تستخدم التوثيق
-
-- **مبتدئ؟** ابدأ بـ [language-reference.md](language-reference.md)
-- **محتاج دالة رياضية؟** راجع [math-library.md](math-library.md)
-- **محتاج أرقام عشوائية؟** راجع [random-library.md](random-library.md)
-- **محتاج إحصاء؟** راجع [statistics-library.md](statistics-library.md)
-- **محتاج وقت وتاريخ؟** راجع [time-library.md](time-library.md)
-- **محتاج ملفات ومجلدات؟** راجع [os-library.md](os-library.md)
-- **محتاج تعابير نمطية؟** راجع [re-library.md](re-library.md)
-- **محتاج مكتبات مخصصة؟** راجع [collections-library.md](collections-library.md)
-- **محتاج أدوات تكرار؟** راجع [itertools-library.md](itertools-library.md)
-- **محتاج JSON؟** راجع [json-library.md](json-library.md)
-- **محتاج تجزئة؟** راجع [hashlib-library.md](hashlib-library.md)
-- **محتاج ويب Flask؟** راجع [flask-library.md](flask-library.md)
-- **محتاج ويب FastAPI؟** راجع [fastapi-library.md](fastapi-library.md)
-- **محتاج HTTP Client؟** راجع [requests-library.md](requests-library.md)
-- **محتاج قاعدة بيانات؟** راجع [sqlite3-library.md](sqlite3-library.md)
-- **محتاج برمجة غير متزامنة؟** راجع [asyncio-library.md](asyncio-library.md)
-- **محتاج تعدد مهام؟** راجع [threading-library.md](threading-library.md)
-- **محتاج اختبارات؟** راجع [unittest-library.md](unittest-library.md)
-- **محتاج CSV؟** راجع [csv-library.md](csv-library.md)
-- **لقيت error؟** شوف [error-messages.md](error-messages.md)
-- **عايز تفهم التصميم؟** اقرأ [architecture.md](architecture.md)
+**إجمالي: ~674 دالة ومفتاح بالعربي**

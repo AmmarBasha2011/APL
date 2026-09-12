@@ -1,7 +1,7 @@
 import sys, os, re, io
 from core.apl_runner import _inline_replace
 from core.apl_runner.transpiler import transpile_line
-from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs
+from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 if sys.platform == "win32":
@@ -63,6 +63,16 @@ def transpile(source: str) -> str:
         needs.append("import unittest")
     if re.search(csv_funcs.IMPORT_CHECK, code) and "import csv" not in code:
         needs.append("import csv")
+    if re.search(logging_funcs.IMPORT_CHECK, code) and "import logging" not in code:
+        needs.append("import logging")
+    if re.search(argparse_funcs.IMPORT_CHECK, code) and "import argparse" not in code:
+        needs.append("import argparse")
+    if re.search(subprocess_funcs.IMPORT_CHECK, code) and "import subprocess" not in code:
+        needs.append("import subprocess")
+    if re.search(configparser_funcs.IMPORT_CHECK, code) and "import configparser" not in code:
+        needs.append("import configparser")
+    if re.search(dataclasses_funcs.IMPORT_CHECK, code) and "import dataclasses" not in code:
+        needs.append("from dataclasses import dataclass, field, asdict, astuple, replace; from enum import Enum, IntEnum, IntFlag, Flag, auto, unique; from abc import ABC, abstractmethod")
     if "json." in code and "import json" not in code:
         needs.append("import json")
     if "os." in code and "import os" not in code:
@@ -318,6 +328,26 @@ def print_help():
     print()
     print("  # csv library (10+ functions)")
     for line in csv_funcs.CSV_HELP:
+        print(f"    {line}")
+    print()
+    print("  # logging library (30+ functions)")
+    for line in logging_funcs.LOGGING_HELP:
+        print(f"    {line}")
+    print()
+    print("  # argparse library (30+ functions)")
+    for line in argparse_funcs.ARGPARSE_HELP:
+        print(f"    {line}")
+    print()
+    print("  # subprocess library (20+ functions)")
+    for line in subprocess_funcs.SUBPROCESS_HELP:
+        print(f"    {line}")
+    print()
+    print("  # configparser library (20+ functions)")
+    for line in configparser_funcs.CONFIGPARSER_HELP:
+        print(f"    {line}")
+    print()
+    print("  # dataclasses library (30+ functions)")
+    for line in dataclasses_funcs.DATACLASSES_HELP:
         print(f"    {line}")
     print()
     print("Examples:")

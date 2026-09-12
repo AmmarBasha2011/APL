@@ -20,7 +20,7 @@ python apl.py repl             # REPL تفاعلي
 ## المميزات
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
-- **مكتبات بالعربي** — كل دوال `math` و `random` و 18+ مكتبات أخرى مترجمة
+- **مكتبات بالعربي** — كل دوال `math` و `random` و 23+ مكتبات أخرى مترجمة
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.8+
@@ -28,7 +28,7 @@ python apl.py repl             # REPL تفاعلي
 - **تطابق أنماط متقدم** — pattern matching مع guard clauses
 - **REPL تفاعلي** — جرب الكود سطر بسطر بـ `python apl.py repl`
 
-## المكتبات المتاحة (20 مكتبة)
+## المكتبات المتاحة (25 مكتبة)
 
 | المكتبة | عدد الدوال | الوصف |
 |---------|-----------|-------|
@@ -50,8 +50,13 @@ python apl.py repl             # REPL تفاعلي
 | `threading` | 20+ | تعدد المهام |
 | `unittest` | 40+ | اختبارات الوحدة |
 | `csv` | 10+ | ملفات بيانات |
+| `logging` | 30+ | تسجيل الأحداث |
+| `argparse` | 30+ | تحليل وسائط سطر الأوامر |
+| `subprocess` | 20+ | أوامر النظام |
+| `configparser` | 20+ | ملفات الإعدادات |
+| `dataclasses` | 30+ | فئات بيانات، تعدادات، ABC |
 
-**إجمالي: ~574 دالة ومفتاح بالعربي**
+**إجمالي: ~674 دالة ومفتاح بالعربي**
 
 ## الأمثلة
 
@@ -101,14 +106,29 @@ def رئيسية():
 أغلق()
 ```
 
-**برمجة غير متزامنة:**
+**تسجيل الأحداث:**
 ```apl
-async def رابط_ويب(url):
-    اطبع "جاري الاتصال..."
-    await نوم(1)
-    اطبع "تم الاتصال:", url
+تكوين(مستوى=مستوى_معلومات)
+المتغير logger = جل_("تطبيقي")
+معلومات("بدء التطبيق")
+تحذير("هذا تحذير")
+خطأ("حدث خطأ")
+```
 
-شغل(رابط_ويب("https://example.com"))
+**تحليل الوسائط:**
+```apl
+المتغير parser = أنشئ_محلل()
+أضف_حجة("اسم", تلم_hint="اسم المستخدم")
+أضف_خيار("--عمر", نوع=عدد_صحيح, افتراضي=25)
+المتغير args = حلل()
+اطبع args.اسم, args.عمر
+```
+
+**أوامر النظام:**
+```apl
+المتغير r = نفذ(["ls", "-la"])
+اطبع "رمز العودة:", r.returncode
+اطبع "الخرج:", r.stdout
 ```
 
 ## التوثيق الكامل
@@ -136,6 +156,11 @@ async def رابط_ويب(url):
 | [docs/threading-library.md](docs/threading-library.md) | مكتبة `threading` |
 | [docs/unittest-library.md](docs/unittest-library.md) | مكتبة `unittest` |
 | [docs/csv-library.md](docs/csv-library.md) | مكتبة `csv` |
+| [docs/logging-library.md](docs/logging-library.md) | مكتبة `logging` |
+| [docs/argparse-library.md](docs/argparse-library.md) | مكتبة `argparse` |
+| [docs/subprocess-library.md](docs/subprocess-library.md) | مكتبة `subprocess` |
+| [docs/configparser-library.md](docs/configparser-library.md) | مكتبة `configparser` |
+| [docs/dataclasses-library.md](docs/dataclasses-library.md) | مكتبة `dataclasses` |
 | [docs/error-messages.md](docs/error-messages.md) | رسائل الأخطاء بالعربي |
 | [docs/architecture.md](docs/architecture.md) | هيكل المشروع وطريقة العمل |
 
@@ -172,4 +197,4 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.5 — ~574 دالة بالعربي — 20 مكتبة
+**الإصدار:** APL v1.6 — ~674 دالة بالعربي — 25 مكتبة

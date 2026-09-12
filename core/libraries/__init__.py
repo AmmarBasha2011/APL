@@ -21,6 +21,11 @@ from . import asyncio_funcs
 from . import threading_funcs
 from . import unittest_funcs
 from . import csv_funcs
+from . import logging_funcs
+from . import argparse_funcs
+from . import subprocess_funcs
+from . import configparser_funcs
+from . import dataclasses_funcs
 
 # Registry: module references for easy access
 LIBRARIES = {
@@ -42,6 +47,11 @@ LIBRARIES = {
     "threading": threading_funcs,
     "unittest": unittest_funcs,
     "csv": csv_funcs,
+    "logging": logging_funcs,
+    "argparse": argparse_funcs,
+    "subprocess": subprocess_funcs,
+    "configparser": configparser_funcs,
+    "dataclasses": dataclasses_funcs,
 }
 
 def get_all_funcs():
