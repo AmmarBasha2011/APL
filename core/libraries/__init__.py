@@ -26,6 +26,7 @@ from . import argparse_funcs
 from . import subprocess_funcs
 from . import configparser_funcs
 from . import dataclasses_funcs
+from . import advanced_funcs
 
 # Registry: module references for easy access
 LIBRARIES = {
@@ -52,6 +53,7 @@ LIBRARIES = {
     "subprocess": subprocess_funcs,
     "configparser": configparser_funcs,
     "dataclasses": dataclasses_funcs,
+    "advanced": advanced_funcs,
 }
 
 def get_all_funcs():

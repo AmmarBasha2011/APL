@@ -1,4 +1,4 @@
-# التوثيق الكامل — APL v1.6
+# التوثيق الكامل — APL v1.7
 
 فهرس جميع ملفات التوثيق:
 
@@ -29,11 +29,48 @@
 | 23 | [subprocess-library.md](subprocess-library.md) | مكتبة `subprocess` — أوامر النظام |
 | 24 | [configparser-library.md](configparser-library.md) | مكتبة `configparser` — ملفات الإعدادات |
 | 25 | [dataclasses-library.md](dataclasses-library.md) | مكتبة `dataclasses` — فئات بيانات، تعدادات، ABC |
-| 26 | [error-messages.md](error-messages.md) | رسائل الأخطاء — كل أخطاء Python مترجمة بالعربي |
+| 26 | [advanced-library.md](advanced-library.md) | المكتبة المتقدمة — Decorators, Metaclasses, Data Structures, Concurrency, Types, Descriptors |
+| 27 | [error-messages.md](error-messages.md) رسائل الأخطاء — كل أخطاء Python مترجمة بالعربي |
 
 ---
 
-## المكتبات المتاحة (25 مكتبة)
+## الميزات الجديدة (v1.7)
+
+### Context Managers (إدارة السياق)
+```apl
+# استخدام with عربي
+مع فتح("ملف.txt") مثل f:
+    اطبع f.read()
+
+# أو بالإنجليزي
+with open("file.txt") as f:
+    print(f.read())
+```
+
+### Generators (المولدات)
+```apl
+# yield عربي
+دالة أرقام(نهاية):
+    لكل i في نطاق(نهاية):
+        ولد i  # yield i
+
+# yield from عربي
+دالة تسطيح(قائمة):
+    لكل عنصر في قائمة:
+        ولد_من عنصر  # yield from element
+```
+
+### Semicolons (الفواصل المنقوطة)
+```apl
+# يمكن استخدام ; لفصل الأوامر (اختياري)
+المتغير س = 5; اطبع س
+
+# أو بدون ;
+المتغير س = 5
+اطبع س
+```
+
+## المكتبات المتاحة (26 مكتبة)
 
 | المكتبة | عدد الدوال | الوصف |
 |---------|-----------|-------|
@@ -60,5 +97,6 @@
 | `subprocess` | 20+ | أوامر النظام |
 | `configparser` | 20+ | ملفات الإعدادات |
 | `dataclasses` | 30+ | فئات بيانات، تعدادات، ABC |
+| `advanced` | 100+ | ميزات متقدمة |
 
-**إجمالي: ~674 دالة ومفتاح بالعربي**
+**إجمالي: ~774 دالة ومفتاح بالعربي**

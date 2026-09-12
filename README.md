@@ -21,15 +21,17 @@ python apl.py repl             # REPL تفاعلي
 ## المميزات
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
-- **مكتبات بالعربي** — كل دوال `math` و `random` و 23+ مكتبات أخرى مترجمة
+- **مكتبات بالعربي** — كل دوال `math` و `random` و 24+ مكتبات أخرى مترجمة
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.8+
 - **فهم متقدم** — list comprehensions، type hints، f-strings، multi-line strings
 - **تطابق أنماط متقدم** — pattern matching مع guard clauses
+- **إدارة سياق** — `with` statement بالعربي
+- **مولدات** — `yield` و `yield from` بالعربي
 - **REPL تفاعلي** — جرب الكود سطر بسطر بـ `python apl.py repl`
 
-## المكتبات المتاحة (25 مكتبة)
+## المكتبات المتاحة (26 مكتبة)
 
 | المكتبة | عدد الدوال | الوصف |
 |---------|-----------|-------|
@@ -56,8 +58,9 @@ python apl.py repl             # REPL تفاعلي
 | `subprocess` | 20+ | أوامر النظام |
 | `configparser` | 20+ | ملفات الإعدادات |
 | `dataclasses` | 30+ | فئات بيانات، تعدادات، ABC |
+| `advanced` | 100+ | ميزات متقدمة |
 
-**إجمالي: ~674 دالة ومفتاح بالعربي**
+**إجمالي: ~774 دالة ومفتاح بالعربي**
 
 ## الأمثلة
 
@@ -107,63 +110,26 @@ def رئيسية():
 أغلق()
 ```
 
-**تسجيل الأحداث:**
+**Context Manager:**
 ```apl
-تكوين(مستوى=مستوى_معلومات)
-المتغير logger = جل_("تطبيقي")
-معلومات("بدء التطبيق")
-تحذير("هذا تحذير")
-خطأ("حدث خطأ")
+مع فتح('ملف.txt', 'r') مثل f:
+    محتوى = f.read()
+    اطبع محتوى
 ```
 
-**تحليل الوسائط:**
+**Generator:**
 ```apl
-المتغير parser = أنشئ_محلل()
-أضف_حجة("اسم", تلم_hint="اسم المستخدم")
-أضف_خيار("--عمر", نوع=عدد_صحيح, افتراضي=25)
-المتغير args = حلل()
-اطبع args.اسم, args.عمر
-```
+دالة أرقام(نهاية):
+    لكل i في نطاق(نهاية):
+        ولد i  # yield i
 
-**أوامر النظام:**
-```apl
-المتغير r = نفذ(["ls", "-la"])
-اطبع "رمز العودة:", r.returncode
-اطبع "الخرج:", r.stdout
+لكل رقم في أرقام(10):
+   اطبع رقم
 ```
 
 ## التوثيق الكامل
 
 📚 **[فهرس التوثيق](docs/index.md)** — مرجع كامل لكل التفاصيل
-
-| الملف | المحتوى |
-|-------|---------|
-| [docs/language-reference.md](docs/language-reference.md) | مرجع اللغة الكامل |
-| [docs/math-library.md](docs/math-library.md) | مكتبة `math` |
-| [docs/random-library.md](docs/random-library.md) | مكتبة `random` |
-| [docs/statistics-library.md](docs/statistics-library.md) | مكتبة `statistics` |
-| [docs/time-library.md](docs/time-library.md) | مكتبة `time` + `datetime` |
-| [docs/os-library.md](docs/os-library.md) | مكتبة `os` + `pathlib` |
-| [docs/re-library.md](docs/re-library.md) | مكتبة `re` |
-| [docs/collections-library.md](docs/collections-library.md) | مكتبة `collections` |
-| [docs/itertools-library.md](docs/itertools-library.md) | مكتبة `itertools` |
-| [docs/json-library.md](docs/json-library.md) | مكتبة `json` |
-| [docs/hashlib-library.md](docs/hashlib-library.md) | مكتبة `hashlib` |
-| [docs/flask-library.md](docs/flask-library.md) | مكتبة `flask` |
-| [docs/fastapi-library.md](docs/fastapi-library.md) | مكتبة `fastapi` |
-| [docs/requests-library.md](docs/requests-library.md) | مكتبة `requests` |
-| [docs/sqlite3-library.md](docs/sqlite3-library.md) | مكتبة `sqlite3` |
-| [docs/asyncio-library.md](docs/asyncio-library.md) | مكتبة `asyncio` |
-| [docs/threading-library.md](docs/threading-library.md) | مكتبة `threading` |
-| [docs/unittest-library.md](docs/unittest-library.md) | مكتبة `unittest` |
-| [docs/csv-library.md](docs/csv-library.md) | مكتبة `csv` |
-| [docs/logging-library.md](docs/logging-library.md) | مكتبة `logging` |
-| [docs/argparse-library.md](docs/argparse-library.md) | مكتبة `argparse` |
-| [docs/subprocess-library.md](docs/subprocess-library.md) | مكتبة `subprocess` |
-| [docs/configparser-library.md](docs/configparser-library.md) | مكتبة `configparser` |
-| [docs/dataclasses-library.md](docs/dataclasses-library.md) | مكتبة `dataclasses` |
-| [docs/error-messages.md](docs/error-messages.md) | رسائل الأخطاء بالعربي |
-| [docs/architecture.md](docs/architecture.md) | هيكل المشروع وطريقة العمل |
 
 ## المتطلبات
 
@@ -198,4 +164,4 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.6 — ~674 دالة بالعربي — 25 مكتبة
+**الإصدار:** APL v1.7 — ~774 دالة بالعربي — 26 مكتبة

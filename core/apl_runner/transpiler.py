@@ -15,6 +15,36 @@ def transpile_line(line: str) -> str:
     if not stripped or stripped.startswith("#"):
         return line
 
+    # Handle context managers FIRST (before any library patterns)
+    if stripped.startswith(("مع ", "with ", "ضمنياً ", "ضمني ")):
+        match = re.match(r'(?:مع|with|ضمنياً|ضمني)\s+(.+?)\s+(?:مثل|as|كـ|يساوي)\s+(\w+)\s*:', stripped)
+        if match:
+            expr = match.group(1).strip()
+            var = match.group(2).strip()
+            return f"{indent}with {expr} as {var}:"
+    
+    # Handle generators (yield/yield from)
+    if stripped.startswith(("ولد ", "ولّد ", "yield ")):
+        rest = stripped.split(" ", 1)[1] if " " in stripped else "None"
+        return f"{indent}yield {_inline_replace(rest)}"
+    if stripped.startswith(("ولد_من ", "yield_from ", "ولّد_من ")):
+        rest = stripped.split(" ", 1)[1] if " " in stripped else ""
+        return f"{indent}yield from {_inline_replace(rest)}"
+    
+    # Handle semicolons - split multiple statements on one line
+    if ";" in stripped and not stripped.startswith(("اطبع", "#", "'''", '"""')):
+        parts = stripped.split(";")
+        results = []
+        for part in parts:
+            if part.strip():
+                # Recursively transpile each part
+                results.append(transpile_line(part))
+        return "\n".join(results)
+
+    # Remove trailing semicolon if present
+    if stripped.endswith(";"):
+        stripped = stripped[:-1].strip()
+
     if stripped.startswith("اطبع_بدون"):
         rest = _inline_replace(stripped[len('اطبع_بدون'):].strip())
         return f"{indent}print({rest[1:-1] if rest.startswith('(') else rest}, end='')"

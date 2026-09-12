@@ -1,7 +1,7 @@
 import sys, os, re, io
 from core.apl_runner import _inline_replace
 from core.apl_runner.transpiler import transpile_line
-from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs
+from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 if sys.platform == "win32":
@@ -73,6 +73,8 @@ def transpile(source: str) -> str:
         needs.append("import configparser")
     if re.search(dataclasses_funcs.IMPORT_CHECK, code) and "import dataclasses" not in code:
         needs.append("from dataclasses import dataclass, field, asdict, astuple, replace; from enum import Enum, IntEnum, IntFlag, Flag, auto, unique; from abc import ABC, abstractmethod")
+    if re.search(advanced_funcs.IMPORT_CHECK, code) and "import functools" not in code:
+        needs.append("import functools, multiprocessing, concurrent.futures, typing, contextlib, tempfile, zipfile, pathlib, heapq, bisect, queue, weakref, copy, secrets, struct, io, codecs, base64")
     if "json." in code and "import json" not in code:
         needs.append("import json")
     if "os." in code and "import os" not in code:
@@ -351,6 +353,10 @@ def print_help():
     for line in dataclasses_funcs.DATACLASSES_HELP:
         print(f"    {line}")
     print()
+    print("  # advanced library (100+ functions)")
+    for line in advanced_funcs.ADVANCED_HELP:
+        print(f"    {line}")
+    print()
     print("Examples:")
     print("  python apl.py calculator.apl")
     print("  python apl.py help")
@@ -408,8 +414,9 @@ def main():
         lines = code.replace(';', '\n').split('\n')
         python_code = _RUNTIME + "\n"
         for line in lines:
-            if line.strip():
-                python_code += transpile(line) + "\n"
+            stripped_line = line.strip()
+            if stripped_line:
+                python_code += transpile_line(stripped_line) + "\n"
         try:
             exec(python_code, {})
         except Exception as e:

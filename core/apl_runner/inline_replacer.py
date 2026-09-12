@@ -9,7 +9,7 @@ from core.apl_runner.patterns import (
     _METHOD_ALIASES, _METHOD_PATTERN, _TYPE_NAMES, _CONSTANTS, _CONSTANT_PATTERN,
     _LOGICAL_PATTERNS, _KW_ALIASES, _IO_ALIASES, _IO_PATTERN
 )
-from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs
+from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs
 
 
 def _replace_type_names(text: str) -> str:
@@ -75,8 +75,15 @@ def _inline_replace(text: str) -> str:
     text = re.compile(subprocess_funcs.SUBPROCESS_PATTERN).sub(lambda m: f"{subprocess_funcs.SUBPROCESS_FUNCS[m.group(1)]}(", text)
     text = re.compile(configparser_funcs.CONFIGPARSER_PATTERN).sub(lambda m: f"{configparser_funcs.CONFIGPARSER_FUNCS[m.group(1)]}(", text)
     text = re.compile(dataclasses_funcs.DATACLASSES_PATTERN).sub(lambda m: f"{dataclasses_funcs.DATACLASSES_FUNCS[m.group(1)]}(", text)
+    text = re.compile(advanced_funcs.ADVANCED_PATTERN).sub(lambda m: f"{advanced_funcs.ADVANCED_FUNCS[m.group(1)]}(", text)
     
     # Then type aliases, inline funcs, methods
+    # Translate context manager protocol methods
+    text = text.replace("__دخل__", "__enter__")
+    text = text.replace("__خرج__", "__exit__")
+    text = text.replace("__دخل_سياق__", "__enter__")
+    text = text.replace("__خرج_سياق__", "__exit__")
+    
     text = _TYPE_PATTERN.sub(lambda m: f"{TYPE_ALIASES[m.group(1)]}(", text)
     text = _INLINE_FUNC_PATTERN.sub(lambda m: f"{_INLINE_FUNCS[m.group(1)]}(", text)
     text = _METHOD_PATTERN.sub(lambda m: f".{_METHOD_ALIASES[m.group(1)]}(", text)
