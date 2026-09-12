@@ -13,6 +13,7 @@
 git clone https://github.com/AmmarBasha2011/APL.git
 cd APL
 python apl.py calculator.apl   # شغّل ملف
+python apl.py -c "اطبع 'مرحباً'"  # تنفيذ كود مباشرة
 python apl.py help             # عرض المساعدة
 python apl.py repl             # REPL تفاعلي
 ```

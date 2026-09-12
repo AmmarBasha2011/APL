@@ -202,6 +202,7 @@ def print_help():
     print()
     print("Usage:")
     print("  python apl.py <file.apl>    Run an APL file")
+    print("  python apl.py -c '<code>'   Execute code directly")
     print("  python apl.py help          Show this help")
     print("  python apl.py repl          Start interactive REPL")
     print("  python apl.py               Show help")
@@ -395,6 +396,25 @@ def main():
     
     if command in ('repl', 'interactive', 'shell'):
         run_repl()
+        return
+
+    # Execute code directly: python apl.py -c "اطبع 'مرحباً'"
+    if command in ('-c', '--code'):
+        if len(sys.argv) < 3:
+            print("Usage: python apl.py -c '<code>'")
+            sys.exit(1)
+        code = sys.argv[2]
+        # Split by newlines and semicolons for multi-statement support
+        lines = code.replace(';', '\n').split('\n')
+        python_code = _RUNTIME + "\n"
+        for line in lines:
+            if line.strip():
+                python_code += transpile(line) + "\n"
+        try:
+            exec(python_code, {})
+        except Exception as e:
+            msg = _get_error_ar(e)
+            print(f"\u202B{msg}\u202C", file=sys.stderr)
         return
 
     filepath = sys.argv[1]
