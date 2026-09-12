@@ -16,6 +16,11 @@ from . import hashlib_funcs
 from . import flask_funcs
 from . import fastapi_funcs
 from . import requests_funcs
+from . import sqlite3_funcs
+from . import asyncio_funcs
+from . import threading_funcs
+from . import unittest_funcs
+from . import csv_funcs
 
 # Registry: module references for easy access
 LIBRARIES = {
@@ -32,6 +37,11 @@ LIBRARIES = {
     "flask": flask_funcs,
     "fastapi": fastapi_funcs,
     "requests": requests_funcs,
+    "sqlite3": sqlite3_funcs,
+    "asyncio": asyncio_funcs,
+    "threading": threading_funcs,
+    "unittest": unittest_funcs,
+    "csv": csv_funcs,
 }
 
 def get_all_funcs():

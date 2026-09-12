@@ -9,7 +9,7 @@ from core.apl_runner.patterns import (
     _METHOD_ALIASES, _METHOD_PATTERN, _TYPE_NAMES, _CONSTANTS, _CONSTANT_PATTERN,
     _LOGICAL_PATTERNS, _KW_ALIASES, _IO_ALIASES, _IO_PATTERN
 )
-from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs
+from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs
 
 
 def _replace_type_names(text: str) -> str:
@@ -65,6 +65,11 @@ def _inline_replace(text: str) -> str:
     text = re.compile(flask_funcs.FLASK_PATTERN).sub(lambda m: f"{flask_funcs.FLASK_FUNCS[m.group(1)]}(", text)
     text = re.compile(fastapi_funcs.FASTAPI_PATTERN).sub(lambda m: f"{fastapi_funcs.FASTAPI_FUNCS[m.group(1)]}(", text)
     text = re.compile(requests_funcs.REQUESTS_PATTERN).sub(lambda m: f"{requests_funcs.REQUESTS_FUNCS[m.group(1)]}(", text)
+    text = re.compile(sqlite3_funcs.SQLITE3_PATTERN).sub(lambda m: f"{sqlite3_funcs.SQLITE3_FUNCS[m.group(1)]}(", text)
+    text = re.compile(asyncio_funcs.ASYNCIO_PATTERN).sub(lambda m: f"{asyncio_funcs.ASYNCIO_FUNCS[m.group(1)]}(", text)
+    text = re.compile(threading_funcs.THREADING_PATTERN).sub(lambda m: f"{threading_funcs.THREADING_FUNCS[m.group(1)]}(", text)
+    text = re.compile(unittest_funcs.UNITTEST_PATTERN).sub(lambda m: f"{unittest_funcs.UNITTEST_FUNCS[m.group(1)]}(", text)
+    text = re.compile(csv_funcs.CSV_PATTERN).sub(lambda m: f"{csv_funcs.CSV_FUNCS[m.group(1)]}(", text)
     
     # Then type aliases, inline funcs, methods
     text = _TYPE_PATTERN.sub(lambda m: f"{TYPE_ALIASES[m.group(1)]}(", text)

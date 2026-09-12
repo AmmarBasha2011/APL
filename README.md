@@ -1,4 +1,4 @@
-# APL v1.2 - Ammar Programming Language
+# APL - Ammar Programming Language
 
 **لغة برمجة كاملة بالعربي.** اكتب كود بالعربي، يتحول تلقائياً لـ Python ويشتغل مباشرة.
 
@@ -20,7 +20,7 @@ python apl.py repl             # REPL تفاعلي
 ## المميزات
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
-- **مكتبات بالعربي** — كل دوال `math` و `random` و 10+ مكتبات أخرى مترجمة
+- **مكتبات بالعربي** — كل دوال `math` و `random` و 18+ مكتبات أخرى مترجمة
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.8+
@@ -28,7 +28,7 @@ python apl.py repl             # REPL تفاعلي
 - **تطابق أنماط متقدم** — pattern matching مع guard clauses
 - **REPL تفاعلي** — جرب الكود سطر بسطر بـ `python apl.py repl`
 
-## المكتبات المتاحة
+## المكتبات المتاحة (20 مكتبة)
 
 | المكتبة | عدد الدوال | الوصف |
 |---------|-----------|-------|
@@ -45,8 +45,13 @@ python apl.py repl             # REPL تفاعلي
 | `flask` | 50+ | إطار عمل ويب |
 | `fastapi` | 100+ | إطار عمل ويب حديث |
 | `requests` | 150+ | HTTP Client كامل |
+| `sqlite3` | 20+ | قاعدة بيانات محلية |
+| `asyncio` | 50+ | برمجة غير متزامنة |
+| `threading` | 20+ | تعدد المهام |
+| `unittest` | 40+ | اختبارات الوحدة |
+| `csv` | 10+ | ملفات بيانات |
 
-**إجمالي: ~484 دالة ومفتاح بالعربي**
+**إجمالي: ~574 دالة ومفتاح بالعربي**
 
 ## الأمثلة
 
@@ -86,6 +91,26 @@ def رئيسية():
 شغل(app, 8000)
 ```
 
+**قاعدة بيانات SQLite:**
+```apl
+المتغير conn = افتح_قاعدة('test.db')
+المتغير c = مؤشر()
+نفذ('CREATE TABLE users (id INTEGER, name TEXT)')
+نفذ('INSERT INTO users VALUES (1, ?)', ('عمار',))
+تأكد()
+أغلق()
+```
+
+**برمجة غير متزامنة:**
+```apl
+async def رابط_ويب(url):
+    اطبع "جاري الاتصال..."
+    await نوم(1)
+    اطبع "تم الاتصال:", url
+
+شغل(رابط_ويب("https://example.com"))
+```
+
 ## التوثيق الكامل
 
 📚 **[فهرس التوثيق](docs/index.md)** — مرجع كامل لكل التفاصيل
@@ -106,6 +131,11 @@ def رئيسية():
 | [docs/flask-library.md](docs/flask-library.md) | مكتبة `flask` |
 | [docs/fastapi-library.md](docs/fastapi-library.md) | مكتبة `fastapi` |
 | [docs/requests-library.md](docs/requests-library.md) | مكتبة `requests` |
+| [docs/sqlite3-library.md](docs/sqlite3-library.md) | مكتبة `sqlite3` |
+| [docs/asyncio-library.md](docs/asyncio-library.md) | مكتبة `asyncio` |
+| [docs/threading-library.md](docs/threading-library.md) | مكتبة `threading` |
+| [docs/unittest-library.md](docs/unittest-library.md) | مكتبة `unittest` |
+| [docs/csv-library.md](docs/csv-library.md) | مكتبة `csv` |
 | [docs/error-messages.md](docs/error-messages.md) | رسائل الأخطاء بالعربي |
 | [docs/architecture.md](docs/architecture.md) | هيكل المشروع وطريقة العمل |
 
@@ -142,4 +172,4 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.2 — ~484 دالة بالعربي
+**الإصدار:** APL v1.5 — ~574 دالة بالعربي — 20 مكتبة

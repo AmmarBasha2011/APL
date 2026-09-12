@@ -1,7 +1,7 @@
 import sys, os, re, io
 from core.apl_runner import _inline_replace
 from core.apl_runner.transpiler import transpile_line
-from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs
+from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 if sys.platform == "win32":
@@ -53,6 +53,16 @@ def transpile(source: str) -> str:
         needs.append("from fastapi import FastAPI, APIRouter, Depends, HTTPException, status, Request, Response, BackgroundTasks, WebSocket, File, UploadFile, Security")
     if re.search(requests_funcs.IMPORT_CHECK, code) and "import requests" not in code:
         needs.append("import requests")
+    if re.search(sqlite3_funcs.IMPORT_CHECK, code) and "import sqlite3" not in code:
+        needs.append("import sqlite3")
+    if re.search(asyncio_funcs.IMPORT_CHECK, code) and "import asyncio" not in code:
+        needs.append("import asyncio")
+    if re.search(threading_funcs.IMPORT_CHECK, code) and "import threading" not in code:
+        needs.append("import threading")
+    if re.search(unittest_funcs.IMPORT_CHECK, code) and "import unittest" not in code:
+        needs.append("import unittest")
+    if re.search(csv_funcs.IMPORT_CHECK, code) and "import csv" not in code:
+        needs.append("import csv")
     if "json." in code and "import json" not in code:
         needs.append("import json")
     if "os." in code and "import os" not in code:
@@ -288,6 +298,26 @@ def print_help():
     print()
     print("  # requests library (150+ functions)")
     for line in requests_funcs.REQUESTS_HELP:
+        print(f"    {line}")
+    print()
+    print("  # sqlite3 library (20+ functions)")
+    for line in sqlite3_funcs.SQLITE3_HELP:
+        print(f"    {line}")
+    print()
+    print("  # asyncio library (50+ functions)")
+    for line in asyncio_funcs.ASYNCIO_HELP:
+        print(f"    {line}")
+    print()
+    print("  # threading library (20+ functions)")
+    for line in threading_funcs.THREADING_HELP:
+        print(f"    {line}")
+    print()
+    print("  # unittest library (40+ functions)")
+    for line in unittest_funcs.UNITTEST_HELP:
+        print(f"    {line}")
+    print()
+    print("  # csv library (10+ functions)")
+    for line in csv_funcs.CSV_HELP:
         print(f"    {line}")
     print()
     print("Examples:")

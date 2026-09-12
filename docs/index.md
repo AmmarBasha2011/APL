@@ -1,4 +1,4 @@
-# التوثيق الكامل — APL v1.2
+# التوثيق الكامل — APL v1.5
 
 فهرس جميع ملفات التوثيق:
 
@@ -19,7 +19,12 @@
 | 13 | [flask-library.md](flask-library.md) | مكتبة `flask` — إطار عمل ويب |
 | 14 | [fastapi-library.md](fastapi-library.md) | مكتبة `fastapi` — إطار عمل ويب حديث |
 | 15 | [requests-library.md](requests-library.md) | مكتبة `requests` — HTTP Client كامل |
-| 16 | [error-messages.md](error-messages.md) | رسائل الأخطاء — كل أخطاء Python مترجمة بالعربي |
+| 16 | [sqlite3-library.md](sqlite3-library.md) | مكتبة `sqlite3` — قاعدة بيانات محلية |
+| 17 | [asyncio-library.md](asyncio-library.md) | مكتبة `asyncio` — برمجة غير متزامنة |
+| 18 | [threading-library.md](threading-library.md) | مكتبة `threading` — تعدد المهام |
+| 19 | [unittest-library.md](unittest-library.md) | مكتبة `unittest` — اختبارات الوحدة |
+| 20 | [csv-library.md](csv-library.md) | مكتبة `csv` — ملفات بيانات |
+| 21 | [error-messages.md](error-messages.md) | رسائل الأخطاء — كل أخطاء Python مترجمة بالعربي |
 
 ---
 
@@ -43,22 +48,24 @@ docs/
 ├── flask-library.md       ← إطار عمل Flask
 ├── fastapi-library.md     ← إطار عمل FastAPI
 ├── requests-library.md    ← HTTP Client
+├── sqlite3-library.md     ← قاعدة بيانات SQLite
+├── asyncio-library.md     ← برمجة غير متزامنة
+├── threading-library.md   ← تعدد المهام
+├── unittest-library.md    ← اختبارات الوحدة
+├── csv-library.md         ← ملفات CSV
 └── error-messages.md      ← رسائل الأخطاء
 ```
 
-## التحسينات الجديدة (v2)
+## التحسينات الجديدة (v1.5)
 
-- **List Comprehensions**: `[س*2 لكل س في قائمة]`
-- **Type Hints**: `دالة جمع(أ: صحيح, ب: صحيح) -> صحيح:`
-- **F-Strings**: `اطبع f"الاسم: {اسم}, العمر: {عمر}"`
-- **Multi-Line Strings**: `المتغير نص = """..."""`
-- **Walrus Operator**: `لو (ن = طول(قائمة)) > 5:`
-- **Match Guards**: `قيمة ن لو ن > 0:`
-- **Decorators with args**: `مزخرف(حجة1, حجة2)`
-- **REPL تفاعلي**: `python apl.py repl` — جرب الكود سطر بسطر
-- **مساعدة مدمجة**: `python apl.py help` — عرض كل الأوامر والمكتبات
+- **sqlite3** — قاعدة بيانات محلية (أهم إضافة!)
+- **asyncio** — برمجة غير متزامنة كاملة
+- **threading** — تعدد المهام
+- **unittest** — اختبارات وحدة مع تسميات عربية
+- **csv** — قراءة وكتابة ملفات البيانات
+- **تحسينات اللغة** — list comprehensions، type hints، f-strings، multi-line strings، walrus operator، match guards، decorators
 
-## المكتبات المتاحة
+## المكتبات المتاحة (20 مكتبة)
 
 | المكتبة | عدد الدوال | الوصف |
 |---------|-----------|-------|
@@ -75,6 +82,13 @@ docs/
 | `flask` | 50+ | إطار عمل ويب |
 | `fastapi` | 100+ | إطار عمل ويب حديث |
 | `requests` | 150+ | HTTP Client كامل |
+| `sqlite3` | 20+ | قاعدة بيانات محلية |
+| `asyncio` | 50+ | برمجة غير متزامنة |
+| `threading` | 20+ | تعدد المهام |
+| `unittest` | 40+ | اختبارات الوحدة |
+| `csv` | 10+ | ملفات بيانات |
+
+**إجمالي: ~574 دالة ومفتاح بالعربي**
 
 ## كيف تستخدم التوثيق
 
@@ -92,5 +106,10 @@ docs/
 - **محتاج ويب Flask؟** راجع [flask-library.md](flask-library.md)
 - **محتاج ويب FastAPI؟** راجع [fastapi-library.md](fastapi-library.md)
 - **محتاج HTTP Client؟** راجع [requests-library.md](requests-library.md)
+- **محتاج قاعدة بيانات؟** راجع [sqlite3-library.md](sqlite3-library.md)
+- **محتاج برمجة غير متزامنة؟** راجع [asyncio-library.md](asyncio-library.md)
+- **محتاج تعدد مهام؟** راجع [threading-library.md](threading-library.md)
+- **محتاج اختبارات؟** راجع [unittest-library.md](unittest-library.md)
+- **محتاج CSV؟** راجع [csv-library.md](csv-library.md)
 - **لقيت error؟** شوف [error-messages.md](error-messages.md)
 - **عايز تفهم التصميم؟** اقرأ [architecture.md](architecture.md)
