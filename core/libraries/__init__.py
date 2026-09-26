@@ -27,6 +27,14 @@ from . import subprocess_funcs
 from . import configparser_funcs
 from . import dataclasses_funcs
 from . import advanced_funcs
+from . import datetime_funcs
+from . import pathlib_funcs
+from . import shutil_funcs
+from . import textwrap_funcs
+from . import uuid_funcs
+from . import base64_funcs
+from . import urllib_funcs
+from . import functools_funcs
 
 # Registry: module references for easy access
 LIBRARIES = {
@@ -54,6 +62,14 @@ LIBRARIES = {
     "configparser": configparser_funcs,
     "dataclasses": dataclasses_funcs,
     "advanced": advanced_funcs,
+    "datetime": datetime_funcs,
+    "pathlib": pathlib_funcs,
+    "shutil": shutil_funcs,
+    "textwrap": textwrap_funcs,
+    "uuid": uuid_funcs,
+    "base64": base64_funcs,
+    "urllib": urllib_funcs,
+    "functools": functools_funcs,
 }
 
 def get_all_funcs():

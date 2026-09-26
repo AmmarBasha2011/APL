@@ -1,7 +1,7 @@
 import sys, os, re, io
 from core.apl_runner import _inline_replace
 from core.apl_runner.transpiler import transpile_line
-from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs
+from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 if sys.platform == "win32":
@@ -83,6 +83,22 @@ def transpile(source: str) -> str:
         needs.append("import datetime")
     if "_apl_fetch" in code and "import urllib.request" not in code:
         needs.append("import urllib.request")
+    if re.search(datetime_funcs.IMPORT_CHECK, code) and "import datetime" not in code:
+        needs.append("import datetime")
+    if re.search(pathlib_funcs.IMPORT_CHECK, code) and "import pathlib" not in code:
+        needs.append("import pathlib")
+    if re.search(shutil_funcs.IMPORT_CHECK, code) and "import shutil" not in code:
+        needs.append("import shutil")
+    if re.search(textwrap_funcs.IMPORT_CHECK, code) and "import textwrap" not in code:
+        needs.append("import textwrap")
+    if re.search(uuid_funcs.IMPORT_CHECK, code) and "import uuid" not in code:
+        needs.append("import uuid")
+    if re.search(base64_funcs.IMPORT_CHECK, code) and "import base64" not in code:
+        needs.append("import base64")
+    if re.search(urllib_funcs.IMPORT_CHECK, code) and "import urllib.parse, urllib.request" not in code:
+        needs.append("import urllib.parse, urllib.request")
+    if re.search(functools_funcs.IMPORT_CHECK, code) and "import functools" not in code:
+        needs.append("import functools")
     if "time." in code and "import time" not in code:
         needs.append("import time")
     if "shutil." in code and "import shutil" not in code:

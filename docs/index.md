@@ -1,4 +1,4 @@
-# التوثيق الكامل — APL v1.7
+# التوثيق الكامل — APL v1.8
 
 فهرس جميع ملفات التوثيق:
 
@@ -30,11 +30,19 @@
 | 24 | [configparser-library.md](configparser-library.md) | مكتبة `configparser` — ملفات الإعدادات |
 | 25 | [dataclasses-library.md](dataclasses-library.md) | مكتبة `dataclasses` — فئات بيانات، تعدادات، ABC |
 | 26 | [advanced-library.md](advanced-library.md) | المكتبة المتقدمة — Decorators, Metaclasses, Data Structures, Concurrency, Types, Descriptors |
-| 27 | [error-messages.md](error-messages.md) رسائل الأخطاء — كل أخطاء Python مترجمة بالعربي |
+| 27 | [datetime-library.md](datetime-library.md) | مكتبة `datetime` — التاريخ والوقت والتحويل بينهما، مع الخصائص والثوابت |
+| 28 | [pathlib-library.md](pathlib-library.md) | مكتبة `pathlib` — التعامل مع المسارات ككائنات |
+| 29 | [shutil-library.md](shutil-library.md) | مكتبة `shutil` — نسخ ونقل وحذف الملفات والمجلدات |
+| 30 | [textwrap-library.md](textwrap-library.md) | مكتبة `textwrap` — تنسيق النصوص ولفّها |
+| 31 | [uuid-library.md](uuid-library.md) | مكتبة `uuid` — المعرفات الفريدة (UUID) |
+| 32 | [base64-library.md](base64-library.md) | مكتبة `base64` — الترميز وفك الترميز |
+| 33 | [urllib-library.md](urllib-library.md) | مكتبة `urllib` — تحليل وبناء الروابط وترميزها |
+| 34 | [functools-library.md](functools-library.md) | مكتبة `functools` — أدوات الدوال (partial, cache, wraps) |
+| 35 | [error-messages.md](error-messages.md) | رسائل الأخطاء — كل أخطاء Python مترجمة بالعربي |
 
 ---
 
-## الميزات الجديدة (v1.7)
+## الميزات الجديدة (v1.8)
 
 ### Context Managers (إدارة السياق)
 ```apl
@@ -70,7 +78,7 @@ with open("file.txt") as f:
 اطبع س
 ```
 
-## المكتبات المتاحة (24 مكتبة)
+## المكتبات المتاحة (32 مكتبة)
 
 | المكتبة | عدد الدوال | الوصف |
 |---------|-----------:|-------|
@@ -85,6 +93,8 @@ with open("file.txt") as f:
 | `advanced` | 70 | ميزات متقدمة |
 | `dataclasses` | 66 | فئات بيانات، تعدادات، ABC |
 | `math` | 59 | مثلثات، لوغاريتمات، جذور، تقريب، هندسة |
+| `pathlib` | 58 | التعامل مع المسارات ككائنات |
+| `datetime` | 45 | التاريخ والوقت والتحويل بينهما |
 | `configparser` | 35 | ملفات الإعدادات |
 | `os` | 30 | ملفات، مجلدات، مسارات، فحص |
 | `threading` | 29 | تعدد المهام |
@@ -95,10 +105,18 @@ with open("file.txt") as f:
 | `itertools` | 19 | أدوات تكرار، توافيق، تباديل |
 | `statistics` | 16 | متوسط، وسيط، منوال، تباين، انحراف معياري |
 | `csv` | 13 | ملفات بيانات |
+| `urllib` | 13 | تحليل وبناء الروابط وترميزها |
+| `uuid` | 13 | المعرفات الفريدة (UUID) |
+| `shutil` | 12 | نسخ ونقل وحذف الملفات والمجلدات |
+| `base64` | 10 | الترميز وفك الترميز |
 | `collections` | 9 | Counter, defaultdict, deque |
+| `functools` | 9 | أدوات الدوال (partial, cache, wraps) |
+| `textwrap` | 9 | تنسيق النصوص ولفّها |
 | `json` | 8 | قراءة وكتابة JSON |
 | `hashlib` | 7 | تجزئة وتشفير |
 
-**إجمالي المكتبات: 1,752 مفتاح في 24 مكتبة (1,579 فريد بعد إزالة التكرار)**
+**الإجمالي: 1,921 مفتاحاً في 32 مكتبة** — تشمل الدوال والخصائص و ثوابت المكتبة ومعاملاتها العربية (`أيام=`, `ساعات=`, …).
 
-**إجمالي المشروع: ~1,746 دالة ومفتاح بالعربي** — 1,752 من المكتبات + 167 عنصراً في اللغة الأساسية (`core/apl_runner/patterns.py`: كلمات مفتاحية، أنواع، ثوابت، أنماط) − 173 مفتاحاً مكرراً بين المكتبات.
+إضافة إلى **167** عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط)، ما يجعل الإجمالي الكلي أكثر من **2,000** عنصر عربي في اللغة.
+
+**إجمالي المشروع: أكثر من 2,000 عنصر عربي** — 1,921 عنصراً في 32 مكتبة (دوال، خصائص، ثوابت، معاملات عربية) + 167 عنصراً في اللغة الأساسية (`core/apl_runner/patterns.py`: كلمات مفتاحية، أنواع، ثوابت، أنماط).

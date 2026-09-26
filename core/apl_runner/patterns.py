@@ -11,7 +11,7 @@ TYPE_ALIASES = {
     "قائمة": "list", "مجموعة": "tuple", "مصفوفة": "set",
     "قاموس": "dict", "بايت": "bytes",
 }
-_TYPE_PATTERN = re.compile("(" + "|".join(TYPE_ALIASES.keys()) + r")\s*\(")
+_TYPE_PATTERN = re.compile(r"(?<!\w)(" + "|".join(TYPE_ALIASES.keys()) + r")\s*\(")
 
 # Inline functions - الدوال المضمنة
 _INLINE_FUNCS = {"نطاق": "range", "طول": "len"}

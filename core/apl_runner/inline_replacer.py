@@ -9,7 +9,8 @@ from core.apl_runner.patterns import (
     _METHOD_ALIASES, _METHOD_PATTERN, _TYPE_NAMES, _CONSTANTS, _CONSTANT_PATTERN,
     _LOGICAL_PATTERNS, _KW_ALIASES, _IO_ALIASES, _IO_PATTERN
 )
-from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs
+from core.libraries.datetime_funcs import DATETIME_KWARGS, DATETIME_CONSTANTS
+from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs
 
 
 def _replace_type_names(text: str) -> str:
@@ -49,6 +50,18 @@ def _inline_replace(text: str) -> str:
     text = re.sub(r"ادخل\s*\(", "input(", text)
     
     # Library patterns first (more specific, longer names)
+    text = re.compile(datetime_funcs.DATETIME_PATTERN).sub(lambda m: f"{datetime_funcs.DATETIME_FUNCS[m.group(1)]}(", text)
+    text = re.compile(pathlib_funcs.PATHLIB_PATTERN).sub(lambda m: f"{pathlib_funcs.PATHLIB_FUNCS[m.group(1)]}(", text)
+    text = re.compile(pathlib_funcs.PATHLIB_METHOD_PATTERN).sub(lambda m: f".{pathlib_funcs.PATHLIB_METHODS[m.group(1)]}(", text)
+    text = re.compile(shutil_funcs.SHUTIL_PATTERN).sub(lambda m: f"{shutil_funcs.SHUTIL_FUNCS[m.group(1)]}(", text)
+    text = re.compile(textwrap_funcs.TEXTWRAP_PATTERN).sub(lambda m: f"{textwrap_funcs.TEXTWRAP_FUNCS[m.group(1)]}(", text)
+    text = re.compile(uuid_funcs.UUID_PATTERN).sub(lambda m: f"{uuid_funcs.UUID_FUNCS[m.group(1)]}(", text)
+    text = re.compile(datetime_funcs.DATETIME_PROP_PATTERN).sub(lambda m: f".{datetime_funcs.DATETIME_PROPS[m.group(1)]}", text)
+    text = re.compile(pathlib_funcs.PATHLIB_PROP_PATTERN).sub(lambda m: f".{pathlib_funcs.PATHLIB_PROPS[m.group(1)]}", text)
+    text = re.compile(uuid_funcs.UUID_PROP_PATTERN).sub(lambda m: f".{uuid_funcs.UUID_PROPS[m.group(1)]}", text)
+    text = re.compile(base64_funcs.BASE64_PATTERN).sub(lambda m: f"{base64_funcs.BASE64_FUNCS[m.group(1)]}(", text)
+    text = re.compile(urllib_funcs.URLLIB_PATTERN).sub(lambda m: f"{urllib_funcs.URLLIB_FUNCS[m.group(1)]}(", text)
+    text = re.compile(functools_funcs.FUNCTOOLS_PATTERN).sub(lambda m: f"{functools_funcs.FUNCTOOLS_FUNCS[m.group(1)]}(", text)
     text = re.compile(math_funcs.MATH_PATTERN).sub(lambda m: f"{math_funcs.MATH_FUNCS[m.group(1)]}(", text)
     text = re.compile(random_funcs.RANDOM_PATTERN).sub(lambda m: f"{random_funcs.RANDOM_FUNCS[m.group(1)]}(", text)
     text = re.compile(time_funcs.TIME_PATTERN).sub(lambda m: f"{time_funcs.TIME_FUNCS[m.group(1)]}(", text)
@@ -77,6 +90,12 @@ def _inline_replace(text: str) -> str:
     text = re.compile(dataclasses_funcs.DATACLASSES_PATTERN).sub(lambda m: f"{dataclasses_funcs.DATACLASSES_FUNCS[m.group(1)]}(", text)
     text = re.compile(advanced_funcs.ADVANCED_PATTERN).sub(lambda m: f"{advanced_funcs.ADVANCED_FUNCS[m.group(1)]}(", text)
     
+    text = re.compile(datetime_funcs.DATETIME_CONSTANT_PATTERN).sub(lambda m: datetime_funcs.DATETIME_CONSTANTS[m.group(1)], text)
+    text = re.compile(uuid_funcs.UUID_CONSTANT_PATTERN).sub(lambda m: uuid_funcs.UUID_CONSTANTS[m.group(1)], text)
+    # Library-specific keyword arguments (e.g. timedelta(days=3))
+    for _ar, _en in DATETIME_KWARGS.items():
+        text = re.sub(rf"(?<![\w\u0600-\u06FF]){_ar}(?=\s*=)", _en, text)
+
     # Then type aliases, inline funcs, methods
     # Translate context manager protocol methods
     text = text.replace("__دخل__", "__enter__")
