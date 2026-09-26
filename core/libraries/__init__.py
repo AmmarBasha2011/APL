@@ -35,6 +35,7 @@ from . import zoneinfo_funcs
 from . import getpass_funcs
 from . import operator_funcs
 from . import pprint_funcs
+from . import enum_funcs
 from . import datetime_funcs
 from . import pathlib_funcs
 from . import shutil_funcs
@@ -86,6 +87,7 @@ LIBRARIES = {
     "getpass": getpass_funcs,
     "operator": operator_funcs,
     "pprint": pprint_funcs,
+    "enum": enum_funcs,
 }
 
 def get_all_funcs():

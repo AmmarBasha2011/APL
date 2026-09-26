@@ -27,7 +27,7 @@ LIBRARY_MODULES = [
     "uuid_funcs", "base64_funcs", "urllib_funcs", "functools_funcs",
 ]
 _RESERVED_KEYS = _build_reserved_keys()
-from core.libraries import decimal_funcs, fractions_funcs, string_funcs, secrets_funcs, zoneinfo_funcs, getpass_funcs, operator_funcs, pprint_funcs, math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs
+from core.libraries import decimal_funcs, fractions_funcs, string_funcs, secrets_funcs, zoneinfo_funcs, getpass_funcs, operator_funcs, pprint_funcs, math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 if sys.platform == "win32":
@@ -53,7 +53,11 @@ def transpile(source: str) -> str:
             # "دالة مربع(...)":  the identifier is مربع
             if _s.startswith("دالة_"):
                 _m = re.match(r"^دالة_([^\s(:]+)", _s)
-                if _m and _m.group(1) != "def":
+                # "دالة_إنشاء" is the CONSTRUCTOR keyword, not a user-defined
+                # name: registering it made the pre-pass placeholder-ise the
+                # constructor, so transpile_line never saw the keyword and
+                # emitted "def إنشاء" instead of "def __init__".
+                if _m and _m.group(1) not in ("def", "إنشاء", "إنشاء_فئة"):
                     _UDF_NAMES.add(_m.group(1))
             else:
                 _m = re.match(r"^([^\s(:]+)", _s[4:].strip())
@@ -69,19 +73,81 @@ def transpile(source: str) -> str:
     for _i, _nm in enumerate(sorted(_UDF_NAMES)):
         _tok = f"_APL_UDF_{_i}_"
         _udf_map[_tok] = _nm
-        source = re.sub(rf"(?<![\w\u0600-\u06FF@]){re.escape(_nm)}(?=\s*\()",
-                        _tok, source)
-    # "دالة_فيب(...)" -> "دالة_ + placeholder" so the transpiler sees a plain call token
-    source = re.sub(r"^(\s*)دالة_(\s*)(?=_APL_UDF_)", r"\1\2", source, flags=re.M)
+        # Protect the name at BOTH call sites and definition sites.
+        # A definition reads "دالة_اسم(نص):" where the name is directly glued to
+        # the "دالة_" prefix, so a normal (?<!\w) guard skips every definition
+        # and leaves `def دالة_اسم` unrenamed while calls became `اسم(...)`
+        # (this silently broke example 49). Handle the glued case explicitly.
+        # (a) glued to the definition/call keyword: "دالة_فيب(" and the
+        #     recursive "ارجع دالة_فيب(". No negative lookbehind here — the
+        #     preceding char is "_", which IS \w, so a (?<!\w) guard would
+        #     block the very match we need. The name may be followed by "("
+        #     (a call) or by "," / ")" (passed as a function reference, e.g.
+        #     map(دالة_مربع, ...)) — cover both.
+        source = re.sub(
+            rf"(?<=دالة_){re.escape(_nm)}(?=\s*[\(,)]|$)", _tok, source
+        )
+        # (a2) decorator lines: "@دالة_مزخرفة" — the char before دالة_ is "@",
+        #      so neither lookbehind above can match. Drop the prefix there.
+        source = re.sub(rf"(@\s*)دالة_({re.escape(_nm)})", rf"\1\2", source)
+        source = re.sub(
+            rf"(?<=دالة_){re.escape(_nm)}(?=\s*[\(,)]|$)", _tok, source
+        )
+        # (b) ordinary call sites: "اطبع فيب(" and bare references such as a
+        #     decorator line "@مزخرفة" (no parentheses at all).
+        source = re.sub(
+            rf"(?<![\w\u0600-\u06FF@]){re.escape(_nm)}(?=\s*[\(,)\s]|$)",
+            _tok, source,
+        )
+    # "دالة_اسم(...)" -> "_APL_UDF_0_(...)" so the transpiler sees a plain call
+    # token. A DEFINITION keeps its دالة_ prefix: without it, transpile_line
+    # sees "_APL_UDF_0_(ن):" (no "دالة"/"def") and emits a bare tuple, not a
+    # function. The def name is normalised in the restore step below.
+    _lines = source.split("\n")
+    # A definition: "دالة_<anything>(...):" at end of line. Match on the
+    # ALREADY-substituted text too, because the placeholder has replaced the
+    # name by this point: "دالة_فيب(ن):" -> "دالة__APL_UDF_0_(ن):".
+    _is_def = re.compile(r"^\s*دالة_\S*\s*\(.*\)\s*:\s*$")
+    for _i, _l in enumerate(_lines):
+        if _is_def.match(_l):
+            continue
+        # Any "دالة_" immediately followed by the placeholder token, at line
+        # start OR mid-line ("ارجع دالة__APL_UDF_0_(...)"), loses the prefix.
+        _lines[_i] = re.sub(r"دالة_(?=_APL_UDF_)", "", _l)
+    source = "\n".join(_lines)
 
 
     lines = source.split("\n")
     result = []
+    _class_indent = None      # indent of the innermost open class body
+    import core.apl_runner.transpiler as _tp
+    _tp._IN_MATCH = False
     for line in lines:
+        _indent = len(line) - len(line.lstrip())
         try:
-            result.append(transpile_line(line))
+            _out = transpile_line(line)
+            result.append(_out)
         except SyntaxError as e:
             result.append(f"# ERROR: {e}")
+            continue
+        # Track class bodies so a method named "دالة_س" becomes "س" (def س).
+        # A comment or blank line inside a method must NOT end the class — only
+        # a real statement dedented back to column 0 does. (An earlier flag
+        # version mis-fired on example 49 and broke a top-level function.)
+        _s = _out.strip()
+        if re.match(r"^\s*class\s+\S", _out):
+            _class_indent = _indent
+        elif _class_indent is not None:
+            if _s and not _s.startswith("#") and _indent <= _class_indent:
+                _class_indent = None
+            elif re.match(r"^\s+def\s+", _out) and _indent > _class_indent:
+                # strip the دالة_ prefix on methods (recursion is not needed
+                # inside a class body, and Python rejects Arabic def names)
+                _out = re.sub(r"^(\s+def\s+)دالة_", r"\1", _out)
+                result[-1] = _out
+        # leaving any match body ends case-context for a following حالة
+        if not _s or (_s and not _s.startswith(("case ", "if ")) and _indent == 0):
+            _tp._IN_MATCH = False
     code = "\n".join(result)
 
     needs = []
@@ -199,6 +265,38 @@ def transpile(source: str) -> str:
     for _tok, _nm in _udf_map.items():
         code = code.replace(_tok, _nm)
     code = code.replace("_APL_UDF_", "")
+    # Definitions whose name came from a placeholder must lose the دالة_
+    # prefix (call sites use the bare name). Recursive top-level functions
+    # keep it — a blanket strip broke 14 examples.
+    if _udf_map:
+        # A definition is emitted as `def دالة_اسم(...)` (recursion-safe: the
+        # recursive call site kept the same prefix). Its call sites use the bare
+        # `اسم`, so emit an alias right after each such definition instead of
+        # renaming it — renaming broke recursion, an alias does not.
+        _names = "|".join(re.escape(n) for n in _udf_map.values())
+        # The alias must go AFTER the function body, not right after the def
+        # line (that split the body and broke indentation).
+        _lines = code.split("\n")
+        _alias_at = []
+        for _i, _l in enumerate(_lines):
+            _m = re.match(rf"^(\s*)def\s+دالة_({_names})\b", _l)
+            if not _m:
+                continue
+            _ind = len(_m.group(1))
+            _j = _i + 1
+            while _j < len(_lines):
+                _nxt = _lines[_j]
+                if not _nxt.strip():
+                    _j += 1
+                    continue
+                _n_ind = len(_nxt) - len(_nxt.lstrip())
+                if _n_ind <= _ind:
+                    break
+                _j += 1
+            _alias_at.append((_j, f"{_m.group(1)}{_m.group(2)} = دالة_{_m.group(2)}"))
+        for _pos, _txt in sorted(_alias_at, reverse=True):
+            _lines.insert(_pos, _txt)
+        code = "\n".join(_lines)
 
     return code
 
@@ -211,6 +309,7 @@ import zoneinfo
 import decimal
 import fractions
 import string
+import enum
 import secrets
 import getpass
 import operator
@@ -392,6 +491,33 @@ def _apl_excepthook(typ, val, tb):
     traceback.print_exception(typ, val, tb)
     sys.stderr.write(f"\\u202B{name}: {val}\\u202C\\n")
 sys.excepthook = _apl_excepthook
+
+def _apl_enum(name, spec, base=None):
+    # تعداد("الحالة", "نشط، معطل، pending") -> a real enum class.
+    # Members are numbered from 1 in the order given; the Arabic member names
+    # are valid Python identifiers, so the class exposes them directly.
+    import enum as _enum
+    members = {}
+    for i, raw in enumerate(str(spec).replace("\u060c", ",").split(","), 1):
+        key = raw.strip()
+        if not key:
+            continue
+        members[key] = i
+    _base = base or _enum.Enum
+    return _enum.Enum(name, members, type=_base) if _base is not _enum.Enum \
+        else _enum.Enum(name, members)
+
+def _apl_enum_value(cls, key):
+    return cls[key].value
+
+def _apl_enum_all_names(cls):
+    return [m.name for m in cls]
+
+def _apl_enum_all_values(cls):
+    return [m.value for m in cls]
+
+def _apl_enum_has_value(cls, v):
+    return v in [m.value for m in cls]
 
 def _apl_read(target, mode="r", encoding="utf-8"):
     # اقرأ(file) or اقرأ(open_handle)

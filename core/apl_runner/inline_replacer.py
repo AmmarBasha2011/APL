@@ -20,7 +20,7 @@ _STANDALONE_METHODS = {
     "يبدأ": "startswith", "ينتهي": "endswith", "ضم": "join",
     "فرز": "sort", "عكس": "reverse", "نسخ": "copy",
 }
-from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs
+from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs
 
 
 def _replace_type_names(text: str) -> str:
@@ -125,6 +125,8 @@ def _inline_replace(text: str) -> str:
     text = re.compile(getpass_funcs.GETPASS_PATTERN).sub(lambda m: f"{getpass_funcs.GETPASS_FUNCS[m.group(1)]}(", text)
     text = re.compile(operator_funcs.OPERATOR_PATTERN).sub(lambda m: f"{operator_funcs.OPERATOR_FUNCS[m.group(1)]}(", text)
     text = re.compile(pprint_funcs.PPRINT_PATTERN).sub(lambda m: f"{pprint_funcs.PPRINT_FUNCS[m.group(1)]}(", text)
+    text = re.compile(enum_funcs.ENUM_PATTERN).sub(
+        lambda m: f"{enum_funcs.ENUM_FUNCS[m.group(1)]}(", text)
 
     # --- f-string interpolation: translate expressions inside {...} ---
     _APL_FSTR_RE = re.compile(r'(?P<pre>[fF])"[^"\\]*(?:\\.[^"\\]*)*"')
@@ -164,8 +166,15 @@ def _inline_replace(text: str) -> str:
             pieces.append("{" + _inline_replace(e) + spec + "}")
         return whole[0] + '"' + "".join(pieces) + '"'
 
+    # Lambda inside an expression: "(س) => س * 2" -> "lambda س: س * 2"
+    if "=>" in text:
+        _APL_LAMBDA_RE = re.compile(r"\(\s*([^()]*?)\s*\)\s*=>\s*")
+        def _apl_lambda_sub(m):
+            params = m.group(1).strip()
+            return f"lambda {params}: "
+        text = _APL_LAMBDA_RE.sub(_apl_lambda_sub, text)
+
     text = _APL_FSTR_RE.sub(_apl_fstr_sub, text)
-    if 'f"' in text and 'مقرب' in text: print('FSTR-PASS-RAN', file=__import__('sys').stderr)
 
     # Library-specific keyword arguments (e.g. timedelta(days=3))
     for _kmap in (DATETIME_KWARGS, PATHLIB_KWARGS):

@@ -28,6 +28,40 @@ _DECORATOR_ALIASES = {
 }
 
 
+# True while transpiling the body of a `match` statement, so the
+# same `حالة` spelling can act as a `case`.
+_IN_MATCH = False
+
+
+def _apl_split_comment(text: str) -> tuple:
+    """Split a trailing "# ..." comment off an expression.
+
+    Without this, `اطبع مربع(5)  # 25` became `print(مربع(5)  # 25)` — the
+    comment landed INSIDE the call parentheses and Python choked.
+    """
+    depth = 0
+    quote = None
+    i = 0
+    while i < len(text):
+        ch = text[i]
+        if quote:
+            if ch == "\\" :
+                i += 2
+                continue
+            if ch == quote:
+                quote = None
+        elif ch in ("'", '"'):
+            quote = ch
+        elif ch in "([{":
+            depth += 1
+        elif ch in ")]}":
+            depth -= 1
+        elif ch == "#" and depth == 0:
+            return text[:i].rstrip(), text[i:]
+        i += 1
+    return text, ""
+
+
 def transpile_line(line: str) -> str:
     """Translate a single line of APL code to Python"""
     indent = line[: len(line) - len(line.lstrip())]
@@ -67,14 +101,15 @@ def transpile_line(line: str) -> str:
         stripped = stripped[:-1].strip()
 
     if stripped.startswith("اطبع_بدون"):
-        rest = _inline_replace(stripped[len('اطبع_بدون'):].strip())
-        args = rest
+        rest, _cmt = _apl_split_comment(stripped[len('اطبع_بدون'):].strip())
+        args = _inline_replace(rest)
         if args.startswith("(") and args.endswith(")"):
             args = args[1:-1]
         return f"{indent}print({args}, end='')"
 
     if stripped.startswith("اطبع"):
-        rest = _inline_replace(stripped[4:].strip())
+        rest, _cmt = _apl_split_comment(stripped[4:].strip())
+        rest = _inline_replace(rest)
         if rest.startswith("(") and rest.endswith(")"):
             rest = rest[1:-1]
         return f"{indent}print({rest})"
@@ -193,13 +228,19 @@ def transpile_line(line: str) -> str:
         return f"{indent}except{rest}"
     for _kw in ("إمسك", "امسك", "خطأ_في"):
         if stripped.startswith(_kw):
-            rest = _inline_replace(stripped[len(_kw):].strip())
-            if not rest or rest == ":":
-                return f"{indent}except:"
-            # "إمسك مثل خطأ:" -> "except ... خطأ:"  (Arabic exception variable)
-            m = re.match(r"^(?:مثل|كـ|اسـ|as)\s+([\w\u0600-\u06FF]+)\s*:?$", rest)
+            rest = stripped[len(_kw):].strip()
+            # "إمسك مثل خطأ:" -> "except Exception as خطأ:"
+            # Capture the Arabic name BEFORE inline replacement: خطأ is a core
+            # constant (False), so _inline_replace would turn the binding name
+            # into `except Exception as False` — a hard SyntaxError.
+            m = re.match(
+                r"^(?:مثل|كـ|اسـ|as)\s+([\w\u0600-\u06FF]+)\s*:?$", rest
+            )
             if m:
                 return f"{indent}except Exception as {m.group(1)}:"
+            rest = _inline_replace(rest)
+            if not rest or rest == ":":
+                return f"{indent}except:"
             return f"{indent}except {rest}"
 
     if stripped.startswith("استورد"):
@@ -220,23 +261,34 @@ def transpile_line(line: str) -> str:
         rest = _inline_replace(stripped[5:].strip())
         return f"{indent}exit({rest})"
 
-    if stripped.startswith("حالة"):
-        return f"{indent}match {stripped[len('حالة'):].strip()}"
-    # match/case: "قيمة <pattern>:"  -- must be followed by space/colon, never "="
+    # match/case -------------------------------------------------------
+    # "قيمة <pattern>:"  -- must be followed by space/colon, never "="
     _apl_case = re.match(r"^قيمة(?:\s+(.*))?\s*:\s*$", stripped)
     if _apl_case or stripped.rstrip() == "قيمة:":
         rest = _inline_replace((_apl_case.group(1) if _apl_case else "").strip())
         if not rest:
             return f"{indent}case _:"
-        # Support guard clauses: "قيمة ن لو ن > 0:" → "case ن if ن > 0:"
+        # Support guard clauses: "قيمة ن لو ن > 0:" -> "case ن if ن > 0:"
         if "لو" in rest:
             parts = rest.split("لو", 1)
             pattern = parts[0].strip()
             guard = parts[1].strip().rstrip(":")
             return f"{indent}case {pattern} if {guard}:"
         return f"{indent}case {rest}:"
-    if stripped.startswith("افتراضي"):
-        return f"{indent}case _:{stripped[9:]}"
+    if stripped.rstrip() in ("افتراضي:", "افتراضي :"):
+        return f"{indent}case _:{stripped.split(':', 1)[1] if ':' in stripped else ''}"
+
+    # "حالة <expr>:" opens a match; inside a match body the same spelling is
+    # used for a case. _IN_MATCH is set by the line loop in main.transpile.
+    from core.apl_runner import transpiler as _self_mod
+    if _self_mod._IN_MATCH and re.match(r"^حالة\s+.+:\s*$", stripped):
+        _pat = stripped[len("حالة"):].strip().rstrip(":").strip()
+        return f"{indent}case {_inline_replace(_pat)}:"
+    _apl_match = re.match(r"^حالة(?:\s+(.*?))?\s*:\s*$", stripped)
+    if _apl_match:
+        expr = (_apl_match.group(1) or "").strip()
+        _self_mod._IN_MATCH = True
+        return f"{indent}match {_inline_replace(expr)}:"
 
     if stripped.startswith("مع") and "مثل" in stripped:
         parts = stripped[3:].strip().split("مثل", 1)
@@ -248,8 +300,19 @@ def transpile_line(line: str) -> str:
         rest = stripped[7:].strip()
         if "=" in rest:
             parts = rest.split("=", 1)
-            return f"{indent}{parts[0].strip()} = {_inline_replace(parts[1].strip())}"
-        raise SyntaxError(f"'=' expected after المتغير")
+            name = parts[0].strip()
+            value = parts[1].strip()
+            # Lambda on the right: "(س) => نص"  ->  "lambda س: نص"
+            _lam = re.match(r"^\(\s*([^)]*?)\s*\)\s*=>\s*(.+)$", value)
+            if _lam:
+                value = (
+                    f"lambda {_inline_replace(_lam.group(1))}: "
+                    f"{_inline_replace(_lam.group(2).strip())}"
+                )
+            else:
+                value = _inline_replace(value)
+            return f"{indent}{name} = {value}"
+        raise SyntaxError("'=' expected after المتغير")
 
     # class definitions: "صنف اسم:" or "قاعدة اسم:" (a class database helper)
     _m = re.match(r"^(صنف|قاعدة)\s+([^\s:(]+(?:\([^)]*\))?)\s*:\s*$", stripped)
