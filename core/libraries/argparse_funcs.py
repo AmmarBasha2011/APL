@@ -130,7 +130,7 @@ ARGPARSE_FUNCS = {
     "FILE": "argparse.FileType",
 }
 
-ARGPARSE_PATTERN = r"(?<!\w)(" + "|".join(sorted(ARGPARSE_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+ARGPARSE_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(ARGPARSE_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 ARGPARSE_HELP = [
     "# === الإنشاء ===",

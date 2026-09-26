@@ -108,7 +108,7 @@ UNITTEST_FUNCS = {
     "patch.object": "unittest.mock.patch.object",
 }
 
-UNITTEST_PATTERN = r"(?<!\w)(" + "|".join(sorted(UNITTEST_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+UNITTEST_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(UNITTEST_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 UNITTEST_HELP = [
     "# === TestCase ===",

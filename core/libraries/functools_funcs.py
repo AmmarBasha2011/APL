@@ -15,7 +15,7 @@ FUNCTOOLS_FUNCS = {
     "أقوى_قيمة": "functools.reduce",
 }
 
-FUNCTOOLS_PATTERN = r"(?<!\w)(" + "|".join(sorted(FUNCTOOLS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+FUNCTOOLS_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(FUNCTOOLS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI
 FUNCTOOLS_HELP = [

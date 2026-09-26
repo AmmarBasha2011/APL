@@ -42,7 +42,7 @@ PATHLIB_FUNCS = {
     "مسار_أنشئ_رابط": "pathlib.Path.symlink_to",
 }
 
-PATHLIB_PATTERN = r"(?<!\w)(" + "|".join(sorted(PATHLIB_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+PATHLIB_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(PATHLIB_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 PATHLIB_METHODS = {
     "ادمج": "joinpath",

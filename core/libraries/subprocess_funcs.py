@@ -109,7 +109,7 @@ SUBPROCESS_FUNCS = {
     "getstatusoutput": "subprocess.getstatusoutput",
 }
 
-SUBPROCESS_PATTERN = r"(?<!\w)(" + "|".join(sorted(SUBPROCESS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+SUBPROCESS_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(SUBPROCESS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 SUBPROCESS_HELP = [
     "# === الإنشاء ===",

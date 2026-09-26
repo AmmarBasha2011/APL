@@ -11,6 +11,7 @@ from core.apl_runner.patterns import (
 )
 from core.libraries.datetime_funcs import DATETIME_KWARGS
 from core.libraries.pathlib_funcs import PATHLIB_KWARGS
+from core.libraries import decimal_funcs, fractions_funcs, string_funcs, secrets_funcs, zoneinfo_funcs, getpass_funcs, operator_funcs, pprint_funcs
 
 # Arabic names usable both as methods (.علوي) and standalone (علوي("x"))
 _STANDALONE_METHODS = {
@@ -102,6 +103,22 @@ def _inline_replace(text: str) -> str:
     
     text = re.compile(datetime_funcs.DATETIME_CONSTANT_PATTERN).sub(lambda m: datetime_funcs.DATETIME_CONSTANTS[m.group(1)], text)
     text = re.compile(uuid_funcs.UUID_CONSTANT_PATTERN).sub(lambda m: uuid_funcs.UUID_CONSTANTS[m.group(1)], text)
+
+    text = re.compile(decimal_funcs.DECIMAL_PATTERN).sub(lambda m: f"{decimal_funcs.DECIMAL_FUNCS[m.group(1)]}(", text)
+    text = re.compile(decimal_funcs.DECIMAL_CONSTANT_PATTERN).sub(lambda m: decimal_funcs.DECIMAL_CONSTANTS[m.group(1)], text)
+    text = re.compile(fractions_funcs.FRACTIONS_PATTERN).sub(lambda m: f"{fractions_funcs.FRACTIONS_FUNCS[m.group(1)]}(", text)
+    text = re.compile(fractions_funcs.FRACTIONS_METHOD_PATTERN).sub(lambda m: f".{fractions_funcs.FRACTIONS_METHODS[m.group(1)]}(", text)
+    text = re.compile(fractions_funcs.FRACTIONS_PROP_PATTERN).sub(lambda m: f".{fractions_funcs.FRACTIONS_PROPS[m.group(1)]}", text)
+    text = re.compile(string_funcs.STRING_CONSTANT_PATTERN).sub(lambda m: string_funcs.STRING_CONSTANTS[m.group(1)], text)
+    text = re.compile(string_funcs.STRING_PATTERN).sub(lambda m: f"{string_funcs.STRING_FUNCS[m.group(1)]}(", text)
+    text = re.compile(secrets_funcs.SECRETS_PATTERN).sub(lambda m: f"{secrets_funcs.SECRETS_FUNCS[m.group(1)]}(", text)
+    text = re.compile(zoneinfo_funcs.ZONEINFO_PATTERN).sub(lambda m: f"{zoneinfo_funcs.ZONEINFO_FUNCS[m.group(1)]}(", text)
+    text = re.compile(zoneinfo_funcs.ZONEINFO_CONSTANT_PATTERN).sub(lambda m: zoneinfo_funcs.ZONEINFO_CONSTANTS[m.group(1)], text)
+    text = re.compile(zoneinfo_funcs.ZONEINFO_PROP_PATTERN).sub(lambda m: f".{zoneinfo_funcs.ZONEINFO_PROPS[m.group(1)]}", text)
+    text = re.compile(getpass_funcs.GETPASS_PATTERN).sub(lambda m: f"{getpass_funcs.GETPASS_FUNCS[m.group(1)]}(", text)
+    text = re.compile(operator_funcs.OPERATOR_PATTERN).sub(lambda m: f"{operator_funcs.OPERATOR_FUNCS[m.group(1)]}(", text)
+    text = re.compile(pprint_funcs.PPRINT_PATTERN).sub(lambda m: f"{pprint_funcs.PPRINT_FUNCS[m.group(1)]}(", text)
+
     # Library-specific keyword arguments (e.g. timedelta(days=3))
     for _kmap in (DATETIME_KWARGS, PATHLIB_KWARGS):
         for _ar, _en in _kmap.items():

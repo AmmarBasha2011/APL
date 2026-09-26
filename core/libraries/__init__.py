@@ -27,6 +27,14 @@ from . import subprocess_funcs
 from . import configparser_funcs
 from . import dataclasses_funcs
 from . import advanced_funcs
+from . import decimal_funcs
+from . import fractions_funcs
+from . import string_funcs
+from . import secrets_funcs
+from . import zoneinfo_funcs
+from . import getpass_funcs
+from . import operator_funcs
+from . import pprint_funcs
 from . import datetime_funcs
 from . import pathlib_funcs
 from . import shutil_funcs
@@ -70,6 +78,14 @@ LIBRARIES = {
     "base64": base64_funcs,
     "urllib": urllib_funcs,
     "functools": functools_funcs,
+    "decimal": decimal_funcs,
+    "fractions": fractions_funcs,
+    "string": string_funcs,
+    "secrets": secrets_funcs,
+    "zoneinfo": zoneinfo_funcs,
+    "getpass": getpass_funcs,
+    "operator": operator_funcs,
+    "pprint": pprint_funcs,
 }
 
 def get_all_funcs():
@@ -95,3 +111,4 @@ def get_all_help():
             lines.append(help_line)
         lines.append("")
     return lines
+

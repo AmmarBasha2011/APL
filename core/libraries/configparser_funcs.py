@@ -67,7 +67,7 @@ CONFIGPARSER_FUNCS = {
     "الافتراضي": "configparser.DEFAULTSECT",
 }
 
-CONFIGPARSER_PATTERN = r"(?<!\w)(" + "|".join(sorted(CONFIGPARSER_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+CONFIGPARSER_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(CONFIGPARSER_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 CONFIGPARSER_HELP = [
     "# === الإنشاء ===",

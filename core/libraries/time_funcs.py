@@ -41,7 +41,7 @@ TIME_PROPS = {
 }
 
 # Combined pattern for functions (with parens)
-TIME_PATTERN = "(" + "|".join(sorted(TIME_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+TIME_PATTERN = "(?<![\w\u0600-\u06FF])(" + "|".join(sorted(TIME_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Pattern for properties (word boundary, no parens)
 TIME_PROP_PATTERN = r"(?<!\w)(" + "|".join(sorted(TIME_PROPS.keys(), key=len, reverse=True)) + r")(?!\s*\()(?!\w)"

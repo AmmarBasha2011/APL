@@ -159,7 +159,7 @@ ASYNCIO_FUNCS = {
     "ضمني": "async with",
 }
 
-ASYNCIO_PATTERN = r"(?<!\w)(" + "|".join(sorted(ASYNCIO_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+ASYNCIO_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(ASYNCIO_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 ASYNCIO_HELP = [
     "# === الدوال الأساسية ===",

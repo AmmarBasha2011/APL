@@ -27,7 +27,7 @@ LIBRARY_MODULES = [
     "uuid_funcs", "base64_funcs", "urllib_funcs", "functools_funcs",
 ]
 _RESERVED_KEYS = _build_reserved_keys()
-from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs
+from core.libraries import decimal_funcs, fractions_funcs, string_funcs, secrets_funcs, zoneinfo_funcs, getpass_funcs, operator_funcs, pprint_funcs, math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 if sys.platform == "win32":
@@ -137,6 +137,22 @@ def transpile(source: str) -> str:
         needs.append("from dataclasses import dataclass, field, asdict, astuple, replace; from enum import Enum, IntEnum, IntFlag, Flag, auto, unique; from abc import ABC, abstractmethod")
     if re.search(advanced_funcs.IMPORT_CHECK, code) and "import functools" not in code:
         needs.append("import functools, multiprocessing, concurrent.futures, typing, contextlib, tempfile, zipfile, pathlib, heapq, bisect, queue, weakref, copy, secrets, struct, io, codecs, base64")
+    if re.search(decimal_funcs.IMPORT_CHECK, code) and "decimal" not in code:
+        needs.append("decimal")
+    if re.search(fractions_funcs.IMPORT_CHECK, code) and "fractions" not in code:
+        needs.append("fractions")
+    if re.search(string_funcs.IMPORT_CHECK, code) and "string" not in code:
+        needs.append("string")
+    if re.search(secrets_funcs.IMPORT_CHECK, code) and "secrets" not in code:
+        needs.append("secrets")
+    if re.search(zoneinfo_funcs.IMPORT_CHECK, code) and "zoneinfo" not in code:
+        needs.append("zoneinfo")
+    if re.search(getpass_funcs.IMPORT_CHECK, code) and "getpass" not in code:
+        needs.append("getpass")
+    if re.search(operator_funcs.IMPORT_CHECK, code) and "operator" not in code:
+        needs.append("operator")
+    if re.search(pprint_funcs.IMPORT_CHECK, code) and "pprint" not in code:
+        needs.append("pprint")
     if "json." in code and "import json" not in code:
         needs.append("import json")
     if "os." in code and "import os" not in code:
@@ -191,6 +207,14 @@ _RUNTIME = """
 import sys
 import builtins
 import pathlib
+import zoneinfo
+import decimal
+import fractions
+import string
+import secrets
+import getpass
+import operator
+import pprint
 
 _apl_orig_print = builtins.print
 
@@ -222,6 +246,47 @@ def _apl_bytes_to_text(b):
         return b.decode("utf-8")
     except (UnicodeDecodeError, AttributeError):
         return b.decode("latin-1")
+
+
+# --- batch-2 library runtime helpers -------------------------------------
+def _D(x):
+    import decimal as _dc
+    return x if isinstance(x, _dc.Decimal) else _dc.Decimal(str(x))
+
+def _apl_decimal_add(a, b): return _D(a) + _D(b)
+def _apl_decimal_sub(a, b): return _D(a) - _D(b)
+def _apl_decimal_mul(a, b): return _D(a) * _D(b)
+def _apl_decimal_div(a, b, places=10):
+    import decimal as _dc
+    q = _dc.Decimal(1).scaleb(-places)
+    return (_D(a) / _D(b)).quantize(q)
+def _apl_decimal_mod(a, b): return _D(a) % _D(b)
+def _apl_decimal_pow(a, b): return _D(a) ** _D(b)
+def _apl_decimal_sqrt(a): return _D(a).sqrt()
+def _apl_decimal_cmp(a, b): return (_D(a) > _D(b)) - (_D(a) < _D(b))
+def _apl_decimal_copy(a): return +_D(a)
+def _apl_decimal_quantize(a, places=2):
+    import decimal as _dc
+    return _D(a).quantize(_dc.Decimal(1).scaleb(-places))
+def _apl_decimal_fma(a, b, c): return _D(a) * _D(b) + _D(c)
+
+def _apl_secret_int(low, high=None):
+    import secrets as _sc
+    if high is None:
+        return _sc.randbelow(low)
+    return _sc.randbelow(high - low) + low
+
+def _apl_fraction_value(f): return float(f)
+def _apl_fraction_recip(f):
+    import fractions as _fr
+    return _fr.Fraction(1, 1) / f
+
+def _apl_zone_from_key(key): return zoneinfo.ZoneInfo(key)
+
+def _apl_operator_all(iterable): return builtins.all(iterable)
+def _apl_operator_any(iterable): return builtins.any(iterable)
+def _apl_operator_invert(n): return ~n
+def _apl_operator_pow(a, b): return a ** b
 
 def _apl_path_exists(p):
     return pathlib.Path(p).exists()

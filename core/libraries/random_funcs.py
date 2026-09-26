@@ -29,7 +29,7 @@ RANDOM_FUNCS = {
     "تعيين_حالة": "random.setstate",
 }
 
-RANDOM_PATTERN = r"(?<!\w)(" + "|".join(sorted(RANDOM_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+RANDOM_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(RANDOM_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI
 RANDOM_HELP = [

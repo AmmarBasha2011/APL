@@ -59,6 +59,10 @@ _LOGICAL_PATTERNS = [
 # Keyword arguments - حجج الكلمات المفتاحية
 _KW_ALIASES = {
     "ترميز": "encoding",
+    "معكوس": "reverse",
+    "ترتيب_مفتاح": "key",
+    "بداية_الفهرس": "start",
+    "نهاية_الفهرس": "end",
     "تأكد_من_ascii": "ensure_ascii",
     "مسافة_بادئة": "indent",
 }

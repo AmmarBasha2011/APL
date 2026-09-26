@@ -18,7 +18,7 @@ SHUTIL_FUNCS = {
     "تجاهل_الملفات": "shutil.ignore_patterns",
 }
 
-SHUTIL_PATTERN = r"(?<!\w)(" + "|".join(sorted(SHUTIL_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+SHUTIL_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(SHUTIL_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI
 SHUTIL_HELP = [

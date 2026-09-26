@@ -89,7 +89,7 @@ ADVANCED_FUNCS = {
     "خاصية_مخزنة_مؤقتا_دالة": "cached_property",
 }
 
-ADVANCED_PATTERN = r"(?<!\w)(" + "|".join(sorted(ADVANCED_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+ADVANCED_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(ADVANCED_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 ADVANCED_HELP = [
     "# === Advanced Decorators ===",

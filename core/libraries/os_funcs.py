@@ -45,7 +45,7 @@ OS_PROPS = {
     "مسار_بحث": "sys.path",
 }
 
-OS_PATTERN = r"(?<!\w)(" + "|".join(sorted(OS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+OS_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(OS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 OS_PROP_PATTERN = r"(?<!\w)(" + "|".join(sorted(OS_PROPS.keys(), key=len, reverse=True)) + r")(?!\w)"
 
 OS_HELP = [

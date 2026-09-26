@@ -15,7 +15,7 @@ TEXTWRAP_FUNCS = {
     "حزم_النص": "textwrap.fill",
 }
 
-TEXTWRAP_PATTERN = r"(?<!\w)(" + "|".join(sorted(TEXTWRAP_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+TEXTWRAP_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(TEXTWRAP_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI
 TEXTWRAP_HELP = [

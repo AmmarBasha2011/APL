@@ -19,7 +19,7 @@ URLLIB_FUNCS = {
     "وكيل_المتصفح": "urllib.request.Request",
 }
 
-URLLIB_PATTERN = r"(?<!\w)(" + "|".join(sorted(URLLIB_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+URLLIB_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(URLLIB_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI
 URLLIB_HELP = [

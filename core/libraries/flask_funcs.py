@@ -116,7 +116,7 @@ FLASK_FUNCS = {
     "تأكد_نوع": "request.is_json",
 }
 
-FLASK_PATTERN = r"(?<!\w)(" + "|".join(sorted(FLASK_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+FLASK_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(FLASK_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI
 FLASK_HELP = [

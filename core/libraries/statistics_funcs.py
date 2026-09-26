@@ -27,7 +27,7 @@ STATISTICS_FUNCS = {
     "ميل": "statistics.linear_regression",
 }
 
-STATISTICS_PATTERN = "(" + "|".join(sorted(STATISTICS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+STATISTICS_PATTERN = "(?<![\w\u0600-\u06FF])(" + "|".join(sorted(STATISTICS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI
 STATISTICS_HELP = [

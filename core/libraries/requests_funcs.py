@@ -338,7 +338,7 @@ REQUESTS_FUNCS = {
     "معرف_التتبع": "response.headers.get('X-Trace-Id')",
 }
 
-REQUESTS_PATTERN = r"(?<!\w)(" + "|".join(sorted(REQUESTS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+REQUESTS_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(REQUESTS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 REQUESTS_HELP = [
     "# === الطرق الأساسية ===",

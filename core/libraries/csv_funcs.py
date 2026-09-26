@@ -24,7 +24,7 @@ CSV_FUNCS = {
     "صارم": "strict",
 }
 
-CSV_PATTERN = r"(?<!\w)(" + "|".join(sorted(CSV_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+CSV_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(CSV_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 CSV_HELP = [
     "# === القراءة ===",

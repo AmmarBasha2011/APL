@@ -40,7 +40,7 @@ MATH_FUNCS = {
     "جاما": "math.gamma", "لوغاريتم_جاما": "math.lgamma",
 }
 
-MATH_PATTERN = r"(?<!\w)(" + "|".join(sorted(MATH_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+MATH_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(MATH_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI
 MATH_HELP = [

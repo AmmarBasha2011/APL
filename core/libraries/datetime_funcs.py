@@ -40,7 +40,7 @@ DATETIME_FUNCS = {
     "ثواني_الفرق": "datetime.timedelta.total_seconds",
 }
 
-DATETIME_PATTERN = r"(?<!\w)(" + "|".join(sorted(DATETIME_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+DATETIME_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(DATETIME_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 DATETIME_CONSTANTS = {
     "الحد_الأدنى": "datetime.datetime.min",

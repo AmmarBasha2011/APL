@@ -13,7 +13,7 @@ UUID_FUNCS = {
     "معرف_فارغ": "uuid.UUID",
 }
 
-UUID_PATTERN = r"(?<!\w)(" + "|".join(sorted(UUID_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+UUID_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(UUID_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 UUID_CONSTANTS = {
     "نطاق_دنس": "uuid.NAMESPACE_DNS",

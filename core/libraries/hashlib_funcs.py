@@ -21,7 +21,7 @@ HASHLIB_FUNCS = {
     "اشتق_مفتاح": "hashlib.pbkdf2_hmac",
 }
 
-HASHLIB_PATTERN = r"(?<!\w)(" + "|".join(sorted(HASHLIB_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+HASHLIB_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(HASHLIB_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI
 HASHLIB_HELP = [

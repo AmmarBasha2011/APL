@@ -31,7 +31,7 @@ RE_FUNCS = {
     "هرب": "re.escape",
 }
 
-RE_PATTERN = r"(?<!\w)(" + "|".join(sorted(RE_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+RE_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(RE_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI
 RE_HELP = [

@@ -54,7 +54,7 @@ THREADING_FUNCS = {
     "انتظر_ثانية": "time.sleep",
 }
 
-THREADING_PATTERN = r"(?<!\w)(" + "|".join(sorted(THREADING_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+THREADING_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(THREADING_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 THREADING_HELP = [
     "# === إنشاء ثريد ===",

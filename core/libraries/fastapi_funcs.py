@@ -679,7 +679,7 @@ FASTAPI_FUNCS = {
     "لوحة_مراقبة": "monitoring_dashboard",
 }
 
-FASTAPI_PATTERN = r"(?<!\w)(" + "|".join(sorted(FASTAPI_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+FASTAPI_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(FASTAPI_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI
 FASTAPI_HELP = [

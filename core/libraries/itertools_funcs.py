@@ -34,7 +34,7 @@ ITERTOOLS_FUNCS = {
     "خريطة": "map",
 }
 
-ITERTOOLS_PATTERN = r"(?<!\w)(" + "|".join(sorted(ITERTOOLS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+ITERTOOLS_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(ITERTOOLS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI
 ITERTOOLS_HELP = [

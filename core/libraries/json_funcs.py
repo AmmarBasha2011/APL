@@ -23,7 +23,7 @@ JSON_FUNCS = {
     "لملف_جسون": "json.dump",
 }
 
-JSON_PATTERN = r"(?<!\w)(" + "|".join(sorted(JSON_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+JSON_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(JSON_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI
 JSON_HELP = [

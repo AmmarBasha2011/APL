@@ -20,7 +20,7 @@ COLLECTIONS_FUNCS = {
     "صف_انتظار_محدود": "collections.deque",
 }
 
-COLLECTIONS_PATTERN = r"(?<!\w)(" + "|".join(sorted(COLLECTIONS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+COLLECTIONS_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(COLLECTIONS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI
 COLLECTIONS_HELP = [

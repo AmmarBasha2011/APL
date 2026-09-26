@@ -94,7 +94,7 @@ DATACLASSES_FUNCS = {
     "اختر_ملف": "__file__",
 }
 
-DATACLASSES_PATTERN = r"(?<!\w)(" + "|".join(sorted(DATACLASSES_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+DATACLASSES_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(DATACLASSES_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 DATACLASSES_HELP = [
     "# === Dataclasses ===",

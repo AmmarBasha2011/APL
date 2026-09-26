@@ -114,7 +114,7 @@ LOGGING_FUNCS = {
     "كل_المسجلات": "logging.Logger.manager",
 }
 
-LOGGING_PATTERN = r"(?<!\w)(" + "|".join(sorted(LOGGING_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+LOGGING_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(LOGGING_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 LOGGING_HELP = [
     "# === الإنشاء ===",
