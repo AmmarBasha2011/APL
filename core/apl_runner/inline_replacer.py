@@ -30,6 +30,15 @@ def _replace_type_names(text: str) -> str:
 
 
 def _inline_replace(text: str) -> str:
+    if not text or not text.strip():
+        return text
+    # Fast gate: with no Arabic letter before a "(", "." or "," none of the ~66
+    # library patterns can match, so skip the whole chain. Most real lines
+    # (assignments, literals, pure-Latin code) exit here.
+    from core.apl_runner.fastpath import needs_scan
+    if not needs_scan(text):
+        return text
+
     strings = {}
     def _save(m):
         idx = len(strings)

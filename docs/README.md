@@ -49,6 +49,7 @@
 | 43 | [pprint-library.md](pprint-library.md) | مكتبة `pprint` — طباعة منسّقة للقواميس والقوائم |
 | 44 | [enum-library.md](enum-library.md) | مكتبة `enum` — أنواع معدودة (Enums) |
 | 45 | [language-features.md](language-features.md) | مميزات اللغة — match/case، معالجة الأخطاء، lambda، الوراثة |
+| 46 | [performance.md](performance.md) | تحسينات الأداء — التحميل الكسول، الذاكرة، طيّ الثوابت |
 
 ---
 

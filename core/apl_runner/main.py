@@ -1,21 +1,24 @@
 import sys, os, re, io
+
+# Install lazy library proxies BEFORE anything imports a library module. This is
+# what removes the ~41 unconditional imports (and their ~1,956 regex compiles)
+# from startup: a module is only executed when one of its Arabic keys is used.
+from core.libraries import lazy as _apl_lazy
+_apl_lazy.install()
+
 from core.apl_runner import _inline_replace
 from core.apl_runner.transpiler import transpile_line
 from core.apl_runner.patterns import _UDF_NAMES
 
 def _build_reserved_keys():
-    import importlib
-    keys = set()
-    for _m in LIBRARY_MODULES:
-        try:
-            _mod = importlib.import_module("core.libraries." + _m)
-        except Exception:
-            continue
-        for _n in dir(_mod):
-            _v = getattr(_mod, _n)
-            if _n.isupper() and isinstance(_v, dict):
-                keys |= set(_v.keys())
-    return keys
+    """Deprecated no-op.
+
+    This used to import all 41 library modules and union their Arabic keys.
+    The result was never read anywhere in the codebase, so it only cost startup
+    time (~1,956 regex compiles). Kept for API compatibility; returns an empty
+    set. Library loading is now lazy (see core.libraries.lazy).
+    """
+    return set()
 
 LIBRARY_MODULES = [
     "math_funcs", "random_funcs", "time_funcs", "statistics_funcs", "os_funcs",
@@ -26,7 +29,10 @@ LIBRARY_MODULES = [
     "datetime_funcs", "pathlib_funcs", "shutil_funcs", "textwrap_funcs",
     "uuid_funcs", "base64_funcs", "urllib_funcs", "functools_funcs",
 ]
-_RESERVED_KEYS = _build_reserved_keys()
+_RESERVED_KEYS = _build_reserved_keys()  # empty: unused, see docstring
+
+# Constant folding on by default; APL_NO_FOLD=1 turns it off.
+_APL_FOLD = os.environ.get("APL_NO_FOLD", "") not in ("1", "true", "yes")
 from core.libraries import decimal_funcs, fractions_funcs, string_funcs, secrets_funcs, zoneinfo_funcs, getpass_funcs, operator_funcs, pprint_funcs, math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
@@ -298,6 +304,12 @@ def transpile(source: str) -> str:
             _lines.insert(_pos, _txt)
         code = "\n".join(_lines)
 
+    # Constant folding on the generated Python: pure-literal arithmetic becomes a
+    # literal, so e.g. 2 ** 100 costs nothing at run time.
+    if _APL_FOLD:
+        from core.apl_runner.constfold import fold_code
+        code = fold_code(code)
+
     return code
 
 
@@ -543,9 +555,21 @@ def _apl_fetch(url):
 
 
 def run_file(filepath: str):
+    from pathlib import Path as _Path
+    from core.apl_runner import cache as _cache
+
+    src_path = _Path(filepath)
     with open(filepath, "r", encoding="utf-8") as f:
         source = f.read()
-    python_code = _RUNTIME + "\n" + transpile(source)
+
+    # Cache hit -> skip transpilation entirely (this is the ~166 us/line cost).
+    body = _cache.load_cached(src_path, source)
+    if body is None:
+        body = transpile(source)
+        _cache.store(src_path, source, body)
+        _cache.prune(src_path)
+
+    python_code = _RUNTIME + "\n" + body
     try:
         exec(python_code, {})
     except Exception as e:
@@ -591,7 +615,12 @@ def print_help():
     print("  python apl.py -c '<code>'   Execute code directly")
     print("  python apl.py help          Show this help")
     print("  python apl.py repl          Start interactive REPL")
+    print("  python apl.py --clear-cache  Delete cached transpilations")
     print("  python apl.py               Show help")
+    print()
+    print("Environment switches:")
+    print("  APL_NO_CACHE=1   Disable the transpilation cache")
+    print("  APL_NO_FOLD=1    Disable constant folding")
     print()
     print("Language keywords:")
     lang_cmds = [
@@ -780,6 +809,12 @@ def main():
 
     command = sys.argv[1].lower()
     
+    if command in ('--clear-cache', 'clear-cache'):
+        from core.apl_runner import cache as _c
+        n = _c.clear()
+        print(f"\u202Bتم حذف {n} ملف ترجمة مخزّنة\u202C")
+        return
+
     if command in ('help', '--help', '-h', '-?'):
         print_help()
         return
@@ -796,11 +831,11 @@ def main():
         code = sys.argv[2]
         # Split by newlines and semicolons for multi-statement support
         lines = code.replace(';', '\n').split('\n')
-        python_code = _RUNTIME + "\n"
-        for line in lines:
-            stripped_line = line.strip()
-            if stripped_line:
-                python_code += transpile_line(stripped_line) + "\n"
+        # go through transpile() so the library-import block is emitted.
+        # Building the code line-by-line here skipped it, so
+        # `apl.py -c "اطبع جذر(16)"` produced `math.sqrt(...)` with no
+        # `import math` -> NameError.
+        python_code = _RUNTIME + "\n" + transpile(code)
         try:
             exec(python_code, {})
         except Exception as e:
