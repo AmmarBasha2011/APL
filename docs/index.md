@@ -6,7 +6,7 @@
 |---|-------|-------|
 | 1 | [architecture.md](architecture.md) | هيكل المشروع، كيفية العمل، التصميم |
 | 2 | [language-reference.md](language-reference.md) | مرجع اللغة — كل الكلمات المفتاحية والتراكيب بما فيها التحسينات الجديدة |
-| 3 | [math-library.md](math-library.md) | مكتبة `math` — 50+ دالة مثلثات، لوغاريتمات، جذور، هندسة |
+| 3 | [math-library.md](math-library.md) | مكتبة `math` — 59 دالة مثلثات، لوغاريتمات، جذور، هندسة |
 | 4 | [random-library.md](random-library.md) | مكتبة `random` — 20+ دالة أرقام عشوائية وتوزيعات |
 | 5 | [statistics-library.md](statistics-library.md) | مكتبة `statistics` — متوسط، وسيط، منوال، تباين، انحراف معياري |
 | 6 | [time-library.md](time-library.md) | مكتبة `time` + `datetime` — وقت، تاريخ، تأخير، تنسيق |
@@ -17,7 +17,7 @@
 | 11 | [json-library.md](json-library.md) | مكتبة `json` — قراءة وكتابة JSON |
 | 12 | [hashlib-library.md](hashlib-library.md) | مكتبة `hashlib` — تجزئة وتشفير |
 | 13 | [flask-library.md](flask-library.md) | مكتبة `flask` — إطار عمل ويب |
-| 14 | [fastapi-library.md](fastapi-library.md) | مكتبة `fastapi` — إطار عمل ويب حديث |
+| 14 | [fastapi-library.md](fastapi-library.md) | مكتبة `fastapi` — 532 دالة، إطار عمل ويب حديث |
 | 15 | [requests-library.md](requests-library.md) | مكتبة `requests` — HTTP Client كامل |
 | 16 | [sqlite3-library.md](sqlite3-library.md) | مكتبة `sqlite3` — قاعدة بيانات محلية |
 | 17 | [asyncio-library.md](asyncio-library.md) | مكتبة `asyncio` — برمجة غير متزامنة |
@@ -70,33 +70,35 @@ with open("file.txt") as f:
 اطبع س
 ```
 
-## المكتبات المتاحة (26 مكتبة)
+## المكتبات المتاحة (24 مكتبة)
 
 | المكتبة | عدد الدوال | الوصف |
-|---------|-----------|-------|
-| `math` | 50+ | مثلثات، لوغاريتمات، جذور، تقريب، هندسة |
-| `random` | 20+ | أرقام عشوائية، توزيعات، خلط |
-| `statistics` | 15+ | متوسط، وسيط، منوال، تباين، انحراف معياري |
-| `time` + `datetime` | 20+ | وقت، تاريخ، تأخير، تنسيق |
-| `os` + `pathlib` | 30+ | ملفات، مجلدات، مسارات، فحص |
-| `re` | 10+ | تعابير نمطية، بحث، استبدال، تقسيم |
-| `collections` | 10+ | Counter, defaultdict, deque |
-| `itertools` | 20+ | أدوات تكرار، توافيق، تباديل |
-| `json` | 4+ | قراءة وكتابة JSON |
-| `hashlib` | 5+ | تجزئة وتشفير |
-| `flask` | 50+ | إطار عمل ويب |
-| `fastapi` | 100+ | إطار عمل ويب حديث |
-| `requests` | 150+ | HTTP Client كامل |
-| `sqlite3` | 20+ | قاعدة بيانات محلية |
-| `asyncio` | 50+ | برمجة غير متزامنة |
-| `threading` | 20+ | تعدد المهام |
-| `unittest` | 40+ | اختبارات الوحدة |
-| `csv` | 10+ | ملفات بيانات |
-| `logging` | 30+ | تسجيل الأحداث |
-| `argparse` | 30+ | تحليل وسائط سطر الأوامر |
-| `subprocess` | 20+ | أوامر النظام |
-| `configparser` | 20+ | ملفات الإعدادات |
-| `dataclasses` | 30+ | فئات بيانات، تعدادات، ABC |
-| `advanced` | 100+ | ميزات متقدمة |
+|---------|-----------:|-------|
+| `fastapi` | 532 | إطار عمل ويب حديث |
+| `requests` | 249 | HTTP Client كامل |
+| `asyncio` | 116 | برمجة غير متزامنة |
+| `argparse` | 87 | تحليل وسائط سطر الأوامر |
+| `unittest` | 85 | اختبارات الوحدة |
+| `logging` | 79 | تسجيل الأحداث |
+| `flask` | 77 | إطار عمل ويب |
+| `subprocess` | 74 | أوامر النظام |
+| `advanced` | 70 | ميزات متقدمة |
+| `dataclasses` | 66 | فئات بيانات، تعدادات، ABC |
+| `math` | 59 | مثلثات، لوغاريتمات، جذور، تقريب، هندسة |
+| `configparser` | 35 | ملفات الإعدادات |
+| `os` | 30 | ملفات، مجلدات، مسارات، فحص |
+| `threading` | 29 | تعدد المهام |
+| `re` | 25 | تعابير نمطية، بحث، استبدال، تقسيم |
+| `time` | 25 | وقت، تاريخ، تأخير، تنسيق |
+| `sqlite3` | 22 | قاعدة بيانات محلية |
+| `random` | 20 | أرقام عشوائية، توزيعات، خلط |
+| `itertools` | 19 | أدوات تكرار، توافيق، تباديل |
+| `statistics` | 16 | متوسط، وسيط، منوال، تباين، انحراف معياري |
+| `csv` | 13 | ملفات بيانات |
+| `collections` | 9 | Counter, defaultdict, deque |
+| `json` | 8 | قراءة وكتابة JSON |
+| `hashlib` | 7 | تجزئة وتشفير |
 
-**إجمالي: ~774 دالة ومفتاح بالعربي**
+**إجمالي المكتبات: 1,752 مفتاح في 24 مكتبة (1,579 فريد بعد إزالة التكرار)**
+
+**إجمالي المشروع: ~1,746 دالة ومفتاح بالعربي** — 1,752 من المكتبات + 167 عنصراً في اللغة الأساسية (`core/apl_runner/patterns.py`: كلمات مفتاحية، أنواع، ثوابت، أنماط) − 173 مفتاحاً مكرراً بين المكتبات.
