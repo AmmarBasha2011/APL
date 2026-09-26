@@ -5,7 +5,6 @@
 ```
 APL/
 ├── apl.py                   ← نقطة الدخول (للتشغيل فقط)
-├── calculator.apl           ← مثال
 ├── core/                    ← المحرك (لا تلمس)
 │   ├── __init__.py
 │   ├── apl_runner/           ← تشغيل الـ APL

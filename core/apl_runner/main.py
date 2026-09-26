@@ -571,7 +571,7 @@ def print_help():
         print(f"    {line}")
     print()
     print("Examples:")
-    print("  python apl.py calculator.apl")
+    print("  python apl.py examples/01-calculator.apl")
     print("  python apl.py help")
     print("  python apl.py repl")
 
