@@ -25,7 +25,7 @@ ARGPARSE_FUNCS = {
     # المجموعات
     "أضف_مجموعة": "parser.add_argument_group",
     "مجموعة_متنافية": "parser.add_mutually_exclusive_group",
-    "مجموعة": "parser.add_argument_group",
+    "مجموعة_حجة": "parser.add_argument_group",
     "مجموعة_حجج": "parser.add_argument_group",
     
     # الحجج الموضعية
@@ -58,9 +58,11 @@ ARGPARSE_FUNCS = {
     "خزن_ثابت": "store_const",
     "خزن_صحيح": "store_true",
     "خزن_خطأ": "store_false",
-    "أضف": "append",
+    "أضف_قيمة": "append",
+    "عد_مرات": "count",
+    "أضف_وسيط": "append",
     "أضف_ثابت": "append_const",
-    "عد": "count",
+    "عد_وسيط": "count",
     "مساعدة": "help",
     "إصدار": "version",
     
@@ -94,10 +96,10 @@ ARGPARSE_FUNCS = {
     "من_ملف": "parser.parse_args",
     "إلى_ملف": "parser.parse_args",
     
-    # مساعد للحجج
-    "صحيح": "True",
-    "خطأ": "False",
-    "لا_شيء": "None",
+    # مساعد للحجج (prefixed to avoid shadowing core types صحيح/خطأ)
+    "قيمة_صحيح": "True",
+    "قيمة_خطأ": "False",
+    "قيمة_لا_شيء": "None",
     
     # المكتبة الفرعية
     "فرعي": "subparsers",
@@ -105,15 +107,15 @@ ARGPARSE_FUNCS = {
     "أضف_محلل_فرعي": "subparsers.add_parser",
     "محلل_فرعي": "subparsers.add_parser",
     
-    # الأنواع
-    "نص": "str",
-    "عدد_صحيح": "int",
-    "عدد_عشري": "float",
-    "منطقي": "bool",
-    "قائمة": "list",
-    "صف": "tuple",
-    "مجموعة": "set",
-    "قاموس": "dict",
+    # الأنواع (prefixed to avoid shadowing core types نص/صحيح/قائمة/قاموس)
+    "نوع_نص": "str",
+    "نوع_عدد_صحيح": "int",
+    "نوع_عدد_عشري": "float",
+    "نوع_منطقي": "bool",
+    "نوع_قائمة": "list",
+    "نوع_صف": "tuple",
+    "نوع_مجموعة": "set",
+    "نوع_قاموس": "dict",
     "ملف": "argparse.FileType",
     
     # القيم الخاصة

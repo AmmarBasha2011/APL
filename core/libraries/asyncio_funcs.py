@@ -101,6 +101,8 @@ ASYNCIO_FUNCS = {
     "اكتب_لعملية": "process.stdin.write",
     
     # المهلة (Timeout)
+    "مؤقت": "threading.Timer",
+    "أنشئ_مؤقت": "threading.Timer",
     "مهلة": "asyncio.timeout",
     "داخل_مهلة": "async with asyncio.timeout",
     "انتهت_مهلة": "asyncio.TimeoutError",

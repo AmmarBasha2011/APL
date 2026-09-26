@@ -4,6 +4,7 @@ Transpiles Arabic keywords to Python base64 module
 """
 
 BASE64_FUNCS = {
+    "ثنائي_إلى_نص": "_apl_bytes_to_text",
     "ترميز_قاعد64": "base64.b64encode",
     "فك_ترميز_قاعد64": "base64.b64decode",
     "ترميز_آمن_للروابط": "base64.urlsafe_b64encode",

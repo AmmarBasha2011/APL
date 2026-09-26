@@ -3,8 +3,29 @@ APL - Transpile Dispatch
 """
 
 import re
-from core.apl_runner.patterns import _TYPE_NAMES
+from core.apl_runner.patterns import _TYPE_NAMES, _UDF_NAMES
 from core.apl_runner.inline_replacer import _inline_replace
+
+# Arabic decorator names -> Python decorators
+# Bare "@اسم" (no call parens) on a function is a pass-through decorator.
+_APL_IDENTITY = "_apl_passthrough_decorator"
+
+# Decorators that require a function argument, so a bare @اسم cannot use them
+_NEEDS_FUNC_ARG = {"functools.wraps", "functools.total_ordering",
+                   "functools.singledispatch", "functools.cached_property"}
+
+
+_DECORATOR_ALIASES = {
+    "يلتف": "functools.wraps",
+    "تغليف_دالة": "functools.wraps",
+    "كاش_دالة": "functools.cache",
+    "كاش_مؤقت_دالة": "functools.lru_cache",
+    "ترتيب_كامل": "functools.total_ordering",
+    "توزيع_فردي": "functools.singledispatch",
+    "خاصية_مخزنة_دالة": "functools.cached_property",
+    "فئة_بيانات": "dataclass",
+    "dataclass": "dataclass",
+}
 
 
 def transpile_line(line: str) -> str:
@@ -19,8 +40,8 @@ def transpile_line(line: str) -> str:
     if stripped.startswith(("مع ", "with ", "ضمنياً ", "ضمني ")):
         match = re.match(r'(?:مع|with|ضمنياً|ضمني)\s+(.+?)\s+(?:مثل|as|كـ|يساوي)\s+(\w+)\s*:', stripped)
         if match:
-            expr = match.group(1).strip()
-            var = match.group(2).strip()
+            expr = _inline_replace(match.group(1).strip())
+            var = _inline_replace(match.group(2).strip())
             return f"{indent}with {expr} as {var}:"
     
     # Handle generators (yield/yield from)
@@ -47,7 +68,10 @@ def transpile_line(line: str) -> str:
 
     if stripped.startswith("اطبع_بدون"):
         rest = _inline_replace(stripped[len('اطبع_بدون'):].strip())
-        return f"{indent}print({rest[1:-1] if rest.startswith('(') else rest}, end='')"
+        args = rest
+        if args.startswith("(") and args.endswith(")"):
+            args = args[1:-1]
+        return f"{indent}print({args}, end='')"
 
     if stripped.startswith("اطبع"):
         rest = _inline_replace(stripped[4:].strip())
@@ -59,6 +83,31 @@ def transpile_line(line: str) -> str:
         rest = _inline_replace(stripped[3:].strip())
         return f"{indent}else{rest}"
 
+    # Class methods: "اسم(self, ...):" -> "def اسم(self, ...):"
+    m = re.match(r"^(\w+)\s*\((self|\s*self)\s*(.*)\)\s*:\s*$", stripped)
+    if m and not stripped.startswith((" def", "def", "if", "for", "while", "return", "print")):
+        name, params, rest = m.group(1), m.group(2), m.group(3)
+        rest = re.sub(r"\bself\b", "self", rest)
+        return f"{indent}def {name}({params}{rest}):"
+
+    # Block-level conditional keywords (before generic inline substitution)
+    # else / else-if (block level)
+    if stripped == "والا" or stripped.startswith("والا:") or stripped.startswith("والا "):
+        rest = stripped[4:].strip()
+        return f"{indent}else{':' if not rest or rest == ':' else rest}"
+    if stripped.startswith("والا_لو") or stripped.startswith("والا لو"):
+        cond = stripped.split("لو", 1)[1].strip()
+        return f"{indent}else:\n{indent}    if {_inline_replace(cond)}"
+
+    if stripped.startswith("س إذا"):
+        rest = stripped.split("شرط", 1)[1].strip() if "شرط" in stripped else stripped[4:].strip()
+        return f"{indent}elif {_inline_replace(rest)}"
+    if stripped.startswith("سإذا"):
+        rest = stripped.split("شرط", 1)[1].strip() if "شرط" in stripped else stripped[4:].strip()
+        return f"{indent}elif {_inline_replace(rest)}"
+    if stripped.startswith("إذا"):
+        rest = stripped[3:].strip()
+        return f"{indent}if {_inline_replace(rest)}"
     if stripped.startswith("لو"):
         return f"{indent}if {_inline_replace(stripped[2:].strip())}"
     if stripped.startswith("طالما"):
@@ -71,6 +120,21 @@ def transpile_line(line: str) -> str:
             return f"{indent}for {parts[0].strip()} in {_inline_replace(parts[1].strip().lstrip(':').strip())}"
         return f"{indent}for {rest}"
 
+    # Decorators: @اسم  ->  @python_name
+    if stripped.startswith("@"):
+        name = stripped[1:].strip()
+        if "(" in name:
+            head, _, tail = name.partition("(")
+            mapped = _DECORATOR_ALIASES.get(head, head)
+            return f"{indent}@{mapped}({tail.rstrip(')')})"
+        if name in _DECORATOR_ALIASES:
+            mapped = _DECORATOR_ALIASES[name]
+            if mapped in _NEEDS_FUNC_ARG:
+                return f"{indent}@{_APL_IDENTITY}"
+            return f"{indent}@{mapped}"
+        # user-defined decorator: the @اسم refers to their own function
+        return f"{indent}@_APL_UDF_{name}"
+
     if stripped.startswith("خاصية"):
         rest = stripped[len('خاصية'):].strip()
         return f"{indent}@property" if not rest else f"{indent}@property {rest}"
@@ -81,8 +145,21 @@ def transpile_line(line: str) -> str:
         rest = stripped[len('محدد'):].strip()
         return f"{indent}@{rest}.setter" if rest else f"{indent}@setter"
 
-    if stripped.startswith("دالة"):
-        rest = stripped[4:].strip()
+    if ((stripped.startswith("دالة_") or stripped.startswith("_apl_udf_دالة_"))
+            and "(" in stripped) or stripped.startswith("دالة ") \
+            or (stripped.startswith("دالة(") and False):
+        # "دالة_اسم(...)" / "_apl_udf_دالة_اسم(...)" keep the full identifier;
+        # "دالة اسم(...)" strips the keyword.
+        if stripped.startswith("دالة "):
+            rest = stripped[4:].strip()
+        elif stripped.startswith("دالة_"):
+            rest = stripped
+        else:
+            rest = stripped
+        mname = re.match(r"^([^\s(]+)", rest)
+        if not rest or rest.startswith("("):
+            # nameless "دالة(...)" is not a valid definition
+            return f"{indent}pass"
         # Translate type hints in function signature
         for arabic_type, english_type in _TYPE_NAMES.items():
             rest = re.sub(rf':\s*{arabic_type}(?=[^\w])', f': {english_type}', rest)
@@ -99,12 +176,22 @@ def transpile_line(line: str) -> str:
 
     if stripped.startswith("حاول"):
         return f"{indent}try:{stripped[5:]}"
-    if stripped.startswith("إمسك"):
-        rest = _inline_replace(stripped[4:].strip())
-        return f"{indent}except {rest}" if rest and rest != ":" else f"{indent}except:"
-    if stripped.startswith("امسك"):
-        rest = _inline_replace(stripped[4:].strip())
-        return f"{indent}except {rest}" if rest and rest != ":" else f"{indent}except:"
+    if stripped.startswith("أخيراً") or stripped.startswith("أخيرا") or stripped.startswith("في_الاخير"):
+        rest = stripped.split(":", 1)[1] if ":" in stripped else ""
+        return f"{indent}finally:{rest}"
+    if stripped.startswith("خطأ_في") or stripped.startswith("استثناء"):
+        rest = stripped.split(":", 1)[1] if ":" in stripped else ""
+        return f"{indent}except{rest}"
+    for _kw in ("إمسك", "امسك", "خطأ_في"):
+        if stripped.startswith(_kw):
+            rest = _inline_replace(stripped[len(_kw):].strip())
+            if not rest or rest == ":":
+                return f"{indent}except:"
+            # "إمسك مثل خطأ:" -> "except ... خطأ:"  (Arabic exception variable)
+            m = re.match(r"^(?:مثل|كـ|اسـ|as)\s+([\w\u0600-\u06FF]+)\s*:?$", rest)
+            if m:
+                return f"{indent}except Exception as {m.group(1)}:"
+            return f"{indent}except {rest}"
 
     if stripped.startswith("استورد"):
         return f"{indent}import {stripped[7:].strip()}"
@@ -153,8 +240,10 @@ def transpile_line(line: str) -> str:
             return f"{indent}{parts[0].strip()} = {_inline_replace(parts[1].strip())}"
         raise SyntaxError(f"'=' expected after المتغير")
 
-    if stripped.startswith("قاعدة") or stripped.startswith("صنف"):
-        return f"{indent}class {stripped[6:].strip() if stripped.startswith('قاعدة') else stripped[4:].strip()}"
+    # class definitions: "صنف اسم:" or "قاعدة اسم:" (a class database helper)
+    _m = re.match(r"^(صنف|قاعدة)\s+([^\s:(]+(?:\([^)]*\))?)\s*:\s*$", stripped)
+    if _m:
+        return f"{indent}class {_m.group(2)}:"
     if stripped.startswith("تمرير"):
         return f"{indent}pass"
 

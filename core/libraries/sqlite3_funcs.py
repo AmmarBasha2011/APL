@@ -15,24 +15,16 @@ SQLITE3_FUNCS = {
     "أنشئ_مؤشر": "connection.cursor",
     
     # تنفيذ الاستعلامات
-    "نفذ": "cursor.execute",
-    "نفذ_استعلام": "cursor.execute",
-    "نفذ_كثير": "cursor.executemany",
-    "نفذ_سكريبت": "cursor.executescript",
+
     
     # جلب النتائج
-    "جلب_واحد": "cursor.fetchone",
-    "جلب_الكل": "cursor.fetchall",
-    "جلب_عدد": "cursor.fetchmany",
+
     
     # التأكيد والتراجع
-    "تأكد": "connection.commit",
-    "احفظ": "connection.commit",
-    "تراجع": "connection.rollback",
+
     
     # الإغلاق
-    "أغلق": "connection.close",
-    "أغلق_قاعدة": "connection.close",
+
     
     # خصائص الاتصال
     "صف_مصنع": "connection.row_factory",
@@ -42,6 +34,24 @@ SQLITE3_FUNCS = {
     # الدوال المساعدة
     "نسخ_احتياطي": "sqlite3.connect",
 }
+
+SQLITE3_METHODS = {
+    "نفذ": "execute",
+    "نفذ_استعلام": "execute",
+    "نفذ_كثير": "executemany",
+    "نفذ_سكريبت": "executescript",
+    "جلب_واحد": "fetchone",
+    "جلب_الكل": "fetchall",
+    "جلب_عدد": "fetchmany",
+    "أغلق_مؤشر": "close",
+    "تأكد": "commit",
+    "احفظ": "commit",
+    "تراجع": "rollback",
+    "أغلق_قاعدة": "close",
+    "أغلق_اتصال": "close",
+}
+
+SQLITE3_METHOD_PATTERN = r"\.(" + "|".join(sorted(SQLITE3_METHODS.keys(), key=len, reverse=True)) + r")\s*\("
 
 SQLITE3_PATTERN = r"(?<!\w)(" + "|".join(sorted(SQLITE3_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 

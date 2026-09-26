@@ -4,6 +4,8 @@ Full dataclasses and enum wrapper with Arabic keywords
 """
 
 DATACLASSES_FUNCS = {
+    "@فئة_بيانات": "dataclasses.dataclass",
+    "@dataclass": "dataclasses.dataclass",
     # Dataclasses
     "dataclass": "dataclasses.dataclass",
     "فئة_بيانات": "dataclasses.dataclass",
@@ -29,7 +31,7 @@ DATACLASSES_FUNCS = {
     # دوال Dataclass
     "تحويل_لصف": "dataclasses.astuple",
     "تحويل_لقاموس": "dataclasses.asdict",
-    "استبدال": "dataclasses.replace",
+    "استبدال_حقل": "dataclasses.replace",
     "فحص_فئة_بيانات": "dataclasses.is_dataclass",
     "تهيئة_بعد": "__post_init__",
     

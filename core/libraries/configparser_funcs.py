@@ -15,13 +15,13 @@ CONFIGPARSER_FUNCS = {
     "تكوين_افتراضي": "configparser.DEFAULTSECT",
     
     # القراءة
-    "اقرأ": "config.read",
+    "اقرأ_إعداد": "config.read",
     "اقرأ_ملف": "config.read_file",
     "اقرأ_سلسلة": "config.read_string",
     "اقرأ_قاموس": "config.read_dict",
     
     # الكتابة
-    "اكتب": "config.write",
+    "اكتب_إعداد": "config.write",
     "اكتب_ملف": "config.write",
     
     # الأقسام

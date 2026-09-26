@@ -13,7 +13,7 @@ REQUESTS_FUNCS = {
     "رأس": "requests.head",
     "خيارات": "requests.options",
     "اطلب": "requests.request",
-    "طلب": "requests.request",
+    "طلب_http": "requests.request",
     "اتصل": "requests.Session",
     
     # === اختصارات (Shortcuts) ===
@@ -31,18 +31,14 @@ REQUESTS_FUNCS = {
     "جيت": "requests.get",
     "جلب": "requests.get",
     "تنزيل": "requests.get",
-    "download": "requests.get",
-    "فتح": "requests.get",
     "visit": "requests.get",
     "تابع": "requests.get",
     "تصفح": "requests.get",
     "استعرض": "requests.get",
-    "اقرأ": "requests.get",
     "فتش": "requests.get",
     "ابحث": "requests.get",
     "جد": "requests.get",
-    "هات": "requests.get",
-    
+
     # === POST requests ===
     "بوست": "requests.post",
     "ارسل": "requests.post",
@@ -51,10 +47,10 @@ REQUESTS_FUNCS = {
     "سجل": "requests.post",
     "احفظ": "requests.post",
     "ادخل": "requests.post",
-    "اكتب": "requests.post",
+    "اكتب_طلب": "requests.post",
     "نشر": "requests.post",
     "أعلن": "requests.post",
-    "أضف": "requests.post",
+    "أضف_طلب": "requests.post",
     "ضمن": "requests.post",
     "حط": "requests.post",
     
@@ -99,11 +95,11 @@ REQUESTS_FUNCS = {
     "خرج": "response",
     
     # === محتوى الاستجابة (Response Content) ===
-    "نص": "response.text",
+    "نص_الاستجابة": "response.text",
     "نص_الاستجابة": "response.text",
     "محتوى": "response.content",
     "محتوى_الاستجابة": "response.content",
-    "بايت": "response.content",
+    "بايت_الاستجابة": "response.content",
     "خام": "response.raw",
     "جسون": "response.json()",
     "بيانات_جسون": "response.json()",
@@ -151,7 +147,7 @@ REQUESTS_FUNCS = {
     # === معاملات الطلب (Request Parameters) ===
     "معاملات": "params",
     "استعلام": "params",
-    "بحث": "params",
+    "معاملات_طلب": "params",
     "فلتر": "params",
     "حد": "params",
     "صفحة": "params",

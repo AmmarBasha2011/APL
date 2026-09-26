@@ -13,6 +13,7 @@ FLASK_FUNCS = {
     # المسارات (Routing)
     "مسار_فلاسك": "@app.route",
     "متحكم": "@app.route",
+    "سجل_أضف": "current_app.db.session.add",
     
     # تشغيل (Running)
     "شغل": "app.run",
@@ -21,7 +22,7 @@ FLASK_FUNCS = {
     "ابدأ": "app.run",
     
     # الطلب (Request)
-    "طلب": "request",
+    "طلب_فلاسك": "request",
     "طلب_جيت": "request.args",
     "طلب_نموذج": "request.form",
     "طلب_ملف": "request.files",
@@ -84,15 +85,15 @@ FLASK_FUNCS = {
     "مفتاح_سري": "app.secret_key",
     
     # قاعدة البيانات (Database - SQLAlchemy patterns)
-    "قاعدة": "db",
-    "جدول": "db.Model",
-    "نموذج_قاعدة": "db.Model",
-    "استعلام": "db.session.query",
-    "نفذ": "db.session.commit",
-    "أضف": "db.session.add",
-    "احذف_سجل": "db.session.delete",
-    "تراجع": "db.session.rollback",
-    "هجرة": "db.create_all",
+    "قاعدة_فلاسك": "db",
+    "جدول": "_apl_flask_db.Model",
+    "نموذج_قاعدة": "_apl_flask_db.Model",
+    "استعلام": "_apl_db.session.query",
+    "نفذ_فلاسك": "_apl_db.session.commit",
+    "أضف_فلاسك": "_apl_db.session.add",
+    "احذف_سجل": "_apl_db.session.delete",
+    "تراجع_فلاسك": "_apl_db.session.rollback",
+    "هجرة": "_apl_db.create_all",
     
     # المصادقة (Auth patterns)
     "سجل_دخول": "login_user",

@@ -52,7 +52,7 @@ UNITTEST_FUNCS = {
     # Arabic aliases - تسميات عربية
     "ساوي": "assertEqual",
     "لا_ساوي": "assertNotEqual",
-    "صحيح": "assertTrue",
+    "تأكيد": "assertTrue",
     "خطأ": "assertFalse",
     "هو": "assertIs",
     "ليس": "assertIsNot",

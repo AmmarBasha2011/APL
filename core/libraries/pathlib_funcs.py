@@ -3,6 +3,11 @@ APL - pathlib Library Functions
 Transpiles Arabic keywords to Python pathlib module
 """
 
+PATHLIB_KWARGS = {
+    "آباء": "parents",
+    "موجود_سلفا": "exist_ok",
+}
+
 PATHLIB_FUNCS = {
     "مسار_جديد": "pathlib.Path",
     "درب": "pathlib.Path",
@@ -13,7 +18,7 @@ PATHLIB_FUNCS = {
     "مسار_نص": "pathlib.Path.as_posix",
     "مسار_مطلق_كامل": "pathlib.Path.resolve",
     "مسار_نسبي_كامل": "pathlib.Path.absolute",
-    "مسار_موجود": "pathlib.Path.exists",
+    "مسار_موجود": "_apl_path_exists",
     "مسار_هو_مجلد": "pathlib.Path.is_dir",
     "مسار_هو_ملف": "pathlib.Path.is_file",
     "مسار_رابط_رمزي": "pathlib.Path.is_symlink",
@@ -30,6 +35,7 @@ PATHLIB_FUNCS = {
     "مسار_استبدال": "pathlib.Path.replace",
     "مسار_محتويات": "pathlib.Path.iterdir",
     "مسار_أنشئ_مجلد": "pathlib.Path.mkdir",
+    "أنشئ_مجلد_مسار": "pathlib.Path.mkdir",
     "مسار_احذف": "pathlib.Path.unlink",
     "مسار_احذف_مجلد": "pathlib.Path.rmdir",
     "مسار_نفسه": "pathlib.Path.samefile",

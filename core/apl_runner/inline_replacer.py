@@ -7,9 +7,18 @@ import re
 from core.apl_runner.patterns import (
     TYPE_ALIASES, _TYPE_PATTERN, _INLINE_FUNCS, _INLINE_FUNC_PATTERN,
     _METHOD_ALIASES, _METHOD_PATTERN, _TYPE_NAMES, _CONSTANTS, _CONSTANT_PATTERN,
-    _LOGICAL_PATTERNS, _KW_ALIASES, _IO_ALIASES, _IO_PATTERN
+    _LOGICAL_PATTERNS, _KW_ALIASES, _IO_ALIASES, _IO_PATTERN, _UDF_NAMES
 )
-from core.libraries.datetime_funcs import DATETIME_KWARGS, DATETIME_CONSTANTS
+from core.libraries.datetime_funcs import DATETIME_KWARGS
+from core.libraries.pathlib_funcs import PATHLIB_KWARGS
+
+# Arabic names usable both as methods (.علوي) and standalone (علوي("x"))
+_STANDALONE_METHODS = {
+    "علوي": "upper", "سفلي": "lower", "تقليم": "strip",
+    "تقسيم": "split", "استبدال": "replace", "عدد": "count",
+    "يبدأ": "startswith", "ينتهي": "endswith", "ضم": "join",
+    "فرز": "sort", "عكس": "reverse", "نسخ": "copy",
+}
 from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs
 
 
@@ -79,6 +88,7 @@ def _inline_replace(text: str) -> str:
     text = re.compile(fastapi_funcs.FASTAPI_PATTERN).sub(lambda m: f"{fastapi_funcs.FASTAPI_FUNCS[m.group(1)]}(", text)
     text = re.compile(requests_funcs.REQUESTS_PATTERN).sub(lambda m: f"{requests_funcs.REQUESTS_FUNCS[m.group(1)]}(", text)
     text = re.compile(sqlite3_funcs.SQLITE3_PATTERN).sub(lambda m: f"{sqlite3_funcs.SQLITE3_FUNCS[m.group(1)]}(", text)
+    text = re.compile(sqlite3_funcs.SQLITE3_METHOD_PATTERN).sub(lambda m: f".{sqlite3_funcs.SQLITE3_METHODS[m.group(1)]}(", text)
     text = re.compile(asyncio_funcs.ASYNCIO_PATTERN).sub(lambda m: f"{asyncio_funcs.ASYNCIO_FUNCS[m.group(1)]}(", text)
     text = re.compile(threading_funcs.THREADING_PATTERN).sub(lambda m: f"{threading_funcs.THREADING_FUNCS[m.group(1)]}(", text)
     text = re.compile(unittest_funcs.UNITTEST_PATTERN).sub(lambda m: f"{unittest_funcs.UNITTEST_FUNCS[m.group(1)]}(", text)
@@ -93,8 +103,14 @@ def _inline_replace(text: str) -> str:
     text = re.compile(datetime_funcs.DATETIME_CONSTANT_PATTERN).sub(lambda m: datetime_funcs.DATETIME_CONSTANTS[m.group(1)], text)
     text = re.compile(uuid_funcs.UUID_CONSTANT_PATTERN).sub(lambda m: uuid_funcs.UUID_CONSTANTS[m.group(1)], text)
     # Library-specific keyword arguments (e.g. timedelta(days=3))
-    for _ar, _en in DATETIME_KWARGS.items():
-        text = re.sub(rf"(?<![\w\u0600-\u06FF]){_ar}(?=\s*=)", _en, text)
+    for _kmap in (DATETIME_KWARGS, PATHLIB_KWARGS):
+        for _ar, _en in _kmap.items():
+            text = re.sub(rf"(?<![\w\u0600-\u06FF]){_ar}(?=\s*=)", _en, text)
+
+
+    # Standalone form of method aliases: علوي("x") -> "x".upper()
+    for _ar, _en in _STANDALONE_METHODS.items():
+        text = re.sub(rf"(?<![\w.\u0600-\u06FF]){_ar}\s*\(", f'_APL_SELF("{_en}", ', text)
 
     # Then type aliases, inline funcs, methods
     # Translate context manager protocol methods
@@ -117,6 +133,7 @@ def _inline_replace(text: str) -> str:
 
     text = re.sub(r"(?<!\w)سهم\s+(.+?):\s*(.+)", lambda m: f"lambda {m.group(1)}: {m.group(2)}", text)
     text = re.sub(r"(.+?)\sإذا\s(.+?)\sوالا\s(.+)", r"\1 if \2 else \3", text)
+
 
     for idx in sorted(strings.keys(), reverse=True):
         text = text.replace(f"\x00APL{idx}\x00", strings[idx])

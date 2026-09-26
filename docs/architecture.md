@@ -19,8 +19,19 @@ APL/
 │       ├── math_funcs.py     ← مكتبة math
 │       ├── random_funcs.py   ← مكتبة random
 │       └── time_funcs.py     ← مكتبة time/datetime
+├── examples/                ← 10 أمثلة جاهزة تعمل فعلياً
+│   ├── 01-calculator.apl
+│   ├── 02-sales-report.apl
+│   ├── 03-task-manager.apl
+│   ├── 04-text-analyzer.apl
+│   ├── 05-report-writer.apl
+│   ├── 06-search-sort.apl
+│   ├── 07-sqlite-tasks.apl
+│   ├── 08-word-frequency.apl
+│   ├── 09-encoding-hashing.apl
+│   └── 10-file-manager.apl
 └── docs/                    ← التوثيق
-    ├── index.md
+    ├── README.md
     ├── architecture.md
     ├── language-reference.md
     ├── math-library.md

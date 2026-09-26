@@ -1,6 +1,32 @@
 import sys, os, re, io
 from core.apl_runner import _inline_replace
 from core.apl_runner.transpiler import transpile_line
+from core.apl_runner.patterns import _UDF_NAMES
+
+def _build_reserved_keys():
+    import importlib
+    keys = set()
+    for _m in LIBRARY_MODULES:
+        try:
+            _mod = importlib.import_module("core.libraries." + _m)
+        except Exception:
+            continue
+        for _n in dir(_mod):
+            _v = getattr(_mod, _n)
+            if _n.isupper() and isinstance(_v, dict):
+                keys |= set(_v.keys())
+    return keys
+
+LIBRARY_MODULES = [
+    "math_funcs", "random_funcs", "time_funcs", "statistics_funcs", "os_funcs",
+    "re_funcs", "collections_funcs", "itertools_funcs", "json_funcs", "hashlib_funcs",
+    "flask_funcs", "fastapi_funcs", "requests_funcs", "sqlite3_funcs", "asyncio_funcs",
+    "threading_funcs", "unittest_funcs", "csv_funcs", "logging_funcs", "argparse_funcs",
+    "subprocess_funcs", "configparser_funcs", "dataclasses_funcs", "advanced_funcs",
+    "datetime_funcs", "pathlib_funcs", "shutil_funcs", "textwrap_funcs",
+    "uuid_funcs", "base64_funcs", "urllib_funcs", "functools_funcs",
+]
+_RESERVED_KEYS = _build_reserved_keys()
 from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
@@ -15,6 +41,40 @@ if sys.platform == "win32":
 
 
 def transpile(source: str) -> str:
+    # Pre-scan for user-defined function names so their call sites are protected
+    # before any library pattern runs.
+    _UDF_NAMES.clear()
+    for _ln in source.split("\n"):
+        _s = _ln.strip()
+        if _s.startswith("دالة") and ("(" in _s) and not _s.startswith("#"):
+            # "دالة_اسم(...)" -> the identifier is "دالة_اسم"
+            # "دالة اسم(...)"  -> the identifier is "اسم"
+            # "دالة_فيب(...)": the identifier is دالة_فيب -> protect "فيب" and re-add prefix
+            # "دالة مربع(...)":  the identifier is مربع
+            if _s.startswith("دالة_"):
+                _m = re.match(r"^دالة_([^\s(:]+)", _s)
+                if _m and _m.group(1) != "def":
+                    _UDF_NAMES.add(_m.group(1))
+            else:
+                _m = re.match(r"^([^\s(:]+)", _s[4:].strip())
+                if _m and _m.group(1) != "def":
+                    _UDF_NAMES.add(_m.group(1))
+
+    # Protect user-defined function names across the WHOLE source before any
+    # library pattern can rewrite them.
+    # A user-defined name shadows a library key of the same name inside this file.
+    # Replace user-defined function names with ASCII placeholders so that no
+    # library pattern (which may contain the same Arabic word) can match them.
+    _udf_map = {}
+    for _i, _nm in enumerate(sorted(_UDF_NAMES)):
+        _tok = f"_APL_UDF_{_i}_"
+        _udf_map[_tok] = _nm
+        source = re.sub(rf"(?<![\w\u0600-\u06FF@]){re.escape(_nm)}(?=\s*\()",
+                        _tok, source)
+    # "دالة_فيب(...)" -> "دالة_ + placeholder" so the transpiler sees a plain call token
+    source = re.sub(r"^(\s*)دالة_(\s*)(?=_APL_UDF_)", r"\1\2", source, flags=re.M)
+
+
     lines = source.split("\n")
     result = []
     for line in lines:
@@ -71,6 +131,8 @@ def transpile(source: str) -> str:
         needs.append("import subprocess")
     if re.search(configparser_funcs.IMPORT_CHECK, code) and "import configparser" not in code:
         needs.append("import configparser")
+    if ("dataclasses." in code or "@_apl_passthrough" in code) and "import dataclasses" not in code:
+        pass
     if re.search(dataclasses_funcs.IMPORT_CHECK, code) and "import dataclasses" not in code:
         needs.append("from dataclasses import dataclass, field, asdict, astuple, replace; from enum import Enum, IntEnum, IntFlag, Flag, auto, unique; from abc import ABC, abstractmethod")
     if re.search(advanced_funcs.IMPORT_CHECK, code) and "import functools" not in code:
@@ -104,16 +166,77 @@ def transpile(source: str) -> str:
     if "shutil." in code and "import shutil" not in code:
         needs.append("import shutil")
 
+    # imports required by resolved decorators
+    if "@dataclass" in code and "from dataclasses import" not in code:
+        needs.append("from dataclasses import dataclass, field, asdict, astuple, replace")
+    if "@functools.total_ordering" in code and "import functools" not in code:
+        needs.append("import functools")
+    if "@functools.singledispatch" in code and "import functools" not in code:
+        needs.append("import functools")
+    if "@functools.cached_property" in code and "import functools" not in code:
+        needs.append("import functools")
+
     if needs:
         code = "\n".join(needs) + "\n\n" + code
+
+    # Restore protected user-defined function names
+    for _tok, _nm in _udf_map.items():
+        code = code.replace(_tok, _nm)
+    code = code.replace("_APL_UDF_", "")
+
     return code
 
 
 _RUNTIME = """
 import sys
 import builtins
+import pathlib
 
 _apl_orig_print = builtins.print
+
+def _apl_passthrough_decorator(func):
+    # Bare Arabic decorator with no call parentheses: returns func unchanged.
+    return func
+
+class _apl_db:
+    # Placeholder for Flask-SQLAlchemy style db.* keys; a real app assigns its own.
+    Model = None
+    session = None
+    add = None
+    delete = None
+    commit = None
+    rollback = None
+    close = None
+    flush = None
+    refresh = None
+    query = None
+    cr = None
+
+_apl_flask_db = _apl_db
+_apl_db.session = _apl_db
+_apl_db_placeholder = _apl_db
+
+def _apl_bytes_to_text(b):
+    # Render bytes as a readable string (base64 payloads are ASCII-safe)
+    try:
+        return b.decode("utf-8")
+    except (UnicodeDecodeError, AttributeError):
+        return b.decode("latin-1")
+
+def _apl_path_exists(p):
+    return pathlib.Path(p).exists()
+
+def _apl_path_unlink(p):
+    return pathlib.Path(p).unlink()
+
+def _APL_SELF(method, *args, **kwargs):
+    # Standalone form of a method alias: علوي("x") -> "x".upper()
+    if not args:
+        return method
+    obj, rest = args[0], args[1:]
+    if rest and isinstance(rest[0], str) and method in (str.split, str.startswith, str.endswith, str.replace):
+        return getattr(obj, method)(rest[0], *rest[1:], **kwargs)
+    return getattr(obj, method)(*rest, **kwargs)
 
 def _apl_has_arabic(v):
     return any('\\u0600' <= c <= '\\u06FF' or '\\u0750' <= c <= '\\u07FF' or '\\u08A0' <= c <= '\\u08FF' or '\\uFB50' <= c <= '\\uFDFF' for c in str(v))
@@ -160,14 +283,23 @@ def _apl_excepthook(typ, val, tb):
     sys.stderr.write(f"\\u202B{name}: {val}\\u202C\\n")
 sys.excepthook = _apl_excepthook
 
-def _apl_read(f):
-    return f.read()
+def _apl_read(target, mode="r", encoding="utf-8"):
+    # اقرأ(file) or اقرأ(open_handle)
+    if hasattr(target, "read"):
+        return target.read()
+    with open(target, mode, encoding=encoding) as _f:
+        return _f.read()
 
-def _apl_write(f, s):
-    return f.write(s)
+def _apl_write(target, s, mode="w", encoding="utf-8"):
+    # اكتب(file, s) or اكتب(open_handle, s)
+    if hasattr(target, "write"):
+        return target.write(s)
+    with open(target, mode, encoding=encoding) as _f:
+        return _f.write(s)
 
-def _apl_close(f):
-    f.close()
+def _apl_close(target=None):
+    if target is not None and hasattr(target, "close"):
+        return target.close()
 
 def _apl_fetch(url):
     return urllib.request.urlopen(url).read().decode("utf-8")

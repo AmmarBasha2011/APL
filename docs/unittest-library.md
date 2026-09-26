@@ -71,7 +71,7 @@
 |--------|--------|
 | `ساوي(أ, ب)` | assertEqual |
 | `لا_ساوي(أ, ب)` | assertNotEqual |
-| `صحيح(تعبير)` | assertTrue |
+| `تأكيد(تعبير)` | assertTrue |
 | `خطأ(تعبير)` | assertFalse |
 | `هو(أ, ب)` | assertIs |
 | `ليس(أ, ب)` | assertIsNot |

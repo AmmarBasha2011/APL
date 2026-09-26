@@ -5,6 +5,9 @@ All regex patterns, type aliases, and transpilation mappings
 
 import re
 
+# Names of user-defined functions (protected from library-pattern rewriting)
+_UDF_NAMES: set = set()
+
 # Type aliases - أنواع البيانات
 TYPE_ALIASES = {
     "صحيح": "int", "نص": "str", "عشري": "float", "منطق": "bool",
@@ -66,6 +69,7 @@ _IO_ALIASES = {
     "اكتب": "_apl_write",
     "اغلق": "_apl_close",
     "طلب": "_apl_fetch",
+    "فتح": "open",
 }
 _IO_PATTERN = re.compile("(" + "|".join(_IO_ALIASES.keys()) + r")\s*\(")
 
