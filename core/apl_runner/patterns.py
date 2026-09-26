@@ -49,11 +49,15 @@ _CONSTANT_PATTERN = re.compile(r"(?<!\w)(" + "|".join(_CONSTANTS.keys()) + r")(?
 
 # Logical patterns - العوامل المنطقية
 _LOGICAL_PATTERNS = [
-    (re.compile(r"(?<!\w)و(?!\w)"), "and"),
-    (re.compile(r"(?<!\w)أو(?!\w)"), "or"),
-    (re.compile(r"(?<!\w)ليس(?!\w)"), "not"),
-    (re.compile(r"(?<!\w)مثل(?!\w)"), "as"),
-    (re.compile(r"(?<!\w)في(?!\w)"), "in"),
+    # Attached form: a word char (Arabic or Latin) on BOTH sides
+    (re.compile(r"(?<=\s)و(?=[\w\u0600-\u06FF])"), " and "),
+    (re.compile(r"(?<=\s)أو(?=[\w\u0600-\u06FF])"), " or "),
+    # Spaced / standalone form
+    (re.compile(r"(?<![\w\u0600-\u06FF])و(?![\w\u0600-\u06FF])"), "and"),
+    (re.compile(r"(?<![\w\u0600-\u06FF])أو(?![\w\u0600-\u06FF])"), "or"),
+    (re.compile(r"(?<![\w\u0600-\u06FF])ليس(?![\w\u0600-\u06FF])"), "not"),
+    (re.compile(r"(?<![\w\u0600-\u06FF])مثل(?![\w\u0600-\u06FF])"), "as"),
+    (re.compile(r"(?<![\w\u0600-\u06FF])في(?![\w\u0600-\u06FF])"), "in"),
 ]
 
 # Keyword arguments - حجج الكلمات المفتاحية

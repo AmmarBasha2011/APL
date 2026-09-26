@@ -50,29 +50,69 @@
 
 ---
 
-## الأمثلة الجاهزة (`examples/`)
+## الأمثلة الجاهزة (50 مثالاً)
 
-10 برامج حقيقية مكتوبة بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء:
+50 برنامجاً حقيقياً مكتوباً بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
-| # | الملف | الوصف | المكتبات المستخدمة |
-|---|-------|-------|-------------------|
-| 1 | [01-calculator.apl](../examples/01-calculator.apl) | آلة حاسبة تفاعلية | `math`، شروط |
-| 2 | [02-sales-report.apl](../examples/02-sales-report.apl) | تقرير مبيعات وخصم | `random`، `math` |
-| 3 | [03-task-manager.apl](../examples/03-task-manager.apl) | مدير المهام | `uuid`، قواميس |
-| 4 | [04-text-analyzer.apl](../examples/04-text-analyzer.apl) | محلل نصوص | `re` |
-| 5 | [05-report-writer.apl](../examples/05-report-writer.apl) | كاتب تقارير | `textwrap` |
-| 6 | [06-search-sort.apl](../examples/06-search-sort.apl) | بحث وترتيب (bubble sort) | خوارزميات |
-| 7 | [07-sqlite-tasks.apl](../examples/07-sqlite-tasks.apl) | قاعدة بيانات مهام | `sqlite3`، `os` |
-| 8 | [08-word-frequency.apl](../examples/08-word-frequency.apl) | عدّاد تكرار الكلمات | `re`، قواميس |
-| 9 | [09-encoding-hashing.apl](../examples/09-encoding-hashing.apl) | ترميز وتجزيع | `base64`، `hashlib`، `uuid` |
-| 10 | [10-file-manager.apl](../examples/10-file-manager.apl) | مدير ملفات | `pathlib`، `shutil`، `os` |
+| # | الملف | الوصف |
+|--:|-------|-------|
+| 1 | [`01-calculator.apl`](../examples/01-calculator.apl) | آلة حاسبة تفاعلية |
+| 2 | [`02-sales-report.apl`](../examples/02-sales-report.apl) | تقرير مبيعات وتقدير الإجمالي |
+| 3 | [`03-task-manager.apl`](../examples/03-task-manager.apl) | مدير المهام (Lists + Dictionary + Search) |
+| 4 | [`04-text-analyzer.apl`](../examples/04-text-analyzer.apl) | تحليل نص ومطابقة الأنماط |
+| 5 | [`05-report-writer.apl`](../examples/05-report-writer.apl) | كاتب التقارير |
+| 6 | [`06-search-sort.apl`](../examples/06-search-sort.apl) | خوارزميات البحث والترتيب |
+| 7 | [`07-sqlite-tasks.apl`](../examples/07-sqlite-tasks.apl) | قاعدة بيانات المهام (SQLite) |
+| 8 | [`08-word-frequency.apl`](../examples/08-word-frequency.apl) | عدّاد الكلمات الم unique مع itertools |
+| 9 | [`09-encoding-hashing.apl`](../examples/09-encoding-hashing.apl) | تشفير وفك تشفير البيانات (base64 + hashlib) |
+| 10 | [`10-file-manager.apl`](../examples/10-file-manager.apl) | مدير الملفات والمجلدات |
+| 11 | [`11-fibonacci.apl`](../examples/11-fibonacci.apl) | مثال تطبيقي |
+| 12 | [`12-prime-check.apl`](../examples/12-prime-check.apl) | فحص الأعداد الأولية |
+| 13 | [`13-matrix-ops.apl`](../examples/13-matrix-ops.apl) | عمليات المصفوفات |
+| 14 | [`14-statistics-report.apl`](../examples/14-statistics-report.apl) | تقرير إحصائي للدرجات |
+| 15 | [`15-string-processing.apl`](../examples/15-string-processing.apl) | معالجة النصوص |
+| 16 | [`16-hash-passwords.apl`](../examples/16-hash-passwords.apl) | بصمات كلمات السر |
+| 17 | [`17-bank-account.apl`](../examples/17-bank-account.apl) | نظام حساب بنكي مبسّط |
+| 18 | [`18-linked-list.apl`](../examples/18-linked-list.apl) | قائمة مرتبطة |
+| 19 | [`19-inventory-system.apl`](../examples/19-inventory-system.apl) | نظام إدارة مخزون |
+| 20 | [`20-json-config.apl`](../examples/20-json-config.apl) | قراءة وكتابة إعدادات JSON |
+| 21 | [`21-calculator-class.apl`](../examples/21-calculator-class.apl) | آلة حاسبة كصنف |
+| 22 | [`22-temperature-converter.apl`](../examples/22-temperature-converter.apl) | محول درجات الحرارة |
+| 23 | [`23-palindrome-check.apl`](../examples/23-palindrome-check.apl) | فحص الكلمات المتناظرة |
+| 24 | [`24-roman-numerals.apl`](../examples/24-roman-numerals.apl) | تحويل إلى أرقام رومانية |
+| 25 | [`25-caesar-cipher.apl`](../examples/25-caesar-cipher.apl) | شيفرة قيصر |
+| 26 | [`26-queue-stack.apl`](../examples/26-queue-stack.apl) | طابور ومكدّس |
+| 27 | [`27-expense-tracker.apl`](../examples/27-expense-tracker.apl) | متتبع المصروفات |
+| 28 | [`28-binary-search.apl`](../examples/28-binary-search.apl) | البحث الثنائي |
+| 29 | [`29-coin-change.apl`](../examples/29-coin-change.apl) | مشكلة تغيير العملات |
+| 30 | [`30-lru-cache-decorator.apl`](../examples/30-lru-cache-decorator.apl) | كاش LRU مع functools |
+| 31 | [`31-decorator-timer.apl`](../examples/31-decorator-timer.apl) | مزخرف قياس الأداء |
+| 32 | [`32-generator-pipeline.apl`](../examples/32-generator-pipeline.apl) | خط أنابيب بالمولدات |
+| 33 | [`33-comprehension-examples.apl`](../examples/33-comprehension-examples.apl) | القوائم فهم comprehensions |
+| 34 | [`34-args-parser-cli.apl`](../examples/34-args-parser-cli.apl) | محلل وسائط سطر الأوامر |
+| 35 | [`35-logging-setup.apl`](../examples/35-logging-setup.apl) | إعداد السجلات |
+| 36 | [`36-threading-tasks.apl`](../examples/36-threading-tasks.apl) | تنفيذ مهام متوازية |
+| 37 | [`37-csv-report.apl`](../examples/37-csv-report.apl) | قراءة وكتابة ملفات CSV |
+| 38 | [`38-hashlib-integrity.apl`](../examples/38-hashlib-integrity.apl) | التحقق من سلامة البيانات |
+| 39 | [`39-uuid-tokens.apl`](../examples/39-uuid-tokens.apl) | توليد معرفات فريدة |
+| 40 | [`40-latin-converter.apl`](../examples/40-latin-converter.apl) | تحويل بين الأرقام العربية والهندية |
+| 41 | [`41-word-frequency-top.apl`](../examples/41-word-frequency-top.apl) | أكثر الكلمات تكراراً |
+| 42 | [`42-geometry-shapes.apl`](../examples/42-geometry-shapes.apl) | أشكال هندسية |
+| 43 | [`43-parallel-processing.apl`](../examples/43-parallel-processing.apl) | المعالجة عبر map و filter |
+| 44 | [`44-tic-tac-toe.apl`](../examples/44-tic-tac-toe.apl) | لعبة tic-tac-toe |
+| 45 | [`45-simple-lexer.apl`](../examples/45-simple-lexer.apl) | محلّل نصوص بسيط |
+| 46 | [`46-simple-interpreter.apl`](../examples/46-simple-interpreter.apl) | مفسّر حسابات مبسّط |
+| 47 | [`47-simple-cache.apl`](../examples/47-simple-cache.apl) | كاش بسيط من الصفر |
+| 48 | [`48-text-analyzer-advanced.apl`](../examples/48-text-analyzer-advanced.apl) | تحليل نص متقدم |
+| 49 | [`49-validate-input.apl`](../examples/49-validate-input.apl) | التحقق من صحة المدخلات |
+| 50 | [`50-final-showcase.apl`](../examples/50-final-showcase.apl) | العرض النهائي (شامل) |
 
 **التشغيل:**
 ```bash
 python apl.py examples/01-calculator.apl
 ```
 
----
+**الاختبار:** `python test_examples.py`
 
 ## الميزات الجديدة (v1.8)
 
@@ -171,4 +211,4 @@ with open("file.txt") as f:
 
 إضافة إلى **167** عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط)، ما يجعل الإجمالي الكلي أكثر من **2,000** عنصر عربي في اللغة.
 
-**إجمالي المشروع: أكثر من 2,000 عنصر عربي** — 2,022 عنصراً في 40 مكتبة (دوال، خصائص، ثوابت، معاملات عربية) + 168 عنصراً في اللغة الأساسية (`core/apl_runner/patterns.py`: كلمات مفتاحية، أنواع، ثوابت، أنماط) = **2,190 عنصراً**.
+**إجمالي المشروع: أكثر من 2,000 عنصر عربي** — 2,093 عنصراً في 40 مكتبة (دوال، خصائص، ثوابت، معاملات عربية) + 168 عنصراً في اللغة الأساسية (`core/apl_runner/patterns.py`) = **2,261 عنصراً**، مع **50 مثالاً جاهزاً** في `examples/`.

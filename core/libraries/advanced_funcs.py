@@ -133,3 +133,89 @@ ADVANCED_HELP = [
 IMPORT_NAME = "advanced"
 IMPORT_CHECK = "(functools|multiprocessing|concurrent|typing|heapq|bisect|weakref)"
 IMPORT_STATEMENT = "import functools, multiprocessing, concurrent.futures, typing, heapq, bisect, weakref"
+
+# --- methods for built-in containers (list / dict / set / str) -------------
+ADVANCED_ORD_FUNCS = {
+    "ترميز_حرف": "ord",
+    "فك_ترميز_حرف": "chr",
+}
+
+# Standalone functional helpers (the plain Python builtins)
+ADVANCED_BUILTIN_FUNCS = {
+    "قائمة": "list",
+    "طقم": "tuple",
+    "مجموعة_فريدة": "set",
+    "قاموس_فاضي": "dict",
+    "فلترة_قائمة": "filter",
+    "تحويل_قائمة": "map",
+    "مصفوفة_من": "array.array",
+    "نطاق_أرقام": "range",
+    "مجموع_مجمّع": "sum",
+    "أقصى_قيمة": "max",
+    "أدنى_قيمة": "min",
+    "عدد_عناصر": "len",
+    "مقلوب": "reversed",
+    "مفاتيح_من": "dict",
+    "فرز_قائمة": "sorted",
+    "استدعاء_الأب": "_apl_super_init",
+}
+
+ADVANCED_STR_FUNCS = {
+    "دالة_تقسيم": "str.split",
+    "دالة_دمج": "str.join",
+}
+
+ADVANCED_METHODS = {
+    # list
+    "ألحق": "append",
+    "ضيف_في_آخر": "append",
+    "أدرج_في": "insert",
+    "وسّع": "extend",
+    "أخرج_آخر": "pop",
+    "أخرج": "remove",
+    "امسح_قائمة": "clear",
+    "انسخ_قائمة": "copy",
+    "اعكس": "reverse",
+    "رتّب": "sort",
+    "رتب_قائمة": "sort",
+    "عدد_تكرارات": "count",
+    "فهرس_أول": "index",
+    # dict
+    "مفاتيح_القاموس": "keys",
+    "قيم_القاموس": "values",
+    "عناصر": "items",
+    "خذ_بمفتاح": "get",
+    "احذف_مفتاح": "popitem",
+    "حدّث_قاموس": "update",
+    # str extras
+    "إزالة_المسافات": "strip",
+    "إزالة_المسافات_البداية": "lstrip",
+    "إزالة_المسافات_النهاية": "rstrip",
+    "انقسام_حسب_طول": "splitlines",
+    "يبدأ_مع": "startswith",
+    "ينتهي_مع": "endswith",
+    "انشقاق": "split",
+    "دمج_مع": "join",
+    "انشقاق_حسب": "split",
+    "تقسيم_حسب": "split",
+    "قسم_حسب": "split",
+    "تكرار_مع": "join",
+    "محاذاة_يمين": "rjust",
+    "محاذاة_يسار": "ljust",
+    "توسيط": "center",
+    "عناوين": "title",
+    "تبديل_حالة": "swapcase",
+    "is_رقم": "isdigit",
+    "is_حرف": "isalpha",
+    "is_مسافة": "isspace",
+    "is_كبير": "isupper",
+    "is_صغير": "islower",
+    # set
+    "اتحاد": "union",
+    "تقاطع": "intersection",
+    "فرق": "difference",
+    "مجموعة_فرعية": "issubset",
+}
+
+ADVANCED_METHOD_PATTERN = r"\.(" + "|".join(
+    sorted(ADVANCED_METHODS.keys(), key=len, reverse=True)) + r")\s*\("

@@ -114,6 +114,17 @@ LOGGING_FUNCS = {
     "كل_المسجلات": "logging.Logger.manager",
 }
 
+LOGGING_VERBS = {
+    "سجل_تصحيح": "logging.debug",
+    "سجل_معلومات": "logging.info",
+    "سجل_تحذير": "logging.warning",
+    "سجل_خطأ": "logging.error",
+    "سجل_حرج": "logging.critical",
+    "سجل_استثناء": "logging.exception",
+    "سجل_تهيئة": "logging.basicConfig",
+    "سجل_مستوى": "logging.getLogger",
+}
+
 LOGGING_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(LOGGING_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 LOGGING_HELP = [

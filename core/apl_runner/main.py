@@ -288,6 +288,51 @@ def _apl_operator_any(iterable): return builtins.any(iterable)
 def _apl_operator_invert(n): return ~n
 def _apl_operator_pow(a, b): return a ** b
 
+def _apl_json_load_file(path, encoding="utf-8"):
+    import json as _j
+    with open(path, "r", encoding=encoding) as f:
+        return _j.load(f)
+
+def _apl_json_dump_file(obj, path, encoding="utf-8", indent=2):
+    import json as _j
+    with open(path, "w", encoding=encoding) as f:
+        return _j.dump(obj, f, ensure_ascii=False, indent=indent)
+
+def _apl_ap_add_argument(parser, *args, **kwargs):
+    return parser.add_argument(*args, **kwargs)
+
+def _apl_ap_add_argument_group(parser, *args, **kwargs):
+    return parser.add_argument_group(*args, **kwargs)
+
+def _apl_ap_parse_args(parser, args=None, namespace=None):
+    return parser.parse_args(args, namespace)
+
+def _apl_ap_parse_known_args(parser, args=None, namespace=None):
+    return parser.parse_known_args(args, namespace)
+
+def _apl_ap_format_help(parser):
+    return parser.format_help()
+
+def _apl_ap_print_help(parser):
+    return parser.print_help()
+
+def _apl_ap_parser_copy(parser):
+    return parser
+
+def _apl_super_init(*args, **kwargs):
+    # استدعاء_الأب(صنف_الأب, ذات, ...) invokes the parent's __init__ directly.
+    # A plain super() cannot be used here: the zero-argument form needs the
+    # __class__ closure cell, which is only available inside a class body.
+    if args and isinstance(args[0], type) and len(args) > 1 and not isinstance(args[1], type):
+        صنف_الأب, rest = args[0], args[2:]
+    elif len(args) > 1 and isinstance(args[1], type):
+        صنف_الأب, rest = args[1], args[2:]
+    else:
+        صنف_الأب, rest = None, args[1:] if args else ()
+    if صنف_الأب is None:
+        return object.__init__(args[0]) if args else None
+    return صنف_الأب.__init__(args[1] if len(args) > 1 and args[0] is صنف_الأب else args[0], *rest, **kwargs)
+
 def _apl_path_exists(p):
     return pathlib.Path(p).exists()
 

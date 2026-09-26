@@ -75,7 +75,9 @@ def transpile_line(line: str) -> str:
 
     if stripped.startswith("اطبع"):
         rest = _inline_replace(stripped[4:].strip())
-        return f"{indent}print({rest[1:-1] if rest.startswith('(') else rest})"
+        if rest.startswith("(") and rest.endswith(")"):
+            rest = rest[1:-1]
+        return f"{indent}print({rest})"
 
     if stripped.startswith("الا لو"):
         return f"{indent}elif {_inline_replace(stripped[6:].strip())}"
@@ -160,6 +162,13 @@ def transpile_line(line: str) -> str:
         if not rest or rest.startswith("("):
             # nameless "دالة(...)" is not a valid definition
             return f"{indent}pass"
+        # constructor:  دالة_إنشاء(ذات, ...)  ->  def __init__(self, ...)
+        if rest.startswith("دالة_إنشاء(") or rest.startswith("دالة إنشاء("):
+            body = rest[rest.index("(") + 1:rest.rindex(")")]
+            params = body.strip()
+            if not params.startswith("ذات") and not params.startswith("self"):
+                params = ("ذات, " + params) if params else "ذات"
+            return f"{indent}def __init__({params}):"
         # Translate type hints in function signature
         for arabic_type, english_type in _TYPE_NAMES.items():
             rest = re.sub(rf':\s*{arabic_type}(?=[^\w])', f': {english_type}', rest)
@@ -213,17 +222,19 @@ def transpile_line(line: str) -> str:
 
     if stripped.startswith("حالة"):
         return f"{indent}match {stripped[len('حالة'):].strip()}"
-    if stripped.startswith("قيمة"):
-        rest = _inline_replace(stripped[5:].strip())
-        if not rest or rest == ":":
-            return f"{indent}case:"
+    # match/case: "قيمة <pattern>:"  -- must be followed by space/colon, never "="
+    _apl_case = re.match(r"^قيمة(?:\s+(.*))?\s*:\s*$", stripped)
+    if _apl_case or stripped.rstrip() == "قيمة:":
+        rest = _inline_replace((_apl_case.group(1) if _apl_case else "").strip())
+        if not rest:
+            return f"{indent}case _:"
         # Support guard clauses: "قيمة ن لو ن > 0:" → "case ن if ن > 0:"
         if "لو" in rest:
             parts = rest.split("لو", 1)
             pattern = parts[0].strip()
             guard = parts[1].strip().rstrip(":")
             return f"{indent}case {pattern} if {guard}:"
-        return f"{indent}case {rest}"
+        return f"{indent}case {rest}:"
     if stripped.startswith("افتراضي"):
         return f"{indent}case _:{stripped[9:]}"
 

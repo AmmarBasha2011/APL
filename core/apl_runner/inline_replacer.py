@@ -72,6 +72,7 @@ def _inline_replace(text: str) -> str:
     text = re.compile(base64_funcs.BASE64_PATTERN).sub(lambda m: f"{base64_funcs.BASE64_FUNCS[m.group(1)]}(", text)
     text = re.compile(urllib_funcs.URLLIB_PATTERN).sub(lambda m: f"{urllib_funcs.URLLIB_FUNCS[m.group(1)]}(", text)
     text = re.compile(functools_funcs.FUNCTOOLS_PATTERN).sub(lambda m: f"{functools_funcs.FUNCTOOLS_FUNCS[m.group(1)]}(", text)
+    text = re.compile(math_funcs.MATH_CONSTANT_PATTERN).sub(lambda m: math_funcs.MATH_CONSTANTS[m.group(1)], text)
     text = re.compile(math_funcs.MATH_PATTERN).sub(lambda m: f"{math_funcs.MATH_FUNCS[m.group(1)]}(", text)
     text = re.compile(random_funcs.RANDOM_PATTERN).sub(lambda m: f"{random_funcs.RANDOM_FUNCS[m.group(1)]}(", text)
     text = re.compile(time_funcs.TIME_PATTERN).sub(lambda m: f"{time_funcs.TIME_FUNCS[m.group(1)]}(", text)
@@ -94,11 +95,17 @@ def _inline_replace(text: str) -> str:
     text = re.compile(threading_funcs.THREADING_PATTERN).sub(lambda m: f"{threading_funcs.THREADING_FUNCS[m.group(1)]}(", text)
     text = re.compile(unittest_funcs.UNITTEST_PATTERN).sub(lambda m: f"{unittest_funcs.UNITTEST_FUNCS[m.group(1)]}(", text)
     text = re.compile(csv_funcs.CSV_PATTERN).sub(lambda m: f"{csv_funcs.CSV_FUNCS[m.group(1)]}(", text)
+    text = re.compile(r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(logging_funcs.LOGGING_VERBS, key=len, reverse=True)) + r")\s*\(").sub(lambda m: logging_funcs.LOGGING_VERBS[m.group(1)] + "(", text)
     text = re.compile(logging_funcs.LOGGING_PATTERN).sub(lambda m: f"{logging_funcs.LOGGING_FUNCS[m.group(1)]}(", text)
+    text = re.compile(r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(argparse_funcs.ARGPARSE_STANDALONE, key=len, reverse=True)) + r")\s*\(").sub(lambda m: argparse_funcs.ARGPARSE_STANDALONE[m.group(1)] + "(", text)
     text = re.compile(argparse_funcs.ARGPARSE_PATTERN).sub(lambda m: f"{argparse_funcs.ARGPARSE_FUNCS[m.group(1)]}(", text)
     text = re.compile(subprocess_funcs.SUBPROCESS_PATTERN).sub(lambda m: f"{subprocess_funcs.SUBPROCESS_FUNCS[m.group(1)]}(", text)
     text = re.compile(configparser_funcs.CONFIGPARSER_PATTERN).sub(lambda m: f"{configparser_funcs.CONFIGPARSER_FUNCS[m.group(1)]}(", text)
     text = re.compile(dataclasses_funcs.DATACLASSES_PATTERN).sub(lambda m: f"{dataclasses_funcs.DATACLASSES_FUNCS[m.group(1)]}(", text)
+    text = re.compile(r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(advanced_funcs.ADVANCED_ORD_FUNCS, key=len, reverse=True)) + r")\s*\(").sub(lambda m: advanced_funcs.ADVANCED_ORD_FUNCS[m.group(1)] + "(", text)
+    text = re.compile(r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(advanced_funcs.ADVANCED_BUILTIN_FUNCS, key=len, reverse=True)) + r")\s*\(").sub(lambda m: advanced_funcs.ADVANCED_BUILTIN_FUNCS[m.group(1)] + "(", text)
+    text = re.compile(r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(advanced_funcs.ADVANCED_STR_FUNCS, key=len, reverse=True)) + r")\s*\(").sub(lambda m: advanced_funcs.ADVANCED_STR_FUNCS[m.group(1)] + "(", text)
+    text = re.compile(advanced_funcs.ADVANCED_METHOD_PATTERN).sub(lambda m: f".{advanced_funcs.ADVANCED_METHODS[m.group(1)]}(", text)
     text = re.compile(advanced_funcs.ADVANCED_PATTERN).sub(lambda m: f"{advanced_funcs.ADVANCED_FUNCS[m.group(1)]}(", text)
     
     text = re.compile(datetime_funcs.DATETIME_CONSTANT_PATTERN).sub(lambda m: datetime_funcs.DATETIME_CONSTANTS[m.group(1)], text)
@@ -118,6 +125,47 @@ def _inline_replace(text: str) -> str:
     text = re.compile(getpass_funcs.GETPASS_PATTERN).sub(lambda m: f"{getpass_funcs.GETPASS_FUNCS[m.group(1)]}(", text)
     text = re.compile(operator_funcs.OPERATOR_PATTERN).sub(lambda m: f"{operator_funcs.OPERATOR_FUNCS[m.group(1)]}(", text)
     text = re.compile(pprint_funcs.PPRINT_PATTERN).sub(lambda m: f"{pprint_funcs.PPRINT_FUNCS[m.group(1)]}(", text)
+
+    # --- f-string interpolation: translate expressions inside {...} ---
+    _APL_FSTR_RE = re.compile(r'(?P<pre>[fF])"[^"\\]*(?:\\.[^"\\]*)*"')
+
+    def _apl_fstr_sub(_m):
+        whole = _m.group(0)
+        body = whole[2:-1]          # drop the f and the quotes
+        out = []
+        buf = ""
+        depth = 0
+        for ch in body:
+            if ch == "{":
+                if depth == 0:
+                    out.append(("lit", buf))
+                    buf = ""
+                else:
+                    buf += ch
+                depth += 1
+            elif ch == "}":
+                depth -= 1
+                if depth == 0:
+                    out.append(("expr", buf))
+                    buf = ""
+                else:
+                    buf += ch
+            else:
+                buf += ch
+        out.append(("lit", buf))
+        pieces = []
+        for kind, val in out:
+            if kind == "lit" or not val:
+                pieces.append(val)
+                continue
+            m_spec = re.match(r"^(.*?)(:[^{}]*)?$", val, re.S)
+            e = m_spec.group(1)
+            spec = m_spec.group(2) or ""
+            pieces.append("{" + _inline_replace(e) + spec + "}")
+        return whole[0] + '"' + "".join(pieces) + '"'
+
+    text = _APL_FSTR_RE.sub(_apl_fstr_sub, text)
+    if 'f"' in text and 'مقرب' in text: print('FSTR-PASS-RAN', file=__import__('sys').stderr)
 
     # Library-specific keyword arguments (e.g. timedelta(days=3))
     for _kmap in (DATETIME_KWARGS, PATHLIB_KWARGS):
@@ -152,6 +200,44 @@ def _inline_replace(text: str) -> str:
     text = re.sub(r"(.+?)\sإذا\s(.+?)\sوالا\s(.+)", r"\1 if \2 else \3", text)
 
 
+    # Translate expressions inside f-string interpolations: f"...{expr}..."
+    def _apl_translate_fstring(_s):
+        if not _s or _s[0] not in "fF":
+            return _s
+        quote = _s[1]
+        body = _s[2:-1]
+        out = []
+        buf = ""
+        depth = 0
+        for ch in body:
+            if ch == "{":
+                if depth == 0:
+                    out.append(("lit", buf))
+                    buf = ""
+                else:
+                    buf += ch
+                depth += 1
+            elif ch == "}":
+                depth -= 1
+                if depth == 0:
+                    out.append(("expr", buf))
+                    buf = ""
+                else:
+                    buf += ch
+            else:
+                buf += ch
+        out.append(("lit", buf))
+        pieces = []
+        for kind, val in out:
+            if kind == "lit" or not val:
+                pieces.append(val)
+                continue
+            m_spec = re.match(r"^(.*?)(:[^{}]*)?$", val, re.S)
+            e = _inline_replace(m_spec.group(1))
+            pieces.append("{" + e + (m_spec.group(2) or "") + "}")
+        return _s[0] + quote + "".join(pieces) + quote
+
     for idx in sorted(strings.keys(), reverse=True):
-        text = text.replace(f"\x00APL{idx}\x00", strings[idx])
+        raw = strings[idx]
+        text = text.replace(f"\x00APL{idx}\x00", _apl_translate_fstring(raw))
     return text

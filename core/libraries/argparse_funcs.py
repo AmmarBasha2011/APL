@@ -130,6 +130,18 @@ ARGPARSE_FUNCS = {
     "FILE": "argparse.FileType",
 }
 
+# Standalone helpers: take the parser as the first argument
+ARGPARSE_STANDALONE = {
+    "محلل_أضف_حجة": "_apl_ap_add_argument",
+    "محلل_أضف_قيمة": "_apl_ap_add_argument",
+    "محلل_أضف_مجموعة": "_apl_ap_add_argument_group",
+    "محلل_حلل": "_apl_ap_parse_args",
+    "محلل_حلل_معروف": "_apl_ap_parse_known_args",
+    "محلل_مساعدة": "_apl_ap_format_help",
+    "محلل_اطبع_مساعدة": "_apl_ap_print_help",
+    "محلل_نسخ": "_apl_ap_parser_copy",
+}
+
 ARGPARSE_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(ARGPARSE_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 ARGPARSE_HELP = [

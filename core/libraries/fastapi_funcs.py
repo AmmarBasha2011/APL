@@ -375,7 +375,7 @@ FASTAPI_FUNCS = {
     
     # المراقبة (Monitoring)
     "سجل": "log",
-    "سجل_خطأ": "log_error",
+    "سجل_خطأ_سريع": "log_error",
     "سجل_طلب": "log_request",
     "سجل_استجابة": "log_response",
     "تتبع": "trace",

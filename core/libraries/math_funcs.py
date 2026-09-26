@@ -40,6 +40,15 @@ MATH_FUNCS = {
     "جاما": "math.gamma", "لوغاريتم_جاما": "math.lgamma",
 }
 
+MATH_CONSTANTS = {
+    "طا": "math.pi",
+    "ي": "math.e",
+    "تان": "math.tau",
+    "لانه��ي": "math.inf",
+}
+
+MATH_CONSTANT_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(MATH_CONSTANTS.keys(), key=len, reverse=True)) + r")(?![\w\u0600-\u06FF])"
+
 MATH_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(MATH_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI

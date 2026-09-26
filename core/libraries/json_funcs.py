@@ -21,6 +21,8 @@ JSON_FUNCS = {
     # ملفات (Files)
     "من_ملف_جسون": "json.load",
     "لملف_جسون": "json.dump",
+    "اقرأ_ملف_جسون": "_apl_json_load_file",
+    "اكتب_ملف_جسون": "_apl_json_dump_file",
 }
 
 JSON_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(JSON_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
