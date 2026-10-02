@@ -15,3 +15,6 @@ env/
 .DS_Store
 Thumbs.db
 *.log
+
+# Locally generated benchmark reports
+benchmarks/*-results.json
