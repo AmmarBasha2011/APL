@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09111f">
+  <meta name="description" content="تقرير عربي قابل لإعادة التشغيل لمقارنة أداء APL وPython على مليون دورة حسابية.">
+  <title>تقرير الأداء — APL مقابل Python</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #09111f;
+      --surface: #101c2c;
+      --surface-raised: #142338;
+      --surface-soft: #0d1929;
+      --line: rgba(177, 203, 230, .13);
+      --text: #edf5ff;
+      --muted: #a2b3c8;
+      --subtle: #7588a0;
+      --teal: #54e0c1;
+      --blue: #7eb8ff;
+      --amber: #ffc66d;
+      --red: #ff8d8d;
+      --green: #75e2a1;
+      --shadow: 0 24px 80px rgba(0, 0, 0, .26);
+      --radius: 22px;
+      --code: #091521;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        radial-gradient(ellipse at 88% -5%, rgba(65, 133, 189, .19), transparent 34rem),
+        radial-gradient(ellipse at 4% 34%, rgba(39, 186, 154, .09), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      font-family: "Noto Sans Arabic", "Noto Naskh Arabic", Tahoma, Arial, system-ui, sans-serif;
+      line-height: 1.75;
+    }
+
+    body.light {
+      color-scheme: light;
+      --bg: #f2f6fb;
+      --surface: #ffffff;
+      --surface-raised: #f7faff;
+      --surface-soft: #edf3f9;
+      --line: rgba(33, 57, 83, .13);
+      --text: #102237;
+      --muted: #4d6178;
+      --subtle: #6c7d90;
+      --teal: #087e6d;
+      --blue: #286eb4;
+      --amber: #98600a;
+      --red: #a83f46;
+      --green: #157744;
+      --shadow: 0 24px 70px rgba(27, 49, 74, .10);
+      --code: #f0f5fa;
+      background:
+        radial-gradient(ellipse at 88% -5%, rgba(65, 133, 189, .10), transparent 34rem),
+        radial-gradient(ellipse at 4% 34%, rgba(39, 186, 154, .07), transparent 30rem),
+        var(--bg);
+    }
+
+    button, input { font: inherit; }
+    button { color: inherit; }
+    a { color: inherit; }
+    .shell { width: min(1160px, calc(100% - 36px)); margin-inline: auto; }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-block: 22px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -.02em; }
+    .brand-mark {
+      display: grid; place-items: center; width: 42px; height: 42px; border-radius: 14px;
+      color: #071521; background: linear-gradient(140deg, var(--teal), #98f0c8); font-size: 1rem;
+      box-shadow: 0 8px 28px rgba(84, 224, 193, .2);
+    }
+    .brand small { display: block; color: var(--muted); font-size: .72rem; font-weight: 500; }
+    .toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 40px; padding: 8px 13px; border: 1px solid var(--line); border-radius: 12px;
+      background: var(--surface); color: var(--text); cursor: pointer; transition: .18s ease;
+      font-size: .84rem; font-weight: 700;
+    }
+    .button:hover { border-color: rgba(84, 224, 193, .55); transform: translateY(-1px); }
+    .button.primary { border-color: transparent; background: var(--teal); color: #071521; }
+    .button:focus-visible, a:focus-visible, summary:focus-visible, .tab:focus-visible {
+      outline: 3px solid var(--amber); outline-offset: 3px;
+    }
+    .hero { padding: 48px 0 29px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px; padding: 6px 11px;
+      border: 1px solid rgba(84, 224, 193, .25); border-radius: 999px;
+      color: var(--teal); background: rgba(84, 224, 193, .07); font-size: .78rem; font-weight: 800;
+    }
+    .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 4px rgba(84, 224, 193, .12); }
+    h1 { margin: 18px 0 13px; max-width: 850px; font-size: clamp(2.05rem, 5.4vw, 4.2rem); line-height: 1.23; letter-spacing: -.055em; }
+    .hero p { max-width: 790px; margin: 0; color: var(--muted); font-size: clamp(.98rem, 2vw, 1.13rem); }
+    .hero-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; margin-top: 21px; color: var(--subtle); font-size: .79rem; }
+    .pill { padding: 4px 9px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.025); }
+
+    .verdict {
+      position: relative; overflow: hidden; display: grid; grid-template-columns: auto 1fr; gap: 17px;
+      align-items: start; margin-block: 20px 18px; padding: 23px 24px;
+      border: 1px solid rgba(84, 224, 193, .25); border-radius: var(--radius);
+      background: linear-gradient(118deg, rgba(84,224,193,.11), rgba(126,184,255,.055) 67%, var(--surface));
+      box-shadow: var(--shadow);
+    }
+    .verdict::after { content: ""; position: absolute; width: 180px; height: 180px; inset: -95px auto auto -45px; border: 1px solid rgba(84,224,193,.12); border-radius: 50%; box-shadow: 0 0 0 24px rgba(84,224,193,.035), 0 0 0 48px rgba(84,224,193,.025); }
+    .verdict-icon { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 14px; color: var(--teal); background: rgba(84,224,193,.12); font-size: 1.3rem; font-weight: 900; }
+    .verdict h2 { margin: 0 0 3px; font-size: 1.08rem; }
+    .verdict p { margin: 0; color: var(--muted); font-size: .91rem; }
+    .verdict strong { color: var(--text); }
+
+    .metric-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-block: 16px 38px; }
+    .metric {
+      min-height: 132px; padding: 17px; border: 1px solid var(--line); border-radius: 18px;
+      background: linear-gradient(150deg, var(--surface-raised), var(--surface));
+    }
+    .metric-label { color: var(--muted); font-size: .8rem; }
+    .metric-value { display: block; margin-top: 8px; font-size: clamp(1.28rem, 2.6vw, 1.82rem); font-weight: 850; letter-spacing: -.035em; line-height: 1.25; }
+    .metric-note { display: block; margin-top: 7px; color: var(--subtle); font-size: .73rem; }
+    .metric.apl .metric-value { color: var(--teal); }
+    .metric.python .metric-value { color: var(--blue); }
+    .metric.check .metric-value { color: var(--green); }
+
+    .section { scroll-margin-top: 20px; margin-block: 34px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 15px; }
+    .section-kicker { color: var(--teal); font-size: .76rem; font-weight: 850; }
+    h2.section-title { margin: 3px 0 0; font-size: clamp(1.35rem, 3vw, 1.9rem); line-height: 1.35; letter-spacing: -.03em; }
+    .section-sub { margin: 6px 0 0; color: var(--muted); font-size: .9rem; }
+    .section-badge { white-space: nowrap; padding: 5px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: .77rem; }
+    .panel { padding: clamp(17px, 3vw, 25px); border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: 0 12px 45px rgba(0,0,0,.08); }
+    .panel + .panel { margin-top: 14px; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .chart-list { display: grid; gap: 19px; }
+    .chart-row { display: grid; gap: 7px; }
+    .chart-label-line { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: .89rem; }
+    .chart-name { font-weight: 750; }
+    .chart-value { color: var(--muted); white-space: nowrap; font-size: .82rem; }
+    .bar-track { height: 13px; overflow: hidden; border-radius: 99px; background: var(--surface-soft); direction: ltr; }
+    .bar-fill { display: block; height: 100%; min-width: 3px; border-radius: inherit; transition: width .55s cubic-bezier(.2,.8,.2,1); }
+    .bar-fill.apl { background: linear-gradient(90deg, #32bfa8, var(--teal)); }
+    .bar-fill.python { background: linear-gradient(90deg, #4e8fd4, var(--blue)); }
+    .bar-fill.cold { background: linear-gradient(90deg, #d68f3b, var(--amber)); }
+    .bar-fill.cached { background: linear-gradient(90deg, #3dbb9c, var(--teal)); }
+    .chart-foot { display: flex; align-items: center; gap: 14px; margin-top: 20px; color: var(--subtle); font-size: .75rem; }
+    .legend { display: inline-flex; align-items: center; gap: 6px; }
+    .legend i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--teal); }
+    .legend.python i { background: var(--blue); }
+    .legend.cold i { background: var(--amber); }
+    .callout { display: flex; gap: 12px; margin-top: 16px; padding: 13px 15px; border: 1px solid var(--line); border-radius: 14px; color: var(--muted); background: var(--surface-soft); font-size: .84rem; }
+    .callout-mark { flex: 0 0 auto; color: var(--amber); font-weight: 900; }
+    .callout strong { color: var(--text); }
+
+    .code-switch { display: inline-flex; gap: 5px; padding: 4px; border: 1px solid var(--line); border-radius: 13px; background: var(--surface-soft); }
+    .tab { padding: 7px 13px; border: 0; border-radius: 9px; color: var(--muted); background: transparent; cursor: pointer; font-size: .83rem; font-weight: 750; }
+    .tab[aria-selected="true"] { color: #081521; background: var(--teal); }
+    .code-wrap { overflow: hidden; margin-top: 14px; border: 1px solid var(--line); border-radius: 16px; background: var(--code); }
+    .code-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 9px 13px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: .75rem; }
+    .code-head .button { min-height: 31px; padding: 4px 9px; font-size: .75rem; }
+    pre { overflow: auto; margin: 0; padding: 18px; direction: ltr; text-align: left; tab-size: 4; color: var(--text); font: 500 .9rem/1.85 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    code { font-family: inherit; }
+    .code-note { margin: 10px 2px 0; color: var(--subtle); font-size: .8rem; }
+
+    .table-wrap { overflow: auto; border: 1px solid var(--line); border-radius: 14px; }
+    table { width: 100%; border-collapse: collapse; min-width: 650px; font-size: .83rem; }
+    th, td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: right; }
+    th { color: var(--muted); background: var(--surface-soft); font-size: .76rem; font-weight: 800; white-space: nowrap; }
+    td { color: var(--text); }
+    tbody tr:last-child td { border-bottom: 0; }
+    tbody tr:hover { background: rgba(126,184,255,.045); }
+    .numeric { direction: ltr; unicode-bidi: isolate; text-align: left; font-variant-numeric: tabular-nums; }
+    .table-caption { margin: 0 0 10px; color: var(--muted); font-size: .84rem; }
+    .table-stack { display: grid; gap: 15px; }
+    details { border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+    details + details { margin-top: 11px; }
+    summary { padding: 15px 18px; cursor: pointer; font-weight: 800; }
+    details[open] summary { border-bottom: 1px solid var(--line); }
+    .details-content { padding: 16px; }
+    .details-content p { color: var(--muted); margin: 0 0 12px; font-size: .84rem; }
+
+    .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .method-card { padding: 17px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+    .method-num { display: grid; place-items: center; width: 29px; height: 29px; margin-bottom: 10px; border-radius: 10px; color: var(--teal); background: rgba(84,224,193,.1); font-weight: 900; }
+    .method-card h3 { margin: 0 0 5px; font-size: .97rem; }
+    .method-card p { margin: 0; color: var(--muted); font-size: .82rem; }
+    .env-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 13px; }
+    .env-item { min-width: 0; padding: 12px 14px; border: 1px solid var(--line); border-radius: 13px; background: var(--surface-soft); }
+    .env-item span { display: block; color: var(--subtle); font-size: .72rem; }
+    .env-item strong { display: block; overflow-wrap: anywhere; margin-top: 3px; font-size: .84rem; }
+    .command {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px;
+      padding: 12px 14px; border: 1px solid var(--line); border-radius: 13px; background: var(--code);
+    }
+    .command code { direction: ltr; unicode-bidi: isolate; overflow-wrap: anywhere; text-align: left; font: .82rem/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .status { min-height: 24px; margin-top: 8px; color: var(--muted); font-size: .8rem; }
+    .ok { color: var(--green) !important; }
+    .error { color: var(--red) !important; }
+    .footnote { margin-block: 15px; color: var(--subtle); font-size: .78rem; }
+    footer { display: flex; justify-content: space-between; gap: 12px; margin-top: 45px; padding: 20px 0 32px; border-top: 1px solid var(--line); color: var(--subtle); font-size: .78rem; }
+    .hidden { display: none !important; }
+    .ltr { direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums; }
+
+    @media (max-width: 820px) {
+      .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .two-col { grid-template-columns: 1fr; }
+      .method-grid { grid-template-columns: 1fr; }
+      .env-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero { padding-top: 30px; }
+    }
+    @media (max-width: 560px) {
+      .shell { width: min(100% - 24px, 1160px); }
+      .topbar { align-items: flex-start; flex-direction: column; }
+      .toolbar { width: 100%; }
+      .toolbar .button { flex: 1 1 auto; }
+      .hero { padding-top: 22px; }
+      .metric { min-height: 118px; padding: 13px; }
+      .verdict { grid-template-columns: 1fr; gap: 10px; padding: 18px; }
+      .section-head { align-items: flex-start; flex-direction: column; }
+      .env-grid { grid-template-columns: 1fr; }
+      .command { align-items: flex-start; flex-direction: column; }
+      footer { flex-direction: column; }
+    }
+    @media print {
+      :root { color-scheme: light; --bg: #fff; --surface: #fff; --surface-raised: #fff; --surface-soft: #f4f6f8; --text: #111; --muted: #444; --subtle: #666; --line: #ddd; --code: #f4f6f8; }
+      body { background: #fff !important; }
+      .toolbar, .code-switch, .code-head .button, #upload-report, #theme-toggle, #download-json, #print-page, .no-print { display: none !important; }
+      .panel, .metric, .verdict { box-shadow: none; break-inside: avoid; }
+      details:not([open]) > :not(summary) { display: block !important; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand" aria-label="تقرير أداء APL">
+        <span class="brand-mark" aria-hidden="true">APL</span>
+        <span>مختبر الأداء<small>مقارنة APL مع Python</small></span>
+      </div>
+      <div class="toolbar" aria-label="أدوات التقرير">
+        <button class="button" id="upload-report" type="button">تحميل نتائج JSON</button>
+        <input id="report-file" class="hidden" type="file" accept="application/json,.json" aria-label="اختر ملف نتائج JSON">
+        <button class="button" id="download-json" type="button">تنزيل النتائج</button>
+        <button class="button" id="print-page" type="button">طباعة التقرير</button>
+        <button class="button" id="theme-toggle" type="button" aria-label="تبديل ألوان الصفحة">فاتح / داكن</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="overview">
+        <span class="eyebrow">اختبار قابل لإعادة التشغيل · دون مكتبات خارجية</span>
+        <h1>هل تضيف APL وقتاً إلى الحسابات؟</h1>
+        <p>قياس عملي للكود نفسه من حيث الخوارزمية: حلقة حسابية بمليون دورة، مكتوبة بالعربية في APL وبالإنجليزية في Python، مع فحص تطابق الناتج وقياس التنفيذ والتحضير وتشغيل الملف بالكامل.</p>
+        <div class="hero-meta">
+          <span class="pill">المشروع: APL — Ammar Programming Language</span>
+          <span class="pill">المحرك: <span id="implementation">—</span></span>
+          <span class="pill">وقت القياس: <span class="ltr" id="generated-at">—</span></span>
+        </div>
+      </section>
+
+      <section class="verdict" aria-live="polite">
+        <div class="verdict-icon" aria-hidden="true">≈</div>
+        <div>
+          <h2 id="verdict-title">جارٍ تحميل النتيجة…</h2>
+          <p id="verdict-copy"></p>
+        </div>
+      </section>
+
+      <section class="metric-grid" aria-label="ملخص القياس">
+        <article class="metric">
+          <span class="metric-label">حجم العينة</span>
+          <strong class="metric-value ltr" id="metric-iterations">—</strong>
+          <span class="metric-note">دورة حسابية في كل عينة</span>
+        </article>
+        <article class="metric apl">
+          <span class="metric-label">وسيط تنفيذ APL</span>
+          <strong class="metric-value ltr" id="metric-apl">—</strong>
+          <span class="metric-note">بعد الترجمة وتجهيز الدالة</span>
+        </article>
+        <article class="metric python">
+          <span class="metric-label">وسيط تنفيذ Python</span>
+          <strong class="metric-value ltr" id="metric-python">—</strong>
+          <span class="metric-note">الدالة الأصلية المترجمة مسبقاً</span>
+        </article>
+        <article class="metric check">
+          <span class="metric-label">التحقق من صحة المقارنة</span>
+          <strong class="metric-value" id="metric-check">—</strong>
+          <span class="metric-note" id="metric-check-note">—</span>
+        </article>
+      </section>
+
+      <section class="section" id="results">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">١ — زمن الحساب</span>
+            <h2 class="section-title">تنفيذ الحلقة بعد تجهيز الدالة</h2>
+            <p class="section-sub">نقيس استدعاء الدالة فقط؛ ترجمة APL وتحضير Python خارج هذا التوقيت.</p>
+          </div>
+          <span class="section-badge" id="execution-runs">—</span>
+        </div>
+        <div class="panel">
+          <div class="chart-list" id="execution-chart" aria-label="مقارنة زمن تنفيذ الحلقة"></div>
+          <div class="chart-foot">
+            <span class="legend"><i></i> APL</span>
+            <span class="legend python"><i></i> Python</span>
+            <span>الأقصر زمناً هو الأسرع</span>
+          </div>
+          <div class="callout"><span class="callout-mark">مهم</span><span>APL في هذا المشروع <strong>محوّل من العربية إلى Python</strong>، وليس مفسّراً مستقلاً أو مترجماً إلى آلة. لذلك تعمل الحلقة في CPython في الحالتين؛ لا يُتوقع من صياغة APL وحدها تسريع الحساب.</span></div>
+        </div>
+      </section>
+
+      <section class="section" id="setup">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">٢ — كلفة التحضير</span>
+            <h2 class="section-title">الترجمة والتحويل قبل التنفيذ</h2>
+            <p class="section-sub">في APL: تحويل المصدر العربي ثم تجهيز كود Python؛ وفي Python: تجهيز الشيفرة الأصلية فقط. هذه عينة لمحرك دافئ.</p>
+          </div>
+          <span class="section-badge" id="setup-runs">—</span>
+        </div>
+        <div class="panel">
+          <div class="chart-list" id="setup-chart" aria-label="مقارنة زمن ترجمة وتحضير الشيفرة"></div>
+          <div class="chart-foot">
+            <span class="legend"><i></i> ترجمة APL وتجهيز كودها</span>
+            <span class="legend python"><i></i> تجهيز Python فقط</span>
+          </div>
+          <p class="footnote" id="setup-fact"></p>
+          <p class="footnote">لا تخلط هذا القياس مع زمن الحساب: الترجمة كلفة إعداد تُدفع قبل تشغيل البرنامج، ويمكن لذاكرة APL المخبأة أن تتجاوزها في التشغيلات اللاحقة.</p>
+        </div>
+      </section>
+
+      <section class="section" id="process">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">٣ — تجربة المستخدم الكاملة</span>
+            <h2 class="section-title">تشغيل الملف من سطر الأوامر</h2>
+            <p class="section-sub">يشمل بدء العملية وقراءة الملف وتحميل المحرك والتنفيذ. أُعيد تشغيل كل وضع عدة مرات.</p>
+          </div>
+          <span class="section-badge" id="process-runs">—</span>
+        </div>
+        <div class="panel">
+          <div class="chart-list" id="process-chart" aria-label="مقارنة زمن التشغيل الكامل للملفات"></div>
+          <div class="chart-foot">
+            <span class="legend"><i></i> APL بذاكرة ترجمة دافئة</span>
+            <span class="legend cold"><i></i> APL بلا ذاكرة ترجمة</span>
+            <span class="legend python"><i></i> Python</span>
+          </div>
+          <p class="footnote" id="process-fact"></p>
+          <div class="callout"><span class="callout-mark">تفسير</span><span>هذا القياس يضم كلفة بدء محرك APL، وهي أوضح نسبياً في البرامج القصيرة. «دافئ» يعني أن ترجمة المصدر محفوظة في ذاكرة المشروع؛ «بلا ذاكرة» يشغّل APL مع <code dir="ltr">APL_NO_CACHE=1</code>. كلاهما ينفّذ الخوارزمية نفسها ويتحقق من الناتج.</span></div>
+        </div>
+      </section>
+
+      <section class="section" id="code">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">٤ — الشيفرة المختبرة</span>
+            <h2 class="section-title">العمل نفسه بلغتين</h2>
+            <p class="section-sub">تجمع الحلقة باقي مربع كل عدد عند قسمته على ٩٧، ثم تجمع القيم الناتجة.</p>
+          </div>
+          <div class="code-switch" role="tablist" aria-label="اختيار لغة الشيفرة">
+            <button class="tab" id="tab-apl" type="button" role="tab" aria-selected="true" aria-controls="code-panel">APL بالعربية</button>
+            <button class="tab" id="tab-python" type="button" role="tab" aria-selected="false" aria-controls="code-panel">Python</button>
+          </div>
+        </div>
+        <div class="code-wrap" id="code-panel" role="tabpanel" aria-labelledby="tab-apl">
+          <div class="code-head"><span id="code-language">ملف الاختبار: workload.apl</span><button class="button" id="copy-code" type="button">نسخ الشيفرة</button></div>
+          <pre><code id="code-content"></code></pre>
+        </div>
+        <p class="code-note">تُفصل كلفة الترجمة عن كلفة الحلقة في جدول النتائج؛ كما يقيس اختبار سطر الأوامر كليهما معاً.</p>
+      </section>
+
+      <section class="section" id="statistics">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">٥ — الأرقام التفصيلية</span>
+            <h2 class="section-title">ملخص العينات</h2>
+            <p class="section-sub">الأزمنة بالميلي ثانية. الوسيط أقل تأثراً بالقفزات العابرة من المتوسط.</p>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">المرحلة</th><th scope="col">الوسيط</th><th scope="col">المتوسط</th><th scope="col">المئين ٩٥</th><th scope="col">الأدنى</th><th scope="col">الأعلى</th><th scope="col">الانحراف المعياري</th></tr></thead>
+              <tbody id="summary-table"></tbody>
+            </table>
+          </div>
+          <p class="footnote">المئين ٩٥ يعني أن ٩٥٪ من العينات لا تتجاوز هذه القيمة. جميع المقارنات أُجريت على الجهاز نفسه وبإصدار Python نفسه.</p>
+        </div>
+      </section>
+
+      <section class="section" id="method">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">٦ — كيف أُجري الاختبار؟</span>
+            <h2 class="section-title">المنهجية والبيئة</h2>
+          </div>
+        </div>
+        <div class="method-grid">
+          <article class="method-card"><span class="method-num">١</span><h3>مهمة ثابتة</h3><p>كل عينة تنفّذ حلقة بعدد الدورات المحدد وتنتج مجموع تحقق واحداً. لا ملفات إدخال أو شبكة أو مكتبات طرف ثالث.</p></article>
+          <article class="method-card"><span class="method-num">٢</span><h3>تسخين وترتيب متبادل</h3><p>تُنفّذ عينات إحماء، ثم يُخلط ترتيب قياس APL وPython ببذرة ثابتة لتقليل أثر ترتيب التشغيل.</p></article>
+          <article class="method-card"><span class="method-num">٣</span><h3>فصل المقاييس</h3><p>قياس التنفيذ يستثني الترجمة؛ وقياس التحضير يقارن تحويل APL بتجهيز شيفرة Python؛ وقياس العملية الكاملة يشمل الإقلاع والذاكرة المؤقتة.</p></article>
+        </div>
+        <div class="panel" style="margin-top:14px">
+          <h3 style="margin:0 0 9px;font-size:1rem">بيئة القياس</h3>
+          <div class="env-grid">
+            <div class="env-item"><span>إصدار Python</span><strong id="env-python">—</strong></div>
+            <div class="env-item"><span>نظام التشغيل</span><strong id="env-os">—</strong></div>
+            <div class="env-item"><span>المعالج</span><strong id="env-cpu">—</strong></div>
+            <div class="env-item"><span>المعالجات المنطقية</span><strong class="ltr" id="env-cores">—</strong></div>
+            <div class="env-item"><span>عينات التنفيذ لكل لغة</span><strong class="ltr" id="env-runs">—</strong></div>
+            <div class="env-item"><span>دورات كل عينة</span><strong class="ltr" id="env-iterations">—</strong></div>
+          </div>
+          <div class="callout"><span class="callout-mark">حدود المقارنة</span><span>النتائج تخص هذا الحمل وهذا الجهاز وإصدار CPython؛ لا تثبت أن لغة أسرع عموماً. اختلاف المعالج والطاقة والعمليات الخلفية ونسخة المشروع قد يغيّر الأرقام. راجع ملف JSON للحصول على كل العينات الخام.</span></div>
+        </div>
+      </section>
+
+      <section class="section" id="rerun">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">٧ — أعد التجربة بنفسك</span>
+            <h2 class="section-title">تشغيل القياس محلياً</h2>
+            <p class="section-sub">نفّذ الأمر من مجلد المشروع؛ يستخدم البرنامج Python القياسي فقط.</p>
+          </div>
+        </div>
+        <div class="panel">
+          <p style="margin:0;color:var(--muted)">القيم الافتراضية: مليون دورة لكل عينة، ١٠٠ عينة لكل لغة لقياس التنفيذ، و٧ عينات لكل نمط تشغيل كامل.</p>
+          <div class="command"><code id="command-text">python benchmarks/run_benchmark.py --iterations 1000000 --runs 100 --output benchmarks/latest-results.json</code><button class="button" id="copy-command" type="button">نسخ الأمر</button></div>
+          <p class="status" id="file-status" role="status">يمكنك تحميل ملف JSON جديداً من أعلى الصفحة لمقارنة نتائج جهازك.</p>
+          <p class="footnote">لفتح التقرير دون خادم، افتح <code dir="ltr">benchmark.html</code> في المتصفح. زر «تحميل نتائج JSON» يقرأ ملفاً محلياً داخل المتصفح ولا يرسل البيانات إلى أي مكان.</p>
+        </div>
+      </section>
+
+      <section class="section" id="raw">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">٨ — الشفافية الكاملة</span>
+            <h2 class="section-title">العينات الخام</h2>
+            <p class="section-sub">افتح الجداول لمراجعة كل قياس على حدة.</p>
+          </div>
+        </div>
+        <details>
+          <summary>عينات تنفيذ الحلقة</summary>
+          <div class="details-content"><p>الزمن لكل استدعاء بعد الإحماء؛ بالميلي ثانية.</p><div class="table-wrap"><table><thead><tr><th>العينة</th><th>APL</th><th>Python</th></tr></thead><tbody id="execution-samples"></tbody></table></div></div>
+        </details>
+        <details>
+          <summary>عينات التحضير والترجمة</summary>
+          <div class="details-content"><p>تحويل APL وتجهيز الناتج، مقابل تجهيز شيفرة Python الأصلية.</p><div class="table-wrap"><table><thead><tr><th>العينة</th><th>APL: ترجمة وتجهيز</th><th>Python: تجهيز</th></tr></thead><tbody id="setup-samples"></tbody></table></div></div>
+        </details>
+        <details>
+          <summary>عينات تشغيل الملف بالكامل</summary>
+          <div class="details-content"><p>كل عينة عملية جديدة تشمل بدء المفسّر وقراءة الملف والتنفيذ.</p><div class="table-wrap"><table><thead><tr><th>العينة</th><th>APL دون ذاكرة</th><th>APL بذاكرة دافئة</th><th>Python</th></tr></thead><tbody id="process-samples"></tbody></table></div></div>
+        </details>
+      </section>
+    </main>
+
+    <footer>
+      <span>تقرير قياس مفتوح محلياً · APL وPython · جميع الأزمنة معروضة كما أُبلغ عنها.</span>
+      <span>تاريخ التقرير: <span class="ltr" id="footer-date">—</span></span>
+    </footer>
+  </div>
+
+  <script id="embedded-report" type="application/json">{"schema_version":1,"project":"APL — Ammar Programming Language","generated_at_utc":"2026-10-02T06:46:19Z","environment":{"python_version":"3.11.2","implementation":"CPython","operating_system":"Linux-6.1.158+-x86_64-with-glibc2.36","cpu":"Intel(R) Xeon(R) Processor @ 2.60GHz","logical_cores":2},"settings":{"iterations_per_sample":1000000,"execution_runs_per_language":100,"warmups_per_language":3,"setup_runs_per_language":25,"process_runs_per_mode":7,"random_seed":20261002,"operation":"sum((i * i) % 97 for i in range(iterations))"},"validation":{"apl_checksum":47999861,"python_checksum":47999861,"matches":true},"results":{"execution":{"unit":"ms","runs_per_language":100,"warmups_per_language":3,"apl":{"median_ms":49.099343,"mean_ms":52.241621,"min_ms":48.24314,"max_ms":98.502965,"p95_ms":72.006817,"stdev_ms":8.683233,"samples_ms":[81.027174,48.359048,48.24314,48.268279,50.788587,59.67338,61.01489,57.266192,53.008376,49.959906,49.137273,89.294345,52.743037,98.502965,72.006817,55.11863,48.832431,49.23269,48.672201,48.846937,49.009702,49.505964,49.264014,49.01275,48.78391,50.057438,48.814885,48.545018,48.874683,49.637518,50.581916,52.454511,49.275304,49.225757,48.75438,50.137222,49.067453,50.970217,50.134754,58.306607,50.462299,48.74473,50.354184,49.231384,48.966196,48.824715,48.632918,48.584102,48.569899,49.071952,49.020288,48.606517,48.618131,55.35158,58.530705,51.201093,49.481851,48.589499,48.874485,49.079859,49.080663,49.899309,48.860269,49.807719,55.910476,50.450354,49.60634,48.924029,48.55399,48.616981,48.536311,48.483016,48.376956,48.582812,48.752079,49.0922,71.89141,48.530318,48.65055,48.605003,48.948404,49.122168,48.398109,49.126243,54.710162,73.788833,80.530384,50.494471,49.535651,49.254511,48.902063,48.810341,48.58775,48.551086,49.106486,49.591944,48.713856,52.40352,48.799069,48.369574]},"python":{"median_ms":49.26248,"mean_ms":50.82715,"min_ms":48.317733,"max_ms":72.791559,"p95_ms":57.430066,"stdev_ms":4.008391,"samples_ms":[72.791559,56.835487,48.317733,50.285427,54.836346,50.484965,55.202694,52.822264,67.19618,57.430066,49.012309,50.562164,48.475619,65.97485,49.055297,48.727038,48.724984,52.929914,48.903206,51.021492,50.274187,48.693306,50.955911,50.086398,48.523949,48.965608,52.677729,53.182963,48.624579,48.630817,49.79768,48.591525,48.970858,49.037432,49.113125,49.116852,48.502073,49.995787,51.374877,49.675448,49.220734,49.057248,51.16107,48.927952,49.596795,49.8995,48.689619,49.960315,49.315933,48.667647,49.054637,52.957524,50.776327,50.512104,51.610698,50.971446,52.330834,49.444086,49.425108,48.944813,48.662875,48.813318,49.14995,48.622824,49.635114,54.76861,52.507434,48.937101,48.70219,48.832245,48.532066,51.340607,49.018144,48.678706,49.304226,61.609783,48.70765,49.874023,49.197078,48.744445,50.150912,48.534547,48.869926,48.66029,57.199764,49.854348,58.884342,51.658406,48.707449,48.793599,48.996616,48.997068,51.889105,48.66991,48.653625,49.589971,49.025985,48.984778,48.625207,49.425646]},"apl_over_python":0.996688},"setup":{"unit":"ms","runs_per_language":25,"description":"APL transpile + Python compile مقابل Python compile فقط؛ محرك دافئ","apl":{"median_ms":0.589588,"mean_ms":0.593095,"min_ms":0.540899,"max_ms":0.689304,"p95_ms":0.672843,"stdev_ms":0.037688,"samples_ms":[0.689304,0.619057,0.589588,0.672843,0.590299,0.56172,0.622878,0.552129,0.587166,0.637872,0.540899,0.60022,0.595693,0.555898,0.596198,0.615323,0.587853,0.595006,0.541577,0.586447,0.573633,0.552199,0.62979,0.570015,0.563756]},"python":{"median_ms":0.03467,"mean_ms":0.03567,"min_ms":0.028185,"max_ms":0.072611,"p95_ms":0.041598,"stdev_ms":0.008436,"samples_ms":[0.039326,0.039766,0.041598,0.031999,0.037022,0.034794,0.030063,0.072611,0.035392,0.028872,0.034326,0.03467,0.033817,0.02865,0.032247,0.034682,0.03497,0.035986,0.029114,0.032995,0.035625,0.033794,0.03394,0.028185,0.037312]},"apl_over_python":17.005711},"process":{"unit":"ms","runs_per_mode":7,"description":"زمن العملية كاملة: بدء Python + تحميل البرنامج + تنفيذه","python":{"median_ms":61.81003,"mean_ms":62.411298,"min_ms":59.964184,"max_ms":64.990232,"p95_ms":64.990232,"stdev_ms":2.217793,"samples_ms":[60.91675,64.990232,64.710913,59.964184,60.130123,64.356851,61.81003]},"apl_uncached":{"median_ms":142.429461,"mean_ms":144.689317,"min_ms":139.836363,"max_ms":152.380172,"p95_ms":152.380172,"stdev_ms":4.422906,"samples_ms":[141.949667,147.487618,141.722729,142.429461,147.019212,152.380172,139.836363]},"apl_cached":{"median_ms":111.561233,"mean_ms":123.099342,"min_ms":109.608896,"max_ms":154.309558,"p95_ms":154.309558,"stdev_ms":18.640118,"samples_ms":[144.965599,154.309558,109.608896,109.966052,111.537962,111.561233,119.746095]},"apl_uncached_over_python":2.30431,"apl_cached_over_python":1.804905}}}</script>
+  <script>
+    (() => {
+      "use strict";
+
+      const aplCode = `دالة احسب(حد):
+    المتغير مجموع = 0
+    لكل رقم في نطاق(حد):
+        مجموع += (رقم * رقم) % 97
+    ارجع مجموع`;
+      const pythonCode = `def calculate(limit: int) -> int:
+    total = 0
+    for number in range(limit):
+        total += (number * number) % 97
+    return total`;
+      let activeCode = "apl";
+      let report;
+
+      const $ = (id) => document.getElementById(id);
+      const number = (value, digits = 3) => {
+        if (value === null || value === undefined || !Number.isFinite(Number(value))) return "—";
+        return new Intl.NumberFormat("en-US", { maximumFractionDigits: digits, minimumFractionDigits: 0 }).format(Number(value));
+      };
+      const ms = (value) => `${number(value, 3)} ms`;
+      const ratio = (value) => `${new Intl.NumberFormat("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(Number(value))}×`;
+      const percent = (value) => `${number(value, 1)}%`;
+      const pctChange = (a, b) => b ? ((a / b) - 1) * 100 : 0;
+      const safe = (value, fallback = "غير متاح") => value === null || value === undefined || value === "" ? fallback : String(value);
+      const setText = (id, text) => { $(id).textContent = text; };
+
+      function statsRow(label, stats) {
+        const tr = document.createElement("tr");
+        const cells = [label, ms(stats.median_ms), ms(stats.mean_ms), ms(stats.p95_ms), ms(stats.min_ms), ms(stats.max_ms), ms(stats.stdev_ms)];
+        cells.forEach((value, index) => {
+          const td = document.createElement("td");
+          td.textContent = value;
+          if (index > 0) td.className = "numeric";
+          tr.appendChild(td);
+        });
+        return tr;
+      }
+
+      function renderChart(targetId, entries) {
+        const target = $(targetId);
+        target.replaceChildren();
+        const max = Math.max(...entries.map((entry) => Number(entry.stats.median_ms) || 0), 0.000001);
+        entries.forEach((entry) => {
+          const row = document.createElement("div");
+          row.className = "chart-row";
+          const line = document.createElement("div");
+          line.className = "chart-label-line";
+          const label = document.createElement("span");
+          label.className = "chart-name";
+          label.textContent = entry.label;
+          const value = document.createElement("span");
+          value.className = "chart-value ltr";
+          value.textContent = `${ms(entry.stats.median_ms)} · المئين ٩٥ ${ms(entry.stats.p95_ms)}`;
+          line.append(label, value);
+          const track = document.createElement("div");
+          track.className = "bar-track";
+          track.setAttribute("role", "img");
+          track.setAttribute("aria-label", `${entry.label}: ${ms(entry.stats.median_ms)}`);
+          const fill = document.createElement("span");
+          fill.className = `bar-fill ${entry.color}`;
+          fill.style.width = `${Math.max(2, (Number(entry.stats.median_ms) / max) * 100)}%`;
+          track.appendChild(fill);
+          row.append(line, track);
+          target.appendChild(row);
+        });
+      }
+
+      function fillSamples(targetId, columns) {
+        const target = $(targetId);
+        target.replaceChildren();
+        const count = Math.max(...columns.map((column) => column.values.length), 0);
+        for (let index = 0; index < count; index += 1) {
+          const tr = document.createElement("tr");
+          const numberCell = document.createElement("td");
+          numberCell.className = "numeric";
+          numberCell.textContent = String(index + 1);
+          tr.appendChild(numberCell);
+          columns.forEach((column) => {
+            const td = document.createElement("td");
+            td.className = "numeric";
+            const value = column.values[index];
+            td.textContent = value === undefined ? "—" : ms(value);
+            tr.appendChild(td);
+          });
+          target.appendChild(tr);
+        }
+      }
+
+      function renderAll() {
+        const settings = report.settings;
+        const env = report.environment;
+        const results = report.results;
+        const execution = results.execution;
+        const setup = results.setup;
+        const process = results.process;
+        const aplMedian = Number(execution.apl.median_ms);
+        const pythonMedian = Number(execution.python.median_ms);
+        const executionRatio = Number(execution.apl_over_python) || (pythonMedian ? aplMedian / pythonMedian : 1);
+        const delta = pctChange(aplMedian, pythonMedian);
+
+        setText("implementation", safe(env.implementation, "CPython"));
+        setText("generated-at", safe(report.generated_at_utc, "—"));
+        setText("footer-date", safe(report.generated_at_utc, "—"));
+        setText("metric-iterations", number(settings.iterations_per_sample, 0));
+        setText("metric-apl", ms(aplMedian));
+        setText("metric-python", ms(pythonMedian));
+        setText("metric-check", report.validation.matches ? "متطابق" : "غير متطابق");
+        setText("metric-check-note", `الناتج: ${number(report.validation.apl_checksum, 0)}`);
+        $("metric-check").style.color = report.validation.matches ? "var(--green)" : "var(--red)";
+        setText("execution-runs", `${number(execution.runs_per_language, 0)} عينة لكل لغة`);
+        setText("setup-runs", `${number(setup.runs_per_language, 0)} عينة لكل وضع`);
+        setText("process-runs", `${number(process.runs_per_mode, 0)} عينات لكل وضع`);
+
+        if (executionRatio > 1.005) {
+          setText("verdict-title", `في الحساب الصافي، استغرق APL ${ratio(executionRatio)} من زمن Python.`);
+          setText("verdict-copy", `أي أن APL احتاجت وقتاً أكثر بنحو ${percent(delta)} في وسيط هذا الاختبار. تُنفّذ الشيفرتان على CPython؛ الفروق الصغيرة تتأثر بضجيج القياس وجدولة النظام.`);
+        } else if (executionRatio < 0.995) {
+          setText("verdict-title", `في الحساب الصافي، استغرق APL ${ratio(executionRatio)} من زمن Python.`);
+          setText("verdict-copy", `أي أن APL احتاجت وقتاً أقل بنحو ${percent(Math.abs(delta))} في وسيط هذا الاختبار. النتيجة لحمل واحد على جهاز واحد وليست ضماناً عاماً.`);
+        } else {
+          setText("verdict-title", "زمن تنفيذ APL وPython متقارب جداً في هذا الحمل.");
+          setText("verdict-copy", `نسبة الوسيط ${ratio(executionRatio)}؛ الفارق ${percent(Math.abs(delta))} فقط، وهو أصغر من أن يُعامل كفوز ثابت من دون قياسات إضافية.`);
+        }
+
+        renderChart("execution-chart", [
+          { label: "APL بعد الترجمة", stats: execution.apl, color: "apl" },
+          { label: "Python العادي", stats: execution.python, color: "python" },
+        ]);
+        renderChart("setup-chart", [
+          { label: "ترجمة APL وتجهيز كودها", stats: setup.apl, color: "apl" },
+          { label: "تجهيز Python فقط", stats: setup.python, color: "python" },
+        ]);
+        const setupFactor = Number(setup.apl_over_python) || 1;
+        setText("setup-fact", `وسيط التحضير في APL يعادل ${ratio(setupFactor)} من زمن تجهيز Python؛ والفارق المطلق ${ms(Math.abs(Number(setup.apl.median_ms) - Number(setup.python.median_ms)))}.`);
+
+        renderChart("process-chart", [
+          { label: "APL — ذاكرة ترجمة دافئة", stats: process.apl_cached, color: "cached" },
+          { label: "APL — بلا ذاكرة ترجمة", stats: process.apl_uncached, color: "cold" },
+          { label: "Python — تشغيل الملف", stats: process.python, color: "python" },
+        ]);
+        const cachedFactor = Number(process.apl_cached_over_python) || 1;
+        const uncachedFactor = Number(process.apl_uncached_over_python) || 1;
+        setText("process-fact", `مقابل Python: تشغيل APL الدافئ استغرق ${ratio(cachedFactor)} من الزمن، والتشغيل بلا ذاكرة استغرق ${ratio(uncachedFactor)}. هذه كلفة العملية الكاملة وليست سرعة الحلقة وحدها.`);
+
+        const summary = $("summary-table");
+        summary.replaceChildren(
+          statsRow("تنفيذ APL فقط", execution.apl),
+          statsRow("تنفيذ Python فقط", execution.python),
+          statsRow("ترجمة APL وتجهيزها", setup.apl),
+          statsRow("تجهيز Python", setup.python),
+          statsRow("APL بذاكرة دافئة — العملية كاملة", process.apl_cached),
+          statsRow("APL بلا ذاكرة — العملية كاملة", process.apl_uncached),
+          statsRow("Python — العملية كاملة", process.python),
+        );
+
+        fillSamples("execution-samples", [
+          { values: execution.apl.samples_ms || [] },
+          { values: execution.python.samples_ms || [] },
+        ]);
+        fillSamples("setup-samples", [
+          { values: setup.apl.samples_ms || [] },
+          { values: setup.python.samples_ms || [] },
+        ]);
+        fillSamples("process-samples", [
+          { values: process.apl_uncached.samples_ms || [] },
+          { values: process.apl_cached.samples_ms || [] },
+          { values: process.python.samples_ms || [] },
+        ]);
+
+        setText("env-python", `${safe(env.implementation, "Python")} ${safe(env.python_version)}`);
+        setText("env-os", safe(env.operating_system));
+        setText("env-cpu", safe(env.cpu));
+        setText("env-cores", number(env.logical_cores, 0));
+        setText("env-runs", number(settings.execution_runs_per_language, 0));
+        setText("env-iterations", number(settings.iterations_per_sample, 0));
+        updateCode();
+      }
+
+      function updateCode() {
+        const isApl = activeCode === "apl";
+        setText("code-content", isApl ? aplCode : pythonCode);
+        setText("code-language", isApl ? "ملف الاختبار: workload.apl" : "ملف الاختبار: workload_python.py");
+        $("tab-apl").setAttribute("aria-selected", String(isApl));
+        $("tab-python").setAttribute("aria-selected", String(!isApl));
+        $("code-panel").setAttribute("aria-labelledby", isApl ? "tab-apl" : "tab-python");
+      }
+
+      async function copyText(text, statusId, successMessage) {
+        const status = $(statusId);
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(text);
+          } else {
+            const field = document.createElement("textarea");
+            field.value = text;
+            field.style.position = "fixed";
+            field.style.opacity = "0";
+            document.body.appendChild(field);
+            field.select();
+            const copied = document.execCommand("copy");
+            field.remove();
+            if (!copied) throw new Error("clipboard unavailable");
+          }
+          status.textContent = successMessage;
+          status.classList.remove("error");
+          status.classList.add("ok");
+        } catch (_) {
+          status.textContent = "تعذّر النسخ تلقائياً؛ حدّد النص وانسخه يدوياً.";
+          status.classList.remove("ok");
+          status.classList.add("error");
+        }
+      }
+
+      function isValidReport(candidate) {
+        return candidate && candidate.schema_version === 1 && candidate.settings && candidate.environment && candidate.validation && candidate.results && candidate.results.execution && candidate.results.setup && candidate.results.process && candidate.results.execution.apl && candidate.results.execution.python && candidate.results.setup.apl && candidate.results.setup.python && candidate.results.process.apl_cached && candidate.results.process.apl_uncached && candidate.results.process.python;
+      }
+
+      $("tab-apl").addEventListener("click", () => { activeCode = "apl"; updateCode(); });
+      $("tab-python").addEventListener("click", () => { activeCode = "python"; updateCode(); });
+      $("copy-code").addEventListener("click", () => copyText(activeCode === "apl" ? aplCode : pythonCode, "file-status", "تم نسخ الشيفرة."));
+      $("copy-command").addEventListener("click", () => copyText($("command-text").textContent, "file-status", "تم نسخ أمر التشغيل."));
+      $("print-page").addEventListener("click", () => window.print());
+      $("theme-toggle").addEventListener("click", () => document.body.classList.toggle("light"));
+      $("download-json").addEventListener("click", () => {
+        const blob = new Blob([JSON.stringify(report, null, 2)], { type: "application/json;charset=utf-8" });
+        const link = document.createElement("a");
+        const date = String(report.generated_at_utc || "report").slice(0, 10);
+        link.href = URL.createObjectURL(blob);
+        link.download = `apl-benchmark-${date}.json`;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        window.setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+      });
+      $("upload-report").addEventListener("click", () => $("report-file").click());
+      $("report-file").addEventListener("change", async (event) => {
+        const file = event.target.files && event.target.files[0];
+        if (!file) return;
+        const status = $("file-status");
+        try {
+          const candidate = JSON.parse(await file.text());
+          if (!isValidReport(candidate)) throw new Error("صيغة التقرير أو نسخته غير مدعومة.");
+          report = candidate;
+          renderAll();
+          status.textContent = `تم تحميل النتائج من ${file.name}. لم تُرسل البيانات خارج جهازك.`;
+          status.classList.remove("error");
+          status.classList.add("ok");
+        } catch (error) {
+          status.textContent = `تعذّر تحميل الملف: ${error.message}`;
+          status.classList.remove("ok");
+          status.classList.add("error");
+        } finally {
+          event.target.value = "";
+        }
+      });
+
+      try {
+        report = JSON.parse($("embedded-report").textContent);
+        if (!isValidReport(report)) throw new Error("بيانات التقرير غير مكتملة");
+        renderAll();
+      } catch (error) {
+        setText("verdict-title", "تعذّر تحميل بيانات التقرير المضمّنة.");
+        setText("verdict-copy", error.message);
+      }
+    })();
+  </script>
+</body>
+</html>
