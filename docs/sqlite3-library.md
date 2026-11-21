@@ -40,7 +40,7 @@
 | العربي | Python | الوصف |
 |--------|--------|-------|
 | `تأكد()` | `connection.commit()` | تأكيد التغييرات |
-| `احفظ()` | `connection.commit()` | حفظ التغييرات |
+| `احفظ_قاعدة()` | `connection.commit()` | حفظ التغييرات |
 | `تراجع()` | `connection.rollback()` | تراجع عن التغييرات |
 
 ## الإغلاق
@@ -62,24 +62,26 @@
 
 ```apl
 # إنشاء قاعدة بيانات
-المتغير conn = افتح_قاعدة('test.db')
-المتغير c = مؤشر()
+المتغير اتصال = افتح_قاعدة("_تجربة.db")
+المتغير مؤشر_ج = اتصال.cursor()
 
 # إنشاء جدول
-نفذ('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)')
+مؤشر_ج.نفذ("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)")
 
 # إدراج بيانات
-نفذ('INSERT INTO users (name, age) VALUES (?, ?)', ('عمار', 25))
-نفذ('INSERT INTO users (name, age) VALUES (?, ?)', ('محمد', 30))
+مؤشر_ج.نفذ("INSERT INTO users (name, age) VALUES (?, ?)", ("عمار", 25))
+مؤشر_ج.نفذ("INSERT INTO users (name, age) VALUES (?, ?)", ("محمد", 30))
 
 # تأكيد
-تأكد()
+اتصال.تأكد()
 
 # استعلام
-نفذ('SELECT * FROM users')
-المتغير rows = جلب_الكل()
-اطبع rows
+مؤشر_ج.نفذ("SELECT name, age FROM users")
+المتغير صفوف = مؤشر_ج.جلب_الكل()
+لكل صف في صفوف:
+    اطبع صف
 
 # إغلاق
-أغلق()
+اتصال.أغلق_قاعدة()
+احذف_ملف("_تجربة.db")
 ```

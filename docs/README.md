@@ -17,7 +17,7 @@
 | 11 | [json-library.md](json-library.md) | مكتبة `json` — قراءة وكتابة JSON |
 | 12 | [hashlib-library.md](hashlib-library.md) | مكتبة `hashlib` — تجزئة وتشفير |
 | 13 | [flask-library.md](flask-library.md) | مكتبة `flask` — إطار عمل ويب |
-| 14 | [fastapi-library.md](fastapi-library.md) | مكتبة `fastapi` — 532 دالة، إطار عمل ويب حديث |
+| 14 | [fastapi-library.md](fastapi-library.md) | مكتبة `fastapi` — 536 دالة، إطار عمل ويب حديث |
 | 15 | [requests-library.md](requests-library.md) | مكتبة `requests` — HTTP Client كامل |
 | 16 | [sqlite3-library.md](sqlite3-library.md) | مكتبة `sqlite3` — قاعدة بيانات محلية |
 | 17 | [asyncio-library.md](asyncio-library.md) | مكتبة `asyncio` — برمجة غير متزامنة |
@@ -48,14 +48,17 @@
 | 42 | [operator-library.md](operator-library.md) | مكتبة `operator` — المشغّلات كدوال لتمريرها إلى map/filter |
 | 43 | [pprint-library.md](pprint-library.md) | مكتبة `pprint` — طباعة منسّقة للقواميس والقوائم |
 | 44 | [enum-library.md](enum-library.md) | مكتبة `enum` — أنواع معدودة (Enums) |
-| 45 | [language-features.md](language-features.md) | مميزات اللغة — match/case، معالجة الأخطاء، lambda، الوراثة |
-| 46 | [performance.md](performance.md) | تحسينات الأداء — التحميل الكسول، الذاكرة، طيّ الثوابت |
+| 45 | [xml-library.md](xml-library.md) | مكتبة `xml` — قراءة وبناء وتعديل ملفات XML (99 عنصراً) |
+| 46 | [archive-library.md](archive-library.md) | مكتبة `archive` — أرشيف ZIP و TAR والضغط gzip / bz2 / xz (102 عنصراً) |
+| 47 | [network-library.md](network-library.md) | مكتبة `net` — الشبكة والبريد: socket و ssl و http و email و SMTP/IMAP/FTP (1006 عنصراً) |
+| 48 | [language-features.md](language-features.md) | مميزات اللغة — match/case، معالجة الأخطاء، lambda، الوراثة |
+| 49 | [performance.md](performance.md) | تحسينات الأداء — التحميل الكسول، الذاكرة، طيّ الثوابت |
 
 ---
 
-## الأمثلة الجاهزة (50 مثالاً)
+## الأمثلة الجاهزة (60 مثالاً)
 
-50 برنامجاً حقيقياً مكتوباً بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+60 برنامجاً حقيقياً مكتوباً بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -109,6 +112,16 @@
 | 48 | [`48-text-analyzer-advanced.apl`](../examples/48-text-analyzer-advanced.apl) | تحليل نص متقدم |
 | 49 | [`49-validate-input.apl`](../examples/49-validate-input.apl) | التحقق من صحة المدخلات |
 | 50 | [`50-final-showcase.apl`](../examples/50-final-showcase.apl) | العرض النهائي (شامل) |
+| 51 | [`51-xml-read.apl`](../examples/51-xml-read.apl) | قراءة مستند XML وتحليله |
+| 52 | [`52-xml-build.apl`](../examples/52-xml-build.apl) | بناء ملف XML وتعديله وحفظه |
+| 53 | [`53-xml-namespaces.apl`](../examples/53-xml-namespaces.apl) | مساحات الأسماء والتحليل التدريجي والباني |
+| 54 | [`54-archive-zip.apl`](../examples/54-archive-zip.apl) | أرشيف ZIP كامل: إنشاء، سرد، قراءة، تعديل، استخراج |
+| 55 | [`55-archive-compress.apl`](../examples/55-archive-compress.apl) | الضغط: gzip و bz2 و xz ومقارنة الأحجام وأرشيف TAR |
+| 56 | [`56-archive-backup.apl`](../examples/56-archive-backup.apl) | أداة نسخ احتياطي حقيقية: تحقق، تقليم، استعادة |
+| 57 | [`57-net-tcp.apl`](../examples/57-net-tcp.apl) | مقابس TCP و UDP: خادم وعميل على نفس الجهاز |
+| 58 | [`58-net-http.apl`](../examples/58-net-http.apl) | خادم HTTP محلي وعميله حتى تحليل JSON |
+| 59 | [`59-net-email.apl`](../examples/59-net-email.apl) | بناء رسالة بريد ومرفق وحفظها `.eml` ثم قراءتها |
+| 60 | [`60-net-tools.apl`](../examples/60-net-tools.apl) | أدوات بلا اتصال: IP و struct و ترميزات و MIME |
 
 **التشغيل:**
 ```bash
@@ -122,12 +135,16 @@ python apl.py examples/01-calculator.apl
 ### Context Managers (إدارة السياق)
 ```apl
 # استخدام with عربي
+اكتب("ملف.txt", "محتوى تجريبي\n")
+
 مع فتح("ملف.txt") مثل f:
-    اطبع f.read()
+    اطبع f.read().strip()
 
 # أو بالإنجليزي
-with open("file.txt") as f:
-    print(f.read())
+with open("ملف.txt") as f:
+    print(f.read().strip())
+
+احذف_ملف("ملف.txt")
 ```
 
 ### Generators (المولدات)
@@ -153,10 +170,11 @@ with open("file.txt") as f:
 اطبع س
 ```
 
-## المكتبات المتاحة (41 مكتبة)
+## المكتبات المتاحة (44 مكتبة)
 
 | المكتبة | عدد العناصر | الوصف |
 |---------|------------:|-------|
+| `net` | 1006 | الشبكة: socket و ssl و http و email و SMTP/IMAP/FTP |
 | `fastapi` | 536 | إطار عمل ويب حديث |
 | `requests` | 244 | HTTP Client كامل |
 | `asyncio` | 118 | برمجة غير متزامنة |
@@ -165,11 +183,13 @@ with open("file.txt") as f:
 | `logging` | 79 | تسجيل الأحداث |
 | `flask` | 78 | إطار عمل ويب |
 | `subprocess` | 74 | أوامر النظام |
-| `advanced` | 70 | ميزات متقدمة (decorators, metaclasses, typing) |
+| `advanced` | 115 | ميزات متقدمة (decorators, metaclasses, typing) |
 | `dataclasses` | 68 | فئات بيانات، تعدادات، ABC |
+| `archive` | 105 | أرشيف ZIP و TAR وضغط gzip / bz2 / xz |
+| `xml` | 106 | قراءة وبناء وتعديل ملفات XML (ElementTree) |
 | `pathlib` | 61 | التعامل مع المسارات ككائنات |
-| `math` | 59 | مثلثات، لوغاريتمات، جذور، تقريب، هندسة |
-| `datetime` | 45 | التاريخ والوقت والتحويل بينهما |
+| `math` | 63 | مثلثات، لوغاريتمات، جذور، تقريب، هندسة |
+| `datetime` | 42 | التاريخ والوقت والتحويل بينهما |
 | `configparser` | 35 | ملفات الإعدادات |
 | `os` | 30 | ملفات، مجلدات، مسارات، فحص |
 | `threading` | 29 | تعدد المهام |
@@ -191,7 +211,7 @@ with open("file.txt") as f:
 | `functools` | 9 | أدوات الدوال (partial, cache, wraps) |
 | `textwrap` | 9 | تنسيق النصوص ولفّها |
 | `fractions` | 8 | الكسور الرياضية الدقيقة |
-| `json` | 8 | قراءة وكتابة JSON |
+| `json` | 10 | قراءة وكتابة JSON |
 | `secrets` | 8 | توليد قيم عشوائية آمنة تشفيرياً |
 | `zoneinfo` | 8 | المناطق الزمنية (IANA) |
 | `hashlib` | 7 | تجزئة وتشفير |
@@ -199,20 +219,9 @@ with open("file.txt") as f:
 | `pprint` | 2 | طباعة منسّقة للقواميس والقوائم |
 | `enum` | 7 | أنواع معدودة (Enums) — قيم مسمّاة بدل الأرقام السحرية |
 
-**الإجمالي: 2116 عنصراً في 41 مكتبة** (1956 مفتاحاً فريداً بعد إزالة التكرار).
+**الإجمالي: 3,294 عنصراً في 44 مكتبة** (3,136 مفتاحاً فريداً بعد إزالة التكرار).
 
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
-إضافة إلى **168** عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)،
-ما يجعل الإجمالي الكلي **2190** عنصراً عربياً في اللغة.
-
-تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
-إضافة إلى **168** عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)،
-ما يجعل الإجمالي الكلي **2100** عنصراً عربياً في اللغة.
-
-تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
-إضافة إلى **168** عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)،
-ما يجعل الإجمالي الكلي **2،089** عنصراً عربياً في اللغة.
-
-إضافة إلى **167** عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط)، ما يجعل الإجمالي الكلي أكثر من **2,000** عنصر عربي في اللغة.
-
-**إجمالي المشروع: أكثر من 2,000 عنصر عربي** — 2,116 عنصراً في 41 مكتبة (دوال، خصائص، ثوابت، معاملات عربية) + 168 عنصراً في اللغة الأساسية (`core/apl_runner/patterns.py`) = **2,284 عنصراً**، مع **50 مثالاً جاهزاً** في `examples/`.
+إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
+في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **3,358 عنصراً**،
+مع **60 مثالاً جاهزاً** في `examples/`.
