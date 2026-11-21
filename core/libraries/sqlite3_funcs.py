@@ -36,6 +36,7 @@ SQLITE3_FUNCS = {
 }
 
 SQLITE3_METHODS = {
+    "مؤشر": "cursor",
     "نفذ": "execute",
     "نفذ_استعلام": "execute",
     "نفذ_كثير": "executemany",

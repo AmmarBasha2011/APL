@@ -47,6 +47,7 @@ from . import functools_funcs
 from . import xml_funcs
 from . import archive_funcs
 from . import net_funcs
+from . import devtools_funcs
 
 # Registry: module references for easy access
 LIBRARIES = {
@@ -94,6 +95,7 @@ LIBRARIES = {
     "xml": xml_funcs,
     "archive": archive_funcs,
     "net": net_funcs,
+    "devtools": devtools_funcs,
 }
 
 def get_all_funcs():
