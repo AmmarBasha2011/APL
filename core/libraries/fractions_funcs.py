@@ -11,7 +11,7 @@ FRACTIONS_FUNCS = {
     "مقلوب_كسر": "_apl_fraction_recip",
 }
 
-FRACTIONS_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(FRACTIONS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+FRACTIONS_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(FRACTIONS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 FRACTIONS_METHODS = {
     "حد_المقام": "limit_denominator",

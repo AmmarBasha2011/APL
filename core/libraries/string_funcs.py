@@ -21,7 +21,7 @@ STRING_CONSTANTS = {
 
 STRING_CONSTANT_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(STRING_CONSTANTS.keys(), key=len, reverse=True)) + r")(?![\w\u0600-\u06FF])"
 
-STRING_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(STRING_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+STRING_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(STRING_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI
 STRING_HELP = [

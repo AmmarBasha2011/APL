@@ -13,8 +13,8 @@ DATACLASSES_FUNCS = {
     "أنشئ_فئة_بيانات": "dataclasses.dataclass",
     
     # خصائص Dataclass
-    "حقول": "dataclasses.fields",
-    "حقل": "dataclasses.field",
+    "حقول_بيانات": "dataclasses.fields",
+    "حقل_بيانات": "dataclasses.field",
     "أنواع": "dataclasses.fields",
     "اسم_حقل": "field.name",
     "نوع_حقل": "field.type",
@@ -55,7 +55,7 @@ DATACLASSES_FUNCS = {
     "EnumMeta": "enum.EnumMeta",
     
     # دوال Enum
-    "تلقائي": "enum.auto",
+    "تلقائي_بيانات": "enum.auto",
     "auto": "enum.auto",
     "فريد": "enum.unique",
     "عضو_تعداد": "EnumMember",
@@ -80,9 +80,9 @@ DATACLASSES_FUNCS = {
     "اختر_النوع": "type",
     "اختر_فئة": "type",
     "فئة_الأم": "super",
-    "أب": "super",
-    "نوع": "type",
-    "من_نوع": "isinstance",
+    "أب_بيانات": "super",
+    "نوع_بيانات": "type",
+    "من_نوع_بيانات": "isinstance",
     "يملك": "hasattr",
     "احصل_خاصية": "getattr",
     "ضع_خاصية": "setattr",
@@ -94,14 +94,14 @@ DATACLASSES_FUNCS = {
     "اختر_ملف": "__file__",
 }
 
-DATACLASSES_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(DATACLASSES_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+DATACLASSES_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(DATACLASSES_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 DATACLASSES_HELP = [
     "# === Dataclasses ===",
     "@dataclass                - مُزيِّن فئة البيانات",
     "@فئة_بيانات              - مُزيِّن (عربي)",
-    "حقول(فئة)                - حقول الفئة",
-    "حقل(افتراضي, مقارنة)     - حقل مخصص",
+    "حقول_بيانات(فئة)                - حقول_بيانات الفئة",
+    "حقل_بيانات(افتراضي, مقارنة)     - حقل_بيانات مخصص",
     "تهيئة_بعد(ذات)           - بعد التهيئة",
     "تحويل_لصف(كائن)          - تحويل لصف",
     "تحويل_لقاموس(كائن)        - تحويل لقاموس",
@@ -114,7 +114,7 @@ DATACLASSES_HELP = [
     "IntFlag                   - تعداد أعلام أعداد",
     "Flag                      - تعداد أعلام",
     "StrEnum                   - تعداد نصوص",
-    "تلقائي()                  - قيمة تلقائية",
+    "تلقائي_بيانات()                  - قيمة تلقائية",
     "auto()                    - قيمة تلقائية (إنجليزي)",
     "فريد                      - تعداد فريد",
     "# === ABC ===",
@@ -126,13 +126,13 @@ DATACLASSES_HELP = [
     "فتحة = (...)              - __slots__",
     "مفاتيح = (...)            - __slots__",
     "# === Useful properties ===",
-    "نوع(كائن)                - type",
-    "من_نوع(كائن, نوع)        - isinstance",
+    "نوع_بيانات(كائن)                - type",
+    "من_نوع_بيانات(كائن, نوع_بيانات)        - isinstance",
     "يملك(كائن, اسم)          - hasattr",
     "احصل_خاصية(كائن, اسم)    - getattr",
     "ضع_خاصية(كائن, اسم, قيمة) - setattr",
     "فئة_الأم()               - super",
-    "أب()                      - super",
+    "أب_بيانات()                      - super",
 ]
 
 IMPORT_NAME = "dataclasses"

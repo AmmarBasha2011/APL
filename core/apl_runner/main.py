@@ -33,7 +33,7 @@ _RESERVED_KEYS = _build_reserved_keys()  # empty: unused, see docstring
 
 # Constant folding on by default; APL_NO_FOLD=1 turns it off.
 _APL_FOLD = os.environ.get("APL_NO_FOLD", "") not in ("1", "true", "yes")
-from core.libraries import decimal_funcs, fractions_funcs, string_funcs, secrets_funcs, zoneinfo_funcs, getpass_funcs, operator_funcs, pprint_funcs, math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs
+from core.libraries import decimal_funcs, fractions_funcs, string_funcs, secrets_funcs, zoneinfo_funcs, getpass_funcs, operator_funcs, pprint_funcs, math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs, xml_funcs, archive_funcs, net_funcs
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 if sys.platform == "win32":
@@ -46,7 +46,36 @@ if sys.platform == "win32":
         pass
 
 
+
+_USER_NAME_PATTERNS = (
+    r"^\s*(?:async\s+)?def\s+([^\s(:]+)",
+    r"^\s*class\s+([^\s(:]+)",
+    r"^\s*دالة\s+([^\s(]+)",
+    r"^\s*دالة_([^\s(]+)\s*\(",
+    r"^\s*صنف\s+([^\s(:]+)",
+    r"^\s*(?:المتغير|عام\s+المتغير|خاص\s+المتغير)\s+([^\s=]+)",
+    r"^\s*([\w\u0600-\u06FF]+)\s*=(?!=)",
+    r"^\s*لكل\s+([^\s]+)\s+",
+    r"^\s*من\s+([^\s]+)\s+استورد",
+)
+
+
+def _collect_user_names(source: str) -> set:
+    """Names the program itself defines, so libraries never rewrite them."""
+    names = set()
+    for line in source.splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
+        for pat in _USER_NAME_PATTERNS:
+            m = re.match(pat, stripped)
+            if m:
+                names.add(m.group(1))
+    return names
+
 def transpile(source: str) -> str:
+    from core.apl_runner import inline_replacer as _ir
+    _ir.USER_NAMES = _collect_user_names(source)
     # Pre-scan for user-defined function names so their call sites are protected
     # before any library pattern runs.
     _UDF_NAMES.clear()
@@ -203,8 +232,12 @@ def transpile(source: str) -> str:
         needs.append("import subprocess")
     if re.search(configparser_funcs.IMPORT_CHECK, code) and "import configparser" not in code:
         needs.append("import configparser")
-    if ("dataclasses." in code or "@_apl_passthrough" in code) and "import dataclasses" not in code:
-        pass
+    if "dataclasses." in code and "import dataclasses" not in code:
+        needs.append("import dataclasses")
+    if "enum." in code and "import enum" not in code:
+        needs.append("import enum")
+    if "abc." in code and "import abc" not in code:
+        needs.append("import abc")
     if re.search(dataclasses_funcs.IMPORT_CHECK, code) and "import dataclasses" not in code:
         needs.append("from dataclasses import dataclass, field, asdict, astuple, replace; from enum import Enum, IntEnum, IntFlag, Flag, auto, unique; from abc import ABC, abstractmethod")
     if re.search(advanced_funcs.IMPORT_CHECK, code) and "import functools" not in code:
@@ -237,6 +270,16 @@ def transpile(source: str) -> str:
         needs.append("import datetime")
     if re.search(pathlib_funcs.IMPORT_CHECK, code) and "import pathlib" not in code:
         needs.append("import pathlib")
+    if re.search(archive_funcs.IMPORT_CHECK, code) and "import zipfile" not in code:
+        needs.append(archive_funcs.IMPORT_STATEMENT)
+    if re.search(net_funcs.IMPORT_CHECK, code):
+        # Only the modules that really occur in the generated code: a program
+        # that just formats an IP address should not pay for smtplib + imaplib.
+        _net_mods = [m for m in net_funcs.IMPORT_MODULES
+                     if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
+                     and ("import " + m) not in code]
+        if _net_mods:
+            needs.append("import " + ", ".join(_net_mods))
     if re.search(shutil_funcs.IMPORT_CHECK, code) and "import shutil" not in code:
         needs.append("import shutil")
     if re.search(textwrap_funcs.IMPORT_CHECK, code) and "import textwrap" not in code:
@@ -551,6 +594,707 @@ def _apl_close(target=None):
 
 def _apl_fetch(url):
     return urllib.request.urlopen(url).read().decode("utf-8")
+
+
+# --- xml.etree.ElementTree helpers --------------------------------------
+# Every helper imports the module lazily, so an APL program that never touches
+# XML never pays for the ElementTree import.
+def _apl_xml_et():
+    import xml.etree.ElementTree as _ET
+    return _ET
+
+def _apl_xml_parse(source, parser=None):
+    # اقرأ_إكس_إم_إل("ملف.xml") -> جذر الشجرة (ElementTree.parse)
+    return _apl_xml_et().parse(source, parser=parser)
+
+def _apl_xml_safe_parse(source, parser=None):
+    # نفس القراءة لكن ترفض أي مرجع خارجي (حماية من هجمات XXE)
+    return _apl_xml_et().parse(source, parser=_apl_xml_et().XMLParser())
+
+def _apl_xml_fromstring(text, parser=None):
+    return _apl_xml_et().fromstring(text, parser=parser)
+
+def _apl_xml_fromstringlist(sequence, parser=None):
+    return _apl_xml_et().fromstringlist(sequence, parser=parser)
+
+def _apl_xml_tostring(element, encoding="unicode", **kwargs):
+    # النص العربي يجب أن يبقى عربياً: encoding="unicode" افتراضياً
+    return _apl_xml_et().tostring(element, encoding=encoding, **kwargs)
+
+def _apl_xml_tostring_raw(element, encoding="utf-8", **kwargs):
+    return _apl_xml_et().tostring(element, encoding=encoding, **kwargs)
+
+def _apl_xml_tolist(element, encoding="unicode", **kwargs):
+    # قائمة أجزاء النص (str افتراضياً، حتى يبقى العربي مقروءاً)
+    return _apl_xml_et().tostringlist(element, encoding=encoding, **kwargs)
+
+def _apl_xml_canonicalize(xml_data=None, **kwargs):
+    return _apl_xml_et().canonicalize(xml_data, **kwargs)
+
+def _apl_xml_save(element, path, encoding="utf-8", **kwargs):
+    # احفظ_إكس_إم_إل(جذر, "ملف.xml") — يقبل Element أو ElementTree
+    _t = _apl_xml_et()
+    tree = element if isinstance(element, _t.ElementTree) else _t.ElementTree(element)
+    tree.write(path, encoding=encoding, **kwargs)
+    return path
+
+def _apl_xml_dump(element, **kwargs):
+    print(_apl_xml_tostring(element, **kwargs))
+    return element
+
+def _apl_xml_element(tag, attrib=None, **kwargs):
+    return _apl_xml_et().Element(tag, attrib if attrib is not None else {}, **kwargs)
+
+def _apl_xml_subelement(parent, tag, attrib=None, **kwargs):
+    # SubElement ينشئ الابن ويضيفه للأب في خطوة واحدة (makeelement لا يضيف)
+    return _apl_xml_et().SubElement(parent, tag, attrib if attrib is not None else {}, **kwargs)
+
+def _apl_xml_tree(element=None, file=None):
+    _t = _apl_xml_et()
+    return _t.ElementTree(element) if element is not None else _t.ElementTree(file=file)
+
+def _apl_xml_treebuilder(element_factory=None):
+    _t = _apl_xml_et()
+    return _t.TreeBuilder(element_factory=element_factory) if element_factory else _t.TreeBuilder()
+
+def _apl_xml_pull_parser(events=None):
+    _t = _apl_xml_et()
+    return _t.XMLPullParser(events=events or ("end",))
+
+def _apl_xml_children(element, tag=None):
+    return list(element) if tag is None else list(element.findall(tag))
+
+def _apl_xml_count(element, tag=None):
+    return len(element) if tag is None else len(element.findall(tag))
+
+def _apl_xml_text(element):
+    return "".join(element.itertext())
+
+def _apl_xml_path(root, element):
+    # احسب_المسار(الجذر, العنصر) -> مسار مطلق بصيغة /أب/ابن
+    index = {child: parent for parent in root.iter() for child in parent}
+
+    def _segment(node):
+        tag = node.tag if isinstance(node.tag, str) else str(node.tag)
+        parent = index.get(node)
+        siblings = [c for c in (list(parent) if parent is not None else []) if c.tag == node.tag]
+        if len(siblings) <= 1:
+            return tag
+        return tag + "[" + str(siblings.index(node) + 1) + "]"
+
+    parts = []
+    node = element
+    while node is not None:
+        parts.append(_segment(node))
+        node = index.get(node)
+    # المسار يبدأ دائماً بالجذر: /طلاب/طالب[1]
+    return "/" + "/".join(reversed(parts))
+
+def _apl_xml_by_id(element, target):
+    for node in element.iter():
+        if node.get("id") == target:
+            return node
+    return None
+
+def _apl_xml_copy(element):
+    tmpl = element.makeelement(element.tag, dict(element.attrib))
+    tmpl.text = element.text
+    tmpl.tail = element.tail
+    for child in element:
+        tmpl.append(_apl_xml_copy(child))
+    return tmpl
+
+def _apl_xml_namespace(tag):
+    if isinstance(tag, str) and tag.startswith("{"):
+        end = tag.find("}")
+        return tag[1:end] if end > 0 else ""
+    return ""
+
+def _apl_xml_register_namespace(prefix, uri):
+    _apl_xml_et().register_namespace(prefix, uri)
+    return prefix
+
+def _apl_xml_get(element, key, default=None):
+    # اقرأ_خاصية(عنصر, "الاسم") — الصيغة الحرة لعنصر.اقرأ_خاصية("الاسم")
+    return element.get(key, default)
+
+def _apl_xml_set(element, key, value):
+    # عين_خاصية(عنصر, "الاسم", "قيمة") — الصيغة الحرة لعنصر.عين_خاصية(...)
+    element.set(key, value)
+    return element
+
+def _apl_xml_find(element, path, namespaces=None):
+    # الصيغة الحرة لعنصر.ابحث_عنصر: تجد(الجذر, "كتاب")
+    return element.find(path, namespaces) if namespaces else element.find(path)
+
+def _apl_xml_findall(element, path, namespaces=None):
+    return element.findall(path, namespaces) if namespaces else element.findall(path)
+
+def _apl_xml_findtext(element, path, default=None, namespaces=None):
+    return element.findtext(path, default, namespaces)
+
+def _apl_xml_append(parent, child):
+    parent.append(child)
+    return child
+
+def _apl_xml_remove(parent, child):
+    parent.remove(child)
+    return parent
+
+def _apl_xml_clear(element):
+    element.clear()
+    return element
+
+def _apl_xml_set_text(element, text):
+    element.text = text
+    return element
+
+def _apl_xml_set_tail(element, text):
+    element.tail = text
+    return element
+
+def _apl_xml_event_start(tag, attrs):
+    # باني.ابدأ("صنف", {"سعر": "2"}) — حدث بداية وسم للباني
+    if hasattr(tag, "start"):
+        return tag.start(tag, attrs)
+    return (tag, attrs)
+
+def _apl_xml_event_end(tag):
+    # باني.أنهِ("صنف")
+    if hasattr(tag, "end"):
+        return tag.end(tag)
+    return tag
+
+def _apl_xml_indent(tree, space="  ", level=0):
+    # رتّب_الشجرة(الجذر) — إخراج مُزاح بصرياً (ElementTree.indent من 3.9+)
+    _t = _apl_xml_et()
+    target = tree.getroot() if isinstance(tree, _t.ElementTree) else tree
+    if hasattr(_t, "indent"):
+        _t.indent(target, space=space, level=level)
+    return tree
+
+def _apl_xml_pretty(element, space="  "):
+    # نسخة منسّقة من الشجرة (لا تعدّل الأصل) ثم إرجاع النص
+    copy = _apl_xml_copy(element.getroot() if isinstance(element, _apl_xml_et().ElementTree) else element)
+    _apl_xml_indent(copy, space)
+    return _apl_xml_tostring(copy)
+
+def _apl_xml_strip(element):
+    # أزل_المسافات(عنصر) — حذف النصوص والذيل المكوّنة من مسافات فقط
+    for node in element.iter():
+        if node.text is not None and not node.text.strip():
+            node.text = None
+        if node.tail is not None and not node.tail.strip():
+            node.tail = None
+    return element
+
+def _apl_xml_set_tag(element, tag):
+    element.tag = tag
+    return element
+
+def _apl_xml_set_attrib(element, attrib):
+    element.attrib.clear()
+    element.attrib.update(attrib)
+    return element
+
+def _apl_xml_check(text, parser=None):
+    # تحقق_من_عنصر(نص) -> صحيح/خطأ (مناسب للاستخدام مباشرة داخل لو)
+    try:
+        _apl_xml_et().fromstring(text, parser=parser)
+        return True
+    except Exception:
+        return False
+
+def _apl_xml_check_message(text, parser=None):
+    # خطأ_التحقق(نص) -> رسالة الخطأ، أو نص فارغ إن كانت الصياغة صحيحة
+    try:
+        _apl_xml_et().fromstring(text, parser=parser)
+        return ""
+    except Exception as exc:
+        return str(exc)
+
+# --- archive / compression helpers (zipfile, tarfile, gzip, bz2, lzma) ------
+# --- archive / compression helpers (zipfile, tarfile, gzip, bz2, lzma) ------
+# Same rule as the XML helpers: each one imports its module inside its body so
+# a program that never touches an archive pays nothing at startup.
+def _apl_archive_bytes(data):
+    if isinstance(data, str):
+        return data.encode("utf-8")
+    return data
+
+def _apl_archive_text(data):
+    if isinstance(data, (bytes, bytearray)):
+        return bytes(data).decode("utf-8", "replace")
+    return data
+
+def _apl_archive_as_list(items):
+    if items is None:
+        return []
+    if isinstance(items, (str, bytes)):
+        return [items]
+    return list(items)
+
+def _apl_archive_safe_name(name):
+    # رفض أي عضو يحاول الخروج عن مجلد الاستخراج (zip-slip)
+    norm = str(name).replace("\\\\", "/")
+    if norm.startswith("/") or (len(norm) > 1 and norm[1] == ":"):
+        raise ValueError("عضو غير آمن (مسار مطلق): " + str(name))
+    if ".." in norm.split("/"):
+        raise ValueError("عضو غير آمن (خروج عن المجلد): " + str(name))
+    return name
+
+def _apl_file_size(path):
+    import os
+    return os.path.getsize(path)
+
+def _apl_size_human(size, decimals=1):
+    units = ["بايت", "ك.ب", "م.ب", "ج.ب", "ت.ب"]
+    value = float(size)
+    index = 0
+    while value >= 1024 and index < len(units) - 1:
+        value /= 1024.0
+        index += 1
+    if index == 0:
+        return "%d بايت" % int(value)
+    return ("%." + str(int(decimals)) + "f %s") % (value, units[index])
+
+def _apl_compression_ratio(original, compressed):
+    original = float(original)
+    if original <= 0:
+        return 0.0
+    return round(float(compressed) / original * 100.0, 2)
+
+# ---------- ZIP ----------
+def _apl_zip_open(path, mode="r", compression=None, compresslevel=None):
+    import zipfile
+    kwargs = {}
+    if mode[:1] in ("w", "x"):
+        kwargs["compression"] = zipfile.ZIP_DEFLATED if compression is None else compression
+    elif compression is not None:
+        kwargs["compression"] = compression
+    if compresslevel is not None:
+        kwargs["compresslevel"] = compresslevel
+    return zipfile.ZipFile(path, mode, **kwargs)
+
+def _apl_zip_read_open(path, **kwargs):
+    return _apl_zip_open(path, "r", **kwargs)
+
+def _apl_zip_is(path):
+    import zipfile
+    return zipfile.is_zipfile(path)
+
+def _apl_zip_names(path):
+    import zipfile
+    with zipfile.ZipFile(path) as archive:
+        return archive.namelist()
+
+def _apl_zip_count(path):
+    return len(_apl_zip_names(path))
+
+def _apl_zip_contains(path, member):
+    return member in _apl_zip_names(path)
+
+def _apl_zip_info(path, member):
+    import zipfile
+    with zipfile.ZipFile(path) as archive:
+        return archive.getinfo(member)
+
+def _apl_zip_read_bytes(path, member, pwd=None):
+    import zipfile
+    with zipfile.ZipFile(path) as archive:
+        if pwd is not None:
+            archive.setpassword(_apl_archive_bytes(pwd))
+        return archive.read(member)
+
+def _apl_zip_read(path, member, pwd=None):
+    return _apl_archive_text(_apl_zip_read_bytes(path, member, pwd))
+
+def _apl_zip_uncompressed(path):
+    with_open = _apl_zip_open(path, "r")
+    with with_open as archive:
+        return sum(info.file_size for info in archive.infolist())
+
+def _apl_zip_stats(path):
+    with _apl_zip_open(path, "r") as archive:
+        infos = archive.infolist()
+        raw = sum(info.file_size for info in infos)
+        packed = sum(info.compress_size for info in infos)
+    return {
+        "عدد_الأعضاء": len(infos),
+        "الحجم_الأصلي": raw,
+        "الحجم_المضغوط": packed,
+        "نسبة_الضغط": _apl_compression_ratio(raw, packed),
+        "الحجم_المقروء": _apl_size_human(packed),
+    }
+
+def _apl_zip_summary(path):
+    with _apl_zip_open(path, "r") as archive:
+        infos = archive.infolist()
+        lines = []
+        raw = 0
+        packed = 0
+        for info in infos:
+            raw += info.file_size
+            packed += info.compress_size
+            lines.append(
+                "%s  |  %s ← %s" % (
+                    info.filename,
+                    _apl_size_human(info.compress_size),
+                    _apl_size_human(info.file_size),
+                )
+            )
+        lines.append(
+            "الإجمالي: %d عضواً | %s مضغوط من %s (%.2f%%)" % (
+                len(infos), _apl_size_human(packed), _apl_size_human(raw),
+                _apl_compression_ratio(raw, packed),
+            )
+        )
+        return lines
+
+def _apl_zip_print(path):
+    lines = _apl_zip_summary(path)
+    for line in lines:
+        print(line)
+    return lines
+
+def _apl_zip_create(path, items=None, compresslevel=None):
+    import os
+    import zipfile
+    entries = _apl_archive_as_list(items)
+    kwargs = {"compression": zipfile.ZIP_DEFLATED}
+    if compresslevel is not None:
+        kwargs["compresslevel"] = compresslevel
+    with zipfile.ZipFile(path, "w", **kwargs) as archive:
+        for entry in entries:
+            if os.path.isdir(entry):
+                base = os.path.dirname(os.path.abspath(entry))
+                for root, dirs, files in os.walk(entry):
+                    dirs.sort()
+                    for name in sorted(files):
+                        full = os.path.join(root, name)
+                        archive.write(full, os.path.relpath(full, base))
+            elif os.path.exists(entry):
+                archive.write(entry, os.path.basename(entry))
+            else:
+                raise FileNotFoundError("العنصر غير موجود: " + str(entry))
+    return path
+
+def _apl_zip_add(path, items, compresslevel=None):
+    import os
+    import zipfile
+    entries = _apl_archive_as_list(items)
+    kwargs = {}
+    if compresslevel is not None:
+        kwargs["compresslevel"] = compresslevel
+    with zipfile.ZipFile(path, "a", **kwargs) as archive:
+        for entry in entries:
+            if os.path.isdir(entry):
+                base = os.path.dirname(os.path.abspath(entry))
+                for root, dirs, files in os.walk(entry):
+                    dirs.sort()
+                    for name in sorted(files):
+                        full = os.path.join(root, name)
+                        archive.write(full, os.path.relpath(full, base))
+            elif os.path.exists(entry):
+                archive.write(entry, os.path.basename(entry))
+            else:
+                raise FileNotFoundError("العنصر غير موجود: " + str(entry))
+    return path
+
+def _apl_zip_remove(path, members):
+    import os
+    import zipfile
+    names = set(_apl_archive_as_list(members))
+    temp = str(path) + ".tmp"
+    with zipfile.ZipFile(path) as source:
+        with zipfile.ZipFile(temp, "w", compression=zipfile.ZIP_DEFLATED) as target:
+            for info in source.infolist():
+                if info.filename in names:
+                    continue
+                target.writestr(info, source.read(info.filename))
+    os.replace(temp, path)
+    return sorted(names)
+
+def _apl_zip_extract(path, dest=".", members=None, pwd=None):
+    import os
+    import zipfile
+    names = members if members is not None else None
+    if isinstance(names, (str, bytes)):
+        names = [names]
+    with zipfile.ZipFile(path) as archive:
+        targets = list(names) if names is not None else archive.namelist()
+        for name in targets:
+            _apl_archive_safe_name(name)
+        if pwd is not None:
+            archive.setpassword(_apl_archive_bytes(pwd))
+        os.makedirs(dest, exist_ok=True)
+        archive.extractall(dest, members=names)
+        return targets
+
+# ---------- TAR ----------
+def _apl_tar_open(path, mode="r:*"):
+    import tarfile
+    return tarfile.open(path, mode)
+
+def _apl_tar_is(path):
+    import tarfile
+    return tarfile.is_tarfile(path)
+
+def _apl_tar_names(path):
+    import tarfile
+    with tarfile.open(path, "r:*") as archive:
+        return archive.getnames()
+
+def _apl_tar_members(path):
+    import tarfile
+    with tarfile.open(path, "r:*") as archive:
+        return archive.getmembers()
+
+def _apl_tar_info(path, member):
+    import tarfile
+    with tarfile.open(path, "r:*") as archive:
+        return archive.getmember(member)
+
+def _apl_tar_read(path, member):
+    import tarfile
+    with tarfile.open(path, "r:*") as archive:
+        handle = archive.extractfile(member)
+        if handle is None:
+            raise ValueError("العضو ليس ملفاً عادياً: " + str(member))
+        return _apl_archive_text(handle.read())
+
+def _apl_tar_create(path, items=None, mode="w:gz"):
+    import os
+    import tarfile
+    entries = _apl_archive_as_list(items)
+    with tarfile.open(path, mode) as archive:
+        for entry in entries:
+            if os.path.exists(entry):
+                archive.add(entry, arcname=os.path.basename(entry))
+            else:
+                raise FileNotFoundError("العنصر غير موجود: " + str(entry))
+    return path
+
+def _apl_tar_add(path, items, mode="a"):
+    import os
+    import tarfile
+    entries = _apl_archive_as_list(items)
+    with tarfile.open(path, mode) as archive:
+        for entry in entries:
+            if os.path.exists(entry):
+                archive.add(entry, arcname=os.path.basename(entry))
+            else:
+                raise FileNotFoundError("العنصر غير موجود: " + str(entry))
+    return path
+
+def _apl_tar_extract(path, dest=".", members=None):
+    import os
+    import tarfile
+    names = members
+    if isinstance(names, (str, bytes)):
+        names = [names]
+    with tarfile.open(path, "r:*") as archive:
+        targets = list(names) if names is not None else archive.getnames()
+        for name in targets:
+            _apl_archive_safe_name(name)
+        os.makedirs(dest, exist_ok=True)
+        kwargs = {}
+        try:
+            import inspect
+            if "filter" in inspect.signature(archive.extractall).parameters:
+                kwargs["filter"] = "data"
+        except Exception:
+            kwargs = {}
+        archive.extractall(dest, members=names, **kwargs)
+        return targets
+
+# ---------- gzip / bz2 / lzma ----------
+def _apl_gzip_compress(data, compresslevel=9):
+    import gzip
+    return gzip.compress(_apl_archive_bytes(data), compresslevel=int(compresslevel))
+
+def _apl_gzip_decompress(data):
+    import gzip
+    return _apl_archive_text(gzip.decompress(_apl_archive_bytes(data)))
+
+def _apl_bz2_compress(data, compresslevel=9):
+    import bz2
+    return bz2.compress(_apl_archive_bytes(data), compresslevel=int(compresslevel))
+
+def _apl_bz2_decompress(data):
+    import bz2
+    return _apl_archive_text(bz2.decompress(_apl_archive_bytes(data)))
+
+def _apl_lzma_compress(data, compresslevel=None):
+    import lzma
+    preset = 6 if compresslevel is None else int(compresslevel)
+    return lzma.compress(_apl_archive_bytes(data), preset=preset)
+
+def _apl_lzma_decompress(data):
+    import lzma
+    return _apl_archive_text(lzma.decompress(_apl_archive_bytes(data)))
+
+def _apl_gz_read_file(path):
+    import gzip
+    with gzip.open(path, "rt", encoding="utf-8", errors="replace") as handle:
+        return handle.read()
+
+def _apl_gz_write_file(path, text):
+    import gzip
+    with gzip.open(path, "wt", encoding="utf-8") as handle:
+        handle.write(_apl_archive_text(text))
+    return path
+
+def _apl_gz_file(source, dest=None):
+    import gzip
+    import shutil
+    target = dest or (str(source) + ".gz")
+    with open(source, "rb") as reader, gzip.open(target, "wb") as writer:
+        shutil.copyfileobj(reader, writer)
+    return target
+
+def _apl_gz_unfile(source, dest=None):
+    import gzip
+    import shutil
+    target = dest or (str(source)[:-3] if str(source).endswith(".gz") else str(source) + ".out")
+    with gzip.open(source, "rb") as reader, open(target, "wb") as writer:
+        shutil.copyfileobj(reader, writer)
+    return target
+
+def _apl_bz2_read_file(path):
+    import bz2
+    with bz2.open(path, "rt", encoding="utf-8", errors="replace") as handle:
+        return handle.read()
+
+def _apl_bz2_write_file(path, text):
+    import bz2
+    with bz2.open(path, "wt", encoding="utf-8") as handle:
+        handle.write(_apl_archive_text(text))
+    return path
+
+def _apl_lzma_read_file(path):
+    import lzma
+    with lzma.open(path, "rt", encoding="utf-8", errors="replace") as handle:
+        return handle.read()
+
+def _apl_lzma_write_file(path, text):
+    import lzma
+    with lzma.open(path, "wt", encoding="utf-8") as handle:
+        handle.write(_apl_archive_text(text))
+    return path
+
+def _apl_archive_detect(path):
+    import os
+    import zipfile
+    try:
+        import tarfile
+        if tarfile.is_tarfile(path):
+            return "TAR"
+    except Exception:
+        pass
+    if zipfile.is_zipfile(path):
+        return "ZIP"
+    lower = str(path).lower()
+    for suffix, kind in ((".tar.gz", "TAR"), (".tgz", "TAR"), (".tar.bz2", "TAR"),
+                         (".tar.xz", "TAR"), (".tar", "TAR"), (".gz", "GZIP"),
+                         (".bz2", "BZ2"), (".xz", "XZ"), (".lzma", "LZMA"),
+                         (".zip", "ZIP")):
+        if lower.endswith(suffix):
+            return kind
+    return "غير معروف"
+
+def _apl_archive_open(path, mode="r"):
+    import zipfile
+    if zipfile.is_zipfile(path):
+        return zipfile.ZipFile(path, mode)
+    import tarfile
+    tar_mode = mode if mode not in ("r", "w") else ("r:*" if mode == "r" else "w:gz")
+    return tarfile.open(path, tar_mode)
+
+# --- network helpers (socket, ssl, email, smtp, imap, ftp) -------------------
+# Same contract as the archive helpers: every import happens inside the body,
+# so a program that never touches the network imports nothing here.
+def _apl_net_close(conn):
+    # أغلق_مقبس(م) works for a socket object and for a raw file descriptor.
+    import socket
+    if hasattr(conn, "close"):
+        return conn.close()
+    return socket.close(conn)
+
+def _apl_net_bytes(data, encoding="utf-8"):
+    # أرسل_بيانات("نص") is accepted just like bytes.
+    if isinstance(data, str):
+        return data.encode(encoding)
+    return data
+
+def _apl_net_text(data, encoding="utf-8"):
+    if isinstance(data, (bytes, bytearray)):
+        return bytes(data).decode(encoding, "replace")
+    return data
+
+def _apl_net_addr(address):
+    # Accepts ("host", port), "host:port" or ["host", port] and returns a tuple.
+    if isinstance(address, str):
+        host, _, port = address.rpartition(":")
+        return (host or "127.0.0.1", int(port))
+    return tuple(address)
+
+def _apl_net_send(conn, data):
+    import socket
+    sock = conn if hasattr(conn, "sendall") else socket.socket(fileno=conn)
+    payload = _apl_net_bytes(data)
+    sock.sendall(payload)
+    return len(payload)
+
+def _apl_net_recv(conn, size=4096):
+    import socket
+    sock = conn if hasattr(conn, "recv") else socket.socket(fileno=conn)
+    return _apl_net_text(sock.recv(size))
+
+def _apl_net_send_text(conn, data, encoding="utf-8"):
+    payload = _apl_net_bytes(data, encoding)
+    conn["socket"].sendall(payload) if isinstance(conn, dict) else conn.sendall(payload)
+    return len(payload)
+
+def _apl_ssl_context(cafile=None, capath=None, cadata=None, تحقق=True):
+    # سياق_آمن_افتراضي() with an Arabic switch:
+    #   سياق_آمن_افتراضي(تحقق = خطأ)  -> no certificate check (local testing)
+    # The parameter name is Arabic on purpose: the call site already reads
+    # `تحقق = خطأ`, so no keyword mapping is needed.
+    import ssl
+    context = ssl.create_default_context(cafile=cafile, capath=capath, cadata=cadata)
+    if not تحقق:
+        context.check_hostname = False
+        context.verify_mode = ssl.CERT_NONE
+    return context
+
+def _apl_email_attach(message, data, filename=None, subtype=None, cid=None):
+    # أضف_مرفقاً(بايتات, اسم_الملف = "...") without guessing the MIME type.
+    import mimetypes
+    import os
+    if isinstance(data, str) and os.path.isfile(data):
+        filename = filename or os.path.basename(data)
+        with open(data, "rb") as handle:
+            data = handle.read()
+    guess_name = filename or "attachment.bin"
+    mime, _ = mimetypes.guess_type(guess_name)
+    maintype, _, sub = (mime or "application/octet-stream").partition("/")
+    message.add_attachment(data, maintype=maintype, subtype=subtype or sub, filename=filename, cid=cid)
+    return message
+
+def _apl_email_body_list(message):
+    # أجزاء_الرسالة(ر) -> قائمة الأجزاء المفكوكة، مفيدة لكل جزء في ...
+    return list(message.walk())
+
+def _apl_http_status(response):
+    return int(response.status)
+
+def _apl_http_text(response, encoding="utf-8"):
+    return response.read().decode(encoding, "replace")
+
+def _apl_http_json(response):
+    import json
+    return json.loads(_apl_http_text(response))
 """
 
 
@@ -614,6 +1358,7 @@ def print_help():
     print("  python apl.py <file.apl>    Run an APL file")
     print("  python apl.py -c '<code>'   Execute code directly")
     print("  python apl.py help          Show this help")
+    print("  python apl.py --version     Show the version")
     print("  python apl.py repl          Start interactive REPL")
     print("  python apl.py --clear-cache  Delete cached transpilations")
     print("  python apl.py               Show help")
@@ -770,10 +1515,25 @@ def print_help():
     for line in advanced_funcs.ADVANCED_HELP:
         print(f"    {line}")
     print()
+    print("  # xml library (xml.etree.ElementTree)")
+    for line in xml_funcs.XML_HELP:
+        print(f"    {line}")
+    print()
+    print("  # archive library (zipfile, tarfile, gzip, bz2, lzma)")
+    for line in archive_funcs.ARCHIVE_HELP:
+        print(f"    {line}")
+    print()
+    print("  # net library (socket, ssl, http, email, smtp, imap, ftp)")
+    for line in net_funcs.NET_HELP:
+        print(f"    {line}")
+    print()
     print("Examples:")
     print("  python apl.py examples/01-calculator.apl")
     print("  python apl.py help")
     print("  python apl.py repl")
+
+
+__version__ = "1.8"
 
 
 def run_repl():
@@ -781,25 +1541,60 @@ def run_repl():
     print("APL - Ammar Programming Language")
     print("Interactive REPL (type 'exit' or Ctrl+C to quit)")
     print()
-    
+
+    # One shared namespace for the whole session, so variables survive between
+    # lines (and the runtime prologue is executed only once).
+    _namespace = {}
+    exec(_RUNTIME, _namespace)
+
     while True:
         try:
             line = input(">>> ")
-            if line.strip().lower() in ('exit', 'اخرج', 'quit'):
-                print("Goodbye! 👋")
-                break
-            if not line.strip():
-                continue
-            
-            # Transpile and execute single line
-            python_code = _RUNTIME + "\n" + transpile(line)
-            exec(python_code, {})
+        except EOFError:          # end of piped input / Ctrl+D
+            print()
+            break
+        except KeyboardInterrupt:
+            print("\nGoodbye! 👋")
+            break
+
+        if line.strip().lower() in ('exit', 'اخرج', 'quit', 'خروج'):
+            print("Goodbye! 👋")
+            break
+        if not line.strip():
+            continue
+
+        # A block header (ends with ":") keeps reading indented lines, so
+        # `دالة س(ص):` + body works exactly like in a file.
+        eof = False
+        if line.rstrip().endswith(':'):
+            block = [line]
+            while True:
+                try:
+                    cont = input("... ")
+                except EOFError:
+                    eof = True
+                    break
+                except KeyboardInterrupt:
+                    eof = True
+                    print()
+                    break
+                if not cont.strip():
+                    break
+                block.append(cont)
+            line = "\n".join(block)
+
+        try:
+            # Transpile and execute in the session namespace
+            exec(transpile(line), _namespace)
         except KeyboardInterrupt:
             print("\nGoodbye! 👋")
             break
         except Exception as e:
             msg = _get_error_ar(e)
             print(f"\u202B{msg}\u202C", file=sys.stderr)
+        if eof:
+            print()
+            break
 
 
 def main():
@@ -817,6 +1612,10 @@ def main():
 
     if command in ('help', '--help', '-h', '-?'):
         print_help()
+        return
+
+    if command in ('--version', '-v', 'version'):
+        print(f"APL v{__version__} - Ammar Programming Language")
         return
     
     if command in ('repl', 'interactive', 'shell'):
@@ -852,4 +1651,14 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except BrokenPipeError:
+        # `python apl.py help | head` closes the pipe early - exit quietly.
+        try:
+            sys.stdout.close()
+        finally:
+            os._exit(0)
+    except KeyboardInterrupt:
+        print()
+        os._exit(130)

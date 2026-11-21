@@ -24,7 +24,7 @@ ADVANCED_FUNCS = {
     "رئيسي_ملف": "__main__",
     "حزمة": "__init__",
     "كل": "__all__",
-    "رئيسي": "__main__",
+    "رئيسي_متقدم": "__main__",
     "مسار_بحث_حزم": "sys.path",
     
     # === Data Structures ===
@@ -89,7 +89,7 @@ ADVANCED_FUNCS = {
     "خاصية_مخزنة_مؤقتا_دالة": "cached_property",
 }
 
-ADVANCED_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(ADVANCED_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+ADVANCED_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(ADVANCED_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 ADVANCED_HELP = [
     "# === Advanced Decorators ===",
@@ -211,9 +211,9 @@ ADVANCED_METHODS = {
     "is_كبير": "isupper",
     "is_صغير": "islower",
     # set
-    "اتحاد": "union",
-    "تقاطع": "intersection",
-    "فرق": "difference",
+    "اتحاد_متقدم": "union",
+    "تقاطع_متقدم": "intersection",
+    "فرق_متقدم": "difference",
     "مجموعة_فرعية": "issubset",
 }
 

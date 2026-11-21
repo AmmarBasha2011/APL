@@ -36,9 +36,9 @@
 
 | العربي | Python |
 |--------|--------|
-| `كوكي` | response.cookies.get |
-| `ضع_كوكي` | requests.cookies.set |
-| `احذف_كوكي` | requests.cookies.clear |
+| `كوكي_طلبات` | response.cookies.get |
+| `ضع_كوكي_طلبات` | requests.cookies.set |
+| `احذف_كوكي_طلبات` | requests.cookies.clear |
 
 ## معاملات الطلب
 
@@ -69,7 +69,7 @@
 
 | العربي | Python |
 |--------|--------|
-| `تحقق` | verify |
+| `تحقق_طلبات` | verify |
 | `اسمح_التوجيه` | allow_redirects |
 | `بروكسي` | proxies |
 
@@ -77,15 +77,15 @@
 
 | العربي | Python |
 |--------|--------|
-| `مصادقة` | auth |
-| `مصادقة_أساسية` | HTTPBasicAuth |
+| `مصادقة_طلبات` | auth |
+| `مصادقة_أساسية_طلبات` | HTTPBasicAuth |
 | `مصادقة_ملخصة` | HTTPDigestAuth |
 
 ## الجلسات
 
 | العربي | Python |
 |--------|--------|
-| `جلسة` | requests.Session |
+| `جلسة_طلبات` | requests.Session |
 | `افتح_جلسة` | requests.Session |
 | `أغلق_جلسة` | session.close |
 | `جلسة_جيت` | session.get |
@@ -97,14 +97,14 @@
 |--------|--------|
 | `خطأ_http` | requests.exceptions.HTTPError |
 | `خطأ_اتصال` | requests.exceptions.ConnectionError |
-| `انتهت_مهلة` | requests.exceptions.Timeout |
+| `انتهت_مهلة_طلبات` | requests.exceptions.Timeout |
 | `توجيهات_كثيرة` | requests.exceptions.TooManyRedirects |
 
 ## التصفح
 
 | العربي | Python |
 |--------|--------|
-| `تصفح` | params |
+| `تصفح_طلبات` | params |
 | `صفحة_تالية` | response.links.get('next') |
 | `رقم_الصفحة` | params.get('page') |
 
@@ -112,7 +112,7 @@
 
 | العربي | Python |
 |--------|--------|
-| `فلتر` | params |
+| `فلتر_طلبات` | params |
 | `حيث` | params |
 | `يساوي` | params |
 | `أكبر_من` | params |
@@ -132,7 +132,7 @@
 | `حقول` | params |
 | `اختر` | params |
 | `عدد` | params |
-| `مجموع` | params |
+| `مجموع_طلبات` | params |
 
 ## الأمان
 
@@ -162,7 +162,7 @@ print("حالة:", r.status_code)
 print("نتيجة:", r2.json())
 
 # Session
-المتغير s = جلسة()
+المتغير s = جلسة_طلبات()
 s.headers.update({"Authorization": "Bearer token"})
 المتغير ر3 = s.get("https://api.example.com/data")
 ```

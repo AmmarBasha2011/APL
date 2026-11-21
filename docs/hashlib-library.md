@@ -40,18 +40,13 @@ hashlib تتطلب **bytes** وليس strings. استخدم `b"..."` للباي�
 ## مثال
 
 ```apl
-# SHA256
-النتيجة = تجزئة_sha256(b"Hello World")
-print("SHA256:", النتيجة.hexdigest())
+# SHA256 و MD5 و SHA1 — كلها دوال عربية
+المتغير نتيجة = تجزئة_sha256(b"Hello World")
+print("SHA256:", نتيجة.hexdigest())
 
-# MD5
-النتيجة2 = تجزئة_md5(b"Hello World")
-print("MD5:", النتيجة2.hexdigest())
+المتغير نتيجة2 = تجزئة_md5(b"Hello World")
+print("MD5:", نتيجة2.hexdigest())
 
-# SHA1
-النتيجة3 = تجزئة_sha1(b"Hello World")
-print("SHA1:", النتيجة3.hexdigest())
-
-# Shortcuts
-print("sha256:", sha256(b"test").hexdigest())
+المتغير نتيجة3 = تجزئة_sha1(b"Hello World")
+print("SHA1:", نتيجة3.hexdigest())
 ```

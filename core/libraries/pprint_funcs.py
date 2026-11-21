@@ -8,7 +8,7 @@ PPRINT_FUNCS = {
     "طباعة_نص_جميل": "pprint.pformat",
 }
 
-PPRINT_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(PPRINT_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+PPRINT_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(PPRINT_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI
 PPRINT_HELP = [

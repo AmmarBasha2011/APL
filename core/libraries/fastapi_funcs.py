@@ -19,7 +19,7 @@ FASTAPI_FUNCS = {
     "مسار_تعديل": "@app.put",
     "مسار_تصحيح": "@app.patch",
     "سريع_تصحيح": "@app.patch",
-    "متحكم": "@app.get",
+    "متحكم_فاست": "@app.get",
     "متحكم_رأس": "@app.head",
     "خيارات_مسار": "@app.options",
     "مسار_خيارات": "@app.options",
@@ -36,33 +36,33 @@ FASTAPI_FUNCS = {
     "نقطة_نهاية": "@app.get",
     
     # تشغيل (Running)
-    "شغل": "uvicorn.run",
-    "شغل_خدمة": "uvicorn.run",
-    "استمع": "uvicorn.run",
-    "ابدأ": "uvicorn.run",
+    "شغل_فاست": "uvicorn.run",
+    "شغل_خدمة_فاست": "uvicorn.run",
+    "استمع_فاست": "uvicorn.run",
+    "ابدأ_فاست": "uvicorn.run",
     "شغل_سريع": "uvicorn.run",
     
     # الطلب (Request)
     "طلب_-fastapi": "Request",
     "طلب_جسم": "request.json",
-    "طلب_مسار": "request.path_params",
+    "طلب_مسار_فاست": "request.path_params",
     "طلب_استعلام": "request.query_params",
-    "طلب_رأس": "request.headers",
-    "طلب_كوكي": "request.cookies",
-    "طلب_جلسة": "request.session",
-    "طلب_طريقة": "request.method",
-    "طلب_عنوان": "request.url",
-    "طلب_أي_بي": "request.client.host",
-    "طلب_نموذج": "request.form",
-    "طلب_ملف": "request.files",
+    "طلب_رأس_فاست": "request.headers",
+    "طلب_كوكي_فاست": "request.cookies",
+    "طلب_جلسة_فاست": "request.session",
+    "طلب_طريقة_فاست": "request.method",
+    "طلب_عنوان_فاست": "request.url",
+    "طلب_أي_بي_فاست": "request.client.host",
+    "طلب_نموذج_فاست": "request.form",
+    "طلب_ملف_فاست": "request.files",
     "طلب_مسار_كامل": "request.url.path",
     "طلب_نظامي": "request.url.params",
     "طلب_محلي": "request.url.hostname",
     
     # الاستجابة (Response)
-    "استجابة": "Response",
-    "استجابة_نص": "PlainTextResponse",
-    "استجابة_جسون": "JSONResponse",
+    "استجابة_فاست": "Response",
+    "استجابة_نص_فاست": "PlainTextResponse",
+    "استجابة_جسون_فاست": "JSONResponse",
     "استجابة_توجيه": "RedirectResponse",
     "استجابة_ملف": "FileResponse",
     "استجابة_تدفق": "StreamingResponse",
@@ -83,30 +83,30 @@ FASTAPI_FUNCS = {
     "إعدادات_النموذج": "model_config",
     
     # إعادة التوجيه (Redirect)
-    "حول": "RedirectResponse",
-    "إعادة_توجيه": "RedirectResponse",
-    "رابط_دائم": "url_for",
-    "بناء_رابط": "url_for",
+    "حول_فاست": "RedirectResponse",
+    "إعادة_توجيه_فاست": "RedirectResponse",
+    "رابط_دائم_فاست": "url_for",
+    "بناء_رابط_فاست": "url_for",
     
     # القوالب (Templates)
-    "عرض": "templates.TemplateResponse",
-    "قالب": "templates.TemplateResponse",
-    "عرض_قالب": "templates.TemplateResponse",
+    "عرض_فاست": "templates.TemplateResponse",
+    "قالب_فاست": "templates.TemplateResponse",
+    "عرض_قالب_فاست": "templates.TemplateResponse",
     "عرض_صفحة": "templates.TemplateResponse",
     
     # الأخطاء (Errors)
     "خطأ_ http": "HTTPException",
-    "خطأ": "HTTPException",
-    "خطأ_400": "HTTPException",
-    "خطأ_401": "HTTPException",
-    "خطأ_403": "HTTPException",
-    "خطأ_404": "HTTPException",
+    "خطأ_فاست": "HTTPException",
+    "خطأ_400_فاست": "HTTPException",
+    "خطأ_401_فاست": "HTTPException",
+    "خطأ_403_فاست": "HTTPException",
+    "خطأ_404_فاست": "HTTPException",
     "خطأ_405": "HTTPException",
     "خطأ_408": "HTTPException",
     "خطأ_409": "HTTPException",
     "خطأ_422": "HTTPException",
     "خطأ_429": "HTTPException",
-    "خطأ_500": "HTTPException",
+    "خطأ_500_فاست": "HTTPException",
     "خطأ_502": "HTTPException",
     "خطأ_503": "HTTPException",
     "خطأ_504": "HTTPException",
@@ -147,9 +147,9 @@ FASTAPI_FUNCS = {
     "حالة_اتصال": "health",
     
     # وسطاء (Middlewares)
-    "وسيط": "middleware",
-    "قبل_طلب": "middleware('http')",
-    "بعد_طلب": "middleware('http')",
+    "وسيط_فاست": "middleware",
+    "قبل_طلب_فاست": "middleware('http')",
+    "بعد_طلب_فاست": "middleware('http')",
     "وسيط_طلب": "app.middleware('http')",
     "موجه_طلب": "app.middleware('http')",
     "مراقب": "app.middleware('http')",
@@ -169,15 +169,15 @@ FASTAPI_FUNCS = {
     "رمز_وصول": "Depends(oauth2_scheme)",
     
     # المصادقة (Auth)
-    "سجل_دخول": "login_for_access_token",
-    "سجل_خروج": "logout",
+    "سجل_دخول_فاست": "login_for_access_token",
+    "سجل_خروج_فاست": "logout",
     "رمز_وصول": "create_access_token",
     "رمز_تحقق": "create_access_token",
     "رمز_جديد": "create_access_token",
     "تحقق_رمز": "verify_access_token",
-    "تحقق_من": "get_current_user",
+    "تحقق_من_فاست": "get_current_user",
     "تحقق_مستخدم": "get_current_active_user",
-    "شفر_كلمة": "get_password_hash",
+    "شفر_كلمة_فاست": "get_password_hash",
     "تحقق_كلمة": "verify_password",
     "كلمة_مرور_صحيحة": "verify_password",
     "كلمة_مشروعة": "verify_password",
@@ -191,9 +191,9 @@ FASTAPI_FUNCS = {
     "أذونات": "Security",
     
     # رفع الملفات (File Upload)
-    "احفظ_ملف": "file.save",
-    "ملف_آمن": "secure_filename",
-    "اسم_آمن": "secure_filename",
+    "احفظ_ملف_فاست": "file.save",
+    "ملف_آمن_فاست": "secure_filename",
+    "اسم_آمن_فاست": "secure_filename",
     "ملف_مرفوع": "UploadFile",
     "ملف_صورة": "UploadFile",
     "ملف_صوت": "UploadFile",
@@ -245,8 +245,8 @@ FASTAPI_FUNCS = {
     "مرجع_تفاعلي": "docs",
     
     # اختبار (Testing)
-    "اختبار_عميل": "TestClient",
-    "عميل": "TestClient",
+    "اختبار_عميل_فاست": "TestClient",
+    "عميل_فاست": "TestClient",
     "اختبار": "TestClient",
     "اختبار_خدمة": "TestClient",
     
@@ -255,20 +255,20 @@ FASTAPI_FUNCS = {
     "قاعدة_محلية": "SessionLocal",
     "قاعدة_بيانات": "SessionLocal",
     "قاعدة_سريع": "SessionLocal",
-    "استعلام": "_apl_db.query",
+    "استعلام_فاست": "_apl_db.query",
     "أضف_سجل": "_apl_db.add",
     "نفذ_سريع": "_apl_db.commit",
     "تراجع_سريع": "_apl_db.rollback",
     "أغلق_سريع": "_apl_db.close",
     "امسح": "_apl_db.flush",
-    "احذف_سجل": "_apl_db.delete",
+    "احذف_سجل_فاست": "_apl_db.delete",
     "حدّث": "_apl_db.refresh",
     
     # الترحيلات (Migrations)
     "ترحيل": "alembic",
     "ترحيل_قاعدة": "alembic",
     "إنشاء_جداول": "Base.metadata.create_all",
-    "هجرة": "Base.metadata.create_all",
+    "هجرة_فاست": "Base.metadata.create_all",
     "ترحيل_أولي": "Base.metadata.create_all",
     "ترحيل_تراجع": "alembic downgrade",
     "ترحيل_ترقية": "alembic upgrade",
@@ -306,9 +306,9 @@ FASTAPI_FUNCS = {
     "كوكي_نطاق": "response.set_cookie",
     
     # الجلسة (Session)
-    "جلسة": "session",
-    "ضع_جلسة": "session.__setitem__",
-    "احذف_جلسة": "session.pop",
+    "جلسة_فاست": "session",
+    "ضع_جلسة_فاست": "session.__setitem__",
+    "احذف_جلسة_فاست": "session.pop",
     "مسح_جلسة": "session.clear",
     "مفتاح_جلسة": "session_key",
     "فترة_جلسة": "session_timeout",
@@ -352,7 +352,7 @@ FASTAPI_FUNCS = {
     "بحث_نصي": "search",
     
     # الفلترة (Filtering)
-    "فلتر": "filter",
+    "فلتر_فاست": "filter",
     "فلتر_حقل": "filter",
     "فلتر_نطاق": "filter",
     "فلتر_تاريخ": "filter",
@@ -366,7 +366,7 @@ FASTAPI_FUNCS = {
     "ملح": "salt",
     "توقيع": "sign",
     "تحقق_توقيع": "verify",
-    "مفتاح_سري": "secret_key",
+    "مفتاح_سري_فاست": "secret_key",
     "خوارزمية": "algorithm",
     "مدة_انتهاء": "expire_minutes",
     "تشفير_متماثل": "symmetric",
@@ -390,7 +390,7 @@ FASTAPI_FUNCS = {
     "إعدادات": "settings",
     "تكوين": "config",
     "متغيرات": "env",
-    "متغير_بيئة": "env",
+    "متغير_بيئة_فاست": "env",
     "بيئة": "environment",
     "وضع": "mode",
     "وضع_تطوير": "development",
@@ -497,9 +497,9 @@ FASTAPI_FUNCS = {
     "تحميل": "upload",
     "رفع": "upload",
     "ملف_مرفوع": "UploadFile",
-    "حجم_ملف": "file_size",
+    "حجم_ملف_فاست": "file_size",
     "نوع_ملف": "file_type",
-    "اسم_ملف": "filename",
+    "اسم_ملف_فاست": "filename",
     "مسار_ملف": "file_path",
     
     # التنزيل (Download)
@@ -557,7 +557,7 @@ FASTAPI_FUNCS = {
     "تدفق": "stream",
     
     # الضغط (Compression)
-    "ضغط": "compression",
+    "ضغط_فاست": "compression",
     "خوارزمية_ضغط": "compression_algorithm",
     "مستوى_ضغط": "compression_level",
     "نسبة_ضغط": "compression_ratio",
@@ -679,7 +679,7 @@ FASTAPI_FUNCS = {
     "لوحة_مراقبة": "monitoring_dashboard",
 }
 
-FASTAPI_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(FASTAPI_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+FASTAPI_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(FASTAPI_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI
 FASTAPI_HELP = [
@@ -693,20 +693,20 @@ FASTAPI_HELP = [
     "سريع_حذف('/path')       - مسار DELETE",
     "سريع_تعديل('/path')     - مسار PUT",
     "# === تشغيل الخادم ===",
-    "شغل(app, منفذ)         - تشغيل الخادم",
+    "شغل_فاست(app, منفذ)         - تشغيل الخادم",
     "# === النماذج ===",
     "نموذج_أساسي()           - نموذج بيانات أساسي",
     "حقل(افتراضي, وصف)       - حقل في النموذج",
     "# === الطلب ===",
     "طلب                       - كائن الطلب",
     "طلب_جسم()                - جسم الطلب JSON",
-    "طلب_مسار(مفتاح)          - معاملات المسار",
+    "طلب_مسار_فاست(مفتاح)          - معاملات المسار",
     "# === الاستجابة ===",
-    "استجابة(محتوى)          - إنشاء استجابة",
-    "استجابة_جسون(بيانات)   - استجابة JSON",
+    "استجابة_فاست(محتوى)          - إنشاء استجابة_فاست",
+    "استجابة_جسون_فاست(بيانات)   - استجابة_فاست JSON",
     "# === الأخطاء ===",
-    "خطأ(رمز, تفاصيل)       - إطلاق خطأ HTTP",
-    "غير_موجود()              - خطأ 404",
+    "خطأ_فاست(رمز, تفاصيل)       - إطلاق خطأ_فاست HTTP",
+    "غير_موجود()              - خطأ_فاست 404",
     "# === الحالة ===",
     "نجاح                     - 200 OK",
     "غير_مصرح                - 401 Unauthorized",
@@ -715,7 +715,7 @@ FASTAPI_HELP = [
     "# === الأمان ===",
     "تبعية(دالة)            - تبعية حقن",
     "مصادقة_رمز(مخطط)       - مصادقة بالرمز",
-    "شفر_كلمة(كلمة)         - تشفير كلمة مرور",
+    "شفر_كلمة_فاست(كلمة)         - تشفير كلمة مرور",
     "# === خلفية ===",
     "خلفية                     - مهام الخلفية",
     "مهمة(دالة, *حجج)       - إضافة مهمة",
@@ -725,5 +725,5 @@ FASTAPI_HELP = [
 ]
 
 IMPORT_NAME = "fastapi"
-IMPORT_CHECK = "fastapi\."
+IMPORT_CHECK = r"fastapi\.|(?<![\w.])FastAPI\("
 IMPORT_STATEMENT = "from fastapi import FastAPI, APIRouter, Depends, HTTPException, status, Request, Response, BackgroundTasks, WebSocket, File, UploadFile, Security"

@@ -11,14 +11,14 @@ ZONEINFO_FUNCS = {
       "منطقة_من_النص": "zoneinfo.ZoneInfo",
 }
 
-ZONEINFO_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(ZONEINFO_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+ZONEINFO_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(ZONEINFO_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 ZONEINFO_CONSTANTS = {
     "مسار_المناطق": "zoneinfo.TZPATH",
     "منطقة_utc": "datetime.timezone.utc",
 }
 
-ZONEINFO_CONSTANT_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(ZONEINFO_CONSTANTS.keys(), key=len, reverse=True)) + r")(?![\w\u0600-\u06FF])"
+ZONEINFO_CONSTANT_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(ZONEINFO_CONSTANTS.keys(), key=len, reverse=True)) + r")(?![\w\u0600-\u06FF])"
 
 ZONEINFO_PROPS = {
     "مفتاح_المنطقة": "key",

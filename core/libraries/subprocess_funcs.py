@@ -5,24 +5,24 @@ Full subprocess wrapper with Arabic keywords
 
 SUBPROCESS_FUNCS = {
     # الإنشاء الأساسي
-    "أنشئ_عملية": "subprocess.run",
+    "أنشئ_عملية_أوامر": "subprocess.run",
     "عملية": "subprocess.run",
-    "نفذ": "subprocess.run",
-    "شغل": "subprocess.run",
+    "نفذ_أوامر": "subprocess.run",
+    "شغل_أوامر": "subprocess.run",
     
     # العملية الأساسية
     "Process": "subprocess.Popen",
     "أنشئ_Process": "subprocess.Popen",
     
     # الخصائص
-    "حجة": "args",
+    "حجة_أوامر": "args",
     "قشرة": "shell",
-    "انتظر": "timeout",
-    "ترميز": "encoding",
+    "انتظر_أوامر": "timeout",
+    "ترميز_أوامر": "encoding",
     "ترميز_خطأ": "errors",
     "مدخل": "stdin",
     "مخرج": "stdout",
-    "خطأ": "stderr",
+    "خطأ_أوامر": "stderr",
     "دليل": "cwd",
     "متغيرات_بيئة": "env",
     "تجميع_مخرج": "text",
@@ -31,13 +31,13 @@ SUBPROCESS_FUNCS = {
     "مدخل_نصي": "input",
     
     # العمليات
-    "اتصل": "process.communicate",
+    "اتصل_أوامر": "process.communicate",
     "أرسل": "process.communicate",
     "انتظر_إنهاء": "process.wait",
-    "ألغى": "process.terminate",
+    "ألغى_أوامر": "process.terminate",
     "اقتل": "process.kill",
     "أرسل_إشارة": "process.send_signal",
-    "إشارة": "process.send_signal",
+    "إشارة_أوامر": "process.send_signal",
     "رمز_العودة": "process.returncode",
     "pid": "process.pid",
     "معرف": "process.pid",
@@ -59,7 +59,7 @@ SUBPROCESS_FUNCS = {
     # التحقق
     "تم_إنهاء": "process.poll",
     "انتهى": "process.poll",
-    "نشط": "process.poll",
+    "نشط_أوامر": "process.poll",
     
     # الأخطاء
     "CalledProcessError": "subprocess.CalledProcessError",
@@ -67,7 +67,7 @@ SUBPROCESS_FUNCS = {
     "FileNotFoundError": "FileNotFoundError",
     
     # التوجيه
-    "تحويل": "stderr_to_stdout",
+    "تحويل_أوامر": "stderr_to_stdout",
     "دمج": "merge_outputs",
     
     # الخصائص الإضافية
@@ -90,13 +90,13 @@ SUBPROCESS_FUNCS = {
     "stderr": "stderr",
     
     # المخرجات
-    "خرج_معياري": "stdout",
-    "خطأ_معياري": "stderr",
+    "خرج_معياري_أوامر": "stdout",
+    "خطأ_معياري_أوامر": "stderr",
     "دخرج_وخطأ": "stdout_and_stderr",
     
     # التحقق من الحالة
-    "نجاح": "returncode == 0",
-    "فشل": "returncode != 0",
+    "نجاح_أوامر": "returncode == 0",
+    "فشل_أوامر": "returncode != 0",
     "رمز_نجاح": "0",
     
     # إدارة العمليات
@@ -109,47 +109,47 @@ SUBPROCESS_FUNCS = {
     "getstatusoutput": "subprocess.getstatusoutput",
 }
 
-SUBPROCESS_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(SUBPROCESS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+SUBPROCESS_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(SUBPROCESS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 SUBPROCESS_HELP = [
     "# === الإنشاء ===",
-    "أنشئ_عملية(أمر)        - تشغيل أمر",
+    "أنشئ_عملية_أوامر(أمر)        - تشغيل أمر",
     "عملية(أمر)              - عملية (مختصر)",
-    "نفذ(أمر)                - تنفيذ أمر",
+    "نفذ_أوامر(أمر)                - تنفيذ أمر",
     "Process(أمر)            - إنشاء Process",
     "# === الخصائص ===",
-    "حجة(قائمة)              - حجة الأمر",
+    "حجة_أوامر(قائمة)              - حجة_أوامر الأمر",
     "قشرة(صحيح)              - استخدام القشرة",
-    "انتظر(ثوان)             - مهلة الانتظار",
+    "انتظر_أوامر(ثوان)             - مهلة الانتظار",
     "دليل(مسار)              - دليل العمل",
     "متغيرات_بيئة(قاموس)     - متغيرات البيئة",
     "التقاط(صحيح)           - التقاط المخرجات",
     "مدخل(نص)                - مدخل العملية",
     "# === التنفيذ ===",
-    "اتصل()                  - تواصل مع العملية",
+    "اتصل_أوامر()                  - تواصل مع العملية",
     "انتظر_إنهاء()            - انتظار الإنهاء",
-    "ألغى()                  - إنهاء العملية",
+    "ألغى_أوامر()                  - إنهاء العملية",
     "اقتل()                  - قتل العملية",
-    "أرسل_إشارة(إشارة)       - إرسال إشارة",
+    "أرسل_إشارة(إشارة_أوامر)       - إرسال إشارة_أوامر",
     "# === الحالة ===",
     "رمز_العودة()            - رمز العودة",
     "pid()                    - معرف العملية",
     "تم_إنهاء()              - هل انتهت العملية",
     "# === المخرجات ===",
-    "خرج_معياري()            - الخرج المعياري",
-    "خطأ_معياري()            - الخطأ المعياري",
+    "خرج_معياري_أوامر()            - الخرج المعياري",
+    "خطأ_معياري_أوامر()            - الخطأ المعياري",
     "دخرج_وخطأ()            - دمج المخرجات",
     "# === الإشارات ===",
-    "SIGTERM                  - إشارة إنهاء",
-    "SIGKILL                  - إشارة قتل",
-    "SIGINT                   - إشارة مقاطعة",
+    "SIGTERM                  - إشارة_أوامر إنهاء",
+    "SIGKILL                  - إشارة_أوامر قتل",
+    "SIGINT                   - إشارة_أوامر مقاطعة",
     "# === الأجهزة ===",
     "PIPE                     - أنبوب",
     "STDOUT                   - خرج معياري",
     "DEVNULL                  - لا شيء",
     "# === التحقق ===",
-    "نجاح()                   - نجاح العملية",
-    "فشل()                    - فشل العملية",
+    "نجاح_أوامر()                   - نجاح_أوامر العملية",
+    "فشل_أوامر()                    - فشل_أوامر العملية",
     "رمز_نجاح                 - رمز النجاح (0)",
 ]
 

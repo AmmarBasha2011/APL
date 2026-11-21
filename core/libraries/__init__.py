@@ -44,6 +44,9 @@ from . import uuid_funcs
 from . import base64_funcs
 from . import urllib_funcs
 from . import functools_funcs
+from . import xml_funcs
+from . import archive_funcs
+from . import net_funcs
 
 # Registry: module references for easy access
 LIBRARIES = {
@@ -88,6 +91,9 @@ LIBRARIES = {
     "operator": operator_funcs,
     "pprint": pprint_funcs,
     "enum": enum_funcs,
+    "xml": xml_funcs,
+    "archive": archive_funcs,
+    "net": net_funcs,
 }
 
 def get_all_funcs():

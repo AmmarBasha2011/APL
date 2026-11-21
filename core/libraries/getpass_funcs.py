@@ -8,7 +8,7 @@ GETPASS_FUNCS = {
     "اسم_المستخدم_الحالي": "getpass.getuser",
 }
 
-GETPASS_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(GETPASS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+GETPASS_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(GETPASS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI
 GETPASS_HELP = [

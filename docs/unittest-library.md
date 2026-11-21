@@ -8,7 +8,7 @@
 |--------|--------|-------|
 | `حالة_اختبار()` | `unittest.TestCase()` | فئة اختبار |
 | `أنشئ_اختبار()` | `unittest.TestCase()` | إنشاء اختبار |
-| `اختبار()` | `unittest.TestCase()` | اختبار |
+| `حالة_اختبار()` | `unittest.TestCase()` | اختبار |
 | `setUp()` | `setUp()` | قبل كل اختبار |
 | `tearDown()` | `tearDown()` | بعد كل اختبار |
 | `setUpClass()` | `setUpClass()` | قبل الفئة |
@@ -72,12 +72,12 @@
 | `ساوي(أ, ب)` | assertEqual |
 | `لا_ساوي(أ, ب)` | assertNotEqual |
 | `تأكيد(تعبير)` | assertTrue |
-| `خطأ(تعبير)` | assertFalse |
+| `خطأ_اختبار(تعبير)` | assertFalse |
 | `هو(أ, ب)` | assertIs |
 | `ليس(أ, ب)` | assertIsNot |
 | `لا_شيء(قيمة)` | assertIsNone |
 | `ليس_لا_شيء(قيمة)` | assertIsNotNone |
-| `في(عنصر, تسلسل)` | assertIn |
+| `في_اختبار(عنصر, تسلسل)` | assertIn |
 | `ليس_في(عنصر, تسلسل)` | assertNotIn |
 | `من_نوع(كائن, نوع)` | assertIsInstance |
 | `ليس_من_نوع(كائن, نوع)` | assertNotIsInstance |
@@ -85,8 +85,8 @@
 | `يحذر(تحذير, دالة)` | assertWarns |
 | `يسجل(مسجل, مستوى)` | assertLogs |
 | `تقريبا(أ, ب)` | assertAlmostEqual |
-| `أكبر(أ, ب)` | assertGreater |
-| `أصغر(أ, ب)` | assertLess |
+| `أكبر_اختبار(أ, ب)` | assertGreater |
+| `أصغر_اختبار(أ, ب)` | assertLess |
 | `أكبر_أو_يساوي(أ, ب)` | assertGreaterEqual |
 | `أصغر_أو_يساوي(أ, ب)` | assertLessEqual |
 | `يطابق_نمط(نص, نمط)` | assertRegex |
@@ -106,7 +106,7 @@
 | العربي | Python | الوصف |
 |--------|--------|-------|
 | `شغل_اختبارات(مجموعة)` | `unittest.TextTestRunner().run(مجموعة)` | تشغيل الاختبارات |
-| `نفذ(مجموعة)` | `testRunner.run(مجموعة)` | تنفيذ الاختبارات |
+| `نفذ_اختبار(مجموعة)` | `testRunner.run(مجموعة)` | تنفيذ الاختبارات |
 | `رئيسي()` | `unittest.main()` | الدالة الرئيسية |
 
 ## التخطي والتوقع
@@ -125,28 +125,25 @@
 | `mock()` | `unittest.mock` | مكتبة الـ mock |
 | `Mock()` | `unittest.mock.Mock()` | كائن mock |
 | `MagicMock()` | `unittest.mock.MagicMock()` | كائن MagicMock |
-| `patch(هدف)` | `unittest.mock.patch(هدف)` | تصحيح |
-| `patch.object(هدف, خاصية)` | `unittest.mock.patch.object(هدف, خاصية)` | تصحيح كائن |
+| `تصحيح_اختبار(هدف)` | `unittest.mock.تصحيح_اختبار(هدف)` | تصحيح |
+| `patch.object(هدف, خاصية)` | `unittest.mock.تصحيح_اختبار.object(هدف, خاصية)` | تصحيح كائن |
 
 ## مثال
 
 ```apl
-class TestMath(حالة_اختبار):
-    def setUp(self):
-        self.x = 10
-        self.y = 20
+import unittest
 
-    def test_جمع(self):
-        result = self.x + self.y
-        ساوي(result, 30)
+صنف TestMath(unittest.TestCase):
+    دالة setUp(ذات):
+        ذات.س = 10
+        ذات.ص = 20
 
-    def test_ضرب(self):
-        result = self.x * self.y
-        ساوي(result, 200)
+    دالة test_جمع(ذات):
+        ذات.assertEqual(ذات.س + ذات.ص, 30)
 
-    def test_أكبر(self):
-        أكبر(self.y, self.x)
+    دالة test_ضرب(ذات):
+        ذات.assertEqual(ذات.س * ذات.ص, 200)
 
-# تشغيل الاختبارات
-رئيسي()
+المتغير حزمة = unittest.TestLoader().loadTestsFromTestCase(TestMath)
+unittest.TextTestRunner(verbosity=2).run(حزمة)
 ```
