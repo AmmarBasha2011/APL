@@ -5,18 +5,13 @@ Full logging wrapper with Arabic keywords
 
 LOGGING_FUNCS = {
     # الإنشاء والتكوين
-    "سجل": "logging.getLogger",
+    "مسجّل": "logging.getLogger",
     "أنشئ_مسجل": "logging.getLogger",
     "مسجل": "logging.getLogger",
-    "تكوين": "logging.basicConfig",
+    "تكوين_تسجيل": "logging.basicConfig",
     "أساسي": "logging.basicConfig",
     
     # مستويات السجل
-    "مستوى_تصحيح": "logging.DEBUG",
-    "مستوى_معلومات": "logging.INFO",
-    "مستوى_تحذير": "logging.WARNING",
-    "مستوى_خطأ": "logging.ERROR",
-    "level_حرج": "logging.CRITICAL",
     "مستوى": "setLevel",
     "ضع_مستوى": "setLevel",
     
@@ -40,7 +35,7 @@ LOGGING_FUNCS = {
     "أزل_معالج": "logger.removeHandler",
     
     # المسجل الجذر
-    "جذر": "logging.root",
+    "جذر_تسجيل": "logging.root",
     "سجل_جذر": "logging.root",
     "سجل_أساسي": "logging",
     
@@ -50,26 +45,26 @@ LOGGING_FUNCS = {
     "اطبع_تحذير": "logging.warning",
     "اطبع_خطأ": "logging.error",
     "اطبع_حرج": "logging.critical",
-    "استثناء": "logging.exception",
+    "استثناء_تسجيل": "logging.exception",
     
     # التسجيل
     "تسجيل": "logging.log",
     "تصحيح": "debug",
     "معلومات": "info",
     "تحذير": "warning",
-    "خطأ": "error",
+    "خطأ_تسجيل": "error",
     "حرج": "critical",
     "استثناء_سجل": "exception",
     
     # الفلاتر (Filters)
-    "فلتر": "logging.Filter",
+    "فلتر_تسجيل": "logging.Filter",
     "أنشئ_فلتر": "logging.Filter",
     "أضف_فلتر": "logger.addFilter",
     "أزل_فلتر": "logger.removeFilter",
     "اسم_فلتر": "filter.name",
     
     # البيانات الوصفية
-    "اسم": "logger.name",
+    "اسم_المسجل": "logger.name",
     "أب": "logger.parent",
     "منتشر": "logger.propagate",
     "مكّن": "logger.disabled",
@@ -125,17 +120,17 @@ LOGGING_VERBS = {
     "سجل_مستوى": "logging.getLogger",
 }
 
-LOGGING_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(LOGGING_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+LOGGING_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(LOGGING_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 LOGGING_HELP = [
     "# === الإنشاء ===",
-    "سجل(اسم)               - إنشاء مسجل",
-    "أنشئ_مسجل(اسم)         - إنشاء مسجل",
-    "مسجل(اسم)              - مسجل (مختصر)",
-    "جذر()                   - المسجل الجذر",
+    "مسجّل(اسم_المسجل)               - إنشاء مسجل",
+    "أنشئ_مسجل(اسم_المسجل)         - إنشاء مسجل",
+    "مسجل(اسم_المسجل)              - مسجل (مختصر)",
+    "جذر_تسجيل()                   - المسجل الجذر",
     "# === التكوين ===",
-    "تكوين()                - تكوين أساسي",
-    "أساسي()                - تكوين أساسي",
+    "تكوين_تسجيل()                - تكوين_تسجيل أساسي",
+    "أساسي()                - تكوين_تسجيل أساسي",
     "ضع_مستوى(مستوى)        - تعيين المستوى",
     "# === المستويات ===",
     "مستوى_تصحيح()          - DEBUG",
@@ -151,17 +146,17 @@ LOGGING_HELP = [
     "# === التنسيق ===",
     "شكل(تنسيق)             - منسق النصوص",
     "ضع_شكل(شكل)            - تعيين المنسق",
-    "أضف_فلتر(فلتر)         - إضافة فلتر",
+    "أضف_فلتر(فلتر_تسجيل)         - إضافة فلتر_تسجيل",
     "# === التسجيل ===",
     "تصحيح(رسالة)           - تصحيح",
     "معلومات(رسالة)        - معلومات",
     "تحذير(رسالة)           - تحذير",
-    "خطأ(رسالة)             - خطأ",
+    "خطأ_تسجيل(رسالة)             - خطأ_تسجيل",
     "حرج(رسالة)             - حرج",
-    "استثناء(رسالة)         - استثناء",
+    "استثناء_تسجيل(رسالة)         - استثناء_تسجيل",
     "# === البيانات الإضافية ===",
-    "سجل_إضافي(مسجل, بيانات) - محول سجل",
-    "محول_سجل(مسجل, بيانات) - محول سجل",
+    "سجل_إضافي(مسجل, بيانات) - محول مسجّل",
+    "محول_سجل(مسجل, بيانات) - محول مسجّل",
     "# === الإغلاق ===",
     "أغلق()                 - إغلاق كل المسجلات",
     "تنظيف()                - تنظيف المسجلات",
@@ -170,3 +165,18 @@ LOGGING_HELP = [
 IMPORT_NAME = "logging"
 IMPORT_CHECK = "logging\."
 IMPORT_STATEMENT = "import logging"
+
+# مستويات التسجيل كقيم ثابتة (تُستعمل وحدها بلا أقواس)
+LOGGING_CONSTANTS = {
+    "مستوى_تصحيح": "logging.DEBUG",
+    "مستوى_معلومات": "logging.INFO",
+    "مستوى_تحذير": "logging.WARNING",
+    "مستوى_خطأ": "logging.ERROR",
+    "مستوى_حرج": "logging.CRITICAL",
+}
+
+LOGGING_CONSTANT_PATTERN = (
+    r"(?<![\w.\u0600-\u06FF])("
+    + "|".join(sorted(LOGGING_CONSTANTS.keys(), key=len, reverse=True))
+    + r")(?![\w\u0600-\u06FF])"
+)

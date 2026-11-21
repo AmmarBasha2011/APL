@@ -7,7 +7,7 @@ ASYNCIO_FUNCS = {
     # الدوال الأساسية
     "غير_متزامن": "asyncio",
     "أنشئ_مهمة": "asyncio.create_task",
-    "شغل": "asyncio.run",
+    "شغل_تزامن": "asyncio.run",
     "انتظر": "asyncio.wait",
     "انتظر_أي": "asyncio.wait_for",
     "اجمع": "asyncio.gather",
@@ -19,7 +19,7 @@ ASYNCIO_FUNCS = {
     "تشغيل": "asyncio.run",
     
     # المهام (Tasks)
-    "مهمة": "asyncio.Task",
+    "مهمة_تزامن": "asyncio.Task",
     "أنشئ_مهمة_جديدة": "asyncio.create_task",
     "ألغى_مهمة": "task.cancel",
     "حالة_مهمة": "task.done",
@@ -43,7 +43,7 @@ ASYNCIO_FUNCS = {
     "أطلق_إشارة": "semaphore.release",
     
     # الحدث (Event)
-    "حدث": "asyncio.Event",
+    "حدث_تزامن": "asyncio.Event",
     "انتظر_حدث": "event.wait",
     "أطلق_حدث": "event.set",
     "امسح_حدث": "event.clear",
@@ -71,7 +71,7 @@ ASYNCIO_FUNCS = {
     # الأنابيب (Pipes)
     "استدعاء": "asyncio.StreamReader",
     "مجرى": "asyncio.StreamReader",
-    "اتصال": "asyncio.StreamWriter",
+    "اتصال_تزامن": "asyncio.StreamWriter",
     "اكتب_مجرى": "writer.write",
     "فرغ_مجرى": "writer.drain",
     "أغلق_مجرى": "writer.close",
@@ -103,9 +103,9 @@ ASYNCIO_FUNCS = {
     # المهلة (Timeout)
     "مؤقت": "threading.Timer",
     "أنشئ_مؤقت": "threading.Timer",
-    "مهلة": "asyncio.timeout",
+    "مهلة_تزامن": "asyncio.timeout",
     "داخل_مهلة": "async with asyncio.timeout",
-    "انتهت_مهلة": "asyncio.TimeoutError",
+    "انتهت_مهلة_تزامن": "asyncio.TimeoutError",
     "ألغى": "asyncio.CancelledError",
     "ألغى_مهمة": "asyncio.CancelledError",
     
@@ -140,7 +140,7 @@ ASYNCIO_FUNCS = {
     
     # العميل
     "افتح_اتصال": "asyncio.open_connection",
-    "أغلق_اتصال": "writer.close",
+    "أغلق_اتصال_تزامن": "writer.close",
     "اكتب_اتصال": "writer.write",
     "اقرأ_اتصال": "reader.read",
     "اقرأ_سطر": "reader.readline",
@@ -151,28 +151,28 @@ ASYNCIO_FUNCS = {
     "غير_متزامن": "async with",
     
     # التعامل مع الأخطاء
-    "استثناء": "Exception",
+    "استثناء_تزامن": "Exception",
     "ألقى_استثناء": "raise",
     "حاول": "try",
     "إلا": "except",
     "أخيرا": "finally",
-    "ضمني": "async with",
+    "ضمني_تزامن": "async with",
 }
 
-ASYNCIO_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(ASYNCIO_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+ASYNCIO_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(ASYNCIO_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 ASYNCIO_HELP = [
     "# === الدوال الأساسية ===",
-    "شغل(دالة)              - تشغيل دالة غير متزامنة",
-    "أنشئ_مهمة(دالة)       - إنشاء مهمة",
-    "انتظر(مهمة)            - انتظار مهمة",
-    "انتظر_أي(مهمة, مهلة)   - انتظار مع مهلة",
+    "شغل_تزامن(دالة)              - تشغيل دالة غير متزامنة",
+    "أنشئ_مهمة(دالة)       - إنشاء مهمة_تزامن",
+    "انتظر(مهمة_تزامن)            - انتظار مهمة_تزامن",
+    "انتظر_أي(مهمة_تزامن, مهلة_تزامن)   - انتظار مع مهلة_تزامن",
     "اجمع(مهام)             - جمع مهام",
     "نوم(ثوان)              - نوم لثواني",
     "# === المهام ===",
-    "ألغى_مهمة(مهمة)       - إلغاء مهمة",
-    "حالة_مهمة(مهمة)        - حالة المهمة",
-    "نتيجة_مهمة(مهمة)      - نتيجة المهمة",
+    "ألغى_مهمة(مهمة_تزامن)       - إلغاء مهمة_تزامن",
+    "حالة_مهمة(مهمة_تزامن)        - حالة المهمة",
+    "نتيجة_مهمة(مهمة_تزامن)      - نتيجة المهمة",
     "# === القفل ===",
     "قفل()                   - إنشاء قفل",
     "امتلك()                - امتلاك القفل",

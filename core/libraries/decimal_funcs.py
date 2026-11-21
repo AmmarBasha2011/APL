@@ -23,7 +23,7 @@ DECIMAL_FUNCS = {
     "بدقة_عشري": "_apl_decimal_fma",
 }
 
-DECIMAL_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(DECIMAL_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+DECIMAL_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(DECIMAL_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 DECIMAL_CONSTANTS = {
     "نقطة_عشرية": "decimal.getcontext().prec",

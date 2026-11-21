@@ -10,4 +10,14 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from core.apl_runner import main
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except BrokenPipeError:
+        # `python apl.py help | head` closes the pipe early: exit quietly
+        try:
+            sys.stdout.close()
+        finally:
+            os._exit(0)
+    except KeyboardInterrupt:
+        print()
+        os._exit(130)

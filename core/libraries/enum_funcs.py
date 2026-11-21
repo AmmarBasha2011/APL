@@ -23,7 +23,7 @@ ENUM_FUNCS = {
 }
 
 ENUM_PATTERN = (
-    r"(?<![\w\u0600-\u06FF])("
+    r"(?<![\w.\u0600-\u06FF])("
     + "|".join(sorted(ENUM_FUNCS.keys(), key=len, reverse=True))
     + r")\s*\("
 )

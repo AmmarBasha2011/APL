@@ -30,10 +30,10 @@ REQUESTS_FUNCS = {
     # === GET requests ===
     "جيت": "requests.get",
     "جلب": "requests.get",
-    "تنزيل": "requests.get",
+    "تنزيل_طلبات": "requests.get",
     "visit": "requests.get",
     "تابع": "requests.get",
-    "تصفح": "requests.get",
+    "تصفح_طلبات": "requests.get",
     "استعرض": "requests.get",
     "فتش": "requests.get",
     "ابحث": "requests.get",
@@ -43,8 +43,8 @@ REQUESTS_FUNCS = {
     "بوست": "requests.post",
     "ارسل": "requests.post",
     "أنزل": "requests.post",
-    "رفع": "requests.post",
-    "سجل": "requests.post",
+    "رفع_طلبات": "requests.post",
+    "سجل_طلبات": "requests.post",
     "احفظ": "requests.post",
     "ادخل": "requests.post",
     "اكتب_طلب": "requests.post",
@@ -68,7 +68,7 @@ REQUESTS_FUNCS = {
     
     # === DELETE requests ===
     "delete": "requests.delete",
-    "امسح": "requests.delete",
+    "امسح_طلبات": "requests.delete",
     "شيل": "requests.delete",
     "الغي": "requests.delete",
     "انزع": "requests.delete",
@@ -82,13 +82,13 @@ REQUESTS_FUNCS = {
     "كمل": "requests.patch",
     
     # === Session ===
-    "جلسة": "requests.Session",
+    "جلسة_طلبات": "requests.Session",
     "اتصال": "requests.Session",
     "وصلة": "requests.Session",
     "رابطة": "requests.Session",
     
     # === الاستجابة (Response) ===
-    "استجابة": "response",
+    "استجابة_طلبات": "response",
     "رد": "response",
     "نتيجة": "response",
     "مخرجات": "response",
@@ -101,23 +101,23 @@ REQUESTS_FUNCS = {
     "محتوى_الاستجابة": "response.content",
     "بايت_الاستجابة": "response.content",
     "خام": "response.raw",
-    "جسون": "response.json()",
+    "جسون_طلبات": "response.json()",
     "بيانات_جسون": "response.json()",
     "html": "response.text",
-    "صفحة": "response.text",
+    "صفحة_طلبات": "response.text",
     "مصدر": "response.text",
     "كود": "response.text",
     
     # === حالة الاستجابة (Response Status) ===
-    "حالة": "response.status_code",
+    "حالة_طلبات": "response.status_code",
     "رمز_الحالة": "response.status_code",
     "ناجح": "response.ok",
-    "نجاح": "response.ok",
+    "نجاح_طلبات": "response.ok",
     "فشل": "response.status_code >= 400",
-    "خطأ": "response.status_code >= 400",
-    "غير_موجود": "response.status_code == 404",
+    "خطأ_طلبات": "response.status_code >= 400",
+    "غير_موجود_طلبات": "response.status_code == 404",
     "ممنوع": "response.status_code == 403",
-    "غير_مصرح": "response.status_code == 401",
+    "غير_مصرح_طلبات": "response.status_code == 401",
     "توجيه": "response.is_redirect",
     "توجيه_دائم": "response.is_permanent_redirect",
     
@@ -133,9 +133,9 @@ REQUESTS_FUNCS = {
     "كوكيز": "response.cookies",
     
     # === ملفات تعريف الارتباط (Cookies) ===
-    "كوكي": "response.cookies.get",
-    "ضع_كوكي": "requests.cookies.set",
-    "احذف_كوكي": "requests.cookies.clear",
+    "كوكي_طلبات": "response.cookies.get",
+    "ضع_كوكي_طلبات": "requests.cookies.set",
+    "احذف_كوكي_طلبات": "requests.cookies.clear",
     "مسح_كوكي": "requests.cookies.clear",
     
     # === روابط (URLs) ===
@@ -146,16 +146,16 @@ REQUESTS_FUNCS = {
     
     # === معاملات الطلب (Request Parameters) ===
     "معاملات": "params",
-    "استعلام": "params",
+    "استعلام_طلبات": "params",
     "معاملات_طلب": "params",
-    "فلتر": "params",
+    "فلتر_طلبات": "params",
     "حد": "params",
-    "صفحة": "params",
-    "ترتيب": "params",
+    "صفحة_طلبات": "params",
+    "ترتيب_طلبات": "params",
     
     # === بيانات الطلب (Request Data) ===
     "بيانات": "data",
-    "نموذج": "data",
+    "نموذج_طلبات": "data",
     "جسم": "json",
     "json_data": "json",
     "ملف": "files",
@@ -165,8 +165,8 @@ REQUESTS_FUNCS = {
     "رؤوس_الطلب": "headers",
     "وكيل_المستخدم": "headers",
     "تفويض": "headers",
-    "رمز": "headers",
-    "مفتاح_ api": "headers",
+    "رمز_طلبات": "headers",
+    "مفتاح_ api_طلبات": "headers",
     
     # === المهلة (Timeouts) ===
     "مهلة": "timeout",
@@ -176,7 +176,7 @@ REQUESTS_FUNCS = {
     "عدد_المحاولات": "max_retries",
     
     # === التحقق (Validation) ===
-    "تحقق": "verify",
+    "تحقق_طلبات": "verify",
     "شهادة": "verify",
     "اسمح_التوجيه": "allow_redirects",
     "تابع_التوجيه": "allow_redirects",
@@ -184,24 +184,24 @@ REQUESTS_FUNCS = {
     "وكيل": "proxies",
     
     # === المصادقة (Authentication) ===
-    "مصادقة": "auth",
+    "مصادقة_طلبات": "auth",
     "مستخدم": "auth",
     "كلمة_مرور": "auth",
-    "مصادقة_أساسية": "HTTPBasicAuth",
+    "مصادقة_أساسية_طلبات": "HTTPBasicAuth",
     "مصادقة_ملخصة": "HTTPDigestAuth",
     
     # === الأخطاء (Errors) ===
     "خطأ_http": "requests.exceptions.HTTPError",
     "خطأ_اتصال": "requests.exceptions.ConnectionError",
-    "انتهت_مهلة": "requests.exceptions.Timeout",
+    "انتهت_مهلة_طلبات": "requests.exceptions.Timeout",
     "انتهت_مهلة_الاتصال": "requests.exceptions.ConnectTimeout",
     "انتهت_مهلة_القراءة": "requests.exceptions.ReadTimeout",
     "توجيهات_كثيرة": "requests.exceptions.TooManyRedirects",
     "رابط_غير_صالح": "requests.exceptions.InvalidURL",
     
     # === التخزين المؤقت (Caching) ===
-    "كاش": "cache",
-    "تخزين_مؤقت": "cache",
+    "كاش_طلبات": "cache",
+    "تخزين_مؤقت_طلبات": "cache",
     "مسح_الكاش": "requests.cache.clear",
     "تعطيل_الكاش": "requests.cache.disabled",
     "تفعيل_الكاش": "requests.cache.enabled",
@@ -213,8 +213,8 @@ REQUESTS_FUNCS = {
     # === التحميل (Downloads) ===
     "حمل": "requests.get",
     "حمل_ملف": "requests.get",
-    "احفظ_ملف": "open",
-    "تدفق": "stream",
+    "احفظ_ملف_طلبات": "open",
+    "تدفق_طلبات": "stream",
     "محتوى_تدفقي": "response.iter_content",
     "حجم_القطعة": "chunk_size",
     
@@ -231,7 +231,7 @@ REQUESTS_FUNCS = {
     "جلسة_حذف": "session.delete",
     
     # === التصفح (Pagination) ===
-    "تصفح": "params",
+    "تصفح_طلبات": "params",
     "صفحة_تالية": "response.links.get('next')",
     "صفحة_سابقة": "response.links.get('prev')",
     "صفحة_أولى": "response.links.get('first')",
@@ -242,7 +242,7 @@ REQUESTS_FUNCS = {
     "إجمالي_العناصر": "response.headers.get('X-Total-Count')",
     
     # === الفلترة (Filtering) ===
-    "فلتر": "params",
+    "فلتر_طلبات": "params",
     "حيث": "params",
     "يساوي": "params",
     "أكبر_من": "params",
@@ -267,8 +267,8 @@ REQUESTS_FUNCS = {
     "أدرج": "params",
     "استبعد": "params",
     "عدد": "params",
-    "مجموع": "params",
-    "متوسط": "params",
+    "مجموع_طلبات": "params",
+    "متوسط_طلبات": "params",
     "أدنى": "params",
     "أعلى": "params",
     
@@ -338,7 +338,7 @@ REQUESTS_FUNCS = {
     "معرف_التتبع": "response.headers.get('X-Trace-Id')",
 }
 
-REQUESTS_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(REQUESTS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+REQUESTS_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(REQUESTS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 REQUESTS_HELP = [
     "# === الطرق الأساسية ===",
@@ -357,18 +357,18 @@ REQUESTS_HELP = [
     "# === الاستجابة ===",
     "نص                       - response.text",
     "محتوى                    - response.content",
-    "جسون()                   - response.json()",
-    "حالة                     - response.status_code",
+    "جسون_طلبات()                   - response.json()",
+    "حالة_طلبات                     - response.status_code",
     "ناجح                     - response.ok",
     "رؤوس                     - response.headers",
     "كوكيز                   - response.cookies",
     "# === الأمان ===",
-    "مصادقة                   - auth",
+    "مصادقة_طلبات                   - auth",
     "مهلة                     - timeout",
-    "تحقق                     - verify (SSL)",
+    "تحقق_طلبات                     - verify (SSL)",
     "بروكسي                   - proxies",
     "# === الجلسات ===",
-    "جلسة()                   - requests.Session()",
+    "جلسة_طلبات()                   - requests.Session()",
     "جلسة_جيت(رابط)          - session.get()",
     "جلسة_بوست(رابط)         - session.post()",
 ]

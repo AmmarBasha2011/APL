@@ -7,7 +7,7 @@ UNITTEST_FUNCS = {
     # TestCase
     "حالة_اختبار": "unittest.TestCase",
     "أنشئ_اختبار": "unittest.TestCase",
-    "اختبار": "unittest.TestCase",
+    "حالة_اختبار": "unittest.TestCase",
     
     # Test fixtures
     "setUp": "setUp",
@@ -53,12 +53,12 @@ UNITTEST_FUNCS = {
     "ساوي": "assertEqual",
     "لا_ساوي": "assertNotEqual",
     "تأكيد": "assertTrue",
-    "خطأ": "assertFalse",
+    "خطأ_اختبار": "assertFalse",
     "هو": "assertIs",
     "ليس": "assertIsNot",
     "لا_شيء": "assertIsNone",
     "ليس_لا_شيء": "assertIsNotNone",
-    "في": "assertIn",
+    "في_اختبار": "assertIn",
     "ليس_في": "assertNotIn",
     "من_نوع": "assertIsInstance",
     "ليس_من_نوع": "assertNotIsInstance",
@@ -69,9 +69,9 @@ UNITTEST_FUNCS = {
     "يسجل": "assertLogs",
     "تقريبا": "assertAlmostEqual",
     "ليس_تقريبا": "assertNotAlmostEqual",
-    "أكبر": "assertGreater",
+    "أكبر_اختبار": "assertGreater",
     "أكبر_أو_يساوي": "assertGreaterEqual",
-    "أصغر": "assertLess",
+    "أصغر_اختبار": "assertLess",
     "أصغر_أو_يساوي": "assertLessEqual",
     "يطابق_نمط": "assertRegex",
     "لا_يطابق_نمط": "assertNotRegex",
@@ -89,7 +89,7 @@ UNITTEST_FUNCS = {
     
     # Test Runner
     "شغل_اختبارات": "unittest.TextTestRunner",
-    "نفذ": "testRunner.run",
+    "نفذ_اختبار": "testRunner.run",
     
     # Main
     "رئيسي": "unittest.main",
@@ -104,29 +104,29 @@ UNITTEST_FUNCS = {
     "mock": "unittest.mock",
     "Mock": "unittest.mock.Mock",
     "MagicMock": "unittest.mock.MagicMock",
-    "patch": "unittest.mock.patch",
+    "تصحيح_اختبار": "unittest.mock.patch",
     "patch.object": "unittest.mock.patch.object",
 }
 
-UNITTEST_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(UNITTEST_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+UNITTEST_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(UNITTEST_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 UNITTEST_HELP = [
     "# === TestCase ===",
-    "حالة_اختبار             - فئة اختبار",
-    "أنشئ_اختبار             - إنشاء اختبار",
-    "setUp                    - قبل كل اختبار",
-    "tearDown                 - بعد كل اختبار",
+    "حالة_اختبار             - فئة حالة_اختبار",
+    "أنشئ_اختبار             - إنشاء حالة_اختبار",
+    "setUp                    - قبل كل حالة_اختبار",
+    "tearDown                 - بعد كل حالة_اختبار",
     "# === Assertions ===",
     "ساوي(أ, ب)               - تأكد من المساواة",
     "لا_ساوي(أ, ب)            - تأكد من عدم المساواة",
     "صحيح(تعبير)             - تأكد من الصحة",
-    "خطأ(تعبير)              - تأكد من الخطأ",
+    "خطأ_اختبار(تعبير)              - تأكد من الخطأ",
     "لا_شيء(قيمة)            - تأكد من كونها None",
-    "في(عنصر, تسلسل)         - تأكد من الانتماء",
+    "في_اختبار(عنصر, تسلسل)         - تأكد من الانتماء",
     "من_نوع(كائن, نوع)       - تأكد من النوع",
     "يرفع(استثناء, دالة)     - تأكد من رفع الاستثناء",
-    "أكبر(أ, ب)               - تأكد من أكبر",
-    "أصغر(أ, ب)               - تأكد من أصغر",
+    "أكبر_اختبار(أ, ب)               - تأكد من أكبر_اختبار",
+    "أصغر_اختبار(أ, ب)               - تأكد من أصغر_اختبار",
     "تقريبا(أ, ب)            - تأكد من التقريب",
     "يطابق_نمط(نص, نمط)      - تأكد من النمط",
 ]

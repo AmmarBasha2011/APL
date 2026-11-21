@@ -14,7 +14,7 @@ SECRETS_FUNCS = {
     "مصدر_عشوائي_آمن": "secrets.SystemRandom",
 }
 
-SECRETS_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(SECRETS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+SECRETS_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(SECRETS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI
 SECRETS_HELP = [

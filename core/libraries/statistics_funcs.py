@@ -20,14 +20,14 @@ STATISTICS_FUNCS = {
     "تباين_مجتمع": "statistics.pvariance",
     "انحراف_معياري": "statistics.stdev",
     "انحراف_معياري_مجتمع": "statistics.pstdev",
-    "نطاق": "range",
+    "نطاق_إحصاء": "range",
     
     # ارتباط (Correlation) - for sequences
     "ارتباط": "statistics.correlation",
     "ميل": "statistics.linear_regression",
 }
 
-STATISTICS_PATTERN = "(?<![\w\u0600-\u06FF])(" + "|".join(sorted(STATISTICS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+STATISTICS_PATTERN = "(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(STATISTICS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI
 STATISTICS_HELP = [

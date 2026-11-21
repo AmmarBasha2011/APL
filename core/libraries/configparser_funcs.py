@@ -8,17 +8,17 @@ CONFIGPARSER_FUNCS = {
     "أنشئ_مُكوِّن": "configparser.ConfigParser",
     "مُكوِّن": "configparser.ConfigParser",
     "مُكوِّن_إعدادات": "configparser.ConfigParser",
-    "إعدادات": "configparser.ConfigParser",
+    "محلل_إعدادات": "configparser.ConfigParser",
     
     # التنسيقات
-    "افتراضي": "configparser.DEFAULTSECT",
+    "افتراضي_إعدادات": "configparser.DEFAULTSECT",
     "تكوين_افتراضي": "configparser.DEFAULTSECT",
     
     # القراءة
     "اقرأ_إعداد": "config.read",
     "اقرأ_ملف": "config.read_file",
     "اقرأ_سلسلة": "config.read_string",
-    "اقرأ_قاموس": "config.read_dict",
+    "اقرأ_قاموس_إعدادات": "config.read_dict",
     
     # الكتابة
     "اكتب_إعداد": "config.write",
@@ -56,7 +56,7 @@ CONFIGPARSER_FUNCS = {
     "SafeConfigParser": "configparser.SafeConfigParser",
     
     # الخصائص
-    "افتراضي": "config.defaults",
+    "افتراضي_إعدادات": "config.defaults",
     "مفاتيح_افتراضية": "config.defaults",
     
     # التعليقات
@@ -67,22 +67,22 @@ CONFIGPARSER_FUNCS = {
     "الافتراضي": "configparser.DEFAULTSECT",
 }
 
-CONFIGPARSER_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(CONFIGPARSER_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+CONFIGPARSER_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(CONFIGPARSER_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 CONFIGPARSER_HELP = [
     "# === الإنشاء ===",
     "أنشئ_مُكوِّن()             - إنشاء مُكوِّن",
     "مُكوِّن()                  - مُكوِّن (مختصر)",
-    "مُكوِّن_إعدادات()          - مُكوِّن إعدادات",
-    "إعدادات()                 - إعدادات (مختصر)",
+    "مُكوِّن_إعدادات()          - مُكوِّن محلل_إعدادات",
+    "محلل_إعدادات()                 - محلل_إعدادات (مختصر)",
     "# === القراءة ===",
-    "اقرأ(ملف)                - قراءة ملف إعدادات",
-    "اقرأ_ملف(ملف)            - قراءة ملف إعدادات",
-    "اقرأ_سلسلة(نص)          - قراءة سلسلة إعدادات",
-    "اقرأ_قاموس(قاموس)        - قراءة قاموس إعدادات",
+    "اقرأ(ملف)                - قراءة ملف محلل_إعدادات",
+    "اقرأ_ملف(ملف)            - قراءة ملف محلل_إعدادات",
+    "اقرأ_سلسلة(نص)          - قراءة سلسلة محلل_إعدادات",
+    "اقرأ_قاموس_إعدادات(قاموس)        - قراءة قاموس محلل_إعدادات",
     "# === الكتابة ===",
-    "اكتب(ملف)                - كتابة ملف إعدادات",
-    "اكتب_ملف(ملف)            - كتابة ملف إعدادات",
+    "اكتب(ملف)                - كتابة ملف محلل_إعدادات",
+    "اكتب_ملف(ملف)            - كتابة ملف محلل_إعدادات",
     "# === الأقسام ===",
     "أضف_قسم(قسم)            - إضافة قسم",
     "أزل_قسم(قسم)            - إزالة قسم",

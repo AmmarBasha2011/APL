@@ -49,7 +49,7 @@ MATH_CONSTANTS = {
 
 MATH_CONSTANT_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(MATH_CONSTANTS.keys(), key=len, reverse=True)) + r")(?![\w\u0600-\u06FF])"
 
-MATH_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(MATH_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+MATH_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(MATH_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI
 MATH_HELP = [

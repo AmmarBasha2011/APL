@@ -28,6 +28,9 @@ _MODULE_NAMES = [
     "configparser", "dataclasses", "advanced", "datetime", "pathlib", "shutil",
     "textwrap", "uuid", "base64", "urllib", "functools", "decimal", "fractions",
     "string", "secrets", "zoneinfo", "getpass", "operator", "pprint", "enum",
+    "xml",
+    "archive",
+    "net",
 ]
 
 _loaded: dict[str, ModuleType] = {}

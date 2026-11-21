@@ -32,7 +32,7 @@ OPERATOR_FUNCS = {
     "قوة_مركبة": "_apl_operator_pow",
 }
 
-OPERATOR_PATTERN = r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(OPERATOR_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+OPERATOR_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(OPERATOR_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 # Help text for CLI
 OPERATOR_HELP = [

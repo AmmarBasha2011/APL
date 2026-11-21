@@ -79,6 +79,27 @@ def _eval_number_expr(expr: str) -> str | None:
     return None
 
 
+_OPERATOR_CHARS = "+-*/%"
+
+
+def _is_isolated(masked: str, start: int, end: int) -> bool:
+    """True when the run is not glued (through spaces) to a neighbouring operator.
+
+    `س % 26 + 97` must NOT become `س % 123`, and `2 + 3 ** x` must NOT become
+    `5 ** x`: in both cases the folded run sits inside a larger expression whose
+    operator precedence would change. A run is only folded when the closest
+    non-space character on each side is neither part of an identifier/number nor
+    an arithmetic operator.
+    """
+    left = masked[:start].rstrip()
+    if left and left[-1] in _OPERATOR_CHARS:
+        return False
+    right = masked[end:].lstrip()
+    if right and right[0] in _OPERATOR_CHARS:
+        return False
+    return True
+
+
 def fold_code(code: str) -> str:
     """Return `code` with constant arithmetic folded. Never raises."""
     out = []
@@ -95,6 +116,8 @@ def fold_code(code: str) -> str:
         last = 0
         changed = False
         for m in _NUM_EXPR.finditer(masked):
+            if not _is_isolated(masked, m.start(), m.end()):
+                continue
             folded = _eval_number_expr(m.group(0))
             if folded is None or folded == m.group(0):
                 continue
@@ -140,6 +163,8 @@ def count_foldable(code: str) -> int:
             continue
         masked = _mask_noncode(line)
         for m in _NUM_EXPR.finditer(masked):
+            if not _is_isolated(masked, m.start(), m.end()):
+                continue
             folded = _eval_number_expr(m.group(0))
             if folded is not None and folded != m.group(0):
                 n += 1
