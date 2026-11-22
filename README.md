@@ -304,7 +304,14 @@ python test_examples.py     # يشغّل كل الأمثلة ويفحص النت
 
 ## التحقق المستمر
 
-ثلاث فحوص بتسبق أي تعديل، وCI بيشغّلهم على كل PR:
+كل الفحوص دي بتشتغل في أمر واحد:
+
+```bash
+./scripts/check.sh            # نفس اللي بتشتغل في CI
+./scripts/check.sh --quiet    # من غير التفاصيل
+```
+
+وبتتفصّل كده:
 
 | الأمر | ماذا يفحص |
 |-------|-----------|
@@ -327,8 +334,9 @@ python scripts/check_libraries.py --update-baseline   # يحدّث الـ baseli
 
 ### GitHub Actions
 
-- **[CI](.github/workflows/ci.yml)** — كل push على `main` وكل PR: المكتبات + الريبو + الأمثلة.
-- **[Stdlib drift](.github/workflows/stdlib-drift.yml)** — كل إثنين 04:23 UTC ويدوياً؛
+- **[CI](.github/workflows/ci.yml)** — كل push على `main` وكل PR: المكتبات + الريبو + الأمثلة،
+  بالإضافة إلى job **غير حاجب** على أحدث نسخة (3.15) يبلّغ عن الانحراف قبل ما يطلع.
+- **[Stdlib drift](.github/workflows/stdlib-drift.yml)** — كل إثنين 04:23 UTC + كل PR + يدوياً؛
   أي فشل بيفتح **issue تلقائياً** (بدون تكرار).
 
 ## مقارنة الأداء: APL مقابل Python
