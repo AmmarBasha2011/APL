@@ -55,7 +55,7 @@ APL — مكتبة الويب والبريد (web)
     WEB_PROPS      خصائص وسمات أصناف بلا أقواس
     WEB_CONSTS     ثوابت تُكتب عارية
 
-عدد العناصر: 2802 (390 نداء + 1742 طريقة + 455 خاصية + 215 ثابت).
+عدد العناصر: 2761 (393 نداء + 1713 طريقة + 440 خاصية + 215 ثابت).
 كل عنصر تم التحقق منه آلياً مقابل الكائن الحقيقي في Python.
 """
 
@@ -64,8 +64,6 @@ import re
 
 WEB_FUNCS = {
     # نداءات الوحدة والأصناف
-    # === http ===
-    "CGI_HTTP_اطلب_معالج": "http.server.CGIHTTPRequestHandler",
     # === xmlrpc ===
     "CGI_XMLRPC_اطلب_معالج": "xmlrpc.server.CGIXMLRPCRequestHandler",
     # === wsgiref ===
@@ -217,6 +215,7 @@ WEB_FUNCS = {
     # === http ===
     "اختبر": "http.server.test",
     # === urllib ===
+    "ادمج_إدخالات": "urllib.robotparser.merge_entries",
     "اربط_العنوان": "urllib.parse.urljoin",
     # === http ===
     "اربط_رأس_كلمات": "http.cookiejar.join_header_words",
@@ -359,6 +358,8 @@ WEB_FUNCS = {
     # === http ===
     "ترابط_HTTPS_خادم": "http.server.ThreadingHTTPSServer",
     "ترابط_HTTP_خادم": "http.server.ThreadingHTTPServer",
+    # === urllib ===
+    "ترجم_نمط": "urllib.robotparser.translate_pattern",
     # === wsgiref ===
     "تطبيق_URI": "wsgiref.util.application_uri",
     "تطبيق_توضيحي": "wsgiref.simple_server.demo_app",
@@ -672,7 +673,9 @@ WEB_FUNCS = {
     "هو_قفزة_بواسطة_قفزة": "wsgiref.util.is_hop_by_hop",
     # === urllib ===
     "وحّد": "urllib.robotparser.normalize",
+    "وحّد_URI": "urllib.robotparser.normalize_uri",
     "وحّد_العنوان": "urllib.parse.urlunsplit",
+    "وحّد_نمط": "urllib.robotparser.normalize_pattern",
     "وسيط_أساسي_تصديق_معالج": "urllib.request.ProxyBasicAuthHandler",
     "وسيط_تجاوز": "urllib.request.proxy_bypass",
     "وسيط_خلاصة_تصديق_معالج": "urllib.request.ProxyDigestAuthHandler",
@@ -690,31 +693,6 @@ WEB_FUNCS = {
 
 WEB_METHODS = {
     # دوال الكائن بعد نقطة
-    # === http ===
-    "CGI_HTTP_اطلب_معالج_أرسل_استجابة": "send_response",
-    "CGI_HTTP_اطلب_معالج_أرسل_استجابة_فقط": "send_response_only",
-    "CGI_HTTP_اطلب_معالج_أرسل_خطأ": "send_error",
-    "CGI_HTTP_اطلب_معالج_أرسل_رأس": "send_head",
-    "CGI_HTTP_اطلب_معالج_أفرغ_رؤوس": "flush_headers",
-    "CGI_HTTP_اطلب_معالج_أنهِ_رؤوس": "end_headers",
-    "CGI_HTTP_اطلب_معالج_إصدار_نص": "version_string",
-    "CGI_HTTP_اطلب_معالج_افعل_أرسل": "do_POST",
-    "CGI_HTTP_اطلب_معالج_افعل_احصل": "do_GET",
-    "CGI_HTTP_اطلب_معالج_افعل_رأس": "do_HEAD",
-    "CGI_HTTP_اطلب_معالج_انسخ_ملف": "copyfile",
-    "CGI_HTTP_اطلب_معالج_تاريخ_وقت_نص": "date_time_string",
-    "CGI_HTTP_اطلب_معالج_تخمين_نوع": "guess_type",
-    "CGI_HTTP_اطلب_معالج_ترجم_مسار": "translate_path",
-    "CGI_HTTP_اطلب_معالج_حلل_اطلب": "parse_request",
-    "CGI_HTTP_اطلب_معالج_سجل_اطلب": "log_request",
-    "CGI_HTTP_اطلب_معالج_سجل_تاريخ_وقت_نص": "log_date_time_string",
-    "CGI_HTTP_اطلب_معالج_سجل_خطأ": "log_error",
-    "CGI_HTTP_اطلب_معالج_سجل_رسالة": "log_message",
-    "CGI_HTTP_اطلب_معالج_عالج": "handle",
-    "CGI_HTTP_اطلب_معالج_عالج_توقّع_100": "handle_expect_100",
-    "CGI_HTTP_اطلب_معالج_عالج_واحد_اطلب": "handle_one_request",
-    "CGI_HTTP_اطلب_معالج_عنوان_نص": "address_string",
-    "CGI_HTTP_اطلب_معالج_قائمة_مجلد": "list_directory",
     # === xmlrpc ===
     "CGI_XMLRPC_اطلب_معالج_سجّل_استدعاء_متعدد_دالة": "register_multicall_functions",
     "CGI_XMLRPC_اطلب_معالج_سجّل_دالة": "register_function",
@@ -1743,6 +1721,7 @@ WEB_METHODS = {
     "افصل_نتيجة_بايتات_فكّ_ترميز": "decode",
     "افصل_نتيجة_رمّز": "encode",
     # === http ===
+    "افعل_رأس": "do_HEAD",
     "اقرأ1": "read1",
     "اقرأ_في": "readinto",
     # === mimetypes ===
@@ -1960,11 +1939,9 @@ WEB_METHODS = {
     "بسيط_HTTP_اطلب_معالج_أنهِ_رؤوس": "end_headers",
     "بسيط_HTTP_اطلب_معالج_إصدار_نص": "version_string",
     "بسيط_HTTP_اطلب_معالج_افعل_احصل": "do_GET",
-    "بسيط_HTTP_اطلب_معالج_افعل_رأس": "do_HEAD",
     "بسيط_HTTP_اطلب_معالج_انسخ_ملف": "copyfile",
     "بسيط_HTTP_اطلب_معالج_تاريخ_وقت_نص": "date_time_string",
     "بسيط_HTTP_اطلب_معالج_تخمين_نوع": "guess_type",
-    "بسيط_HTTP_اطلب_معالج_ترجم_مسار": "translate_path",
     "بسيط_HTTP_اطلب_معالج_حلل_اطلب": "parse_request",
     "بسيط_HTTP_اطلب_معالج_سجل_اطلب": "log_request",
     "بسيط_HTTP_اطلب_معالج_سجل_تاريخ_وقت_نص": "log_date_time_string",
@@ -2065,6 +2042,7 @@ WEB_METHODS = {
     "ترابط_HTTPS_خادم_خادم_اربط": "server_bind",
     "ترابط_HTTPS_خادم_خادم_فعّل": "server_activate",
     "ترابط_HTTP_خادم_خادم_اربط": "server_bind",
+    "ترجم_مسار": "translate_path",
     # === urllib ===
     "تسلّل_تأخير": "crawl_delay",
     # === html ===
@@ -2142,8 +2120,6 @@ WEB_METHODS = {
     # === html ===
     "حلل_وسم_البداية": "parse_starttag",
     "حلل_وسم_النهاية": "parse_endtag",
-    # === http ===
-    "خادم_CGI_HTTP_اطلب_معالج_أرسل_رأس": "send_header",
     # === xmlrpc ===
     "خادم_HTML_توثيق_صفحة": "page",
     # === http ===
@@ -2253,8 +2229,6 @@ WEB_METHODS = {
     "سطر_كتابة": "writelines",
     # === urllib ===
     "سماح": "allowance",
-    # === http ===
-    "شغّل_CGI": "run_cgi",
     # === xmlrpc ===
     "صف_الوقت": "timetuple",
     # === html ===
@@ -2575,9 +2549,6 @@ WEB_METHODS = {
     # === mailbox ===
     "نظّف": "clean",
     # === http ===
-    "هو_CGI": "is_cgi",
-    "هو_بايثون": "is_python",
-    "هو_قابل_للتنفيذ": "is_executable",
     "هو_لا_مسموح": "is_not_allowed",
     "هو_محجوب": "is_blocked",
     "هو_محجوز_مفتاح": "isReservedKey",
@@ -2620,20 +2591,6 @@ WEB_METHODS = {
 
 WEB_PROPS = {
     # خصائص الأصناف
-    # === http ===
-    "CGI_HTTP_اطلب_معالج_استجابات": "responses",
-    "CGI_HTTP_اطلب_معالج_اسم_الشهر": "monthname",
-    "CGI_HTTP_اطلب_معالج_اسم_يوم_الأسبوع": "weekdayname",
-    "CGI_HTTP_اطلب_معالج_افتراضي_اطلب_إصدار": "default_request_version",
-    "CGI_HTTP_اطلب_معالج_امتدادات_خريطة": "extensions_map",
-    "CGI_HTTP_اطلب_معالج_بروتوكول_إصدار": "protocol_version",
-    "CGI_HTTP_اطلب_معالج_خادم_إصدار": "server_version",
-    "CGI_HTTP_اطلب_معالج_خطأ_رسالة_نسّق": "error_message_format",
-    "CGI_HTTP_اطلب_معالج_خطأ_محتوى_نوع": "error_content_type",
-    "CGI_HTTP_اطلب_معالج_رسالة_صنف": "MessageClass",
-    "CGI_HTTP_اطلب_معالج_فهرس_صفحات": "index_pages",
-    "CGI_HTTP_اطلب_معالج_نظام_إصدار": "sys_version",
-    "CGI_مجلدات": "cgi_directories",
     # === wsgiref ===
     "CGI_معالج_HTTP_إصدار": "http_version",
     "CGI_معالج_WSGI_إصدار": "wsgi_version",
@@ -2863,19 +2820,20 @@ WEB_PROPS = {
     # === email ===
     "النوع_الرئيسي": "maintype",
     "النوع_الفرعي": "subtype",
+    # === http ===
+    "امتدادات_خريطة": "extensions_map",
+    # === email ===
     "بريد_رأس_سجلّ_مجموعة_عناوين": "addresses",
     # === http ===
     "بسيط_HTTP_اطلب_معالج_استجابات": "responses",
     "بسيط_HTTP_اطلب_معالج_اسم_الشهر": "monthname",
     "بسيط_HTTP_اطلب_معالج_اسم_يوم_الأسبوع": "weekdayname",
     "بسيط_HTTP_اطلب_معالج_افتراضي_اطلب_إصدار": "default_request_version",
-    "بسيط_HTTP_اطلب_معالج_امتدادات_خريطة": "extensions_map",
     "بسيط_HTTP_اطلب_معالج_بروتوكول_إصدار": "protocol_version",
     "بسيط_HTTP_اطلب_معالج_خادم_إصدار": "server_version",
     "بسيط_HTTP_اطلب_معالج_خطأ_رسالة_نسّق": "error_message_format",
     "بسيط_HTTP_اطلب_معالج_خطأ_محتوى_نوع": "error_content_type",
     "بسيط_HTTP_اطلب_معالج_رسالة_صنف": "MessageClass",
-    "بسيط_HTTP_اطلب_معالج_فهرس_صفحات": "index_pages",
     "بسيط_HTTP_اطلب_معالج_نظام_إصدار": "sys_version",
     # === xmlrpc ===
     "بسيط_XMLRPC_اطلب_معالج_RPC_مسار": "rpc_paths",
@@ -2953,9 +2911,6 @@ WEB_PROPS = {
     "ثانوي": "minor",
     # === urllib ===
     "ثاني": "seconds",
-    # === http ===
-    "حجم_مخزن_القراءة": "rbufsize",
-    # === urllib ===
     "حلل_نتيجة_استعلام": "query",
     "حلل_نتيجة_اسم_المستخدم": "username",
     "حلل_نتيجة_اسم_المضيف": "hostname",
@@ -3036,6 +2991,7 @@ WEB_PROPS = {
     "فكّ_التجزئة_نتيجة_بايتات_جزء": "fragment",
     "فكّ_التجزئة_نتيجة_جزء": "fragment",
     # === http ===
+    "فهرس_صفحات": "index_pages",
     "قيمة": "value",
     # === urllib ===
     "كامل_URL": "full_url",
@@ -3051,8 +3007,6 @@ WEB_PROPS = {
     "كونكورر_معطيات": "args",
     # === urllib ===
     "لا_نهائي_رسالة": "inf_msg",
-    # === http ===
-    "لديه_تفرّع": "have_fork",
     # === xmlrpc ===
     "متعدد_مسار_XMLRPC_خادم_اسمح_أعد_الاستخدام_عنوان": "allow_reuse_address",
     "متعدد_مسار_XMLRPC_خادم_اسمح_أعد_الاستخدام_منفذ": "allow_reuse_port",

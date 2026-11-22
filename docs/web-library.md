@@ -1,6 +1,6 @@
 # مكتبة الويب والبريد — `web`
 
-**2802 عنصراً عربياً** لتغطية بروتوكولات الويب والبريد في Python،
+**2761 عنصراً عربياً** لتغطية بروتوكولات الويب والبريد في Python،
 موزّعة على **43 وحدة** من المكتبة القياسية.
 
 ```apl
@@ -72,7 +72,7 @@ WEB_PROPS      خصائص وسمات بلا أقواس            HTTP_حالة_
 WEB_CONSTS     ثوابت تُكتب عارية                 HTTP_حالة_غير_موجود
 ```
 
-العدد: **390 نداء + 1742 طريقة + 455 خاصية + 215 ثابت = 2802 عنصراً**.
+العدد: **393 نداء + 1713 طريقة + 440 خاصية + 215 ثابت = 2761 عنصراً**.
 
 ## الاستيراد التلقائي
 
@@ -91,11 +91,10 @@ WEB_CONSTS     ثوابت تُكتب عارية                 HTTP_حالة_غ
 
 ## المرجع الكامل
 
-### نداءات مستوى الوحدة والأصناف (390)
+### نداءات مستوى الوحدة والأصناف (393)
 
 | العربي | الإنجليزي |
 |--------|-----------|
-| `CGI_HTTP_اطلب_معالج` | `http.server.CGIHTTPRequestHandler` |
 | `CGI_XMLRPC_اطلب_معالج` | `xmlrpc.server.CGIXMLRPCRequestHandler` |
 | `CGI_معالج` | `wsgiref.handlers.CGIHandler` |
 | `ELINKS` | `webbrowser.Elinks` |
@@ -191,6 +190,7 @@ WEB_CONSTS     ثوابت تُكتب عارية                 HTTP_حالة_غ
 | `احصل_نص_محتوى` | `email.contentmanager.get_text_content` |
 | `احصل_و_صلّح_مجهول_رسالة_محتوى` | `email.contentmanager.get_and_fixup_unknown_message_content` |
 | `اختبر` | `http.server.test` |
+| `ادمج_إدخالات` | `urllib.robotparser.merge_entries` |
 | `اربط_العنوان` | `urllib.parse.urljoin` |
 | `اربط_رأس_كلمات` | `http.cookiejar.join_header_words` |
 | `ازح_مسار_معلومات` | `wsgiref.util.shift_path_info` |
@@ -282,6 +282,7 @@ WEB_CONSTS     ثوابت تُكتب عارية                 HTTP_حالة_غ
 | `تخمين_نوع_الملف` | `mimetypes.guess_type` |
 | `ترابط_HTTPS_خادم` | `http.server.ThreadingHTTPSServer` |
 | `ترابط_HTTP_خادم` | `http.server.ThreadingHTTPServer` |
+| `ترجم_نمط` | `urllib.robotparser.translate_pattern` |
 | `تطبيق_URI` | `wsgiref.util.application_uri` |
 | `تطبيق_توضيحي` | `wsgiref.simple_server.demo_app` |
 | `توثيق_CGI_XMLRPC_اطلب_معالج` | `xmlrpc.server.DocCGIXMLRPCRequestHandler` |
@@ -475,7 +476,9 @@ WEB_CONSTS     ثوابت تُكتب عارية                 HTTP_حالة_غ
 | `هو_ثالث_طرف` | `http.cookiejar.is_third_party` |
 | `هو_قفزة_بواسطة_قفزة` | `wsgiref.util.is_hop_by_hop` |
 | `وحّد` | `urllib.robotparser.normalize` |
+| `وحّد_URI` | `urllib.robotparser.normalize_uri` |
 | `وحّد_العنوان` | `urllib.parse.urlunsplit` |
+| `وحّد_نمط` | `urllib.robotparser.normalize_pattern` |
 | `وسيط_أساسي_تصديق_معالج` | `urllib.request.ProxyBasicAuthHandler` |
 | `وسيط_تجاوز` | `urllib.request.proxy_bypass` |
 | `وسيط_خلاصة_تصديق_معالج` | `urllib.request.ProxyDigestAuthHandler` |
@@ -486,34 +489,10 @@ WEB_CONSTS     ثوابت تُكتب عارية                 HTTP_حالة_غ
 | `وقت_من_عناصر_منطقة_زمنية` | `email.utils.mktime_tz` |
 | `يونكس_متصفح` | `webbrowser.UnixBrowser` |
 
-### دوال الكائن (1742)
+### دوال الكائن (1713)
 
 | العربي | الإنجليزي |
 |--------|-----------|
-| `CGI_HTTP_اطلب_معالج_أرسل_استجابة` | `send_response` |
-| `CGI_HTTP_اطلب_معالج_أرسل_استجابة_فقط` | `send_response_only` |
-| `CGI_HTTP_اطلب_معالج_أرسل_خطأ` | `send_error` |
-| `CGI_HTTP_اطلب_معالج_أرسل_رأس` | `send_head` |
-| `CGI_HTTP_اطلب_معالج_أفرغ_رؤوس` | `flush_headers` |
-| `CGI_HTTP_اطلب_معالج_أنهِ_رؤوس` | `end_headers` |
-| `CGI_HTTP_اطلب_معالج_إصدار_نص` | `version_string` |
-| `CGI_HTTP_اطلب_معالج_افعل_أرسل` | `do_POST` |
-| `CGI_HTTP_اطلب_معالج_افعل_احصل` | `do_GET` |
-| `CGI_HTTP_اطلب_معالج_افعل_رأس` | `do_HEAD` |
-| `CGI_HTTP_اطلب_معالج_انسخ_ملف` | `copyfile` |
-| `CGI_HTTP_اطلب_معالج_تاريخ_وقت_نص` | `date_time_string` |
-| `CGI_HTTP_اطلب_معالج_تخمين_نوع` | `guess_type` |
-| `CGI_HTTP_اطلب_معالج_ترجم_مسار` | `translate_path` |
-| `CGI_HTTP_اطلب_معالج_حلل_اطلب` | `parse_request` |
-| `CGI_HTTP_اطلب_معالج_سجل_اطلب` | `log_request` |
-| `CGI_HTTP_اطلب_معالج_سجل_تاريخ_وقت_نص` | `log_date_time_string` |
-| `CGI_HTTP_اطلب_معالج_سجل_خطأ` | `log_error` |
-| `CGI_HTTP_اطلب_معالج_سجل_رسالة` | `log_message` |
-| `CGI_HTTP_اطلب_معالج_عالج` | `handle` |
-| `CGI_HTTP_اطلب_معالج_عالج_توقّع_100` | `handle_expect_100` |
-| `CGI_HTTP_اطلب_معالج_عالج_واحد_اطلب` | `handle_one_request` |
-| `CGI_HTTP_اطلب_معالج_عنوان_نص` | `address_string` |
-| `CGI_HTTP_اطلب_معالج_قائمة_مجلد` | `list_directory` |
 | `CGI_XMLRPC_اطلب_معالج_سجّل_استدعاء_متعدد_دالة` | `register_multicall_functions` |
 | `CGI_XMLRPC_اطلب_معالج_سجّل_دالة` | `register_function` |
 | `CGI_XMLRPC_اطلب_معالج_سجّل_فحص_ذاتي_دالة` | `register_introspection_functions` |
@@ -1468,6 +1447,7 @@ WEB_CONSTS     ثوابت تُكتب عارية                 HTTP_حالة_غ
 | `افصل_نتيجة_بايتات_احصل_على_العنوان` | `geturl` |
 | `افصل_نتيجة_بايتات_فكّ_ترميز` | `decode` |
 | `افصل_نتيجة_رمّز` | `encode` |
+| `افعل_رأس` | `do_HEAD` |
 | `اقرأ1` | `read1` |
 | `اقرأ_في` | `readinto` |
 | `اقرأ_ملفاً` | `readfp` |
@@ -1677,11 +1657,9 @@ WEB_CONSTS     ثوابت تُكتب عارية                 HTTP_حالة_غ
 | `بسيط_HTTP_اطلب_معالج_أنهِ_رؤوس` | `end_headers` |
 | `بسيط_HTTP_اطلب_معالج_إصدار_نص` | `version_string` |
 | `بسيط_HTTP_اطلب_معالج_افعل_احصل` | `do_GET` |
-| `بسيط_HTTP_اطلب_معالج_افعل_رأس` | `do_HEAD` |
 | `بسيط_HTTP_اطلب_معالج_انسخ_ملف` | `copyfile` |
 | `بسيط_HTTP_اطلب_معالج_تاريخ_وقت_نص` | `date_time_string` |
 | `بسيط_HTTP_اطلب_معالج_تخمين_نوع` | `guess_type` |
-| `بسيط_HTTP_اطلب_معالج_ترجم_مسار` | `translate_path` |
 | `بسيط_HTTP_اطلب_معالج_حلل_اطلب` | `parse_request` |
 | `بسيط_HTTP_اطلب_معالج_سجل_اطلب` | `log_request` |
 | `بسيط_HTTP_اطلب_معالج_سجل_تاريخ_وقت_نص` | `log_date_time_string` |
@@ -1772,6 +1750,7 @@ WEB_CONSTS     ثوابت تُكتب عارية                 HTTP_حالة_غ
 | `ترابط_HTTPS_خادم_خادم_اربط` | `server_bind` |
 | `ترابط_HTTPS_خادم_خادم_فعّل` | `server_activate` |
 | `ترابط_HTTP_خادم_خادم_اربط` | `server_bind` |
+| `ترجم_مسار` | `translate_path` |
 | `تسلّل_تأخير` | `crawl_delay` |
 | `تقدّم` | `goahead` |
 | `توثيق_CGI_XMLRPC_اطلب_معالج_سجّل_استدعاء_متعدد_دالة` | `register_multicall_functions` |
@@ -1841,7 +1820,6 @@ WEB_CONSTS     ثوابت تُكتب عارية                 HTTP_حالة_غ
 | `حلل_نتيجة_رمّز` | `encode` |
 | `حلل_وسم_البداية` | `parse_starttag` |
 | `حلل_وسم_النهاية` | `parse_endtag` |
-| `خادم_CGI_HTTP_اطلب_معالج_أرسل_رأس` | `send_header` |
 | `خادم_HTML_توثيق_صفحة` | `page` |
 | `خادم_بسيط_HTTP_اطلب_معالج_أرسل_رأس` | `send_header` |
 | `خادم_معالج_أرسل_رؤوس` | `send_headers` |
@@ -1935,7 +1913,6 @@ WEB_CONSTS     ثوابت تُكتب عارية                 HTTP_حالة_غ
 | `روبوت_ملف_محلل_حلل` | `parse` |
 | `سطر_كتابة` | `writelines` |
 | `سماح` | `allowance` |
-| `شغّل_CGI` | `run_cgi` |
 | `صف_الوقت` | `timetuple` |
 | `صفّر` | `reset` |
 | `صندوق_بريد_أضف` | `add` |
@@ -2196,9 +2173,6 @@ WEB_CONSTS     ثوابت تُكتب عارية                 HTTP_حالة_غ
 | `ناقل_مفرد_اطلب` | `single_request` |
 | `نتيجة_أساس_رمّز` | `encode` |
 | `نظّف` | `clean` |
-| `هو_CGI` | `is_cgi` |
-| `هو_بايثون` | `is_python` |
-| `هو_قابل_للتنفيذ` | `is_executable` |
 | `هو_لا_مسموح` | `is_not_allowed` |
 | `هو_محجوب` | `is_blocked` |
 | `هو_محجوز_مفتاح` | `isReservedKey` |
@@ -2233,23 +2207,10 @@ WEB_CONSTS     ثوابت تُكتب عارية                 HTTP_حالة_غ
 | `يونكس_متصفح_افتح_جديد` | `open_new` |
 | `يونكس_متصفح_افتح_جديد_جدولة` | `open_new_tab` |
 
-### الخصائص وسمات الأصناف (455)
+### الخصائص وسمات الأصناف (440)
 
 | العربي | الإنجليزي |
 |--------|-----------|
-| `CGI_HTTP_اطلب_معالج_استجابات` | `responses` |
-| `CGI_HTTP_اطلب_معالج_اسم_الشهر` | `monthname` |
-| `CGI_HTTP_اطلب_معالج_اسم_يوم_الأسبوع` | `weekdayname` |
-| `CGI_HTTP_اطلب_معالج_افتراضي_اطلب_إصدار` | `default_request_version` |
-| `CGI_HTTP_اطلب_معالج_امتدادات_خريطة` | `extensions_map` |
-| `CGI_HTTP_اطلب_معالج_بروتوكول_إصدار` | `protocol_version` |
-| `CGI_HTTP_اطلب_معالج_خادم_إصدار` | `server_version` |
-| `CGI_HTTP_اطلب_معالج_خطأ_رسالة_نسّق` | `error_message_format` |
-| `CGI_HTTP_اطلب_معالج_خطأ_محتوى_نوع` | `error_content_type` |
-| `CGI_HTTP_اطلب_معالج_رسالة_صنف` | `MessageClass` |
-| `CGI_HTTP_اطلب_معالج_فهرس_صفحات` | `index_pages` |
-| `CGI_HTTP_اطلب_معالج_نظام_إصدار` | `sys_version` |
-| `CGI_مجلدات` | `cgi_directories` |
 | `CGI_معالج_HTTP_إصدار` | `http_version` |
 | `CGI_معالج_WSGI_إصدار` | `wsgi_version` |
 | `CGI_معالج_WSGI_شغّل_مرة_واحدة` | `wsgi_run_once` |
@@ -2449,18 +2410,17 @@ WEB_CONSTS     ثوابت تُكتب عارية                 HTTP_حالة_غ
 | `افصل_نتيجة_موضع_الشبكة` | `netloc` |
 | `النوع_الرئيسي` | `maintype` |
 | `النوع_الفرعي` | `subtype` |
+| `امتدادات_خريطة` | `extensions_map` |
 | `بريد_رأس_سجلّ_مجموعة_عناوين` | `addresses` |
 | `بسيط_HTTP_اطلب_معالج_استجابات` | `responses` |
 | `بسيط_HTTP_اطلب_معالج_اسم_الشهر` | `monthname` |
 | `بسيط_HTTP_اطلب_معالج_اسم_يوم_الأسبوع` | `weekdayname` |
 | `بسيط_HTTP_اطلب_معالج_افتراضي_اطلب_إصدار` | `default_request_version` |
-| `بسيط_HTTP_اطلب_معالج_امتدادات_خريطة` | `extensions_map` |
 | `بسيط_HTTP_اطلب_معالج_بروتوكول_إصدار` | `protocol_version` |
 | `بسيط_HTTP_اطلب_معالج_خادم_إصدار` | `server_version` |
 | `بسيط_HTTP_اطلب_معالج_خطأ_رسالة_نسّق` | `error_message_format` |
 | `بسيط_HTTP_اطلب_معالج_خطأ_محتوى_نوع` | `error_content_type` |
 | `بسيط_HTTP_اطلب_معالج_رسالة_صنف` | `MessageClass` |
-| `بسيط_HTTP_اطلب_معالج_فهرس_صفحات` | `index_pages` |
 | `بسيط_HTTP_اطلب_معالج_نظام_إصدار` | `sys_version` |
 | `بسيط_XMLRPC_اطلب_معالج_RPC_مسار` | `rpc_paths` |
 | `بسيط_XMLRPC_اطلب_معالج_استجابات` | `responses` |
@@ -2528,7 +2488,6 @@ WEB_CONSTS     ثوابت تُكتب عارية                 HTTP_حالة_غ
 | `توثيق_XMLRPC_خادم_اسمح_أعد_الاستخدام_منفذ` | `allow_reuse_port` |
 | `ثانوي` | `minor` |
 | `ثاني` | `seconds` |
-| `حجم_مخزن_القراءة` | `rbufsize` |
 | `حلل_نتيجة_استعلام` | `query` |
 | `حلل_نتيجة_اسم_المستخدم` | `username` |
 | `حلل_نتيجة_اسم_المضيف` | `hostname` |
@@ -2599,6 +2558,7 @@ WEB_CONSTS     ثوابت تُكتب عارية                 HTTP_حالة_غ
 | `فكّ_التجزئة_نتيجة_بايتات_URL` | `url` |
 | `فكّ_التجزئة_نتيجة_بايتات_جزء` | `fragment` |
 | `فكّ_التجزئة_نتيجة_جزء` | `fragment` |
+| `فهرس_صفحات` | `index_pages` |
 | `قيمة` | `value` |
 | `كامل_URL` | `full_url` |
 | `كروم_إعادة_توجيه_إخراج_قياسي` | `redirect_stdout` |
@@ -2611,7 +2571,6 @@ WEB_CONSTS     ثوابت تُكتب عارية                 HTTP_حالة_غ
 | `كروم_معطيات` | `args` |
 | `كونكورر_معطيات` | `args` |
 | `لا_نهائي_رسالة` | `inf_msg` |
-| `لديه_تفرّع` | `have_fork` |
 | `متعدد_مسار_XMLRPC_خادم_اسمح_أعد_الاستخدام_عنوان` | `allow_reuse_address` |
 | `متعدد_مسار_XMLRPC_خادم_اسمح_أعد_الاستخدام_منفذ` | `allow_reuse_port` |
 | `مجرد_HTTP_معالج_معالج_ترتيب` | `handler_order` |
