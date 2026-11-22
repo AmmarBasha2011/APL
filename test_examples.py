@@ -58,6 +58,9 @@ def run_one(path, verbose=False):
     """يرجع (ok, problems, stdout)."""
     name = os.path.basename(path)
     problems = []
+    # APL_NO_CACHE=1: الاختبارات لازم تترجم من أول وجديد. الكاش مظلوم في
+    # الاستخدام العادي، لكن هنا ترجمة قديمة ممكن تخفي اسم اتشال من مكتبة.
+    env = dict(os.environ, APL_NO_CACHE="1")
     try:
         proc = subprocess.run(
             [sys.executable, os.path.join(ROOT, "apl.py"), path],
@@ -66,6 +69,7 @@ def run_one(path, verbose=False):
             text=True,
             timeout=TIMEOUT,
             cwd=ROOT,
+            env=env,
         )
     except subprocess.TimeoutExpired:
         return False, ["انتهت المهلة"], ""
