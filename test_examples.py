@@ -65,6 +65,16 @@ EXPECTED = {
                                "Content-Type: text/plain; charset=utf-8"],
     "73-web-robots-maildir.apl": ["يستطيع الزحف /public: True",
                                   "يستطيع الزحف /private: False"],
+    "74-df-paths.apl": ["المسار: /tmp/apl-df-dir", "الامتداد: ('تقرير', '.pdf')"],
+    "75-df-archive.apl": ["الأعضاء: ['echo.txt']", "مقروء: نص مضغوط بالعربية"],
+    "76-df-serialize.apl": ["مفكوك: {'الاسم': 'أحمد', 'الأعمار': [3, 7, 11]}",
+                            "marshal: [1, 'نص', {'م': True}]"],
+    "77-df-structures.apl": ["العناصر: [1, 2, 3]", "مفكوك: (7,)",
+                             "موضع 6: 4"],
+    "78-df-xml.apl": ["الوسم: كتاب", "اسم العقدة: #document"],
+    "79-df-text.apl": ["اسم المحرف A: LATIN CAPITAL LETTER A",
+                       "فئة المحرف ع: Lo"],
+    "80-df-refs.apl": ["القيمة: أول", "عدد العناصر: 1"],
 }
 
 
