@@ -212,7 +212,7 @@ with open("ملف.txt") as f:
 | `datafiles` | 2631 | البيانات والملفات: مسارات، ضغط، أرشيف، تسلسل، هياكل بيانات، XML، يونيكود (io / zipfile / tarfile / pickle / shelve / array / struct / xml.dom / xml.etree / unicodedata) |
 | `syslib` | 3973 | النظام والتشغيل والتشخيص: منصة، إشارات، موارد، تسجيل، اختبارات، عمليات متعددة، ctypes، سياق (platform / signal / resource / logging / unittest / multiprocessing / concurrent.futures / ctypes / termios) |
 | `weblibs` | 5496 | الويب والنصوص: بث متدفق، قوالب، ماركداون، تورنيدو، سطر الأوامر، تلوين الشيفرة (websockets / jinja2 / markdown / tornado / click / pygments) |
-| `webserver` | 5494 | الخوادم والشبكات: خوادم ASGI/WSGI، عملاء HTTP غير متزامنين، HTTP/1.1 (starlette / uvicorn / httpx / httpcore / h11 / anyio) |
+| `webserver` | 5492 | الخوادم والشبكات: خوادم ASGI/WSGI، عملاء HTTP غير متزامنين، HTTP/1.1 (starlette / uvicorn / httpx / httpcore / h11 / anyio) |
 | `secauth` | 5495 | الأمان والمصادقة: تشفير وشهادات، قوالب معزولة، تحقق من المخططات، JWT (cryptography / jinja2 / jsonschema / jwt / cffi) |
 | `textdata` | 5492 | النصوص والبيانات: مطابقة الأنماط، أصناف الخصائص، الصور، النماذج الأولية (pathspec / attrs / PIL / markdown / proto) |
 | `utiltools` | 5494 | الأدوات المساعدة: الإصدارات والتواريخ، أشرطة التقدم، مراقبة العمليات (packaging / dateutil / tqdm / psutil / websockets) |
@@ -262,9 +262,9 @@ with open("ملف.txt") as f:
 | `getpass` | 2 | إدخال كلمات السر دون إظهارها |
 | `pprint` | 2 | طباعة منسّقة للقواميس والقوائم |
 
-**الإجمالي: 41,302 عنصراً في 53 مكتبة** (41,284 مفتاحاً فريداً بعد إزالة التكرار).
+**الإجمالي: 41,300 عنصراً في 53 مكتبة** (41,282 مفتاحاً فريداً بعد إزالة التكرار).
 
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
-في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **41,515 عنصراً**،
+في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **41,513 عنصراً**،
 مع **92 مثالاً جاهزاً** في `examples/`.
