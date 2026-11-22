@@ -45,6 +45,14 @@ def _engine_fingerprint() -> str:
             h.update(p.read_bytes())
         except OSError:
             h.update(rel.encode("utf-8"))
+    # المكتبات كمان بتاعلة على الترجمة: أي تعديل في أي ملف مكتبة لازم يلغي
+    # الكاش، وإلا ترجمة قديمة (بأسماء اتشالت مثلاً) تفضل تُقدَّم لبرنامج
+    # لم يتغيّر مصدره. حصل ده فعلاً مع cProfile.label في Python 3.15.
+    lib_dir = _SRC_ROOT / "core" / "libraries"
+    if lib_dir.is_dir():
+        for p in sorted(lib_dir.glob("*.py")):
+            h.update(p.name.encode("utf-8"))
+            h.update(p.read_bytes())
     return h.hexdigest()[:12]
 
 
