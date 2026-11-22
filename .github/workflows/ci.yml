@@ -1,0 +1,48 @@
+name: CI
+
+# يفحص كل  push على main وكل PR:
+#   1) سلامة المكتبات (حلّ المسارات + التحويل + التكرار + التصادم)
+#   2) نظافة الريبو (compileall + اتساق النسخة والأرقام + التحميل الكسول + بلوكات README)
+#   3) كل الأمثلة (تشغيل + مخرجات متوقعة)
+#
+# الحد الأدنى المدعوم هو Python 3.14 (انظر README). لإضافة نسخ أخرى
+# عدّل قائمة matrix ниже.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  libraries:
+    name: سلامة المكتبات
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - name: فحص المكتبات
+        run: python scripts/check_libraries.py
+
+  repo:
+    name: نظافة الريبو
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - name: نظافة الريبو واتساق التوثيق
+        run: python scripts/check_repo.py
+
+  examples:
+    name: الأمثلة
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - name: تشغيل كل الأمثلة
+        run: python test_examples.py

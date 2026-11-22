@@ -1,0 +1,66 @@
+name: Stdlib drift
+
+# فحص أسبوعي لانحراف المكتبة القياسية: APL يترجم أسماء من Python نفسه،
+# وPython بيغيّر/يشيل أسماء مع كل نسخة (مثل ssl.match_hostname و
+# configparser.SafeConfigParser). الفحص بيقارن بالـ baseline، وأي مشكلة
+# جديدة بتفتح issue تلقائياً.
+#
+# يشتغل: كل إثنين 04:23 UTC + يدوياً من تبويب Actions.
+
+on:
+  schedule:
+    - cron: "23 4 * * 1"
+  workflow_dispatch:
+
+jobs:
+  drift:
+    name: فحص انحراف المكتبة القياسية
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: فحص المكتبات
+        run: python scripts/check_libraries.py
+
+      - name: نظافة الريبو
+        run: python scripts/check_repo.py
+
+      - name: الأمثلة
+        run: python test_examples.py
+
+      - name: فتح issue عند الفشل
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -e
+          TITLE="stdlib drift: فحص المكتبات فشل (${{ github.run_id }})"
+          EXISTING=$(gh issue list --state open --search "stdlib drift in:title" \
+                     --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            echo "يوجد issue مفتوح بالفعل: #$EXISTING — لن يُفتح واحد جديد"
+            exit 0
+          fi
+          gh issue create \
+            --title "$TITLE" \
+            --body "$(cat <<EOF
+          ## فحص انحراف المكتبة القياسية فشل
+
+          السجل: $RUN_URL
+
+          الفحوص المفعّلة:
+          - \`python scripts/check_libraries.py\` — التحويل + الحلّ + التكرار + التصادم
+          - \`python scripts/check_repo.py\` — اتساق التوثيق والنظافة
+          - \`python test_examples.py\` — كل الأمثلة
+
+          المشكلة **جديدة** إن لم تكن مُسجّلة في \`scripts/baselines/library_issues.txt\`.
+          لاقتراح إصلاح: عدّل المكتبة أو حدّث الـ baseline بأمر:
+          \`\`\`
+          python scripts/check_libraries.py --update-baseline
+          \`\`\`
+          EOF
+          )"

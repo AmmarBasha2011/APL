@@ -1326,6 +1326,11 @@ def run_file(filepath: str):
     except Exception as e:
         msg = _get_error_ar(e)
         print(f"\u202B{msg}\u202C", file=sys.stderr)
+        #  EXIT NON-ZERO on a real runtime error. Without this an example (or a
+        #  user script) could fail silently and still report success, which is
+        #  exactly how 4 broken examples lived on main unnoticed. CI and
+        #  test_examples.py rely on this.
+        raise SystemExit(1)
 
 
 def _get_error_ar(e: Exception) -> str:
@@ -1544,7 +1549,7 @@ def print_help():
     print("  python apl.py repl")
 
 
-__version__ = "1.9"
+__version__ = "1.10"
 
 
 def run_repl():
@@ -1651,6 +1656,7 @@ def main():
         except Exception as e:
             msg = _get_error_ar(e)
             print(f"\u202B{msg}\u202C", file=sys.stderr)
+            raise SystemExit(1)
         return
 
     filepath = sys.argv[1]

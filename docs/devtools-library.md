@@ -159,7 +159,7 @@ DEVTOOLS_KWARGS     أسماء وسائط عربية قبل =          رقم_س
 | `تجوّل_الشجرة` | `inspect.walktree` |
 | `احصل_التعليقات_النوعية` | `inspect.get_annotations` |
 | `معلومات_الحجة` | `inspect.ArgInfo` |
-| `الحجج` | `inspect.Arguments` |
+| `حجج_وصفية` | `inspect.Arguments` |
 | `واصفة_خاصية` | `inspect.Attribute` |
 | `كاشف_الكتل` | `inspect.BlockFinder` |
 | `حجج_مربوطة` | `inspect.BoundArguments` |
@@ -843,7 +843,7 @@ DEVTOOLS_KWARGS     أسماء وسائط عربية قبل =          رقم_س
 | `مخزن_قابل_للكتابة` | `WRITABLE` |
 | `مخزن_كتابة` | `WRITE` |
 | `الحجج` | `args` |
-| `كلمات_مفتاحية` | `kwargs` |
+| `كلمات_مفتاحية_مرتبطة` | `kwargs` |
 | `التوقيع` | `signature` |
 | `التعليق_النوعي` | `annotation` |
 | `الافتراضي_للمعامل` | `default` |
@@ -1190,13 +1190,13 @@ DEVTOOLS_KWARGS     أسماء وسائط عربية قبل =          رقم_س
 | العربي | الإنجليزي |
 |--------|-----------|
 | `كائن` | `object` |
-| `اسم_ملف` | `filename` |
-| `ملف` | `file` |
+| `اسم_الملف` | `filename` |
+| `الملف` | `file` |
 | `رقم_سطر` | `lineno` |
 | `حجج` | `args` |
 | `متغيرات_محلية_صريحة` | `locals` |
 | `وحدة_مصدر` | `module` |
-| `حد_أقصى` | `limit` |
+| `أقصى_عدد` | `limit` |
 | `شيفرة_مصدر` | `code` |
 | `فئة_تنبيه` | `category` |
 | `أعلام_إضافية` | `flags` |
@@ -1207,7 +1207,7 @@ DEVTOOLS_KWARGS     أسماء وسائط عربية قبل =          رقم_س
 | `أظهر_الكاش` | `show_caches` |
 | `أظهر_المواضع` | `show_positions` |
 | `أظهر_الإزاحات` | `show_offsets` |
-| `رسالة_نصية` | `message` |
+| `نص_الرسالة` | `message` |
 | `عبارة_برمجية` | `statement` |
 | `تفصيلي_خرج` | `verbose` |
 | `قيم_متعددة` | `values` |
@@ -1233,7 +1233,7 @@ DEVTOOLS_KWARGS     أسماء وسائط عربية قبل =          رقم_س
 | `حد_التفاف` | `maxline` |
 | `اسم_دالة_داخلي` | `func_name` |
 | `رقم_بدء` | `start` |
-| `عدد_عناصر` | `count` |
+| `العدد` | `count` |
 | `أعلام_خيارات` | `optionflags` |
 
 ## أمثلة
