@@ -5,13 +5,20 @@ name: Stdlib drift
 # configparser.SafeConfigParser). الفحص بيقارن بالـ baseline، وأي مشكلة
 # جديدة بتفتح issue تلقائياً.
 #
-# يشتغل: كل إثنين 04:23 UTC + يدوياً من تبويب Actions.
+# يشتغل: كل إثنين 04:23 UTC + كل PR + يدوياً من تبويب Actions.
+# (pull_request مطلوب هنا لأن GitHub لا يسجّل الـ workflow على فرع غير
+#  default إذا لم يكن له trigger على الفروع.)
 
 on:
   pull_request:
   schedule:
     - cron: "23 4 * * 1"
   workflow_dispatch:
+
+# التوكن الافتراضي يحتاج issues:write لفتح issue.
+permissions:
+  contents: read
+  issues: write
 
 jobs:
   drift:
@@ -46,22 +53,23 @@ jobs:
             echo "يوجد issue مفتوح بالفعل: #$EXISTING — لن يُفتح واحد جديد"
             exit 0
           fi
-          gh issue create \
-            --title "$TITLE" \
-            --body "$(cat <<EOF
+          BODY=$(cat <<'EOF'
           ## فحص انحراف المكتبة القياسية فشل
 
-          السجل: $RUN_URL
+          السجل: RUN_URL_PLACEHOLDER
 
           الفحوص المفعّلة:
-          - \`python scripts/check_libraries.py\` — التحويل + الحلّ + التكرار + التصادم
-          - \`python scripts/check_repo.py\` — اتساق التوثيق والنظافة
-          - \`python test_examples.py\` — كل الأمثلة
+          - `python scripts/check_libraries.py` — التحويل + الحلّ + التكرار + التصادم
+          - `python scripts/check_repo.py` — اتساق التوثيق والنظافة
+          - `python test_examples.py` — كل الأمثلة
 
-          المشكلة **جديدة** إن لم تكن مُسجّلة في \`scripts/baselines/library_issues.txt\`.
+          المشكلة **جديدة** إن لم تكن مُسجّلة في `scripts/baselines/library_issues.txt`.
           لاقتراح إصلاح: عدّل المكتبة أو حدّث الـ baseline بأمر:
-          \`\`\`
+
+          ```
           python scripts/check_libraries.py --update-baseline
-          \`\`\`
+          ```
           EOF
-          )"
+          )
+          BODY=${BODY//RUN_URL_PLACEHOLDER/$RUN_URL}
+          gh issue create --title "$TITLE" --body "$BODY"
