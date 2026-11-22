@@ -24,7 +24,7 @@ _STANDALONE_METHODS = {
     "يبدأ": "startswith", "ينتهي": "endswith", "ضم": "join",
     "فرز": "sort", "عكس": "reverse", "نسخ": "copy",
 }
-from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs, xml_funcs, archive_funcs, net_funcs, devtools_funcs, web_funcs, datafiles_funcs
+from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs, xml_funcs, archive_funcs, net_funcs, devtools_funcs, web_funcs, datafiles_funcs, syslib_funcs
 
 
 def _replace_type_names(text: str) -> str:
@@ -206,6 +206,10 @@ def _inline_replace(text: str) -> str:
     # --- datafiles: البيانات والملفات ---
     datafiles_funcs.USER_NAMES = USER_NAMES
     text = datafiles_funcs.DF_SUBSTITUTE(text)
+
+    # --- syslib: النظام والتشغيل والتشخيص ---
+    syslib_funcs.USER_NAMES = USER_NAMES
+    text = syslib_funcs.SYS_SUBSTITUTE(text)
 
     # --- f-string interpolation: translate expressions inside {...} ---
     _APL_FSTR_RE = re.compile(r'(?P<pre>[fF])"[^"\\]*(?:\\.[^"\\]*)*"')

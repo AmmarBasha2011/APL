@@ -33,7 +33,7 @@ _RESERVED_KEYS = _build_reserved_keys()  # empty: unused, see docstring
 
 # Constant folding on by default; APL_NO_FOLD=1 turns it off.
 _APL_FOLD = os.environ.get("APL_NO_FOLD", "") not in ("1", "true", "yes")
-from core.libraries import decimal_funcs, fractions_funcs, string_funcs, secrets_funcs, zoneinfo_funcs, getpass_funcs, operator_funcs, pprint_funcs, math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs, xml_funcs, archive_funcs, net_funcs, devtools_funcs, web_funcs, datafiles_funcs
+from core.libraries import decimal_funcs, fractions_funcs, string_funcs, secrets_funcs, zoneinfo_funcs, getpass_funcs, operator_funcs, pprint_funcs, math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs, xml_funcs, archive_funcs, net_funcs, devtools_funcs, web_funcs, datafiles_funcs, syslib_funcs
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 if sys.platform == "win32":
@@ -300,6 +300,12 @@ def transpile(source: str) -> str:
                     and ("import " + m) not in code]
         if _df_mods:
             needs.append("import " + ", ".join(_df_mods))
+    if re.search(syslib_funcs.IMPORT_CHECK, code):
+        _sys_mods = [m for m in syslib_funcs.IMPORT_MODULES
+                     if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
+                     and ("import " + m) not in code]
+        if _sys_mods:
+            needs.append("import " + ", ".join(_sys_mods))
     if re.search(shutil_funcs.IMPORT_CHECK, code) and "import shutil" not in code:
         needs.append("import shutil")
     if re.search(textwrap_funcs.IMPORT_CHECK, code) and "import textwrap" not in code:
@@ -1562,6 +1568,10 @@ def print_help():
     print()
     print("  # datafiles library (io, zipfile, pickle, xml, os.path)")
     for line in datafiles_funcs.DF_HELP:
+        print(f"    {line}")
+    print()
+    print("  # syslib library (platform, signal, ctypes, unittest, logging)")
+    for line in syslib_funcs.SYS_HELP:
         print(f"    {line}")
     print()
     print("Examples:")
