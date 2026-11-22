@@ -399,8 +399,6 @@ DEVTOOLS_FUNCS = {
     "حلّل_عبارة_بسياق": "profile.runctx",
     "محلّل_أداء": "profile.Profile",
     # === cProfile ===
-    "تسمية_التحليل": "cProfile.label",
-    "البرنامج_الرئيسي_للتحليل_السريع": "cProfile.main",
     "شغّل_تحليلاً_سريعاً": "cProfile.run",
     "شغّل_تحليلاً_سريعاً_بسياق": "cProfile.runctx",
     "محلّل_سريع": "cProfile.Profile",

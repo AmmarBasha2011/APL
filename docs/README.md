@@ -53,7 +53,7 @@
 | 47 | [network-library.md](network-library.md) | مكتبة `net` — الشبكة والبريد: socket و ssl و http و email و SMTP/IMAP/FTP (1006 عنصراً) |
 | 48 | [language-features.md](language-features.md) | مميزات اللغة — match/case، معالجة الأخطاء، lambda، الوراثة |
 | 49 | [performance.md](performance.md) | تحسينات الأداء — التحميل الكسول، الذاكرة، طيّ الثوابت |
-| 50 | [devtools-library.md](devtools-library.md) | مكتبة `devtools` — أدوات المطوّر: فحص، تصحيح، قياس أداء، ترجمة (1125 عنصراً) |
+| 50 | [devtools-library.md](devtools-library.md) | مكتبة `devtools` — أدوات المطوّر: فحص، تصحيح، قياس أداء، ترجمة (1123 عنصراً) |
 
 ---
 
@@ -181,7 +181,7 @@ with open("ملف.txt") as f:
 
 | المكتبة | عدد العناصر | الوصف |
 |---------|------------:|-------|
-| `devtools` | 1125 | أدوات المطوّر: فحص، تصحيح، قياس أداء، ترجمة (inspect / ast / dis / pdb / doctest / timeit / profile / tracemalloc) |
+| `devtools` | 1123 | أدوات المطوّر: فحص، تصحيح، قياس أداء، ترجمة (inspect / ast / dis / pdb / doctest / timeit / profile / tracemalloc) |
 | `net` | 1006 | الشبكة: socket و ssl و http و email و SMTP/IMAP/FTP |
 | `fastapi` | 536 | إطار عمل ويب حديث |
 | `requests` | 244 | HTTP Client كامل |
@@ -227,9 +227,9 @@ with open("ملف.txt") as f:
 | `getpass` | 2 | إدخال كلمات السر دون إظهارها |
 | `pprint` | 2 | طباعة منسّقة للقواميس والقوائم |
 
-**الإجمالي: 4,472 عنصراً في 45 مكتبة** (4,454 مفتاحاً فريداً بعد إزالة التكرار).
+**الإجمالي: 4,470 عنصراً في 45 مكتبة** (4,452 مفتاحاً فريداً بعد إزالة التكرار).
 
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
-في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **4,685 عنصراً**،
+في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **4,683 عنصراً**،
 مع **66 مثالاً جاهزاً** في `examples/`.
