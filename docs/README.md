@@ -1,4 +1,4 @@
-# التوثيق الكامل — APL v1.11
+# التوثيق الكامل — APL v1.12
 
 فهرس جميع ملفات التوثيق ومجلد الأمثلة الجاهزة:
 
@@ -57,7 +57,7 @@
 
 ---
 
-## الأمثلة الجاهزة (73 مثالاً)
+## الأمثلة الجاهزة (80 مثالاً)
 
 66 برنامجاً حقيقياً مكتوباً بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
@@ -136,6 +136,13 @@
 | 71 | [`71-web-html-cookies.apl`](../examples/71-web-html-cookies.apl) | تهريب HTML وملفات تعريف الارتباط (web/html) |
 | 72 | [`72-web-xmlrpc-wsgi.apl`](../examples/72-web-xmlrpc-wsgi.apl) | نداءات XML-RPC ورؤوس WSGI (web/xmlrpc) |
 | 73 | [`73-web-robots-maildir.apl`](../examples/73-web-robots-maildir.apl) | تحليل robots.txt وصناديق Maildir (web/urllib) |
+| 74 | [`74-df-paths.apl`](../examples/74-df-paths.apl) | المسارات والبحث النمطي (datafiles/os.path) |
+| 75 | [`75-df-archive.apl`](../examples/75-df-archive.apl) | ضغط zip وgzip وbz2 (datafiles/zipfile) |
+| 76 | [`76-df-serialize.apl`](../examples/76-df-serialize.apl) | تسلسل البيانات (datafiles/pickle) |
+| 77 | [`77-df-structures.apl`](../examples/77-df-structures.apl) | هياكل البيانات (datafiles/array) |
+| 78 | [`78-df-xml.apl`](../examples/78-df-xml.apl) | بناء XML وتحليله (datafiles/xml) |
+| 79 | [`79-df-text.apl`](../examples/79-df-text.apl) | يونيكود والترميز (datafiles/unicodedata) |
+| 80 | [`80-df-refs.apl`](../examples/80-df-refs.apl) | المراجع والسياق والفروق (datafiles/weakref) |
 
 **التشغيل:**
 ```bash
@@ -184,12 +191,13 @@ with open("ملف.txt") as f:
 اطبع س
 ```
 
-## المكتبات المتاحة (46 مكتبة)
+## المكتبات المتاحة (47 مكتبة)
 
 | المكتبة | عدد العناصر | الوصف |
 |---------|------------:|-------|
 | `devtools` | 1123 | أدوات المطوّر: فحص، تصحيح، قياس أداء، ترجمة (inspect / ast / dis / pdb / doctest / timeit / profile / tracemalloc) |
-| `web` | 2761 | الويب والبريد: عناوين، HTTP، بريد، صناديق، كوكيز، HTML، WSGI، XML-RPC (http / urllib / email / mailbox / html / wsgiref / xmlrpc) |
+| `datafiles` | 2631 | البيانات والملفات: مسارات، ضغط، أرشيف، تسلسل، هياكل بيانات، XML، يونيكود (io / zipfile / tarfile / pickle / shelve / array / struct / xml.dom / xml.etree / unicodedata) |
+| `web` | 2757 | الويب والبريد: عناوين، HTTP، بريد، صناديق، كوكيز، HTML، WSGI، XML-RPC (http / urllib / email / mailbox / html / wsgiref / xmlrpc) |
 | `net` | 1006 | الشبكة: socket و ssl و http و email و SMTP/IMAP/FTP |
 | `fastapi` | 536 | إطار عمل ويب حديث |
 | `requests` | 244 | HTTP Client كامل |
@@ -235,9 +243,9 @@ with open("ملف.txt") as f:
 | `getpass` | 2 | إدخال كلمات السر دون إظهارها |
 | `pprint` | 2 | طباعة منسّقة للقواميس والقوائم |
 
-**الإجمالي: 7,231 عنصراً في 46 مكتبة** (7,213 مفتاحاً فريداً بعد إزالة التكرار).
+**الإجمالي: 9,858 عنصراً في 47 مكتبة** (9,840 مفتاحاً فريداً بعد إزالة التكرار).
 
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
-في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **7,444 عنصراً**،
-مع **73 مثالاً جاهزاً** في `examples/`.
+في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **10,071 عنصراً**،
+مع **80 مثالاً جاهزاً** في `examples/`.

@@ -1,6 +1,6 @@
 # مكتبة الويب والبريد — `web`
 
-**2761 عنصراً عربياً** لتغطية بروتوكولات الويب والبريد في Python،
+**2757 عنصراً عربياً** لتغطية بروتوكولات الويب والبريد في Python،
 موزّعة على **43 وحدة** من المكتبة القياسية.
 
 ```apl
@@ -72,7 +72,7 @@ WEB_PROPS      خصائص وسمات بلا أقواس            HTTP_حالة_
 WEB_CONSTS     ثوابت تُكتب عارية                 HTTP_حالة_غير_موجود
 ```
 
-العدد: **393 نداء + 1713 طريقة + 440 خاصية + 215 ثابت = 2761 عنصراً**.
+العدد: **389 نداء + 1713 طريقة + 440 خاصية + 215 ثابت = 2757 عنصراً**.
 
 ## الاستيراد التلقائي
 
@@ -91,7 +91,7 @@ WEB_CONSTS     ثوابت تُكتب عارية                 HTTP_حالة_غ
 
 ## المرجع الكامل
 
-### نداءات مستوى الوحدة والأصناف (393)
+### نداءات مستوى الوحدة والأصناف (389)
 
 | العربي | الإنجليزي |
 |--------|-----------|
@@ -190,7 +190,6 @@ WEB_CONSTS     ثوابت تُكتب عارية                 HTTP_حالة_غ
 | `احصل_نص_محتوى` | `email.contentmanager.get_text_content` |
 | `احصل_و_صلّح_مجهول_رسالة_محتوى` | `email.contentmanager.get_and_fixup_unknown_message_content` |
 | `اختبر` | `http.server.test` |
-| `ادمج_إدخالات` | `urllib.robotparser.merge_entries` |
 | `اربط_العنوان` | `urllib.parse.urljoin` |
 | `اربط_رأس_كلمات` | `http.cookiejar.join_header_words` |
 | `ازح_مسار_معلومات` | `wsgiref.util.shift_path_info` |
@@ -282,7 +281,6 @@ WEB_CONSTS     ثوابت تُكتب عارية                 HTTP_حالة_غ
 | `تخمين_نوع_الملف` | `mimetypes.guess_type` |
 | `ترابط_HTTPS_خادم` | `http.server.ThreadingHTTPSServer` |
 | `ترابط_HTTP_خادم` | `http.server.ThreadingHTTPServer` |
-| `ترجم_نمط` | `urllib.robotparser.translate_pattern` |
 | `تطبيق_URI` | `wsgiref.util.application_uri` |
 | `تطبيق_توضيحي` | `wsgiref.simple_server.demo_app` |
 | `توثيق_CGI_XMLRPC_اطلب_معالج` | `xmlrpc.server.DocCGIXMLRPCRequestHandler` |
@@ -476,9 +474,7 @@ WEB_CONSTS     ثوابت تُكتب عارية                 HTTP_حالة_غ
 | `هو_ثالث_طرف` | `http.cookiejar.is_third_party` |
 | `هو_قفزة_بواسطة_قفزة` | `wsgiref.util.is_hop_by_hop` |
 | `وحّد` | `urllib.robotparser.normalize` |
-| `وحّد_URI` | `urllib.robotparser.normalize_uri` |
 | `وحّد_العنوان` | `urllib.parse.urlunsplit` |
-| `وحّد_نمط` | `urllib.robotparser.normalize_pattern` |
 | `وسيط_أساسي_تصديق_معالج` | `urllib.request.ProxyBasicAuthHandler` |
 | `وسيط_تجاوز` | `urllib.request.proxy_bypass` |
 | `وسيط_خلاصة_تصديق_معالج` | `urllib.request.ProxyDigestAuthHandler` |

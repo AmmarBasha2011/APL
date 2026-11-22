@@ -22,15 +22,16 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 ## المميزات
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
-- **مكتبات بالعربي** — 46 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **73 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **مكتبات بالعربي** — 47 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
+- **80 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
 - **أداء سريع** — تحميل كسول للمكتبات + ذاكرة ترجمة + طيّ ثوابت (4.6× أسرع في الترجمة)
 - **فهم متقدم** — list comprehensions، type hints، f-strings، multi-line strings
 - **أدوات مطوّر بالعربي** — فحص الكائنات وتوقيعات الدوال، شجرة بناء الجملة، تفكيك البايتكود، المصحّح، القياس والتحليل (1123 عنصراً)
-- **الويب والبريد بالعربي** — العناوين وHTTP والبريد وصناديقه والكوكيز وHTML وWSGI وXML-RPC (2761 عنصراً)
+- **الويب والبريد بالعربي** — العناوين وHTTP والبريد وصناديقه والكوكيز وHTML وWSGI وXML-RPC (2757 عنصراً)
+- **البيانات والملفات بالعربي** — مسارات وضغط وأرشيف وتسلسل وهياكل بيانات وXML ويونيكود (2631 عنصراً)
 - **تطابق أنماط متقدم** — `حالة` / `قيمة` مع guards و alternatives
 - **معالجة أخطاء حقيقية** — `حاول` / `إمسك مثل متغير` / `أخيراً`
 - **دوال مختصرة (lambda)** — `(س) => س * س` في أي موضع
@@ -40,12 +41,13 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 - **مولدات** — `yield` و `yield from` بالعربي
 - **REPL تفاعلي** — جرب الكود سطر بسطر بـ `python apl.py repl`
 
-## المكتبات المتاحة (46 مكتبة)
+## المكتبات المتاحة (47 مكتبة)
 
 | المكتبة | عدد العناصر | الوصف |
 |---------|------------:|-------|
 | `devtools` | 1123 | أدوات المطوّر: فحص، تصحيح، قياس أداء، ترجمة (inspect / ast / dis / pdb / doctest / timeit / profile / tracemalloc) |
-| `web` | 2761 | الويب والبريد: عناوين، HTTP، بريد، صناديق، كوكيز، HTML، WSGI، XML-RPC (http / urllib / email / mailbox / html / wsgiref / xmlrpc) |
+| `datafiles` | 2631 | البيانات والملفات: مسارات، ضغط، أرشيف، تسلسل، هياكل بيانات، XML، يونيكود (io / zipfile / tarfile / pickle / shelve / array / struct / xml.dom / xml.etree / unicodedata) |
+| `web` | 2757 | الويب والبريد: عناوين، HTTP، بريد، صناديق، كوكيز، HTML، WSGI، XML-RPC (http / urllib / email / mailbox / html / wsgiref / xmlrpc) |
 | `net` | 1006 | الشبكة: socket و ssl و http و email و SMTP/IMAP/FTP |
 | `fastapi` | 536 | إطار عمل ويب حديث |
 | `requests` | 244 | HTTP Client كامل |
@@ -91,11 +93,11 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | `getpass` | 2 | إدخال كلمات السر دون إظهارها |
 | `pprint` | 2 | طباعة منسّقة للقواميس والقوائم |
 
-**الإجمالي: 7,231 عنصراً في 46 مكتبة** (7,213 مفتاحاً فريداً بعد إزالة التكرار).
+**الإجمالي: 9,858 عنصراً في 47 مكتبة** (9,840 مفتاحاً فريداً بعد إزالة التكرار).
 
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
-في `core/apl_runner/patterns.py`، فيصبح عدد العناصر العربية الفريدة في اللغة **7,444 عنصراً**.
+في `core/apl_runner/patterns.py`، فيصبح عدد العناصر العربية الفريدة في اللغة **10,071 عنصراً**.
 
 ## الأمثلة
 
@@ -218,7 +220,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (73 مثالاً)
+## الأمثلة الجاهزة (80 مثالاً)
 
 مجلد `examples/` يحتوي على **66 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
@@ -297,6 +299,13 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 71 | [`71-web-html-cookies.apl`](examples/71-web-html-cookies.apl) | تهريب HTML وملفات تعريف الارتباط (web/html) |
 | 72 | [`72-web-xmlrpc-wsgi.apl`](examples/72-web-xmlrpc-wsgi.apl) | نداءات XML-RPC ورؤوس WSGI (web/xmlrpc) |
 | 73 | [`73-web-robots-maildir.apl`](examples/73-web-robots-maildir.apl) | تحليل robots.txt وصناديق Maildir (web/urllib) |
+| 74 | [`74-df-paths.apl`](examples/74-df-paths.apl) | المسارات والبحث النمطي (datafiles/os.path) |
+| 75 | [`75-df-archive.apl`](examples/75-df-archive.apl) | ضغط zip وgzip وbz2 (datafiles/zipfile) |
+| 76 | [`76-df-serialize.apl`](examples/76-df-serialize.apl) | تسلسل البيانات (datafiles/pickle) |
+| 77 | [`77-df-structures.apl`](examples/77-df-structures.apl) | هياكل البيانات (datafiles/array) |
+| 78 | [`78-df-xml.apl`](examples/78-df-xml.apl) | بناء XML وتحليله (datafiles/xml) |
+| 79 | [`79-df-text.apl`](examples/79-df-text.apl) | يونيكود والترميز (datafiles/unicodedata) |
+| 80 | [`80-df-refs.apl`](examples/80-df-refs.apl) | المراجع والسياق والفروق (datafiles/weakref) |
 
 ### تشغيل أي مثال
 
@@ -398,4 +407,4 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.11 — 7,444 عنصراً عربياً — 46 مكتبة — 73 مثالاً
+**الإصدار:** APL v1.12 — 10,071 عنصراً عربياً — 47 مكتبة — 80 مثالاً

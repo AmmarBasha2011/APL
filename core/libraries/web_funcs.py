@@ -55,7 +55,7 @@ APL — مكتبة الويب والبريد (web)
     WEB_PROPS      خصائص وسمات أصناف بلا أقواس
     WEB_CONSTS     ثوابت تُكتب عارية
 
-عدد العناصر: 2761 (393 نداء + 1713 طريقة + 440 خاصية + 215 ثابت).
+عدد العناصر: 2757 (389 نداء + 1713 طريقة + 440 خاصية + 215 ثابت).
 كل عنصر تم التحقق منه آلياً مقابل الكائن الحقيقي في Python.
 """
 
@@ -215,7 +215,6 @@ WEB_FUNCS = {
     # === http ===
     "اختبر": "http.server.test",
     # === urllib ===
-    "ادمج_إدخالات": "urllib.robotparser.merge_entries",
     "اربط_العنوان": "urllib.parse.urljoin",
     # === http ===
     "اربط_رأس_كلمات": "http.cookiejar.join_header_words",
@@ -358,8 +357,6 @@ WEB_FUNCS = {
     # === http ===
     "ترابط_HTTPS_خادم": "http.server.ThreadingHTTPSServer",
     "ترابط_HTTP_خادم": "http.server.ThreadingHTTPServer",
-    # === urllib ===
-    "ترجم_نمط": "urllib.robotparser.translate_pattern",
     # === wsgiref ===
     "تطبيق_URI": "wsgiref.util.application_uri",
     "تطبيق_توضيحي": "wsgiref.simple_server.demo_app",
@@ -673,9 +670,7 @@ WEB_FUNCS = {
     "هو_قفزة_بواسطة_قفزة": "wsgiref.util.is_hop_by_hop",
     # === urllib ===
     "وحّد": "urllib.robotparser.normalize",
-    "وحّد_URI": "urllib.robotparser.normalize_uri",
     "وحّد_العنوان": "urllib.parse.urlunsplit",
-    "وحّد_نمط": "urllib.robotparser.normalize_pattern",
     "وسيط_أساسي_تصديق_معالج": "urllib.request.ProxyBasicAuthHandler",
     "وسيط_تجاوز": "urllib.request.proxy_bypass",
     "وسيط_خلاصة_تصديق_معالج": "urllib.request.ProxyDigestAuthHandler",
