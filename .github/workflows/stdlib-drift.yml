@@ -8,6 +8,7 @@ name: Stdlib drift
 # يشتغل: كل إثنين 04:23 UTC + يدوياً من تبويب Actions.
 
 on:
+  pull_request:
   schedule:
     - cron: "23 4 * * 1"
   workflow_dispatch:
