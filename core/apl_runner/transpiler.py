@@ -33,6 +33,61 @@ _DECORATOR_ALIASES = {
 _IN_MATCH = False
 
 
+def _split_statements(line: str) -> list:
+    """قسّم السطر على الفواصل المنقوطة خارج النصوص الحرفية.
+
+    قبل الإصلاح كان `المتغير س = "a;b"` يُترجم إلى `س = "a` + سطر جديد +
+    `b"` لأن التقسيم كان يتم على كل `;` بما فيها اللي جوه النص. ده كان
+    يكسر أي نص فيه فاصلة منقوطة (مثل سلاسل ملفات تعريف الارتباط).
+    """
+    parts = []
+    buf = []
+    i = 0
+    n = len(line)
+    while i < n:
+        ch = line[i]
+        if ch in "\"'":
+            quote = ch
+            triple = line[i:i + 3] == ch * 3
+            buf.append(ch)
+            i += 1
+            if triple:
+                buf.append(line[i:i + 2])
+                i += 2
+                while i < n:
+                    if line[i] == "\\" and i + 1 < n:
+                        buf.append(line[i:i + 2])
+                        i += 2
+                        continue
+                    buf.append(line[i])
+                    if line[i:i + 3] == quote * 3:
+                        buf.append(line[i + 1:i + 3])
+                        i += 3
+                        break
+                    i += 1
+            else:
+                while i < n:
+                    if line[i] == "\\" and i + 1 < n:
+                        buf.append(line[i:i + 2])
+                        i += 2
+                        continue
+                    buf.append(line[i])
+                    if line[i] == quote:
+                        i += 1
+                        break
+                    i += 1
+            continue
+        if ch == ";":
+            parts.append("".join(buf))
+            buf = []
+            i += 1
+            continue
+        buf.append(ch)
+        i += 1
+    parts.append("".join(buf))
+    return parts
+
+
 def _apl_split_comment(text: str) -> tuple:
     """Split a trailing "# ..." comment off an expression.
 
@@ -106,14 +161,15 @@ def transpile_line(line: str) -> str:
     
     # Handle semicolons - split multiple statements on one line
     if ";" in stripped and not stripped.startswith(("اطبع", "#", "'''", '"""')):
-        parts = stripped.split(";")
-        results = []
-        for part in parts:
-            if part.strip():
-                # Recursively transpile each part (with the original indent, so
-                # "المتغير س = 5; اطبع س" inside a block stays aligned)
-                results.append(transpile_line(indent + part.strip()))
-        return "\n".join(results)
+        parts = _split_statements(stripped)
+        if len(parts) > 1:
+            results = []
+            for part in parts:
+                if part.strip():
+                    # Recursively transpile each part (with the original indent, so
+                    # "المتغير س = 5; اطبع س" inside a block stays aligned)
+                    results.append(transpile_line(indent + part.strip()))
+            return "\n".join(results)
 
     # Remove trailing semicolon if present
     if stripped.endswith(";"):

@@ -32,6 +32,7 @@ _MODULE_NAMES = [
     "archive",
     "net",
     "devtools",
+    "web",
 ]
 
 _loaded: dict[str, ModuleType] = {}

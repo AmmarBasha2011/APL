@@ -1,4 +1,4 @@
-# التوثيق الكامل — APL v1.10
+# التوثيق الكامل — APL v1.11
 
 فهرس جميع ملفات التوثيق ومجلد الأمثلة الجاهزة:
 
@@ -57,7 +57,7 @@
 
 ---
 
-## الأمثلة الجاهزة (66 مثالاً)
+## الأمثلة الجاهزة (73 مثالاً)
 
 66 برنامجاً حقيقياً مكتوباً بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
@@ -129,6 +129,13 @@
 | 64 | [`64-devtools-traceback.apl`](../examples/64-devtools-traceback.apl) | تنسيق تتبع الأخطاء واختبارات الوثائق (devtools/traceback) |
 | 65 | [`65-devtools-profile.apl`](../examples/65-devtools-profile.apl) | قياس الزمن وتحليل الأداء والذاكرة (devtools/timeit) |
 | 66 | [`66-devtools-import.apl`](../examples/66-devtools-import.apl) | الاستيراد الديناميكي والتحذيرات وذاكرة الأسطر (devtools/importlib) |
+| 67 | [`67-web-http-status.apl`](../examples/67-web-http-status.apl) | ثوابت حالات HTTP (web/http) |
+| 68 | [`68-web-url-parse.apl`](../examples/68-web-url-parse.apl) | تحليل العناوين وترميزها وربطها (web/urllib.parse) |
+| 69 | [`69-web-email-build.apl`](../examples/69-web-email-build.apl) | بناء رسائل البريد وإخراجها (web/email) |
+| 70 | [`70-web-mailbox-mime.apl`](../examples/70-web-mailbox-mime.apl) | صناديق البريد وأنواع MIME (web/mailbox) |
+| 71 | [`71-web-html-cookies.apl`](../examples/71-web-html-cookies.apl) | تهريب HTML وملفات تعريف الارتباط (web/html) |
+| 72 | [`72-web-xmlrpc-wsgi.apl`](../examples/72-web-xmlrpc-wsgi.apl) | نداءات XML-RPC ورؤوس WSGI (web/xmlrpc) |
+| 73 | [`73-web-robots-maildir.apl`](../examples/73-web-robots-maildir.apl) | تحليل robots.txt وصناديق Maildir (web/urllib) |
 
 **التشغيل:**
 ```bash
@@ -177,11 +184,12 @@ with open("ملف.txt") as f:
 اطبع س
 ```
 
-## المكتبات المتاحة (45 مكتبة)
+## المكتبات المتاحة (46 مكتبة)
 
 | المكتبة | عدد العناصر | الوصف |
 |---------|------------:|-------|
 | `devtools` | 1123 | أدوات المطوّر: فحص، تصحيح، قياس أداء، ترجمة (inspect / ast / dis / pdb / doctest / timeit / profile / tracemalloc) |
+| `web` | 2802 | الويب والبريد: عناوين، HTTP، بريد، صناديق، كوكيز، HTML، WSGI، XML-RPC (http / urllib / email / mailbox / html / wsgiref / xmlrpc) |
 | `net` | 1006 | الشبكة: socket و ssl و http و email و SMTP/IMAP/FTP |
 | `fastapi` | 536 | إطار عمل ويب حديث |
 | `requests` | 244 | HTTP Client كامل |
@@ -227,9 +235,9 @@ with open("ملف.txt") as f:
 | `getpass` | 2 | إدخال كلمات السر دون إظهارها |
 | `pprint` | 2 | طباعة منسّقة للقواميس والقوائم |
 
-**الإجمالي: 4,470 عنصراً في 45 مكتبة** (4,452 مفتاحاً فريداً بعد إزالة التكرار).
+**الإجمالي: 7,272 عنصراً في 46 مكتبة** (7,254 مفتاحاً فريداً بعد إزالة التكرار).
 
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
-في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **4,683 عنصراً**،
-مع **66 مثالاً جاهزاً** في `examples/`.
+في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **7,485 عنصراً**،
+مع **73 مثالاً جاهزاً** في `examples/`.
