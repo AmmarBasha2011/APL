@@ -73,3 +73,19 @@ jobs:
           )
           BODY=${BODY//RUN_URL_PLACEHOLDER/$RUN_URL}
           gh issue create --title "$TITLE" --body "$BODY"
+
+      # لما الفحص يرجع أخضر تاني، نقفل أي issue مفتوحة من نفس النوع —
+      # عشان مفيش issue قديم يفضل مفتوح بعد ما المشكلة اتحلّت.
+      - name: قفل الـ issues لما الفحص يرجع أخضر
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -e
+          for N in $(gh issue list --state open --search "stdlib drift in:title" \
+                     --json number --jq '.[].number'); do
+            gh issue comment "$N" --body "✅ الفحص رجع أخضر في $RUN_URL — قُفل تلقائياً." || true
+            gh issue close "$N" --reason completed || true
+            echo "قُفل issue #$N"
+          done

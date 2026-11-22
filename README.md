@@ -337,7 +337,7 @@ python scripts/check_libraries.py --update-baseline   # يحدّث الـ baseli
 - **[CI](.github/workflows/ci.yml)** — كل push على `main` وكل PR: المكتبات + الريبو + الأمثلة،
   بالإضافة إلى job **غير حاجب** على أحدث نسخة (3.15) يبلّغ عن الانحراف قبل ما يطلع.
 - **[Stdlib drift](.github/workflows/stdlib-drift.yml)** — كل إثنين 04:23 UTC + كل PR + يدوياً؛
-  أي فشل بيفتح **issue تلقائياً** (بدون تكرار).
+  أي فشل بيفتح **issue تلقائياً** (بدون تكرار)، ولما الفحص يرجع أخضر **بيقفلها تلقائياً**.
 
 ## مقارنة الأداء: APL مقابل Python
 
