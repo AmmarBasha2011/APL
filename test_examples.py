@@ -51,6 +51,20 @@ EXPECTED = {
     "65-devtools-profile.apl": ["هو_مفعّل: True", "عدد_الأجيال: 3"],
     "66-devtools-import.apl": ["ترجم_أمراً('1 + 2'): <class 'code'>",
                                "هو_وحدة(رياضيات): True"],
+    "67-web-http-status.apl": ["ناجح: 200", "غير موجود: 404",
+                               "404 -> غير موجود"],
+    "68-web-url-parse.apl": ["اسم_المضيف: example.com", "المنفذ: 8080",
+                             "https://example.com/a/c/d"],
+    "69-web-email-build.apl": ["النوع: text/utf-8",
+                               "المحتوى: مرحباً من مكتبة الويب",
+                               "عدد عناصر الترويسة: 3"],
+    "70-web-mailbox-mime.apl": ["صورة.png -> image/png",
+                                "application/pdf -> .pdf"],
+    "71-web-html-cookies.apl": ["&lt;b&gt;مرحباً&lt;/b&gt;", "الاسم: ahmed"],
+    "72-web-xmlrpc-wsgi.apl": ["القاموس: {'مفتاح': True}",
+                               "Content-Type: text/plain; charset=utf-8"],
+    "73-web-robots-maildir.apl": ["يستطيع الزحف /public: True",
+                                  "يستطيع الزحف /private: False"],
 }
 
 

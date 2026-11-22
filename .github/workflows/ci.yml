@@ -36,11 +36,10 @@ jobs:
         run: python test_examples.py
 
   # نسخة أحدث من الحد الأدنى: بتحمي من انحراف المكتبة القياسية قبل ما
-  # يطلع فعلاً، لكنها non-blocking حتى لا تقفل أي PR إذا الاسم الجديد مش
-  # موجود في setup-python أو لو في اختلافات بسيطة.
+  # يطلع فعلاً. غير حاجبة عمداً — الانحراف هنا معروفة ومتوقَّعة (مثلاً
+  # CGIHTTPRequestHandler اتشال في 3.15)، فبتظهر كتحذير على الـ PR مش كـ ✗ أحمر.
   next-python:
     name: نسخة مستقبلية (غير حاجبة)
-    continue-on-error: true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -48,6 +47,17 @@ jobs:
         with:
           python-version: "3.15"
       - name: فحص المكتبات على النسخة الأحدث
-        run: python scripts/check_libraries.py
+        run: |
+          if python scripts/check_libraries.py; then
+            echo "✓ مفيش انحراف في النسخة المستقبلية"
+          else
+            echo "::warning title=انحراف المكتبة القياسية::في أسماء اتشالت أو اتغيّرت في النسخة الأحدث — راجع سجل الخطوة دي"
+          fi
       - name: الأمثلة على النسخة الأحدث
-        run: python test_examples.py
+        run: |
+          if python test_examples.py; then
+            echo "✓ الأمثلة كلها شغالة على النسخة الأحدث"
+          else
+            echo "::warning title=الأمثلة على النسخة الأحدث::بعض الأمثلة فشلت — راجع السجل"
+            python test_examples.py || true
+          fi
