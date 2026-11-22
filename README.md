@@ -22,8 +22,8 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 ## المميزات
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
-- **مكتبات بالعربي** — 47 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **80 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **مكتبات بالعربي** — 48 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
+- **87 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -41,12 +41,13 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 - **مولدات** — `yield` و `yield from` بالعربي
 - **REPL تفاعلي** — جرب الكود سطر بسطر بـ `python apl.py repl`
 
-## المكتبات المتاحة (47 مكتبة)
+## المكتبات المتاحة (48 مكتبة)
 
 | المكتبة | عدد العناصر | الوصف |
 |---------|------------:|-------|
 | `devtools` | 1123 | أدوات المطوّر: فحص، تصحيح، قياس أداء، ترجمة (inspect / ast / dis / pdb / doctest / timeit / profile / tracemalloc) |
 | `datafiles` | 2631 | البيانات والملفات: مسارات، ضغط، أرشيف، تسلسل، هياكل بيانات، XML، يونيكود (io / zipfile / tarfile / pickle / shelve / array / struct / xml.dom / xml.etree / unicodedata) |
+| `syslib` | 3973 | النظام والتشغيل والتشخيص: منصة، إشارات، موارد، تسجيل، اختبارات، عمليات متعددة، ctypes، سياق (platform / signal / resource / logging / unittest / multiprocessing / concurrent.futures / ctypes / termios) |
 | `web` | 2757 | الويب والبريد: عناوين، HTTP، بريد، صناديق، كوكيز، HTML، WSGI، XML-RPC (http / urllib / email / mailbox / html / wsgiref / xmlrpc) |
 | `net` | 1006 | الشبكة: socket و ssl و http و email و SMTP/IMAP/FTP |
 | `fastapi` | 536 | إطار عمل ويب حديث |
@@ -93,11 +94,11 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | `getpass` | 2 | إدخال كلمات السر دون إظهارها |
 | `pprint` | 2 | طباعة منسّقة للقواميس والقوائم |
 
-**الإجمالي: 9,858 عنصراً في 47 مكتبة** (9,840 مفتاحاً فريداً بعد إزالة التكرار).
+**الإجمالي: 13,831 عنصراً في 48 مكتبة** (13,813 مفتاحاً فريداً بعد إزالة التكرار).
 
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
-في `core/apl_runner/patterns.py`، فيصبح عدد العناصر العربية الفريدة في اللغة **10,071 عنصراً**.
+في `core/apl_runner/patterns.py`، فيصبح عدد العناصر العربية الفريدة في اللغة **14,044 عنصراً**.
 
 ## الأمثلة
 
@@ -220,7 +221,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (80 مثالاً)
+## الأمثلة الجاهزة (87 مثالاً)
 
 مجلد `examples/` يحتوي على **66 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
@@ -272,7 +273,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 44 | [`44-tic-tac-toe.apl`](examples/44-tic-tac-toe.apl) | لعبة tic-tac-toe |
 | 45 | [`45-simple-lexer.apl`](examples/45-simple-lexer.apl) | محلّل نصوص بسيط |
 | 46 | [`46-simple-interpreter.apl`](examples/46-simple-interpreter.apl) | مفسّر حسابات مبسّط |
-| 47 | [`47-simple-cache.apl`](examples/47-simple-cache.apl) | كاش بسيط من الصفر |
+| 48 | [`47-simple-cache.apl`](examples/47-simple-cache.apl) | كاش بسيط من الصفر |
 | 48 | [`48-text-analyzer-advanced.apl`](examples/48-text-analyzer-advanced.apl) | تحليل نص متقدم |
 | 49 | [`49-validate-input.apl`](examples/49-validate-input.apl) | التحقق من صحة المدخلات |
 | 50 | [`50-final-showcase.apl`](examples/50-final-showcase.apl) | العرض النهائي (شامل) |
@@ -306,6 +307,13 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 78 | [`78-df-xml.apl`](examples/78-df-xml.apl) | بناء XML وتحليله (datafiles/xml) |
 | 79 | [`79-df-text.apl`](examples/79-df-text.apl) | يونيكود والترميز (datafiles/unicodedata) |
 | 80 | [`80-df-refs.apl`](examples/80-df-refs.apl) | المراجع والسياق والفروق (datafiles/weakref) |
+| 81 | [`81-syslib-system.apl`](examples/81-syslib-system.apl) | معلومات النظام (syslib/platform) |
+| 82 | [`82-syslib-signals.apl`](examples/82-syslib-signals.apl) | الإشارات وحدود الموارد (syslib/signal) |
+| 83 | [`83-syslib-logging.apl`](examples/83-syslib-logging.apl) | التسجيل (syslib/logging) |
+| 84 | [`84-syslib-docs.apl`](examples/84-syslib-docs.apl) | التوثيق ويونيكود والفروق (syslib/pydoc) |
+| 85 | [`85-syslib-processes.apl`](examples/85-syslib-processes.apl) | العمليات المتعددة (syslib/multiprocessing) |
+| 86 | [`86-syslib-ctypes.apl`](examples/86-syslib-ctypes.apl) | ctypes والأنواع (syslib/ctypes) |
+| 87 | [`87-syslib-context.apl`](examples/87-syslib-context.apl) | السياق وتحليل الأوامر (syslib/contextvars) |
 
 ### تشغيل أي مثال
 
@@ -407,4 +415,4 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.12 — 10,071 عنصراً عربياً — 47 مكتبة — 80 مثالاً
+**الإصدار:** APL v1.12 — 14,044 عنصراً عربياً — 48 مكتبة — 87 مثالاً

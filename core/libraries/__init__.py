@@ -50,6 +50,7 @@ from . import net_funcs
 from . import devtools_funcs
 from . import web_funcs
 from . import datafiles_funcs
+from . import syslib_funcs
 
 # Registry: module references for easy access
 LIBRARIES = {
@@ -100,6 +101,7 @@ LIBRARIES = {
     "devtools": devtools_funcs,
     "web": web_funcs,
     "datafiles": datafiles_funcs,
+    "syslib": syslib_funcs,
 }
 
 def get_all_funcs():

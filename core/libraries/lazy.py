@@ -34,6 +34,7 @@ _MODULE_NAMES = [
     "devtools",
     "web",
     "datafiles",
+    "syslib",
 ]
 
 _loaded: dict[str, ModuleType] = {}
