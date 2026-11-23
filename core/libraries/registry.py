@@ -8,12 +8,15 @@ import importlib
 import json
 from pathlib import Path
 import re
+import sys
 
 ENTRIES = json.loads(Path(__file__).with_name('registry.json').read_text(encoding='utf-8'))
 
 
 def module(entry):
-    return importlib.import_module('core.libraries.' + entry['module'])
+    name = 'core.libraries.' + entry['module']
+    existing = sys.modules.get(name)
+    return existing if existing is not None else importlib.import_module(name)
 
 
 def substitute_all(text, user_names):

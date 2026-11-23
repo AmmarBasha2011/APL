@@ -37,7 +37,14 @@ def load(name: str) -> ModuleType:
     """Import one library module by its short name (e.g. "math")."""
     if name in _loaded:
         return _loaded[name]
-    mod = importlib.import_module("core.libraries." + name + "_funcs")
+    full = "core.libraries." + name + "_funcs"
+    previous = sys.modules.pop(full, None)
+    try:
+        mod = importlib.import_module(full)
+    except BaseException:
+        if previous is not None:
+            sys.modules[full] = previous
+        raise
     _loaded[name] = mod
     return mod
 

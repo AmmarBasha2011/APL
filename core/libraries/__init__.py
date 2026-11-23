@@ -1,5 +1,7 @@
 """APL library compatibility API, backed by the unified registry."""
 from .registry import ENTRIES, module
+from . import lazy
+lazy.install()
 
 LIBRARIES = {entry['name']: module(entry) for entry in ENTRIES}
 globals().update({entry['module']: LIBRARIES[entry['name']] for entry in ENTRIES})
