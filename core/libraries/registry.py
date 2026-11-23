@@ -5,6 +5,8 @@ remain the vocabulary source and compatibility API. No optional dependencies
 are imported just to read registration metadata.
 """
 import importlib
+import base64
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -20,8 +22,18 @@ def module(entry):
 
 
 def substitute_all(text, user_names):
+    words = re.findall(r"[^\W\d][\w\u064B-\u065F\u0670]*", text)
+    hashes = [hashlib.blake2b(word.encode(), digest_size=16).digest()
+              for word in words if not word.startswith('_APL_')]
     for entry in ENTRIES:
         if entry['substitute']:
+            encoded = entry.get('token_filter')
+            if encoded:
+                bits = base64.b64decode(encoded)
+                size = len(bits) * 8
+                if not any(all(bits[(n := int.from_bytes(digest[off:off + 4], 'little') % size) // 8]
+                               & (1 << (n % 8)) for off in (0, 4, 8)) for digest in hashes):
+                    continue
             mod = module(entry)
             mod.USER_NAMES = user_names
             text = getattr(mod, entry['substitute'])(text)

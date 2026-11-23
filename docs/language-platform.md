@@ -50,7 +50,9 @@ is not a newly promised feature in this change.
 `core/libraries/registry.json` is the ordered registration source. It drives
 `LIBRARIES`, lazy module names, generated-library substitution, Python import
 insertion and the editor vocabulary export. Existing `*_funcs.py` tables remain
-the source of Arabic spellings and Python targets. Compatibility regexes for
+the source of Arabic spellings and Python targets. Per-library token Bloom filters avoid loading large generated tables for
+unrelated words. False positives only cause an extra load; they never alter
+lookup results. Regenerate filters after vocabulary changes. Compatibility regexes for
 older small libraries remain in the inline engine; migrating those regexes is
 not necessary to add another generated library.
 
@@ -62,6 +64,7 @@ Unknown API signatures stay null in the normalized symbol API. We do not
 invent signatures or load optional packages just to fill completion metadata.
 
 ```sh
+python scripts/update_registry_filters.py
 python scripts/export_editor_index.py
 python scripts/export_editor_index.py --check
 ```
