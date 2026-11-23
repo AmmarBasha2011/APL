@@ -34,7 +34,7 @@ proto-plus==1.28.3
 psutil==7.2.2
 pycparser==3.0
 pydantic==2.13.4
-Pillow==12.3.0
+Pillow==13.0.0
 PyJWT==2.13.0
 Pygments==2.21.0
 pytz==2026.3.post1
