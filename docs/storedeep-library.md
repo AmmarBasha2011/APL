@@ -4902,7 +4902,7 @@
 | `صارم_ريديس_كمون_بياني` | `redis.StrictRedis.latency_graph` |
 | `صارم_ريديس_كمون_سجل` | `redis.StrictRedis.latency_history` |
 | `صارم_ريديس_كمون_طبيب` | `redis.StrictRedis.latency_doctor` |
-| `صارم_ريديس_متزامن` | `redis.asyncio.client.StrictRedis.aclose` |
+| `صارم_ريديس_متزامن` | `redis.asyncio.StrictRedis.aclose` |
 | `صارم_ريديس_متعدد` | `redis.StrictRedis.mget` |
 | `صارم_ريديس_مجموعة` | `redis.StrictRedis.sscan` |
 | `صارم_ريديس_مجموعة_كرّر` | `redis.StrictRedis.sscan_iter` |
@@ -6660,7 +6660,6 @@
 | `متدفق_اعتماد_مزوّد_على_التالي` | `redis.client.StreamingCredentialProvider.on_next` |
 | `متدفق_اعتماد_مزوّد_على_خطأ` | `redis.asyncio.client.StreamingCredentialProvider.on_error` |
 | `متدفق_اعتماد_مزوّد_هو_متدفق` | `redis.client.StreamingCredentialProvider.is_streaming` |
-| `متزامن` | `redis.asyncio.StrictRedis.aclose` |
 | `متزامن_ACL_أوامر` | `redis.commands.cluster.AsyncACLCommands` |
 | `متزامن_ACL_أوامر_الوصول_cat` | `redis.commands.cluster.AsyncACLCommands.acl_cat` |
 | `متزامن_ACL_أوامر_الوصول_deluser` | `redis.commands.cluster.AsyncACLCommands.acl_deluser` |
@@ -17530,6 +17529,7 @@
 | `مخزن_صارم_ريديس_كمون_طبيب` | `redis.asyncio.StrictRedis.latency_doctor` |
 | `مخزن_صارم_ريديس_كمون_طبيب_2` | `redis.asyncio.client.StrictRedis.latency_doctor` |
 | `مخزن_صارم_ريديس_كمون_طبيب_3` | `redis.client.StrictRedis.latency_doctor` |
+| `مخزن_صارم_ريديس_متزامن` | `redis.asyncio.client.StrictRedis.aclose` |
 | `مخزن_صارم_ريديس_متعدد` | `redis.asyncio.StrictRedis.mget` |
 | `مخزن_صارم_ريديس_متعدد_2` | `redis.asyncio.client.StrictRedis.mget` |
 | `مخزن_صارم_ريديس_متعدد_3` | `redis.client.StrictRedis.mget` |

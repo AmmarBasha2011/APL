@@ -3881,6 +3881,7 @@
 | `رسالة_كيان_لغة` | `telegram.ext.filters.MessageEntity.language` |
 | `رسالة_كيان_مستخدم` | `telegram.ext.filters.MessageEntity.user` |
 | `رسالة_كيان_معاملات_الكلمات` | `telegram.ext.filters.MessageEntity.api_kwargs` |
+| `رسالة_كيانات` | `telegram.ext.filters.Message.entities` |
 | `رسالة_لعبة` | `telegram.ext.filters.Message.game` |
 | `رسالة_مباشر_رسائل_موضوع` | `telegram.ext.filters.Message.direct_messages_topic` |
 | `رسالة_مباشر_صورة` | `telegram.ext.filters.Message.live_photo` |
@@ -4068,7 +4069,6 @@
 | `كتابة_الوصول_اسمح` | `telegram.ext.filters.Message.write_access_allowed` |
 | `كيان_كيان_نوع` | `telegram.ext.filters.Entity.entity_type` |
 | `كيان_نوع` | `telegram.ext.filters.CaptionEntity.entity_type` |
-| `كيانات` | `telegram.ext.filters.Message.entities` |
 | `لانج` | `telegram.ext.filters.Language.lang` |
 | `لغة_شيفرة` | `telegram.ext.filters.TGUser.language_code` |
 | `له_topics_مُفعّل` | `telegram.ext.filters.TGUser.has_topics_enabled` |

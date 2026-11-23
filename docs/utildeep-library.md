@@ -114,6 +114,7 @@
 | `أدوات_utcoffset` | `dateutil.parser.isoparser.datetime.utcoffset` |
 | `أدوات_xz` | `dateutil.zoneinfo.rebuild.TarFile.xzopen` |
 | `أدوات_zst` | `dateutil.zoneinfo.rebuild.TarFile.zstopen` |
+| `أدوات_أرشيف_ملف_شريط` | `dateutil.zoneinfo.rebuild.TarFile.tarinfo` |
 | `أدوات_أرشيف_ملف_ملفاً` | `dateutil.zoneinfo.rebuild.TarFile.extractfile` |
 | `أدوات_أرشيف_ملف_ملفاً_2` | `dateutil.zoneinfo.rebuild.TarFile.makefile` |
 | `أدوات_افتراضي_بالفعل_عيّن_خطأ_أضف_ملاحظة` | `attrs.exceptions.DefaultAlreadySetError.add_note` |
@@ -391,7 +392,7 @@
 | `أرشيف_ملف_الكل` | `dateutil.zoneinfo.rebuild.TarFile.extractall` |
 | `أرشيف_ملف_المالك` | `dateutil.zoneinfo.rebuild.TarFile.chown` |
 | `أرشيف_ملف_الوضع` | `dateutil.zoneinfo.rebuild.TarFile.chmod` |
-| `أرشيف_ملف_شريط` | `dateutil.zoneinfo.rebuild.TarFile.tarinfo` |
+| `أرشيف_ملف_شريط` | `dateutil.zoneinfo.rebuild.TarFile.gettarinfo` |
 | `أرشيف_ملف_عضو` | `dateutil.zoneinfo.rebuild.TarFile.getmember` |
 | `أرشيف_ملف_قائمة` | `dateutil.zoneinfo.rebuild.TarFile.list` |
 | `أرشيف_ملف_مجلداً` | `dateutil.zoneinfo.rebuild.TarFile.makedir` |
@@ -637,7 +638,6 @@
 | `سينسورس_باتتيري` | `psutil.sensors_battery` |
 | `سينسورس_تيمبيراتوريس` | `psutil.sensors_temperatures` |
 | `سينسورس_فانس` | `psutil.sensors_fans` |
-| `شريط` | `dateutil.zoneinfo.rebuild.TarFile.gettarinfo` |
 | `شريطاً` | `dateutil.zoneinfo.rebuild.TarFile.taropen` |
 | `شغّل_أمر` | `dotenv.cli.run_command` |
 | `شغّل_ارون_عالج` | `watchfiles.run.arun_process` |

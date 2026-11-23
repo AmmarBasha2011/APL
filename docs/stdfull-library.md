@@ -75,6 +75,7 @@
 | `C_عنصر_شجرة_C_14_N_كاتب_هدف` | `xml.etree.cElementTree.C14NWriterTarget` |
 | `C_عنصر_شجرة_XML_اسحب_محلل` | `xml.etree.cElementTree.XMLPullParser` |
 | `C_عنصر_شجرة_XML_محلل` | `xml.etree.cElementTree.XMLParser` |
+| `C_عنصر_شجرة_أسطر` | `xml.etree.cElementTree.fromstringlist` |
 | `C_عنصر_شجرة_أفرغ` | `xml.etree.cElementTree.dump` |
 | `C_عنصر_شجرة_التحليل` | `xml.etree.cElementTree.iterparse` |
 | `C_عنصر_شجرة_بادئة` | `xml.etree.cElementTree.indent` |
@@ -709,7 +710,6 @@
 | `أرسل_رأس` | `http.server.CGIHTTPRequestHandler.send_head` |
 | `أرسل_رؤوس` | `wsgiref.handlers.SimpleHandler.send_headers` |
 | `أرسل_مقدمة` | `wsgiref.handlers.SimpleHandler.send_preamble` |
-| `أسطر` | `xml.etree.cElementTree.fromstringlist` |
 | `أسفل` | `curses.panel.panel.bottom` |
 | `أسفل_Panel` | `curses.panel.bottom_panel` |
 | `أسماء_إنشاء_محلل` | `xml.dom.expatbuilder.Namespaces.createParser` |
@@ -1729,6 +1729,7 @@
 | `جينيريكباته_جهاز` | `genericpath.isdevdrive` |
 | `جينيريكباته_رابط` | `genericpath.islink` |
 | `جينيريكباته_مجلد` | `genericpath.isdir` |
+| `جينيريكباته_مشتركة` | `genericpath.commonprefix` |
 | `جينيريكباته_ملف` | `genericpath.getsize` |
 | `جينيريكباته_موجود` | `genericpath.exists` |
 | `جينيريكباته_وصلة` | `genericpath.isjunction` |
@@ -5445,6 +5446,7 @@
 | `كورووتينيس_تعاونية` | `asyncio.coroutines.iscoroutinefunction` |
 | `كولورسيس_RGB_إلى_هلس` | `colorsys.rgb_to_hls` |
 | `كولورسيس_هلس_إلى_RGB` | `colorsys.hls_to_rgb` |
+| `كونفيجبارسير_نصي` | `configparser.Interpolation` |
 | `كيان_إعلان_معالج` | `xml.dom.expatbuilder.ExpatBuilder.entity_decl_handler` |
 | `كيللبج` | `os.killpg` |
 | `كيينامي` | `curses.keyname` |
@@ -5652,7 +5654,6 @@
 | `مسمّى_عُقدة_خريطة_مفاتيح` | `xml.dom.minidom.NamedNodeMap.keys` |
 | `مسمّى_عُقدة_خريطة_مفاتيح_NS` | `xml.dom.minidom.NamedNodeMap.keysNS` |
 | `مشترك_ذاكرة_جزئي` | `multiprocessing.shared_memory.partial` |
-| `مشتركة` | `genericpath.commonprefix` |
 | `مصدر_إلى_شيفرة` | `importlib.abc.ExecutionLoader.source_to_code` |
 | `مصدر_تجزئة` | `importlib.util.source_hash` |
 | `مصدر_محمّل` | `importlib.abc.SourceLoader` |
@@ -5971,7 +5972,6 @@
 | `نص_اختبر_مُشغّل_النتيجة` | `unittest.runner.TextTestRunner.resultclass` |
 | `نص_اختبر_نتيجة_أضف_متوقع_نجاح` | `unittest.runner.TextTestResult.addUnexpectedSuccess` |
 | `نص_اختبر_نتيجة_كان_successful` | `unittest.runner.TextTestResult.wasSuccessful` |
-| `نصي` | `configparser.Interpolation` |
 | `نصي_خطأ` | `configparser.InterpolationError` |
 | `نصي_خطأ_أضف_ملاحظة` | `configparser.InterpolationError.add_note` |
 | `نصي_خطأ_تتبع_الخطأ` | `configparser.InterpolationError.with_traceback` |
@@ -6264,6 +6264,8 @@
 | `BZ_2_ضغط_ملف` | `compression.bz2.BZ2Decompressor.eof` |
 | `CGIHTTP_اطلب_معالج_استجابات` | `http.server.CGIHTTPRequestHandler.responses` |
 | `CGIHTTP_اطلب_معالج_الأسبوع` | `http.server.CGIHTTPRequestHandler.weekdayname` |
+| `CGIHTTP_اطلب_معالج_الشهر` | `http.server.CGIHTTPRequestHandler.monthname` |
+| `CGIHTTP_اطلب_معالج_الكتابة` | `http.server.CGIHTTPRequestHandler.wbufsize` |
 | `CGIHTTP_اطلب_معالج_بروتوكول_إصدار` | `http.server.CGIHTTPRequestHandler.protocol_version` |
 | `CGIHTTP_اطلب_معالج_خادم_إصدار` | `http.server.CGIHTTPRequestHandler.server_version` |
 | `CGIHTTP_اطلب_معالج_مهلة` | `http.server.CGIHTTPRequestHandler.timeout` |
@@ -6371,6 +6373,7 @@
 | `LCTYPE_قيمة` | `ctypes.wintypes.LCTYPE.value` |
 | `LGRPID_قيمة` | `ctypes.wintypes.LGRPID.value` |
 | `LMTP_افتراضي_منفذ` | `smtplib.LMTP.default_port` |
+| `LMTP_التصحيح` | `smtplib.LMTP.debuglevel` |
 | `LMTP_مقبس` | `smtplib.LMTP.sock` |
 | `LMTP_ملف` | `smtplib.LMTP.file` |
 | `LONG_قيمة` | `ctypes.wintypes.LONG.value` |
@@ -6837,7 +6840,6 @@
 | `الامتداد` | `ntpath.extsep` |
 | `الترميز_نوع` | `email.policy.Compat32.cte_type` |
 | `التزوني` | `time.altzone` |
-| `التصحيح` | `smtplib.LMTP.debuglevel` |
 | `الثابت` | `opcode.hasconst` |
 | `الجوريتهمس_جوارانتييد` | `hashlib.algorithms_guaranteed` |
 | `الجوريتهمس_متاح` | `hashlib.algorithms_available` |
@@ -6849,10 +6851,8 @@
 | `الرموز_مفرد` | `tokenize.Single` |
 | `الرموز_نص` | `tokenize.String` |
 | `السطر_splitter` | `email.policy.linesep_splitter` |
-| `الشهر` | `http.server.CGIHTTPRequestHandler.monthname` |
 | `العدم` | `ntpath.devnull` |
 | `القفز` | `opcode.hasjump` |
-| `الكتابة` | `http.server.CGIHTTPRequestHandler.wbufsize` |
 | `المحلي` | `opcode.haslocal` |
 | `المطلق` | `opcode.hasjabs` |
 | `النسبي` | `opcode.hasjrel` |

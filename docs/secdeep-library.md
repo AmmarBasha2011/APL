@@ -1946,6 +1946,7 @@
 | `اعتماد_حساب` | `google.oauth2.credentials.Credentials.account` |
 | `اعتماد_خدمة_حساب_بريد` | `google.auth.aws.Credentials.service_account_email` |
 | `اعتماد_رمز_حالة` | `google.auth.app_engine.Credentials.token_state` |
+| `اعتماد_رمز_رابط` | `google.auth.external_account_authorized_user.Credentials.token_url` |
 | `اعتماد_رمز_معلومة_رابط` | `google.auth.external_account.Credentials.token_info_url` |
 | `اعتماد_ريجيونال_الوصول_حدّ` | `google.auth.compute_engine.Credentials.regional_access_boundary` |
 | `اعتماد_ريجيونال_الوصول_حدّ_Expiry` | `google.auth.compute_engine.Credentials.regional_access_boundary_expiry` |
@@ -3103,7 +3104,6 @@
 | `رمز_اطلب_معرف_رمز_مدس` | `google.auth.metrics.token_request_id_token_mds` |
 | `رمز_اطلب_معرف_رمز_يمبيرسوناتي` | `google.auth.metrics.token_request_id_token_impersonate` |
 | `رمز_حالة` | `google.auth.api_key.Credentials.token_state` |
-| `رمز_رابط` | `google.auth.external_account_authorized_user.Credentials.token_url` |
 | `رمز_قاعدة` | `google.protobuf.symbol_database.SymbolDatabase` |
 | `رمز_قاعدة_احصل_رسائل` | `google.protobuf.symbol_database.SymbolDatabase.GetMessages` |
 | `رمز_قاعدة_احصل_رمز` | `google.protobuf.symbol_database.SymbolDatabase.GetSymbol` |

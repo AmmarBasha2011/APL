@@ -149,7 +149,6 @@
 | `I_بف_4_شبكة_عنوان_استبعاد` | `pydantic.deprecated.json.IPv4Network.address_exclude` |
 | `I_بف_4_شبكة_فائقة` | `pydantic.deprecated.json.IPv4Network.supernet` |
 | `I_بف_4_شبكة_فائقة_من` | `pydantic.deprecated.json.IPv4Network.supernet_of` |
-| `I_بف_4_شبكة_فرعية` | `pydantic.deprecated.json.IPv4Network.subnets` |
 | `I_بف_4_شبكة_مضيفون` | `pydantic.deprecated.json.IPv4Network.hosts` |
 | `I_بف_4_شبكة_مقارنة_نيتووركس` | `pydantic.deprecated.json.IPv4Network.compare_networks` |
 | `I_بف_4_عنوان_اعكس_مؤشر` | `pydantic.deprecated.json.IPv4Address.reverse_pointer` |
@@ -175,7 +174,6 @@
 | `I_بف_6_شبكة_خطأ` | `pydantic.v1.IPv6NetworkError` |
 | `I_بف_6_شبكة_خطأ_أضف_ملاحظة` | `pydantic.v1.IPv6NetworkError.add_note` |
 | `I_بف_6_شبكة_خطأ_تتبع_الخطأ` | `pydantic.v1.IPv6NetworkError.with_traceback` |
-| `I_بف_6_عنوان_أربعة` | `pydantic.deprecated.json.IPv6Address.sixtofour` |
 | `I_بف_6_عنوان_تيريدو` | `pydantic.deprecated.json.IPv6Address.teredo` |
 | `I_بف_6_عنوان_خطأ` | `pydantic.v1.IPv6AddressError` |
 | `I_بف_6_عنوان_خطأ_أضف_ملاحظة` | `pydantic.v1.IPv6AddressError.add_note` |
@@ -1209,7 +1207,6 @@
 | `إلى_pascal` | `pydantic.alias_generators.to_pascal` |
 | `إلى_بايثون` | `pydantic.networks.SchemaSerializer.to_python` |
 | `إلى_جسونابلي_بايثون` | `pydantic.json_schema.to_jsonable_python` |
-| `إلى_جمل` | `pydantic.alias_generators.to_camel` |
 | `إلى_سناكي` | `pydantic.alias_generators.to_snake` |
 | `إلى_صغّر_جمل` | `pydantic.v1.utils.to_lower_camel` |
 | `إلى_مخزَّن_مورد` | `referencing.retrieval.to_cached_resource` |
@@ -1333,7 +1330,6 @@
 | `اعمل_مسمّى_متحقق` | `pydantic.v1.validators.make_namedtuple_validator` |
 | `اعمل_مُنوَّع_متحقق` | `pydantic.v1.validators.make_typeddict_validator` |
 | `افتراضي_مخطط` | `pydantic.deprecated.tools.GenerateJsonSchema.default_schema` |
-| `البناء` | `pydantic.TypeAdapter.rebuild` |
 | `البناء_بيانات` | `pydantic.dataclasses.rebuild_dataclass` |
 | `التشغيل_للتحديد` | `typing_extensions.runtime_checkable` |
 | `انيستر_جرّد_بيضاء` | `pydantic.v1.validators.anystr_strip_whitespace` |
@@ -4230,6 +4226,7 @@
 | `مسار_موجود_متحقق` | `pydantic.v1.types.path_exists_validator` |
 | `مسار_نوع` | `pydantic.types.PathType` |
 | `مستعار_أي` | `pydantic.aliases.Any` |
+| `مستعار_جينيراتورس_إلى_جمل` | `pydantic.alias_generators.to_camel` |
 | `مستعار_حرفي` | `pydantic.aliases.Literal` |
 | `مستعار_للاستدعاء` | `pydantic.aliases.Callable` |
 | `مستعار_مستعار_خيارات` | `pydantic.aliases.AliasChoices` |
@@ -4861,11 +4858,12 @@
 | `نماذج_I_بف_4_شبكة_فائقة_من_3` | `pydantic.v1.networks.IPv4Network.supernet_of` |
 | `نماذج_I_بف_4_شبكة_فائقة_من_4` | `pydantic.v1.schema.IPv4Network.supernet_of` |
 | `نماذج_I_بف_4_شبكة_فائقة_من_5` | `pydantic.v1.validators.IPv4Network.supernet_of` |
-| `نماذج_I_بف_4_شبكة_فرعية` | `pydantic.networks.IPv4Network.subnets` |
-| `نماذج_I_بف_4_شبكة_فرعية_2` | `pydantic.v1.json.IPv4Network.subnets` |
-| `نماذج_I_بف_4_شبكة_فرعية_3` | `pydantic.v1.networks.IPv4Network.subnets` |
-| `نماذج_I_بف_4_شبكة_فرعية_4` | `pydantic.v1.schema.IPv4Network.subnets` |
-| `نماذج_I_بف_4_شبكة_فرعية_5` | `pydantic.v1.validators.IPv4Network.subnets` |
+| `نماذج_I_بف_4_شبكة_فرعية` | `pydantic.deprecated.json.IPv4Network.subnets` |
+| `نماذج_I_بف_4_شبكة_فرعية_2` | `pydantic.networks.IPv4Network.subnets` |
+| `نماذج_I_بف_4_شبكة_فرعية_3` | `pydantic.v1.json.IPv4Network.subnets` |
+| `نماذج_I_بف_4_شبكة_فرعية_4` | `pydantic.v1.networks.IPv4Network.subnets` |
+| `نماذج_I_بف_4_شبكة_فرعية_5` | `pydantic.v1.schema.IPv4Network.subnets` |
+| `نماذج_I_بف_4_شبكة_فرعية_6` | `pydantic.v1.validators.IPv4Network.subnets` |
 | `نماذج_I_بف_4_شبكة_كامل` | `pydantic.deprecated.json.IPv4Network.exploded` |
 | `نماذج_I_بف_4_شبكة_كامل_2` | `pydantic.networks.IPv4Network.exploded` |
 | `نماذج_I_بف_4_شبكة_كامل_3` | `pydantic.v1.json.IPv4Network.exploded` |
@@ -5257,11 +5255,12 @@
 | `نماذج_I_بف_6_شبكة_هوستماسك_4` | `pydantic.v1.networks.IPv6Network.hostmask` |
 | `نماذج_I_بف_6_شبكة_هوستماسك_5` | `pydantic.v1.schema.IPv6Network.hostmask` |
 | `نماذج_I_بف_6_شبكة_هوستماسك_6` | `pydantic.v1.validators.IPv6Network.hostmask` |
-| `نماذج_I_بف_6_عنوان_أربعة` | `pydantic.networks.IPv6Address.sixtofour` |
-| `نماذج_I_بف_6_عنوان_أربعة_2` | `pydantic.v1.json.IPv6Address.sixtofour` |
-| `نماذج_I_بف_6_عنوان_أربعة_3` | `pydantic.v1.networks.IPv6Address.sixtofour` |
-| `نماذج_I_بف_6_عنوان_أربعة_4` | `pydantic.v1.schema.IPv6Address.sixtofour` |
-| `نماذج_I_بف_6_عنوان_أربعة_5` | `pydantic.v1.validators.IPv6Address.sixtofour` |
+| `نماذج_I_بف_6_عنوان_أربعة` | `pydantic.deprecated.json.IPv6Address.sixtofour` |
+| `نماذج_I_بف_6_عنوان_أربعة_2` | `pydantic.networks.IPv6Address.sixtofour` |
+| `نماذج_I_بف_6_عنوان_أربعة_3` | `pydantic.v1.json.IPv6Address.sixtofour` |
+| `نماذج_I_بف_6_عنوان_أربعة_4` | `pydantic.v1.networks.IPv6Address.sixtofour` |
+| `نماذج_I_بف_6_عنوان_أربعة_5` | `pydantic.v1.schema.IPv6Address.sixtofour` |
+| `نماذج_I_بف_6_عنوان_أربعة_6` | `pydantic.v1.validators.IPv6Address.sixtofour` |
 | `نماذج_I_بف_6_عنوان_اعكس_مؤشر` | `pydantic.deprecated.json.IPv6Address.reverse_pointer` |
 | `نماذج_I_بف_6_عنوان_اعكس_مؤشر_2` | `pydantic.networks.IPv6Address.reverse_pointer` |
 | `نماذج_I_بف_6_عنوان_اعكس_مؤشر_3` | `pydantic.v1.json.IPv6Address.reverse_pointer` |
@@ -11463,7 +11462,8 @@
 | `نماذج_نوع_مكيّف_أفرغ_بايثون` | `pydantic.type_adapter.TypeAdapter.dump_python` |
 | `نماذج_نوع_مكيّف_أفرغ_جيسون` | `pydantic.type_adapter.TypeAdapter.dump_json` |
 | `نماذج_نوع_مكيّف_احصل_افتراضي_قيمة` | `pydantic.type_adapter.TypeAdapter.get_default_value` |
-| `نماذج_نوع_مكيّف_البناء` | `pydantic.type_adapter.TypeAdapter.rebuild` |
+| `نماذج_نوع_مكيّف_البناء` | `pydantic.deprecated.tools.TypeAdapter.rebuild` |
+| `نماذج_نوع_مكيّف_البناء_2` | `pydantic.type_adapter.TypeAdapter.rebuild` |
 | `نماذج_نوع_مكيّف_تحقق_بايثون` | `pydantic.type_adapter.TypeAdapter.validate_python` |
 | `نماذج_نوع_مكيّف_تحقق_جيسون` | `pydantic.type_adapter.TypeAdapter.validate_json` |
 | `نماذج_نوع_مكيّف_تحقق_نصوص` | `pydantic.type_adapter.TypeAdapter.validate_strings` |
@@ -11901,7 +11901,7 @@
 | `نوع_مكيّف_إطار_نوع` | `pydantic.type_adapter.FrameType` |
 | `نوع_مكيّف_إعداد_قاموس` | `pydantic.type_adapter.ConfigDict` |
 | `نوع_مكيّف_احصل_افتراضي_قيمة` | `pydantic.deprecated.tools.TypeAdapter.get_default_value` |
-| `نوع_مكيّف_البناء` | `pydantic.deprecated.tools.TypeAdapter.rebuild` |
+| `نوع_مكيّف_البناء` | `pydantic.TypeAdapter.rebuild` |
 | `نوع_مكيّف_بايدانتك_مستخدم_خطأ` | `pydantic.type_adapter.PydanticUserError` |
 | `نوع_مكيّف_بايدانتك_معرّف_توضيحي` | `pydantic.type_adapter.PydanticUndefinedAnnotation` |
 | `نوع_مكيّف_بلوججابلي_مخطط_متحقق` | `pydantic.type_adapter.PluggableSchemaValidator` |

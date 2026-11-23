@@ -94,6 +94,7 @@
 | `Beat_جزئي` | `celery.bin.beat.partial` |
 | `Beat_حدث` | `celery.beat.Event` |
 | `Beat_حمّل_امتداد_صنف_أسماء` | `celery.beat.load_extension_class_names` |
+| `Beat_خيط` | `celery.beat.Thread` |
 | `Beat_ربما_اعمل_aware` | `celery.beat.maybe_make_aware` |
 | `Beat_رمز_بواسطة_اسم` | `celery.beat.symbol_by_name` |
 | `Beat_عالج` | `celery.beat.Process` |
@@ -722,6 +723,7 @@
 | `colored_مهام_white` | `celery.utils.term.colored.white` |
 | `compat_احصل_fdmax` | `billiard.compat.get_fdmax` |
 | `compat_احصل_gevent_concurrent_خطأ` | `kombu.utils.compat.get_gevent_concurrent_error` |
+| `compat_الاستخدام` | `billiard.compat.getrusage` |
 | `compat_الواصف` | `kombu.utils.compat.fileno` |
 | `compat_تسجيل_بعد_تفرّع` | `kombu.utils.compat.register_after_fork` |
 | `compat_تعاونية` | `kombu.utils.compat.coro` |
@@ -1683,7 +1685,6 @@
 | `اسينكهرونووس_عيّن_حدث_حلقة` | `kombu.asynchronous.set_event_loop` |
 | `اسينكهرونووس_فارغ` | `celery.backends.asynchronous.Empty` |
 | `اسينكهرونووس_مزدوج` | `celery.backends.asynchronous.deque` |
-| `اشترك` | `kombu.transport.redis.PrefixedRedisPubSub.subscribe` |
 | `اطبع_topics` | `celery.contrib.rdb.Pdb.print_topics` |
 | `اطبع_مكدس_إدخال` | `celery.contrib.rdb.Pdb.print_stack_entry` |
 | `اطبع_مكدس_تتبّع` | `celery.contrib.rdb.Pdb.print_stack_trace` |
@@ -1904,7 +1905,6 @@
 | `الإطار_محليّات` | `celery.contrib.rdb.Pdb.curframe_locals` |
 | `الإنشاء` | `amqp.serialization.datetime.ctime` |
 | `الاتصال_على_خطأ` | `celery.backends.redis.BaseResultConsumer.reconnect_on_error` |
-| `الاستخدام` | `billiard.compat.getrusage` |
 | `البناء_exc` | `billiard.einfo.rebuild_exc` |
 | `البناء_اتصال` | `billiard.connection.rebuild_connection` |
 | `البناء_ارينا` | `billiard.heap.rebuild_arena` |
@@ -1945,11 +1945,9 @@
 | `الضبط_مؤقت_إعدادات` | `kombu.transport.redis.SentinelManagedSSLConnection.reset_tmp_settings` |
 | `الضبط_مستقبَل_إشعارات` | `kombu.transport.redis.SentinelManagedSSLConnection.reset_received_notifications` |
 | `الضبط_ينبغي_الاتصال` | `kombu.transport.redis.SentinelManagedSSLConnection.reset_should_reconnect` |
-| `الطابور` | `amqp.channel.Queue.qsize` |
 | `الطبقات` | `amqp.sasl.BytesIO.detach` |
 | `القيم` | `celery.app.amqp.WeakValueDictionary.itervaluerefs` |
 | `اللطف` | `celery.utils.debug.Process.nice` |
-| `المحاولة` | `celery.app.task.BaseTask.retry` |
 | `المحاولة_أضف_ملاحظة` | `celery.app.task.Retry.add_note` |
 | `المحاولة_تتبع_الخطأ` | `celery.app.task.Retry.with_traceback` |
 | `المحاولة_فوق_وقت` | `celery.backends.redis.retry_over_time` |
@@ -2177,7 +2175,7 @@
 | `بياني_مُنسّق_draw_حافة` | `celery.result.GraphFormatter.draw_edge` |
 | `بياني_مُنسّق_draw_عُقدة` | `celery.result.GraphFormatter.draw_node` |
 | `بياني_مُنسّق_تسمية` | `celery.bootsteps.GraphFormatter.label` |
-| `بياني_مُنسّق_حافة` | `celery.result.GraphFormatter.edge` |
+| `بياني_مُنسّق_حافة` | `celery.bootsteps.GraphFormatter.edge` |
 | `بياني_مُنسّق_ذيل` | `celery.bootsteps.GraphFormatter.tail` |
 | `بياني_مُنسّق_رأس` | `celery.bootsteps.GraphFormatter.head` |
 | `بياني_مُنسّق_سمات` | `celery.bootsteps.GraphFormatter.attrs` |
@@ -2900,7 +2898,6 @@
 | `حارس_ناقل_يدعم_heartbeats` | `kombu.transport.redis.SentinelTransport.supports_heartbeats` |
 | `حارس_ناقل_يدعم_دفعة_انشر` | `kombu.transport.redis.SentinelTransport.supports_batch_publish` |
 | `حاصل_وكيل_إفلات` | `billiard.managers.AcquirerProxy.release` |
-| `حافة` | `celery.bootsteps.GraphFormatter.edge` |
 | `حالة_LRU_مؤقتة` | `celery.events.state.LRUCache` |
 | `حالة_احصل_مسجّل` | `celery.events.state.get_logger` |
 | `حالة_افتراضي` | `celery.events.state.defaultdict` |
@@ -3017,7 +3014,6 @@
 | `خلفية_احصل_وصفي_خطأ_تتبع_الخطأ` | `celery.backends.base.BackendGetMetaError.with_traceback` |
 | `خلفية_اخزن_خطأ_أضف_ملاحظة` | `celery.backends.redis.BackendStoreError.add_note` |
 | `خلفية_اخزن_خطأ_تتبع_الخطأ` | `celery.backends.redis.BackendStoreError.with_traceback` |
-| `خيط` | `celery.beat.Thread` |
 | `خيط_أصيل_معرف` | `celery.beat.Thread.native_id` |
 | `خيط_أي` | `celery.concurrency.thread.Any` |
 | `خيط_اربط` | `celery.beat.Thread.join` |
@@ -3105,7 +3101,6 @@
 | `دفعة_انشر_خطأ` | `kombu.exceptions.BatchPublishError` |
 | `دفعة_انشر_خطأ_أضف_ملاحظة` | `kombu.exceptions.BatchPublishError.add_note` |
 | `دفعة_انشر_خطأ_تتبع_الخطأ` | `kombu.exceptions.BatchPublishError.with_traceback` |
-| `دور` | `kombu.transport.redis.PrefixedRedisPipeline.role` |
 | `دورة_بواسطة_اسم` | `kombu.transport.redis.cycle_by_name` |
 | `ديكريمينت_يفينتواللي` | `kombu.common.QoS.decrement_eventually` |
 | `دينامودب_أي` | `celery.backends.dynamodb.Any` |
@@ -3606,7 +3601,7 @@
 | `طابور_استهلاك` | `celery.app.amqp.Queue.consume` |
 | `طابور_الربط` | `amqp.Channel.queue_unbind` |
 | `طابور_الربط_من` | `celery.app.amqp.Queue.unbind_from` |
-| `طابور_الطابور` | `billiard.dummy.Queue.qsize` |
+| `طابور_الطابور` | `amqp.channel.Queue.qsize` |
 | `طابور_ربط_T` | `kombu.transport.virtual.queue_binding_t` |
 | `طابور_ربط_T_عدد` | `kombu.transport.virtual.queue_binding_t.count` |
 | `طابور_ربط_T_فهرس` | `kombu.transport.virtual.queue_binding_t.index` |
@@ -4329,7 +4324,7 @@
 | `قاعدة_مهمة_استبدال` | `celery.app.task.BaseTask.replace` |
 | `قاعدة_مهمة_اسحب_اطلب` | `celery.app.trace.BaseTask.pop_request` |
 | `قاعدة_مهمة_اطلب` | `celery.app.task.BaseTask.request` |
-| `قاعدة_مهمة_المحاولة` | `celery.app.trace.BaseTask.retry` |
+| `قاعدة_مهمة_المحاولة` | `celery.app.task.BaseTask.retry` |
 | `قاعدة_مهمة_بعد_أرجع` | `celery.app.trace.BaseTask.after_return` |
 | `قاعدة_مهمة_تأخير` | `celery.app.task.BaseTask.delay` |
 | `قاعدة_مهمة_توقيع` | `celery.app.task.BaseTask.signature` |
@@ -5091,6 +5086,7 @@
 | `مسبوق_ريديس_Pub_فرعي_إغلاق` | `kombu.transport.redis.PrefixedRedisPubSub.close` |
 | `مسبوق_ريديس_Pub_فرعي_احصل_رسالة` | `kombu.transport.redis.PrefixedRedisPubSub.get_message` |
 | `مسبوق_ريديس_Pub_فرعي_استمع` | `kombu.transport.redis.PrefixedRedisPubSub.listen` |
+| `مسبوق_ريديس_Pub_فرعي_اشترك` | `kombu.transport.redis.PrefixedRedisPubSub.subscribe` |
 | `مسبوق_ريديس_Pub_فرعي_الضبط` | `kombu.transport.redis.PrefixedRedisPubSub.reset` |
 | `مسبوق_ريديس_Pub_فرعي_تحقق_صحة` | `kombu.transport.redis.PrefixedRedisPubSub.check_health` |
 | `مسبوق_ريديس_Pub_فرعي_حلل_استجابة` | `kombu.transport.redis.PrefixedRedisPubSub.parse_response` |
@@ -5132,6 +5128,7 @@
 | `مسبوق_ريديس_أنابيب_حلل_استجابة` | `kombu.transport.redis.PrefixedRedisPipeline.parse_response` |
 | `مسبوق_ريديس_أنابيب_خلاصة` | `kombu.transport.redis.PrefixedRedisPipeline.digest` |
 | `مسبوق_ريديس_أنابيب_دالة` | `kombu.transport.redis.PrefixedRedisPipeline.fcall` |
+| `مسبوق_ريديس_أنابيب_دور` | `kombu.transport.redis.PrefixedRedisPipeline.role` |
 | `مسبوق_ريديس_أنابيب_رتّب` | `kombu.transport.redis.PrefixedRedisPipeline.sort` |
 | `مسبوق_ريديس_أنابيب_رحّل` | `kombu.transport.redis.PrefixedRedisPipeline.migrate` |
 | `مسبوق_ريديس_أنابيب_رقمي` | `kombu.transport.redis.PrefixedRedisPipeline.tdigest` |
@@ -8084,7 +8081,8 @@
 | `مهام_بياني_مُنسّق_draw_عُقدة` | `celery.utils.graph.GraphFormatter.draw_node` |
 | `مهام_بياني_مُنسّق_تسمية` | `celery.result.GraphFormatter.label` |
 | `مهام_بياني_مُنسّق_تسمية_2` | `celery.utils.graph.GraphFormatter.label` |
-| `مهام_بياني_مُنسّق_حافة` | `celery.utils.graph.GraphFormatter.edge` |
+| `مهام_بياني_مُنسّق_حافة` | `celery.result.GraphFormatter.edge` |
+| `مهام_بياني_مُنسّق_حافة_2` | `celery.utils.graph.GraphFormatter.edge` |
 | `مهام_بياني_مُنسّق_ذيل` | `celery.result.GraphFormatter.tail` |
 | `مهام_بياني_مُنسّق_ذيل_2` | `celery.utils.graph.GraphFormatter.tail` |
 | `مهام_بياني_مُنسّق_رأس` | `celery.result.GraphFormatter.head` |
@@ -8849,12 +8847,13 @@
 | `مهام_طابور_الربط_من_7` | `kombu.compat.Queue.unbind_from` |
 | `مهام_طابور_الربط_من_8` | `kombu.entity.Queue.unbind_from` |
 | `مهام_طابور_الربط_من_9` | `kombu.messaging.Queue.unbind_from` |
-| `مهام_طابور_الطابور` | `billiard.dummy.connection.Queue.qsize` |
-| `مهام_طابور_الطابور_2` | `billiard.managers.Queue.qsize` |
-| `مهام_طابور_الطابور_3` | `billiard.pool.Queue.qsize` |
-| `مهام_طابور_الطابور_4` | `billiard.queues.Queue.qsize` |
-| `مهام_طابور_الطابور_5` | `kombu.transport.memory.Queue.qsize` |
-| `مهام_طابور_الطابور_6` | `kombu.transport.pyro.Queue.qsize` |
+| `مهام_طابور_الطابور` | `billiard.dummy.Queue.qsize` |
+| `مهام_طابور_الطابور_2` | `billiard.dummy.connection.Queue.qsize` |
+| `مهام_طابور_الطابور_3` | `billiard.managers.Queue.qsize` |
+| `مهام_طابور_الطابور_4` | `billiard.pool.Queue.qsize` |
+| `مهام_طابور_الطابور_5` | `billiard.queues.Queue.qsize` |
+| `مهام_طابور_الطابور_6` | `kombu.transport.memory.Queue.qsize` |
+| `مهام_طابور_الطابور_7` | `kombu.transport.pyro.Queue.qsize` |
 | `مهام_طابور_ربما_اربط` | `celery.app.routes.Queue.maybe_bind` |
 | `مهام_طابور_ربما_اربط_10` | `kombu.pidbox.Queue.maybe_bind` |
 | `مهام_طابور_ربما_اربط_11` | `kombu.transport.native_delayed_delivery.Queue.maybe_bind` |
@@ -9672,6 +9671,7 @@
 | `مهام_قاعدة_مهمة_اربط` | `celery.app.trace.BaseTask.bind` |
 | `مهام_قاعدة_مهمة_استبدال` | `celery.app.trace.BaseTask.replace` |
 | `مهام_قاعدة_مهمة_اطلب` | `celery.app.trace.BaseTask.request` |
+| `مهام_قاعدة_مهمة_المحاولة` | `celery.app.trace.BaseTask.retry` |
 | `مهام_قاعدة_مهمة_تأخير` | `celery.app.trace.BaseTask.delay` |
 | `مهام_قاعدة_مهمة_توقيع` | `celery.app.trace.BaseTask.signature` |
 | `مهام_قاعدة_مهمة_خريطة` | `celery.app.trace.BaseTask.map` |
@@ -13769,6 +13769,7 @@
 
 | العربي | Python |
 |--------|--------|
+| `AMQPLAIN_المرور` | `amqp.sasl.AMQPLAIN.password` |
 | `AMQPLAIN_المستخدم` | `amqp.sasl.AMQPLAIN.username` |
 | `AMQPLAIN_ميكهانيسم` | `amqp.sasl.AMQPLAIN.mechanism` |
 | `AMQP_إصدار_معلومة` | `amqp.version_info` |
@@ -14251,7 +14252,6 @@
 | `استخدم_خام` | `celery.contrib.rdb.Pdb.use_rawinput` |
 | `استخدم_شامل_حد` | `kombu.pools.use_global_limit` |
 | `استخدم_نبّه` | `kombu.transport.pgmq.Channel.use_notify` |
-| `استراتيجية` | `celery.app.task.BaseTask.Strategy` |
 | `استراتيجية_زمنية` | `celery.worker.strategy.timezone` |
 | `استطلاع_فترة_ms` | `kombu.transport.pgmq.Channel.poll_interval_ms` |
 | `استعد_عند_أوقف` | `kombu.transport.redis.QoS.restore_at_shutdown` |
@@ -14332,7 +14332,6 @@
 | `المحاولة_مهمة_خطأ_متى` | `celery.exceptions.RetryTaskError.when` |
 | `المحاولة_مهمة_خطأ_معطيات` | `celery.exceptions.RetryTaskError.args` |
 | `المحاولة_مهمة_خطأ_مهام_exc` | `celery.exceptions.RetryTaskError.exc` |
-| `المرور` | `amqp.sasl.AMQPLAIN.password` |
 | `المرور_اوتهينتيكاتور` | `celery.backends.couchbase.PasswordAuthenticator` |
 | `المفتاح_fanout` | `kombu.transport.redis.Channel.keyprefix_fanout` |
 | `المفتاح_ربط_إعادة` | `kombu.transport.redis.Channel.keyprefix_binding_permanent` |
@@ -14675,7 +14674,7 @@
 | `رسالة_ناككيد_معطيات` | `amqp.channel.MessageNacked.args` |
 | `رمز_دلو_املأ_معدّل` | `kombu.mixins.TokenBucket.fill_rate` |
 | `رمز_دلو_زمني` | `celery.events.snapshot.TokenBucket.timestamp` |
-| `رمز_دلو_سعة` | `kombu.mixins.TokenBucket.capacity` |
+| `رمز_دلو_سعة` | `celery.events.snapshot.TokenBucket.capacity` |
 | `ريادكانبوف` | `celery.concurrency.asynpool.readcanbuf` |
 | `ريدوكتيون_مهام_PY_3` | `billiard.reduction.PY3` |
 | `ريديس_تعليقات` | `kombu.transport.redis.annotations` |
@@ -14713,7 +14712,6 @@
 | `سجّل_مهام_TYPE_CHECKING` | `kombu.log.TYPE_CHECKING` |
 | `سسلوبتس` | `amqp.transport.SSLTransport.sslopts` |
 | `سطر_مؤقت` | `celery.utils.text.StringIO.line_buffering` |
-| `سعة` | `celery.events.snapshot.TokenBucket.capacity` |
 | `سلبي` | `celery.app.amqp.Exchange.passive` |
 | `سلسلة_subtask_نوع` | `celery.canvas.chain.subtask_type` |
 | `سلسلة_أب_معرف` | `celery.canvas.chain.parent_id` |
@@ -14933,7 +14931,7 @@
 | `قاعدة_مهمة_أقصى_retries` | `celery.app.trace.BaseTask.max_retries` |
 | `قاعدة_مهمة_أولوية` | `celery.app.task.BaseTask.priority` |
 | `قاعدة_مهمة_اخزن_أخطاء_even_إذا_ignored` | `celery.app.trace.BaseTask.store_errors_even_if_ignored` |
-| `قاعدة_مهمة_استراتيجية` | `celery.app.trace.BaseTask.Strategy` |
+| `قاعدة_مهمة_استراتيجية` | `celery.app.task.BaseTask.Strategy` |
 | `قاعدة_مهمة_اسم` | `celery.app.task.BaseTask.name` |
 | `قاعدة_مهمة_اطلب_مكدس` | `celery.app.trace.BaseTask.request_stack` |
 | `قاعدة_مهمة_افتراضي_المحاولة_تأخير` | `celery.app.trace.BaseTask.default_retry_delay` |
@@ -16571,7 +16569,8 @@
 | `مهام_رمز_دلو_املأ_معدّل` | `kombu.utils.limits.TokenBucket.fill_rate` |
 | `مهام_رمز_دلو_زمني` | `kombu.mixins.TokenBucket.timestamp` |
 | `مهام_رمز_دلو_زمني_2` | `kombu.utils.limits.TokenBucket.timestamp` |
-| `مهام_رمز_دلو_سعة` | `kombu.utils.limits.TokenBucket.capacity` |
+| `مهام_رمز_دلو_سعة` | `kombu.mixins.TokenBucket.capacity` |
+| `مهام_رمز_دلو_سعة_2` | `kombu.utils.limits.TokenBucket.capacity` |
 | `مهام_رمز_عنوان` | `billiard.managers.Token.address` |
 | `مهام_رمز_معرف` | `billiard.managers.Token.id` |
 | `مهام_ريكوفيرابلي_اتصال_خطأ_شيفرة` | `amqp.abstract_channel.RecoverableConnectionError.code` |
@@ -16918,6 +16917,7 @@
 | `مهام_قاعدة_محمّل_عامل_initialized` | `celery.loaders.default.BaseLoader.worker_initialized` |
 | `مهام_قاعدة_محمّل_مهام_configured` | `celery.loaders.default.BaseLoader.configured` |
 | `مهام_قاعدة_مهمة_أولوية` | `celery.app.trace.BaseTask.priority` |
+| `مهام_قاعدة_مهمة_استراتيجية` | `celery.app.trace.BaseTask.Strategy` |
 | `مهام_قاعدة_مهمة_اسم` | `celery.app.trace.BaseTask.name` |
 | `مهام_قاعدة_مهمة_اطلب_2` | `celery.app.task.BaseTask.Request` |
 | `مهام_قاعدة_مهمة_اطلب_3` | `celery.app.trace.BaseTask.Request` |
