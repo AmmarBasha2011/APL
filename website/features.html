@@ -17,125 +17,125 @@
 <main id="main">
 <div class="wrap doc"><div class="doc-head"><h1>مميزات اللغة</h1><p class="lead">التقاط الأخطاء، المطابقة، lambda، الوراثة وغيرها.</p></div><div class="doc-grid"><aside class="toc" aria-label="فهرس الصفحة"><strong>في هذه الصفحة</strong><a href="#1-إمسك-مثل-التقاط-الاستثناءات">1. إمسك مثل — التقاط الاستثناءات</a><a href="#2-حالة-قيمة-match-case">2. حالة / قيمة — match/case</a><a href="#3-lambda">3. lambda</a><a href="#4-الوراثة">4. الوراثة</a><a href="#5-صيغة-دالة_-Prefix-متى-تستخدمها">5. صيغة دالة_Prefix — متى تستخدمها</a><a href="#6-try-finally">6. try/finally</a><a href="#الاختبارات">الاختبارات</a></aside><article class="prose"><p>هذه الميزات مضافة حديثًا وكلها مختبرة في <code>test_batch3.py</code> (15/15).</p>
 <h2 id="1-إمسك-مثل-التقاط-الاستثناءات">1. <code>إمسك مثل</code> — التقاط الاستثناءات</h2>
-<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code>دالة_قراءة(ملف):
-    <span class="k">حاول</span>:
-        النص = اقرأ(ملف)
-        <span class="k">ارجع</span> <span class="s">&quot;نجح: &quot;</span> + النص
-    <span class="k">إمسك</span> <span class="k">مثل</span> <span class="k">خطأ</span>:
-        <span class="k">اطبع</span> <span class="s">&quot;تعذّر القراءة: &quot;</span> + نص(<span class="k">خطأ</span>)
-        <span class="k">ارجع</span> <span class="s">&quot;فشل&quot;</span></code></pre></div>
-<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code>دالة_مقسوم(أ, ب):
-    <span class="k">حاول</span>:
-        <span class="k">ارجع</span> أ / ب
-    <span class="k">إمسك</span> <span class="k">مثل</span> <span class="k">خطأ</span>:
-        <span class="k">ارجع</span> <span class="n">0</span></code></pre></div>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="ltr"><code>‎<bdi>دالة_قراءة</bdi>‎(‎<bdi>ملف</bdi>‎):
+    ‎<bdi><span class="k">حاول</span></bdi>‎:
+        ‎<bdi>النص</bdi>‎ = ‎<bdi>اقرأ</bdi>‎(‎<bdi>ملف</bdi>‎)
+        ‎<bdi><span class="k">ارجع</span></bdi>‎ <span class="s">&quot;‎<bdi>نجح</bdi>‎: &quot;</span> + ‎<bdi>النص</bdi>‎
+    ‎<bdi><span class="k">إمسك</span></bdi>‎ ‎<bdi><span class="k">مثل</span></bdi>‎ ‎<bdi><span class="k">خطأ</span></bdi>‎:
+        ‎<bdi><span class="k">اطبع</span></bdi>‎ <span class="s">&quot;‎<bdi>تعذّر القراءة</bdi>‎: &quot;</span> + ‎<bdi>نص</bdi>‎(‎<bdi><span class="k">خطأ</span></bdi>‎)
+        ‎<bdi><span class="k">ارجع</span></bdi>‎ <span class="s">&quot;‎<bdi>فشل</bdi>‎&quot;</span></code></pre></div>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="ltr"><code>‎<bdi>دالة_مقسوم</bdi>‎(‎<bdi>أ</bdi>‎, ‎<bdi>ب</bdi>‎):
+    ‎<bdi><span class="k">حاول</span></bdi>‎:
+        ‎<bdi><span class="k">ارجع</span></bdi>‎ ‎<bdi>أ</bdi>‎ / ‎<bdi>ب</bdi>‎
+    ‎<bdi><span class="k">إمسك</span></bdi>‎ ‎<bdi><span class="k">مثل</span></bdi>‎ ‎<bdi><span class="k">خطأ</span></bdi>‎:
+        ‎<bdi><span class="k">ارجع</span></bdi>‎ <span class="n">0</span></code></pre></div>
 <p><strong>كان مكسورًا قبل هذا الإصلاح:</strong> <code>خطأ</code> كلمة أساسية تعني <code>False</code>، فكان ينتج:</p>
-<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code>except Exception as False:   # SyntaxError</code></pre></div>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="ltr"><code>except Exception as False:   # SyntaxError</code></pre></div>
 <p>الآن يعمل.</p>
 <h2 id="2-حالة-قيمة-match-case">2. <code>حالة</code> / <code>قيمة</code> — match/case</h2>
 <h3 id="الصيغة-الأولى-قيمة">الصيغة الأولى: <code>قيمة</code></h3>
-<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code>دالة_وصف(ن):
-    <span class="k">حالة</span> ن:
-        <span class="k">قيمة</span> <span class="n">0</span>:
-            <span class="k">ارجع</span> <span class="s">&quot;صفر&quot;</span>
-        <span class="k">قيمة</span> <span class="n">1</span>:
-            <span class="k">ارجع</span> <span class="s">&quot;واحد&quot;</span>
-        <span class="k">قيمة</span> _:
-            <span class="k">ارجع</span> <span class="s">&quot;غير معروف&quot;</span></code></pre></div>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="ltr"><code>‎<bdi>دالة_وصف</bdi>‎(‎<bdi>ن</bdi>‎):
+    ‎<bdi><span class="k">حالة</span></bdi>‎ ‎<bdi>ن</bdi>‎:
+        ‎<bdi><span class="k">قيمة</span></bdi>‎ <span class="n">0</span>:
+            ‎<bdi><span class="k">ارجع</span></bdi>‎ <span class="s">&quot;‎<bdi>صفر</bdi>‎&quot;</span>
+        ‎<bdi><span class="k">قيمة</span></bdi>‎ <span class="n">1</span>:
+            ‎<bdi><span class="k">ارجع</span></bdi>‎ <span class="s">&quot;‎<bdi>واحد</bdi>‎&quot;</span>
+        ‎<bdi><span class="k">قيمة</span></bdi>‎ ‎<bdi>_</bdi>‎:
+            ‎<bdi><span class="k">ارجع</span></bdi>‎ <span class="s">&quot;‎<bdi>غير معروف</bdi>‎&quot;</span></code></pre></div>
 <h3 id="الصيغة-الثانية-حالة-نفس-المعنى">الصيغة الثانية: <code>حالة</code> (نفس المعنى)</h3>
-<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code>دالة_وصف(ن):
-    <span class="k">حالة</span> ن:
-        <span class="k">حالة</span> <span class="n">0</span>:
-            <span class="k">ارجع</span> <span class="s">&quot;صفر&quot;</span>
-        <span class="k">حالة</span> _:
-            <span class="k">ارجع</span> <span class="s">&quot;غير معروف&quot;</span></code></pre></div>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="ltr"><code>‎<bdi>دالة_وصف</bdi>‎(‎<bdi>ن</bdi>‎):
+    ‎<bdi><span class="k">حالة</span></bdi>‎ ‎<bdi>ن</bdi>‎:
+        ‎<bdi><span class="k">حالة</span></bdi>‎ <span class="n">0</span>:
+            ‎<bdi><span class="k">ارجع</span></bdi>‎ <span class="s">&quot;‎<bdi>صفر</bdi>‎&quot;</span>
+        ‎<bdi><span class="k">حالة</span></bdi>‎ ‎<bdi>_</bdi>‎:
+            ‎<bdi><span class="k">ارجع</span></bdi>‎ <span class="s">&quot;‎<bdi>غير معروف</bdi>‎&quot;</span></code></pre></div>
 <h3 id="حماية-guard">حماية (guard)</h3>
-<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code>دالة_تصنيف(ن):
-    <span class="k">حالة</span> ن:
-        <span class="k">قيمة</span> ن <span class="k">لو</span> ن &lt; <span class="n">0</span>:
-            <span class="k">ارجع</span> <span class="s">&quot;سالب&quot;</span>
-        <span class="k">قيمة</span> ن <span class="k">لو</span> ن == <span class="n">0</span>:
-            <span class="k">ارجع</span> <span class="s">&quot;صفر&quot;</span>
-        <span class="k">قيمة</span> ن <span class="k">لو</span> ن &lt; <span class="n">10</span>:
-            <span class="k">ارجع</span> <span class="s">&quot;صغير&quot;</span>
-        <span class="k">قيمة</span> _:
-            <span class="k">ارجع</span> <span class="s">&quot;كبير&quot;</span></code></pre></div>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="ltr"><code>‎<bdi>دالة_تصنيف</bdi>‎(‎<bdi>ن</bdi>‎):
+    ‎<bdi><span class="k">حالة</span></bdi>‎ ‎<bdi>ن</bdi>‎:
+        ‎<bdi><span class="k">قيمة</span></bdi>‎ ‎<bdi>ن</bdi>‎ ‎<bdi><span class="k">لو</span></bdi>‎ ‎<bdi>ن</bdi>‎ &lt; <span class="n">0</span>:
+            ‎<bdi><span class="k">ارجع</span></bdi>‎ <span class="s">&quot;‎<bdi>سالب</bdi>‎&quot;</span>
+        ‎<bdi><span class="k">قيمة</span></bdi>‎ ‎<bdi>ن</bdi>‎ ‎<bdi><span class="k">لو</span></bdi>‎ ‎<bdi>ن</bdi>‎ == <span class="n">0</span>:
+            ‎<bdi><span class="k">ارجع</span></bdi>‎ <span class="s">&quot;‎<bdi>صفر</bdi>‎&quot;</span>
+        ‎<bdi><span class="k">قيمة</span></bdi>‎ ‎<bdi>ن</bdi>‎ ‎<bdi><span class="k">لو</span></bdi>‎ ‎<bdi>ن</bdi>‎ &lt; <span class="n">10</span>:
+            ‎<bdi><span class="k">ارجع</span></bdi>‎ <span class="s">&quot;‎<bdi>صغير</bdi>‎&quot;</span>
+        ‎<bdi><span class="k">قيمة</span></bdi>‎ ‎<bdi>_</bdi>‎:
+            ‎<bdi><span class="k">ارجع</span></bdi>‎ <span class="s">&quot;‎<bdi>كبير</bdi>‎&quot;</span></code></pre></div>
 <h3 id="بدائل-alternatives">بدائل (alternatives)</h3>
-<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code>دالة_يوم(ن):
-    <span class="k">حالة</span> ن:
-        <span class="k">قيمة</span> (<span class="n">6</span> | <span class="n">7</span>):
-            <span class="k">ارجع</span> <span class="s">&quot;عطلة&quot;</span>
-        <span class="k">قيمة</span> _:
-            <span class="k">ارجع</span> <span class="s">&quot;عمل&quot;</span></code></pre></div>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="ltr"><code>‎<bdi>دالة_يوم</bdi>‎(‎<bdi>ن</bdi>‎):
+    ‎<bdi><span class="k">حالة</span></bdi>‎ ‎<bdi>ن</bdi>‎:
+        ‎<bdi><span class="k">قيمة</span></bdi>‎ (<span class="n">6</span> | <span class="n">7</span>):
+            ‎<bdi><span class="k">ارجع</span></bdi>‎ <span class="s">&quot;‎<bdi>عطلة</bdi>‎&quot;</span>
+        ‎<bdi><span class="k">قيمة</span></bdi>‎ ‎<bdi>_</bdi>‎:
+            ‎<bdi><span class="k">ارجع</span></bdi>‎ <span class="s">&quot;‎<bdi>عمل</bdi>‎&quot;</span></code></pre></div>
 <h3 id="مقارنة-نصوص">مقارنة نصوص</h3>
-<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code>دالة_نوع_المادة(م):
-    <span class="k">حالة</span> م:
-        <span class="k">قيمة</span> <span class="s">&quot;رياضيات&quot;</span>:
-            <span class="k">ارجع</span> <span class="s">&quot;علمية&quot;</span>
-        <span class="k">قيمة</span> <span class="s">&quot;تاريخ&quot;</span>:
-            <span class="k">ارجع</span> <span class="s">&quot;نظري&quot;</span>
-        <span class="k">قيمة</span> _:
-            <span class="k">ارجع</span> <span class="s">&quot;معروف&quot;</span></code></pre></div>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="ltr"><code>‎<bdi>دالة_نوع_المادة</bdi>‎(‎<bdi>م</bdi>‎):
+    ‎<bdi><span class="k">حالة</span></bdi>‎ ‎<bdi>م</bdi>‎:
+        ‎<bdi><span class="k">قيمة</span></bdi>‎ <span class="s">&quot;‎<bdi>رياضيات</bdi>‎&quot;</span>:
+            ‎<bdi><span class="k">ارجع</span></bdi>‎ <span class="s">&quot;‎<bdi>علمية</bdi>‎&quot;</span>
+        ‎<bdi><span class="k">قيمة</span></bdi>‎ <span class="s">&quot;‎<bdi>تاريخ</bdi>‎&quot;</span>:
+            ‎<bdi><span class="k">ارجع</span></bdi>‎ <span class="s">&quot;‎<bdi>نظري</bdi>‎&quot;</span>
+        ‎<bdi><span class="k">قيمة</span></bdi>‎ ‎<bdi>_</bdi>‎:
+            ‎<bdi><span class="k">ارجع</span></bdi>‎ <span class="s">&quot;‎<bdi>معروف</bdi>‎&quot;</span></code></pre></div>
 <h2 id="3-lambda">3. lambda</h2>
 <h3 id="مهمة">مهمة</h3>
-<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">المتغير</span> مربع = (س) =&gt; س * س
-<span class="k">اطبع</span> مربع(<span class="n">5</span>)     <span class="c"># 25</span></code></pre></div>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="ltr"><code>‎<bdi><span class="k">المتغير</span></bdi>‎ ‎<bdi>مربع</bdi>‎ = (‎<bdi>س</bdi>‎) =&gt; ‎<bdi>س</bdi>‎ * ‎<bdi>س</bdi>‎
+‎<bdi><span class="k">اطبع</span></bdi>‎ ‎<bdi>مربع</bdi>‎(<span class="n">5</span>)     <span class="c"># 25</span></code></pre></div>
 <h3 id="داخل-الاستدعاء">داخل الاستدعاء</h3>
-<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">المتغير</span> الأرقام = [<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>, <span class="n">4</span>]
-<span class="k">اطبع</span> قائمة(خريطة((س) =&gt; س * س, الأرقام))    <span class="c"># [1, 4, 9, 16]</span>
-<span class="k">اطبع</span> قائمة(فلترة_قائمة((س) =&gt; س % <span class="n">2</span> == <span class="n">0</span>, الأرقام))  <span class="c"># [2, 4]</span></code></pre></div>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="ltr"><code>‎<bdi><span class="k">المتغير</span></bdi>‎ ‎<bdi>الأرقام</bdi>‎ = [<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>, <span class="n">4</span>]
+‎<bdi><span class="k">اطبع</span></bdi>‎ ‎<bdi>قائمة</bdi>‎(‎<bdi>خريطة</bdi>‎((‎<bdi>س</bdi>‎) =&gt; ‎<bdi>س</bdi>‎ * ‎<bdi>س</bdi>‎, ‎<bdi>الأرقام</bdi>‎))    <span class="c"># [1, 4, 9, 16]</span>
+‎<bdi><span class="k">اطبع</span></bdi>‎ ‎<bdi>قائمة</bdi>‎(‎<bdi>فلترة_قائمة</bdi>‎((‎<bdi>س</bdi>‎) =&gt; ‎<bdi>س</bdi>‎ % <span class="n">2</span> == <span class="n">0</span>, ‎<bdi>الأرقام</bdi>‎))  <span class="c"># [2, 4]</span></code></pre></div>
 <h3 id="كـ-callback">كـ callback</h3>
-<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">المتغير</span> الكلمات = [<span class="s">&quot;تفاحة&quot;</span>, <span class="s">&quot;موز&quot;</span>, <span class="s">&quot;كرز&quot;</span>, <span class="s">&quot;بطيخ&quot;</span>]
-<span class="k">المتغير</span> مرتبة = فرز_قائمة(الكلمات, ترتيب_مفتاح = (كلمة) =&gt; طول(كلمة))
-<span class="k">اطبع</span> مرتبة</code></pre></div>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="ltr"><code>‎<bdi><span class="k">المتغير</span></bdi>‎ ‎<bdi>الكلمات</bdi>‎ = [<span class="s">&quot;‎<bdi>تفاحة</bdi>‎&quot;</span>, <span class="s">&quot;‎<bdi>موز</bdi>‎&quot;</span>, <span class="s">&quot;‎<bdi>كرز</bdi>‎&quot;</span>, <span class="s">&quot;‎<bdi>بطيخ</bdi>‎&quot;</span>]
+‎<bdi><span class="k">المتغير</span></bdi>‎ ‎<bdi>مرتبة</bdi>‎ = ‎<bdi>فرز_قائمة</bdi>‎(‎<bdi>الكلمات</bdi>‎, ‎<bdi>ترتيب_مفتاح</bdi>‎ = (‎<bdi>كلمة</bdi>‎) =&gt; ‎<bdi>طول</bdi>‎(‎<bdi>كلمة</bdi>‎))
+‎<bdi><span class="k">اطبع</span></bdi>‎ ‎<bdi>مرتبة</bdi>‎</code></pre></div>
 <h2 id="4-الوراثة">4. الوراثة</h2>
-<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">صنف</span> حيوان:
-    <span class="k">دالة_إنشاء</span>(<span class="k">ذات</span>, اسم, صوت):
-        <span class="k">ذات</span>.اسم = اسم
-        <span class="k">ذات</span>.صوت = صوت
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="ltr"><code>‎<bdi><span class="k">صنف</span></bdi>‎ ‎<bdi>حيوان</bdi>‎:
+    ‎<bdi><span class="k">دالة_إنشاء</span></bdi>‎(‎<bdi><span class="k">ذات</span></bdi>‎, ‎<bdi>اسم</bdi>‎, ‎<bdi>صوت</bdi>‎):
+        ‎<bdi><span class="k">ذات</span></bdi>‎.‎<bdi>اسم</bdi>‎ = ‎<bdi>اسم</bdi>‎
+        ‎<bdi><span class="k">ذات</span></bdi>‎.‎<bdi>صوت</bdi>‎ = ‎<bdi>صوت</bdi>‎
 
-    دالة_تحدث(<span class="k">ذات</span>):
-        <span class="k">ارجع</span> <span class="k">ذات</span>.اسم + <span class="s">&quot; تقول &quot;</span> + <span class="k">ذات</span>.صوت
+    ‎<bdi>دالة_تحدث</bdi>‎(‎<bdi><span class="k">ذات</span></bdi>‎):
+        ‎<bdi><span class="k">ارجع</span></bdi>‎ ‎<bdi><span class="k">ذات</span></bdi>‎.‎<bdi>اسم</bdi>‎ + <span class="s">&quot; ‎<bdi>تقول</bdi>‎ &quot;</span> + ‎<bdi><span class="k">ذات</span></bdi>‎.‎<bdi>صوت</bdi>‎
 
-    دالة_وصف(<span class="k">ذات</span>):
-        <span class="k">ارجع</span> <span class="s">&quot;حيوان: &quot;</span> + <span class="k">ذات</span>.اسم
-
-
-<span class="k">صنف</span> كلب(حيوان):
-    دالة_تحدث(<span class="k">ذات</span>):
-        <span class="k">ارجع</span> <span class="k">ذات</span>.اسم + <span class="s">&quot; ينبح&quot;</span>
-
-    دالة_وصف(<span class="k">ذات</span>):
-        <span class="k">ارجع</span> <span class="s">&quot;كلب: &quot;</span> + <span class="k">ذات</span>.اسم
+    ‎<bdi>دالة_وصف</bdi>‎(‎<bdi><span class="k">ذات</span></bdi>‎):
+        ‎<bdi><span class="k">ارجع</span></bdi>‎ <span class="s">&quot;‎<bdi>حيوان</bdi>‎: &quot;</span> + ‎<bdi><span class="k">ذات</span></bdi>‎.‎<bdi>اسم</bdi>‎
 
 
-<span class="k">المتغير</span> د = كلب(<span class="s">&quot;بودي&quot;</span>, <span class="s">&quot;woof&quot;</span>)
-<span class="k">اطبع</span> د.تحدث()     <span class="c"># بودي ينبح</span>
-<span class="k">اطبع</span> د.وصف()      <span class="c"># كلب: بودي</span></code></pre></div>
+‎<bdi><span class="k">صنف</span></bdi>‎ ‎<bdi>كلب</bdi>‎(‎<bdi>حيوان</bdi>‎):
+    ‎<bdi>دالة_تحدث</bdi>‎(‎<bdi><span class="k">ذات</span></bdi>‎):
+        ‎<bdi><span class="k">ارجع</span></bdi>‎ ‎<bdi><span class="k">ذات</span></bdi>‎.‎<bdi>اسم</bdi>‎ + <span class="s">&quot; ‎<bdi>ينبح</bdi>‎&quot;</span>
+
+    ‎<bdi>دالة_وصف</bdi>‎(‎<bdi><span class="k">ذات</span></bdi>‎):
+        ‎<bdi><span class="k">ارجع</span></bdi>‎ <span class="s">&quot;‎<bdi>كلب</bdi>‎: &quot;</span> + ‎<bdi><span class="k">ذات</span></bdi>‎.‎<bdi>اسم</bdi>‎
+
+
+‎<bdi><span class="k">المتغير</span></bdi>‎ ‎<bdi>د</bdi>‎ = ‎<bdi>كلب</bdi>‎(<span class="s">&quot;‎<bdi>بودي</bdi>‎&quot;</span>, <span class="s">&quot;woof&quot;</span>)
+‎<bdi><span class="k">اطبع</span></bdi>‎ ‎<bdi>د</bdi>‎.‎<bdi>تحدث</bdi>‎()     <span class="c"># ‎<bdi>بودي ينبح</bdi>‎</span>
+‎<bdi><span class="k">اطبع</span></bdi>‎ ‎<bdi>د</bdi>‎.‎<bdi>وصف</bdi>‎()      <span class="c"># ‎<bdi>كلب</bdi>‎: ‎<bdi>بودي</bdi>‎</span></code></pre></div>
 <h3 id="صنف-داخل-صنف">صنف داخل صنف</h3>
-<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">صنف</span> حاوية:
-    <span class="k">صنف</span> عنصر:
-        <span class="k">دالة_إنشاء</span>(<span class="k">ذات</span>, <span class="k">قيمة</span>):
-            <span class="k">ذات</span>.<span class="k">قيمة</span> = <span class="k">قيمة</span>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="ltr"><code>‎<bdi><span class="k">صنف</span></bdi>‎ ‎<bdi>حاوية</bdi>‎:
+    ‎<bdi><span class="k">صنف</span></bdi>‎ ‎<bdi>عنصر</bdi>‎:
+        ‎<bdi><span class="k">دالة_إنشاء</span></bdi>‎(‎<bdi><span class="k">ذات</span></bdi>‎, ‎<bdi><span class="k">قيمة</span></bdi>‎):
+            ‎<bdi><span class="k">ذات</span></bdi>‎.‎<bdi><span class="k">قيمة</span></bdi>‎ = ‎<bdi><span class="k">قيمة</span></bdi>‎
 
-        دالة_نص(<span class="k">ذات</span>):
-            <span class="k">ارجع</span> <span class="s">f&quot;القيمة: {ذات.قيمة}&quot;</span>
+        ‎<bdi>دالة_نص</bdi>‎(‎<bdi><span class="k">ذات</span></bdi>‎):
+            ‎<bdi><span class="k">ارجع</span></bdi>‎ <span class="s">f&quot;‎<bdi>القيمة</bdi>‎: {‎<bdi>ذات</bdi>‎.‎<bdi>قيمة</bdi>‎}&quot;</span>
 
-<span class="k">المتغير</span> ك = حاوية.عنصر(<span class="n">42</span>)
-<span class="k">اطبع</span> ك.نص()</code></pre></div>
+‎<bdi><span class="k">المتغير</span></bdi>‎ ‎<bdi>ك</bdi>‎ = ‎<bdi>حاوية</bdi>‎.‎<bdi>عنصر</bdi>‎(<span class="n">42</span>)
+‎<bdi><span class="k">اطبع</span></bdi>‎ ‎<bdi>ك</bdi>‎.‎<bdi>نص</bdi>‎()</code></pre></div>
 <h2 id="5-صيغة-دالة_-Prefix-متى-تستخدمها">5. صيغة <code>دالة_</code>Prefix — متى تستخدمها</h2>
 <div class="table-wrap"><table><thead><tr><th>المكان</th><th>الصيغة</th><th>النتيجة في Python</th></tr></thead><tbody><tr><td>دالة علوية</td><td><code>دالة_فيب(ن):</code></td><td><code>def فيب(ن):</code> (الاستدعاء الذاتي يعمل)</td></tr><tr><td>method في صنف</td><td><code>دالة_م(ذات):</code></td><td><code>def م(self):</code></td></tr><tr><td>constructor</td><td><code>دالة_إنشاء(ذات, ...):</code></td><td><code>def __init__(self, ...):</code></td></tr><tr><td>دالة متداخلة</td><td><code>دالة_غلاف(س):</code></td><td><code>غلاف = ...</code> (بدون بادئة)</td></tr></tbody></table></div>
 <p><strong>القاعدة:</strong> <code>دالة_</code> على المستوى العلوي مطلوبة ليستدعي الدالة نفسها؛ داخل الصنف يكفي اسم عادي.</p>
 <h2 id="6-try-finally">6. <code>try/finally</code></h2>
-<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code>دالة_مع_ملف(اسم):
-    <span class="k">حاول</span>:
-        <span class="k">مع</span> فتح(اسم, <span class="s">&quot;w&quot;</span>) <span class="k">مثل</span> ف:
-            اكتب(ف, <span class="s">&quot;محتوى&quot;</span>)
-    <span class="k">أخيراً</span>:
-        <span class="k">اطبع</span> <span class="s">&quot;انتهى Processing&quot;</span></code></pre></div>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="ltr"><code>‎<bdi>دالة_مع_ملف</bdi>‎(‎<bdi>اسم</bdi>‎):
+    ‎<bdi><span class="k">حاول</span></bdi>‎:
+        ‎<bdi><span class="k">مع</span></bdi>‎ ‎<bdi>فتح</bdi>‎(‎<bdi>اسم</bdi>‎, <span class="s">&quot;w&quot;</span>) ‎<bdi><span class="k">مثل</span></bdi>‎ ‎<bdi>ف</bdi>‎:
+            ‎<bdi>اكتب</bdi>‎(‎<bdi>ف</bdi>‎, <span class="s">&quot;‎<bdi>محتوى</bdi>‎&quot;</span>)
+    ‎<bdi><span class="k">أخيراً</span></bdi>‎:
+        ‎<bdi><span class="k">اطبع</span></bdi>‎ <span class="s">&quot;‎<bdi>انتهى</bdi>‎ Processing&quot;</span></code></pre></div>
 <h2 id="الاختبارات">الاختبارات</h2>
 <p>كل ما سبق مُغطّى في <code>test_batch3.py</code>:</p>
-<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code>==== BATCH-3 (enum + 4 engine fixes): 15 passed, 0 failed (of 15) ====</code></pre></div></article></div></div>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="ltr"><code>==== BATCH-3 (enum + 4 engine fixes): 15 passed, 0 failed (of 15) ====</code></pre></div></article></div></div>
 </main>
 <footer><div class="wrap">
 <p>APL v1.13 — لغة برمجة بالعربي. المصدر على <a href="https://github.com/AmmarBasha2011/APL">GitHub</a>. هذه الصفحات مبنية تلقائيا من ملفات المشروع بواسطة <code>website/build.py</code>.</p>

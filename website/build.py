@@ -44,18 +44,36 @@ TOKEN_RE = re.compile(
     r'|(?P<n>(?<![\w\u0600-\u06FF])\d+(?:\.\d+)?)')
 
 
+AR = r"[\u0600-\u06FF\u0750-\u077F_]"
+RUN_RE = re.compile(r"%s[\w\u0600-\u06FF\u0750-\u077F]*(?: %s[\w\u0600-\u06FF\u0750-\u077F]*)*" % (AR, AR))
+
+
+WORD_RE = re.compile(r"%s[\w\u0600-\u06FF\u0750-\u077F]*" % AR)
+
+
+def kw_plain(text):
+    return KW_RE.sub(lambda m: '<span class="k">%s</span>' % m.group(1), html.escape(text))
+
+
+def bidi(text, keywords=True, runs=False):
+    """يعزل كل مقطع عربي داخل <bdi> فيبقى ترتيب الرموز اللاتينية والعلامات كما في الكود."""
+    out, pos = [], 0
+    for m in (RUN_RE if runs else WORD_RE).finditer(text):
+        out.append(html.escape(text[pos:m.start()]))
+        run = kw_plain(m.group(0)) if keywords else html.escape(m.group(0))
+        out.append("\u200e<bdi>%s</bdi>\u200e" % run)
+        pos = m.end()
+    out.append(html.escape(text[pos:]))
+    return "".join(out)
+
+
 def highlight(code):
     out, pos = [], 0
-
-    def kw(text):
-        return KW_RE.sub(lambda m: '<span class="k">%s</span>' % m.group(1), html.escape(text))
-
     for m in TOKEN_RE.finditer(code):
-        out.append(kw(code[pos:m.start()]))
-        cls = m.lastgroup
-        out.append('<span class="%s">%s</span>' % (cls, html.escape(m.group(0))))
+        out.append(bidi(code[pos:m.start()]))
+        out.append('<span class="%s">%s</span>' % (m.lastgroup, bidi(m.group(0), keywords=False, runs=True)))
         pos = m.end()
-    out.append(kw(code[pos:]))
+    out.append(bidi(code[pos:]))
     return "".join(out)
 
 
@@ -63,7 +81,7 @@ def code_block(code, lang="apl"):
     code = code.rstrip("\n")
     body = highlight(code) if lang in ("apl", "") else html.escape(code)
     return ('<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button>'
-            '<pre dir="rtl"><code>%s</code></pre></div>' % body)
+            '<pre dir="ltr"><code>%s</code></pre></div>' % body)
 
 
 # ---------------------------------------------------------------- ماركداون مصغّر
