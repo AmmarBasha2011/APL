@@ -2,40 +2,40 @@
 
 المشغّلات الرياضية والمنطقية كدوال، لتمريرها إلى map/filter/sort.
 
-**26 عنصر** (26 دالة).
+**26 عنصراً عربياً** (الدوال: 26).
 
-## الدوال
+## الدوال (26)
 
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `عامل_جمع(...)` | `operator.add` | a + b |
-| `عامل_طرح(...)` | `operator.sub` | a - b |
-| `عامل_ضرب(...)` | `operator.mul` | a * b |
-| `عامل_قسمة(...)` | `operator.truediv` | a / b |
-| `عامل_قسمة_أرضية(...)` | `operator.floordiv` | a // b |
-| `عامل_باقي(...)` | `operator.mod` | a % b |
-| `عامل_أس(...)` | `operator.pow` | a ** b |
-| `عامل_سالب(...)` | `operator.neg` | -a |
-| `عامل_مطلق(...)` | `operator.abs` | abs(a) |
-| `مساواة_عامل(...)` | `operator.eq` | a == b |
-| `اختلاف_عامل(...)` | `operator.ne` | a != b |
-| `أصغر_عامل(...)` | `operator.lt` | a < b |
-| `أصغر_أو_يساوي_عامل(...)` | `operator.le` | a <= b |
-| `أكبر_عامل(...)` | `operator.gt` | a > b |
-| `أكبر_أو_يساوي_عامل(...)` | `operator.ge` | a >= b |
-| `عامل_نفي(...)` | `operator.not_` | not a |
-| `عامل_و(...)` | `operator.and_` | a and b |
-| `عامل_أو(...)` | `operator.or_` | a or b |
-| `عامل_أو_حصري(...)` | `operator.xor` | a xor b |
-| `جالب_عنصر(...)` | `operator.itemgetter` | عنصر بفهرس |
-| `جالب_خاصية(...)` | `operator.attrgetter` | خاصية object |
-| `حجم_تقريبي(...)` | `operator.length_hint` | حجم تقريبي |
-| `بانتظار_الكل(...)` | `_apl_operator_all` | all(...) |
-| `أي_من_الكل(...)` | `_apl_operator_any` | any(...) |
-| `مقلوب_القيمة(...)` | `_apl_operator_invert` | ~n |
-| `قوة_مركبة(...)` | `_apl_operator_pow` | a ** b |
+| العربي | Python |
+|--------|--------|
+| `عامل_جمع` | `operator.add` |
+| `عامل_طرح` | `operator.sub` |
+| `عامل_ضرب` | `operator.mul` |
+| `عامل_قسمة` | `operator.truediv` |
+| `عامل_قسمة_أرضية` | `operator.floordiv` |
+| `عامل_باقي` | `operator.mod` |
+| `عامل_أس` | `operator.pow` |
+| `عامل_سالب` | `operator.neg` |
+| `عامل_مطلق` | `operator.abs` |
+| `مساواة_عامل` | `operator.eq` |
+| `اختلاف_عامل` | `operator.ne` |
+| `أصغر_عامل` | `operator.lt` |
+| `أصغر_أو_يساوي_عامل` | `operator.le` |
+| `أكبر_عامل` | `operator.gt` |
+| `أكبر_أو_يساوي_عامل` | `operator.ge` |
+| `عامل_نفي` | `operator.not_` |
+| `عامل_و` | `operator.and_` |
+| `عامل_أو` | `operator.or_` |
+| `عامل_أو_حصري` | `operator.xor` |
+| `جالب_عنصر` | `operator.itemgetter` |
+| `جالب_خاصية` | `operator.attrgetter` |
+| `حجم_تقريبي` | `operator.length_hint` |
+| `بانتظار_الكل` | `_apl_operator_all` |
+| `أي_من_الكل` | `_apl_operator_any` |
+| `مقلوب_القيمة` | `_apl_operator_invert` |
+| `قوة_مركبة` | `_apl_operator_pow` |
 
-## أمثلة
+## مثال
 
 ```apl
 اطبع "جمع:", عامل_جمع(2, 3)

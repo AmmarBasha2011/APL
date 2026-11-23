@@ -2,35 +2,28 @@
 
 كل الدوال من مكتبة `statistics` في Python، مترجمة بالكامل:
 
-## نزعة مركزية (Central Tendency)
+**16 عنصراً عربياً** (الدوال: 16).
 
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `متوسط(قائمة)` | `statistics.mean(قائمة)` | المتوسط الحسابي |
-| `متوسط_حسابي(قائمة)` | `statistics.mean(قائمة)` | المتوسط الحسابي |
-| `وسيط(قائمة)` | `statistics.median(قائمة)` | الوسيط |
-| `منوال(قائمة)` | `statistics.mode(قائمة)` | المنوال (أكثر قيمة تكراراً) |
-| `متوسط_توافقي(قائمة)` | `statistics.harmonic_mean(قائمة)` | المتوسط التوافقي |
-| `متوسط_هندسي(قائمة)` | `statistics.geometric_mean(قائمة)` | المتوسط الهندسي |
-| `وسيط_منخفض(قائمة)` | `statistics.median_low(قائمة)` | الوسيط المنخفض |
-| `وسيط_مرتفع(قائمة)` | `statistics.median_high(قائمة)` | الوسيط المرتفع |
-| `وسيط_مجمع(قائمة)` | `statistics.median_grouped(قائمة)` | الوسيط المجمّع |
+## الدوال (16)
 
-## تشتت (Dispersion)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `تباين(قائمة)` | `statistics.variance(قائمة)` | التباين (عينة) |
-| `تباين_مجتمع(قائمة)` | `statistics.pvariance(قائمة)` | التباين (المجتمع) |
-| `انحراف_معياري(قائمة)` | `statistics.stdev(قائمة)` | الانحراف المعياري (عينة) |
-| `انحراف_معياري_مجتمع(قائمة)` | `statistics.pstdev(قائمة)` | الانحراف المعياري (المجتمع) |
-
-## ارتباط (Correlation)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `ارتباط(س1, س2)` | `statistics.correlation(س1, س2)` | معامل الارتباط |
-| `ميل(س1, س2)` | `statistics.linear_regression(س1, س2)` | الانحدار الخطي |
+| العربي | Python |
+|--------|--------|
+| `متوسط` | `statistics.mean` |
+| `متوسط_حسابي` | `statistics.mean` |
+| `وسيط` | `statistics.median` |
+| `منوال` | `statistics.mode` |
+| `متوسط_توافقي` | `statistics.harmonic_mean` |
+| `متوسط_هندسي` | `statistics.geometric_mean` |
+| `وسيط_منخفض` | `statistics.median_low` |
+| `وسيط_مرتفع` | `statistics.median_high` |
+| `وسيط_مجمع` | `statistics.median_grouped` |
+| `تباين` | `statistics.variance` |
+| `تباين_مجتمع` | `statistics.pvariance` |
+| `انحراف_معياري` | `statistics.stdev` |
+| `انحراف_معياري_مجتمع` | `statistics.pstdev` |
+| `نطاق_إحصاء` | `range` |
+| `ارتباط` | `statistics.correlation` |
+| `ميل` | `statistics.linear_regression` |
 
 ## مثال
 

@@ -2,131 +2,96 @@
 
 مكتبة unittest الكاملة بالعربي، اختبارات الوحدة:
 
-## TestCase
+**84 عنصراً عربياً** (الدوال: 84).
 
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `حالة_اختبار()` | `unittest.TestCase()` | فئة اختبار |
-| `أنشئ_اختبار()` | `unittest.TestCase()` | إنشاء اختبار |
-| `حالة_اختبار()` | `unittest.TestCase()` | اختبار |
-| `setUp()` | `setUp()` | قبل كل اختبار |
-| `tearDown()` | `tearDown()` | بعد كل اختبار |
-| `setUpClass()` | `setUpClass()` | قبل الفئة |
-| `tearDownClass()` | `tearDownClass()` | بعد الفئة |
-
-## التأكيدات الأساسية (Basic Assertions)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `assertEqual(أ, ب)` | `assertEqual(أ, ب)` | تأكد من المساواة |
-| `assertNotEqual(أ, ب)` | `assertNotEqual(أ, ب)` | تأكد من عدم المساواة |
-| `assertTrue(تعبير)` | `assertTrue(تعبير)` | تأكد من الصحة |
-| `assertFalse(تعبير)` | `assertFalse(تعبير)` | تأكد من الخطأ |
-| `assertIs(أ, ب)` | `assertIs(أ, ب)` | تأكد من الهوية |
-| `assertIsNot(أ, ب)` | `assertIsNot(أ, ب)` | تأكد من عدم الهوية |
-| `assertIsNone(قيمة)` | `assertIsNone(قيمة)` | تأكد من None |
-| `assertIsNotNone(قيمة)` | `assertIsNotNone(قيمة)` | تأكد من عدم None |
-| `assertIn(عنصر, تسلسل)` | `assertIn(عنصر, تسلسل)` | تأكد من الانتماء |
-| `assertNotIn(عنصر, تسلسل)` | `assertNotIn(عنصر, تسلسل)` | تأكد من عدم الانتماء |
-| `assertIsInstance(كائن, نوع)` | `assertIsInstance(كائن, نوع)` | تأكد من النوع |
-| `assertNotIsInstance(كائن, نوع)` | `assertNotIsInstance(كائن, نوع)` | تأكد من عدم النوع |
-| `assertRaises(استثناء, دالة)` | `assertRaises(استثناء, دالة)` | تأكد من رفع الاستثناء |
-| `assertRaisesRegex(استثناء, نمط, دالة)` | `assertRaisesRegex(استثناء, نمط, دالة)` | تأكد من رفع استثناء مع نمط |
-| `assertWarns(تحذير, دالة)` | `assertWarns(تحذير, دالة)` | تأكد من التحذير |
-| `assertLogs(مسجل, مستوى)` | `assertLogs(مسجل, مستوى)` | تأكد من السجلات |
-
-## التأكيدات العددية (Numeric Assertions)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `assertAlmostEqual(أ, ب)` | `assertAlmostEqual(أ, ب)` | تأكد من التقريب |
-| `assertNotAlmostEqual(أ, ب)` | `assertNotAlmostEqual(أ, ب)` | تأكد من عدم التقريب |
-| `assertGreater(أ, ب)` | `assertGreater(أ, ب)` | تأكد من أكبر |
-| `assertGreaterEqual(أ, ب)` | `assertGreaterEqual(أ, ب)` | تأكد من أكبر أو يساوي |
-| `assertLess(أ, ب)` | `assertLess(أ, ب)` | تأكد من أصغر |
-| `assertLessEqual(أ, ب)` | `assertLessEqual(أ, ب)` | تأكد من أصغر أو يساوي |
-
-## التأكيدات النصية (String Assertions)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `assertRegex(نص, نمط)` | `assertRegex(نص, نمط)` | تأكد من النمط |
-| `assertNotRegex(نص, نمط)` | `assertNotRegex(نص, نمط)` | تأكد من عدم النمط |
-| `assertMultiLineEqual(أول, ثاني)` | `assertMultiLineEqual(أول, ثاني)` | تأكد من مساواة متعدد الأسطر |
-
-## التأكيدات على المجموعات (Collection Assertions)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `assertCountEqual(أول, ثاني)` | `assertCountEqual(أول, ثاني)` | تأكد من نفس العدد |
-| `assertSequenceEqual(أول, ثاني)` | `assertSequenceEqual(أول, ثاني)` | تأكد من نفس التسلسل |
-| `assertListEqual(أول, ثاني)` | `assertListEqual(أول, ثاني)` | تأكد من نفس القائمة |
-| `assertTupleEqual(أول, ثاني)` | `assertTupleEqual(أول, ثاني)` | تأكد من نفس الصف |
-| `assertSetEqual(أول, ثاني)` | `assertSetEqual(أول, ثاني)` | تأكد من نفس المجموعة |
-| `assertDictEqual(أول, ثاني)` | `assertDictEqual(أول, ثاني)` | تأكد من نفس القاموس |
-
-## التسميات العربية (Arabic Aliases)
+## الدوال (84)
 
 | العربي | Python |
 |--------|--------|
-| `ساوي(أ, ب)` | assertEqual |
-| `لا_ساوي(أ, ب)` | assertNotEqual |
-| `تأكيد(تعبير)` | assertTrue |
-| `خطأ_اختبار(تعبير)` | assertFalse |
-| `هو(أ, ب)` | assertIs |
-| `ليس(أ, ب)` | assertIsNot |
-| `لا_شيء(قيمة)` | assertIsNone |
-| `ليس_لا_شيء(قيمة)` | assertIsNotNone |
-| `في_اختبار(عنصر, تسلسل)` | assertIn |
-| `ليس_في(عنصر, تسلسل)` | assertNotIn |
-| `من_نوع(كائن, نوع)` | assertIsInstance |
-| `ليس_من_نوع(كائن, نوع)` | assertNotIsInstance |
-| `يرفع(استثناء, دالة)` | assertRaises |
-| `يحذر(تحذير, دالة)` | assertWarns |
-| `يسجل(مسجل, مستوى)` | assertLogs |
-| `تقريبا(أ, ب)` | assertAlmostEqual |
-| `أكبر_اختبار(أ, ب)` | assertGreater |
-| `أصغر_اختبار(أ, ب)` | assertLess |
-| `أكبر_أو_يساوي(أ, ب)` | assertGreaterEqual |
-| `أصغر_أو_يساوي(أ, ب)` | assertLessEqual |
-| `يطابق_نمط(نص, نمط)` | assertRegex |
-| `نفس_العدد(أول, ثاني)` | assertCountEqual |
-| `نفس_القائمة(أول, ثاني)` | assertListEqual |
-| `نفس_القاموس(أول, ثاني)` | assertDictEqual |
-
-## Test Suite
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `مجموعة_اختبارات()` | `unittest.TestSuite()` | إنشاء مجموعة اختبارات |
-| `أضف_اختبار(اختبار)` | `testSuite.addTest(اختبار)` | إضافة اختبار |
-
-## Test Runner
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `شغل_اختبارات(مجموعة)` | `unittest.TextTestRunner().run(مجموعة)` | تشغيل الاختبارات |
-| `نفذ_اختبار(مجموعة)` | `testRunner.run(مجموعة)` | تنفيذ الاختبارات |
-| `رئيسي()` | `unittest.main()` | الدالة الرئيسية |
-
-## التخطي والتوقع
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `تخطى(سبب)` | `unittest.skip(سبب)` | تخطي اختبار |
-| `تخطى_إذا(شرط, سبب)` | `unittest.skipIf(شرط, سبب)` | تخطي إذا تحقق الشرط |
-| `تخطى_ما_لم(شرط, سبب)` | `unittest.skipUnless(شرط, سبب)` | تخطي ما لم يتحقق الشرط |
-| `فشل_متوقع()` | `unittest.expectedFailure` | فشل متوقع |
-
-## Mock
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `mock()` | `unittest.mock` | مكتبة الـ mock |
-| `Mock()` | `unittest.mock.Mock()` | كائن mock |
-| `MagicMock()` | `unittest.mock.MagicMock()` | كائن MagicMock |
-| `تصحيح_اختبار(هدف)` | `unittest.mock.تصحيح_اختبار(هدف)` | تصحيح |
-| `patch.object(هدف, خاصية)` | `unittest.mock.تصحيح_اختبار.object(هدف, خاصية)` | تصحيح كائن |
+| `حالة_اختبار` | `unittest.TestCase` |
+| `أنشئ_اختبار` | `unittest.TestCase` |
+| `setUp` | `setUp` |
+| `tearDown` | `tearDown` |
+| `setUpClass` | `setUpClass` |
+| `tearDownClass` | `tearDownClass` |
+| `assertEqual` | `assertEqual` |
+| `assertNotEqual` | `assertNotEqual` |
+| `assertTrue` | `assertTrue` |
+| `assertFalse` | `assertFalse` |
+| `assertIs` | `assertIs` |
+| `assertIsNot` | `assertIsNot` |
+| `assertIsNone` | `assertIsNone` |
+| `assertIsNotNone` | `assertIsNotNone` |
+| `assertIn` | `assertIn` |
+| `assertNotIn` | `assertNotIn` |
+| `assertIsInstance` | `assertIsInstance` |
+| `assertNotIsInstance` | `assertNotIsInstance` |
+| `assertRaises` | `assertRaises` |
+| `assertRaisesRegex` | `assertRaisesRegex` |
+| `assertWarns` | `assertWarns` |
+| `assertWarnsRegex` | `assertWarnsRegex` |
+| `assertLogs` | `assertLogs` |
+| `assertAlmostEqual` | `assertAlmostEqual` |
+| `assertNotAlmostEqual` | `assertNotAlmostEqual` |
+| `assertGreater` | `assertGreater` |
+| `assertGreaterEqual` | `assertGreaterEqual` |
+| `assertLess` | `assertLess` |
+| `assertLessEqual` | `assertLessEqual` |
+| `assertRegex` | `assertRegex` |
+| `assertNotRegex` | `assertNotRegex` |
+| `assertCountEqual` | `assertCountEqual` |
+| `assertMultiLineEqual` | `assertMultiLineEqual` |
+| `assertSequenceEqual` | `assertSequenceEqual` |
+| `assertListEqual` | `assertListEqual` |
+| `assertTupleEqual` | `assertTupleEqual` |
+| `assertSetEqual` | `assertSetEqual` |
+| `assertDictEqual` | `assertDictEqual` |
+| `ساوي` | `assertEqual` |
+| `لا_ساوي` | `assertNotEqual` |
+| `تأكيد` | `assertTrue` |
+| `خطأ_اختبار` | `assertFalse` |
+| `هو` | `assertIs` |
+| `ليس` | `assertIsNot` |
+| `لا_شيء` | `assertIsNone` |
+| `ليس_لا_شيء` | `assertIsNotNone` |
+| `في_اختبار` | `assertIn` |
+| `ليس_في` | `assertNotIn` |
+| `من_نوع` | `assertIsInstance` |
+| `ليس_من_نوع` | `assertNotIsInstance` |
+| `يرفع` | `assertRaises` |
+| `يرفع_نمط` | `assertRaisesRegex` |
+| `يحذر` | `assertWarns` |
+| `يحذر_نمط` | `assertWarnsRegex` |
+| `يسجل` | `assertLogs` |
+| `تقريبا` | `assertAlmostEqual` |
+| `ليس_تقريبا` | `assertNotAlmostEqual` |
+| `أكبر_اختبار` | `assertGreater` |
+| `أكبر_أو_يساوي` | `assertGreaterEqual` |
+| `أصغر_اختبار` | `assertLess` |
+| `أصغر_أو_يساوي` | `assertLessEqual` |
+| `يطابق_نمط` | `assertRegex` |
+| `لا_يطابق_نمط` | `assertNotRegex` |
+| `نفس_العدد` | `assertCountEqual` |
+| `نفس_السطر` | `assertMultiLineEqual` |
+| `نفس_التسلسل` | `assertSequenceEqual` |
+| `نفس_القائمة` | `assertListEqual` |
+| `نفس_الصف` | `assertTupleEqual` |
+| `نفس_المجموعة` | `assertSetEqual` |
+| `نفس_القاموس` | `assertDictEqual` |
+| `مجموعة_اختبارات` | `unittest.TestSuite` |
+| `أضف_اختبار` | `testSuite.addTest` |
+| `شغل_اختبارات` | `unittest.TextTestRunner` |
+| `نفذ_اختبار` | `testRunner.run` |
+| `رئيسي` | `unittest.main` |
+| `تخطى` | `unittest.skip` |
+| `تخطى_إذا` | `unittest.skipIf` |
+| `تخطى_ما_لم` | `unittest.skipUnless` |
+| `فشل_متوقع` | `unittest.expectedFailure` |
+| `mock` | `unittest.mock` |
+| `Mock` | `unittest.mock.Mock` |
+| `MagicMock` | `unittest.mock.MagicMock` |
+| `تصحيح_اختبار` | `unittest.mock.patch` |
+| `patch.object` | `unittest.mock.patch.object` |
 
 ## مثال
 

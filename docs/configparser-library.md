@@ -2,64 +2,47 @@
 
 مكتبة configparser الكاملة بالعربي، قراءة وكتابة ملفات الإعداد:
 
-## الإنشاء
+**35 عنصراً عربياً** (الدوال: 35).
 
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `أنشئ_مُكوِّن()` | `configparser.ConfigParser()` | إنشاء مُكوِّن |
-| `مُكوِّن()` | `configparser.ConfigParser()` | مُكوِّن (مختصر) |
-| `مُكوِّن_إعدادات()` | `configparser.ConfigParser()` | مُكوِّن إعدادات |
-| `محلل_إعدادات()` | `configparser.ConfigParser()` | إعدادات (مختصر) |
-
-## القراءة
+## الدوال (35)
 
 | العربي | Python |
 |--------|--------|
-| `اقرأ_إعداد(ملف)` | read |
-| `اقرأ_ملف(ملف)` | read_file |
-| `اقرأ_سلسلة(نص)` | read_string |
-| `اقرأ_قاموس_إعدادات(قاموس)` | read_dict |
-
-## الكتابة
-
-| العربي | Python |
-|--------|--------|
-| `اكتب_إعداد(ملف)` | write |
-| `اكتب_ملف(ملف)` | write |
-
-## الأقسام
-
-| العربي | Python |
-|--------|--------|
-| `أضف_قسم(قسم)` | add_section |
-| `أزل_قسم(قسم)` | remove_section |
-| `يوجد_قسم(قسم)` | has_section |
-| `الأقسام()` | sections |
-
-## الخيارات
-
-| العربي | Python |
-|--------|--------|
-| `ضع(قسم, خيار, قيمة)` | set |
-| `احصل(قسم, خيار)` | get |
-| `أزل_خيار(قسم, خيار)` | remove_option |
-| `يوجد_خيار(قسم, خيار)` | has_option |
-| `الخيارات(قسم)` | options |
-
-## أنواع البيانات
-
-| العربي | Python |
-|--------|--------|
-| `احصل_عدد_صحيح(قسم, خيار)` | getint |
-| `احصل_عدد_عشري(قسم, خيار)` | getfloat |
-| `احصل_منطقي(قسم, خيار)` | getboolean |
-
-## التعيينات
-
-| العربي | Python |
-|--------|--------|
-| `items(قسم)` | items |
-| `احصل_كل(قسم)` | items |
+| `أنشئ_مُكوِّن` | `configparser.ConfigParser` |
+| `مُكوِّن` | `configparser.ConfigParser` |
+| `مُكوِّن_إعدادات` | `configparser.ConfigParser` |
+| `محلل_إعدادات` | `configparser.ConfigParser` |
+| `افتراضي_إعدادات` | `config.defaults` |
+| `تكوين_افتراضي` | `configparser.DEFAULTSECT` |
+| `اقرأ_إعداد` | `config.read` |
+| `اقرأ_ملف` | `config.read_file` |
+| `اقرأ_سلسلة` | `config.read_string` |
+| `اقرأ_قاموس_إعدادات` | `config.read_dict` |
+| `اكتب_إعداد` | `config.write` |
+| `اكتب_ملف` | `config.write` |
+| `أضف_قسم` | `config.add_section` |
+| `أزل_قسم` | `config.remove_section` |
+| `يوجد_قسم` | `config.has_section` |
+| `الأقسام` | `config.sections` |
+| `ضع` | `config.set` |
+| `احصل` | `config.get` |
+| `أزل_خيار` | `config.remove_option` |
+| `يوجد_خيار` | `config.has_option` |
+| `الخيارات` | `config.options` |
+| `احصل_عدد_صحيح` | `config.getint` |
+| `احصل_عدد_عشري` | `config.getfloat` |
+| `احصل_منطقي` | `config.getboolean` |
+| `items` | `config.items` |
+| `احصل_كل` | `config.items` |
+| `BasicInterpolation` | `configparser.BasicInterpolation` |
+| `ExtendedInterpolation` | `configparser.ExtendedInterpolation` |
+| `RawInterpolation` | `configparser.RawInterpolation` |
+| `RawConfigParser` | `configparser.RawConfigParser` |
+| `SafeConfigParser` | `configparser.SafeConfigParser` |
+| `مفاتيح_افتراضية` | `config.defaults` |
+| `بادئة_تعليق` | `config._comment_prefixes` |
+| `DEFAULT` | `configparser.DEFAULTSECT` |
+| `الافتراضي` | `configparser.DEFAULTSECT` |
 
 ## مثال
 

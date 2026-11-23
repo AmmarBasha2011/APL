@@ -2,22 +2,21 @@
 
 كل الدوال من مكتبة `collections` في Python، مترجمة بالكامل:
 
-## أنواع خاصة (Specialized Types)
+**9 عنصراً عربياً** (الدوال: 9).
 
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `عداد(تسلسل)` | `collections.Counter(تسلسل)` | عداد للعناصر (Counter) |
-| `قاموس_افتراضي(نوع)` | `collections.defaultdict(نوع)` | قاموس بقيمة افتراضية |
-| `قائمة_مزدوجة(تسلسل)` | `collections.deque(تسلسل)` | قائمة مزدوجة الطرفين (deque) |
-| `صف_مسمى(اسم, حقول)` | `collections.namedtuple(اسم, حقول)` | صف مسمى (namedtuple) |
-| `سلسلة_مرتبة(قاموس)` | `collections.OrderedDict(قاموس)` | قاموس مرتب (OrderedDict) |
+## الدوال (9)
 
-## دوال (Functions)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `عد_عناصر(تسلسل)` | `collections.Counter(تسلسل)` | عد العناصر (Counter) |
-| `عنصر_أكثر(تسلسل, ن)` | `collections.Counter.most_common(ن)` | أكثر العناصر تكراراً |
+| العربي | Python |
+|--------|--------|
+| `عداد` | `collections.Counter` |
+| `قاموس_افتراضي` | `collections.defaultdict` |
+| `قائمة_مزدوجة` | `collections.deque` |
+| `صف_مسمى` | `collections.namedtuple` |
+| `سلسلة_مرتبة` | `collections.OrderedDict` |
+| `عد_عناصر` | `collections.Counter` |
+| `عنصر_أكثر` | `collections.Counter.most_common` |
+| `صف_انتظار` | `collections.deque` |
+| `صف_انتظار_محدود` | `collections.deque` |
 
 ## مثال
 
