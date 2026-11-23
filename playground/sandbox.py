@@ -53,6 +53,7 @@ def run(source):
                     if not pending:
                         selector.unregister(key.fileobj)
                         process.stdin.close()
+                        process.stdin = None
                 else:
                     block = os.read(key.fd, 4096)
                     if not block:

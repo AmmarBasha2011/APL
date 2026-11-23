@@ -14,5 +14,5 @@ test('valid manifest, grammar and generated completion index', () => {
   const manifest = require('../package.json');
   assert.equal(manifest.contributes.languages[0].id,'apl');
   assert.ok(require('../syntaxes/apl.tmLanguage.json').patterns.length);
-  assert.ok(require('../completions.json').length > 1000);
+  assert.ok(JSON.parse(require('node:zlib').gunzipSync(require('node:fs').readFileSync(require('node:path').join(__dirname,'../completions.json.gz')))).length > 1000);
 });

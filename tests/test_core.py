@@ -28,7 +28,7 @@ class CompilerTests(unittest.TestCase):
 
     def test_multiline_literal_exact(self):
         value = 'first\nلو صحيح:\n2 + 3\n# اطبع\nدالة فيب(س):\n'
-        code = transpile('المتغير س = ' + repr(value).replace("'", '"', 1)) if False else transpile('المتغير س = """' + value + '"""')
+        code = transpile('المتغير س = """' + value + '"""')
         ns = {}
         exec(code, ns)
         self.assertEqual(ns['س'], value)

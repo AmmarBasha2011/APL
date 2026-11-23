@@ -1,7 +1,7 @@
 'use strict';
 const vscode = require('vscode');
 const cp = require('node:child_process');
-const index = require('./completions.json');
+const index = JSON.parse(require('node:zlib').gunzipSync(require('node:fs').readFileSync(require('node:path').join(__dirname,'completions.json.gz'))));
 const {parseDiagnostic, words} = require('./support');
 function activate(context) {
   const diagnostics = vscode.languages.createDiagnosticCollection('apl');

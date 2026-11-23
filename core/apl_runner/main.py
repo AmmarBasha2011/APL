@@ -21,20 +21,13 @@ def _build_reserved_keys():
     """
     return set()
 
-LIBRARY_MODULES = [
-    "math_funcs", "random_funcs", "time_funcs", "statistics_funcs", "os_funcs",
-    "re_funcs", "collections_funcs", "itertools_funcs", "json_funcs", "hashlib_funcs",
-    "flask_funcs", "fastapi_funcs", "requests_funcs", "sqlite3_funcs", "asyncio_funcs",
-    "threading_funcs", "unittest_funcs", "csv_funcs", "logging_funcs", "argparse_funcs",
-    "subprocess_funcs", "configparser_funcs", "dataclasses_funcs", "advanced_funcs",
-    "datetime_funcs", "pathlib_funcs", "shutil_funcs", "textwrap_funcs",
-    "uuid_funcs", "base64_funcs", "urllib_funcs", "functools_funcs",
-]
+from core.libraries.registry import ENTRIES, module, imports_for
+LIBRARY_MODULES = [entry['module'] for entry in ENTRIES]
 _RESERVED_KEYS = _build_reserved_keys()  # empty: unused, see docstring
 
 # Constant folding on by default; APL_NO_FOLD=1 turns it off.
 _APL_FOLD = os.environ.get("APL_NO_FOLD", "") not in ("1", "true", "yes")
-from core.libraries import decimal_funcs, fractions_funcs, string_funcs, secrets_funcs, zoneinfo_funcs, getpass_funcs, operator_funcs, pprint_funcs, math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs, xml_funcs, archive_funcs, net_funcs, devtools_funcs, web_funcs, datafiles_funcs, syslib_funcs, stdlib_ext_funcs, aiohttp_funcs, acp_funcs, cdp_use_funcs, idlelib_funcs, utiltools_funcs, textdata_funcs, secauth_funcs, webserver_funcs, weblibs_funcs, numpy_funcs, scipy_funcs, telegram_funcs, redis_funcs, celery_funcs, numdeep_funcs, botdeep_funcs, taskdeep_funcs, storedeep_funcs, pygdeep_funcs, webdeep_funcs, datadeep_funcs, mediadeep_funcs, secdeep_funcs, utildeep_funcs, stdfull_funcs
+globals().update({entry['module']: module(entry) for entry in ENTRIES})
 
 # Respect embedding applications and redirected/captured stdout.
 if hasattr(sys.stdout, "reconfigure"):
@@ -79,6 +72,7 @@ def _collect_user_names(source: str) -> set:
         if match:
             for name in match.group(1).split(','):
                 names.add(name.strip().split()[-1])
+    names.update(re.findall(r"(?:إمسك|امسك|except).*?(?:مثل|as)\s+([^\W\d]\w*)", source))
     return names
 
 import threading
@@ -178,8 +172,24 @@ def _transpile(source: str) -> str:
     _class_indent = None      # indent of the innermost open class body
     import core.apl_runner.transpiler as _tp
     _tp._IN_MATCH = False
+    _ir.USER_ATTRIBUTES = set(re.findall(r"ذات\.([^\W\d]\w*)\s*=(?!=)", source))
+    _global_names = set(_ir.USER_NAMES)
+    _scopes = []
     for _source_index, line in enumerate(lines):
         _indent = len(line) - len(line.lstrip())
+        if line.strip() and not line.lstrip().startswith('#'):
+            while _scopes and _indent <= _scopes[-1][0]:
+                _scopes.pop()
+        _local_names = set()
+        _signature = re.match(r"\s*(?:دالة\s+|دالة_|def\s+)[^ (]+\((.*?)\)", line)
+        if _signature:
+            _local_names = {p.split(':')[0].split('=')[0].strip().lstrip('*')
+                            for p in _signature.group(1).split(',') if p.strip()}
+            _scopes.append((_indent, _local_names))
+        _ir.USER_NAMES = _global_names | set().union(*(names for _, names in _scopes))
+        # Comprehension, lambda and exception bindings are user identifiers too.
+        for _binding in re.finditer(r"(?:لكل|for|مثل)\s+([^\W\d]\w*)|\(([^()]+)\)\s*=>", line):
+            _ir.USER_NAMES.update((_binding.group(1) or _binding.group(2)).replace(' ', '').split(','))
         try:
             _out = transpile_line(line)
             result.append(" " * _indent + f"# apl-source:{_origins[_source_index]}")
@@ -208,310 +218,7 @@ def _transpile(source: str) -> str:
             _tp._IN_MATCH = False
     code = "\n".join(result)
 
-    needs = []
-    if re.search(math_funcs.IMPORT_CHECK, code) and "import math" not in code:
-        needs.append("import math")
-    if re.search(random_funcs.IMPORT_CHECK, code) and "import random" not in code:
-        needs.append("import random")
-    if re.search(time_funcs.IMPORT_CHECK, code) and "import time" not in code:
-        needs.append("import time")
-        needs.append("import datetime")
-    if re.search(statistics_funcs.IMPORT_CHECK, code) and "import statistics" not in code:
-        needs.append("import statistics")
-    if re.search(os_funcs.IMPORT_CHECK, code) and "import os" not in code:
-        needs.append("import os")
-        needs.append("import shutil")
-    if re.search(re_funcs.IMPORT_CHECK, code) and "import re" not in code:
-        needs.append("import re")
-    if re.search(collections_funcs.IMPORT_CHECK, code) and "import collections" not in code:
-        needs.append("import collections")
-    if re.search(itertools_funcs.IMPORT_CHECK, code) and "import itertools" not in code:
-        needs.append("import itertools")
-    if re.search(json_funcs.IMPORT_CHECK, code) and "import json" not in code:
-        needs.append("import json")
-    if re.search(hashlib_funcs.IMPORT_CHECK, code) and "import hashlib" not in code:
-        needs.append("import hashlib")
-    if re.search(flask_funcs.IMPORT_CHECK, code) and "from flask import" not in code:
-        needs.append("from flask import Flask, request, jsonify, render_template, redirect, url_for, abort, session, make_response")
-    if re.search(fastapi_funcs.IMPORT_CHECK, code) and "from fastapi import" not in code:
-        needs.append("from fastapi import FastAPI, APIRouter, Depends, HTTPException, status, Request, Response, BackgroundTasks, WebSocket, File, UploadFile, Security")
-    if re.search(requests_funcs.IMPORT_CHECK, code) and "import requests" not in code:
-        needs.append("import requests")
-    if re.search(sqlite3_funcs.IMPORT_CHECK, code) and "import sqlite3" not in code:
-        needs.append("import sqlite3")
-    if re.search(asyncio_funcs.IMPORT_CHECK, code) and "import asyncio" not in code:
-        needs.append("import asyncio")
-    if re.search(threading_funcs.IMPORT_CHECK, code) and "import threading" not in code:
-        needs.append("import threading")
-    if re.search(unittest_funcs.IMPORT_CHECK, code) and "import unittest" not in code:
-        needs.append("import unittest")
-    if re.search(csv_funcs.IMPORT_CHECK, code) and "import csv" not in code:
-        needs.append("import csv")
-    if re.search(logging_funcs.IMPORT_CHECK, code) and "import logging" not in code:
-        needs.append("import logging")
-    if re.search(argparse_funcs.IMPORT_CHECK, code) and "import argparse" not in code:
-        needs.append("import argparse")
-    if re.search(subprocess_funcs.IMPORT_CHECK, code) and "import subprocess" not in code:
-        needs.append("import subprocess")
-    if re.search(configparser_funcs.IMPORT_CHECK, code) and "import configparser" not in code:
-        needs.append("import configparser")
-    if "dataclasses." in code and "import dataclasses" not in code:
-        needs.append("import dataclasses")
-    if "enum." in code and "import enum" not in code:
-        needs.append("import enum")
-    if "abc." in code and "import abc" not in code:
-        needs.append("import abc")
-    if re.search(dataclasses_funcs.IMPORT_CHECK, code) and "import dataclasses" not in code:
-        needs.append("from dataclasses import dataclass, field, asdict, astuple, replace; from enum import Enum, IntEnum, IntFlag, Flag, auto, unique; from abc import ABC, abstractmethod")
-    if re.search(advanced_funcs.IMPORT_CHECK, code) and "import functools" not in code:
-        needs.append("import functools, multiprocessing, concurrent.futures, typing, contextlib, tempfile, zipfile, pathlib, heapq, bisect, queue, weakref, copy, secrets, struct, io, codecs, base64")
-    if re.search(decimal_funcs.IMPORT_CHECK, code) and "decimal" not in code:
-        needs.append("decimal")
-    if re.search(fractions_funcs.IMPORT_CHECK, code) and "fractions" not in code:
-        needs.append("fractions")
-    if re.search(string_funcs.IMPORT_CHECK, code) and "string" not in code:
-        needs.append("string")
-    if re.search(secrets_funcs.IMPORT_CHECK, code) and "secrets" not in code:
-        needs.append("secrets")
-    if re.search(zoneinfo_funcs.IMPORT_CHECK, code) and "zoneinfo" not in code:
-        needs.append("zoneinfo")
-    if re.search(getpass_funcs.IMPORT_CHECK, code) and "getpass" not in code:
-        needs.append("getpass")
-    if re.search(operator_funcs.IMPORT_CHECK, code) and "operator" not in code:
-        needs.append("operator")
-    if re.search(pprint_funcs.IMPORT_CHECK, code) and "pprint" not in code:
-        needs.append("pprint")
-    if "json." in code and "import json" not in code:
-        needs.append("import json")
-    if "os." in code and "import os" not in code:
-        needs.append("import os")
-    if "datetime." in code and "import datetime" not in code:
-        needs.append("import datetime")
-    if "_apl_fetch" in code and "import urllib.request" not in code:
-        needs.append("import urllib.request")
-    if re.search(datetime_funcs.IMPORT_CHECK, code) and "import datetime" not in code:
-        needs.append("import datetime")
-    if re.search(pathlib_funcs.IMPORT_CHECK, code) and "import pathlib" not in code:
-        needs.append("import pathlib")
-    if re.search(archive_funcs.IMPORT_CHECK, code) and "import zipfile" not in code:
-        needs.append(archive_funcs.IMPORT_STATEMENT)
-    if re.search(net_funcs.IMPORT_CHECK, code):
-        # Only the modules that really occur in the generated code: a program
-        # that just formats an IP address should not pay for smtplib + imaplib.
-        _net_mods = [m for m in net_funcs.IMPORT_MODULES
-                     if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
-                     and ("import " + m) not in code]
-        if _net_mods:
-            needs.append("import " + ", ".join(_net_mods))
-    if re.search(devtools_funcs.IMPORT_CHECK, code):
-        # فقط الوحدات التي تظهر فعلاً في الشيفرة المولّدة
-        _dt_mods = [m for m in devtools_funcs.IMPORT_MODULES
-                    if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
-                    and ("import " + m) not in code]
-        if _dt_mods:
-            needs.append("import " + ", ".join(_dt_mods))
-    if re.search(web_funcs.IMPORT_CHECK, code):
-        # فقط الوحدات التي تظهر فعلاً في الشيفرة المولّدة
-        _web_mods = [m for m in web_funcs.IMPORT_MODULES
-                     if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
-                     and ("import " + m) not in code]
-        if _web_mods:
-            needs.append("import " + ", ".join(_web_mods))
-    if re.search(datafiles_funcs.IMPORT_CHECK, code):
-        _df_mods = [m for m in datafiles_funcs.IMPORT_MODULES
-                    if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
-                    and ("import " + m) not in code]
-        if _df_mods:
-            needs.append("import " + ", ".join(_df_mods))
-    if re.search(weblibs_funcs.IMPORT_CHECK, code):
-        _weblibs_mods = [m for m in weblibs_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
-                        and ("import " + m) not in code]
-        if _weblibs_mods:
-            needs.append("import " + ", ".join(_weblibs_mods))
-    if re.search(webserver_funcs.IMPORT_CHECK, code):
-        _webserver_mods = [m for m in webserver_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
-                        and ("import " + m) not in code]
-        if _webserver_mods:
-            needs.append("import " + ", ".join(_webserver_mods))
-    if re.search(secauth_funcs.IMPORT_CHECK, code):
-        _secauth_mods = [m for m in secauth_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
-                        and ("import " + m) not in code]
-        if _secauth_mods:
-            needs.append("import " + ", ".join(_secauth_mods))
-    if re.search(textdata_funcs.IMPORT_CHECK, code):
-        _textdata_mods = [m for m in textdata_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
-                        and ("import " + m) not in code]
-        if _textdata_mods:
-            needs.append("import " + ", ".join(_textdata_mods))
-    if re.search(utiltools_funcs.IMPORT_CHECK, code):
-        _utiltools_mods = [m for m in utiltools_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
-                        and ("import " + m) not in code]
-        if _utiltools_mods:
-            needs.append("import " + ", ".join(_utiltools_mods))
-    if re.search(idlelib_funcs.IMPORT_CHECK, code):
-        _idlelib_mods = [m for m in idlelib_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
-                        and ("import " + m) not in code]
-        if _idlelib_mods:
-            needs.append("import " + ", ".join(_idlelib_mods))
-    if re.search(cdp_use_funcs.IMPORT_CHECK, code):
-        _cdp_use_mods = [m for m in cdp_use_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
-                        and ("import " + m) not in code]
-        if _cdp_use_mods:
-            needs.append("import " + ", ".join(_cdp_use_mods))
-    if re.search(acp_funcs.IMPORT_CHECK, code):
-        _acp_mods = [m for m in acp_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
-                        and ("import " + m) not in code]
-        if _acp_mods:
-            needs.append("import " + ", ".join(_acp_mods))
-    if re.search(aiohttp_funcs.IMPORT_CHECK, code):
-        _aiohttp_mods = [m for m in aiohttp_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
-                        and ("import " + m) not in code]
-        if _aiohttp_mods:
-            needs.append("import " + ", ".join(_aiohttp_mods))
-    if re.search(stdlib_ext_funcs.IMPORT_CHECK, code):
-        _stdlib_ext_mods = [m for m in stdlib_ext_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
-                        and ("import " + m) not in code]
-        if _stdlib_ext_mods:
-            needs.append("import " + ", ".join(_stdlib_ext_mods))
-    if re.search(syslib_funcs.IMPORT_CHECK, code):
-        _sys_mods = [m for m in syslib_funcs.IMPORT_MODULES
-                     if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
-                     and ("import " + m) not in code]
-        if _sys_mods:
-            needs.append("import " + ", ".join(_sys_mods))
-    if re.search(numpy_funcs.IMPORT_CHECK, code):
-        _numpy_mods = [m for m in numpy_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
-                        and ("import " + m) not in code]
-        if _numpy_mods:
-            needs.append("import " + ", ".join(_numpy_mods))
-    if re.search(scipy_funcs.IMPORT_CHECK, code):
-        _scipy_mods = [m for m in scipy_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
-                        and ("import " + m) not in code]
-        if _scipy_mods:
-            needs.append("import " + ", ".join(_scipy_mods))
-    if re.search(telegram_funcs.IMPORT_CHECK, code):
-        _telegram_mods = [m for m in telegram_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
-                        and ("import " + m) not in code]
-        if _telegram_mods:
-            needs.append("import " + ", ".join(_telegram_mods))
-    if re.search(redis_funcs.IMPORT_CHECK, code):
-        _redis_mods = [m for m in redis_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
-                        and ("import " + m) not in code]
-        if _redis_mods:
-            needs.append("import " + ", ".join(_redis_mods))
-    if re.search(celery_funcs.IMPORT_CHECK, code):
-        _celery_mods = [m for m in celery_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
-                        and ("import " + m) not in code]
-        if _celery_mods:
-            needs.append("import " + ", ".join(_celery_mods))
-    if re.search(numdeep_funcs.IMPORT_CHECK, code):
-        _numdeep_mods = [mod for mod in numdeep_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(mod) + r"\.", code)
-                        and ("import " + mod) not in code]
-        if _numdeep_mods:
-            needs.append("import " + ", ".join(_numdeep_mods))
-    if re.search(botdeep_funcs.IMPORT_CHECK, code):
-        _botdeep_mods = [mod for mod in botdeep_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(mod) + r"\.", code)
-                        and ("import " + mod) not in code]
-        if _botdeep_mods:
-            needs.append("import " + ", ".join(_botdeep_mods))
-    if re.search(taskdeep_funcs.IMPORT_CHECK, code):
-        _taskdeep_mods = [mod for mod in taskdeep_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(mod) + r"\.", code)
-                        and ("import " + mod) not in code]
-        if _taskdeep_mods:
-            needs.append("import " + ", ".join(_taskdeep_mods))
-    if re.search(storedeep_funcs.IMPORT_CHECK, code):
-        _storedeep_mods = [mod for mod in storedeep_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(mod) + r"\.", code)
-                        and ("import " + mod) not in code]
-        if _storedeep_mods:
-            needs.append("import " + ", ".join(_storedeep_mods))
-    if re.search(pygdeep_funcs.IMPORT_CHECK, code):
-        _pygdeep_mods = [mod for mod in pygdeep_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(mod) + r"\.", code)
-                        and ("import " + mod) not in code]
-        if _pygdeep_mods:
-            needs.append("import " + ", ".join(_pygdeep_mods))
-    if re.search(webdeep_funcs.IMPORT_CHECK, code):
-        _webdeep_mods = [mod for mod in webdeep_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(mod) + r"\.", code)
-                        and ("import " + mod) not in code]
-        if _webdeep_mods:
-            needs.append("import " + ", ".join(_webdeep_mods))
-    if re.search(datadeep_funcs.IMPORT_CHECK, code):
-        _datadeep_mods = [mod for mod in datadeep_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(mod) + r"\.", code)
-                        and ("import " + mod) not in code]
-        if _datadeep_mods:
-            needs.append("import " + ", ".join(_datadeep_mods))
-    if re.search(mediadeep_funcs.IMPORT_CHECK, code):
-        _mediadeep_mods = [mod for mod in mediadeep_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(mod) + r"\.", code)
-                        and ("import " + mod) not in code]
-        if _mediadeep_mods:
-            needs.append("import " + ", ".join(_mediadeep_mods))
-    if re.search(secdeep_funcs.IMPORT_CHECK, code):
-        _secdeep_mods = [mod for mod in secdeep_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(mod) + r"\.", code)
-                        and ("import " + mod) not in code]
-        if _secdeep_mods:
-            needs.append("import " + ", ".join(_secdeep_mods))
-    if re.search(utildeep_funcs.IMPORT_CHECK, code):
-        _utildeep_mods = [mod for mod in utildeep_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(mod) + r"\.", code)
-                        and ("import " + mod) not in code]
-        if _utildeep_mods:
-            needs.append("import " + ", ".join(_utildeep_mods))
-    if re.search(stdfull_funcs.IMPORT_CHECK, code):
-        _stdfull_mods = [mod for mod in stdfull_funcs.IMPORT_MODULES
-                        if re.search(r"(?<![\w.])" + re.escape(mod) + r"\.", code)
-                        and ("import " + mod) not in code]
-        if _stdfull_mods:
-            needs.append("import " + ", ".join(_stdfull_mods))
-    if re.search(shutil_funcs.IMPORT_CHECK, code) and "import shutil" not in code:
-        needs.append("import shutil")
-    if re.search(textwrap_funcs.IMPORT_CHECK, code) and "import textwrap" not in code:
-        needs.append("import textwrap")
-    if re.search(uuid_funcs.IMPORT_CHECK, code) and "import uuid" not in code:
-        needs.append("import uuid")
-    if re.search(base64_funcs.IMPORT_CHECK, code) and "import base64" not in code:
-        needs.append("import base64")
-    if re.search(urllib_funcs.IMPORT_CHECK, code) and "import urllib.parse, urllib.request" not in code:
-        needs.append("import urllib.parse, urllib.request")
-    if re.search(functools_funcs.IMPORT_CHECK, code) and "import functools" not in code:
-        needs.append("import functools")
-    if "time." in code and "import time" not in code:
-        needs.append("import time")
-    if "shutil." in code and "import shutil" not in code:
-        needs.append("import shutil")
-
-    # imports required by resolved decorators
-    if "@dataclass" in code and "from dataclasses import" not in code:
-        needs.append("from dataclasses import dataclass, field, asdict, astuple, replace")
-    if "@functools.total_ordering" in code and "import functools" not in code:
-        needs.append("import functools")
-    if "@functools.singledispatch" in code and "import functools" not in code:
-        needs.append("import functools")
-    if "@functools.cached_property" in code and "import functools" not in code:
-        needs.append("import functools")
-
+    needs = imports_for(code)
     if needs:
         code = "\n".join(needs) + "\n\n" + code
 
@@ -558,7 +265,10 @@ def _transpile(source: str) -> str:
         from core.apl_runner.constfold import fold_code
         code = fold_code(code)
 
-    return restore(code, _literals)
+    code = restore(code, _literals)
+    # Interpolation expressions are translated during restoration, so discover
+    # imports once more after literals have been restored.
+    return "\n".join(imports_for(code)) + "\n" + code
 
 
 _RUNTIME = """

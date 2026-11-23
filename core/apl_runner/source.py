@@ -15,7 +15,6 @@ def protect(source):
     values, out, origins = {}, [], [1]
     i, line = 0, 1
     while i < len(source):
-        start = i
         ch = source[i]
         if ch == '#':
             end = source.find('\n', i)

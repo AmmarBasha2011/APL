@@ -19,8 +19,9 @@ def configure(namespace):
 
         def save():
             try:
-                readline.write_history_file(str(history))
+                history.touch(mode=0o600, exist_ok=True)
                 history.chmod(0o600)
+                readline.write_history_file(str(history))
             except OSError:
                 pass
         atexit.register(save)

@@ -21,47 +21,8 @@ import sys
 from types import ModuleType
 
 # module basename -> library key it defines (module name without "_funcs")
-_MODULE_NAMES = [
-    "math", "random", "time", "statistics", "os", "re", "collections", "itertools",
-    "json", "hashlib", "flask", "fastapi", "requests", "sqlite3", "asyncio",
-    "threading", "unittest", "csv", "logging", "argparse", "subprocess",
-    "configparser", "dataclasses", "advanced", "datetime", "pathlib", "shutil",
-    "textwrap", "uuid", "base64", "urllib", "functools", "decimal", "fractions",
-    "string", "secrets", "zoneinfo", "getpass", "operator", "pprint", "enum",
-    "xml",
-    "archive",
-    "net",
-    "devtools",
-    "web",
-    "datafiles",
-    "syslib",
-    "stdlib_ext",
-    "aiohttp",
-    "acp",
-    "cdp_use",
-    "idlelib",
-    "utiltools",
-    "textdata",
-    "secauth",
-    "webserver",
-    "weblibs",
-    "numpy",
-    "scipy",
-    "telegram",
-    "redis",
-    "celery",
-    "numdeep",
-    "botdeep",
-    "taskdeep",
-    "storedeep",
-    "pygdeep",
-    "webdeep",
-    "datadeep",
-    "mediadeep",
-    "secdeep",
-    "utildeep",
-    "stdfull",
-]
+from .registry import ENTRIES
+_MODULE_NAMES = [entry['name'] for entry in ENTRIES]
 
 _loaded: dict[str, ModuleType] = {}
 _loading: set[str] = set()
