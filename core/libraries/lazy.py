@@ -35,6 +35,11 @@ _MODULE_NAMES = [
     "web",
     "datafiles",
     "syslib",
+    "utiltools",
+    "textdata",
+    "secauth",
+    "webserver",
+    "weblibs",
 ]
 
 _loaded: dict[str, ModuleType] = {}

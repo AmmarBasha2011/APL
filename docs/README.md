@@ -50,15 +50,20 @@
 | 44 | [enum-library.md](enum-library.md) | مكتبة `enum` — أنواع معدودة (Enums) |
 | 45 | [xml-library.md](xml-library.md) | مكتبة `xml` — قراءة وبناء وتعديل ملفات XML (99 عنصراً) |
 | 46 | [archive-library.md](archive-library.md) | مكتبة `archive` — أرشيف ZIP و TAR والضغط gzip / bz2 / xz (102 عنصراً) |
-| 48 | [network-library.md](network-library.md) | مكتبة `net` — الشبكة والبريد: socket و ssl و http و email و SMTP/IMAP/FTP (1006 عنصراً) |
-| 48 | [language-features.md](language-features.md) | مميزات اللغة — match/case، معالجة الأخطاء، lambda، الوراثة |
+| 53 | [network-library.md](network-library.md) | مكتبة `net` — الشبكة والبريد: socket و ssl و http و email و SMTP/IMAP/FTP (1006 عنصراً) |
+| 53 | [language-features.md](language-features.md) | مميزات اللغة — match/case، معالجة الأخطاء، lambda، الوراثة |
 | 49 | [performance.md](performance.md) | تحسينات الأداء — التحميل الكسول، الذاكرة، طيّ الثوابت |
 | 50 | [devtools-library.md](devtools-library.md) | مكتبة `devtools` — أدوات المطوّر: فحص، تصحيح، قياس أداء، ترجمة (1123 عنصراً) |
 | 87 | [syslib-library.md](syslib-library.md) | مكتبة `syslib` — النظام والتشغيل والتشخيص: منصة، إشارات، تسجيل، اختبارات، عمليات، ctypes (3973 عنصراً) |
+| 88 | [`88-weblibs.apl`](../examples/88-weblibs.apl) | الويب والنصوص (weblibs/markdown) |
+| 89 | [`89-webserver.apl`](../examples/89-webserver.apl) | الخوادم (webserver/uvicorn) |
+| 90 | [`90-secauth.apl`](../examples/90-secauth.apl) | الأمان والمصادقة (secauth/jinja2) |
+| 91 | [`91-textdata.apl`](../examples/91-textdata.apl) | النصوص والبيانات (textdata/pathspec) |
+| 92 | [`92-utiltools.apl`](../examples/92-utiltools.apl) | الأدوات (utiltools/dateutil) |
 
 ---
 
-## الأمثلة الجاهزة (87 مثالاً)
+## الأمثلة الجاهزة (92 مثالاً)
 
 66 برنامجاً حقيقياً مكتوباً بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
@@ -110,8 +115,8 @@
 | 44 | [`44-tic-tac-toe.apl`](../examples/44-tic-tac-toe.apl) | لعبة tic-tac-toe |
 | 45 | [`45-simple-lexer.apl`](../examples/45-simple-lexer.apl) | محلّل نصوص بسيط |
 | 46 | [`46-simple-interpreter.apl`](../examples/46-simple-interpreter.apl) | مفسّر حسابات مبسّط |
-| 48 | [`47-simple-cache.apl`](../examples/47-simple-cache.apl) | كاش بسيط من الصفر |
-| 48 | [`48-text-analyzer-advanced.apl`](../examples/48-text-analyzer-advanced.apl) | تحليل نص متقدم |
+| 53 | [`47-simple-cache.apl`](../examples/47-simple-cache.apl) | كاش بسيط من الصفر |
+| 53 | [`48-text-analyzer-advanced.apl`](../examples/48-text-analyzer-advanced.apl) | تحليل نص متقدم |
 | 49 | [`49-validate-input.apl`](../examples/49-validate-input.apl) | التحقق من صحة المدخلات |
 | 50 | [`50-final-showcase.apl`](../examples/50-final-showcase.apl) | العرض النهائي (شامل) |
 | 51 | [`51-xml-read.apl`](../examples/51-xml-read.apl) | قراءة مستند XML وتحليله |
@@ -199,13 +204,18 @@ with open("ملف.txt") as f:
 اطبع س
 ```
 
-## المكتبات المتاحة (48 مكتبة)
+## المكتبات المتاحة (53 مكتبة)
 
 | المكتبة | عدد العناصر | الوصف |
 |---------|------------:|-------|
 | `devtools` | 1123 | أدوات المطوّر: فحص، تصحيح، قياس أداء، ترجمة (inspect / ast / dis / pdb / doctest / timeit / profile / tracemalloc) |
 | `datafiles` | 2631 | البيانات والملفات: مسارات، ضغط، أرشيف، تسلسل، هياكل بيانات، XML، يونيكود (io / zipfile / tarfile / pickle / shelve / array / struct / xml.dom / xml.etree / unicodedata) |
 | `syslib` | 3973 | النظام والتشغيل والتشخيص: منصة، إشارات، موارد، تسجيل، اختبارات، عمليات متعددة، ctypes، سياق (platform / signal / resource / logging / unittest / multiprocessing / concurrent.futures / ctypes / termios) |
+| `weblibs` | 5496 | الويب والنصوص: بث متدفق، قوالب، ماركداون، تورنيدو، سطر الأوامر، تلوين الشيفرة (websockets / jinja2 / markdown / tornado / click / pygments) |
+| `webserver` | 5492 | الخوادم والشبكات: خوادم ASGI/WSGI، عملاء HTTP غير متزامنين، HTTP/1.1 (starlette / uvicorn / httpx / httpcore / h11 / anyio) |
+| `secauth` | 5495 | الأمان والمصادقة: تشفير وشهادات، قوالب معزولة، تحقق من المخططات، JWT (cryptography / jinja2 / jsonschema / jwt / cffi) |
+| `textdata` | 5492 | النصوص والبيانات: مطابقة الأنماط، أصناف الخصائص، الصور، النماذج الأولية (pathspec / attrs / PIL / markdown / proto) |
+| `utiltools` | 5494 | الأدوات المساعدة: الإصدارات والتواريخ، أشرطة التقدم، مراقبة العمليات (packaging / dateutil / tqdm / psutil / websockets) |
 | `web` | 2757 | الويب والبريد: عناوين، HTTP، بريد، صناديق، كوكيز، HTML، WSGI، XML-RPC (http / urllib / email / mailbox / html / wsgiref / xmlrpc) |
 | `net` | 1006 | الشبكة: socket و ssl و http و email و SMTP/IMAP/FTP |
 | `fastapi` | 536 | إطار عمل ويب حديث |
@@ -252,9 +262,9 @@ with open("ملف.txt") as f:
 | `getpass` | 2 | إدخال كلمات السر دون إظهارها |
 | `pprint` | 2 | طباعة منسّقة للقواميس والقوائم |
 
-**الإجمالي: 13,831 عنصراً في 48 مكتبة** (13,813 مفتاحاً فريداً بعد إزالة التكرار).
+**الإجمالي: 41,300 عنصراً في 53 مكتبة** (41,282 مفتاحاً فريداً بعد إزالة التكرار).
 
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
-في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **14,044 عنصراً**،
-مع **87 مثالاً جاهزاً** في `examples/`.
+في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **41,513 عنصراً**،
+مع **92 مثالاً جاهزاً** في `examples/`.

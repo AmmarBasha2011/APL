@@ -1,59 +1,69 @@
+
+from . import advanced_funcs
+from . import archive_funcs
+from . import argparse_funcs
+from . import asyncio_funcs
+from . import base64_funcs
+from . import collections_funcs
+from . import configparser_funcs
+from . import csv_funcs
+from . import dataclasses_funcs
+from . import datafiles_funcs
+from . import datetime_funcs
+from . import decimal_funcs
+from . import devtools_funcs
+from . import enum_funcs
+from . import fastapi_funcs
+from . import flask_funcs
+from . import fractions_funcs
+from . import functools_funcs
+from . import getpass_funcs
+from . import hashlib_funcs
+from . import itertools_funcs
+from . import json_funcs
+from . import logging_funcs
+from . import math_funcs
+from . import net_funcs
+from . import operator_funcs
+from . import os_funcs
+from . import pathlib_funcs
+from . import pprint_funcs
+from . import random_funcs
+from . import re_funcs
+from . import requests_funcs
+from . import secauth_funcs
+from . import secrets_funcs
+from . import shutil_funcs
+from . import sqlite3_funcs
+from . import statistics_funcs
+from . import string_funcs
+from . import subprocess_funcs
+from . import syslib_funcs
+from . import textdata_funcs
+from . import textwrap_funcs
+from . import threading_funcs
+from . import time_funcs
+from . import unittest_funcs
+from . import urllib_funcs
+from . import utiltools_funcs
+from . import uuid_funcs
+from . import web_funcs
+from . import weblibs_funcs
+from . import webserver_funcs
+from . import xml_funcs
+from . import zoneinfo_funcs
 """
 APL Libraries Package
 Each module provides transpilation for a Python standard library module.
 """
 
-from . import math_funcs
-from . import random_funcs
-from . import time_funcs
-from . import statistics_funcs
-from . import os_funcs
-from . import re_funcs
-from . import collections_funcs
-from . import itertools_funcs
-from . import json_funcs
-from . import hashlib_funcs
-from . import flask_funcs
-from . import fastapi_funcs
-from . import requests_funcs
-from . import sqlite3_funcs
-from . import asyncio_funcs
-from . import threading_funcs
-from . import unittest_funcs
-from . import csv_funcs
-from . import logging_funcs
-from . import argparse_funcs
-from . import subprocess_funcs
-from . import configparser_funcs
-from . import dataclasses_funcs
-from . import advanced_funcs
-from . import decimal_funcs
-from . import fractions_funcs
-from . import string_funcs
-from . import secrets_funcs
-from . import zoneinfo_funcs
-from . import getpass_funcs
-from . import operator_funcs
-from . import pprint_funcs
-from . import enum_funcs
-from . import datetime_funcs
-from . import pathlib_funcs
-from . import shutil_funcs
-from . import textwrap_funcs
-from . import uuid_funcs
-from . import base64_funcs
-from . import urllib_funcs
-from . import functools_funcs
-from . import xml_funcs
-from . import archive_funcs
-from . import net_funcs
-from . import devtools_funcs
-from . import web_funcs
-from . import datafiles_funcs
-from . import syslib_funcs
-
 # Registry: module references for easy access
 LIBRARIES = {
+    "utiltools": utiltools_funcs,
+    "textdata": textdata_funcs,
+    "secauth": secauth_funcs,
+    "webserver": webserver_funcs,
+    "weblibs": weblibs_funcs,
     "math": math_funcs,
     "random": random_funcs,
     "time": time_funcs,
