@@ -74,9 +74,9 @@
 | 68 | [pprint-library.md](pprint-library.md) | مكتبة `pprint` — طباعة منسّقة للقواميس والقوائم (2 عنصراً) |
 
 ---
-## الأمثلة الجاهزة (102 مثالاً)
+## الأمثلة الجاهزة (200 مثال)
 
-102 برنامجاً حقيقياً مكتوباً بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+200 برنامج حقيقي مكتوب بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -182,6 +182,104 @@
 | 100 | [`100-telegram.apl`](../examples/100-telegram.apl) | بوتات تيليجرام (telegram) |
 | 101 | [`101-redis.apl`](../examples/101-redis.apl) | تخزين ريديس (redis) |
 | 102 | [`102-celery.apl`](../examples/102-celery.apl) | طوابير المهام (celery) |
+| 103 | [`103-gcd-lcm.apl`](../examples/103-gcd-lcm.apl) | القاسم المشترك والمضاعف المشترك ونظرية الأعداد |
+| 104 | [`104-trig-table.apl`](../examples/104-trig-table.apl) | جدول الدوال المثلثية |
+| 105 | [`105-log-exp.apl`](../examples/105-log-exp.apl) | اللوغاريتمات والأسس والجذور |
+| 106 | [`106-rounding.apl`](../examples/106-rounding.apl) | التقريب بكل أنواعه |
+| 107 | [`107-special-funcs.apl`](../examples/107-special-funcs.apl) | الدوال الخاصة: جاما ودالة الخطأ |
+| 108 | [`108-decimal-money.apl`](../examples/108-decimal-money.apl) | حساب الأموال بدقة بلا أخطاء عشرية |
+| 109 | [`109-fractions-ops.apl`](../examples/109-fractions-ops.apl) | الكسور الدقيقة والعمليات عليها |
+| 110 | [`110-statistics-data.apl`](../examples/110-statistics-data.apl) | تقرير إحصائي لدرجات طلاب |
+| 111 | [`111-random-dice.apl`](../examples/111-random-dice.apl) | محاكاة رمي نرد |
+| 112 | [`112-montecarlo-pi.apl`](../examples/112-montecarlo-pi.apl) | تقدير ط بطريقة مونت كارلو |
+| 113 | [`113-string-constants.apl`](../examples/113-string-constants.apl) | ثوابت النصوص وتصنيف الحروف |
+| 114 | [`114-string-template.apl`](../examples/114-string-template.apl) | قوالب النصوص |
+| 115 | [`115-textwrap-report.apl`](../examples/115-textwrap-report.apl) | تنسيق التقارير النصية |
+| 116 | [`116-re-emails.apl`](../examples/116-re-emails.apl) | استخراج البريد الإلكتروني والأرقام من نص |
+| 117 | [`117-re-arabic-words.apl`](../examples/117-re-arabic-words.apl) | البحث عن الكلمات العربية في نص |
+| 118 | [`118-re-substitutions.apl`](../examples/118-re-substitutions.apl) | الاستبدال والتقسيم بالأنماط |
+| 119 | [`119-text-palindromes.apl`](../examples/119-text-palindromes.apl) | كشف النصوص المتناظرة |
+| 120 | [`120-text-slug.apl`](../examples/120-text-slug.apl) | توليد روابط صديقة من العناوين |
+| 121 | [`121-text-wordcount.apl`](../examples/121-text-wordcount.apl) | تكرار الكلمات في نص عربي |
+| 122 | [`122-text-case-tools.apl`](../examples/122-text-case-tools.apl) | أدوات الحالة والفحص في النصوص |
+| 123 | [`123-text-split-join.apl`](../examples/123-text-split-join.apl) | التقسيم والدمج |
+| 124 | [`124-text-validate.apl`](../examples/124-text-validate.apl) | التحقق من المدخلات بالأنماط |
+| 125 | [`125-datetime-arithmetic.apl`](../examples/125-datetime-arithmetic.apl) | حسابات التواريخ والمدد |
+| 126 | [`126-datetime-format.apl`](../examples/126-datetime-format.apl) | تنسيق وتحليل التواريخ |
+| 127 | [`127-datetime-age.apl`](../examples/127-datetime-age.apl) | حساب العمر بالتفصيل |
+| 128 | [`128-zoneinfo-meeting.apl`](../examples/128-zoneinfo-meeting.apl) | تحويل اجتماع بين المناطق الزمنية |
+| 129 | [`129-time-stopwatch.apl`](../examples/129-time-stopwatch.apl) | ساعة إيقاف لقياس الأداء |
+| 130 | [`130-datetime-weekday.apl`](../examples/130-datetime-weekday.apl) | أيام الأسبوع وعطلات نهاية الأسبوع |
+| 131 | [`131-month-calendar.apl`](../examples/131-month-calendar.apl) | طباعة تقويم شهر |
+| 132 | [`132-pathlib-ops.apl`](../examples/132-pathlib-ops.apl) | المسارات ككائنات |
+| 133 | [`133-file-search-ext.apl`](../examples/133-file-search-ext.apl) | البحث عن ملفات بامتداد معين |
+| 134 | [`134-file-dedup-hash.apl`](../examples/134-file-dedup-hash.apl) | كشف الملفات المكررة بالتجزئة |
+| 135 | [`135-dir-size-report.apl`](../examples/135-dir-size-report.apl) | تقرير أحجام المجلدات |
+| 136 | [`136-shutil-backup.apl`](../examples/136-shutil-backup.apl) | نسخ احتياطي لمجلد كامل |
+| 137 | [`137-file-rename-batch.apl`](../examples/137-file-rename-batch.apl) | إعادة تسمية مجموعة ملفات |
+| 138 | [`138-os-env.apl`](../examples/138-os-env.apl) | معلومات النظام والبيئة |
+| 139 | [`139-file-read-write.apl`](../examples/139-file-read-write.apl) | القراءة والكتابة الأساسية للملفات |
+| 140 | [`140-json-nested.apl`](../examples/140-json-nested.apl) | JSON متداخل: بناء وقراءة |
+| 141 | [`141-json-files.apl`](../examples/141-json-files.apl) | حفظ وقراءة JSON من ملف |
+| 142 | [`142-json-merge.apl`](../examples/142-json-merge.apl) | دمج وتحديث قواميس JSON |
+| 143 | [`143-csv-write-read.apl`](../examples/143-csv-write-read.apl) | كتابة وقراءة CSV |
+| 144 | [`144-csv-stats.apl`](../examples/144-csv-stats.apl) | إحصاءات على عمود CSV |
+| 145 | [`145-configparser-settings.apl`](../examples/145-configparser-settings.apl) | ملفات الإعدادات |
+| 146 | [`146-json-to-csv.apl`](../examples/146-json-to-csv.apl) | تحويل JSON إلى CSV |
+| 147 | [`147-counter-advanced.apl`](../examples/147-counter-advanced.apl) | العداد المتقدم |
+| 148 | [`148-deque-printer.apl`](../examples/148-deque-printer.apl) | صف انتظار مهام الطباعة |
+| 149 | [`149-itertools-combos.apl`](../examples/149-itertools-combos.apl) | التوافيق والناتج الديكارتي |
+| 150 | [`150-itertools-slicing.apl`](../examples/150-itertools-slicing.apl) | تقطيع المكررات وتجميعها |
+| 151 | [`151-functools-reduce.apl`](../examples/151-functools-reduce.apl) | الاختزال بدوال العوامل |
+| 152 | [`152-functools-cache.apl`](../examples/152-functools-cache.apl) | التخزين المؤقت للدوال |
+| 153 | [`153-operator-sorting.apl`](../examples/153-operator-sorting.apl) | الترتيب بجالب العناصر |
+| 154 | [`154-enum-states.apl`](../examples/154-enum-states.apl) | حالات الطلب بالتعداد |
+| 155 | [`155-dataclass-inventory.apl`](../examples/155-dataclass-inventory.apl) | جرد المنتجات بفئات البيانات |
+| 156 | [`156-sqlite-notes.apl`](../examples/156-sqlite-notes.apl) | دفتر ملاحظات بقاعدة بيانات |
+| 157 | [`157-sqlite-grades.apl`](../examples/157-sqlite-grades.apl) | تقرير درجات باستعلامات تجميعية |
+| 158 | [`158-sqlite-transactions.apl`](../examples/158-sqlite-transactions.apl) | المعاملات والتراجع |
+| 159 | [`159-hash-integrity.apl`](../examples/159-hash-integrity.apl) | التحقق من سلامة الملفات |
+| 160 | [`160-hash-pbkdf2.apl`](../examples/160-hash-pbkdf2.apl) | اشتقاق مفاتيح كلمات السر |
+| 161 | [`161-base64-codec.apl`](../examples/161-base64-codec.apl) | الترميز وفكه بقاعدة 64 |
+| 162 | [`162-secrets-tokens.apl`](../examples/162-secrets-tokens.apl) | توليد الرموز الآمنة |
+| 163 | [`163-uuid-generate.apl`](../examples/163-uuid-generate.apl) | المعرفات الفريدة |
+| 164 | [`164-hash-file.apl`](../examples/164-hash-file.apl) | تجزئة ملف قبل وبعد النسخ |
+| 165 | [`165-xml-parse.apl`](../examples/165-xml-parse.apl) | قراءة بيانات من XML |
+| 166 | [`166-xml-build.apl`](../examples/166-xml-build.apl) | بناء مستند XML من الصفر |
+| 167 | [`167-xml-modify.apl`](../examples/167-xml-modify.apl) | تعديل مستند XML |
+| 168 | [`168-archive-tar.apl`](../examples/168-archive-tar.apl) | أرشيف TAR كامل |
+| 169 | [`169-archive-compress.apl`](../examples/169-archive-compress.apl) | ضغط النصوص بثلاث خوارزميات |
+| 170 | [`170-archive-zip-info.apl`](../examples/170-archive-zip-info.apl) | فحص أرشيف ZIP وإحصاءاته |
+| 171 | [`171-asyncio-tasks.apl`](../examples/171-asyncio-tasks.apl) | مهام غير متزامنة |
+| 172 | [`172-asyncio-gather.apl`](../examples/172-asyncio-gather.apl) | تشغيل مهام متوازية وتجميع نتائجها |
+| 173 | [`173-threading-lock.apl`](../examples/173-threading-lock.apl) | عداد مشترك بقفل بين الخيوط |
+| 174 | [`174-threading-event.apl`](../examples/174-threading-event.apl) | إشارة بين خيطين |
+| 175 | [`175-subprocess-run.apl`](../examples/175-subprocess-run.apl) | تشغيل أوامر النظام |
+| 176 | [`176-logging-levels.apl`](../examples/176-logging-levels.apl) | تسجيل الأحداث بمستويات |
+| 177 | [`177-match-case.apl`](../examples/177-match-case.apl) | التطابق بالحالات (match/case) |
+| 178 | [`178-decorators-property.apl`](../examples/178-decorators-property.apl) | الخواص المحسوبة والمحددات |
+| 179 | [`179-context-manager.apl`](../examples/179-context-manager.apl) | مدير السياق مع الملفات |
+| 180 | [`180-generator-pipeline.apl`](../examples/180-generator-pipeline.apl) | خط معالجة متسلسل |
+| 181 | [`181-inheritance.apl`](../examples/181-inheritance.apl) | الوراثة وتعدد الأشكال |
+| 182 | [`182-error-handling.apl`](../examples/182-error-handling.apl) | معالجة الأخطاء |
+| 183 | [`183-lambda-hof.apl`](../examples/183-lambda-hof.apl) | الدوال المجردة ودوال الرتبة العليا |
+| 184 | [`184-comprehensions.apl`](../examples/184-comprehensions.apl) | التوليدات الشاملة المتقدمة |
+| 185 | [`185-bubble-sort.apl`](../examples/185-bubble-sort.apl) | الترتيب الفقاعي |
+| 186 | [`186-merge-sort.apl`](../examples/186-merge-sort.apl) | ترتيب الدمج |
+| 187 | [`187-quick-sort.apl`](../examples/187-quick-sort.apl) | الترتيب السريع |
+| 188 | [`188-binary-search.apl`](../examples/188-binary-search.apl) | البحث الثنائي بالعودية |
+| 189 | [`189-balanced-brackets.apl`](../examples/189-balanced-brackets.apl) | فحص توازن الأقواس |
+| 190 | [`190-two-sum.apl`](../examples/190-two-sum.apl) | مجموع العددين |
+| 191 | [`191-anagrams.apl`](../examples/191-anagrams.apl) | كشف الجناس الناقص |
+| 192 | [`192-collatz.apl`](../examples/192-collatz.apl) | متتالية كولاتز |
+| 193 | [`193-fizzbuzz.apl`](../examples/193-fizzbuzz.apl) | فيزباز |
+| 194 | [`194-sieve-primes.apl`](../examples/194-sieve-primes.apl) | غربال إراتوستينس |
+| 195 | [`195-matrix-multiply.apl`](../examples/195-matrix-multiply.apl) | ضرب المصفوفات |
+| 196 | [`196-number-to-words.apl`](../examples/196-number-to-words.apl) | تحويل الأرقام إلى كلمات عربية |
+| 197 | [`197-temperature-stats.apl`](../examples/197-temperature-stats.apl) | إحصاءات درجات الحرارة |
+| 198 | [`198-todo-json.apl`](../examples/198-todo-json.apl) | قائمة مهام محفوظة في ملف JSON |
+| 199 | [`199-banking-oop.apl`](../examples/199-banking-oop.apl) | نظام بنكي بسيط بالكائنات |
+| 200 | [`200-final-showcase-2.apl`](../examples/200-final-showcase-2.apl) | لوحة نتائج الطلاب |
 
 **التشغيل:**
 ```bash
@@ -303,4 +401,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **136,554 عنصراً**،
-مع **102 مثالاً جاهزاً** في `examples/`.
+مع **200 مثال جاهز** في `examples/`.
