@@ -367,6 +367,7 @@
 | `IO_حلقة_ولّد_نداء` | `tornado.platform.asyncio.IOLoop.spawn_callback` |
 | `I_بف_4_شبكة` | `fastapi.encoders.IPv4Network` |
 | `I_بف_4_شبكة_اعكس_مؤشر` | `fastapi.encoders.IPv4Network.reverse_pointer` |
+| `I_بف_4_شبكة_بالطول` | `fastapi.encoders.IPv4Network.prefixlen` |
 | `I_بف_4_شبكة_تتبع_بالطول` | `fastapi.encoders.IPv4Network.with_prefixlen` |
 | `I_بف_4_شبكة_تتبع_شبكة` | `fastapi.encoders.IPv4Network.with_netmask` |
 | `I_بف_4_شبكة_تتبع_هوستماسك` | `fastapi.encoders.IPv4Network.with_hostmask` |
@@ -630,7 +631,7 @@
 | `WSGI_استقبال` | `starlette.middleware.wsgi.Receive` |
 | `WSGI_ريسبوندير` | `starlette.middleware.wsgi.WSGIResponder` |
 | `WSGI_ريسبوندير_ابدأ_استجابة` | `starlette.middleware.wsgi.WSGIResponder.start_response` |
-| `WSGI_ريسبوندير_مرسل` | `uvicorn.middleware.wsgi.WSGIResponder.sender` |
+| `WSGI_ريسبوندير_مرسل` | `starlette.middleware.wsgi.WSGIResponder.sender` |
 | `WSGI_ريسبوندير_ويب_WSGI` | `uvicorn.middleware.wsgi.WSGIResponder.wsgi` |
 | `WSGI_كائن_أرسل_تدفق` | `starlette.middleware.wsgi.ObjectSendStream` |
 | `WSGI_كائن_استقبال_تدفق` | `starlette.middleware.wsgi.ObjectReceiveStream` |
@@ -1135,7 +1136,6 @@
 | `أرسل_دينيال_استجابة` | `fastapi.WebSocket.send_denial_response` |
 | `أرسل_مبكر_تلميحات` | `fastapi.Request.send_early_hints` |
 | `أرسل_ووتجوينج_رسائل` | `websockets.cli.send_outgoing_messages` |
-| `أصلي` | `fastapi.encoders.Color.original` |
 | `أضف_إشارة_معالج` | `tornado.platform.asyncio.AddThreadSelectorEventLoop.add_signal_handler` |
 | `أضف_استثناء_معالج` | `fastapi.FastAPI.add_exception_handler` |
 | `أضف_التحميل_خطاف` | `tornado.autoreload.add_reload_hook` |
@@ -1812,7 +1812,6 @@
 | `الشبكات` | `fastapi.encoders.IPv4Network.overlaps` |
 | `الضبط_طابور` | `websockets.sync.connection.Assembler.reset_queue` |
 | `العمليات_احصل_عملية` | `uvicorn.supervisors.multiprocess.get_subprocess` |
-| `المصدر` | `starlette.datastructures.shlex.sourcehook` |
 | `المعكوس` | `anyio.itertools.filterfalse` |
 | `النص_محلي` | `tornado.locale.GettextLocale` |
 | `النص_محلي_احصل` | `tornado.locale.GettextLocale.get` |
@@ -1844,7 +1843,6 @@
 | `ايتير_نص` | `starlette.testclient.WebSocketDenialResponse.aiter_text` |
 | `باتكهيد` | `anyio.itertools.batched` |
 | `باسيريلواد_قاعدة_التحميل` | `uvicorn.supervisors.basereload.BaseReload` |
-| `بالطول` | `fastapi.encoders.IPv4Network.prefixlen` |
 | `بايت_أرسل_تدفق_متزامن` | `anyio.streams.file.ByteSendStream.aclose` |
 | `بايت_استقبال_تدفق_متزامن` | `anyio.streams.buffered.ByteReceiveStream.aclose` |
 | `بايت_تدفق_أرسل_ملف` | `anyio.streams.buffered.ByteStream.send_eof` |
@@ -2016,7 +2014,6 @@
 | `تطبيق_سجّل_اطلب` | `tornado.testing.Application.log_request` |
 | `تطبيق_على_إغلاق` | `tornado.testing.Application.on_close` |
 | `تعاونية_أرسل` | `anyio.functools.Coroutine.send` |
-| `تعريف` | `fastapi.Cookie` |
 | `تعريف_إهجار_رسالة` | `fastapi.params.Cookie.deprecation_message` |
 | `تعريف_احصل_افتراضي` | `fastapi.params.Cookie.get_default` |
 | `تعريف_ادمج_حقل_معلومات` | `fastapi.params.Cookie.merge_field_infos` |
@@ -2610,7 +2607,6 @@
 | `صيّر` | `fastapi.Response.render` |
 | `صيّر_نص` | `tornado.web.UIModule.render_string` |
 | `ضاغط` | `starlette.middleware.gzip.GZipResponder.compressor` |
-| `ضعيف_مفتاح_قاموس_المفاتيح` | `anyio.functools.WeakKeyDictionary.keyrefs` |
 | `ضمّ_استعلام_معاملات` | `starlette.datastructures.URL.include_query_params` |
 | `ضمّ_موجّه` | `fastapi.FastAPI.include_router` |
 | `طابور_حجم` | `tornado.queues.Queue.maxsize` |
@@ -2751,6 +2747,7 @@
 | `فاستابي_استجابة` | `fastapi.Response` |
 | `فاستابي_اطلب` | `fastapi.Request` |
 | `فاستابي_تبعية` | `fastapi.Depends` |
+| `فاستابي_تعريف` | `fastapi.Cookie` |
 | `فاستابي_رأس` | `fastapi.Header` |
 | `فاستابي_رفع_ملف` | `fastapi.UploadFile` |
 | `فاستابي_متن` | `fastapi.Body` |
@@ -2928,6 +2925,7 @@
 | `كلمات_ادفع_رمز` | `starlette.datastructures.shlex.push_token` |
 | `كلمات_ادفع_مصدر` | `starlette.datastructures.shlex.push_source` |
 | `كلمات_اسحب_مصدر` | `starlette.datastructures.shlex.pop_source` |
+| `كلمات_المصدر` | `starlette.datastructures.shlex.sourcehook` |
 | `كلمات_ترقيم_أحرف` | `starlette.datastructures.shlex.punctuation_chars` |
 | `كلمات_خطأ_زعيم` | `starlette.datastructures.shlex.error_leader` |
 | `كولووريزيد_مُنسّق` | `uvicorn.logging.ColourizedFormatter` |
@@ -2980,6 +2978,7 @@
 | `له_مطلوب_نطاق` | `starlette.authentication.has_required_scope` |
 | `له_معلق_كانكيللاتيون` | `anyio.streams.memory.TaskInfo.has_pending_cancellation` |
 | `لون` | `fastapi.encoders.Color` |
+| `لون_أصلي` | `fastapi.encoders.Color.original` |
 | `لون_مستوى_اسم` | `uvicorn.logging.ColourizedFormatter.color_level_name` |
 | `لووليفيل_ألغِ_سهييلديد_نقطة` | `anyio.lowlevel.cancel_shielded_checkpoint` |
 | `لووليفيل_نقطة_إذا_مُلغى` | `anyio.lowlevel.checkpoint_if_cancelled` |
@@ -3590,7 +3589,6 @@
 | `مرجع_نموذج_حقول` | `fastapi.openapi.models.Reference.model_fields` |
 | `مرجع_نموذج_حقول_عيّن` | `fastapi.openapi.models.Reference.model_fields_set` |
 | `مرجع_نموذج_نسخ` | `fastapi.openapi.models.Reference.model_copy` |
-| `مرسل` | `starlette.middleware.wsgi.WSGIResponder.sender` |
 | `مرمّز_نص` | `fastapi.encoders.AnyUrl.encoded_string` |
 | `مسار_تطابقات` | `starlette.routing.Route.matches` |
 | `مسار_رابط_مسار_لأجل` | `starlette.routing.Route.url_path_for` |
@@ -4833,6 +4831,7 @@
 | `ويب_WSGI` | `starlette.middleware.wsgi.WSGIResponder.wsgi` |
 | `ويب_WSGI_أي` | `starlette.middleware.wsgi.Any` |
 | `ويب_WSGI_ريسبوندير_ابدأ_استجابة` | `uvicorn.middleware.wsgi.WSGIResponder.start_response` |
+| `ويب_WSGI_ريسبوندير_مرسل` | `uvicorn.middleware.wsgi.WSGIResponder.sender` |
 | `ويب_XML` | `fastapi.openapi.models.XML` |
 | `ويب_accumulate` | `anyio.itertools.accumulate` |
 | `ويب_collection` | `fastapi.routing.Collection` |
@@ -6130,6 +6129,7 @@
 | `ويب_ضعيف_مفتاح_قاموس_احصل` | `anyio.functools.WeakKeyDictionary.get` |
 | `ويب_ضعيف_مفتاح_قاموس_اسحب` | `anyio.functools.WeakKeyDictionary.pop` |
 | `ويب_ضعيف_مفتاح_قاموس_افتراضياً` | `anyio.functools.WeakKeyDictionary.setdefault` |
+| `ويب_ضعيف_مفتاح_قاموس_المفاتيح` | `anyio.functools.WeakKeyDictionary.keyrefs` |
 | `ويب_ضعيف_مفتاح_قاموس_حدّث` | `anyio.functools.WeakKeyDictionary.update` |
 | `ويب_ضعيف_مفتاح_قاموس_عناصر` | `anyio.functools.WeakKeyDictionary.items` |
 | `ويب_ضعيف_مفتاح_قاموس_عنصراً` | `anyio.functools.WeakKeyDictionary.popitem` |
@@ -7733,7 +7733,6 @@
 | `أمان_قاعدة_نموذج_إعداد` | `fastapi.openapi.models.SecurityBase.model_config` |
 | `أمان_قاعدة_نموذج_نموذج_إعداد` | `fastapi.security.base.SecurityBaseModel.model_config` |
 | `أمان_مخطط_نوع_افتح_معرف_اتصل` | `fastapi.openapi.models.SecuritySchemeType.openIdConnect` |
-| `أمثلة` | `fastapi.dependencies.utils.FieldInfo.examples` |
 | `أنواع_استثناء_معالج` | `starlette.types.ExceptionHandler` |
 | `أنواع_تطبيق_نوع` | `starlette.types.AppType` |
 | `أنواع_ديكوراتيد_للاستدعاء` | `fastapi.types.DecoratedCallable` |
@@ -7791,7 +7790,6 @@
 | `افتح_معرف_اتصل_نموذج_نموذج_إعداد` | `fastapi.security.open_id_connect_url.OpenIdConnectModel.model_config` |
 | `افتراضي_نوع` | `fastapi.datastructures.DefaultType` |
 | `افصل_نتيجة_الشبكة` | `starlette.datastructures.SplitResult.netloc` |
-| `الأجزاء` | `starlette.formparsers.multipart` |
 | `الأجزاء_Incorrect_ثبّت_خطأ` | `fastapi.dependencies.utils.multipart_incorrect_install_error` |
 | `الأجزاء_جزء_حقل_اسم` | `starlette.formparsers.MultipartPart.field_name` |
 | `الأجزاء_جزء_محتوى_توجّه` | `starlette.formparsers.MultipartPart.content_disposition` |
@@ -7930,6 +7928,7 @@
 | `عملية_ويب_STREAM` | `tornado.testing.Subprocess.STREAM` |
 | `عميل_افصل_معطيات` | `starlette.middleware.base.ClientDisconnect.args` |
 | `عنوان_منفذ` | `fastapi.datastructures.Address.port` |
+| `فورمبارسيرس_الأجزاء` | `starlette.formparsers.multipart` |
 | `فورمبارسيرس_تعليقات` | `starlette.formparsers.annotations` |
 | `فورمبارسيرس_ويب_TYPE_CHECKING` | `starlette.formparsers.TYPE_CHECKING` |
 | `فونكتوولس_تعليقات` | `anyio.functools.annotations` |
@@ -8513,7 +8512,8 @@
 | `ويب_جزئي_مفتاحية_2` | `starlette.responses.partial.keywords` |
 | `ويب_حقل_معلومة_KW_فقط` | `fastapi.params.FieldInfo.kw_only` |
 | `ويب_حقل_معلومة_KW_فقط_2` | `fastapi.utils.FieldInfo.kw_only` |
-| `ويب_حقل_معلومة_أمثلة` | `fastapi.utils.FieldInfo.examples` |
+| `ويب_حقل_معلومة_أمثلة` | `fastapi.dependencies.utils.FieldInfo.examples` |
+| `ويب_حقل_معلومة_أمثلة_2` | `fastapi.utils.FieldInfo.examples` |
 | `ويب_حقل_معلومة_استبعاد` | `fastapi.utils.FieldInfo.exclude` |
 | `ويب_حقل_معلومة_استبعاد_إذا` | `fastapi.utils.FieldInfo.exclude_if` |
 | `ويب_حقل_معلومة_اسم_مستعار` | `fastapi.params.FieldInfo.serialization_alias` |

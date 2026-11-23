@@ -140,7 +140,6 @@
 | `HTTP_رابط_يساراً` | `pydantic.v1.HttpUrl.ljust` |
 | `HTTP_رابط_يميناً` | `pydantic.v1.HttpUrl.rjust` |
 | `I_بف_4_شبكة_الشبكات` | `pydantic.deprecated.json.IPv4Network.overlaps` |
-| `I_بف_4_شبكة_بالطول` | `pydantic.deprecated.json.IPv4Network.prefixlen` |
 | `I_بف_4_شبكة_بث_عنوان` | `pydantic.deprecated.json.IPv4Network.broadcast_address` |
 | `I_بف_4_شبكة_تبعية_من` | `pydantic.deprecated.json.IPv4Network.subnet_of` |
 | `I_بف_4_شبكة_خطأ` | `pydantic.v1.IPv4NetworkError` |
@@ -1824,7 +1823,6 @@
 | `تحقق_بايثون_معالج_بروتوكول_على_موعداً` | `pydantic.plugin.ValidatePythonHandlerProtocol.on_enter` |
 | `تحقق_بايثون_معالج_بروتوكول_على_نجاح` | `pydantic.plugin.ValidatePythonHandlerProtocol.on_success` |
 | `تحقق_بايدانتك_نواة_إصدار` | `pydantic.version.check_pydantic_core_version` |
-| `تحقق_بريد` | `pydantic.networks.validate_email` |
 | `تحقق_تعبير_جذر_نوع` | `pydantic.v1.main.validate_custom_root_type` |
 | `تحقق_جديد` | `pydantic.types.PathType.validate_new` |
 | `تحقق_جيسون` | `pydantic.TypeAdapter.validate_json` |
@@ -2762,7 +2760,7 @@
 | `سبيكيفيكاتيون` | `referencing.Specification` |
 | `سبيكيفيكاتيون_إنشاء_مورد` | `referencing.jsonschema.Specification.create_resource` |
 | `سبيكيفيكاتيون_تتبع` | `referencing.jsonschema.specification_with` |
-| `سبيكيفيكاتيون_كشف` | `referencing.jsonschema.Specification.detect` |
+| `سبيكيفيكاتيون_كشف` | `referencing.Specification.detect` |
 | `سبيكيفيكاتيون_مرساة_في` | `referencing.jsonschema.Specification.anchors_in` |
 | `ستريكتورل` | `pydantic.v1.networks.stricturl` |
 | `سطر_ديفيني` | `jsonschema.cli.define` |
@@ -3489,7 +3487,6 @@
 | `كرّر_أخطاء` | `jsonschema.Draft201909Validator.iter_errors` |
 | `كرّر_اتحاد_خيارات` | `pydantic_core.core_schema.iter_union_choices` |
 | `كرّر_كونتاينيد_نوع` | `pydantic.v1.generics.iter_contained_typevars` |
-| `كشف` | `referencing.Specification.detect` |
 | `كل_حرفي_قيم` | `pydantic.v1.schema.all_literal_values` |
 | `كل_يدينتيكال` | `pydantic.v1.generics.all_identical` |
 | `كولليكتيونس_للتجزئة` | `pydantic.v1.fields.CollectionsHashable` |
@@ -3705,7 +3702,6 @@
 | `كونليست` | `pydantic.conlist` |
 | `كونينت` | `pydantic.conint` |
 | `لأجل_عنصر` | `pydantic.v1.fields.ValueItems.for_element` |
-| `لا` | `annotated_types.Not` |
 | `لا_رقم_خطأ` | `pydantic.v1.NotDigitError` |
 | `لا_رقم_خطأ_أضف_ملاحظة` | `pydantic.v1.NotDigitError.add_note` |
 | `لا_رقم_خطأ_تتبع_الخطأ` | `pydantic.v1.NotDigitError.with_traceback` |
@@ -3773,7 +3769,6 @@
 | `للعكس` | `typing_extensions.Reversible` |
 | `لون_RGB_إلى_هلس` | `pydantic.v1.color.rgb_to_hls` |
 | `لون_ints_إلى_رجبا` | `pydantic.v1.color.ints_to_rgba` |
-| `لون_أصلي` | `pydantic.color.Color.original` |
 | `لون_أي` | `pydantic.color.Any` |
 | `لون_اتحاد` | `pydantic.color.Union` |
 | `لون_اختياري` | `pydantic.color.Optional` |
@@ -4527,6 +4522,7 @@
 | `مُعلَّق_أنواع_فترة` | `annotated_types.Interval` |
 | `مُعلَّق_أنواع_قاعدة_نموذج` | `pydantic.v1.annotated_types.BaseModel` |
 | `مُعلَّق_أنواع_قاموس` | `pydantic.v1.annotated_types.Dict` |
+| `مُعلَّق_أنواع_لا` | `annotated_types.Not` |
 | `مُعلَّق_أنواع_مجمّد_عيّن` | `pydantic.v1.annotated_types.FrozenSet` |
 | `مُعلَّق_أنواع_مسمّى_صف` | `pydantic.v1.annotated_types.NamedTuple` |
 | `مُعلَّق_أنواع_نوع` | `pydantic.v1.annotated_types.Type` |
@@ -4809,11 +4805,12 @@
 | `نماذج_I_بف_4_شبكة_الشبكات_3` | `pydantic.v1.networks.IPv4Network.overlaps` |
 | `نماذج_I_بف_4_شبكة_الشبكات_4` | `pydantic.v1.schema.IPv4Network.overlaps` |
 | `نماذج_I_بف_4_شبكة_الشبكات_5` | `pydantic.v1.validators.IPv4Network.overlaps` |
-| `نماذج_I_بف_4_شبكة_بالطول` | `pydantic.networks.IPv4Network.prefixlen` |
-| `نماذج_I_بف_4_شبكة_بالطول_2` | `pydantic.v1.json.IPv4Network.prefixlen` |
-| `نماذج_I_بف_4_شبكة_بالطول_3` | `pydantic.v1.networks.IPv4Network.prefixlen` |
-| `نماذج_I_بف_4_شبكة_بالطول_4` | `pydantic.v1.schema.IPv4Network.prefixlen` |
-| `نماذج_I_بف_4_شبكة_بالطول_5` | `pydantic.v1.validators.IPv4Network.prefixlen` |
+| `نماذج_I_بف_4_شبكة_بالطول` | `pydantic.deprecated.json.IPv4Network.prefixlen` |
+| `نماذج_I_بف_4_شبكة_بالطول_2` | `pydantic.networks.IPv4Network.prefixlen` |
+| `نماذج_I_بف_4_شبكة_بالطول_3` | `pydantic.v1.json.IPv4Network.prefixlen` |
+| `نماذج_I_بف_4_شبكة_بالطول_4` | `pydantic.v1.networks.IPv4Network.prefixlen` |
+| `نماذج_I_بف_4_شبكة_بالطول_5` | `pydantic.v1.schema.IPv4Network.prefixlen` |
+| `نماذج_I_بف_4_شبكة_بالطول_6` | `pydantic.v1.validators.IPv4Network.prefixlen` |
 | `نماذج_I_بف_4_شبكة_بث_عنوان` | `pydantic.networks.IPv4Network.broadcast_address` |
 | `نماذج_I_بف_4_شبكة_بث_عنوان_2` | `pydantic.v1.json.IPv4Network.broadcast_address` |
 | `نماذج_I_بف_4_شبكة_بث_عنوان_3` | `pydantic.v1.networks.IPv4Network.broadcast_address` |
@@ -8029,6 +8026,7 @@
 | `نماذج_زمنية_الصيفي` | `annotated_types.test_cases.timezone.dst` |
 | `نماذج_زمنية_الصيفي_2` | `pydantic.v1.datetime_parse.timezone.dst` |
 | `نماذج_زمنية_نماذج_utcoffset` | `pydantic.v1.datetime_parse.timezone.utcoffset` |
+| `نماذج_سبيكيفيكاتيون_كشف` | `referencing.jsonschema.Specification.detect` |
 | `نماذج_سلسلة_خريطة_آباء` | `pydantic.v1.class_validators.ChainMap.parents` |
 | `نماذج_سلسلة_خريطة_احصل` | `pydantic.v1.class_validators.ChainMap.get` |
 | `نماذج_سلسلة_خريطة_اسحب` | `pydantic.v1.class_validators.ChainMap.pop` |
@@ -9759,9 +9757,10 @@
 | `نماذج_للتجزئة_خطأ_تتبع_الخطأ` | `pydantic.v1.errors.HashableError.with_traceback` |
 | `نماذج_لون` | `pydantic.color.Color` |
 | `نماذج_لون_2` | `pydantic.v1.color.Color` |
-| `نماذج_لون_أصلي` | `pydantic.deprecated.json.Color.original` |
-| `نماذج_لون_أصلي_2` | `pydantic.v1.color.Color.original` |
-| `نماذج_لون_أصلي_3` | `pydantic.v1.json.Color.original` |
+| `نماذج_لون_أصلي` | `pydantic.color.Color.original` |
+| `نماذج_لون_أصلي_2` | `pydantic.deprecated.json.Color.original` |
+| `نماذج_لون_أصلي_3` | `pydantic.v1.color.Color.original` |
+| `نماذج_لون_أصلي_4` | `pydantic.v1.json.Color.original` |
 | `نماذج_لون_أي` | `pydantic.v1.color.Any` |
 | `نماذج_لون_اتحاد` | `pydantic.v1.color.Union` |
 | `نماذج_لون_اختياري` | `pydantic.v1.color.Optional` |
@@ -11485,6 +11484,7 @@
 | `نماذج_نيتووركس_أي_رابط` | `pydantic.v1.networks.AnyUrl` |
 | `نماذج_نيتووركس_اسم_بريد` | `pydantic.v1.networks.NameEmail` |
 | `نماذج_نيتووركس_بوستجريس_DSN` | `pydantic.v1.networks.PostgresDsn` |
+| `نماذج_نيتووركس_تحقق_بريد` | `pydantic.v1.networks.validate_email` |
 | `نماذج_نيتووركس_ريديس_DSN` | `pydantic.v1.networks.RedisDsn` |
 | `نماذج_نيتووركس_ملف_رابط` | `pydantic.v1.networks.FileUrl` |
 | `نماذج_نيتووركس_نماذج_Mongo_DSN` | `pydantic.v1.networks.MongoDsn` |
@@ -11961,7 +11961,7 @@
 | `نيتووركس_بريد_نص` | `pydantic.v1.networks.EmailStr` |
 | `نيتووركس_بلا_نوع_تحقق` | `pydantic.v1.networks.no_type_check` |
 | `نيتووركس_بوستجريس_DSN` | `pydantic.networks.PostgresDsn` |
-| `نيتووركس_تحقق_بريد` | `pydantic.v1.networks.validate_email` |
+| `نيتووركس_تحقق_بريد` | `pydantic.networks.validate_email` |
 | `نيتووركس_جيسون_مخطط_قيمة` | `pydantic.networks.JsonSchemaValue` |
 | `نيتووركس_حقول` | `pydantic.networks.fields` |
 | `نيتووركس_خاصية_ميجراتيون` | `pydantic.networks.getattr_migration` |
@@ -12884,7 +12884,6 @@
 | `قائمة_فريد_عناصر_خطأ_رسالة_قالب` | `pydantic.v1.ListUniqueItemsError.msg_template` |
 | `قائمة_فريد_عناصر_خطأ_شيفرة` | `pydantic.v1.ListUniqueItemsError.code` |
 | `قائمة_فريد_عناصر_خطأ_معطيات` | `pydantic.v1.ListUniqueItemsError.args` |
-| `قابل` | `pydantic.v1.class_validators.Validator.always` |
 | `قاعدة_إعداد_ORM_وضع` | `pydantic.v1.config.BaseConfig.orm_mode` |
 | `قاعدة_إعداد_أبقِ_ونتووكهيد` | `pydantic.v1.config.BaseConfig.keep_untouched` |
 | `قاعدة_إعداد_أدنى_انيستر_طول` | `pydantic.v1.config.BaseConfig.min_anystr_length` |
@@ -13035,7 +13034,7 @@
 | `متحقق_تجاوز_على_فشل` | `pydantic.v1.fields.Validator.skip_on_failure` |
 | `متحقق_تحقق_حقول` | `pydantic.v1.fields.Validator.check_fields` |
 | `متحقق_دالة` | `pydantic.v1.class_validators.Validator.func` |
-| `متحقق_قابل` | `pydantic.v1.fields.Validator.always` |
+| `متحقق_قابل` | `pydantic.v1.class_validators.Validator.always` |
 | `متحقق_قبل` | `pydantic.v1.class_validators.Validator.pre` |
 | `متحقق_ياكه_عنصر` | `pydantic.v1.fields.Validator.each_item` |
 | `متحققون` | `pydantic.v1.env_settings.ModelField.validators` |
@@ -14639,6 +14638,7 @@
 | `نماذج_ماضٍ_تاريخ_شهر` | `pydantic.v1.types.PastDate.month` |
 | `نماذج_ماضٍ_تاريخ_يوم` | `pydantic.v1.types.PastDate.day` |
 | `نماذج_متحقق_دالة` | `pydantic.v1.fields.Validator.func` |
+| `نماذج_متحقق_قابل` | `pydantic.v1.fields.Validator.always` |
 | `نماذج_متحقق_قبل` | `pydantic.v1.fields.Validator.pre` |
 | `نماذج_متعدد_مضيف_رابط_مخطط` | `pydantic_core.MultiHostUrl.scheme` |
 | `نماذج_مجمّد_عيّن_أدنى_طول_خطأ_رسالة_قالب` | `pydantic.v1.errors.FrozenSetMinLengthError.msg_template` |

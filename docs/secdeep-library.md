@@ -21,6 +21,7 @@
 | `C_فقط_إذا` | `pycparser.c_ast.If` |
 | `C_فقط_إعلان` | `pycparser.c_ast.Decl` |
 | `C_فقط_بنية` | `pycparser.c_ast.Struct` |
+| `C_فقط_طالما` | `pycparser.c_ast.While` |
 | `C_محلل_fix_switch_حالات` | `pycparser.c_parser.fix_switch_cases` |
 | `C_محلل_fix_ذري_سبيكيفييرس` | `pycparser.c_parser.fix_atomic_specifiers` |
 | `C_محلل_بلا_أرجع` | `pycparser.c_parser.NoReturn` |
@@ -1147,7 +1148,8 @@
 | `أمان_ريبياتيد_حقل_بب_نوع` | `proto.message.RepeatedField.pb_type` |
 | `أمان_ريبياتيد_حقل_حجة` | `proto.fields.RepeatedField.descriptor` |
 | `أمان_ريبياتيد_حقل_حجة_2` | `proto.message.RepeatedField.descriptor` |
-| `أمان_ريبياتيد_حقل_عمر` | `proto.message.RepeatedField.package` |
+| `أمان_ريبياتيد_حقل_عمر` | `proto.fields.RepeatedField.package` |
+| `أمان_ريبياتيد_حقل_عمر_2` | `proto.message.RepeatedField.package` |
 | `أمان_ريبياتيد_رتّب` | `proto.marshal.marshal.Repeated.sort` |
 | `أمان_ريبياتيد_عدد` | `proto.marshal.marshal.Repeated.count` |
 | `أمان_ريبياتيد_فهرس` | `proto.marshal.marshal.Repeated.index` |
@@ -1941,6 +1943,7 @@
 | `اعتماد_تعداد` | `google.auth.credentials.Enum` |
 | `اعتماد_توقيع` | `google.auth.credentials.Signing` |
 | `اعتماد_توقيع_بايتات` | `google.auth.impersonated_credentials.Credentials.sign_bytes` |
+| `اعتماد_حساب` | `google.oauth2.credentials.Credentials.account` |
 | `اعتماد_خدمة_حساب_بريد` | `google.auth.aws.Credentials.service_account_email` |
 | `اعتماد_رمز_حالة` | `google.auth.app_engine.Credentials.token_state` |
 | `اعتماد_رمز_معلومة_رابط` | `google.auth.external_account.Credentials.token_info_url` |
@@ -2647,7 +2650,6 @@
 | `حجم_تام` | `cryptography.hazmat.asn1.Size.exact` |
 | `حدّث_إلى` | `cryptography.cobblestone.Cobblestone128Decryptor.update_into` |
 | `حذّر_إهجار_لأجل_إصدارات_أصغر_تهان` | `google.api_core.warn_deprecation_for_versions_less_than` |
-| `حساب` | `google.oauth2.credentials.Credentials.account` |
 | `حشو_بتات` | `cryptography.hazmat.asn1.BitString.padding_bits` |
 | `حقل_ابحث_ينيتياليزاتيون_أخطاء` | `google.protobuf.type_pb2.Field.FindInitializationErrors` |
 | `حقل_ادمج_من` | `google.protobuf.type_pb2.Field.MergeFrom` |
@@ -3146,7 +3148,7 @@
 | `ريبياتيد_حقل_اسم` | `proto.RepeatedField.name` |
 | `ريبياتيد_حقل_بب_نوع` | `proto.fields.RepeatedField.pb_type` |
 | `ريبياتيد_حقل_حجة` | `proto.RepeatedField.descriptor` |
-| `ريبياتيد_حقل_عمر` | `proto.fields.RepeatedField.package` |
+| `ريبياتيد_حقل_عمر` | `proto.RepeatedField.package` |
 | `ريبياتيد_رتّب` | `proto.marshal.collections.Repeated.sort` |
 | `ريبياتيد_عدد` | `proto.marshal.collections.Repeated.count` |
 | `ريبياتيد_فهرس` | `proto.marshal.collections.Repeated.index` |
@@ -3471,7 +3473,6 @@
 | `صفحة_مكرّر_مكرّر` | `google.api_core.page_iterator.Iterator` |
 | `ضبط_افتراضيات` | `google.api_core.client_logging.configure_defaults` |
 | `ضمني_صريح` | `cryptography.hazmat.asn1.Implicit.Explicit` |
-| `طالما` | `pycparser.c_ast.While` |
 | `طالما_أبناء` | `pycparser.c_ast.While.children` |
 | `طالما_أظهر` | `pycparser.c_ast.While.show` |
 | `طبعة_افتراضي` | `google.protobuf.descriptor_pb2.FieldOptions.EditionDefault` |
@@ -3534,7 +3535,6 @@
 | `على_ديماند_اعتماد_من_خدمة_حساب_معلومة` | `google.auth.jwt.OnDemandCredentials.from_service_account_info` |
 | `على_ديماند_اعتماد_من_خدمة_حساب_ملف` | `google.auth.jwt.OnDemandCredentials.from_service_account_file` |
 | `على_ديماند_اعتماد_ونيفيرسي_نطاق` | `google.auth.jwt.OnDemandCredentials.universe_domain` |
-| `عمر` | `proto.RepeatedField.package` |
 | `عملية_Op` | `pycparser.c_ast.UnaryOp` |
 | `عملية_Op_أبناء` | `pycparser.c_ast.UnaryOp.children` |
 | `عملية_Op_أظهر` | `pycparser.c_ast.UnaryOp.show` |
@@ -5702,6 +5702,7 @@
 | `ثابت_فويدب_نوع` | `cffi.model.const_voidp_type` |
 | `ثنائي_Op_سمة_أسماء` | `pycparser.c_ast.BinaryOp.attr_names` |
 | `ثنائي_Op_كوورد` | `pycparser.c_ast.BinaryOp.coord` |
+| `ثنائي_Op_يسار` | `pycparser.c_ast.BinaryOp.left` |
 | `ثنائي_Op_يمين` | `pycparser.c_ast.BinaryOp.right` |
 | `جربك` | `google.api_core.exceptions.grpc` |
 | `جلسة_رمز` | `google.auth.aws.AwsSecurityCredentials.session_token` |
@@ -6182,7 +6183,6 @@
 | `ووقت_تتبع_نانوسيكوندس_ميكروثانية` | `google.api_core.datetime_helpers.DatetimeWithNanoseconds.microsecond` |
 | `ووقت_تتبع_نانوسيكوندس_يوم` | `google.api_core.datetime_helpers.DatetimeWithNanoseconds.day` |
 | `يتطلب_CRYPTOGRAPHY` | `jwt.algorithms.requires_cryptography` |
-| `يسار` | `pycparser.c_ast.BinaryOp.left` |
 | `يسسوينج_توزيع_نقطة_كائن` | `cryptography.x509.IssuingDistributionPoint.oid` |
 | `يفتروي` | `pycparser.c_ast.If.iftrue` |
 | `يففالسي` | `pycparser.c_ast.If.iffalse` |

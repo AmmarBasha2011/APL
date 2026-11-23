@@ -101,6 +101,7 @@
 | `HTTP_عميل_احصل` | `redis.http.http_client.HttpClient.get` |
 | `HTTP_عميل_اطلب` | `redis.http.http_client.HttpClient.request` |
 | `HTTP_عميل_الرابط` | `redis.http.http_client.urlopen` |
+| `HTTP_عميل_العناوين` | `redis.http.http_client.urljoin` |
 | `HTTP_عميل_العنوان` | `redis.http.http_client.urlencode` |
 | `HTTP_عميل_المحاولة` | `redis.http.http_client.Retry` |
 | `HTTP_عميل_انشر` | `redis.http.http_client.HttpClient.post` |
@@ -1624,7 +1625,6 @@
 | `اتصال_الضبط_مؤقت_إعدادات` | `redis.asyncio.client.Connection.reset_tmp_settings` |
 | `اتصال_الضبط_مستقبَل_إشعارات` | `redis.asyncio.client.Connection.reset_received_notifications` |
 | `اتصال_الضبط_ينبغي_الاتصال` | `redis.asyncio.client.Connection.reset_should_reconnect` |
-| `اتصال_العنوان` | `redis.connection.urlparse` |
 | `اتصال_الكلمات` | `redis.asyncio.client.ConnectionPool.connection_kwargs` |
 | `اتصال_المحاولة` | `redis.asyncio.connection.Retry` |
 | `اتصال_المستخدم_المرور_اعتماد_مزوّد` | `redis.connection.UsernamePasswordCredentialProvider` |
@@ -1934,7 +1934,6 @@
 | `الضبط_Observability_نسخة` | `redis.observability.providers.reset_observability_instance` |
 | `الضبط_بعد_تفرّع` | `redis.maint_notifications.MaintNotificationsPoolHandler.reset_after_fork` |
 | `الضبط_كولليكتور` | `redis.observability.recorder.reset_collector` |
-| `العناوين` | `redis.http.http_client.urljoin` |
 | `الكود` | `redis.http.http_client.HTTPError.getcode` |
 | `المحاولة_أي` | `redis.asyncio.retry.Any` |
 | `المحاولة_اتحاد` | `redis.asyncio.retry.Union` |
@@ -2800,7 +2799,6 @@
 | `ديناميكي_وصفية_محلّل_هو_cacheable` | `redis.commands.metadata.DynamicMetadataResolver.is_cacheable` |
 | `ديناميكي_وصفية_محلّل_هو_replica_آمن` | `redis.commands.metadata.DynamicMetadataResolver.is_replica_safe` |
 | `ديناميكي_وصفية_محلّل_هو_trackable_قراءة` | `redis.commands.metadata.DynamicMetadataResolver.is_trackable_read` |
-| `ذات` | `redis.asyncio.client.Self` |
 | `رئيسي_عنوان` | `redis.sentinel.SentinelConnectionPool.master_address` |
 | `رئيسي_لأجل` | `redis.asyncio.sentinel.Sentinel.master_for` |
 | `رئيسي_لا_موجود_خطأ` | `redis.asyncio.sentinel.MasterNotFoundError` |
@@ -5240,7 +5238,7 @@
 | `عميل_حلل_واشتراك_subscriptions` | `redis.client.parse_pubsub_subscriptions` |
 | `عميل_حلّ_سائق_معلومة` | `redis.client.resolve_driver_info` |
 | `عميل_خريطة` | `redis.asyncio.client.Mapping` |
-| `عميل_ذات` | `redis.client.Self` |
+| `عميل_ذات` | `redis.asyncio.client.Self` |
 | `عميل_راقب_خطأ` | `redis.asyncio.client.WatchError` |
 | `عميل_ريديس` | `redis.asyncio.client.Redis` |
 | `عميل_ريديس_خطأ` | `redis.asyncio.client.RedisError` |
@@ -11282,6 +11280,7 @@
 | `مخزن_اتصال_الضبط_ينبغي_الاتصال_5` | `redis.cluster.Connection.reset_should_reconnect` |
 | `مخزن_اتصال_الضبط_ينبغي_الاتصال_6` | `redis.connection.Connection.reset_should_reconnect` |
 | `مخزن_اتصال_الضبط_ينبغي_الاتصال_7` | `redis.sentinel.Connection.reset_should_reconnect` |
+| `مخزن_اتصال_العنوان` | `redis.connection.urlparse` |
 | `مخزن_اتصال_المحاولة` | `redis.connection.Retry` |
 | `مخزن_اتصال_النظير` | `redis.asyncio.cluster.Connection.getpeername` |
 | `مخزن_اتصال_النظير_2` | `redis.asyncio.connection.Connection.getpeername` |
@@ -18119,6 +18118,7 @@
 | `مخزن_عميل_حدث_موجّه` | `redis.client.EventDispatcher` |
 | `مخزن_عميل_حرفي` | `redis.client.Literal` |
 | `مخزن_عميل_خريطة` | `redis.client.Mapping` |
+| `مخزن_عميل_ذات` | `redis.client.Self` |
 | `مخزن_عميل_راقب_خطأ` | `redis.client.WatchError` |
 | `مخزن_عميل_ريديس` | `redis.client.Redis` |
 | `مخزن_عميل_ريديس_خطأ` | `redis.client.RedisError` |
@@ -23070,6 +23070,7 @@
 | `TLS_إصدار_مخزن_TL_SV_1_3` | `redis.asyncio.connection.TLSVersion.TLSv1_3` |
 | `TS_معلومة_جزء_حجم` | `redis.commands.timeseries.TSInfo.chunk_size` |
 | `TS_معلومة_ذاكرة_استخدام` | `redis.commands.timeseries.TSInfo.memory_usage` |
+| `TS_معلومة_قواعد` | `redis.commands.timeseries.TSInfo.rules` |
 | `Telemetry_خيار_بسط` | `redis.observability.config.TelemetryOption.numerator` |
 | `Telemetry_خيار_تخيّلي` | `redis.observability.config.TelemetryOption.imag` |
 | `Telemetry_خيار_حقيقي` | `redis.observability.config.TelemetryOption.real` |
@@ -23226,7 +23227,6 @@
 | `الخطأ_نوع_التتبع_التالي` | `redis.lock.TracebackType.tb_next` |
 | `الخطأ_نوع_التتبع_السطر` | `redis.lock.TracebackType.tb_lineno` |
 | `الخطأ_نوع_التتبع_لاستي` | `redis.lock.TracebackType.tb_lasti` |
-| `الشبكة` | `redis.asyncio.connection.ParseResult.netloc` |
 | `المحاولة_على_خطأ` | `redis.asyncio.client.AbstractConnection.retry_on_error` |
 | `المحاولة_مخزن_TYPE_CHECKING` | `redis.asyncio.retry.TYPE_CHECKING` |
 | `المفاتيح_إشعارات_تعليقات` | `redis.asyncio.keyspace_notifications.annotations` |
@@ -23255,7 +23255,6 @@
 | `تفويل_خطأ_معطيات` | `redis.asyncio.cluster.AuthorizationError.args` |
 | `تكرار_مخزن_REDIS_CLUSTER_HASH_SLOTS` | `redis.crc.REDIS_CLUSTER_HASH_SLOTS` |
 | `تنفيذ_أجهض_خطأ_معطيات` | `redis.asyncio.client.ExecAbortError.args` |
-| `جزء` | `redis.asyncio.connection.ParseResult.fragment` |
 | `جزء_عدد` | `redis.commands.timeseries.TSInfo.chunk_count` |
 | `حارس_masters_استجابة` | `redis.commands.sentinel.SentinelMastersResponse` |
 | `حارس_اتصال_تجمع_مخزن_OMIT_REPR_KEYS` | `redis.asyncio.sentinel.SentinelConnectionPool.OMIT_REPR_KEYS` |
@@ -23298,6 +23297,7 @@
 | `حارس_ينكودابلي_T` | `redis.asyncio.sentinel.EncodableT` |
 | `حدث_مخزن_TYPE_CHECKING` | `redis.event.TYPE_CHECKING` |
 | `حقل_T` | `redis.asyncio.client.FieldT` |
+| `حلل_نتيجة_الشبكة` | `redis.asyncio.connection.ParseResult.netloc` |
 | `حمّل_balancing_استراتيجية_مخزن_RANDOM` | `redis.asyncio.cluster.LoadBalancingStrategy.RANDOM` |
 | `حمّل_balancing_استراتيجية_مخزن_RANDOM_REPLICA` | `redis.cluster.LoadBalancingStrategy.RANDOM_REPLICA` |
 | `حمّل_balancing_استراتيجية_مخزن_ROUND_ROBIN` | `redis.cluster.LoadBalancingStrategy.ROUND_ROBIN` |
@@ -23462,7 +23462,6 @@
 | `قراءة_فقط_خطأ_معطيات` | `redis.asyncio.ReadOnlyError.args` |
 | `قراءة_من_احتياطية` | `redis.asyncio.cluster.AsyncRedisClusterCommands.read_from_replicas` |
 | `قناة_T` | `redis.asyncio.client.ChannelT` |
-| `قواعد` | `redis.commands.timeseries.TSInfo.rules` |
 | `له_اكتمال_وصفية` | `redis.asyncio.cluster.CommandMetadata.has_complete_metadata` |
 | `له_مفتاح_حجة` | `redis.asyncio.cluster.CommandMetadata.has_key_argument` |
 | `له_نونديتيرمينيستيك_إخراج` | `redis.asyncio.cluster.CommandMetadata.has_nondeterministic_output` |
@@ -24171,6 +24170,7 @@
 | `مخزن_حارس_مُدار_اتصال_مقبس_مهلة` | `redis.asyncio.sentinel.SentinelManagedConnection.socket_timeout` |
 | `مخزن_حارس_ينكودابلي_T` | `redis.sentinel.EncodableT` |
 | `مخزن_حلل_نتيجة_استعلام` | `redis.asyncio.connection.ParseResult.query` |
+| `مخزن_حلل_نتيجة_جزء` | `redis.asyncio.connection.ParseResult.fragment` |
 | `مخزن_حلل_نتيجة_مخطط` | `redis.asyncio.connection.ParseResult.scheme` |
 | `مخزن_حلل_نتيجة_مسار` | `redis.asyncio.connection.ParseResult.path` |
 | `مخزن_حلل_نتيجة_معاملات` | `redis.asyncio.connection.ParseResult.params` |

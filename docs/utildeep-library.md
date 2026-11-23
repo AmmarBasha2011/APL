@@ -386,6 +386,7 @@
 | `أرشيف_ملف_استخرج` | `dateutil.zoneinfo.rebuild.TarFile.extract` |
 | `أرشيف_ملف_افتح` | `dateutil.zoneinfo.rebuild.TarFile.open` |
 | `أرشيف_ملف_الأسماء` | `dateutil.zoneinfo.rebuild.TarFile.getnames` |
+| `أرشيف_ملف_الأعضاء` | `dateutil.zoneinfo.rebuild.TarFile.getmembers` |
 | `أرشيف_ملف_التالي` | `dateutil.zoneinfo.rebuild.TarFile.next` |
 | `أرشيف_ملف_الكل` | `dateutil.zoneinfo.rebuild.TarFile.extractall` |
 | `أرشيف_ملف_المالك` | `dateutil.zoneinfo.rebuild.TarFile.chown` |
@@ -420,7 +421,6 @@
 | `افتراضي_بالفعل_عيّن_خطأ` | `attr.exceptions.DefaultAlreadySetError` |
 | `افتراضي_بالفعل_عيّن_خطأ_أضف_ملاحظة` | `attr.exceptions.DefaultAlreadySetError.add_note` |
 | `افتراضي_بالفعل_عيّن_خطأ_تتبع_الخطأ` | `attr.exceptions.DefaultAlreadySetError.with_traceback` |
-| `الأعضاء` | `dateutil.zoneinfo.rebuild.TarFile.getmembers` |
 | `الأوقات` | `dateutil.zoneinfo.rebuild.TarFile.utime` |
 | `البناء_تحقق_نداء` | `dateutil.zoneinfo.rebuild.check_call` |
 | `البهابيت_لانجواجيس` | `charset_normalizer.cd.alphabet_languages` |

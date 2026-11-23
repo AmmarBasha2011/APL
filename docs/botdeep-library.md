@@ -631,7 +631,6 @@
 | `الأمام_رسائل_إلى` | `telegram.ext.filters.TGChat.forward_messages_to` |
 | `الأمام_رسائل_من` | `telegram.ext.filters.TGChat.forward_messages_from` |
 | `الأمام_من` | `telegram.ext.filters.TGChat.forward_from` |
-| `البحث` | `telegram.ext.filters.Pattern.finditer` |
 | `التثبيت` | `telegram.ext.filters.Message.unpin` |
 | `التثبيت_رسالة` | `telegram.ext.filters.TGChat.unpin_message` |
 | `التثبيت_كل_general_منتدى_موضوع_رسائل` | `telegram.ext.filters.TGChat.unpin_all_general_forum_topic_messages` |
@@ -1699,6 +1698,7 @@
 | `رسالة_منشأ_نوع_يساراً` | `telegram.constants.MessageOriginType.ljust` |
 | `رسالة_منشأ_نوع_يميناً` | `telegram.constants.MessageOriginType.rjust` |
 | `رسالة_نسخ` | `telegram.ext.filters.Message.copy` |
+| `رسالة_نص_HTML` | `telegram.ext.filters.Message.text_html` |
 | `رسالة_نوع` | `telegram.constants.MessageType` |
 | `رسالة_نوع_أسطراً` | `telegram.constants.MessageType.splitlines` |
 | `رسالة_نوع_أسكي` | `telegram.constants.MessageType.isascii` |
@@ -2908,7 +2908,6 @@
 | `نرد_مرشّح` | `telegram.ext.filters.Dice.filter` |
 | `نسخ_رسائل` | `telegram.ext.filters.TGChat.copy_messages` |
 | `نسخ_رسالة` | `telegram.ext.filters.TGChat.copy_message` |
-| `نص_HTML` | `telegram.ext.filters.Message.text_html` |
 | `نص_HTML_urled` | `telegram.ext.filters.Message.text_html_urled` |
 | `نص_اسم` | `telegram.ext.filters.Text.name` |
 | `نص_بيانات_مرشّح` | `telegram.ext.filters.Text.data_filter` |
@@ -2942,6 +2941,7 @@
 | `نص_ماركداون_V_2_urled` | `telegram.ext.filters.Message.text_markdown_v2_urled` |
 | `نص_ماركداون_urled` | `telegram.ext.filters.Message.text_markdown_urled` |
 | `نص_مرشّح` | `telegram.ext.filters.Text.filter` |
+| `نمط_البحث` | `telegram.ext.filters.Pattern.finditer` |
 | `نمط_الكل` | `telegram.ext.filters.Pattern.findall` |
 | `نمط_عدد` | `telegram.ext.filters.Pattern.subn` |
 | `نمطي_اسم` | `telegram.ext.filters.Regex.name` |
@@ -3702,6 +3702,7 @@
 | `تعبير_رسومي_ملصق_حد_مقام` | `telegram.constants.CustomEmojiStickerLimit.denominator` |
 | `تعزيز_أُضيف` | `telegram.ext.filters.Message.boost_added` |
 | `تعليق_كيانات` | `telegram.ext.filters.Message.caption_entities` |
+| `تعليق_نصوص` | `telegram.ext.filters.Caption.strings` |
 | `تعليق_نمطي_نمط` | `telegram.ext.filters.CaptionRegex.pattern` |
 | `تفاعل_رسومي_بوت_EYES` | `telegram.constants.ReactionEmoji.EYES` |
 | `تفاعل_نوع_بوت_CUSTOM_EMOJI` | `telegram.constants.ReactionType.CUSTOM_EMOJI` |
@@ -4287,7 +4288,6 @@
 | `نرد_رسومي_تعداد_بوت_SLOT_MACHINE` | `telegram.ext.filters.DiceEmojiEnum.SLOT_MACHINE` |
 | `نرد_قيم` | `telegram.ext.filters.Dice.values` |
 | `نص_نصوص` | `telegram.ext.filters.Text.strings` |
-| `نصوص` | `telegram.ext.filters.Caption.strings` |
 | `نمطي_نمط` | `telegram.ext.filters.Regex.pattern` |
 | `هدية_completed` | `telegram.ext.filters.Message.giveaway_completed` |
 | `هدية_winners` | `telegram.ext.filters.Message.giveaway_winners` |

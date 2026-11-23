@@ -76,6 +76,7 @@
 | `C_عنصر_شجرة_XML_اسحب_محلل` | `xml.etree.cElementTree.XMLPullParser` |
 | `C_عنصر_شجرة_XML_محلل` | `xml.etree.cElementTree.XMLParser` |
 | `C_عنصر_شجرة_أفرغ` | `xml.etree.cElementTree.dump` |
+| `C_عنصر_شجرة_التحليل` | `xml.etree.cElementTree.iterparse` |
 | `C_عنصر_شجرة_بادئة` | `xml.etree.cElementTree.indent` |
 | `C_عنصر_شجرة_تعليق` | `xml.etree.cElementTree.Comment` |
 | `C_عنصر_شجرة_حلل` | `xml.etree.cElementTree.parse` |
@@ -208,6 +209,7 @@
 | `LMTP_إغلاق` | `smtplib.LMTP.close` |
 | `LMTP_اتصل` | `smtplib.LMTP.connect` |
 | `LMTP_اخرج` | `smtplib.LMTP.quit` |
+| `LMTP_الخادم` | `smtplib.LMTP.getreply` |
 | `LMTP_بريد` | `smtplib.LMTP.mail` |
 | `LMTP_بيانات` | `smtplib.LMTP.data` |
 | `LMTP_تحقق` | `smtplib.LMTP.verify` |
@@ -357,9 +359,11 @@
 | `POSIX_الخطأ` | `posix.strerror` |
 | `POSIX_الرابط` | `posix.readlink` |
 | `POSIX_العمل` | `posix.getcwd` |
+| `POSIX_العملية` | `posix.getpid` |
 | `POSIX_اللطف` | `posix.nice` |
 | `POSIX_المالك` | `posix.chown` |
-| `POSIX_المجلد` | `posix.listdir` |
+| `POSIX_المجلد` | `posix.chdir` |
+| `POSIX_النظام` | `posix.uname` |
 | `POSIX_الوصول` | `posix.access` |
 | `POSIX_الوضع` | `posix.chmod` |
 | `POSIX_انتظر` | `posix.wait` |
@@ -478,6 +482,7 @@
 | `POSIX_ملف_جيتتيمي_NS` | `posix.timerfd_gettime_ns` |
 | `POSIX_ملف_سيتتيمي` | `posix.timerfd_settime` |
 | `POSIX_ملف_سيتتيمي_NS` | `posix.timerfd_settime_ns` |
+| `POSIX_ملف_قراءة` | `posix.eventfd_read` |
 | `POSIX_ملفات` | `posix.statvfs` |
 | `POSIX_ملفاً` | `posix.sendfile` |
 | `POSIX_ميمفد_إنشاء` | `posix.memfd_create` |
@@ -618,6 +623,7 @@
 | `gzip_ملف_إلى_1` | `compression.gzip.GzipFile.readinto1` |
 | `gzip_ملف_اطّلع` | `compression.gzip.GzipFile.peek` |
 | `gzip_ملف_اقتطاع` | `compression.gzip.GzipFile.truncate` |
+| `gzip_ملف_التعديل` | `compression.gzip.GzipFile.mtime` |
 | `gzip_ملف_الطبقات` | `compression.gzip.GzipFile.detach` |
 | `gzip_ملف_الواصف` | `compression.gzip.GzipFile.fileno` |
 | `gzip_ملف_تحريك` | `compression.gzip.GzipFile.seek` |
@@ -765,6 +771,7 @@
 | `أول_عنصر_معالج` | `xml.dom.expatbuilder.ExpatBuilder.first_element_handler` |
 | `إحصائيات_جب` | `statistics.asin` |
 | `إحصائيات_جتا` | `statistics.acos` |
+| `إحصائيات_دقيق` | `statistics.fsum` |
 | `إحصائيات_زائدي` | `statistics.cosh` |
 | `إحصائيات_سومبرود` | `statistics.sumprod` |
 | `إحصائيات_ظا` | `statistics.atan` |
@@ -902,6 +909,7 @@
 | `اتصال_smtp_خطأ_تتبع_الخطأ` | `builtins.ConnectionRefusedError.with_traceback` |
 | `اتصال_إنشاء_دالة` | `sqlite3.dbapi2.Connection.create_function` |
 | `اتصال_إنشاء_نافذة_دالة` | `sqlite3.dbapi2.Connection.create_window_function` |
+| `اتصال_احتياطية` | `sqlite3.dbapi2.Connection.backup` |
 | `اتصال_تسلسل` | `sqlite3.dbapi2.Connection.serialize` |
 | `اتصال_حمّل_امتداد` | `sqlite3.dbapi2.Connection.load_extension` |
 | `اتصال_صُنع` | `asyncio.SubprocessProtocol.connection_made` |
@@ -910,7 +918,6 @@
 | `اتصال_فلاسك` | `sqlite3.dbapi2.Connection.commit` |
 | `اتصال_مفقود` | `asyncio.SubprocessProtocol.connection_lost` |
 | `اتصال_نفّذ` | `sqlite3.dbapi2.Connection.execute` |
-| `احتياطية` | `sqlite3.dbapi2.Connection.backup` |
 | `احذف_me` | `bdb.Breakpoint.deleteMe` |
 | `احصل_DOM_تنفيذ` | `xml.dom.domreg.getDOMImplementation` |
 | `احصل_DTD_معالج` | `xml.sax.expatreader.ExpatParser.getDTDHandler` |
@@ -1028,7 +1035,6 @@
 | `اسم_محمّل_تنفيذ_وحدة` | `importlib.machinery.NamespaceLoader.exec_module` |
 | `اسم_محمّل_حمّل_وحدة` | `importlib.machinery.NamespaceLoader.load_module` |
 | `اسم_محمّل_هو_عمر` | `importlib.machinery.NamespaceLoader.is_package` |
-| `اطبع` | `builtins.print` |
 | `اطبع_أخطاء` | `unittest.result.TestResult.printErrors` |
 | `اطبع_سجّل` | `imaplib.IMAP4_stream.print_log` |
 | `اطبع_نداء_بياني` | `asyncio.graph.print_call_graph` |
@@ -1066,31 +1072,21 @@
 | `الإحصاء` | `genericpath.samestat` |
 | `الإذن` | `posix.umask` |
 | `الإرجاع` | `asyncio.subprocess.Process.returncode` |
-| `التحليل` | `xml.etree.cElementTree.iterparse` |
-| `التعديل` | `compression.gzip.GzipFile.mtime` |
 | `التقط_نداء_بياني` | `asyncio.capture_call_graph` |
-| `الجذر` | `ntpath.splitroot` |
 | `الحجم_term` | `curses.resize_term` |
 | `الحصة` | `imaplib.IMAP4_stream.getquotaroot` |
-| `الخادم` | `smtplib.LMTP.getreply` |
 | `الخيارات_خطأ` | `getopt.error` |
 | `الرموز_أي` | `tokenize.any` |
 | `الرموز_ربما` | `tokenize.maybe` |
 | `الرموز_قياسي_ISEOF` | `tokenize.ISEOF` |
 | `الرموز_قياسي_ISNONTERMINAL` | `tokenize.ISNONTERMINAL` |
 | `الرموز_قياسي_ISTERMINAL` | `tokenize.ISTERMINAL` |
-| `الصنف` | `unittest.util.strclass` |
 | `الضبط_صدفة_وضع` | `curses.reset_shell_mode` |
-| `العملية` | `posix.getpid` |
 | `المتغيرات` | `ntpath.expandvars` |
-| `المجلد` | `posix.chdir` |
 | `المحرك` | `ntpath.splitdrive` |
-| `المسار` | `ntpath.normpath` |
 | `المفتوح` | `genericpath.sameopenfile` |
 | `المقبس` | `asyncio.trsock.TransportSocket.getsockname` |
 | `المكملة` | `statistics.erfc` |
-| `النصوص` | `xml.etree.cElementTree.Element.itertext` |
-| `النظام` | `posix.uname` |
 | `النظام_نتيجة` | `posix.uname_result` |
 | `النظام_نتيجة_عدد` | `posix.uname_result.count` |
 | `النظام_نتيجة_فهرس` | `posix.uname_result.index` |
@@ -1433,6 +1429,7 @@
 | `تدفق_تحكم_مزيج_ملف_مستقبَل` | `asyncio.streams.FlowControlMixin.eof_received` |
 | `تدفق_تحكم_مزيج_وقفة_كتابة` | `asyncio.streams.FlowControlMixin.pause_writing` |
 | `تدفق_قارئ_بروتوكول_ملف_مستقبَل` | `asyncio.streams.StreamReaderProtocol.eof_received` |
+| `تدفق_قارئ_حتى` | `asyncio.streams.StreamReader.readuntil` |
 | `تدفق_قارئ_سطراً` | `asyncio.streams.StreamReader.readline` |
 | `تدفق_قارئ_عيّن_ناقل` | `asyncio.streams.StreamReader.set_transport` |
 | `تدفق_كاتب_أسطراً` | `asyncio.streams.StreamWriter.writelines` |
@@ -1744,7 +1741,6 @@
 | `حالة_تجاوز_اختبر` | `unittest.case.SkipTest` |
 | `حالة_دالة_اختبر_حالة` | `unittest.case.FunctionTestCase` |
 | `حالة_متوقع_فشل` | `unittest.case.expectedFailure` |
-| `حتى` | `asyncio.streams.StreamReader.readuntil` |
 | `حد_وفيررون_خطأ` | `asyncio.LimitOverrunError` |
 | `حد_وفيررون_خطأ_أضف_ملاحظة` | `asyncio.LimitOverrunError.add_note` |
 | `حد_وفيررون_خطأ_تتبع_الخطأ` | `asyncio.LimitOverrunError.with_traceback` |
@@ -1931,7 +1927,6 @@
 | `دبابي_2_وقت_من_نبضة` | `sqlite3.dbapi2.TimeFromTicks` |
 | `دخول` | `imaplib.IMAP4_stream.login` |
 | `دخول_كرام_مد_5` | `imaplib.IMAP4_stream.login_cram_md5` |
-| `دقيق` | `statistics.fsum` |
 | `دلليست` | `ctypes.util.dllist` |
 | `دورة_موجود_استثناء` | `asyncio.tools.CycleFoundException` |
 | `دورة_موجود_استثناء_أضف_ملاحظة` | `asyncio.tools.CycleFoundException.add_note` |
@@ -2373,6 +2368,7 @@
 | `عنصر_البحث` | `xml.etree.cElementTree.Element.iterfind` |
 | `عنصر_الكل` | `xml.etree.cElementTree.Element.findall` |
 | `عنصر_النص` | `xml.etree.cElementTree.Element.findtext` |
+| `عنصر_النصوص` | `xml.etree.cElementTree.Element.itertext` |
 | `عنصر_شجرة_البحث` | `xml.etree.cElementTree.ElementTree.iterfind` |
 | `عنصر_شجرة_الجذر` | `xml.etree.cElementTree.ElementTree.getroot` |
 | `عنصر_شجرة_الكل` | `xml.etree.cElementTree.ElementTree.findall` |
@@ -2993,7 +2989,8 @@
 | `قياسي_POSIX_PT` | `posix.posix_openpt` |
 | `قياسي_POSIX_أنبوب` | `posix.pipe` |
 | `قياسي_POSIX_الرابط` | `posix.unlink` |
-| `قياسي_POSIX_المجلد` | `posix.scandir` |
+| `قياسي_POSIX_المجلد` | `posix.listdir` |
+| `قياسي_POSIX_المجلد_2` | `posix.scandir` |
 | `قياسي_POSIX_بواصف` | `posix.fchown` |
 | `قياسي_POSIX_بواصف_2` | `posix.fstatvfs` |
 | `قياسي_POSIX_رابط` | `posix.link` |
@@ -5544,7 +5541,6 @@
 | `مجرد_ريدوكير_ريكففدس` | `multiprocessing.reduction.AbstractReducer.recvfds` |
 | `مجرد_ريدوكير_سيندفدس` | `multiprocessing.reduction.AbstractReducer.sendfds` |
 | `مجرد_ريدوكير_كرّر_ملف` | `multiprocessing.reduction.AbstractReducer.DupFd` |
-| `مجلد` | `builtins.dir` |
 | `مجلد_إدخال_هو_رمزياً` | `posix.DirEntry.is_symlink` |
 | `مجمّد_مُستورد` | `importlib.machinery.FrozenImporter` |
 | `مجمّد_مُستورد_إنشاء_وحدة` | `importlib.machinery.FrozenImporter.create_module` |
@@ -5579,6 +5575,7 @@
 | `مخزَّن` | `importlib.machinery.ModuleSpec.cached` |
 | `مدمجة_أس` | `builtins.pow` |
 | `مدمجة_أقصى` | `builtins.max` |
+| `مدمجة_اطبع` | `builtins.print` |
 | `مدمجة_انيكست` | `builtins.anext` |
 | `مدمجة_ايتير` | `builtins.aiter` |
 | `مدمجة_بايتات` | `builtins.bytes` |
@@ -5589,6 +5586,7 @@
 | `مدمجة_شريحة` | `builtins.slice` |
 | `مدمجة_طول` | `builtins.len` |
 | `مدمجة_قرّب` | `builtins.round` |
+| `مدمجة_مجلد` | `builtins.dir` |
 | `مدمجة_مجموع` | `builtins.sum` |
 | `مدمجة_مدى` | `builtins.range` |
 | `مدمجة_منطقي` | `builtins.bool` |
@@ -5717,7 +5715,6 @@
 | `معزول_آسينيو_اختبر_حالة_موعداً_صنف_سياق` | `unittest.async_case.IsolatedAsyncioTestCase.enterClassContext` |
 | `معزول_آسينيو_اختبر_حالة_موعداً_متزامن_سياق` | `unittest.async_case.IsolatedAsyncioTestCase.enterAsyncContext` |
 | `مفتاحية_يسكييوورد` | `keyword.iskeyword` |
-| `مفسّر` | `concurrent.interpreters.Interpreter` |
 | `مفسّر_إغلاق` | `concurrent.interpreters.Interpreter.close` |
 | `مفسّر_تجمع_منفّذ` | `concurrent.futures.interpreter.InterpreterPoolExecutor` |
 | `مفسّر_تجمع_منفّذ_أرسل` | `concurrent.futures.interpreter.InterpreterPoolExecutor.submit` |
@@ -5766,7 +5763,6 @@
 | `ملف_قارئ_ملفات` | `importlib.readers.FileReader.files` |
 | `ملف_قارئ_مورد_مسار` | `importlib.readers.FileReader.resource_path` |
 | `ملف_قارئ_هو_مورد` | `importlib.resources.readers.FileReader.is_resource` |
-| `ملف_قراءة` | `posix.eventfd_read` |
 | `ملف_كتابة` | `posix.eventfd_write` |
 | `ملف_محمّل` | `importlib.abc.FileLoader` |
 | `ملف_محمّل_إنشاء_وحدة` | `importlib.abc.FileLoader.create_module` |
@@ -5924,7 +5920,9 @@
 | `نتباته_الأساس` | `ntpath.basename` |
 | `نتباته_الإحصاء` | `ntpath.samestat` |
 | `نتباته_الإنشاء` | `ntpath.getctime` |
+| `نتباته_الجذر` | `ntpath.splitroot` |
 | `نتباته_الحالة` | `ntpath.normcase` |
+| `نتباته_المسار` | `ntpath.normpath` |
 | `نتباته_المستخدم` | `ntpath.expanduser` |
 | `نتباته_المفتوح` | `ntpath.sameopenfile` |
 | `نتباته_الملف` | `ntpath.samefile` |
@@ -6054,6 +6052,7 @@
 | `وتيل_ابحث_مواصفة` | `importlib.util.find_spec` |
 | `وتيل_احصل_ftp_مجلد` | `multiprocessing.util.get_temp_dir` |
 | `وتيل_اختبر` | `ctypes.util.test` |
+| `وتيل_الصنف` | `unittest.util.strclass` |
 | `وتيل_تفرّع_aware_خيط_اقفل` | `multiprocessing.util.ForkAwareThreadLock` |
 | `وتيل_تفرّع_aware_محلي` | `multiprocessing.util.ForkAwareLocal` |
 | `وتيل_حذّر` | `multiprocessing.util.warn` |
@@ -6224,6 +6223,7 @@
 | `ينتيربريتيرس_طابور` | `concurrent.interpreters.Queue` |
 | `ينتيربريتيرس_طابور_فارغ` | `concurrent.interpreters.QueueEmpty` |
 | `ينتيربريتيرس_طابور_كامل` | `concurrent.interpreters.QueueFull` |
+| `ينتيربريتيرس_مفسّر` | `concurrent.interpreters.Interpreter` |
 | `ينتيرنالداتي_2_صف` | `imaplib.Internaldate2tuple` |
 | `يندوين` | `curses.endwin` |
 | `يندينتيد_مساعدة_مُنسّق` | `optparse.IndentedHelpFormatter` |
@@ -6745,6 +6745,7 @@
 | `opcode_الاسم` | `opcode.hasname` |
 | `opcode_الحجة` | `opcode.hasarg` |
 | `opcode_الرموز` | `opcode.opmap` |
+| `opcode_المقارنة` | `opcode.hascompare` |
 | `pseudo_إضافي` | `tokenize.PseudoExtras` |
 | `pseudo_رمز` | `tokenize.PseudoToken` |
 | `sqlite_3_تهريادسافيتي` | `sqlite3.threadsafety` |
@@ -6753,9 +6754,7 @@
 | `أبناء_نظام` | `posix.times_result.children_system` |
 | `أخير_وضع` | `compression.zstd.ZstdCompressor.last_mode` |
 | `أدنى_طابق` | `compression.zstd.CompressionParameter.min_match` |
-| `أرقام` | `email.quoprimime.digits` |
 | `أعد_الاستخدام_منفذ` | `logging.config.ThreadingTCPServer.allow_reuse_port` |
-| `أعمدة` | `posix.terminal_size.columns` |
 | `أوقات_نتيجة_N_مسمّى_حقول` | `posix.times_result.n_unnamed_fields` |
 | `أوقف_Iteration_قيمة` | `builtins.StopIteration.value` |
 | `أوقف_Iteration_معطيات` | `builtins.StopIteration.args` |
@@ -6791,6 +6790,7 @@
 | `احجب_على_إغلاق` | `logging.config.ThreadingTCPServer.block_on_close` |
 | `احصل_pop_تحذير_معطيات` | `getpass.GetPassWarning.args` |
 | `اختبر_PROGRAM_اختبر_اسم_أنماط` | `unittest.main.TestProgram.testNamePatterns` |
+| `اختبر_PROGRAM_الفاصلة` | `unittest.main.TestProgram.catchbreak` |
 | `اختبر_PROGRAM_برنامج_اسم` | `unittest.main.TestProgram.progName` |
 | `اختبر_PROGRAM_تحذيرات` | `unittest.main.TestProgram.warnings` |
 | `اختبر_PROGRAM_تفصيل` | `unittest.main.TestProgram.verbosity` |
@@ -6834,7 +6834,6 @@
 | `افتراضي_معالج` | `xml.parsers.expat.XMLParserType.DefaultHandler` |
 | `افتراضي_معالج_توسيع` | `xml.parsers.expat.XMLParserType.DefaultHandlerExpand` |
 | `الأب` | `ntpath.pardir` |
-| `الأولى` | `csv.excel.skipinitialspace` |
 | `الامتداد` | `ntpath.extsep` |
 | `الترميز_نوع` | `email.policy.Compat32.cte_type` |
 | `التزوني` | `time.altzone` |
@@ -6842,7 +6841,6 @@
 | `الثابت` | `opcode.hasconst` |
 | `الجوريتهمس_جوارانتييد` | `hashlib.algorithms_guaranteed` |
 | `الجوريتهمس_متاح` | `hashlib.algorithms_available` |
-| `الحالي` | `ntpath.curdir` |
 | `الحر` | `opcode.hasfree` |
 | `الخطأ_حد` | `wsgiref.handlers.SimpleHandler.traceback_limit` |
 | `الرمز_اسم` | `token.tok_name` |
@@ -6853,12 +6851,10 @@
 | `السطر_splitter` | `email.policy.linesep_splitter` |
 | `الشهر` | `http.server.CGIHTTPRequestHandler.monthname` |
 | `العدم` | `ntpath.devnull` |
-| `الفاصلة` | `unittest.main.TestProgram.catchbreak` |
 | `القفز` | `opcode.hasjump` |
 | `الكتابة` | `http.server.CGIHTTPRequestHandler.wbufsize` |
 | `المحلي` | `opcode.haslocal` |
 | `المطلق` | `opcode.hasjabs` |
-| `المقارنة` | `opcode.hascompare` |
 | `النسبي` | `opcode.hasjrel` |
 | `النظام_نتيجة_N_تسلسل_حقول` | `posix.uname_result.n_sequence_fields` |
 | `النظام_نتيجة_N_حقول` | `posix.uname_result.n_fields` |
@@ -7295,7 +7291,6 @@
 | `عائم_تمثيل_نمط` | `sys.float_repr_style` |
 | `عائم_معلومة` | `sys.float_info` |
 | `عام_معرف` | `xml.dom.xmlbuilder.DOMInputSource.publicId` |
-| `عشرية` | `email.quoprimime.hexdigits` |
 | `عطل_معطيات` | `xmlrpc.server.Fault.args` |
 | `عطّل_ناجل_خوارزمية` | `http.server.CGIHTTPRequestHandler.disable_nagle_algorithm` |
 | `عملية_خطأ_معطيات` | `subprocess.SubprocessError.args` |
@@ -7365,6 +7360,8 @@
 | `قاموس_معرف` | `compression.zstd.FrameInfo.dictionary_id` |
 | `قاموس_معرف_علامة` | `compression.zstd.CompressionParameter.dict_id_flag` |
 | `قديم_موحّد` | `importlib.metadata.Prepared.legacy_normalized` |
+| `قووبريميمي_أرقام` | `email.quoprimime.digits` |
+| `قووبريميمي_عشرية` | `email.quoprimime.hexdigits` |
 | `قووبريميمي_قياسي_CRLF` | `email.quoprimime.CRLF` |
 | `قووبريميمي_قياسي_EMPTYSTRING` | `email.quoprimime.EMPTYSTRING` |
 | `قووبريميمي_قياسي_NL` | `email.quoprimime.NL` |
@@ -8622,6 +8619,7 @@
 | `قياسي_XML_PARAM_ENTITY_PARSING_NEVER` | `pyexpat.XML_PARAM_ENTITY_PARSING_NEVER` |
 | `قياسي_XML_PARAM_ENTITY_PARSING_UNLESS_STANDALONE` | `pyexpat.XML_PARAM_ENTITY_PARSING_UNLESS_STANDALONE` |
 | `قياسي_XML_محلل_إصدار` | `xml.etree.cElementTree.XMLParser.version` |
+| `قياسي_XML_محلل_هدف` | `xml.etree.cElementTree.XMLParser.target` |
 | `قياسي_X_OK` | `posix.X_OK` |
 | `قياسي_ZERO_OR_MORE` | `argparse.ZERO_OR_MORE` |
 | `قياسي_ZIP_64_EXTRA_TAG` | `zipimport.ZIP64_EXTRA_TAG` |
@@ -8858,6 +8856,7 @@
 | `قياسي_طرفية_حجم_N_تسلسل_حقول` | `posix.terminal_size.n_sequence_fields` |
 | `قياسي_طرفية_حجم_N_حقول` | `posix.terminal_size.n_fields` |
 | `قياسي_طرفية_حجم_أسطر` | `posix.terminal_size.lines` |
+| `قياسي_طرفية_حجم_أعمدة` | `posix.terminal_size.columns` |
 | `قياسي_عالج_خطأ_معطيات` | `multiprocessing.context.ProcessError.args` |
 | `قياسي_عالج_خطأ_معطيات_2` | `multiprocessing.managers.ProcessError.args` |
 | `قياسي_عشري_تخيّلي` | `xmlrpc.client.Decimal.imag` |
@@ -8940,6 +8939,7 @@
 | `قياسي_مُجهَّز_موحّد` | `importlib.metadata.Prepared.normalized` |
 | `قياسي_مُلغى_خطأ_معطيات` | `asyncio.exceptions.CancelledError.args` |
 | `قياسي_ناقص_قراءة_خطأ_معطيات` | `asyncio.exceptions.IncompleteReadError.args` |
+| `قياسي_نتباته_المسار` | `ntpath.pathsep` |
 | `قياسي_نص_IO_أخطاء` | `email.feedparser.StringIO.errors` |
 | `قياسي_نص_IO_أخطاء_2` | `email.generator.StringIO.errors` |
 | `قياسي_نص_IO_أخطاء_3` | `email.iterators.StringIO.errors` |
@@ -9094,7 +9094,6 @@
 | `مفرد_3` | `tokenize.Single3` |
 | `مفسّر_خطأ_معطيات` | `concurrent.interpreters.InterpreterError.args` |
 | `مفسّر_لا_موجود_خطأ_معطيات` | `concurrent.interpreters.InterpreterNotFoundError.args` |
-| `مكتبة` | `dbm.ndbm.library` |
 | `مكسور_خيط_تجمع_معطيات` | `concurrent.futures.thread.BrokenThreadPool.args` |
 | `مكسور_عالج_تجمع_معطيات` | `concurrent.futures.process.BrokenProcessPool.args` |
 | `مكسور_مفسّر_تجمع_معطيات` | `concurrent.futures.interpreter.BrokenInterpreterPool.args` |
@@ -9128,11 +9127,12 @@
 | `نانج` | `cmath.nanj` |
 | `نانني_ناج_معطيات` | `tabnanny.NannyNag.args` |
 | `نتباته_الافتراضي` | `ntpath.defpath` |
-| `نتباته_المسار` | `ntpath.pathsep` |
+| `نتباته_الحالي` | `ntpath.curdir` |
 | `نتباته_بديل` | `ntpath.altsep` |
 | `نتباته_فاصل` | `ntpath.sep` |
 | `نتباته_قياسي_ALLOW_MISSING` | `ntpath.ALLOW_MISSING` |
 | `نداء_مكدس` | `asyncio.FutureCallGraph.call_stack` |
+| `ندبم_مكتبة` | `dbm.ndbm.library` |
 | `نص_1` | `pickletools.string1` |
 | `نص_4` | `pickletools.string4` |
 | `نص_IO_غلاف_أخطاء` | `email.parser.TextIOWrapper.errors` |
@@ -9180,7 +9180,6 @@
 | `نهاية_السطر` | `xml.etree.ElementInclude.FatalIncludeError.end_lineno` |
 | `نوعية` | `xml.dom.xmlbuilder.Options.comments` |
 | `نيد` | `ssl.Purpose.nid` |
-| `هدف` | `xml.etree.cElementTree.XMLParser.target` |
 | `هدف_طول` | `compression.zstd.CompressionParameter.target_length` |
 | `هو_A_مجلد_خطأ_الخطأ` | `builtins.IsADirectoryError.errno` |
 | `هو_A_مجلد_خطأ_محارف_مكتوب` | `builtins.IsADirectoryError.characters_written` |
@@ -9247,6 +9246,7 @@
 | `يكسبفلوات` | `tokenize.Expfloat` |
 | `يكسبونينت` | `tokenize.Exponent` |
 | `يكسكيل_اقتباس` | `csv.excel.quoting` |
+| `يكسكيل_الأولى` | `csv.excel.skipinitialspace` |
 | `يكسكيل_السطر` | `csv.excel.lineterminator` |
 | `يكسكيل_جدولة_اقتباس` | `csv.excel_tab.quoting` |
 | `يكسكيل_جدولة_الأولى` | `csv.excel_tab.skipinitialspace` |

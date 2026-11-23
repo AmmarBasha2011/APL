@@ -53,7 +53,7 @@
 | `B_منحنية_عددي_k` | `scipy.interpolate.interpolate.BSpline.k` |
 | `B_منحنية_عددي_tck` | `scipy.interpolate.interpolate.BSpline.tck` |
 | `B_منحنية_كامل` | `scipy.interpolate.fitpack.BSpline.integrate` |
-| `B_منحنية_محور` | `scipy.interpolate.interpolate.BSpline.axis` |
+| `B_منحنية_محور` | `scipy.interpolate.fitpack.BSpline.axis` |
 | `B_منحنية_مشتقة` | `scipy.interpolate.fitpack.BSpline.derivative` |
 | `B_منحنية_من_قوة_أساس` | `scipy.interpolate.interpolate.BSpline.from_power_basis` |
 | `Barycentric_Interpolator_عددي_derivatives` | `scipy.interpolate.polyint.BarycentricInterpolator.derivatives` |
@@ -519,6 +519,7 @@
 | `cb_قواعد_l_و` | `numpy.f2py.cb_rules.l_and` |
 | `cb_قواعد_ارمِ_خطأ` | `numpy.f2py.cb_rules.throw_error` |
 | `cb_قواعد_استبدال` | `numpy.f2py.cb_rules.replace` |
+| `cb_قواعد_الشيفرة` | `numpy.f2py.cb_rules.getargs` |
 | `cb_قواعد_عددي_applyrules` | `numpy.f2py.cb_rules.applyrules` |
 | `cb_قواعد_عددي_debugcapi` | `numpy.f2py.cb_rules.debugcapi` |
 | `cb_قواعد_عددي_dictappend` | `numpy.f2py.cb_rules.dictappend` |
@@ -753,7 +754,7 @@
 | `coo_مصفوفة_عددي_todok` | `scipy.sparse.construct.coo_matrix.todok` |
 | `coo_مصفوفة_عددي_tolil` | `scipy.sparse.construct.coo_matrix.tolil` |
 | `coo_مصفوفة_عددي_trunc` | `scipy.sparse.construct.coo_matrix.trunc` |
-| `coo_مصفوفة_عمود` | `scipy.sparse.coo.coo_matrix.col` |
+| `coo_مصفوفة_عمود` | `scipy.sparse.construct.coo_matrix.col` |
 | `coo_مصفوفة_عيّن_شكل` | `scipy.sparse.construct.coo_matrix.set_shape` |
 | `coo_مصفوفة_قطري` | `scipy.sparse.construct.coo_matrix.diagonal` |
 | `coo_مصفوفة_قوة` | `scipy.sparse.construct.coo_matrix.power` |
@@ -1699,6 +1700,7 @@
 | `rv_مستمر_البقاء` | `scipy.stats.distributions.rv_continuous.logsf` |
 | `rv_مستمر_التوزيع` | `scipy.stats.distributions.rv_continuous.logcdf` |
 | `rv_مستمر_الكثافة` | `scipy.stats.distributions.rv_continuous.pdf` |
+| `rv_مستمر_الكمية` | `scipy.stats.distributions.rv_continuous.ppf` |
 | `rv_مستمر_تباين` | `scipy.stats.distributions.rv_continuous.var` |
 | `rv_مستمر_توقّع` | `scipy.stats.distributions.rv_continuous.expect` |
 | `rv_مستمر_عزم` | `scipy.stats.distributions.rv_continuous.moment` |
@@ -1833,6 +1835,7 @@
 | `ttest_ونيسامب` | `scipy.stats.mstats.ttest_onesamp` |
 | `ufunc_اختزل` | `numpy.matlib.ufunc.reduce` |
 | `ufunc_خارجي` | `numpy.matlib.ufunc.outer` |
+| `ufunc_عند` | `numpy.matlib.ufunc.at` |
 | `ulonglong_أدنى` | `numpy.matlib.ulonglong.min` |
 | `ulonglong_أفرغ` | `numpy.matlib.ulonglong.dump` |
 | `ulonglong_أقصى` | `numpy.matlib.ulonglong.max` |
@@ -2065,6 +2068,7 @@
 | `إضافي_اضغط_rowcols` | `numpy.ma.extras.compress_rowcols` |
 | `إضافي_اضغط_أعمدة` | `numpy.ma.extras.compress_cols` |
 | `إضافي_اعمل_قناع_وصف` | `numpy.ma.extras.make_mask_descr` |
+| `إضافي_الارتباط` | `numpy.ma.extras.corrcoef` |
 | `إضافي_البيانات` | `numpy.ma.extras.getdata` |
 | `إضافي_القناع` | `numpy.ma.extras.getmaskarray` |
 | `إضافي_تغاير` | `numpy.ma.extras.cov` |
@@ -2183,25 +2187,20 @@
 | `اكبح_تحذيرات_سجل` | `numpy.testing.suppress_warnings.record` |
 | `اكبح_تحذيرات_مرشّح` | `numpy.testing.suppress_warnings.filter` |
 | `الأعلام` | `numpy.bool_.setflags` |
-| `الأول` | `numpy.char.bytes_.capitalize` |
 | `الاحتمال` | `scipy.stats.distributions.rv_discrete.logpmf` |
-| `الارتباط` | `numpy.ma.extras.corrcoef` |
 | `البايتات` | `numpy.bool_.byteswap` |
 | `البتات` | `numpy.matlib.packbits` |
 | `البقاء` | `scipy.stats.distributions.rv_continuous.isf` |
-| `البيانات` | `numpy.ma.core.MaskedArray.dtype` |
 | `البيانات_جديد` | `numpy.matlib.dtype.newbyteorder` |
 | `التالي_سريع_طول` | `scipy.fftpack.helper.next_fast_len` |
 | `التراكمي` | `scipy.stats.distributions.rv_continuous.cdf` |
 | `التراكمي_2_ردف` | `scipy.linalg.decomp.cdf2rdf` |
 | `التشكيل` | `numpy.bool_.reshape` |
 | `الجدولة` | `numpy.char.bytes_.expandtabs` |
-| `الحالة` | `numpy.char.bytes_.swapcase` |
 | `الحزم` | `numpy.matlib.bincount` |
 | `الحقل` | `numpy.bool_.getfield` |
 | `الرابط` | `numpy.f2py.crackfortran.Path.readlink` |
 | `السالب` | `scipy.stats.distributions.rv_continuous.nnlf` |
-| `الشيفرة` | `numpy.f2py.cb_rules.getargs` |
 | `الشيفرة_2` | `numpy.f2py.capi_maps.getargs2` |
 | `الصيفي` | `scipy.fftpack.realtransforms.dst` |
 | `الضبط` | `numpy.matlib.broadcast.reset` |
@@ -2213,11 +2212,9 @@
 | `القناع` | `numpy.ma.core.getmaskarray` |
 | `الكتلة` | `scipy.sparse.bsr.bsr_matrix.blocksize` |
 | `الكثافة` | `scipy.stats.distributions.rv_continuous.logpdf` |
-| `الكمية` | `scipy.stats.distributions.rv_continuous.ppf` |
 | `المالك` | `numpy.f2py.crackfortran.Path.owner` |
 | `المحاور` | `numpy.bool_.swapaxes` |
 | `المس` | `numpy.f2py.crackfortran.Path.touch` |
-| `المستخدم` | `numpy.f2py.crackfortran.Path.expanduser` |
 | `الوجود` | `numpy.matlib.argwhere` |
 | `الوضع` | `numpy.f2py.crackfortran.Path.chmod` |
 | `اليمين` | `numpy.char.bytes_.rfind` |
@@ -2290,11 +2287,11 @@
 | `بايتات_الأدنى` | `numpy.char.bytes_.argmin` |
 | `بايتات_الأعلام` | `numpy.char.bytes_.setflags` |
 | `بايتات_الأقصى` | `numpy.char.bytes_.argmax` |
-| `بايتات_الأول` | `numpy.matlib.bytes_.capitalize` |
+| `بايتات_الأول` | `numpy.char.bytes_.capitalize` |
 | `بايتات_البايتات` | `numpy.char.bytes_.byteswap` |
 | `بايتات_التشكيل` | `numpy.char.bytes_.reshape` |
 | `بايتات_الجدولة` | `numpy.matlib.bytes_.expandtabs` |
-| `بايتات_الحالة` | `numpy.matlib.bytes_.swapcase` |
+| `بايتات_الحالة` | `numpy.char.bytes_.swapcase` |
 | `بايتات_الحجم` | `numpy.char.bytes_.resize` |
 | `بايتات_الحقل` | `numpy.char.bytes_.getfield` |
 | `بايتات_الفهارس` | `numpy.char.bytes_.argsort` |
@@ -2331,7 +2328,7 @@
 | `بايتات_قائمة` | `numpy.char.bytes_.tolist` |
 | `بايتات_قرّب` | `numpy.char.bytes_.round` |
 | `بايتات_قطري` | `numpy.char.bytes_.diagonal` |
-| `بايتات_كبير` | `numpy.matlib.bytes_.isupper` |
+| `بايتات_كبير` | `numpy.char.bytes_.isupper` |
 | `بايتات_كرّر` | `numpy.char.bytes_.repeat` |
 | `بايتات_كل` | `numpy.char.bytes_.all` |
 | `بايتات_لاحقة` | `numpy.matlib.bytes_.removesuffix` |
@@ -2453,7 +2450,6 @@
 | `جذور_legendre` | `scipy.special.orthogonal.roots_legendre` |
 | `جذور_sh_jacobi` | `scipy.special.orthogonal.roots_sh_jacobi` |
 | `جذور_sh_legendre` | `scipy.special.orthogonal.roots_sh_legendre` |
-| `جزئي` | `scipy.spatial.distance.partial` |
 | `جزئي_مشتقة` | `scipy.interpolate.fitpack2.BivariateSpline.partial_derivative` |
 | `جمّد` | `scipy.stats.distributions.rv_continuous.freeze` |
 | `جولدين` | `scipy.optimize.optimize.golden` |
@@ -3219,7 +3215,6 @@
 | `صفري` | `numpy.bool_.nonzero` |
 | `صلب_إلى` | `numpy.f2py.crackfortran.Path.hardlink_to` |
 | `طبيعي_منحنية` | `scipy.signal.bsplines.gauss_spline` |
-| `طرح` | `numpy.ma.core.subtract` |
 | `طويل_D_نوع` | `numpy.dtypes.LongDType` |
 | `طويل_D_نوع_جديد` | `numpy.dtypes.LongDType.newbyteorder` |
 | `طويل_أدنى` | `numpy.long.min` |
@@ -3717,6 +3712,7 @@
 | `عددي_B_منحنية_عددي_C` | `scipy.interpolate.interpolate.BSpline.c` |
 | `عددي_B_منحنية_عددي_T` | `scipy.interpolate.interpolate.BSpline.t` |
 | `عددي_B_منحنية_كامل` | `scipy.interpolate.interpolate.BSpline.integrate` |
+| `عددي_B_منحنية_محور` | `scipy.interpolate.interpolate.BSpline.axis` |
 | `عددي_B_منحنية_مشتقة` | `scipy.interpolate.interpolate.BSpline.derivative` |
 | `عددي_Barycentric_Interpolator` | `scipy.interpolate.polyint.BarycentricInterpolator` |
 | `عددي_Barycentric_interpolate` | `scipy.interpolate.polyint.barycentric_interpolate` |
@@ -4146,7 +4142,8 @@
 | `عددي_coo_مصفوفة_عددي_tolil_2` | `scipy.sparse.extract.coo_matrix.tolil` |
 | `عددي_coo_مصفوفة_عددي_trunc` | `scipy.sparse.coo.coo_matrix.trunc` |
 | `عددي_coo_مصفوفة_عددي_trunc_2` | `scipy.sparse.extract.coo_matrix.trunc` |
-| `عددي_coo_مصفوفة_عمود` | `scipy.sparse.extract.coo_matrix.col` |
+| `عددي_coo_مصفوفة_عمود` | `scipy.sparse.coo.coo_matrix.col` |
+| `عددي_coo_مصفوفة_عمود_2` | `scipy.sparse.extract.coo_matrix.col` |
 | `عددي_coo_مصفوفة_عيّن_شكل` | `scipy.sparse.coo.coo_matrix.set_shape` |
 | `عددي_coo_مصفوفة_عيّن_شكل_2` | `scipy.sparse.extract.coo_matrix.set_shape` |
 | `عددي_coo_مصفوفة_قطري` | `scipy.sparse.coo.coo_matrix.diagonal` |
@@ -5442,8 +5439,10 @@
 | `عددي_بايتات_الأدنى` | `numpy.matlib.bytes_.argmin` |
 | `عددي_بايتات_الأعلام` | `numpy.matlib.bytes_.setflags` |
 | `عددي_بايتات_الأقصى` | `numpy.matlib.bytes_.argmax` |
+| `عددي_بايتات_الأول` | `numpy.matlib.bytes_.capitalize` |
 | `عددي_بايتات_البايتات` | `numpy.matlib.bytes_.byteswap` |
 | `عددي_بايتات_التشكيل` | `numpy.matlib.bytes_.reshape` |
+| `عددي_بايتات_الحالة` | `numpy.matlib.bytes_.swapcase` |
 | `عددي_بايتات_الحجم` | `numpy.matlib.bytes_.resize` |
 | `عددي_بايتات_الحقل` | `numpy.char.bytes_.setfield` |
 | `عددي_بايتات_الحقل_2` | `numpy.matlib.bytes_.getfield` |
@@ -5501,6 +5500,7 @@
 | `عددي_بايتات_قسمة` | `numpy.char.bytes_.partition` |
 | `عددي_بايتات_قسمة_2` | `numpy.matlib.bytes_.partition` |
 | `عددي_بايتات_قطري` | `numpy.matlib.bytes_.diagonal` |
+| `عددي_بايتات_كبير` | `numpy.matlib.bytes_.isupper` |
 | `عددي_بايتات_كبّر` | `numpy.char.bytes_.upper` |
 | `عددي_بايتات_كبّر_2` | `numpy.matlib.bytes_.upper` |
 | `عددي_بايتات_كرّر` | `numpy.matlib.bytes_.repeat` |
@@ -6306,8 +6306,10 @@
 | `عددي_ماتليب_قرّب` | `numpy.matlib.round` |
 | `عددي_ماتليب_قسمة` | `numpy.matlib.partition` |
 | `عددي_ماتليب_مرافق` | `numpy.matlib.conjugate` |
+| `عددي_ماتليب_مشترك` | `numpy.matlib.lcm` |
 | `عددي_ماتليب_مصفوفة` | `numpy.matlib.matrix` |
 | `عددي_ماتليب_مطلق` | `numpy.matlib.absolute` |
+| `عددي_ماتليب_من` | `numpy.matlib.isclose` |
 | `عددي_ماتليب_منطقي` | `numpy.matlib.bool_` |
 | `عددي_ماتليب_نص` | `numpy.matlib.str_` |
 | `عددي_متراند_عشوائي` | `numpy.random.mtrand.random` |
@@ -6719,6 +6721,7 @@
 | `عددي_مسار_الرابط_2` | `numpy.f2py.rules.Path.readlink` |
 | `عددي_مسار_الرابط_3` | `numpy.f2py.rules.Path.unlink` |
 | `عددي_مسار_المالك` | `numpy.f2py.rules.Path.owner` |
+| `عددي_مسار_المستخدم` | `numpy.f2py.rules.Path.expanduser` |
 | `عددي_مسار_الملف` | `numpy.f2py.rules.Path.samefile` |
 | `عددي_مسار_تجوّل` | `numpy.f2py.crackfortran.Path.walk` |
 | `عددي_مسار_تجوّل_2` | `numpy.f2py.rules.Path.walk` |
@@ -7305,10 +7308,11 @@
 | `عددي_مُقنّع_مصفوفة_البايتات_3` | `numpy.ma.extras.masked_array.byteswap` |
 | `عددي_مُقنّع_مصفوفة_البايتات_4` | `numpy.ma.masked_array.byteswap` |
 | `عددي_مُقنّع_مصفوفة_البايتات_5` | `numpy.ma.testutils.masked_array.byteswap` |
-| `عددي_مُقنّع_مصفوفة_البيانات` | `numpy.ma.extras.MaskedArray.dtype` |
-| `عددي_مُقنّع_مصفوفة_البيانات_2` | `numpy.ma.extras.masked_array.dtype` |
-| `عددي_مُقنّع_مصفوفة_البيانات_3` | `numpy.ma.masked_array.dtype` |
-| `عددي_مُقنّع_مصفوفة_البيانات_4` | `numpy.ma.testutils.masked_array.dtype` |
+| `عددي_مُقنّع_مصفوفة_البيانات` | `numpy.ma.core.masked_array.dtype` |
+| `عددي_مُقنّع_مصفوفة_البيانات_2` | `numpy.ma.extras.MaskedArray.dtype` |
+| `عددي_مُقنّع_مصفوفة_البيانات_3` | `numpy.ma.extras.masked_array.dtype` |
+| `عددي_مُقنّع_مصفوفة_البيانات_4` | `numpy.ma.masked_array.dtype` |
+| `عددي_مُقنّع_مصفوفة_البيانات_5` | `numpy.ma.testutils.masked_array.dtype` |
 | `عددي_مُقنّع_مصفوفة_التشكيل` | `numpy.ma.core.masked_array.reshape` |
 | `عددي_مُقنّع_مصفوفة_التشكيل_2` | `numpy.ma.extras.MaskedArray.reshape` |
 | `عددي_مُقنّع_مصفوفة_التشكيل_3` | `numpy.ma.extras.masked_array.reshape` |
@@ -8173,8 +8177,6 @@
 | `عشوائي_حالة_قوة` | `numpy.random.mtrand.RandomState.power` |
 | `عشوائي_خام` | `numpy.random.bit_generator.BitGenerator.random_raw` |
 | `عشوائية` | `scipy.stats.distributions.rv_continuous.rvs` |
-| `عمود` | `scipy.sparse.construct.coo_matrix.col` |
-| `عند` | `numpy.matlib.ufunc.at` |
 | `عنصراً` | `scipy.optimize.cobyla.OptimizeResult.popitem` |
 | `عنواني` | `numpy.char.bytes_.istitle` |
 | `عيّن_bandwidth` | `scipy.stats.kde.gaussian_kde.set_bandwidth` |
@@ -8498,7 +8500,6 @@
 | `كامل_صندوق` | `scipy.stats.kde.gaussian_kde.integrate_box` |
 | `كامل_صندوق_1_D` | `scipy.stats.kde.gaussian_kde.integrate_box_1d` |
 | `كامل_طابق` | `numpy.f2py.crackfortran.Path.full_match` |
-| `كبير` | `numpy.char.bytes_.isupper` |
 | `كتابة_بايتات` | `numpy.f2py.crackfortran.Path.write_bytes` |
 | `كثيف` | `scipy.optimize.lbfgsb.LbfgsInvHessProduct.todense` |
 | `كدتريي_C_KD_شجرة` | `scipy.spatial.kdtree.cKDTree` |
@@ -8844,7 +8845,8 @@
 | `ماتليب_مركّب_256` | `numpy.matlib.complex256` |
 | `ماتليب_مركّب_64` | `numpy.matlib.complex64` |
 | `ماتليب_مزدوج` | `numpy.matlib.double` |
-| `ماتليب_مشترك` | `numpy.matlib.lcm` |
+| `ماتليب_مشترك` | `numpy.matlib.gcd` |
+| `ماتليب_مصفوفات` | `numpy.matlib.matmul` |
 | `ماتليب_مصفوفة` | `numpy.matlib.array` |
 | `ماتليب_مصفوفة_2_نص` | `numpy.matlib.array2string` |
 | `ماتليب_مصفوفة_equiv` | `numpy.matlib.array_equiv` |
@@ -8860,7 +8862,7 @@
 | `ماتليب_مفرد` | `numpy.matlib.single` |
 | `ماتليب_مكدس` | `numpy.matlib.stack` |
 | `ماتليب_مكرّر` | `numpy.matlib.fromiter` |
-| `ماتليب_من` | `numpy.matlib.isclose` |
+| `ماتليب_من` | `numpy.matlib.fromfile` |
 | `ماتليب_من_نوع` | `numpy.matlib.from_dlpack` |
 | `ماتليب_منطقي` | `numpy.matlib.bool` |
 | `ماتليب_منطقي_أو` | `numpy.matlib.logical_or` |
@@ -8872,6 +8874,7 @@
 | `ماتليب_نص` | `numpy.matlib.fromstring` |
 | `ماتليب_نصّاً` | `numpy.matlib.savetxt` |
 | `ماتليب_نقطي` | `numpy.matlib.dot` |
+| `ماتليب_نهائي` | `numpy.matlib.isinf` |
 | `ماتليب_هالف` | `numpy.matlib.half` |
 | `ماتليب_هو_busday` | `numpy.matlib.is_busday` |
 | `ماتليب_وتر` | `numpy.matlib.hypot` |
@@ -9051,7 +9054,6 @@
 | `محرف_معياري` | `numpy.char.character.std` |
 | `محرف_ملف` | `numpy.char.character.tofile` |
 | `محرف_نسخ` | `numpy.char.character.copy` |
-| `محور` | `scipy.interpolate.fitpack.BSpline.axis` |
 | `مختلط_فشل_استثناء` | `numpy.testing.KnownFailureException` |
 | `مختلط_فشل_استثناء_أضف_ملاحظة` | `numpy.testing.KnownFailureException.add_note` |
 | `مختلط_فشل_استثناء_تتبع_الخطأ` | `numpy.testing.KnownFailureException.with_traceback` |
@@ -9347,7 +9349,7 @@
 | `مسار_التسمية` | `numpy.f2py.crackfortran.Path.rename` |
 | `مسار_العمل` | `numpy.f2py.rules.Path.cwd` |
 | `مسار_المس` | `numpy.f2py.rules.Path.touch` |
-| `مسار_المستخدم` | `numpy.f2py.rules.Path.expanduser` |
+| `مسار_المستخدم` | `numpy.f2py.crackfortran.Path.expanduser` |
 | `مسار_الملف` | `numpy.f2py.crackfortran.Path.samefile` |
 | `مسار_الوضع` | `numpy.f2py.rules.Path.chmod` |
 | `مسار_تتبع_اسم` | `numpy.f2py.rules.Path.with_name` |
@@ -9367,6 +9369,7 @@
 | `مسار_هو_رمزياً` | `numpy.f2py.rules.Path.is_symlink` |
 | `مسار_هو_ملفات` | `numpy.f2py.rules.Path.is_mount` |
 | `مساراً` | `numpy.f2py.crackfortran.Path.joinpath` |
+| `مسافة_جزئي` | `scipy.spatial.distance.partial` |
 | `مسافة_حوّل_BF` | `scipy.ndimage.morphology.distance_transform_bf` |
 | `مسافة_عددي_norm` | `scipy.spatial.distance.norm` |
 | `مسافة_للاستدعاء` | `scipy.spatial.distance.Callable` |
@@ -9400,8 +9403,6 @@
 | `مسح_و_اسقط_تحذيرات` | `numpy.testing.clear_and_catch_warnings` |
 | `مسطّح` | `numpy.ma.core.MaskedArray.flat` |
 | `مسمّى` | `numpy.testing.print_coercion_tables.namedtuple` |
-| `مشترك` | `numpy.matlib.gcd` |
-| `مصفوفات` | `numpy.matlib.matmul` |
 | `مصفوفات_toeplitz` | `scipy.linalg.basic.matmul_toeplitz` |
 | `مصفوفة_أدنى` | `numpy.matlib.matrix.min` |
 | `مصفوفة_أفرغ` | `numpy.matlib.matrix.dump` |
@@ -9570,7 +9571,6 @@
 | `مفرد_هو_صحيح` | `numpy.matlib.single.is_integer` |
 | `مقارنة_medians_ms` | `scipy.stats.mstats_extras.compare_medians_ms` |
 | `ملء` | `numpy.ma.core.MaskedArray.filled` |
-| `من` | `numpy.matlib.fromfile` |
 | `من_bernstein_أساس` | `scipy.interpolate.interpolate.PPoly.from_bernstein_basis` |
 | `من_derivatives` | `scipy.interpolate.interpolate.BPoly.from_derivatives` |
 | `من_عدد` | `numpy.complex128.from_number` |
@@ -9685,7 +9685,7 @@
 | `مُقنّع_مصفوفة_الأعلام` | `numpy.ma.core.MaskedArray.setflags` |
 | `مُقنّع_مصفوفة_الأقصى` | `numpy.ma.core.MaskedArray.argmax` |
 | `مُقنّع_مصفوفة_البايتات` | `numpy.ma.core.MaskedArray.byteswap` |
-| `مُقنّع_مصفوفة_البيانات` | `numpy.ma.core.masked_array.dtype` |
+| `مُقنّع_مصفوفة_البيانات` | `numpy.ma.core.MaskedArray.dtype` |
 | `مُقنّع_مصفوفة_التشكيل` | `numpy.ma.core.MaskedArray.reshape` |
 | `مُقنّع_مصفوفة_الحجم` | `numpy.ma.core.MaskedArray.resize` |
 | `مُقنّع_مصفوفة_الحقل` | `numpy.ma.core.MaskedArray.getfield` |
@@ -9872,7 +9872,6 @@
 | `نماذج_نموذج` | `scipy.odr.models.Model` |
 | `نمطي` | `numpy.f2py.crackfortran.Path.glob` |
 | `نموذج_عيّن_وصفي` | `scipy.odr.odrpack.Model.set_meta` |
-| `نهائي` | `numpy.matlib.isinf` |
 | `نو_2_لامدا` | `scipy.constants.constants.nu2lambda` |
 | `نواة_MA_خطأ` | `numpy.ma.core.MAError` |
 | `نواة_harden_قناع` | `numpy.ma.core.harden_mask` |
@@ -9929,6 +9928,7 @@
 | `نواة_شكل` | `numpy.ma.core.shape` |
 | `نواة_صفري` | `numpy.ma.core.nonzero` |
 | `نواة_ضع` | `numpy.ma.core.put` |
+| `نواة_طرح` | `numpy.ma.core.subtract` |
 | `نواة_عدد` | `numpy.ma.core.count` |
 | `نواة_عددي_anom` | `numpy.ma.core.anom` |
 | `نواة_عددي_arccos` | `numpy.ma.core.arccos` |
@@ -10856,10 +10856,8 @@
 | `جرووبنامي` | `numpy.f2py.crackfortran.groupname` |
 | `جوتنيكستفيلي` | `numpy.f2py.crackfortran.gotnextfile` |
 | `جولدين_نسبة` | `scipy.constants.constants.golden_ratio` |
-| `حرف` | `numpy.dtypes.Int8DType.char` |
 | `خاص_دالة_تحذير_معطيات` | `scipy.special.sf_error.SpecialFunctionWarning.args` |
 | `خاص_دالة_خطأ_معطيات` | `scipy.special.sf_error.SpecialFunctionError.args` |
-| `خطوات` | `numpy.bool_.strides` |
 | `دولوويركاسي` | `numpy.f2py.crackfortran.dolowercase` |
 | `ديني` | `scipy.constants.constants.dyne` |
 | `زمني_64_أعلام` | `numpy.matlib.timedelta64.flags` |
@@ -11034,6 +11032,7 @@
 | `صحيح_8_D_نوع_الأبعاد` | `numpy.dtypes.Int8DType.ndim` |
 | `صحيح_8_D_نوع_البايتات` | `numpy.dtypes.Int8DType.byteorder` |
 | `صحيح_8_D_نوع_العنصر` | `numpy.dtypes.Int8DType.itemsize` |
+| `صحيح_8_D_نوع_حرف` | `numpy.dtypes.Int8DType.char` |
 | `صحيح_8_D_نوع_حقول` | `numpy.dtypes.Int8DType.fields` |
 | `صحيح_8_D_نوع_شكل` | `numpy.dtypes.Int8DType.shape` |
 | `صحيح_8_D_نوع_عدد` | `numpy.dtypes.Int8DType.num` |
@@ -11803,6 +11802,7 @@
 | `عددي_كسينجلي_مسطّح` | `numpy.matlib.csingle.flat` |
 | `عددي_ماتليب_رقم` | `numpy.matlib.nan` |
 | `عددي_ماتليب_صحيح_3` | `numpy.matlib.True_` |
+| `عددي_ماتليب_نهائي` | `numpy.matlib.inf` |
 | `عددي_متعددة_أعلام` | `numpy.ma.core.ndarray.flags` |
 | `عددي_متعددة_أعلام_2` | `numpy.ma.extras.ndarray.flags` |
 | `عددي_متعددة_أعلام_3` | `numpy.ma.testutils.ndarray.flags` |
@@ -12030,9 +12030,10 @@
 | `عددي_منطقي_حقيقي_2` | `numpy.ma.core.bool_.real` |
 | `عددي_منطقي_حقيقي_3` | `numpy.matlib.bool.real` |
 | `عددي_منطقي_حقيقي_4` | `numpy.matlib.bool_.real` |
-| `عددي_منطقي_خطوات` | `numpy.ma.core.bool_.strides` |
-| `عددي_منطقي_خطوات_2` | `numpy.matlib.bool.strides` |
-| `عددي_منطقي_خطوات_3` | `numpy.matlib.bool_.strides` |
+| `عددي_منطقي_خطوات` | `numpy.ma.bool_.strides` |
+| `عددي_منطقي_خطوات_2` | `numpy.ma.core.bool_.strides` |
+| `عددي_منطقي_خطوات_3` | `numpy.matlib.bool.strides` |
+| `عددي_منطقي_خطوات_4` | `numpy.matlib.bool_.strides` |
 | `عددي_منطقي_شكل` | `numpy.ma.bool_.shape` |
 | `عددي_منطقي_شكل_2` | `numpy.ma.core.bool_.shape` |
 | `عددي_منطقي_شكل_3` | `numpy.matlib.bool.shape` |
@@ -12358,7 +12359,6 @@
 | `ماتليب_عددي_R` | `numpy.matlib.r_` |
 | `ماتليب_فهرس_exp` | `numpy.matlib.index_exp` |
 | `ماتليب_قياسي_نوع` | `numpy.matlib.ScalarType` |
-| `ماتليب_نهائي` | `numpy.matlib.inf` |
 | `متعدد_فهرس` | `numpy.matlib.nditer.multi_index` |
 | `متعددة_أعلام` | `numpy.char.ndarray.flags` |
 | `متعددة_الأبعاد` | `numpy.char.ndarray.ndim` |
@@ -12513,7 +12513,7 @@
 | `منطقي_جهاز` | `numpy.bool_.device` |
 | `منطقي_حجم` | `numpy.bool_.size` |
 | `منطقي_حقيقي` | `numpy.bool_.real` |
-| `منطقي_خطوات` | `numpy.ma.bool_.strides` |
+| `منطقي_خطوات` | `numpy.bool_.strides` |
 | `منطقي_شكل` | `numpy.bool_.shape` |
 | `منطقي_عددي_T` | `numpy.bool_.T` |
 | `منطقي_قاعدة` | `numpy.bool_.base` |

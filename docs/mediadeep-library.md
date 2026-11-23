@@ -507,6 +507,7 @@
 | `WMF_بديل_صورة_ملف_وضع` | `PIL.WmfImagePlugin.WmfStubImageFile.mode` |
 | `WMF_صورة_إضافة_تسجيل_معالج` | `PIL.WmfImagePlugin.register_handler` |
 | `WMF_صورة_إضافة_قصير` | `PIL.WmfImagePlugin.short` |
+| `WMF_صورة_إضافة_كلمة` | `PIL.WmfImagePlugin.word` |
 | `WMF_صورة_إضافة_وسائط_IO` | `PIL.WmfImagePlugin.IO` |
 | `XDG_عرض` | `PIL.ImageShow.XDGViewer` |
 | `XDG_عرض_أظهر` | `PIL.ImageShow.XDGViewer.show` |
@@ -703,7 +704,7 @@
 | `eval_سياق_MODIFIER_كرّر_ابن_عُقد` | `jinja2.nodes.EvalContextModifier.iter_child_nodes` |
 | `eval_سياق_MODIFIER_كرّر_حقول` | `jinja2.nodes.EvalContextModifier.iter_fields` |
 | `eval_سياق_احفظ` | `jinja2.compiler.EvalContext.save` |
-| `eval_سياق_ارجع` | `jinja2.environment.EvalContext.revert` |
+| `eval_سياق_ارجع` | `jinja2.compiler.EvalContext.revert` |
 | `extent_حوّل` | `PIL.ImageTransform.ExtentTransform` |
 | `extent_حوّل_البيانات` | `PIL.ImageTransform.ExtentTransform.getdata` |
 | `extent_حوّل_حوّل` | `PIL.ImageTransform.ExtentTransform.transform` |
@@ -1126,7 +1127,6 @@
 | `أنماط_يم_قوي_عنصر` | `markdown.inlinepatterns.EmStrongItem` |
 | `أنواع_كسول_ملف` | `click.types.LazyFile` |
 | `أنواع_وسائط_BOOL` | `click.types.BOOL` |
-| `أو` | `jinja2.nodes.Or` |
 | `أول_مسار` | `pathspec.RecursionError.first_path` |
 | `أيقونة_رأس` | `PIL.IcoImagePlugin.IconHeader` |
 | `أيقونة_رأس_عدد` | `PIL.IcoImagePlugin.IconHeader.count` |
@@ -1140,7 +1140,6 @@
 | `إحصاء_مجموع_2` | `PIL.ImageStat.Stat.sum2` |
 | `إحصاء_وسائط_extrema` | `PIL.ImageStat.Stat.extrema` |
 | `إحصاء_وسيط` | `PIL.ImageStat.Stat.median` |
-| `إذا` | `jinja2.nodes.If` |
 | `إذا_أفرغ` | `jinja2.nodes.If.dump` |
 | `إذا_ابحث` | `jinja2.nodes.If.find` |
 | `إذا_ابحث_كل` | `jinja2.nodes.If.find_all` |
@@ -1482,7 +1481,6 @@
 | `إطلاق_ديكوراتورس_اختبر_موعداً_صنف_سياق` | `fire.decorators_test.FireDecoratorsTest.enterClassContext` |
 | `إغلاق_مخزن` | `PIL.PdfParser.PdfParser.close_buf` |
 | `إغلاق_ينتيلليجينتلي` | `click.termui.LazyFile.close_intelligently` |
-| `إكمال` | `fire.completion.Completions` |
 | `إكمال_سكربت` | `fire.completion.Script` |
 | `إلى_V_2` | `PIL.TiffImagePlugin.ImageFileDirectory.to_v2` |
 | `إلى_يماجيفونت` | `PIL.BdfFontFile.BdfFontFile.to_imagefont` |
@@ -2010,7 +2008,6 @@
 | `ادمونيتيون_معالج_شغّل` | `markdown.extensions.admonition.AdmonitionProcessor.run` |
 | `ادوبت` | `PIL.MpoImagePlugin.MpoImageFile.adopt` |
 | `ارتفاع` | `PIL.AvifImagePlugin.AvifImageFile.height` |
-| `ارجع` | `jinja2.compiler.EvalContext.revert` |
 | `استبدال_دالة` | `markdown_it.rules_core.replacements.replaceFn` |
 | `استبدال_سكوبيد` | `markdown_it.rules_core.replacements.replace_scoped` |
 | `استبدال_علامة` | `markdown.extensions.toc.TocTreeprocessor.replace_marker` |
@@ -3548,6 +3545,7 @@
 | `ثنائي_كانفاس` | `fire.test_components.BinaryCanvas` |
 | `ثنائي_كانفاس_أظهر` | `fire.test_components.BinaryCanvas.show` |
 | `ثنائي_كانفاس_حرّك` | `fire.test_components.BinaryCanvas.move` |
+| `ثنائي_كانفاس_على` | `fire.test_components.BinaryCanvas.on` |
 | `ثنائي_كانفاس_عيّن` | `fire.test_components.BinaryCanvas.set` |
 | `جبر_صورة_إضافة_وسائط_I_32` | `PIL.GbrImagePlugin.i32` |
 | `جبر_صورة_ملف` | `PIL.GbrImagePlugin.GbrImageFile` |
@@ -3845,7 +3843,6 @@
 | `جم_display_عرض_احصل_أمر_EX` | `PIL.ImageShow.GmDisplayViewer.get_command_ex` |
 | `جم_display_عرض_احصل_تنسيق` | `PIL.ImageShow.GmDisplayViewer.get_format` |
 | `جم_display_عرض_احفظ_صورة` | `PIL.ImageShow.GmDisplayViewer.save_image` |
-| `جملة` | `jinja2.nodes.Stmt` |
 | `جملة_أفرغ` | `jinja2.nodes.Stmt.dump` |
 | `جملة_ابحث` | `jinja2.nodes.Stmt.find` |
 | `جملة_ابحث_كل` | `jinja2.nodes.Stmt.find_all` |
@@ -4113,7 +4110,6 @@
 | `حوّل_البيانات` | `PIL.ImageTransform.Transform.getdata` |
 | `حوّل_قياسي` | `markdown_it.cli.parse.convert_stdin` |
 | `خارجي_كتابة_وضع` | `tqdm.asyncio.std_tqdm.external_write_mode` |
-| `خاصية` | `jinja2.nodes.Getattr` |
 | `خاصية_أفرغ` | `jinja2.nodes.Getattr.dump` |
 | `خاصية_ابحث` | `jinja2.nodes.Getattr.find` |
 | `خاصية_ابحث_كل` | `jinja2.nodes.Getattr.find_all` |
@@ -4125,7 +4121,6 @@
 | `خاصية_كرّر_حقول` | `jinja2.nodes.Getattr.iter_fields` |
 | `خاصية_كـ_ثابت` | `jinja2.nodes.Getattr.as_const` |
 | `خاصية_يستطيع_إسناد` | `jinja2.nodes.Getattr.can_assign` |
-| `خط` | `PIL.ImageDraw2.Font` |
 | `خط_متغير` | `PIL.ImageFont.FreeTypeFont.font_variant` |
 | `خط_ملف` | `PIL.FontFile.FontFile` |
 | `خط_ملف_إلى_يماجيفونت` | `PIL.FontFile.FontFile.to_imagefont` |
@@ -4685,7 +4680,6 @@
 | `زسه_اكتمال_دالة_اسم` | `click.shell_completion.ZshComplete.func_name` |
 | `زسه_اكتمال_مصدر` | `click.shell_completion.ZshComplete.source` |
 | `زسه_اكتمال_مصدر_متغيرات` | `click.shell_completion.ZshComplete.source_vars` |
-| `زوج` | `jinja2.nodes.Pair` |
 | `زيارة` | `jinja2.compiler.Optimizer.visit` |
 | `زيارة_احجب` | `jinja2.compiler.UndeclaredNameVisitor.visit_Block` |
 | `زيارة_اسم` | `jinja2.compiler.UndeclaredNameVisitor.visit_Name` |
@@ -4834,7 +4828,6 @@
 | `سجي_صورة_ملف_وسائط_alpha_composite` | `PIL.SgiImagePlugin.SgiImageFile.alpha_composite` |
 | `سجي_صورة_ملف_وسائط_histogram` | `PIL.SgiImagePlugin.SgiImageFile.histogram` |
 | `سجي_صورة_ملف_وضع` | `PIL.SgiImagePlugin.SgiImageFile.mode` |
-| `سطر` | `PIL.ImageDraw.ImageDraw.line` |
 | `سطر_تقدم` | `tqdm.cli.tqdm` |
 | `سطر_تقدم_مفتاح_خطأ` | `tqdm.cli.TqdmKeyError` |
 | `سطر_تقدم_نوع_خطأ` | `tqdm.cli.TqdmTypeError` |
@@ -5071,9 +5064,11 @@
 | `صورة_draw_2_أي` | `PIL.ImageDraw2.Any` |
 | `صورة_draw_2_بين` | `PIL.ImageDraw2.Pen` |
 | `صورة_draw_2_ثنائي_IO` | `PIL.ImageDraw2.BinaryIO` |
+| `صورة_draw_2_خط` | `PIL.ImageDraw2.Font` |
 | `صورة_draw_2_وسائط_draw` | `PIL.ImageDraw2.Draw` |
 | `صورة_draw_تسلسل` | `PIL.ImageDraw.Sequence` |
 | `صورة_draw_زاوية` | `PIL.ImageDraw.ImageDraw.rectangle` |
+| `صورة_draw_سطر` | `PIL.ImageDraw.ImageDraw.line` |
 | `صورة_draw_شكل` | `PIL.ImageDraw.ImageDraw.shape` |
 | `صورة_draw_نص` | `PIL.ImageDraw.ImageDraw.text` |
 | `صورة_draw_نقطة` | `PIL.ImageDraw.ImageDraw.point` |
@@ -5269,7 +5264,6 @@
 | `صيّر_سمات` | `markdown_it.main.RendererHTML.renderAttrs` |
 | `صيّر_مضمّن` | `markdown_it.MarkdownIt.renderInline` |
 | `صيّر_مضمّن_كـ_نص` | `markdown_it.main.RendererHTML.renderInlineAsText` |
-| `ضرب` | `jinja2.nodes.Mul` |
 | `ضرب_أفرغ` | `jinja2.nodes.Mul.dump` |
 | `ضرب_ابحث` | `jinja2.nodes.Mul.find` |
 | `ضرب_ابحث_كل` | `jinja2.nodes.Mul.find_all` |
@@ -5319,7 +5313,6 @@
 | `علامة_آمن_إذا_هرب_كـ_ثابت` | `jinja2.nodes.MarkSafeIfAutoescape.as_const` |
 | `علامة_آمن_إذا_هرب_يستطيع_إسناد` | `jinja2.nodes.MarkSafeIfAutoescape.can_assign` |
 | `علامة_تيجهت_paragraphs` | `markdown_it.rules_block.list.markTightParagraphs` |
-| `على` | `fire.test_components.BinaryCanvas.on` |
 | `عمر_لا_موجود_خطأ` | `tqdm.version.PackageNotFoundError` |
 | `عمر_لا_موجود_خطأ_أضف_ملاحظة` | `tqdm.version.PackageNotFoundError.add_note` |
 | `عمر_لا_موجود_خطأ_اسم` | `tqdm.version.PackageNotFoundError.name` |
@@ -5353,15 +5346,22 @@
 | `عيّن_وصف_نص` | `tqdm.asyncio.std_tqdm.set_description_str` |
 | `عُقد_eval_سياق` | `jinja2.nodes.EvalContext` |
 | `عُقد_أس` | `jinja2.nodes.Pow` |
+| `عُقد_أو` | `jinja2.nodes.Or` |
+| `عُقد_إذا` | `jinja2.nodes.If` |
 | `عُقد_الرسالة` | `jinja2.nodes.Getitem` |
 | `عُقد_باقي` | `jinja2.nodes.Mod` |
 | `عُقد_تتبع` | `jinja2.nodes.With` |
 | `عُقد_تعبير` | `jinja2.nodes.Expr` |
+| `عُقد_جملة` | `jinja2.nodes.Stmt` |
+| `عُقد_خاصية` | `jinja2.nodes.Getattr` |
+| `عُقد_زوج` | `jinja2.nodes.Pair` |
 | `عُقد_سالب` | `jinja2.nodes.Neg` |
 | `عُقد_شريحة` | `jinja2.nodes.Slice` |
+| `عُقد_ضرب` | `jinja2.nodes.Mul` |
 | `عُقد_قسمة` | `jinja2.nodes.Div` |
 | `عُقد_لا` | `jinja2.nodes.Not` |
 | `عُقد_مقارنة` | `jinja2.nodes.Compare` |
+| `عُقد_و` | `jinja2.nodes.And` |
 | `عُقد_وسائط_concat` | `jinja2.nodes.Concat` |
 | `غلاف_خاصية` | `tqdm.contrib.DummyTqdmFile.wrapper_getattr` |
 | `غلاف_سمة` | `tqdm.contrib.DummyTqdmFile.wrapper_setattr` |
@@ -5860,7 +5860,6 @@
 | `كفت_تعداد` | `PIL.TiffTags.TagInfo.cvt_enum` |
 | `كل_إطار` | `PIL.ImageSequence.all_frames` |
 | `كل_قيم` | `fire.console.platforms.Architecture.AllValues` |
-| `كلمة` | `PIL.WmfImagePlugin.word` |
 | `كهاينابلي_معرّف` | `jinja2.ChainableUndefined` |
 | `كود_إلى_نص` | `jinja2.bccache.Bucket.bytecode_to_string` |
 | `كود_من_نص` | `jinja2.bccache.Bucket.bytecode_from_string` |
@@ -6670,7 +6669,6 @@
 | `هيليتي` | `markdown.extensions.codehilite.CodeHilite.hilite` |
 | `هيليتي_معالج` | `markdown.extensions.codehilite.HiliteTreeprocessor` |
 | `هيليتي_معالج_شغّل` | `markdown.extensions.codehilite.HiliteTreeprocessor.run` |
-| `و` | `jinja2.nodes.And` |
 | `وال_صورة_ملف` | `PIL.WalImageFile.WalImageFile` |
 | `وال_صورة_ملف_remap_ألوان` | `PIL.WalImageFile.WalImageFile.remap_palette` |
 | `وال_صورة_ملف_أظهر` | `PIL.WalImageFile.WalImageFile.show` |
@@ -7446,8 +7444,9 @@
 | `وسائط_eval_سياق_احفظ` | `jinja2.environment.EvalContext.save` |
 | `وسائط_eval_سياق_احفظ_2` | `jinja2.nodes.EvalContext.save` |
 | `وسائط_eval_سياق_احفظ_3` | `jinja2.runtime.EvalContext.save` |
-| `وسائط_eval_سياق_ارجع` | `jinja2.nodes.EvalContext.revert` |
-| `وسائط_eval_سياق_ارجع_2` | `jinja2.runtime.EvalContext.revert` |
+| `وسائط_eval_سياق_ارجع` | `jinja2.environment.EvalContext.revert` |
+| `وسائط_eval_سياق_ارجع_2` | `jinja2.nodes.EvalContext.revert` |
+| `وسائط_eval_سياق_ارجع_3` | `jinja2.runtime.EvalContext.revert` |
 | `وسائط_extrema` | `PIL.ImageStat.Global.extrema` |
 | `وسائط_fix_IFD` | `PIL.TiffImagePlugin.AppendingTiffWriter.fixIFD` |
 | `وسائط_getmask` | `PIL.ImageFont.BaseImageFont.getmask` |
@@ -7488,6 +7487,7 @@
 | `وسائط_أنا_صورة_ملف_حوّل` | `PIL.ImImagePlugin.ImImageFile.transform` |
 | `وسائط_أنا_صورة_ملف_دوّر` | `PIL.ImImagePlugin.ImImageFile.transpose` |
 | `وسائط_إصدار` | `tqdm.version.version` |
+| `وسائط_إكمال` | `fire.completion.Completions` |
 | `وسائط_اببيندينج_تيفف_كاتب_أسطراً` | `PIL.TiffImagePlugin.AppendingTiffWriter.writelines` |
 | `وسائط_احجب` | `markdown_it.rules_core.block.block` |
 | `وسائط_افيف_صورة_ملف_بايتات` | `PIL.AvifImagePlugin.AvifImageFile.tobytes` |
@@ -10047,6 +10047,7 @@
 | `HDF_5_بديل_صورة_ملف_تنسيق` | `PIL.Hdf5StubImagePlugin.HDF5StubImageFile.format` |
 | `HDF_5_بديل_صورة_ملف_تنسيق_وصف` | `PIL.Hdf5StubImagePlugin.HDF5StubImageFile.format_description` |
 | `HTML_R_تعليق` | `markdown_it.common.html_re.comment` |
+| `HTML_R_ج` | `markdown_it.common.html_re.cdata` |
 | `HTML_R_سمة` | `markdown_it.common.html_re.attribute` |
 | `HTML_R_سمة_اسم` | `markdown_it.common.html_re.attr_name` |
 | `HTML_R_سمة_قيمة` | `markdown_it.common.html_re.attr_value` |
@@ -10439,7 +10440,6 @@
 | `ثنائي_تعبير_حقول` | `jinja2.nodes.BinExpr.fields` |
 | `ثنائي_تعبير_سمات` | `jinja2.nodes.BinExpr.attributes` |
 | `ثنائي_تعبير_مجرد` | `jinja2.nodes.BinExpr.abstract` |
-| `ج` | `markdown_it.common.html_re.cdata` |
 | `جبر_صورة_إضافة_تعليقات` | `PIL.GbrImagePlugin.annotations` |
 | `جبر_صورة_ملف_تنسيق` | `PIL.GbrImagePlugin.GbrImageFile.format` |
 | `جبر_صورة_ملف_تنسيق_وصف` | `PIL.GbrImagePlugin.GbrImageFile.format_description` |
