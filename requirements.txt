@@ -52,3 +52,11 @@ yarl==1.24.5
 zipp==4.1.0
 cdp-use==1.4.5
 agent-client-protocol==0.9.0
+numpy==2.5.5
+scipy==1.18.1
+celery==5.7.0
+kombu==5.7.0
+billiard==4.3.2
+vine==5.1.0
+python-telegram-bot==22.8
+redis==8.2.0

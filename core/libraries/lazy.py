@@ -45,6 +45,11 @@ _MODULE_NAMES = [
     "secauth",
     "webserver",
     "weblibs",
+    "numpy",
+    "scipy",
+    "telegram",
+    "redis",
+    "celery",
 ]
 
 _loaded: dict[str, ModuleType] = {}

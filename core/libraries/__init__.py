@@ -61,6 +61,11 @@ from . import weblibs_funcs
 from . import webserver_funcs
 from . import xml_funcs
 from . import zoneinfo_funcs
+from . import numpy_funcs
+from . import scipy_funcs
+from . import telegram_funcs
+from . import redis_funcs
+from . import celery_funcs
 
 # Registry: module references for easy access
 LIBRARIES = {
@@ -122,6 +127,11 @@ LIBRARIES = {
     "web": web_funcs,
     "datafiles": datafiles_funcs,
     "syslib": syslib_funcs,
+    "numpy": numpy_funcs,
+    "scipy": scipy_funcs,
+    "telegram": telegram_funcs,
+    "redis": redis_funcs,
+    "celery": celery_funcs,
 }
 
 def get_all_funcs():
