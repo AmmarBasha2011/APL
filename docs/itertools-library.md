@@ -2,39 +2,31 @@
 
 كل الدوال من مكتبة `itertools` في Python، مترجمة بالكامل:
 
-## مكررات لا نهائية (Infinite Iterators)
+**19 عنصراً عربياً** (الدوال: 19).
 
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `عد_لا نهائي(بداية, خطوة)` | `itertools.count(بداية, خطوة)` | عد لا نهائي |
-| `تكرار_لا نهائي(تسلسل)` | `itertools.cycle(تسلسل)` | تكرار لا نهائي |
-| `كرر_لا نهائي(قيمة, مرة)` | `itertools.repeat(قيمة, مرة)` | تكرار قيمة |
+## الدوال (19)
 
-## مكررات منتهية (Finite Iterators)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `تجميع(ت1, ت2, ...)` | `itertools.chain(ت1, ت2, ...)` | تجميع المكررات |
-| `تجميع_من_قوائم(قوائم)` | `itertools.chain.from_iterable(قوائم)` | تجميع قوائم |
-| `ضغط(بيانات, أقنعة)` | `itertools.compress(بيانات, أقنعة)` | ضغط |
-| `فلترة_خاطئة(د, بيانات)` | `itertools.filterfalse(د, بيانات)` | فلترة خاطئة |
-| `قطّع(مكرر, بداية, نهاية)` | `itertools.islice(مكرر, بداية, نهاية)` | قطعة |
-
-## توليفات (Combinatoric)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `توافيق_مع_إرجاع(ت, ر)` | `itertools.combinations_with_replacement(ت, ر)` | توافيق مع إرجاع |
-| `ناتج_ديكارتي(ت1, ت2)` | `itertools.product(ت1, ت2)` | ناتج ديكارتي |
-| `تباديل_مع_إرجاع(ت1, ت2)` | `itertools.product(ت1, ت2)` | تباديل مع إرجاع |
-
-## مساعدة (Helpers)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `تراكم(مكرر)` | `itertools.accumulate(مكرر)` | تراكمي |
-| `زوجي(ت1, ت2, حشو)` | `itertools.zip_longest(ت1, ت2, حشو)` | زوجي |
-| `اجمع_مفتاح(مكرر, مفتاح)` | `itertools.groupby(مكرر, مفتاح)` | تجميع بمفتاح |
+| العربي | Python |
+|--------|--------|
+| `عد_لا نهائي` | `itertools.count` |
+| `تكرار_لا نهائي` | `itertools.cycle` |
+| `كرر_لا نهائي` | `itertools.repeat` |
+| `مدى_لا نهائي` | `itertools.count` |
+| `تجميع` | `itertools.chain` |
+| `تجميع_من_قوائم` | `itertools.chain.from_iterable` |
+| `ضغط` | `itertools.compress` |
+| `فلترة_خاطئة` | `itertools.filterfalse` |
+| `قطّع` | `itertools.islice` |
+| `اقطع` | `itertools.islice` |
+| `توافيق_مع_إرجاع` | `itertools.combinations_with_replacement` |
+| `ناتج_ديكارتي` | `itertools.product` |
+| `تباديل_مع_إرجاع` | `itertools.product` |
+| `اجمع_مفتاح` | `itertools.groupby` |
+| `تراكم` | `itertools.accumulate` |
+| `زوجي` | `itertools.zip_longest` |
+| `سلسلة` | `itertools.chain` |
+| `فلتر` | `filter` |
+| `خريطة` | `map` |
 
 ## مثال
 

@@ -2,31 +2,29 @@
 
 مجموعات الأحرف والرموز الثابتة في Python، كمتغيرات جاهزة.
 
-**10 عنصر** (2 دالة، 8 ثابت).
+**10 عنصراً عربياً** (الدوال: 2، الثوابت: 8).
 
-## الدوال
+## الدوال (2)
 
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `أحرف_كبيرة_أول_كل_كلمة(...)` | `string.capwords` | Capitalize Each Word |
-| `قالب_نص(...)` | `string.Template` | قالب يستبدل $placeholder |
+| العربي | Python |
+|--------|--------|
+| `أحرف_كبيرة_أول_كل_كلمة` | `string.capwords` |
+| `قالب_نص` | `string.Template` |
 
-## الثوابت (Constants)
+## الثوابت (8) — `STRING_CONSTANTS`
 
-تُستخدم **بدون** أقواس.
+| العربي | Python |
+|--------|--------|
+| `حروف_انجليزية` | `string.ascii_letters` |
+| `حروف_صغيرة_ثابتة` | `string.ascii_lowercase` |
+| `حروف_كبيرة_ثابتة` | `string.ascii_uppercase` |
+| `أرقام_ثابتة` | `string.digits` |
+| `رموز_خاصة` | `string.punctuation` |
+| `حروف_سداسية` | `string.hexdigits` |
+| `حروف_قابلة_للطباعة` | `string.printable` |
+| `مسافات_بيضاء` | `string.whitespace` |
 
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `حروف_انجليزية` | `string.ascii_letters` |  |
-| `حروف_صغيرة_ثابتة` | `string.ascii_lowercase` |  |
-| `حروف_كبيرة_ثابتة` | `string.ascii_uppercase` |  |
-| `أرقام_ثابتة` | `string.digits` |  |
-| `رموز_خاصة` | `string.punctuation` |  |
-| `حروف_سداسية` | `string.hexdigits` |  |
-| `حروف_قابلة_للطباعة` | `string.printable` |  |
-| `مسافات_بيضاء` | `string.whitespace` |  |
-
-## أمثلة
+## مثال
 
 ```apl
 اطبع "عدد حروف إنجليزية:", طول(حروف_انجليزية)

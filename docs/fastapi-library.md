@@ -2,434 +2,550 @@
 
 مكتبة FastAPI الكاملة بالعربي، إطار عمل ويب عالي الأداء:
 
-## إنشاء التطبيق
+**536 عنصراً عربياً** (الدوال: 536).
 
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `سريع()` | `FastAPI()` | إنشاء تطبيق FastAPI |
-| `فاست_أبي()` | `FastAPI()` | إنشاء تطبيق FastAPI |
-| `تطبيق_سريع()` | `FastAPI()` | إنشاء تطبيق سريع |
-| `واجهة_سريعة()` | `FastAPI()` | إنشاء واجهة سريعة |
-| `خدمة_سريعة()` | `FastAPI()` | إنشاء خدمة سريعة |
-| `منصة_سريعة()` | `FastAPI()` | إنشاء منصة سريعة |
+## الدوال (536)
 
-## المسارات (Routing)
+| العربي | Python |
+|--------|--------|
+| `فاست_أبي` | `FastAPI` |
+| `سريع` | `FastAPI` |
+| `تطبيق_سريع` | `FastAPI` |
+| `واجهة_سريعة` | `FastAPI` |
+| `خدمة_سريعة` | `FastAPI` |
+| `منصة_سريعة` | `FastAPI` |
+| `مسار_جيت` | `@app.get` |
+| `مسار_بوست` | `@app.post` |
+| `مسار_حذف` | `@app.delete` |
+| `مسار_تعديل` | `@app.put` |
+| `مسار_تصحيح` | `@app.patch` |
+| `سريع_تصحيح` | `@app.patch` |
+| `متحكم_فاست` | `@app.get` |
+| `متحكم_رأس` | `@app.head` |
+| `خيارات_مسار` | `@app.options` |
+| `مسار_خيارات` | `@app.options` |
+| `مسار_رأس` | `@app.head` |
+| `مسار_مسار` | `@app.trace` |
+| `سريع_جيت` | `@app.get` |
+| `سريع_بوست` | `@app.post` |
+| `سريع_حذف` | `@app.delete` |
+| `سريع_تعديل` | `@app.put` |
+| `مسار_سريع` | `@app.get` |
+| `رابط` | `@app.get` |
+| `رابط_جيت` | `@app.get` |
+| `رابط_بوست` | `@app.post` |
+| `نقطة_نهاية` | `@app.get` |
+| `شغل_فاست` | `uvicorn.run` |
+| `شغل_خدمة_فاست` | `uvicorn.run` |
+| `استمع_فاست` | `uvicorn.run` |
+| `ابدأ_فاست` | `uvicorn.run` |
+| `شغل_سريع` | `uvicorn.run` |
+| `طلب_-fastapi` | `Request` |
+| `طلب_جسم` | `request.json` |
+| `طلب_مسار_فاست` | `request.path_params` |
+| `طلب_استعلام` | `request.query_params` |
+| `طلب_رأس_فاست` | `request.headers` |
+| `طلب_كوكي_فاست` | `request.cookies` |
+| `طلب_جلسة_فاست` | `request.session` |
+| `طلب_طريقة_فاست` | `request.method` |
+| `طلب_عنوان_فاست` | `request.url` |
+| `طلب_أي_بي_فاست` | `request.client.host` |
+| `طلب_نموذج_فاست` | `request.form` |
+| `طلب_ملف_فاست` | `request.files` |
+| `طلب_مسار_كامل` | `request.url.path` |
+| `طلب_نظامي` | `request.url.params` |
+| `طلب_محلي` | `request.url.hostname` |
+| `استجابة_فاست` | `Response` |
+| `استجابة_نص_فاست` | `PlainTextResponse` |
+| `استجابة_جسون_فاست` | `JSONResponse` |
+| `استجابة_توجيه` | `RedirectResponse` |
+| `استجابة_ملف` | `FileResponse` |
+| `استجابة_تدفق` | `StreamingResponse` |
+| `استجابة_مباشرة` | `UJSONResponse` |
+| `استجابة_بسيطة` | `HTMLResponse` |
+| `استجابة_صفحة` | `HTMLResponse` |
+| `نموذج_أساسي` | `BaseModel` |
+| `نموذج` | `model` |
+| `نموذج_بيانات` | `BaseModel` |
+| `نموذج_طلب` | `BaseModel` |
+| `نموذج_استجابة` | `BaseModel` |
+| `حقل` | `Field` |
+| `حقل_مطلوب` | `Field` |
+| `مدقق` | `validator` |
+| `مسلسل` | `jsonable_encoder` |
+| `إعدادات_النموذج` | `model_config` |
+| `حول_فاست` | `RedirectResponse` |
+| `إعادة_توجيه_فاست` | `RedirectResponse` |
+| `رابط_دائم_فاست` | `url_for` |
+| `بناء_رابط_فاست` | `url_for` |
+| `عرض_فاست` | `templates.TemplateResponse` |
+| `قالب_فاست` | `templates.TemplateResponse` |
+| `عرض_قالب_فاست` | `templates.TemplateResponse` |
+| `عرض_صفحة` | `templates.TemplateResponse` |
+| `خطأ_ http` | `HTTPException` |
+| `خطأ_فاست` | `HTTPException` |
+| `خطأ_400_فاست` | `HTTPException` |
+| `خطأ_401_فاست` | `HTTPException` |
+| `خطأ_403_فاست` | `HTTPException` |
+| `خطأ_404_فاست` | `HTTPException` |
+| `خطأ_405` | `HTTPException` |
+| `خطأ_408` | `HTTPException` |
+| `خطأ_409` | `HTTPException` |
+| `خطأ_422` | `HTTPException` |
+| `خطأ_429` | `HTTPException` |
+| `خطأ_500_فاست` | `HTTPException` |
+| `خطأ_502` | `HTTPException` |
+| `خطأ_503` | `HTTPException` |
+| `خطأ_504` | `HTTPException` |
+| `خطأ_بيانات` | `RequestValidationError` |
+| `خطأ_تحقق` | `ValidationError` |
+| `استثناء` | `HTTPException` |
+| `استثناء_عام` | `HTTPException` |
+| `نجاح` | `status.HTTP_200_OK` |
+| `تم_إنشاء` | `status.HTTP_201_CREATED` |
+| `مقبول` | `status.HTTP_202_ACCEPTED` |
+| `بدون_محتوى` | `status.HTTP_204_NO_CONTENT` |
+| `معدوم` | `status.HTTP_301_MOVED_PERMANENTLY` |
+| `تم_إيجاده` | `status.HTTP_302_FOUND` |
+| `معدل` | `rate` |
+| `طلب_سيء` | `status.HTTP_400_BAD_REQUEST` |
+| `غير_مصرح` | `status.HTTP_401_UNAUTHORIZED` |
+| `محظور` | `status.HTTP_403_FORBIDDEN` |
+| `غير_موجود` | `status.HTTP_404_NOT_FOUND` |
+| `غير_مسموح` | `status.HTTP_405_METHOD_NOT_ALLOWED` |
+| `انتهت_مهلة` | `status.HTTP_408_REQUEST_TIMEOUT` |
+| `تعارض` | `status.HTTP_409_CONFLICT` |
+| `خطأ_خادم` | `status.HTTP_500_INTERNAL_SERVER_ERROR` |
+| `غير_منفذ` | `status.HTTP_501_NOT_IMPLEMENTED` |
+| `بوابة_سيئة` | `status.HTTP_502_BAD_GATEWAY` |
+| `خدمة_غير_متوفرة` | `status.HTTP_503_SERVICE_UNAVAILABLE` |
+| `مهلة_بوابة` | `status.HTTP_504_GATEWAY_TIMEOUT` |
+| `فحص_صحة` | `health` |
+| `صحة` | `health` |
+| `فحص` | `health` |
+| `حالة` | `health` |
+| `حالة_الخدمة` | `health` |
+| `حالة_النظام` | `health` |
+| `حالة_قاعدة` | `health` |
+| `حالة_اتصال` | `health` |
+| `وسيط_فاست` | `middleware` |
+| `قبل_طلب_فاست` | `middleware('http')` |
+| `بعد_طلب_فاست` | `middleware('http')` |
+| `وسيط_طلب` | `app.middleware('http')` |
+| `موجه_طلب` | `app.middleware('http')` |
+| `مراقب` | `app.middleware('http')` |
+| `مراقب_طلب` | `app.middleware('http')` |
+| `تبعية` | `Depends` |
+| `تعتمد` | `Depends` |
+| `تبعية_حقن` | `Depends` |
+| `تبعية_جلسة` | `Depends(get_db)` |
+| `حماية` | `Depends(get_current_user` |
+| `تحقق_رمز` | `verify_access_token` |
+| `مصادقة` | `Depends(get_current_active_user` |
+| `جلسة_قاعدة` | `SessionLocal` |
+| `قاعدة_بيانات` | `SessionLocal` |
+| `مستخدم_حالي` | `Depends(get_current_user` |
+| `رمز_وصول` | `create_access_token` |
+| `سجل_دخول_فاست` | `login_for_access_token` |
+| `سجل_خروج_فاست` | `logout` |
+| `رمز_تحقق` | `otp` |
+| `رمز_جديد` | `create_access_token` |
+| `تحقق_من_فاست` | `get_current_user` |
+| `تحقق_مستخدم` | `get_current_active_user` |
+| `شفر_كلمة_فاست` | `get_password_hash` |
+| `تحقق_كلمة` | `verify_password` |
+| `كلمة_مرور_صحيحة` | `verify_password` |
+| `كلمة_مشروعة` | `verify_password` |
+| `مصادقة_أساسية` | `HTTPBasic` |
+| `مصادقة_رمز` | `OAuth2PasswordBearer` |
+| `مصادقة_حامل` | `OAuth2PasswordBearer` |
+| `نظام_مصادقة` | `OAuth2PasswordBearer` |
+| `حماية_مسار` | `Security` |
+| `حماية_متقدمة` | `Security` |
+| `أدوار` | `Security` |
+| `أذونات` | `Security` |
+| `احفظ_ملف_فاست` | `file.save` |
+| `ملف_آمن_فاست` | `secure_filename` |
+| `اسم_آمن_فاست` | `secure_filename` |
+| `ملف_مرفوع` | `UploadFile` |
+| `ملف_صورة` | `UploadFile` |
+| `ملف_صوت` | `UploadFile` |
+| `ملف_فيديو` | `UploadFile` |
+| `ملف_مستند` | `UploadFile` |
+| `ملف_ثنائي` | `UploadFile` |
+| `احفظ_ملفات` | `files.save` |
+| `احفظ_صورة` | `file.save` |
+| `كورس` | `CORSMiddleware` |
+| `وصول_متبادل` | `CORSMiddleware` |
+| `موارد_مشتركة` | `CORSMiddleware` |
+| `أصل_متبادل` | `CORSMiddleware` |
+| `رأس_متبادل` | `CORSMiddleware` |
+| `طرق_متبادل` | `CORSMiddleware` |
+| `عند_بدء` | `app.on_event('startup')` |
+| `عند_إيقاف` | `app.on_event('shutdown')` |
+| `حدث_بدء` | `app.on_event('startup')` |
+| `حدث_إيقاف` | `app.on_event('shutdown')` |
+| `حدث_جاهز` | `app.on_event('startup')` |
+| `حدث_إغلاق` | `app.on_event('shutdown')` |
+| `جاهز` | `app.on_event('startup')` |
+| `إغلاق` | `app.on_event('shutdown')` |
+| `ملفات_ثابتة` | `StaticFiles` |
+| `ملف_ثابت` | `StaticFiles.static_directory` |
+| `دليل_ثابت` | `StaticFiles` |
+| `مسار_ثابت` | `StaticFiles` |
+| `موارد_ثابتة` | `StaticFiles` |
+| `توثيق` | `docs` |
+| `توثيق_سريع` | `docs` |
+| `توثيق_تفاعلي` | `docs` |
+| `تجربة` | `docs` |
+| `اختبار_تفاعلي` | `docs` |
+| `مرجع` | `docs` |
+| `مرجع_سريع` | `docs` |
+| `وصف_خدمة` | `docs` |
+| `مواصفات` | `docs` |
+| `مواصفات_خدمة` | `docs` |
+| `نقطة_مرجعية` | `docs` |
+| `مساعدة` | `docs` |
+| `دليل_سريع` | `docs` |
+| `مرجع_تفاعلي` | `docs` |
+| `اختبار_عميل_فاست` | `TestClient` |
+| `عميل_فاست` | `TestClient` |
+| `اختبار` | `TestClient` |
+| `اختبار_خدمة` | `TestClient` |
+| `قاعدة_محلية` | `SessionLocal` |
+| `قاعدة_سريع` | `SessionLocal` |
+| `استعلام_فاست` | `_apl_db.query` |
+| `أضف_سجل` | `_apl_db.add` |
+| `نفذ_سريع` | `_apl_db.commit` |
+| `تراجع_سريع` | `_apl_db.rollback` |
+| `أغلق_سريع` | `_apl_db.close` |
+| `امسح` | `_apl_db.flush` |
+| `احذف_سجل_فاست` | `_apl_db.delete` |
+| `حدّث` | `_apl_db.refresh` |
+| `ترحيل` | `alembic` |
+| `ترحيل_قاعدة` | `alembic` |
+| `إنشاء_جداول` | `Base.metadata.create_all` |
+| `هجرة_فاست` | `Base.metadata.create_all` |
+| `ترحيل_أولي` | `Base.metadata.create_all` |
+| `ترحيل_تراجع` | `alembic downgrade` |
+| `ترحيل_ترقية` | `alembic upgrade` |
+| `كاش` | `cache` |
+| `تخزين_مؤقت` | `cache` |
+| `مفتاح_كاش` | `cache_key` |
+| `فترة_كاش` | `cache_ttl` |
+| `مسح_كاش` | `cache_clear` |
+| `حد_معدل` | `rate_limit` |
+| `معدل_طلبات` | `rate_limit` |
+| `حد_طلبات` | `rate_limit` |
+| `تقييد` | `rate_limit` |
+| `حماية_حمل` | `rate_limit` |
+| `حماية_زحام` | `rate_limit` |
+| `رأس_استجابة` | `response.headers` |
+| `ضع_رأس` | `response.headers.__setitem__` |
+| `أضف_رأس` | `response.headers.__setitem__` |
+| `رأس_خاص` | `response.headers` |
+| `رأس_أمان` | `response.headers` |
+| `كوكي` | `response.set_cookie` |
+| `ضع_كوكي` | `response.set_cookie` |
+| `احذف_كوكي` | `response.delete_cookie` |
+| `كوكي_آمن` | `response.set_cookie` |
+| `كوكي_جلسة` | `response.set_cookie` |
+| `كوكي_دائم` | `response.set_cookie` |
+| `كوكي_مسار` | `response.set_cookie` |
+| `كوكي_نطاق` | `response.set_cookie` |
+| `جلسة_فاست` | `session` |
+| `ضع_جلسة_فاست` | `session.__setitem__` |
+| `احذف_جلسة_فاست` | `session.pop` |
+| `مسح_جلسة` | `session.clear` |
+| `مفتاح_جلسة` | `session_key` |
+| `فترة_جلسة` | `session_timeout` |
+| `جلسة_آمنة` | `session` |
+| `جلسة_مشفرة` | `session` |
+| `رسالة` | `Message` |
+| `رسالة_خطأ` | `Message` |
+| `رسالة_نجاح` | `Message` |
+| `رسالة_تحذير` | `Message` |
+| `رسالة_معلومة` | `Message` |
+| `إشعار` | `notification` |
+| `إشعار_نجاح` | `Message` |
+| `إشعار_خطأ` | `Message` |
+| `تنبيه` | `alerting` |
+| `خطأ_حقل` | `ErrorDetail` |
+| `تحقق` | `validate` |
+| `تحقق_بيانات` | `validate` |
+| `تحقق_نموذج` | `validate` |
+| `تحقق_صحة` | `validate` |
+| `تحقق_إدخال` | `validate` |
+| `تحقق_طلب` | `validate` |
+| `تحقق_استجابة` | `validate` |
+| `مدقق_بيانات` | `validator` |
+| `مدقق_حقل` | `validator` |
+| `مدقق_نموذج` | `validator` |
+| `تصفح` | `pagination` |
+| `صفحة` | `page` |
+| `حجم_صفحة` | `page_size` |
+| `حد_أقصى` | `limit` |
+| `إزاحة` | `offset` |
+| `ترتيب` | `sort` |
+| `ترتيب_تصاعدي` | `sort_asc` |
+| `ترتيب_تنازلي` | `sort_desc` |
+| `بحث_نصي` | `search` |
+| `فلتر_فاست` | `filter` |
+| `فلتر_حقل` | `filter` |
+| `فلتر_نطاق` | `filter` |
+| `فلتر_تاريخ` | `filter` |
+| `فلتر_قيمة` | `filter` |
+| `بحث_متقدم` | `search` |
+| `تشفير` | `encryption` |
+| `فك_تشفير` | `decrypt` |
+| `تجزئة` | `segmentation` |
+| `ملح` | `salt` |
+| `توقيع` | `sign` |
+| `تحقق_توقيع` | `verify` |
+| `مفتاح_سري_فاست` | `secret_key` |
+| `خوارزمية` | `algorithm` |
+| `مدة_انتهاء` | `expire_minutes` |
+| `تشفير_متماثل` | `symmetric` |
+| `تشفير_غير_متماثل` | `asymmetric` |
+| `تشفير_نهاية_إلى_نهاية` | `e2e` |
+| `سجل` | `log` |
+| `سجل_خطأ_سريع` | `log_error` |
+| `سجل_طلب` | `log_request` |
+| `سجل_استجابة` | `log_response` |
+| `تتبع` | `trace` |
+| `قياس` | `metric` |
+| `مقياس` | `metric` |
+| `أداء` | `performance` |
+| `وقت_استجابة` | `response_time` |
+| `معدل_نجاح` | `success_rate` |
+| `معدل_خطأ` | `error_rate` |
+| `إعدادات` | `settings` |
+| `تكوين` | `config` |
+| `متغيرات` | `env` |
+| `متغير_بيئة_فاست` | `env` |
+| `بيئة` | `environment` |
+| `وضع` | `mode` |
+| `وضع_تطوير` | `development` |
+| `وضع_إنتاج` | `production` |
+| `وضع_اختبار` | `testing` |
+| `وضع_مسبق` | `staging` |
+| `إصدار` | `version` |
+| `اسم_خدمة` | `service_name` |
+| `منفذ_خدمة` | `port` |
+| `مضيف` | `host` |
+| `عنوان` | `url` |
+| `عنوان_قاعدة` | `database_url` |
+| `مفتاح_ api` | `api_key` |
+| `مفتاح_عام` | `public_key` |
+| `مفتاح_خاص` | `private_key` |
+| `خلفية` | `BackgroundTasks` |
+| `مهمة_خلفية` | `BackgroundTasks.add_task` |
+| `مهمة` | `BackgroundTasks.add_task` |
+| `جدولة` | `scheduler` |
+| `جدولة_مهمة` | `scheduler.add_job` |
+| `مهمة_مجدولة` | `scheduled_task` |
+| `مهمة_متكررة` | `recurring_task` |
+| `ويب_سوكيت` | `WebSocket` |
+| `اتصال_مباشر` | `WebSocket` |
+| `مقبس` | `WebSocket` |
+| `قناة` | `WebSocket` |
+| `بث` | `WebSocket` |
+| `رسائل_مباشرة` | `WebSocket` |
+| `إرسال_مباشر` | `WebSocket.send_text` |
+| `استقبال_مباشر` | `WebSocket.receive_text` |
+| `غرفة_دردشة` | `WebSocketRoom` |
+| `مجموعة_اتصال` | `WebSocketManager` |
+| `إشعار_بريد` | `email_notification` |
+| `إشعار_دفع` | `push_notification` |
+| `إشعار_رسالة` | `sms_notification` |
+| `بريد` | `email` |
+| `رسالة_بريد` | `email_message` |
+| `أرسل_بريد` | `send_email` |
+| `أرسل_رسالة` | `send_sms` |
+| `أرسل_إشعار` | `send_push` |
+| `دفع` | `payment` |
+| `معاملة` | `transaction` |
+| `معاملة_دفع` | `payment_transaction` |
+| `بوابة_دفع` | `payment_gateway` |
+| `طريقة_دفع` | `payment_method` |
+| `حالة_دفع` | `payment_status` |
+| `دفع_ناجح` | `payment_success` |
+| `دفع_فاشل` | `payment_failed` |
+| `استرداد` | `refund` |
+| `إلغاء_دفع` | `cancel_payment` |
+| `تأكيد_دفع` | `confirm_payment` |
+| `دفع_متكرر` | `recurring_payment` |
+| `اشتراك` | `subscription` |
+| `خطة_اشتراك` | `subscription_plan` |
+| `فترة_اشتراك` | `subscription_period` |
+| `تجديد_اشتراك` | `renew_subscription` |
+| `إلغاء_اشتراك` | `cancel_subscription` |
+| `مهمة_مؤجلة` | `delayed_task` |
+| `مهمة_يومية` | `daily_task` |
+| `مهمة_أسبوعية` | `weekly_task` |
+| `مهمة_شهرية` | `monthly_task` |
+| `تكرار` | `interval` |
+| `فترة_تكرار` | `interval_seconds` |
+| `وقت_بدء` | `start_time` |
+| `وقت_انتهاء` | `end_time` |
+| `بريد_إلكتروني` | `email` |
+| `أكد_بريد` | `verify_email` |
+| `رابط_تأكيد` | `verification_link` |
+| `استعادة_كلمة` | `password_reset` |
+| `رابط_استعادة` | `reset_link` |
+| `رسالة_نصية` | `sms` |
+| `أكد_رسالة` | `verify_sms` |
+| `رمز_تأكيد` | `verification_code` |
+| `رمز_جهاز` | `device_token` |
+| `منصة_جهاز` | `device_platform` |
+| `تحميل` | `upload` |
+| `رفع` | `upload` |
+| `حجم_ملف_فاست` | `file_size` |
+| `نوع_ملف` | `file_type` |
+| `اسم_ملف_فاست` | `filename` |
+| `مسار_ملف` | `file_path` |
+| `تنزيل` | `download` |
+| `تحميل_ملف` | `download` |
+| `ملف_تحميل` | `download` |
+| `تصدير` | `export` |
+| `استيراد` | `import` |
+| `استيراد_ملف` | `import_file` |
+| `تصدير_ملف` | `export_file` |
+| `صورة` | `image` |
+| `صورة_مصغرة` | `thumbnail` |
+| `حجم_صورة` | `image_size` |
+| `أبعاد_صورة` | `image_dimensions` |
+| `عرض_صورة` | `image_width` |
+| `ارتفاع_صورة` | `image_height` |
+| `نوع_صورة` | `image_type` |
+| `جودة_صورة` | `image_quality` |
+| `ضغط_صورة` | `compress_image` |
+| `تغيير_حجم` | `resize_image` |
+| `قص_صورة` | `crop_image` |
+| `تدوير_صورة` | `rotate_image` |
+| `انعكاس_صورة` | `flip_image` |
+| `فلتر_صورة` | `image_filter` |
+| `فيديو` | `video` |
+| `مشغل_فيديو` | `video_player` |
+| `مدة_فيديو` | `video_duration` |
+| `أبعاد_فيديو` | `video_dimensions` |
+| `معدل_بت` | `bitrate` |
+| `إطارات` | `frames` |
+| `دقة` | `resolution` |
+| `دقة_عالية` | `high_resolution` |
+| `دقة_منخفضة` | `low_resolution` |
+| `صوت` | `audio` |
+| `مشغل_صوت` | `audio_player` |
+| `مدة_صوت` | `audio_duration` |
+| `معدل_عينة` | `sample_rate` |
+| `قنوات` | `channels` |
+| `تنسيق_صوت` | `audio_format` |
+| `مفتاح_تشفير` | `encryption_key` |
+| `خوارزمية_تشفير` | `encryption_algorithm` |
+| `متجه_ابتدائي` | `iv` |
+| `وضع_تشفير` | `encryption_mode` |
+| `حشو` | `padding` |
+| `طول_مفتاح` | `key_length` |
+| `تدفق` | `stream` |
+| `ضغط_فاست` | `compression` |
+| `خوارزمية_ضغط` | `compression_algorithm` |
+| `مستوى_ضغط` | `compression_level` |
+| `نسبة_ضغط` | `compression_ratio` |
+| `فك_ضغط` | `decompress` |
+| `أرشيف` | `archive` |
+| `ملف_مضغوط` | `compressed_file` |
+| `تحويل` | `conversion` |
+| `تحويل_تنسيق` | `format_conversion` |
+| `تحويل_نوع` | `type_conversion` |
+| `تحويل_ترميز` | `encoding_conversion` |
+| `تحويل_وحدة` | `unit_conversion` |
+| `تحويل_عملة` | `currency_conversion` |
+| `تحويل_تاريخ` | `date_conversion` |
+| `تحويل_وقت` | `time_conversion` |
+| `تحليل` | `analytics` |
+| `إحصائيات` | `statistics` |
+| `تقارير` | `reports` |
+| `لوحة_تحكم` | `dashboard` |
+| `مخطط` | `chart` |
+| `رسم_بياني` | `graph` |
+| `استخدام` | `usage` |
+| `نسبة` | `percentage` |
+| `اتجاه` | `trend` |
+| `تنبؤ` | `prediction` |
+| `ذكاء` | `ai` |
+| `تدريب` | `training` |
+| `تصنيف` | `classification` |
+| `تصنيف_نص` | `text_classification` |
+| `تصنيف_صورة` | `image_classification` |
+| `كشف_كائن` | `object_detection` |
+| `توليد` | `generation` |
+| `تلخيص` | `summarization` |
+| `ترجمة` | `translation` |
+| `تحليل_مشاعر` | `sentiment_analysis` |
+| `تعرف_صوت` | `speech_recognition` |
+| `توليد_نص` | `text_generation` |
+| `توليد_صورة` | `image_generation` |
+| `توليد_كود` | `code_generation` |
+| `دردشة` | `chat` |
+| `محادثة` | `conversation` |
+| `سؤال_جواب` | `qa` |
+| `بحث_دلالي` | `semantic_search` |
+| `تضمين` | `embedding` |
+| `متجه_دلالي` | `vector_embedding` |
+| `قاعدة_متجهات` | `vector_database` |
+| `تشابه` | `similarity` |
+| `مسافة_مشتركة` | `cosine_similarity` |
+| `بلوكتشين` | `blockchain` |
+| `كتلة` | `block` |
+| `سلسلة_كتل` | `blockchain` |
+| `عقد` | `contract` |
+| `عقد_ذكي` | `smart_contract` |
+| `محفظة` | `wallet` |
+| `عنوان_محفظة` | `wallet_address` |
+| `رمز` | `token` |
+| `عملة_رقمية` | `cryptocurrency` |
+| `تجميد` | `staking` |
+| `تعدين` | `mining` |
+| `إجماع` | `consensus` |
+| `دليل_عمل` | `proof_of_work` |
+| `دليل_حصة` | `proof_of_stake` |
+| `إنترنت_أشياء` | `iot` |
+| `جهاز` | `device` |
+| `مستشعر` | `sensor` |
+| `مشغل` | `actuator` |
+| `بوابة` | `gateway` |
+| `بروتوكول` | `protocol` |
+| `mqtt` | `mqtt` |
+| `mqtt_وكيل` | `mqtt_broker` |
+| `رسالة_ mqtt` | `mqtt_message` |
+| `موضوع` | `topic` |
+| `سحابة` | `cloud` |
+| `خدمة_سحابية` | `cloud_service` |
+| `تخزين_سحابي` | `cloud_storage` |
+| `حاوية` | `container` |
+| `دوكر` | `docker` |
+| `كوبرنيتيس` | `kubernetes` |
+| `مجموعة_كلاستر` | `cluster` |
+| `عقدة` | `node` |
+| `موازن_حمل` | `load_balancer` |
+| `شبكة` | `network` |
+| `شبكة_افتراضية` | `vpc` |
+| `مجموعة_أمان` | `security_group` |
+| `قاعدة_بيانات_سحابية` | `cloud_database` |
+| `ذاكرة_مؤقتة_سحابية` | `cloud_cache` |
+| `طابور_رسائل` | `message_queue` |
+| `ميكروسيرفيس` | `microservice` |
+| `خدمة_صغيرة` | `microservice` |
+| `خدمة` | `service` |
+| `سجل_خدمات` | `service_registry` |
+| `بوابة_خدمة` | `api_gateway` |
+| `اكتشاف_خدمة` | `service_discovery` |
+| `تتبع_خدمة` | `distributed_tracing` |
+| `سجل_تجميع` | `log_aggregation` |
+| `مراقبة` | `monitoring` |
+| `لوحة_مراقبة` | `monitoring_dashboard` |
 
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `سريع_جيت('/path')` | `@app.get('/path')` | مسار GET |
-| `سريع_بوست('/path')` | `@app.post('/path')` | مسار POST |
-| `سريع_حذف('/path')` | `@app.delete('/path')` | مسار DELETE |
-| `سريع_تعديل('/path')` | `@app.put('/path')` | مسار PUT |
-| `سريع_تصحيح('/path')` | `@app.patch('/path')` | مسار PATCH |
-| `مسار_سريع('/path')` | `@app.get('/path')` | مسار سريع (GET) |
-| `رابط('/path')` | `@app.get('/path')` | رابط (GET) |
-| `رابط_جيت('/path')` | `@app.get('/path')` | رابط GET |
-| `رابط_بوست('/path')` | `@app.post('/path')` | رابط POST |
-| `نقطة_نهاية('/path')` | `@app.get('/path')` | نقطة نهاية |
-| `متحكم_فاست('/path')` | `@app.get('/path')` | متحكم |
-
-## تشغيل الخادم
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `شغل_فاست(app, منفذ)` | `uvicorn.run(app, منفذ)` | تشغيل الخادم |
-| `شغل_خدمة_فاست(app, منفذ)` | `uvicorn.run(app, منفذ)` | تشغيل الخدمة |
-| `استمع_فاست(app, منفذ)` | `uvicorn.run(app, منفذ)` | الاستماع على منفذ |
-| `ابدأ_فاست(app, منفذ)` | `uvicorn.run(app, منفذ)` | بدء التشغيل |
-| `شغل_سريع(app, منفذ)` | `uvicorn.run(app, منفذ)` | تشغيل سريع |
-
-## الطلب (Request)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `طلب_-fastapi` | `Request` | كائن الطلب |
-| `طلب_جسم()` | `request.json()` | جسم الطلب JSON |
-| `طلب_مسار_فاست(مفتاح)` | `request.path_params[مفتاح]` | معاملات المسار |
-| `طلب_استعلام(مفتاح)` | `request.query_params[مفتاح]` | معاملات الاستعلام |
-| `طلب_رأس_فاست(اسم)` | `request.headers[اسم]` | رأس الطلب |
-| `طلب_كوكي_فاست(اسم)` | `request.cookies.get(اسم)` | كوكي |
-| `طلب_جلسة_فاست` | `request.session` | جلسة المستخدم |
-| `طلب_طريقة_فاست` | `request.method` | طريقة الطلب |
-| `طلب_عنوان_فاست` | `request.url` | عنوان الطلب |
-| `طلب_أي_بي_فاست` | `request.client.host` | IP العميل |
-| `طلب_نموذج_فاست()` | `request.form()` | نموذج الطلب |
-| `طلب_ملف_فاست(اسم)` | `request.files[اسم]` | ملف مرفوع |
-
-## الاستجابة (Response)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `استجابة_فاست(محتوى)` | `Response(محتوى)` | إنشاء استجابة |
-| `استجابة_نص_فاست(نص)` | `PlainTextResponse(نص)` | استجابة نصية |
-| `استجابة_جسون_فاست(بيانات)` | `JSONResponse(بيانات)` | استجابة JSON |
-| `استجابة_توجيه('/path')` | `RedirectResponse('/path')` | استجابة توجيه |
-| `استجابة_ملف(مسار)` | `FileResponse(مسار)` | استجابة ملف |
-| `استجابة_تدفق(مكرر)` | `StreamingResponse(مكرر)` | استجابة تدفق |
-| `استجابة_مباشرة(بيانات)` | `UJSONResponse(بيانات)` | استجابة مباشرة |
-| `استجابة_بسيطة(محتوى)` | `HTMLResponse(محتوى)` | استجابة HTML |
-| `استجابة_صفحة(محتوى)` | `HTMLResponse(محتوى)` | استجابة صفحة |
-
-## نماذج البيانات (Data Models)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `نموذج_أساسي()` | `BaseModel()` | نموذج بيانات أساسي |
-| `نموذج()` | `BaseModel()` | نموذج بيانات |
-| `نموذج_بيانات()` | `BaseModel()` | نموذج بيانات |
-| `نموذج_طلب()` | `BaseModel()` | نموذج طلب |
-| `نموذج_استجابة()` | `BaseModel()` | نموذج استجابة |
-| `حقل(افتراضي, وصف)` | `Field(افتراضي, وصف)` | حقل في النموذج |
-| `حقل_مطلوب(وصف)` | `Field(..., وصف)` | حقل مطلوب |
-| `مدقق(اسم)` | `@validator(اسم)` | مدقق |
-| `مسلسل(بيانات)` | `jsonable_encoder(بيانات)` | مسلسل JSON |
-
-## الأخطاء (Errors)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `خطأ_فاست(رمز, تفاصيل)` | `HTTPException(رمز, تفاصيل)` | إطلاق خطأ HTTP |
-| `خطأ_ http(رمز, تفاصيل)` | `HTTPException(رمز, تفاصيل)` | إطلاق خطأ HTTP |
-| `خطأ_400_فاست(تفاصيل)` | `HTTPException(400, تفاصيل)` | خطأ 400 |
-| `خطأ_401_فاست(تفاصيل)` | `HTTPException(401, تفاصيل)` | خطأ 401 |
-| `خطأ_403_فاست(تفاصيل)` | `HTTPException(403, تفاصيل)` | خطأ 403 |
-| `خطأ_404_فاست(تفاصيل)` | `HTTPException(404, تفاصيل)` | خطأ 404 |
-| `خطأ_405(تفاصيل)` | `HTTPException(405, تفاصيل)` | خطأ 405 |
-| `خطأ_408(تفاصيل)` | `HTTPException(408, تفاصيل)` | خطأ 408 |
-| `خطأ_409(تفاصيل)` | `HTTPException(409, تفاصيل)` | خطأ 409 |
-| `خطأ_422(تفاصيل)` | `HTTPException(422, تفاصيل)` | خطأ 422 |
-| `خطأ_429(تفاصيل)` | `HTTPException(429, تفاصيل)` | خطأ 429 |
-| `خطأ_500_فاست(تفاصيل)` | `HTTPException(500, تفاصيل)` | خطأ 500 |
-| `خطأ_502(تفاصيل)` | `HTTPException(502, تفاصيل)` | خطأ 502 |
-| `خطأ_503(تفاصيل)` | `HTTPException(503, تفاصيل)` | خطأ 503 |
-| `خطأ_504(تفاصيل)` | `HTTPException(504, تفاصيل)` | خطأ 504 |
-| `خطأ_بيانات(أخطاء)` | `RequestValidationError(أخطاء)` | خطأ بيانات |
-| `خطأ_تحقق(أخطاء)` | `RequestValidationError(أخطاء)` | خطأ تحقق |
-| `استثناء(رمز, تفاصيل)` | `HTTPException(رمز, تفاصيل)` | استثناء |
-| `استثناء_عام(رمز, تفاصيل)` | `HTTPException(رمز, تفاصيل)` | استثناء عام |
-
-## الحالة (Status Codes)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `نجاح` | `status.HTTP_200_OK` | 200 OK |
-| `تم_إنشاء` | `status.HTTP_201_CREATED` | 201 Created |
-| `مقبول` | `status.HTTP_202_ACCEPTED` | 202 Accepted |
-| `بدون_محتوى` | `status.HTTP_204_NO_CONTENT` | 204 No Content |
-| `معدوم` | `status.HTTP_301_MOVED_PERMANENTLY` | 301 Moved Permanently |
-| `تم_إيجاده` | `status.HTTP_302_FOUND` | 302 Found |
-| `معدل` | `status.HTTP_304_NOT_MODIFIED` | 304 Not Modified |
-| `طلب_سيء` | `status.HTTP_400_BAD_REQUEST` | 400 Bad Request |
-| `غير_مصرح` | `status.HTTP_401_UNAUTHORIZED` | 401 Unauthorized |
-| `محظور` | `status.HTTP_403_FORBIDDEN` | 403 Forbidden |
-| `غير_موجود` | `status.HTTP_404_NOT_FOUND` | 404 Not Found |
-| `غير_مسموح` | `status.HTTP_405_METHOD_NOT_ALLOWED` | 405 Method Not Allowed |
-| `انتهت_مهلة` | `status.HTTP_408_REQUEST_TIMEOUT` | 408 Request Timeout |
-| `تعارض` | `status.HTTP_409_CONFLICT` | 409 Conflict |
-| `خطأ_خادم` | `status.HTTP_500_INTERNAL_SERVER_ERROR` | 500 Internal Server Error |
-| `غير_منفذ` | `status.HTTP_501_NOT_IMPLEMENTED` | 501 Not Implemented |
-| `بوابة_سيئة` | `status.HTTP_502_BAD_GATEWAY` | 502 Bad Gateway |
-| `خدمة_غير_متوفرة` | `status.HTTP_503_SERVICE_UNAVAILABLE` | 503 Service Unavailable |
-| `مهلة_بوابة` | `status.HTTP_504_GATEWAY_TIMEOUT` | 504 Gateway Timeout |
-
-## التحقق من الصحة (Health Check)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `فحص_صحة()` | `health()` | فحص الصحة |
-| `صحة()` | `health()` | الصحة |
-| `فحص()` | `health()` | الفحص |
-| `حالة()` | `health()` | الحالة |
-| `حالة_الخدمة()` | `health()` | حالة الخدمة |
-| `حالة_النظام()` | `health()` | حالة النظام |
-| `حالة_قاعدة()` | `health()` | حالة قاعدة البيانات |
-| `حالة_اتصال()` | `health()` | حالة الاتصال |
-
-## وسطاء (Middlewares)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `وسيط_فاست(دالة)` | `@middleware('http')` | وسيط |
-| `قبل_طلب_فاست(دالة)` | `@middleware('http')` | قبل كل طلب |
-| `بعد_طلب_فاست(دالة)` | `@middleware('http')` | بعد كل طلب |
-| `وسيط_طلب(دالة)` | `@app.middleware('http')` | وسيط طلب |
-| `موجه_طلب(دالة)` | `@app.middleware('http')` | موجه طلب |
-| `مراقب(دالة)` | `@app.middleware('http')` | مراقب |
-| `مراقب_طلب(دالة)` | `@app.middleware('http')` | مراقب طلب |
-
-## التبعيات (Dependencies)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `تبعية(دالة)` | `Depends(دالة)` | تبعية حقن |
-| `تعتمد(دالة)` | `Depends(دالة)` | تعتمد على |
-| `تبعية_حقن(دالة)` | `Depends(دالة)` | تبعية حقن |
-| `تبعية_جلسة(دالة)` | `Depends(get_db)` | تبعية جلسة |
-| `حماية(دالة)` | `Depends(get_current_user)` | حماية |
-| `تحقق_رمز(دالة)` | `Depends(oauth2_scheme)` | تحقق من الرمز |
-| `مصادقة(دالة)` | `Depends(get_current_active_user)` | مصادقة |
-| `جلسة_قاعدة(دالة)` | `Depends(get_db)` | جلسة قاعدة بيانات |
-| `قاعدة_بيانات(دالة)` | `Depends(get_db)` | قاعدة بيانات |
-| `مستخدم_حالي(دالة)` | `Depends(get_current_user)` | مستخدم حالي |
-| `رمز_وصول(دالة)` | `Depends(oauth2_scheme)` | رمز وصول |
-
-## المصادقة (Auth)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `سجل_دخول_فاست()` | `login_for_access_token()` | تسجيل دخول |
-| `سجل_خروج_فاست()` | `logout()` | تسجيل خروج |
-| `رمز_وصول()` | `create_access_token()` | إنشاء رمز وصول |
-| `رمز_تحقق()` | `create_access_token()` | إنشاء رمز تحقق |
-| `رمز_جديد()` | `create_access_token()` | إنشاء رمز جديد |
-| `تحقق_رمز()` | `verify_access_token()` | تحقق من الرمز |
-| `تحقق_من_فاست()` | `get_current_user()` | تحقق من المستخدم |
-| `تحقق_مستخدم()` | `get_current_active_user()` | تحقق من المستخدم النشط |
-| `شفر_كلمة_فاست(كلمة)` | `get_password_hash(كلمة)` | تشفير كلمة مرور |
-| `تحقق_كلمة(كلمة, تجزئة)` | `verify_password(كلمة, تجزئة)` | تحقق من كلمة المرور |
-| `كلمة_مرور_صحيحة(كلمة, تجزئة)` | `verify_password(كلمة, تجزئة)` | كلمة مرور صحيحة |
-| `كلمة_مشروعة(كلمة, تجزئة)` | `verify_password(كلمة, تجزئة)` | كلمة مشروعة |
-| `مصادقة_أساسية()` | `HTTPBasic()` | مصادقة أساسية |
-| `مصادقة_رمز(مخطط)` | `OAuth2PasswordBearer(مخطط)` | مصادقة بالرمز |
-| `مصادقة_حامل(مخطط)` | `OAuth2PasswordBearer(مخطط)` | مصادقة بالحامل |
-| `نظام_مصادقة(مخطط)` | `OAuth2PasswordBearer(مخطط)` | نظام مصادقة |
-| `حماية_مسار(دالة)` | `Security(دالة)` | حماية مسار |
-| `حماية_متقدمة(دالة)` | `Security(دالة)` | حماية متقدمة |
-| `أدوار(دالة)` | `Security(دالة)` | أدوار |
-| `أذونات(دالة)` | `Security(دالة)` | أذونات |
-
-## الجلسة (Session)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `جلسة_فاست` | `session` | كائن الجلسة |
-| `ضع_جلسة_فاست(مفتاح, قيمة)` | `session[مفتاح] = قيمة` | ضع قيمة في الجلسة |
-| `احذف_جلسة_فاست(مفتاح)` | `session.pop(مفتاح)` | احذف من الجلسة |
-| `مسح_جلسة()` | `session.clear()` | مسح الجلسة |
-| `مفتاح_جلسة` | `session_key` | مفتاح الجلسة |
-| `فترة_جلسة` | `session_timeout` | فترة الجلسة |
-| `جلسة_آمنة` | `session` | جلسة آمنة |
-| `جلسة_مشفرة` | `session` | جلسة مشفرة |
-
-## ملفات تعريف الارتباط (Cookies)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `كوكي(مفتاح, قيمة)` | `response.set_cookie(مفتاح, قيمة)` | ضع كوكي |
-| `ضع_كوكي(مفتاح, قيمة)` | `response.set_cookie(مفتاح, قيمة)` | ضع كوكي |
-| `احذف_كوكي(مفتاح)` | `response.delete_cookie(مفتاح)` | احذف كوكي |
-| `كوكي_آمن(مفتاح, قيمة)` | `response.set_cookie(مفتاح, قيمة, secure=True)` | كوكي آمن |
-| `كوكي_جلسة(مفتاح, قيمة)` | `response.set_cookie(مفتاح, قيمة)` | كوكي جلسة |
-| `كوكي_دائم(مفتاح, قيمة)` | `response.set_cookie(مفتاح, قيمة, max_age=...)` | كوكي دائم |
-| `كوكي_مسار(مفتاح, قيمة)` | `response.set_cookie(مفتاح, قيمة, path=...)` | كوكي مسار |
-| `كوكي_نطاق(مفتاح, قيمة)` | `response.set_cookie(مفتاح, قيمة, domain=...)` | كوكي نطاق |
-
-## رؤوس الاستجابة (Response Headers)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `رأس_استجابة(مفتاح)` | `response.headers[مفتاح]` | رأس استجابة |
-| `ضع_رأس(مفتاح, قيمة)` | `response.headers[مفتاح] = قيمة` | ضع رأس |
-| `أضف_رأس(مفتاح, قيمة)` | `response.headers[مفتاح] = قيمة` | أضف رأس |
-| `رأس_خاص(مفتاح, قيمة)` | `response.headers[مفتاح] = قيمة` | رأس خاص |
-| `رأس_أمان(مفتاح, قيمة)` | `response.headers[مفتاح] = قيمة` | رأس أمان |
-
-## رفع الملفات (File Upload)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `احفظ_ملف_فاست(مسار)` | `file.save(مسار)` | حفظ ملف |
-| `ملف_آمن_فاست(اسم)` | `secure_filename(اسم)` | اسم ملف آمن |
-| `اسم_آمن_فاست(اسم)` | `secure_filename(اسم)` | اسم آمن |
-| `ملف_مرفوع()` | `UploadFile()` | ملف مرفوع |
-| `ملف_صورة()` | `UploadFile()` | ملف صورة |
-| `ملف_صوت()` | `UploadFile()` | ملف صوت |
-| `ملف_فيديو()` | `UploadFile()` | ملف فيديو |
-| `ملف_مستند()` | `UploadFile()` | ملف مستند |
-| `ملف_ثنائي()` | `UploadFile()` | ملف ثنائي |
-| `احفظ_ملفات(مسار)` | `files.save(مسار)` | حفظ ملفات |
-| `احفظ_صورة(مسار)` | `file.save(مسار)` | حفظ صورة |
-
-## CORS
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `كورس()` | `CORSMiddleware()` | CORS |
-| `وصول_متبادل()` | `CORSMiddleware()` | وصول متبادل |
-| `موارد_مشتركة()` | `CORSMiddleware()` | موارد مشتركة |
-| `أصل_متبادل()` | `CORSMiddleware()` | أصل متبادل |
-| `رأس_متبادل()` | `CORSMiddleware()` | رأس متبادل |
-| `طرق_متبادل()` | `CORSMiddleware()` | طرق متبادل |
-
-## الأحداث (Events)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `عند_بدء(دالة)` | `@app.on_event('startup')` | عند بدء التشغيل |
-| `عند_إيقاف(دالة)` | `@app.on_event('shutdown')` | عند إيقاف التشغيل |
-| `حدث_بدء(دالة)` | `@app.on_event('startup')` | حدث بدء |
-| `حدث_إيقاف(دالة)` | `@app.on_event('shutdown')` | حدث إيقاف |
-| `حدث_جاهز(دالة)` | `@app.on_event('startup')` | حدث جاهز |
-| `حدث_إغلاق(دالة)` | `@app.on_event('shutdown')` | حدث إغلاق |
-| `جاهز(دالة)` | `@app.on_event('startup')` | جاهز |
-| `إغلاق(دالة)` | `@app.on_event('shutdown')` | إغلاق |
-
-## الملفات الثابتة (Static Files)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `ملفات_ثابتة(دليل)` | `StaticFiles(directory=دليل)` | ملفات ثابتة |
-| `ملف_ثابت(مسار)` | `StaticFiles.static_directory` | ملف ثابت |
-| `دليل_ثابت(دليل)` | `StaticFiles(directory=دليل)` | دليل ثابت |
-| `مسار_ثابت(مسار)` | `StaticFiles.static_directory` | مسار ثابت |
-| `موارد_ثابتة(دليل)` | `StaticFiles(directory=دليل)` | موارد ثابتة |
-
-## التوثيق (Documentation)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `توثيق()` | `docs()` | التوثيق |
-| `توثيق_سريع()` | `docs()` | التوثيق السريع |
-| `توثيق_تفاعلي()` | `docs()` | التوثيق التفاعلي |
-| `تجربة()` | `docs()` | التجربة |
-| `اختبار_تفاعلي()` | `docs()` | الاختبار التفاعلي |
-| `مرجع()` | `docs()` | المرجع |
-| `مرجع_سريع()` | `docs()` | المرجع السريع |
-| `وصف_خدمة()` | `docs()` | وصف الخدمة |
-| `مواصفات()` | `docs()` | المواصفات |
-| `مواصفات_خدمة()` | `docs()` | مواصفات الخدمة |
-| `نقطة_مرجعية()` | `docs()` | نقطة مرجعية |
-| `مساعدة()` | `docs()` | المساعدة |
-| `دليل_سريع()` | `docs()` | الدليل السريع |
-| `مرجع_تفاعلي()` | `docs()` | المرجع التفاعلي |
-
-## اختبار (Testing)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `اختبار_عميل_فاست()` | `TestClient()` | عميل اختبار |
-| `عميل_فاست()` | `TestClient()` | عميل |
-| `اختبار()` | `TestClient()` | اختبار |
-| `اختبار_خدمة()` | `TestClient()` | اختبار خدمة |
-
-## قاعدة البيانات (Database)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `جلسة_قاعدة()` | `SessionLocal()` | جلسة قاعدة بيانات |
-| `قاعدة_محلية()` | `SessionLocal()` | قاعدة محلية |
-| `قاعدة_بيانات()` | `SessionLocal()` | قاعدة بيانات |
-| `قاعدة_سريع()` | `SessionLocal()` | قاعدة |
-| `استعلام_فاست(نموذج)` | `db.query(نموذج)` | استعلام |
-| `أضف_سجل(سجل)` | `db.add(سجل)` | إضافة سجل |
-| `نفذ_سريع()` | `db.commit()` | تنفيذ |
-| `تراجع_سريع()` | `db.rollback()` | تراجع |
-| `أغلق_سريع()` | `db.close()` | إغلاق |
-| `امسح()` | `db.flush()` | مسح |
-| `احذف_سجل_فاست(سجل)` | `db.delete(سجل)` | حذف سجل |
-| `حدّث(سجل)` | `db.refresh(سجل)` | تحديث |
-
-## الترحيلات (Migrations)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `ترحيل()` | `alembic` | ترحيل |
-| `ترحيل_قاعدة()` | `alembic` | ترحيل قاعدة |
-| `إنشاء_جداول()` | `Base.metadata.create_all()` | إنشاء الجداول |
-| `هجرة_فاست()` | `Base.metadata.create_all()` | هجرة |
-| `ترحيل_أولي()` | `Base.metadata.create_all()` | ترحيل أولي |
-| `ترحيل_تراجع()` | `alembic downgrade()` | ترحيل تراجع |
-| `ترحيل_ترقية()` | `alembic upgrade()` | ترحيل ترقية |
-
-## التخزين المؤقت (Caching)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `كاش()` | `cache()` | كاش |
-| `تخزين_مؤقت()` | `cache()` | تخزين مؤقت |
-| `مفتاح_كاش(مفتاح)` | `cache_key(مفتاح)` | مفتاح كاش |
-| `فترة_كاش(ثواني)` | `cache_ttl(ثواني)` | فترة كاش |
-| `مسح_كاش()` | `cache_clear()` | مسح كاش |
-
-## تحديد المعدل (Rate Limiting)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `حد_معدل()` | `rate_limit()` | حد معدل |
-| `معدل_طلبات()` | `rate_limit()` | معدل طلبات |
-| `حد_طلبات()` | `rate_limit()` | حد طلبات |
-| `تقييد()` | `rate_limit()` | تقييد |
-| `حماية_حمل()` | `rate_limit()` | حماية حمل |
-| `حماية_زحام()` | `rate_limit()` | حماية زحام |
-
-## مهام الخلفية (Background Tasks)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `خلفية()` | `BackgroundTasks()` | مهام الخلفية |
-| `مهمة_خلفية(دالة, *حجج)` | `BackgroundTasks.add_task(دالة, *حجج)` | مهمة خلفية |
-| `مهمة(دالة, *حجج)` | `BackgroundTasks.add_task(دالة, *حجج)` | مهمة |
-| `جدولة()` | `scheduler()` | جدولة |
-| `جدولة_مهمة(دالة, وقت)` | `scheduler.add_job(دالة, وقت)` | جدولة مهمة |
-| `مهمة_مجدولة(دالة, وقت)` | `scheduler.add_job(دالة, وقت)` | مهمة مجدولة |
-| `مهمة_متكررة(دالة, فترة)` | `scheduler.add_job(دالة, فترة)` | مهمة متكررة |
-
-## WebSocket
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `ويب_سوكيت()` | `WebSocket()` | WebSocket |
-| `اتصال_مباشر()` | `WebSocket()` | اتصال مباشر |
-| `مقبس()` | `WebSocket()` | مقبس |
-| `قناة()` | `WebSocket()` | قناة |
-| `بث()` | `WebSocket()` | بث |
-| `رسائل_مباشرة()` | `WebSocket()` | رسائل مباشرة |
-| `إرسال_مباشر(رسالة)` | `WebSocket.send_text(رسالة)` | إرسال مباشر |
-| `استقبال_مباشر()` | `WebSocket.receive_text()` | استقبال مباشر |
-| `غرفة_دردشة()` | `WebSocketRoom()` | غرفة دردشة |
-| `مجموعة_اتصال()` | `WebSocketManager()` | مجموعة اتصال |
-
-## المراقبة (Monitoring)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `سجل(رسالة)` | `log(رسالة)` | سجل |
-| `سجل_خطأ_سريع(رسالة)` | `log_error(رسالة)` | تسجيل خطأ في سجل التطبيق |
-| `سجل_طلب(طلب)` | `log_request(طلب)` | سجل طلب |
-| `سجل_استجابة(استجابة)` | `log_response(استجابة)` | سجل استجابة |
-| `تتبع(طلب)` | `trace(طلب)` | تتبع |
-| `قياس(اسم, قيمة)` | `metric(اسم, قيمة)` | قياس |
-| `مقياس(اسم, قيمة)` | `metric(اسم, قيمة)` | مقياس إحصائي (Prometheus) |
-| `أداء()` | `performance()` | أداء |
-| `وقت_استجابة()` | `response_time()` | وقت استجابة |
-| `معدل_نجاح()` | `success_rate()` | معدل نجاح |
-| `معدل_خطأ()` | `error_rate()` | معدل خطأ |
-
-## الإعدادات (Settings)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `إعدادات` | `settings` | الإعدادات |
-| `تكوين` | `config` | التكوين |
-| `متغيرات` | `env` | المتغيرات |
-| `متغير_بيئة_فاست(اسم)` | `env(اسم)` | متغير بيئة |
-| `بيئة` | `environment` | البيئة |
-| `وضع` | `mode` | الوضع |
-| `وضع_تطوير` | `development` | وضع التطوير |
-| `وضع_إنتاج` | `production` | وضع الإنتاج |
-| `وضع_اختبار` | `testing` | وضع الاختبار |
-| `وضع_مسبق` | `staging` | وضع مسبق |
-| `إصدار` | `version` | الإصدار |
-| `اسم_خدمة` | `service_name` | اسم الخدمة |
-| `منفذ_خدمة` | `port` | منفذ الخدمة |
-| `مضيف` | `host` | المضيف |
-| `عنوان` | `url` | العنوان |
-| `عنوان_قاعدة` | `database_url` | عنوان قاعدة البيانات |
-| `مفتاح_ api` | `api_key` | مفتاح API |
-| `مفتاح_عام` | `public_key` | مفتاح عام |
-| `مفتاح_خاص` | `private_key` | مفتاح خاص |
-
-## مثال كامل
+## مثال
 
 ```apl
 المتغير app = فاست_أبي()

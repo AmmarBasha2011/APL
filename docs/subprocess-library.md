@@ -2,68 +2,86 @@
 
 مكتبة subprocess الكاملة بالعربي، تشغيل أوامر النظام:
 
-## الإنشاء
+**74 عنصراً عربياً** (الدوال: 74).
 
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `أنشئ_عملية_أوامر(أمر)` | `subprocess.run(أمر)` | تشغيل أمر |
-| `عملية(أمر)` | `subprocess.run(أمر)` | عملية (مختصر) |
-| `نفذ_أوامر(أمر)` | `subprocess.run(أمر)` | تنفيذ أمر |
-| `Process(أمر)` | `subprocess.Popen(أمر)` | إنشاء Process |
-
-## الخصائص
+## الدوال (74)
 
 | العربي | Python |
 |--------|--------|
-| `حجة_أوامر(قائمة)` | args |
-| `قشرة(صحيح)` | shell |
-| `انتظر_أوامر(ثوان)` | timeout |
-| `دليل(مسار)` | cwd |
-| `متغيرات_بيئة(قاموس)` | env |
-| `التقاط(صحيح)` | capture_output |
-| `مدخل(نص)` | input |
-
-## التنفيذ
-
-| العربي | Python |
-|--------|--------|
-| `اتصل_أوامر()` | communicate |
-| `انتظر_إنهاء()` | wait |
-| `ألغى_أوامر()` | terminate |
-| `اقتل()` | kill |
-| `أرسل_إشارة(إشارة)` | send_signal |
-
-## الحالة
-
-| العربي | Python |
-|--------|--------|
-| `رمز_العودة()` | returncode |
-| `pid()` | pid |
-| `تم_إنهاء()` | poll |
-| `نجاح_أوامر()` | returncode == 0 |
-
-## المخرجات
-
-| العربي | Python |
-|--------|--------|
-| `خرج_معياري_أوامر()` | stdout |
-| `خطأ_معياري_أوامر()` | stderr |
-
-## الأجهزة
-
-| العربي | Python |
-|--------|--------|
-| `PIPE` | subprocess.PIPE |
-| `STDOUT` | subprocess.STDOUT |
-| `DEVNULL` | subprocess.DEVNULL |
-
-## الإشارات
-
-| العربي | Python |
-|--------|--------|
-| `SIGTERM` | signal.SIGTERM |
-| `SIGKILL` | signal.SIGKILL |
-| `SIGINT` | signal.SIGINT |
+| `أنشئ_عملية_أوامر` | `subprocess.run` |
+| `عملية` | `subprocess.run` |
+| `نفذ_أوامر` | `subprocess.run` |
+| `شغل_أوامر` | `subprocess.run` |
+| `Process` | `subprocess.Popen` |
+| `أنشئ_Process` | `subprocess.Popen` |
+| `حجة_أوامر` | `args` |
+| `قشرة` | `shell` |
+| `انتظر_أوامر` | `timeout` |
+| `ترميز_أوامر` | `encoding` |
+| `ترميز_خطأ` | `errors` |
+| `مدخل` | `stdin` |
+| `مخرج` | `stdout` |
+| `خطأ_أوامر` | `stderr` |
+| `دليل` | `cwd` |
+| `متغيرات_بيئة` | `env` |
+| `تجميع_مخرج` | `text` |
+| `كائن_ثنائي` | `text` |
+| `التقاط` | `capture_output` |
+| `مدخل_نصي` | `input` |
+| `اتصل_أوامر` | `process.communicate` |
+| `أرسل` | `process.communicate` |
+| `انتظر_إنهاء` | `process.wait` |
+| `ألغى_أوامر` | `process.terminate` |
+| `اقتل` | `process.kill` |
+| `أرسل_إشارة` | `process.send_signal` |
+| `إشارة_أوامر` | `process.send_signal` |
+| `رمز_العودة` | `process.returncode` |
+| `pid` | `process.pid` |
+| `معرف` | `process.pid` |
+| `SIGTERM` | `signal.SIGTERM` |
+| `SIGKILL` | `signal.SIGKILL` |
+| `SIGINT` | `signal.SIGINT` |
+| `PIPE` | `subprocess.PIPE` |
+| `STDOUT` | `subprocess.STDOUT` |
+| `DEVNULL` | `subprocess.DEVNULL` |
+| `CreationFlags` | `creationflags` |
+| `ShowWindow` | `subprocess.SW_HIDE` |
+| `تم_إنهاء` | `process.poll` |
+| `انتهى` | `process.poll` |
+| `نشط_أوامر` | `process.poll` |
+| `CalledProcessError` | `subprocess.CalledProcessError` |
+| `ExpiredTimeout` | `subprocess.TimeoutExpired` |
+| `FileNotFoundError` | `FileNotFoundError` |
+| `تحويل_أوامر` | `stderr_to_stdout` |
+| `دمج` | `merge_outputs` |
+| `universal_newlines` | `text` |
+| `creationflags` | `creationflags` |
+| `close_fds` | `close_fds` |
+| `preexec_fn` | `preexec_fn` |
+| `startupinfo` | `startupinfo` |
+| `restore_signals` | `restore_signals` |
+| `start_new_session` | `start_new_session` |
+| `group` | `group` |
+| `extra_groups` | `extra_groups` |
+| `user` | `user` |
+| `umask` | `umask` |
+| `process_group` | `process_group` |
+| `stdin` | `stdin` |
+| `stdout` | `stdout` |
+| `stderr` | `stderr` |
+| `خرج_معياري_أوامر` | `stdout` |
+| `خطأ_معياري_أوامر` | `stderr` |
+| `دخرج_وخطأ` | `stdout_and_stderr` |
+| `نجاح_أوامر` | `returncode == 0` |
+| `فشل_أوامر` | `returncode != 0` |
+| `رمز_نجاح` | `0` |
+| `عمليات_فرعية` | `subprocess` |
+| `Popen` | `subprocess.Popen` |
+| `call` | `subprocess.call` |
+| `check_call` | `subprocess.check_call` |
+| `check_output` | `subprocess.check_output` |
+| `getoutput` | `subprocess.getoutput` |
+| `getstatusoutput` | `subprocess.getstatusoutput` |
 
 ## مثال
 

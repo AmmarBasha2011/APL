@@ -2,45 +2,43 @@
 
 الحساب العشري الدقيق بدون أخطاء تقريب — كل عمليات الفاصلة العائمة بشكل دقيق.
 
-**24 عنصر** (17 دالة، 7 ثابت).
+**24 عنصراً عربياً** (الدوال: 17، الثوابت: 7).
 
-## الدوال
+## الدوال (17)
 
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `عشري_دقيق(...)` | `decimal.Decimal` | إنشاء رقم عشري دقيق (يقبل نص أو int أو float) |
-| `من_نص_عشري(...)` | `decimal.Decimal` | نص -> Decimal |
-| `من_كسر_عشري(...)` | `decimal.Decimal` | كسر -> Decimal |
-| `من_عدد_عشري(...)` | `decimal.Decimal` | عدد صحيح -> Decimal |
-| `سياق_العشري(...)` | `decimal.getcontext` | سياق الدقة العام |
-| `سياق_محلي(...)` | `decimal.localcontext` | سياق دقة مؤقت |
-| `اجمع_عشري(...)` | `_apl_decimal_add` | جمع دقيق |
-| `اطرح_عشري(...)` | `_apl_decimal_sub` | طرح دقيق |
-| `اضرب_عشري(...)` | `_apl_decimal_mul` | ضرب دقيق |
-| `اقسم_عشري(...)` | `_apl_decimal_div` | قسمة بتحديد الخانات |
-| `اقسم_باقي_عشري(...)` | `_apl_decimal_mod` | باقي القسمة |
-| `اس_عشري(...)` | `_apl_decimal_pow` | أس دقيق |
-| `جذر_عشري(...)` | `_apl_decimal_sqrt` | الجذر التربيعي |
-| `مقارنة_عشري(...)` | `_apl_decimal_cmp` | المقارنة (-1/0/1) |
-| `نسخ_عشري(...)` | `_apl_decimal_copy` | نسخة موجبة |
-| `قرّب_عشري(...)` | `_apl_decimal_quantize` | تقريب لخانات محددة |
-| `بدقة_عشري(...)` | `_apl_decimal_fma` | a*b+c بدقة واحدة |
+| العربي | Python |
+|--------|--------|
+| `عشري_دقيق` | `decimal.Decimal` |
+| `من_نص_عشري` | `decimal.Decimal` |
+| `من_كسر_عشري` | `decimal.Decimal` |
+| `من_عدد_عشري` | `decimal.Decimal` |
+| `سياق_العشري` | `decimal.getcontext` |
+| `سياق_محلي` | `decimal.localcontext` |
+| `اجمع_عشري` | `_apl_decimal_add` |
+| `اطرح_عشري` | `_apl_decimal_sub` |
+| `اضرب_عشري` | `_apl_decimal_mul` |
+| `اقسم_عشري` | `_apl_decimal_div` |
+| `اقسم_باقي_عشري` | `_apl_decimal_mod` |
+| `اس_عشري` | `_apl_decimal_pow` |
+| `جذر_عشري` | `_apl_decimal_sqrt` |
+| `مقارنة_عشري` | `_apl_decimal_cmp` |
+| `نسخ_عشري` | `_apl_decimal_copy` |
+| `قرّب_عشري` | `_apl_decimal_quantize` |
+| `بدقة_عشري` | `_apl_decimal_fma` |
 
-## الثوابت (Constants)
+## الثوابت (7) — `DECIMAL_CONSTANTS`
 
-تُستخدم **بدون** أقواس.
+| العربي | Python |
+|--------|--------|
+| `نقطة_عشرية` | `decimal.getcontext().prec` |
+| `اقرب_لأسفل` | `decimal.ROUND_DOWN` |
+| `اقرب_لأعلى` | `decimal.ROUND_UP` |
+| `اقرب_منتصف` | `decimal.ROUND_HALF_UP` |
+| `اقرب_سقف` | `decimal.ROUND_CEILING` |
+| `اقرب_أرض` | `decimal.ROUND_FLOOR` |
+| `أقصى_دقة` | `decimal.MAX_PREC` |
 
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `نقطة_عشرية` | `decimal.getcontext().prec` |  |
-| `اقرب_لأسفل` | `decimal.ROUND_DOWN` |  |
-| `اقرب_لأعلى` | `decimal.ROUND_UP` |  |
-| `اقرب_منتصف` | `decimal.ROUND_HALF_UP` |  |
-| `اقرب_سقف` | `decimal.ROUND_CEILING` |  |
-| `اقرب_أرض` | `decimal.ROUND_FLOOR` |  |
-| `أقصى_دقة` | `decimal.MAX_PREC` |  |
-
-## أمثلة
+## مثال
 
 ```apl
 # أخطاء الفاصلة العائمة في Python:

@@ -2,50 +2,42 @@
 
 كل الدوال من مكتبتين `time` و `datetime` في Python، مترجمة بالكامل:
 
-## وقت (Time)
+**25 عنصراً عربياً** (الدوال: 18، الخصائص: 7).
 
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `وقت()` | `time.time()` | الوقت بالثواني منذ epoch |
-| `وقت_نومي(ث)` | `time.sleep(ث)` | انتظار (ثواني) |
-| `وقت_نص()` | `time.ctime()` | وقت كنص مقروء |
-| `وقت_عالمي()` | `time.gmtime()` | وقت UTC |
-| `وقت_محلي()` | `time.localtime()` | وقت محلي |
-| `مؤشر_أداء()` | `time.perf_counter()` | مؤشر أداء عالي الدقة |
-| `وقت_عملية()` | `time.process_time()` | وقت المعالج |
-| `وقت_رتيب()` | `time.monotonic()` | وقت رتيب (لقياس الفترات) |
+## الدوال (18)
 
-## تاريخ ووقت (DateTime)
+| العربي | Python |
+|--------|--------|
+| `وقت` | `time.time` |
+| `وقت_نومي` | `time.sleep` |
+| `وقت_نص` | `time.ctime` |
+| `وقت_عالمي` | `time.gmtime` |
+| `وقت_محلي` | `time.localtime` |
+| `مؤشر_أداء` | `time.perf_counter` |
+| `وقت_عملية` | `time.process_time` |
+| `وقت_رتيب` | `time.monotonic` |
+| `الآن` | `datetime.datetime.now` |
+| `اليوم` | `datetime.date.today` |
+| `تاريخ_ووقت` | `datetime.datetime` |
+| `تاريخ` | `datetime.date` |
+| `وقت_فقط` | `datetime.time` |
+| `مدة` | `datetime.timedelta` |
+| `من_نص_وقت` | `datetime.datetime.strptime` |
+| `لتنسيق_وقت` | `datetime.datetime.strftime` |
+| `تنسيق_وقت` | `time.strftime` |
+| `تحليل_وقت` | `time.strptime` |
 
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `الآن()` | `datetime.datetime.now()` | الوقت والتاريخ الحالي |
-| `اليوم()` | `datetime.date.today()` | التاريخ الحالي |
-| `تاريخ_ووقت(...)` | `datetime.datetime(...)` | كائن تاريخ ووقت |
-| `تاريخ(س, ش, ي)` | `datetime.date(...)` | كائن تاريخ |
-| `وقت_فقط(س, د, ث)` | `datetime.time(...)` | كائن وقت |
-| `مدة(أيام, ثواني, ...)` | `datetime.timedelta(...)` | كائن مدة |
-| `من_نص_وقت(نص, تنسيق)` | `datetime.datetime.strptime(...)` | تحليل نص وقت |
-| `لتنسيق_وقت(وقت, تنسيق)` | `datetime.datetime.strftime(...)` | تنسيق وقت لنص |
+## الخصائص (7) — `TIME_PROPS`
 
-## مكونات التاريخ (خصائص - بدون أقواس)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `سنة_الآن` | `datetime.datetime.now().year` | السنة الحالية |
-| `شهر_الآن` | `datetime.datetime.now().month` | الشهر الحالي |
-| `يوم_الآن` | `datetime.datetime.now().day` | اليوم الحالي |
-| `ساعة_الآن` | `datetime.datetime.now().hour` | الساعة الحالية |
-| `دقيقة_الآن` | `datetime.datetime.now().minute` | الدقيقة الحالية |
-| `ثانية_الآن` | `datetime.datetime.now().second` | الثانية الحالية |
-| `يوم_أسبوع_الآن` | `datetime.datetime.now().weekday()` | يوم الأسبوع |
-
-## تنسيق (Formatting)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `تنسيق_وقت(ن, ت)` | `time.strftime(ن, ت)` | تنسيق الوقت |
-| `تحليل_وقت(ن, ت)` | `time.strptime(ن, ت)` | تحليل نص وقت |
+| العربي | Python |
+|--------|--------|
+| `سنة_الآن` | `datetime.datetime.now().year` |
+| `شهر_الآن` | `datetime.datetime.now().month` |
+| `يوم_الآن` | `datetime.datetime.now().day` |
+| `ساعة_الآن` | `datetime.datetime.now().hour` |
+| `دقيقة_الآن` | `datetime.datetime.now().minute` |
+| `ثانية_الآن` | `datetime.datetime.now().second` |
+| `يوم_أسبوع_الآن` | `datetime.datetime.now().weekday()` |
 
 ## مثال
 

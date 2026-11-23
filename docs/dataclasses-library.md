@@ -2,71 +2,82 @@
 
 مكتبة dataclasses و enum و abc الكاملة بالعربي:
 
-## Dataclasses
+**68 عنصراً عربياً** (الدوال: 68).
 
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `@dataclass` | `@dataclass` | مُزيِّن فئة البيانات |
-| `@فئة_بيانات` | `@dataclass` | مُزيِّن (عربي) |
-| `حقول_بيانات(فئة)` | `dataclasses.fields(فئة)` | حقول الفئة |
-| `حقل_بيانات(افتراضي, مقارنة)` | `dataclasses.field(...)` | حقل مخصص |
-| `تهيئة_بعد(ذات)` | `__post_init__` | بعد التهيئة |
-| `تحويل_لصف(كائن)` | `dataclasses.astuple` | تحويل لصف |
-| `تحويل_لقاموس(كائن)` | `dataclasses.asdict` | تحويل لقاموس |
-| `استبدال_حقل(كائن, **تغييرات)` | `dataclasses.replace` | استبدال قيم |
-| `فحص_فئة_بيانات(كائن)` | `dataclasses.is_dataclass` | هل فئة بيانات |
-
-## خصائص الحقل
+## الدوال (68)
 
 | العربي | Python |
 |--------|--------|
-| `قيمة_افتراضية(قيمة)` | default |
-| `مصنع_افتراضي(دالة)` | default_factory |
-| `اختر_مقارنة(صحيح)` | compare |
-| `اختر_تمثيل(صحيح)` | repr |
-| `اختر_تجزئة(صحيح)` | hash |
-| `تهيئة(صحيح)` | init |
-| `بيانات_وصفية(قاموس)` | metadata |
+| `@فئة_بيانات` | `dataclasses.dataclass` |
+| `@dataclass` | `dataclasses.dataclass` |
+| `dataclass` | `dataclasses.dataclass` |
+| `فئة_بيانات` | `dataclasses.dataclass` |
+| `DataClass` | `dataclasses.dataclass` |
+| `أنشئ_فئة_بيانات` | `dataclasses.dataclass` |
+| `حقول_بيانات` | `dataclasses.fields` |
+| `حقل_بيانات` | `dataclasses.field` |
+| `أنواع` | `dataclasses.fields` |
+| `اسم_حقل` | `field.name` |
+| `نوع_حقل` | `field.type` |
+| `قيمة_افتراضية` | `field.default` |
+| `مصنع_افتراضي` | `field.default_factory` |
+| `اختر_تمثيل` | `field.repr` |
+| `اختر_مقارنة` | `field.compare` |
+| `اختر_تجزئة` | `field.hash` |
+| `بيانات_وصفية` | `field.metadata` |
+| `تهيئة` | `field.init` |
+| `اختر_مفتاح` | `field.kw_only` |
+| `اختر_اختيار` | `field.omit` |
+| `تحويل_لصف` | `dataclasses.astuple` |
+| `تحويل_لقاموس` | `dataclasses.asdict` |
+| `استبدال_حقل` | `dataclasses.replace` |
+| `فحص_فئة_بيانات` | `dataclasses.is_dataclass` |
+| `تهيئة_بعد` | `__post_init__` |
+| `MISSING` | `dataclasses.MISSING` |
+| `اختر_النوع` | `type` |
+| `تعداد` | `enum.Enum` |
+| `Enum` | `enum.Enum` |
+| `أنشئ_تعداد` | `enum.Enum` |
+| `Flag` | `enum.Flag` |
+| `IntFlag` | `enum.IntFlag` |
+| `IntEnum` | `enum.IntEnum` |
+| `StrEnum` | `enum.StrEnum` |
+| `أسماء` | `enum.Enum` |
+| `قيم` | `EnumType` |
+| `EnumType` | `enum.EnumType` |
+| `EnumMeta` | `enum.EnumMeta` |
+| `تلقائي_بيانات` | `enum.auto` |
+| `auto` | `enum.auto` |
+| `فريد` | `enum.unique` |
+| `عضو_تعداد` | `EnumMember` |
+| `ABC` | `abc.ABC` |
+| `ABCMeta` | `abc.ABCMeta` |
+| `مجرد` | `abc.ABC` |
+| `فئة_مجردة` | `abc.ABC` |
+| `دالة_مجردة` | `abc.abstractmethod` |
+| `abstract_method` | `abc.abstractmethod` |
+| `خاصية_مجردة` | `abc.abstractproperty` |
+| `static_method` | `staticmethod` |
+| `class_method` | `classmethod` |
+| `فتحة` | `__slots__` |
+| `مفاتيح` | `__slots__` |
+| `فئة_بيانات_مجمدة` | `frozen` |
+| `اختر_فئة` | `type` |
+| `فئة_الأم` | `super` |
+| `أب_بيانات` | `super` |
+| `نوع_بيانات` | `type` |
+| `من_نوع_بيانات` | `isinstance` |
+| `يملك` | `hasattr` |
+| `احصل_خاصية` | `getattr` |
+| `ضع_خاصية` | `setattr` |
+| `احذف_خاصية` | `delattr` |
+| `قابل_للنداء` | `callable` |
+| `اختر_وثيقة` | `__doc__` |
+| `اختر_اسم` | `__name__` |
+| `اختر_وحدة` | `__module__` |
+| `اختر_ملف` | `__file__` |
 
-## Enum
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `تعداد` | `enum.Enum` | فئة تعداد |
-| `Enum` | `enum.Enum` | فئة تعداد (إنجليزي) |
-| `IntEnum` | `enum.IntEnum` | تعداد أعداد صحيحة |
-| `IntFlag` | `enum.IntFlag` | تعداد أعلام أعداد |
-| `Flag` | `enum.Flag` | تعداد أعلام |
-| `StrEnum` | `enum.StrEnum` | تعداد نصوص |
-| `تلقائي_بيانات()` | `enum.auto` | قيمة تلقائية |
-| `auto()` | `enum.auto` | قيمة تلقائية (إنجليزي) |
-| `فريد` | `enum.unique` | تعداد فريد |
-
-## ABC (Abstract Base Classes)
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `مجرد()` | `abc.ABC` | فئة مجردة |
-| `ABC` | `abc.ABC` | فئة مجردة (إنجليزي) |
-| `فئة_مجردة()` | `abc.ABC` | فئة مجردة |
-| `دالة_مجردة(دالة)` | `@abc.abstractmethod` | دالة مجردة |
-| `abstract_method(دالة)` | `@abc.abstractmethod` | دالة مجردة (إنجليزي) |
-
-## الخصائص المفيدة
-
-| العربي | Python |
-|--------|--------|
-| `فتحة = (...)` | `__slots__` |
-| `مفاتيح = (...)` | `__slots__` |
-| `نوع_بيانات(كائن)` | type |
-| `من_نوع_بيانات(كائن, نوع)` | isinstance |
-| `يملك(كائن, اسم)` | hasattr |
-| `احصل_خاصية(كائن, اسم)` | getattr |
-| `ضع_خاصية(كائن, اسم, قيمة)` | setattr |
-| `فئة_الأم()` | super |
-| `أب_بيانات()` | super |
-
-## مثال Dataclass
+## مثال
 
 ```apl
 @فئة_بيانات
@@ -82,59 +93,4 @@
 
 المتغير ح2 = استبدال_حقل(ح, عمر=26)
 اطبع "بعد الاستبدال:", ح2.عمر
-```
-
-## مثال Enum
-
-```apl
-import enum
-
-@enum.unique
-صنف لون(enum.Enum):
-    أحمر = 1
-    أخضر = 2
-    أزرق = 3
-
-# الوصول للقيمة والاسم
-اطبع لون.أحمر
-اطبع لون.أحمر.name
-اطبع لون.أحمر.value
-
-# تعداد بقيم تلقائية
-class حجم(enum.Enum):
-    صغير = enum.auto()
-    متوسط = enum.auto()
-    كبير = enum.auto()
-
-اطبع حجم.صغير.value, حجم.كبير.value
-```
-
-## مثال ABC
-
-```apl
-import abc
-
-صنف شكل(abc.ABC):
-    @abc.abstractmethod
-    دالة مساحة(ذات):
-        pass
-
-    @abc.abstractmethod
-    دالة محيط(ذات):
-        pass
-
-صنف مستطيل(شكل):
-    دالة_إنشاء(ذات, عرض, ارتفاع):
-        ذات.عرض = عرض
-        ذات.ارتفاع = ارتفاع
-
-    دالة مساحة(ذات):
-        ارجع ذات.عرض * ذات.ارتفاع
-
-    دالة محيط(ذات):
-        ارجع 2 * (ذات.عرض + ذات.ارتفاع)
-
-المتغير م = مستطيل(3, 4)
-اطبع "المساحة:", م.مساحة()
-اطبع "المحيط:", م.محيط()
 ```

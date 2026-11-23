@@ -5,64 +5,75 @@
 | # | الملف | الوصف |
 |---|-------|-------|
 | 1 | [architecture.md](architecture.md) | هيكل المشروع، كيفية العمل، التصميم |
-| 2 | [language-reference.md](language-reference.md) | مرجع اللغة — كل الكلمات المفتاحية والتراكيب بما فيها التحسينات الجديدة |
-| 3 | [math-library.md](math-library.md) | مكتبة `math` — 59 دالة مثلثات، لوغاريتمات، جذور، هندسة |
-| 4 | [random-library.md](random-library.md) | مكتبة `random` — 20+ دالة أرقام عشوائية وتوزيعات |
-| 5 | [statistics-library.md](statistics-library.md) | مكتبة `statistics` — متوسط، وسيط، منوال، تباين، انحراف معياري |
-| 6 | [time-library.md](time-library.md) | مكتبة `time` + `datetime` — وقت، تاريخ، تأخير، تنسيق |
-| 7 | [os-library.md](os-library.md) | مكتبة `os` + `pathlib` — ملفات، مجلدات، مسارات، فحص |
-| 8 | [re-library.md](re-library.md) | مكتبة `re` — تعابير نمطية، بحث، استبدال، تقسيم |
-| 9 | [collections-library.md](collections-library.md) | مكتبة `collections` — Counter, defaultdict, deque |
-| 10 | [itertools-library.md](itertools-library.md) | مكتبة `itertools` — أدوات تكرار، توافيق، تباديل |
-| 11 | [json-library.md](json-library.md) | مكتبة `json` — قراءة وكتابة JSON |
-| 12 | [hashlib-library.md](hashlib-library.md) | مكتبة `hashlib` — تجزئة وتشفير |
-| 13 | [flask-library.md](flask-library.md) | مكتبة `flask` — إطار عمل ويب |
-| 14 | [fastapi-library.md](fastapi-library.md) | مكتبة `fastapi` — 536 دالة، إطار عمل ويب حديث |
-| 15 | [requests-library.md](requests-library.md) | مكتبة `requests` — HTTP Client كامل |
-| 16 | [sqlite3-library.md](sqlite3-library.md) | مكتبة `sqlite3` — قاعدة بيانات محلية |
-| 17 | [asyncio-library.md](asyncio-library.md) | مكتبة `asyncio` — برمجة غير متزامنة |
-| 18 | [threading-library.md](threading-library.md) | مكتبة `threading` — تعدد المهام |
-| 19 | [unittest-library.md](unittest-library.md) | مكتبة `unittest` — اختبارات الوحدة |
-| 20 | [csv-library.md](csv-library.md) | مكتبة `csv` — ملفات بيانات |
-| 21 | [logging-library.md](logging-library.md) | مكتبة `logging` — تسجيل الأحداث |
-| 22 | [argparse-library.md](argparse-library.md) | مكتبة `argparse` — تحليل وسائط سطر الأوامر |
-| 23 | [subprocess-library.md](subprocess-library.md) | مكتبة `subprocess` — أوامر النظام |
-| 24 | [configparser-library.md](configparser-library.md) | مكتبة `configparser` — ملفات الإعدادات |
-| 25 | [dataclasses-library.md](dataclasses-library.md) | مكتبة `dataclasses` — فئات بيانات، تعدادات، ABC |
-| 26 | [advanced-library.md](advanced-library.md) | المكتبة المتقدمة — Decorators, Metaclasses, Data Structures, Concurrency, Types, Descriptors |
-| 27 | [datetime-library.md](datetime-library.md) | مكتبة `datetime` — التاريخ والوقت والتحويل بينهما، مع الخصائص والثوابت |
-| 28 | [pathlib-library.md](pathlib-library.md) | مكتبة `pathlib` — التعامل مع المسارات ككائنات |
-| 29 | [shutil-library.md](shutil-library.md) | مكتبة `shutil` — نسخ ونقل وحذف الملفات والمجلدات |
-| 30 | [textwrap-library.md](textwrap-library.md) | مكتبة `textwrap` — تنسيق النصوص ولفّها |
-| 31 | [uuid-library.md](uuid-library.md) | مكتبة `uuid` — المعرفات الفريدة (UUID) |
-| 32 | [base64-library.md](base64-library.md) | مكتبة `base64` — الترميز وفك الترميز |
-| 33 | [urllib-library.md](urllib-library.md) | مكتبة `urllib` — تحليل وبناء الروابط وترميزها |
-| 34 | [functools-library.md](functools-library.md) | مكتبة `functools` — أدوات الدوال (partial, cache, wraps) |
-| 35 | [error-messages.md](error-messages.md) | رسائل الأخطاء — كل أخطاء Python مترجمة بالعربي |
-| 36 | [decimal-library.md](decimal-library.md) | مكتبة `decimal` — الحساب العشري الدقيق بدون أخطاء تقريب |
-| 37 | [fractions-library.md](fractions-library.md) | مكتبة `fractions` — الكسور الرياضية الدقيقة |
-| 38 | [string-library.md](string-library.md) | مكتبة `string` — مجموعات الأحرف والرموز الثابتة |
-| 39 | [secrets-library.md](secrets-library.md) | مكتبة `secrets` — قيم عشوائية آمنة ومقارنة الأسرار |
-| 40 | [zoneinfo-library.md](zoneinfo-library.md) | مكتبة `zoneinfo` — المناطق الزمنية worldwide |
-| 41 | [getpass-library.md](getpass-library.md) | مكتبة `getpass` — إدخال كلمات السر دون إظهارها |
-| 42 | [operator-library.md](operator-library.md) | مكتبة `operator` — المشغّلات كدوال لتمريرها إلى map/filter |
-| 43 | [pprint-library.md](pprint-library.md) | مكتبة `pprint` — طباعة منسّقة للقواميس والقوائم |
-| 44 | [enum-library.md](enum-library.md) | مكتبة `enum` — أنواع معدودة (Enums) |
-| 45 | [xml-library.md](xml-library.md) | مكتبة `xml` — قراءة وبناء وتعديل ملفات XML (99 عنصراً) |
-| 46 | [archive-library.md](archive-library.md) | مكتبة `archive` — أرشيف ZIP و TAR والضغط gzip / bz2 / xz (102 عنصراً) |
-| 58 | [network-library.md](network-library.md) | مكتبة `net` — الشبكة والبريد: socket و ssl و http و email و SMTP/IMAP/FTP (1006 عنصراً) |
-| 58 | [language-features.md](language-features.md) | مميزات اللغة — match/case، معالجة الأخطاء، lambda، الوراثة |
-| 49 | [performance.md](performance.md) | تحسينات الأداء — التحميل الكسول، الذاكرة، طيّ الثوابت |
-| 50 | [devtools-library.md](devtools-library.md) | مكتبة `devtools` — أدوات المطوّر: فحص، تصحيح، قياس أداء، ترجمة (1123 عنصراً) |
-| 87 | [syslib-library.md](syslib-library.md) | مكتبة `syslib` — النظام والتشغيل والتشخيص: منصة، إشارات، تسجيل، اختبارات، عمليات، ctypes (3973 عنصراً) |
-| 103 | [numpy-library.md](numpy-library.md) | مكتبة `numpy` — الحساب العددي (5937 عنصراً) |
-| 104 | [scipy-library.md](scipy-library.md) | مكتبة `scipy` — الحساب العلمي (8396 عنصراً) |
-| 105 | [telegram-library.md](telegram-library.md) | مكتبة `telegram` — بوتات تيليجرام (6429 عنصراً) |
-| 106 | [redis-library.md](redis-library.md) | مكتبة `redis` — تخزين المفاتيح والقيم (6500 عنصراً) |
-| 107 | [celery-library.md](celery-library.md) | مكتبة `celery` — طوابير المهام (6350 عنصراً) |
+| 2 | [language-reference.md](language-reference.md) | مرجع اللغة — كل الكلمات المفتاحية والتراكيب |
+| 3 | [language-features.md](language-features.md) | مميزات اللغة — match/case، معالجة الأخطاء، lambda، الوراثة |
+| 4 | [error-messages.md](error-messages.md) | رسائل الأخطاء — كل أخطاء Python مترجمة بالعربي |
+| 5 | [performance.md](performance.md) | تحسينات الأداء — التحميل الكسول، الذاكرة، طيّ الثوابت |
+| 6 | [devtools-library.md](devtools-library.md) | مكتبة `devtools` — أدوات المطوّر: فحص، تصحيح، قياس أداء، ترجمة (inspect / ast / dis / pdb / doctest / timeit / profile / tracemalloc) (1,123 عنصراً) |
+| 7 | [datafiles-library.md](datafiles-library.md) | مكتبة `datafiles` — البيانات والملفات: مسارات، ضغط، أرشيف، تسلسل، هياكل بيانات، XML، يونيكود (io / zipfile / tarfile / pickle / shelve / array / struct / xml.dom / xml.etree / unicodedata) (2,631 عنصراً) |
+| 8 | [syslib-library.md](syslib-library.md) | مكتبة `syslib` — النظام والتشغيل والتشخيص: منصة، إشارات، موارد، تسجيل، اختبارات، عمليات متعددة، ctypes، سياق (platform / signal / resource / logging / unittest / multiprocessing / concurrent.futures / ctypes / termios) (3,973 عنصراً) |
+| 9 | [weblibs-library.md](weblibs-library.md) | مكتبة `weblibs` — الويب والنصوص: بث متدفق، قوالب، ماركداون، تورنيدو، سطر الأوامر، تلوين الشيفرة (websockets / jinja2 / markdown / tornado / click / pygments) (5,496 عنصراً) |
+| 10 | [webserver-library.md](webserver-library.md) | مكتبة `webserver` — الخوادم والشبكات: خوادم ASGI/WSGI، عملاء HTTP غير متزامنين، HTTP/1.1 (starlette / uvicorn / httpx / httpcore / h11 / anyio) (5,492 عنصراً) |
+| 11 | [secauth-library.md](secauth-library.md) | مكتبة `secauth` — الأمان والمصادقة: تشفير وشهادات، قوالب معزولة، تحقق من المخططات، JWT (cryptography / jinja2 / jsonschema / jwt / cffi) (5,495 عنصراً) |
+| 12 | [textdata-library.md](textdata-library.md) | مكتبة `textdata` — النصوص والبيانات: مطابقة الأنماط، أصناف الخصائص، الصور، النماذج الأولية (pathspec / attrs / PIL / markdown / proto) (5,492 عنصراً) |
+| 13 | [utiltools-library.md](utiltools-library.md) | مكتبة `utiltools` — الأدوات المساعدة: الإصدارات والتواريخ، أشرطة التقدم، مراقبة العمليات (packaging / dateutil / tqdm / psutil / websockets) (5,494 عنصراً) |
+| 14 | [idlelib-library.md](idlelib-library.md) | مكتبة `idlelib` — بيئة التطوير المدمجة: محرر، إكمال تلقائي، مصحح، إعدادات (idlelib) (11,138 عنصراً) |
+| 15 | [cdp_use-library.md](cdp_use-library.md) | مكتبة `cdp_use` — بروتوكول أدوات تطوير كروم CDP (cdp_use) (10,569 عنصراً) |
+| 16 | [acp-library.md](acp-library.md) | مكتبة `acp` — بروتوكول العميل-الوكيل ACP (acp) (11,180 عنصراً) |
+| 17 | [aiohttp-library.md](aiohttp-library.md) | مكتبة `aiohttp` — عميل وخادم HTTP غير متزامنين (aiohttp) (15,592 عنصراً) |
+| 18 | [stdlib_ext-library.md](stdlib_ext-library.md) | مكتبة `stdlib_ext` — توسعة المكتبة القياسية (encodings / inspect / doctest / pdb / tracemalloc) (12,950 عنصراً) |
+| 19 | [numpy-library.md](numpy-library.md) | مكتبة `numpy` — الحساب العددي: مصفوفات، جبر خطي، تحويلات فورييه، عشوائيات (numpy) (5,937 عنصراً) |
+| 20 | [scipy-library.md](scipy-library.md) | مكتبة `scipy` — الحساب العلمي: تكامل، تحسين، استيفاء، إحصاء، مصفوفات متناثرة (scipy) (8,396 عنصراً) |
+| 21 | [telegram-library.md](telegram-library.md) | مكتبة `telegram` — بوتات تيليجرام: رسائل، محادثات، مستخدمون، لوحات مفاتيح (python-telegram-bot) (6,429 عنصراً) |
+| 22 | [redis-library.md](redis-library.md) | مكتبة `redis` — تخزين المفاتيح والقيم والجلسات والمهام الموزعة (redis-py) (6,500 عنصراً) |
+| 23 | [celery-library.md](celery-library.md) | مكتبة `celery` — طوابير المهام الموزعة والجدولة الزمنية (celery) (6,350 عنصراً) |
+| 24 | [web-library.md](web-library.md) | مكتبة `web` — الويب والبريد: عناوين، HTTP، بريد، صناديق، كوكيز، HTML، WSGI، XML-RPC (http / urllib / email / mailbox / html / wsgiref / xmlrpc) (2,757 عنصراً) |
+| 25 | [network-library.md](network-library.md) | مكتبة `net` — الشبكة: socket و ssl و http و email و SMTP/IMAP/FTP (1,006 عنصراً) |
+| 26 | [fastapi-library.md](fastapi-library.md) | مكتبة `fastapi` — إطار عمل ويب حديث (536 عنصراً) |
+| 27 | [requests-library.md](requests-library.md) | مكتبة `requests` — HTTP Client كامل (244 عنصراً) |
+| 28 | [advanced-library.md](advanced-library.md) | مكتبة `advanced` — ميزات متقدمة (decorators, metaclasses, typing) (135 عنصراً) |
+| 29 | [asyncio-library.md](asyncio-library.md) | مكتبة `asyncio` — برمجة غير متزامنة (118 عنصراً) |
+| 30 | [argparse-library.md](argparse-library.md) | مكتبة `argparse` — تحليل وسائط سطر الأوامر (109 عنصراً) |
+| 31 | [xml-library.md](xml-library.md) | مكتبة `xml` — قراءة وبناء وتعديل ملفات XML (ElementTree) (109 عنصراً) |
+| 32 | [archive-library.md](archive-library.md) | مكتبة `archive` — أرشيف ZIP و TAR وضغط gzip / bz2 / xz (106 عنصراً) |
+| 33 | [logging-library.md](logging-library.md) | مكتبة `logging` — تسجيل الأحداث (87 عنصراً) |
+| 34 | [unittest-library.md](unittest-library.md) | مكتبة `unittest` — اختبارات الوحدة (84 عنصراً) |
+| 35 | [flask-library.md](flask-library.md) | مكتبة `flask` — إطار عمل ويب (78 عنصراً) |
+| 36 | [subprocess-library.md](subprocess-library.md) | مكتبة `subprocess` — أوامر النظام (74 عنصراً) |
+| 37 | [dataclasses-library.md](dataclasses-library.md) | مكتبة `dataclasses` — فئات بيانات، تعدادات، ABC (68 عنصراً) |
+| 38 | [math-library.md](math-library.md) | مكتبة `math` — مثلثات، لوغاريتمات، جذور، تقريب، هندسة (63 عنصراً) |
+| 39 | [pathlib-library.md](pathlib-library.md) | مكتبة `pathlib` — التعامل مع المسارات ككائنات (61 عنصراً) |
+| 40 | [datetime-library.md](datetime-library.md) | مكتبة `datetime` — التاريخ والوقت والتحويل بينهما (45 عنصراً) |
+| 41 | [configparser-library.md](configparser-library.md) | مكتبة `configparser` — ملفات الإعدادات (35 عنصراً) |
+| 42 | [os-library.md](os-library.md) | مكتبة `os` — ملفات، مجلدات، مسارات، فحص (30 عنصراً) |
+| 43 | [threading-library.md](threading-library.md) | مكتبة `threading` — تعدد المهام (29 عنصراً) |
+| 44 | [operator-library.md](operator-library.md) | مكتبة `operator` — المشغّلات كدوال (add, mul, itemgetter) (26 عنصراً) |
+| 45 | [time-library.md](time-library.md) | مكتبة `time` — وقت، تاريخ، تأخير، تنسيق (25 عنصراً) |
+| 46 | [re-library.md](re-library.md) | مكتبة `re` — تعابير نمطية، بحث، استبدال، تقسيم (25 عنصراً) |
+| 47 | [sqlite3-library.md](sqlite3-library.md) | مكتبة `sqlite3` — قاعدة بيانات محلية (24 عنصراً) |
+| 48 | [decimal-library.md](decimal-library.md) | مكتبة `decimal` — الحساب العشري الدقيق (بدون أخطاء تقريب) (24 عنصراً) |
+| 49 | [random-library.md](random-library.md) | مكتبة `random` — أرقام عشوائية، توزيعات، خلط (20 عنصراً) |
+| 50 | [itertools-library.md](itertools-library.md) | مكتبة `itertools` — أدوات تكرار، توافيق، تباديل (19 عنصراً) |
+| 51 | [statistics-library.md](statistics-library.md) | مكتبة `statistics` — متوسط، وسيط، منوال، تباين، انحراف معياري (16 عنصراً) |
+| 52 | [csv-library.md](csv-library.md) | مكتبة `csv` — ملفات بيانات (13 عنصراً) |
+| 53 | [uuid-library.md](uuid-library.md) | مكتبة `uuid` — المعرفات الفريدة (UUID) (13 عنصراً) |
+| 54 | [urllib-library.md](urllib-library.md) | مكتبة `urllib` — تحليل وبناء الروابط وترميزها (13 عنصراً) |
+| 55 | [shutil-library.md](shutil-library.md) | مكتبة `shutil` — نسخ ونقل وحذف الملفات والمجلدات (12 عنصراً) |
+| 56 | [base64-library.md](base64-library.md) | مكتبة `base64` — الترميز وفك الترميز (11 عنصراً) |
+| 57 | [json-library.md](json-library.md) | مكتبة `json` — قراءة وكتابة JSON (10 عنصراً) |
+| 58 | [string-library.md](string-library.md) | مكتبة `string` — مجموعات الأحرف والرموز الثابتة (10 عنصراً) |
+| 59 | [collections-library.md](collections-library.md) | مكتبة `collections` — Counter, defaultdict, deque (9 عنصراً) |
+| 60 | [textwrap-library.md](textwrap-library.md) | مكتبة `textwrap` — تنسيق النصوص ولفّها (9 عنصراً) |
+| 61 | [functools-library.md](functools-library.md) | مكتبة `functools` — أدوات الدوال (partial, cache, wraps) (9 عنصراً) |
+| 62 | [fractions-library.md](fractions-library.md) | مكتبة `fractions` — الكسور الرياضية الدقيقة (8 عنصراً) |
+| 63 | [secrets-library.md](secrets-library.md) | مكتبة `secrets` — توليد قيم عشوائية آمنة تشفيرياً (8 عنصراً) |
+| 64 | [zoneinfo-library.md](zoneinfo-library.md) | مكتبة `zoneinfo` — المناطق الزمنية (IANA) (8 عنصراً) |
+| 65 | [hashlib-library.md](hashlib-library.md) | مكتبة `hashlib` — تجزئة وتشفير (7 عنصراً) |
+| 66 | [enum-library.md](enum-library.md) | مكتبة `enum` — أنواع معدودة (Enums) — قيم مسمّاة بدل الأرقام السحرية (7 عنصراً) |
+| 67 | [getpass-library.md](getpass-library.md) | مكتبة `getpass` — إدخال كلمات السر دون إظهارها (2 عنصراً) |
+| 68 | [pprint-library.md](pprint-library.md) | مكتبة `pprint` — طباعة منسّقة للقواميس والقوائم (2 عنصراً) |
 
 ---
-
 ## الأمثلة الجاهزة (102 مثالاً)
 
 102 برنامجاً حقيقياً مكتوباً بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:

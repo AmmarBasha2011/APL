@@ -2,22 +2,22 @@
 
 توليد قيم عشوائية آمنة تشفيرياً، ومقارنة الأسرار بأمان.
 
-**8 عنصر** (8 دالة).
+**8 عنصراً عربياً** (الدوال: 8).
 
-## الدوال
+## الدوال (8)
 
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `سر_سداسي(...)` | `secrets.token_hex` | token عشوائي hex |
-| `سر_آمن_لرابط(...)` | `secrets.token_urlsafe` | token آمن للروابط |
-| `سر_بايتات(...)` | `secrets.token_bytes` | بايتات عشوائية |
-| `سر_حددي(...)` | `secrets.token_int` |  |
-| `سر_في_مجال(...)` | `_apl_secret_int` | عدد صحيح في مجال |
-| `اختر_عشوائي(...)` | `secrets.choice` | اختيار عنصر عشوائي |
-| `مقارنة_آمنة(...)` | `secrets.compare_digest` | مقارنة بزمن ثابت |
-| `مصدر_عشوائي_آمن(...)` | `secrets.SystemRandom` | SystemRandom |
+| العربي | Python |
+|--------|--------|
+| `سر_سداسي` | `secrets.token_hex` |
+| `سر_آمن_لرابط` | `secrets.token_urlsafe` |
+| `سر_بايتات` | `secrets.token_bytes` |
+| `سر_حددي` | `secrets.token_int` |
+| `سر_في_مجال` | `_apl_secret_int` |
+| `اختر_عشوائي` | `secrets.choice` |
+| `مقارنة_آمنة` | `secrets.compare_digest` |
+| `مصدر_عشوائي_آمن` | `secrets.SystemRandom` |
 
-## أمثلة
+## مثال
 
 ```apl
 اطبع "سر hex (16 بايت):", سر_سداسي(16)

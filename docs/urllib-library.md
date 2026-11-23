@@ -2,42 +2,27 @@
 
 تحليل الروابط وبناؤها وترميزها، وفتح الروابط.
 
-**13 عنصر** (13 دالة، 0 خاصية).
+**13 عنصراً عربياً** (الدوال: 13).
 
-## تحليل الروابط
+## الدوال (13)
 
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `تحليل_الرابط(...)` | `urllib.parse.urlparse` | urlparse |
-| `نطاق_الرابط(...)` | `urllib.parse.urlparse` | اسم بديل |
-| `تحليل_استعلام(...)` | `urllib.parse.parse_qs` | parse_qs |
-| `تحليل_استعلام_نص(...)` | `urllib.parse.parse_qsl` | parse_qsl |
+| العربي | Python |
+|--------|--------|
+| `ترميز_الرابط` | `urllib.parse.quote` |
+| `فك_ترميز_الرابط` | `urllib.parse.unquote` |
+| `ترميز_الرابط_كامل` | `urllib.parse.quote_plus` |
+| `فك_ترميز_الرابط_كامل` | `urllib.parse.unquote_plus` |
+| `تحليل_الرابط` | `urllib.parse.urlparse` |
+| `نطاق_الرابط` | `urllib.parse.urlparse` |
+| `بناء_الرابط` | `urllib.parse.urlencode` |
+| `بناء_الرابط_من_قاموس` | `urllib.parse.urlencode` |
+| `تحليل_استعلام` | `urllib.parse.parse_qs` |
+| `تحليل_استعلام_نص` | `urllib.parse.parse_qsl` |
+| `حمّل_الرابط` | `urllib.request.urlopen` |
+| `استخدم_وكيل` | `urllib.request.Request` |
+| `وكيل_المتصفح` | `urllib.request.Request` |
 
-## الترميز
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `ترميز_الرابط(...)` | `urllib.parse.quote` | quote |
-| `فك_ترميز_الرابط(...)` | `urllib.parse.unquote` | unquote |
-| `ترميز_الرابط_كامل(...)` | `urllib.parse.quote_plus` | quote_plus |
-| `فك_ترميز_الرابط_كامل(...)` | `urllib.parse.unquote_plus` | unquote_plus |
-
-## بناء الروابط
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `بناء_الرابط(...)` | `urllib.parse.urlencode` | urlencode |
-| `بناء_الرابط_من_قاموس(...)` | `urllib.parse.urlencode` | اسم بديل |
-
-## فتح الروابط
-
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `حمّل_الرابط(...)` | `urllib.request.urlopen` | فتح رابط |
-| `استخدم_وكيل(...)` | `urllib.request.Request` | إنشاء Request |
-| `وكيل_المتصفح(...)` | `urllib.request.Request` | اسم بديل |
-
-## أمثلة
+## مثال
 
 ```apl
 المتغير رابط = تحليل_الرابط("https://example.com/p?a=1")

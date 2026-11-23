@@ -2,23 +2,23 @@
 
 أدوات لتثبيت الوسائط والتخزين المؤقت وتغليف الدوال.
 
-**9 عنصر** (9 دالة، 0 خاصية).
+**9 عنصراً عربياً** (الدوال: 9).
 
-## الدوال
+## الدوال (9)
 
-| العربي | Python | الوصف |
-|--------|--------|-------|
-| `@تغليف_دالة(...)` | `functools.wraps` |  |
-| `تغليف_دالة(...)` | `functools.wraps` | functools.wraps للـ decorators |
-| `جزئي_دالة(...)` | `functools.partial` | partial لتثبيت وسائط |
-| `كاش_مؤقت_دالة(...)` | `functools.lru_cache` | lru_cache للتخزين المؤقت |
-| `كاش_بلا_حد(...)` | `functools.cache` | cache بدون حد |
-| `مقارن_بالعكس(...)` | `functools.cmp_to_key` | cmp_to_key للترتيب |
-| `اختصر_دالة(...)` | `functools.reduce` | reduce |
-| `تعيين_ترتيب(...)` | `functools.total_ordering` | total_ordering |
-| `أقوى_قيمة(...)` | `functools.reduce` | reduce |
+| العربي | Python |
+|--------|--------|
+| `@تغليف_دالة` | `functools.wraps` |
+| `تغليف_دالة` | `functools.wraps` |
+| `جزئي_دالة` | `functools.partial` |
+| `كاش_مؤقت_دالة` | `functools.lru_cache` |
+| `كاش_بلا_حد` | `functools.cache` |
+| `مقارن_بالعكس` | `functools.cmp_to_key` |
+| `اختصر_دالة` | `functools.reduce` |
+| `تعيين_ترتيب` | `functools.total_ordering` |
+| `أقوى_قيمة` | `functools.reduce` |
 
-## أمثلة
+## مثال
 
 ```apl
 دالة مربع(س):
