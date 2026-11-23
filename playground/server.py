@@ -13,6 +13,10 @@ FILES = {'/': ('index.html', 'text/html; charset=utf-8'),
 
 
 class Handler(BaseHTTPRequestHandler):
+    def setup(self):
+        super().setup()
+        self.connection.settimeout(10)
+
     def send(self, status, body, content_type='application/json; charset=utf-8'):
         self.send_response(status)
         self.send_header('Content-Type', content_type)

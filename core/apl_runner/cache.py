@@ -45,7 +45,7 @@ def _engine_fingerprint() -> str:
     # لم يتغيّر مصدره. حصل ده فعلاً مع cProfile.label في Python 3.15.
     lib_dir = _SRC_ROOT / "core" / "libraries"
     if lib_dir.is_dir():
-        for p in sorted(lib_dir.glob("*.py")):
+        for p in sorted([*lib_dir.glob("*.py"), *lib_dir.glob("*.json")]):
             h.update(p.name.encode("utf-8"))
             h.update(p.read_bytes())
     return h.hexdigest()[:12]

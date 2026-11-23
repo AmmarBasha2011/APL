@@ -102,6 +102,34 @@ class CompilerTests(unittest.TestCase):
             for expected in ('5', '__main__', str(root / 'main.apl'), 'arg-value'):
                 self.assertIn(expected, result.stdout)
 
+    def test_package_relative_import(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / 'pkg').mkdir()
+            (root / 'pkg/__init__.apl').write_text('from .values import answer\n', encoding='utf-8')
+            (root / 'pkg/values.apl').write_text('answer = 42\n', encoding='utf-8')
+            (root / 'main.apl').write_text('from pkg import answer\nاطبع answer', encoding='utf-8')
+            result = cli('run', str(root / 'main.apl'))
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertIn('42', result.stdout)
+
+    def test_core_words_and_attribute_bindings(self):
+        result = cli('-c', 'صنف س:\n    دالة_إنشاء(ذات, أ):\n        ذات.أ = أ\n    دالة قيمة(ذات):\n        ارجع ذات.أ\nالمتغير ك = س(4)\nلو ك.قيمة() == 4 و 1 < 2:\n    اطبع "passed"')
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn('passed', result.stdout)
+
+    def test_cache_invalidation_source_and_registry(self):
+        from core.apl_runner import cache
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / 'program.apl'
+            path.write_text('اطبع 1', encoding='utf-8')
+            self.assertEqual(cli(str(path)).returncode, 0)
+            self.assertIsNotNone(cache.load_cached(path, 'اطبع 1'))
+            self.assertIsNone(cache.load_cached(path, 'اطبع 2'))
+            path.write_text('المتغير س', encoding='utf-8')
+            result = cli(str(path))
+            self.assertEqual(result.returncode, 1)
+
     def test_taskbook(self):
         with tempfile.TemporaryDirectory() as temp:
             db = str(Path(temp) / 'tasks.db')

@@ -1,5 +1,4 @@
 """Compilation, source-aware diagnostics and local APL imports."""
-import ast
 import difflib
 import importlib.abc
 import importlib.util
@@ -18,8 +17,16 @@ class Compilation:
         self.source, self.filename = source, filename
         self.python = ''
         try:
-            self.python = transpile(source)
+            from core.apl_runner import cache
+            path = Path(filename)
+            if path.is_file():
+                self.python = cache.load_cached(path, source) or ''
+            if not self.python:
+                self.python = transpile(source)
             self.code = compile(self.python, filename, 'exec')
+            if path.is_file():
+                cache.store(path, source, self.python)
+                cache.prune(path)
         except SyntaxError as error:
             if self.python:
                 error.lineno = source_line(self.python, error.lineno or 1)
