@@ -59,7 +59,7 @@
 | 104 | [scipy-library.md](scipy-library.md) | مكتبة `scipy` — الحساب العلمي (8396 عنصراً) |
 | 105 | [telegram-library.md](telegram-library.md) | مكتبة `telegram` — بوتات تيليجرام (6429 عنصراً) |
 | 106 | [redis-library.md](redis-library.md) | مكتبة `redis` — تخزين المفاتيح والقيم (6500 عنصراً) |
-| 107 | [celery-library.md](celery-library.md) | مكتبة `celery` — طوابير المهام (6491 عنصراً) |
+| 107 | [celery-library.md](celery-library.md) | مكتبة `celery` — طوابير المهام (6350 عنصراً) |
 | 88 | [`88-weblibs.apl`](../examples/88-weblibs.apl) | الويب والنصوص (weblibs/markdown) |
 | 89 | [`89-webserver.apl`](../examples/89-webserver.apl) | الخوادم (webserver/uvicorn) |
 | 90 | [`90-secauth.apl`](../examples/90-secauth.apl) | الأمان والمصادقة (secauth/jinja2) |
@@ -240,7 +240,7 @@ with open("ملف.txt") as f:
 | `scipy` | 8396 | الحساب العلمي: تكامل، تحسين، استيفاء، إحصاء، مصفوفات متناثرة (scipy) |
 | `telegram` | 6429 | بوتات تيليجرام: رسائل، محادثات، مستخدمون، لوحات مفاتيح (python-telegram-bot) |
 | `redis` | 6500 | تخزين المفاتيح والقيم والجلسات والمهام الموزعة (redis-py) |
-| `celery` | 6491 | طوابير المهام الموزعة والجدولة الزمنية (celery) |
+| `celery` | 6350 | طوابير المهام الموزعة والجدولة الزمنية (celery) |
 | `web` | 2757 | الويب والبريد: عناوين، HTTP، بريد، صناديق، كوكيز، HTML، WSGI، XML-RPC (http / urllib / email / mailbox / html / wsgiref / xmlrpc) |
 | `net` | 1006 | الشبكة: socket و ssl و http و email و SMTP/IMAP/FTP |
 | `fastapi` | 536 | إطار عمل ويب حديث |
@@ -287,9 +287,9 @@ with open("ملف.txt") as f:
 | `getpass` | 2 | إدخال كلمات السر دون إظهارها |
 | `pprint` | 2 | طباعة منسّقة للقواميس والقوائم |
 
-**الإجمالي: 136,482 عنصراً في 63 مكتبة** (136,464 مفتاحاً فريداً بعد إزالة التكرار).
+**الإجمالي: 136,341 عنصراً في 63 مكتبة** (136,323 مفتاحاً فريداً بعد إزالة التكرار).
 
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
-في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **136,695 عنصراً**،
+في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **136,554 عنصراً**،
 مع **102 مثالاً جاهزاً** في `examples/`.
