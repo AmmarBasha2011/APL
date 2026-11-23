@@ -74,9 +74,9 @@
 | 68 | [pprint-library.md](pprint-library.md) | مكتبة `pprint` — طباعة منسّقة للقواميس والقوائم (2 عنصراً) |
 
 ---
-## الأمثلة الجاهزة (200 مثال)
+## الأمثلة الجاهزة (500 مثال)
 
-200 برنامج حقيقي مكتوب بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+500 برنامج حقيقي مكتوب بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -280,6 +280,306 @@
 | 198 | [`198-todo-json.apl`](../examples/198-todo-json.apl) | قائمة مهام محفوظة في ملف JSON |
 | 199 | [`199-banking-oop.apl`](../examples/199-banking-oop.apl) | نظام بنكي بسيط بالكائنات |
 | 200 | [`200-final-showcase-2.apl`](../examples/200-final-showcase-2.apl) | لوحة نتائج الطلاب |
+| 201 | [`201-insertion-sort.apl`](../examples/201-insertion-sort.apl) | الترتيب بالإدراج |
+| 202 | [`202-selection-sort.apl`](../examples/202-selection-sort.apl) | ترتيب الاختيار |
+| 203 | [`203-counting-sort.apl`](../examples/203-counting-sort.apl) | الترتيب بالعد |
+| 204 | [`204-radix-sort.apl`](../examples/204-radix-sort.apl) | الترتيب الجذري |
+| 205 | [`205-heap-sort.apl`](../examples/205-heap-sort.apl) | ترتيب الكومة |
+| 206 | [`206-linear-search.apl`](../examples/206-linear-search.apl) | البحث الخطي وكل المواضع |
+| 207 | [`207-jump-search.apl`](../examples/207-jump-search.apl) | البحث بالقفز |
+| 208 | [`208-fibonacci-memo.apl`](../examples/208-fibonacci-memo.apl) | فيبوناتشي بالتخزين |
+| 209 | [`209-climbing-stairs.apl`](../examples/209-climbing-stairs.apl) | طرق صعود السلم (برمجة ديناميكية) |
+| 210 | [`210-coin-change.apl`](../examples/210-coin-change.apl) | أقل عدد عملات (برمجة ديناميكية) |
+| 211 | [`211-stack-class.apl`](../examples/211-stack-class.apl) | المكدس كصنف |
+| 212 | [`212-queue-class.apl`](../examples/212-queue-class.apl) | الطابور كصنف |
+| 213 | [`213-linked-list.apl`](../examples/213-linked-list.apl) | القائمة المترابطة |
+| 214 | [`214-binary-tree.apl`](../examples/214-binary-tree.apl) | الشجرة الثنائية وجولاتها |
+| 215 | [`215-bst.apl`](../examples/215-bst.apl) | شجرة البحث الثنائية |
+| 216 | [`216-trie.apl`](../examples/216-trie.apl) | شجرة البادئات (Trie) |
+| 217 | [`217-graph-bfs.apl`](../examples/217-graph-bfs.apl) | المسح بالعرض للرسم البياني |
+| 218 | [`218-graph-dfs.apl`](../examples/218-graph-dfs.apl) | المسح بالعمق وإيجاد مسار |
+| 219 | [`219-priority-queue.apl`](../examples/219-priority-queue.apl) | طابور الأولوية اليدوي |
+| 220 | [`220-doubly-linked.apl`](../examples/220-doubly-linked.apl) | القائمة المترابطة المزدوجة |
+| 221 | [`221-caesar-cipher.apl`](../examples/221-caesar-cipher.apl) | شيفرة قيصر |
+| 222 | [`222-vigenere.apl`](../examples/222-vigenere.apl) | شيفرة فيجنير |
+| 223 | [`223-rot13.apl`](../examples/223-rot13.apl) | ROT13 |
+| 224 | [`224-morse.apl`](../examples/224-morse.apl) | شيفرة مورس |
+| 225 | [`225-run-length.apl`](../examples/225-run-length.apl) | ضغط طول التكرار |
+| 226 | [`226-pig-latin.apl`](../examples/226-pig-latin.apl) | لغة الخنزير اللاتينية |
+| 227 | [`227-leet-speak.apl`](../examples/227-leet-speak.apl) | لغة الليت (1337) |
+| 228 | [`228-acronym.apl`](../examples/228-acronym.apl) | توليد الاختصارات |
+| 229 | [`229-word-reverser.apl`](../examples/229-word-reverser.apl) | عكس الكلمات والجمل |
+| 230 | [`230-title-case.apl`](../examples/230-title-case.apl) | تنسيق العناوين الإنجليزية |
+| 231 | [`231-factory-pattern.apl`](../examples/231-factory-pattern.apl) | نمط المصنع |
+| 232 | [`232-singleton.apl`](../examples/232-singleton.apl) | نمط المفرد |
+| 233 | [`233-observer.apl`](../examples/233-observer.apl) | نمط المراقب |
+| 234 | [`234-strategy.apl`](../examples/234-strategy.apl) | نمط الاستراتيجية |
+| 235 | [`235-builder.apl`](../examples/235-builder.apl) | نمط البنّاء |
+| 236 | [`236-adapter.apl`](../examples/236-adapter.apl) | نمط المحوّل |
+| 237 | [`237-state-machine.apl`](../examples/237-state-machine.apl) | آلة الحالات (إشارة مرور) |
+| 238 | [`238-iterator-protocol.apl`](../examples/238-iterator-protocol.apl) | مكرر مخصص (عداد تنازلي) |
+| 239 | [`239-template-method.apl`](../examples/239-template-method.apl) | نمط القالب |
+| 240 | [`240-composite.apl`](../examples/240-composite.apl) | نمط المركّب (نظام ملفات) |
+| 241 | [`241-tic-tac-toe.apl`](../examples/241-tic-tac-toe.apl) | لعبة إكس أو (منطق) |
+| 242 | [`242-guess-number.apl`](../examples/242-guess-number.apl) | تخمين الرقم (محاكاة آلية) |
+| 243 | [`243-rock-paper-scissors.apl`](../examples/243-rock-paper-scissors.apl) | حجر ورقة مقص |
+| 244 | [`244-dice-stats.apl`](../examples/244-dice-stats.apl) | إحصاءات رمي النرد |
+| 245 | [`245-card-deck.apl`](../examples/245-card-deck.apl) | مجموعة أوراق لعب |
+| 246 | [`246-blackjack.apl`](../examples/246-blackjack.apl) | بلاك جاك مبسط |
+| 247 | [`247-slot-machine.apl`](../examples/247-slot-machine.apl) | ماكينة الحظ |
+| 248 | [`248-lottery.apl`](../examples/248-lottery.apl) | محاكاة يانصيب |
+| 249 | [`249-bingo-card.apl`](../examples/249-bingo-card.apl) | بطاقة بنغو |
+| 250 | [`250-hangman-logic.apl`](../examples/250-hangman-logic.apl) | منطق لعبة الرجل المشنوق |
+| 251 | [`251-bmi.apl`](../examples/251-bmi.apl) | حاسبة كتلة الجسم |
+| 252 | [`252-compound-interest.apl`](../examples/252-compound-interest.apl) | الفائدة المركبة |
+| 253 | [`253-loan-amortization.apl`](../examples/253-loan-amortization.apl) | جدول سداد قرض |
+| 254 | [`254-tip-split.apl`](../examples/254-tip-split.apl) | تقسيم الالحساب والإكرامية |
+| 255 | [`255-leap-years.apl`](../examples/255-leap-years.apl) | السنوات الكبيسة |
+| 256 | [`256-zeller-weekday.apl`](../examples/256-zeller-weekday.apl) | يوم الأسبوع بمعادلة زيلر |
+| 257 | [`257-savings-goal.apl`](../examples/257-savings-goal.apl) | هدف الادخار |
+| 258 | [`258-age-days.apl`](../examples/258-age-days.apl) | العمر بالأيام |
+| 259 | [`259-countdown.apl`](../examples/259-countdown.apl) | عداد تنازلي لتاريخ |
+| 260 | [`260-currency-static.apl`](../examples/260-currency-static.apl) | محول عملات بأسعار ثابتة |
+| 261 | [`261-math-quiz.apl`](../examples/261-math-quiz.apl) | اختبار حساب آلي |
+| 262 | [`262-password-strength.apl`](../examples/262-password-strength.apl) | قياس قوة كلمة المرور |
+| 263 | [`263-atm.apl`](../examples/263-atm.apl) | صراف آلي مبسط |
+| 264 | [`264-voting.apl`](../examples/264-voting.apl) | نظام تصويت |
+| 265 | [`265-library-books.apl`](../examples/265-library-books.apl) | مكتبة كتب بسيطة |
+| 266 | [`266-shopping-cart.apl`](../examples/266-shopping-cart.apl) | سلة تسوق |
+| 267 | [`267-expense-categories.apl`](../examples/267-expense-categories.apl) | مصروفات بالفئات |
+| 268 | [`268-grade-book.apl`](../examples/268-grade-book.apl) | سجل درجات فصل |
+| 269 | [`269-parking.apl`](../examples/269-parking.apl) | موقف سيارات |
+| 270 | [`270-flashcards.apl`](../examples/270-flashcards.apl) | بطاقات مراجعة |
+| 271 | [`271-kadane.apl`](../examples/271-kadane.apl) | أكبر مجموع متتالي (كادان) |
+| 272 | [`272-majority.apl`](../examples/272-majority.apl) | العنصر الأغلبي (بوير-مور) |
+| 273 | [`273-dutch-flag.apl`](../examples/273-dutch-flag.apl) | مسألة العلم الهولندي |
+| 274 | [`274-rotate-array.apl`](../examples/274-rotate-array.apl) | تدوير المصفوفة |
+| 275 | [`275-merge-intervals.apl`](../examples/275-merge-intervals.apl) | دمج الفترات المتداخلة |
+| 276 | [`276-product-except-self.apl`](../examples/276-product-except-self.apl) | حاصل ضرب ما عدا الذات |
+| 277 | [`277-lis.apl`](../examples/277-lis.apl) | أطول متتالية متزايدة |
+| 278 | [`278-lcs.apl`](../examples/278-lcs.apl) | أطول متتالية مشتركة |
+| 279 | [`279-edit-distance.apl`](../examples/279-edit-distance.apl) | مسافة التحرير |
+| 280 | [`280-knapsack.apl`](../examples/280-knapsack.apl) | حقيبة الظهر 0/1 |
+| 281 | [`281-subsets.apl`](../examples/281-subsets.apl) | كل المجموعات الفرعية |
+| 282 | [`282-permutations-manual.apl`](../examples/282-permutations-manual.apl) | التبديلات يدويا |
+| 283 | [`283-generate-parentheses.apl`](../examples/283-generate-parentheses.apl) | توليد الأقواس المتوازنة |
+| 284 | [`284-combination-sum.apl`](../examples/284-combination-sum.apl) | مجموعات بمبلغ مستهدف |
+| 285 | [`285-n-queens.apl`](../examples/285-n-queens.apl) | ملكات الشطرنج (عد الحلول) |
+| 286 | [`286-rat-maze.apl`](../examples/286-rat-maze.apl) | فأر في متاهة |
+| 287 | [`287-word-search.apl`](../examples/287-word-search.apl) | البحث عن كلمة في شبكة |
+| 288 | [`288-phone-letters.apl`](../examples/288-phone-letters.apl) | حروف لوحة الهاتف |
+| 289 | [`289-sudoku-mini.apl`](../examples/289-sudoku-mini.apl) | سودوكو مصغر 4x4 |
+| 290 | [`290-hanoi.apl`](../examples/290-hanoi.apl) | أبراج هانوي |
+| 291 | [`291-string-search-count.apl`](../examples/291-string-search-count.apl) | عد تكرارات نموذج في نص |
+| 292 | [`292-longest-palindrome-sub.apl`](../examples/292-longest-palindrome-sub.apl) | أطول مقطع متناظر |
+| 293 | [`293-roman-to-int.apl`](../examples/293-roman-to-int.apl) | من أرقام رومانية إلى عشرية |
+| 294 | [`294-int-to-roman.apl`](../examples/294-int-to-roman.apl) | من أرقام عشرية إلى رومانية |
+| 295 | [`295-longest-common-prefix.apl`](../examples/295-longest-common-prefix.apl) | أطول مقدمة مشتركة |
+| 296 | [`296-count-and-say.apl`](../examples/296-count-and-say.apl) | عد وقل |
+| 297 | [`297-excel-column.apl`](../examples/297-excel-column.apl) | عنوان عمود إكسل |
+| 298 | [`298-zigzag.apl`](../examples/298-zigzag.apl) | تحويل متعرج |
+| 299 | [`299-valid-palindrome2.apl`](../examples/299-valid-palindrome2.apl) | متناظر بحذف حرف واحد |
+| 300 | [`300-string-to-int.apl`](../examples/300-string-to-int.apl) | تحويل نص إلى عدد (atoi) |
+| 301 | [`301-armstrong.apl`](../examples/301-armstrong.apl) | أعداد أرمسترونج |
+| 302 | [`302-perfect-numbers.apl`](../examples/302-perfect-numbers.apl) | الأعداد الكاملة |
+| 303 | [`303-happy-number.apl`](../examples/303-happy-number.apl) | الأعداد السعيدة |
+| 304 | [`304-harshad.apl`](../examples/304-harshad.apl) | أعداد هارشاد |
+| 305 | [`305-palindrome-number.apl`](../examples/305-palindrome-number.apl) | الأعداد المتناظرة |
+| 306 | [`306-digital-root.apl`](../examples/306-digital-root.apl) | الجذر الرقمي |
+| 307 | [`307-factorial.apl`](../examples/307-factorial.apl) | العاملي (مضروب العدد) |
+| 308 | [`308-fast-power.apl`](../examples/308-fast-power.apl) | القوة السريعة |
+| 309 | [`309-prime-factors.apl`](../examples/309-prime-factors.apl) | العوامل الأولية |
+| 310 | [`310-totient.apl`](../examples/310-totient.apl) | دالة أويلر (مؤشر القواسم المشتركة) |
+| 311 | [`311-tribonacci.apl`](../examples/311-tribonacci.apl) | متتالية تريبوناتشي |
+| 312 | [`312-catalan.apl`](../examples/312-catalan.apl) | أعداد كاتالان |
+| 313 | [`313-pascal.apl`](../examples/313-pascal.apl) | مثلث باسكال |
+| 314 | [`314-look-and-say.apl`](../examples/314-look-and-say.apl) | متتالية انظر وقل |
+| 315 | [`315-arithmetic-sequence.apl`](../examples/315-arithmetic-sequence.apl) | المتتالية الحسابية |
+| 316 | [`316-geometric-sequence.apl`](../examples/316-geometric-sequence.apl) | المتتالية الهندسية |
+| 317 | [`317-divisors.apl`](../examples/317-divisors.apl) | قواسم العدد |
+| 318 | [`318-lcm-list.apl`](../examples/318-lcm-list.apl) | المضاعف المشترك الأصغر لقائمة |
+| 319 | [`319-modular-inverse.apl`](../examples/319-modular-inverse.apl) | المعكوس الضربي التراكبي |
+| 320 | [`320-sieve-count.apl`](../examples/320-sieve-count.apl) | عد الأولية وقائمتها حتى ن |
+| 321 | [`321-chunk-list.apl`](../examples/321-chunk-list.apl) | تقسيم قائمة إلى قطع |
+| 322 | [`322-flatten-nested.apl`](../examples/322-flatten-nested.apl) | تسطيح قائمة متداخلة (عودي) |
+| 323 | [`323-pairwise.apl`](../examples/323-pairwise.apl) | أزواج متتالية |
+| 324 | [`324-interleave.apl`](../examples/324-interleave.apl) | تداخل قائمتين |
+| 325 | [`325-sliding-window.apl`](../examples/325-sliding-window.apl) | النافذة المنزلقة |
+| 326 | [`326-dedupe-consecutive.apl`](../examples/326-dedupe-consecutive.apl) | إزالة التكرار المتتالي |
+| 327 | [`327-unique-preserve.apl`](../examples/327-unique-preserve.apl) | فريد مع الحفاظ على الترتيب |
+| 328 | [`328-zip-manual.apl`](../examples/328-zip-manual.apl) | دمج قائمتين يدويا (zip) |
+| 329 | [`329-group-parity.apl`](../examples/329-group-parity.apl) | تجميع زوجي وفردي |
+| 330 | [`330-running-total.apl`](../examples/330-running-total.apl) | المجموع التراكمي |
+| 331 | [`331-next-birthday.apl`](../examples/331-next-birthday.apl) | العد التنازلي لعيد الميلاد |
+| 332 | [`332-working-days.apl`](../examples/332-working-days.apl) | أيام العمل بين تاريخين |
+| 333 | [`333-day-of-year.apl`](../examples/333-day-of-year.apl) | رقم اليوم في السنة |
+| 334 | [`334-weeks-between.apl`](../examples/334-weeks-between.apl) | أسابيع بين تاريخين |
+| 335 | [`335-month-start-end.apl`](../examples/335-month-start-end.apl) | أول وآخر يوم في الشهر |
+| 336 | [`336-age-calculator.apl`](../examples/336-age-calculator.apl) | حاسبة العمر الدقيقة |
+| 337 | [`337-quarter.apl`](../examples/337-quarter.apl) | الربع السنوي والفصل |
+| 338 | [`338-first-weekdays.apl`](../examples/338-first-weekdays.apl) | أول اثنين من كل شهر |
+| 339 | [`339-days-until-weekend.apl`](../examples/339-days-until-weekend.apl) | كم باقي على العطلة |
+| 340 | [`340-date-list.apl`](../examples/340-date-list.apl) | قائمة تواريخ شهر |
+| 341 | [`341-contacts-json.apl`](../examples/341-contacts-json.apl) | دليل جهات اتصال بملف JSON |
+| 342 | [`342-notes-tags.apl`](../examples/342-notes-tags.apl) | ملاحظات بوسوم |
+| 343 | [`343-inventory.apl`](../examples/343-inventory.apl) | مخزون منتجات |
+| 344 | [`344-log-analyzer.apl`](../examples/344-log-analyzer.apl) | محلل سجلات |
+| 345 | [`345-config-editor.apl`](../examples/345-config-editor.apl) | محرر إعدادات بسيط |
+| 346 | [`346-duplicate-finder.apl`](../examples/346-duplicate-finder.apl) | كاشف المحتوى المكرر |
+| 347 | [`347-backup-names.apl`](../examples/347-backup-names.apl) | مولد أسماء نسخ احتياطية |
+| 348 | [`348-csv-manual.apl`](../examples/348-csv-manual.apl) | قراءة CSV يدويا |
+| 349 | [`349-word-frequency-file.apl`](../examples/349-word-frequency-file.apl) | تكرار كلمات ملف |
+| 350 | [`350-mini-database.apl`](../examples/350-mini-database.apl) | قاعدة بيانات JSON مصغرة |
+| 351 | [`351-vector2d.apl`](../examples/351-vector2d.apl) | متجه ثنائي الأبعاد |
+| 352 | [`352-complex-manual.apl`](../examples/352-complex-manual.apl) | أعداد مركبة يدويا |
+| 353 | [`353-matrix-class.apl`](../examples/353-matrix-class.apl) | صنف مصفوفة |
+| 354 | [`354-rational.apl`](../examples/354-rational.apl) | كسر اعتيادي يدوي |
+| 355 | [`355-employee-payroll.apl`](../examples/355-employee-payroll.apl) | رواتب الموظفين |
+| 356 | [`356-shapes-area.apl`](../examples/356-shapes-area.apl) | مساحات الأشكال |
+| 357 | [`357-bank-accounts.apl`](../examples/357-bank-accounts.apl) | حسابات بنكية متعددة |
+| 358 | [`358-school.apl`](../examples/358-school.apl) | مدرسة وطلاب ومواد |
+| 359 | [`359-animals-farm.apl`](../examples/359-animals-farm.apl) | مزرعة حيوانات |
+| 360 | [`360-temperature-class.apl`](../examples/360-temperature-class.apl) | صنف درجة حرارة |
+| 361 | [`361-recursion-basics.apl`](../examples/361-recursion-basics.apl) | أساسيات العودية |
+| 362 | [`362-gcd-euclid.apl`](../examples/362-gcd-euclid.apl) | القاسم المشترك بإقليدس العودي |
+| 363 | [`363-reverse-string-rec.apl`](../examples/363-reverse-string-rec.apl) | عكس نص بالعودية |
+| 364 | [`364-palindrome-rec.apl`](../examples/364-palindrome-rec.apl) | فحص التناظر بالعودية |
+| 365 | [`365-sum-digits-rec.apl`](../examples/365-sum-digits-rec.apl) | مجموع الأرقام بالعودية |
+| 366 | [`366-binary-rec.apl`](../examples/366-binary-rec.apl) | التحويل لثنائي بالعودية |
+| 367 | [`367-flatten-rec.apl`](../examples/367-flatten-rec.apl) | عد عناصر متداخلة بالعودية |
+| 368 | [`368-power-rec.apl`](../examples/368-power-rec.apl) | القوة بالعودية |
+| 369 | [`369-tree-sum.apl`](../examples/369-tree-sum.apl) | مجموع شجرة بالعودية |
+| 370 | [`370-fib-tree-count.apl`](../examples/370-fib-tree-count.apl) | عد استدعاءات فيبوناتشي |
+| 371 | [`371-async-timeout.apl`](../examples/371-async-timeout.apl) | مهلة على مهمة غير متزامنة |
+| 372 | [`372-async-tasks-list.apl`](../examples/372-async-tasks-list.apl) | قائمة مهام بأسماء |
+| 373 | [`373-async-counter.apl`](../examples/373-async-counter.apl) | عداد متزامن مشترك |
+| 374 | [`374-async-pipeline.apl`](../examples/374-async-pipeline.apl) | خط إنتاج واستهلاك مبسط |
+| 375 | [`375-thread-semaphore.apl`](../examples/375-thread-semaphore.apl) | إشارة حد التزامن بين الخيوط |
+| 376 | [`376-thread-timer.apl`](../examples/376-thread-timer.apl) | مؤقت خيط |
+| 377 | [`377-thread-pool-manual.apl`](../examples/377-thread-pool-manual.apl) | مجمع خيوط يدوي |
+| 378 | [`378-thread-name-id.apl`](../examples/378-thread-name-id.apl) | أسماء الخيوط |
+| 379 | [`379-async-gather-mixed.apl`](../examples/379-async-gather-mixed.apl) | تجميع نتائج متنوعة |
+| 380 | [`380-async-retry.apl`](../examples/380-async-retry.apl) | إعادة المحاولة غير المتزامنة |
+| 381 | [`381-validate-emails.apl`](../examples/381-validate-emails.apl) | التحقق من قائمة بريدات |
+| 382 | [`382-extract-numbers.apl`](../examples/382-extract-numbers.apl) | استخراج الأرقام والعمليات |
+| 383 | [`383-parse-dates.apl`](../examples/383-parse-dates.apl) | استخراج التواريخ من نص |
+| 384 | [`384-egypt-phones.apl`](../examples/384-egypt-phones.apl) | أرقام الهواتف المصرية |
+| 385 | [`385-log-parser.apl`](../examples/385-log-parser.apl) | محلل سجل بالأنماط |
+| 386 | [`386-strip-html.apl`](../examples/386-strip-html.apl) | إزالة وسوم HTML |
+| 387 | [`387-camel-snake.apl`](../examples/387-camel-snake.apl) | تحويل camelCase إلى snake_case |
+| 388 | [`388-markdown-headings.apl`](../examples/388-markdown-headings.apl) | فهرس عناوين ماركداون |
+| 389 | [`389-find-arabic-numbers.apl`](../examples/389-find-arabic-numbers.apl) | الأرقام العربية المشرقية في نص |
+| 390 | [`390-password-regex.apl`](../examples/390-password-regex.apl) | تحقق كلمة المرور بالأنماط |
+| 391 | [`391-descriptive-stats.apl`](../examples/391-descriptive-stats.apl) | إحصاءات وصفية |
+| 392 | [`392-variance-std.apl`](../examples/392-variance-std.apl) | التباين والانحراف المعياري |
+| 393 | [`393-weighted-average.apl`](../examples/393-weighted-average.apl) | المتوسط المرجح |
+| 394 | [`394-moving-average.apl`](../examples/394-moving-average.apl) | المتوسط المتحرك |
+| 395 | [`395-percentiles.apl`](../examples/395-percentiles.apl) | المئينيات |
+| 396 | [`396-correlation.apl`](../examples/396-correlation.apl) | معامل الارتباط |
+| 397 | [`397-normalize-data.apl`](../examples/397-normalize-data.apl) | تطبيع البيانات |
+| 398 | [`398-frequency-table.apl`](../examples/398-frequency-table.apl) | جدول التكرار |
+| 399 | [`399-linear-regression.apl`](../examples/399-linear-regression.apl) | الانحدار الخطي |
+| 400 | [`400-chi-square.apl`](../examples/400-chi-square.apl) | احتمالات بسيطة |
+| 401 | [`401-hangman-game.apl`](../examples/401-hangman-game.apl) | لعبة الجلاد |
+| 402 | [`402-rps-tournament.apl`](../examples/402-rps-tournament.apl) | بطولة حجر ورقة مقص |
+| 403 | [`403-pig-dice.apl`](../examples/403-pig-dice.apl) | لعبة نرد الخنزير |
+| 404 | [`404-higher-lower.apl`](../examples/404-higher-lower.apl) | أعلى أم أدنى |
+| 405 | [`405-word-scramble.apl`](../examples/405-word-scramble.apl) | خلط الكلمات |
+| 406 | [`406-typing-test.apl`](../examples/406-typing-test.apl) | اختبار سرعة الكتابة |
+| 407 | [`407-simon-memory.apl`](../examples/407-simon-memory.apl) | لعبة ذاكرة الألوان |
+| 408 | [`408-battleship-mini.apl`](../examples/408-battleship-mini.apl) | حرب السفن المصغرة |
+| 409 | [`409-connect-four.apl`](../examples/409-connect-four.apl) | منطق أربعة تربح |
+| 410 | [`410-slot-machine.apl`](../examples/410-slot-machine.apl) | ماكينة الحظ |
+| 411 | [`411-base64-manual.apl`](../examples/411-base64-manual.apl) | ترميز Base64 يدويا |
+| 412 | [`412-url-encode.apl`](../examples/412-url-encode.apl) | ترميز URL يدويا |
+| 413 | [`413-unicode-explorer.apl`](../examples/413-unicode-explorer.apl) | مستكشف يونيكود |
+| 414 | [`414-morse-code.apl`](../examples/414-morse-code.apl) | شيفرة مورس |
+| 415 | [`415-run-length.apl`](../examples/415-run-length.apl) | ترميز طول التسلسل |
+| 416 | [`416-hex-binary.apl`](../examples/416-hex-binary.apl) | تحويلات عددية |
+| 417 | [`417-html-entities.apl`](../examples/417-html-entities.apl) | كيانات HTML |
+| 418 | [`418-checksum.apl`](../examples/418-checksum.apl) | مجاميع تحقق |
+| 419 | [`419-delta-encoding.apl`](../examples/419-delta-encoding.apl) | ترميز الفروقات |
+| 420 | [`420-hamming-distance.apl`](../examples/420-hamming-distance.apl) | مسافة هامنج ورمز التصحيح |
+| 421 | [`421-graph-coloring.apl`](../examples/421-graph-coloring.apl) | تلوين الرسم البياني |
+| 422 | [`422-graph-components.apl`](../examples/422-graph-components.apl) | المكونات المتصلة |
+| 423 | [`423-graph-bipartite.apl`](../examples/423-graph-bipartite.apl) | فحص الرسم الثنائي |
+| 424 | [`424-topo-sort.apl`](../examples/424-topo-sort.apl) | الترتيب الطوبولوجي |
+| 425 | [`425-kruskal-mst.apl`](../examples/425-kruskal-mst.apl) | شجرة كروسكال الممتدة |
+| 426 | [`426-bellman-ford.apl`](../examples/426-bellman-ford.apl) | بيلمان فورد |
+| 427 | [`427-floyd-warshall.apl`](../examples/427-floyd-warshall.apl) | فلويد وارشال |
+| 428 | [`428-trie-autocomplete.apl`](../examples/428-trie-autocomplete.apl) | إكمال تلقائي بشجرة البادئات |
+| 429 | [`429-union-find.apl`](../examples/429-union-find.apl) | مجموعات منفصلة |
+| 430 | [`430-graph-diameter.apl`](../examples/430-graph-diameter.apl) | قطر الشجرة |
+| 431 | [`431-table-formatter.apl`](../examples/431-table-formatter.apl) | منسق جداول نصية |
+| 432 | [`432-progress-bar.apl`](../examples/432-progress-bar.apl) | شريط تقدم نصي |
+| 433 | [`433-column-align.apl`](../examples/433-column-align.apl) | محاذاة النصوص |
+| 434 | [`434-number-format.apl`](../examples/434-number-format.apl) | تنسيق الأرقام الكبيرة |
+| 435 | [`435-duration-format.apl`](../examples/435-duration-format.apl) | تنسيق المدد الزمنية |
+| 436 | [`436-byte-format.apl`](../examples/436-byte-format.apl) | تنسيق أحجام الملفات |
+| 437 | [`437-sort-benchmark.apl`](../examples/437-sort-benchmark.apl) | مقارنة خوارزميات الترتيب |
+| 438 | [`438-text-wrap.apl`](../examples/438-text-wrap.apl) | التفاف النص |
+| 439 | [`439-pad-center.apl`](../examples/439-pad-center.apl) | توسيط وتعبئة النصوص |
+| 440 | [`440-markdown-table.apl`](../examples/440-markdown-table.apl) | مولد جداول ماركداون |
+| 441 | [`441-point-distance.apl`](../examples/441-point-distance.apl) | المسافة بين نقطتين |
+| 442 | [`442-polygon-area.apl`](../examples/442-polygon-area.apl) | مساحة مضلع |
+| 443 | [`443-circle-line.apl`](../examples/443-circle-line.apl) | حسابات الدائرة والخط |
+| 444 | [`444-triangle-check.apl`](../examples/444-triangle-check.apl) | صحة المثلث ونوعه |
+| 445 | [`445-angles.apl`](../examples/445-angles.apl) | تحويل الزوايا |
+| 446 | [`446-vector-ops.apl`](../examples/446-vector-ops.apl) | عمليات المتجهات |
+| 447 | [`447-quadratic.apl`](../examples/447-quadratic.apl) | حل المعادلة التربيعية |
+| 448 | [`448-matrix-determinant.apl`](../examples/448-matrix-determinant.apl) | محدد المصفوفة |
+| 449 | [`449-fractions-math.apl`](../examples/449-fractions-math.apl) | كسور رياضية |
+| 450 | [`450-complex-manual.apl`](../examples/450-complex-manual.apl) | أعداد مركبة يدويا |
+| 451 | [`451-arabic-lorem.apl`](../examples/451-arabic-lorem.apl) | مولد نص عشوائي عربي |
+| 452 | [`452-name-generator.apl`](../examples/452-name-generator.apl) | مولد أسماء مستعارة |
+| 453 | [`453-pronounceable-password.apl`](../examples/453-pronounceable-password.apl) | كلمة مرور قابلة للنطق |
+| 454 | [`454-acronym.apl`](../examples/454-acronym.apl) | مولد الاختصارات |
+| 455 | [`455-title-case.apl`](../examples/455-title-case.apl) | تنسيق العناوين الإنجليزية |
+| 456 | [`456-slug-generator.apl`](../examples/456-slug-generator.apl) | مولد روابط Slug |
+| 457 | [`457-hashtag-generator.apl`](../examples/457-hashtag-generator.apl) | مولد هاشتاجات |
+| 458 | [`458-markov-lite.apl`](../examples/458-markov-lite.apl) | توليد جمل بسلاسل بسيطة |
+| 459 | [`459-mad-libs.apl`](../examples/459-mad-libs.apl) | قصة بقوالب |
+| 460 | [`460-palindrome-maker.apl`](../examples/460-palindrome-maker.apl) | مولد متناقضات لفظية |
+| 461 | [`461-json-to-csv.apl`](../examples/461-json-to-csv.apl) | تحويل JSON إلى CSV |
+| 462 | [`462-csv-to-json.apl`](../examples/462-csv-to-json.apl) | تحويل CSV إلى JSON |
+| 463 | [`463-flatten-dict.apl`](../examples/463-flatten-dict.apl) | تسطيح القواميس المتداخلة |
+| 464 | [`464-list-to-tree.apl`](../examples/464-list-to-tree.apl) | بناء شجرة من قائمة مسطحة |
+| 465 | [`465-ini-parser.apl`](../examples/465-ini-parser.apl) | قارئ ملفات INI |
+| 466 | [`466-yaml-lite.apl`](../examples/466-yaml-lite.apl) | قارئ YAML مبسط |
+| 467 | [`467-env-parser.apl`](../examples/467-env-parser.apl) | قارئ ملفات البيئة |
+| 468 | [`468-xml-lite.apl`](../examples/468-xml-lite.apl) | قارئ وسوم مبسط |
+| 469 | [`469-html-table.apl`](../examples/469-html-table.apl) | سجلات إلى جدول HTML |
+| 470 | [`470-properties-convert.apl`](../examples/470-properties-convert.apl) | تحويل خصائص إلى JSON |
+| 471 | [`471-password-strength.apl`](../examples/471-password-strength.apl) | مقياس قوة كلمة المرور |
+| 472 | [`472-login-limiter.apl`](../examples/472-login-limiter.apl) | محدد محاولات الدخول |
+| 473 | [`473-pin-bruteforce.apl`](../examples/473-pin-bruteforce.apl) | تجربة كسر رمز PIN |
+| 474 | [`474-otp-generator.apl`](../examples/474-otp-generator.apl) | مولد رموز تحقق |
+| 475 | [`475-rbac.apl`](../examples/475-rbac.apl) | التحكم بالصلاحيات |
+| 476 | [`476-fnv-hash.apl`](../examples/476-fnv-hash.apl) | دالة تجزية يدوية |
+| 477 | [`477-salted-password.apl`](../examples/477-salted-password.apl) | تجزئة كلمة مرور بملح |
+| 478 | [`478-token-generator.apl`](../examples/478-token-generator.apl) | مولد رموز الجلسات |
+| 479 | [`479-firewall-sim.apl`](../examples/479-firewall-sim.apl) | محاكي جدار ناري |
+| 480 | [`480-log-anomaly.apl`](../examples/480-log-anomaly.apl) | كاشف شذوذ السجلات |
+| 481 | [`481-inventory-system.apl`](../examples/481-inventory-system.apl) | نظام مخزون |
+| 482 | [`482-library-system.apl`](../examples/482-library-system.apl) | نظام مكتبة |
+| 483 | [`483-grades-system.apl`](../examples/483-grades-system.apl) | نظام درجات مدرسي |
+| 484 | [`484-clinic-queue.apl`](../examples/484-clinic-queue.apl) | طابور عيادة |
+| 485 | [`485-parking-system.apl`](../examples/485-parking-system.apl) | نظام مواقف سيارات |
+| 486 | [`486-expense-splitter.apl`](../examples/486-expense-splitter.apl) | مقسم المصاريف |
+| 487 | [`487-survey-analyzer.apl`](../examples/487-survey-analyzer.apl) | محلل استبيان |
+| 488 | [`488-tournament-bracket.apl`](../examples/488-tournament-bracket.apl) | شجرة بطولة |
+| 489 | [`489-quiz-engine.apl`](../examples/489-quiz-engine.apl) | محرك اختبارات من ملف |
+| 490 | [`490-chat-analyzer.apl`](../examples/490-chat-analyzer.apl) | محلل سجل محادثة |
+| 491 | [`491-payroll-system.apl`](../examples/491-payroll-system.apl) | نظام رواتب |
+| 492 | [`492-bus-booking.apl`](../examples/492-bus-booking.apl) | حجز مقاعد حافلة |
+| 493 | [`493-recipe-manager.apl`](../examples/493-recipe-manager.apl) | مدير وصفات الطعام |
+| 494 | [`494-habit-tracker.apl`](../examples/494-habit-tracker.apl) | متتبع العادات |
+| 495 | [`495-flashcards.apl`](../examples/495-flashcards.apl) | بطاقات استذكار |
+| 496 | [`496-invoice-generator.apl`](../examples/496-invoice-generator.apl) | مولد فواتير لملف |
+| 497 | [`497-contact-search.apl`](../examples/497-contact-search.apl) | محرك بحث جهات اتصال |
+| 498 | [`498-blog-engine.apl`](../examples/498-blog-engine.apl) | مولد مدونة ثابتة |
+| 499 | [`499-event-planner.apl`](../examples/499-event-planner.apl) | مخطط فعاليات |
+| 500 | [`500-task-manager-suite.apl`](../examples/500-task-manager-suite.apl) | نظام إدارة مهام متكامل |
 
 **التشغيل:**
 ```bash
@@ -401,4 +701,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **136,554 عنصراً**،
-مع **200 مثال جاهز** في `examples/`.
+مع **500 مثال جاهز** في `examples/`.
