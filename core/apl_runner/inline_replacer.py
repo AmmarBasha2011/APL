@@ -3,7 +3,7 @@ APL - Inline Replacer
 Handles all inline text replacements during transpilation
 """
 
-import re
+from core.apl_runner import regex_cache as re
 from core.apl_runner.patterns import (
     TYPE_ALIASES, _TYPE_PATTERN, _INLINE_FUNCS, _INLINE_FUNC_PATTERN,
     _METHOD_ALIASES, _METHOD_PATTERN, _TYPE_NAMES, _CONSTANTS, _CONSTANT_PATTERN,

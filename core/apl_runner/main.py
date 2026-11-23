@@ -1,4 +1,5 @@
-import sys, os, re, io
+import sys, os, io
+from core.apl_runner import regex_cache as re
 
 # Install lazy library proxies BEFORE anything imports a library module. This is
 # what removes the ~41 unconditional imports (and their ~1,956 regex compiles)
