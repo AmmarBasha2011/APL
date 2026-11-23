@@ -27,7 +27,8 @@ _RESERVED_KEYS = _build_reserved_keys()  # empty: unused, see docstring
 
 # Constant folding on by default; APL_NO_FOLD=1 turns it off.
 _APL_FOLD = os.environ.get("APL_NO_FOLD", "") not in ("1", "true", "yes")
-globals().update({entry['module']: module(entry) for entry in ENTRIES})
+_library_modules = {entry['name']: module(entry) for entry in ENTRIES}
+globals().update({entry['module']: _library_modules[entry['name']] for entry in ENTRIES})
 
 # Respect embedding applications and redirected/captured stdout.
 if hasattr(sys.stdout, "reconfigure"):
@@ -1317,147 +1318,147 @@ def print_help():
     print()
     print("Libraries:")
     print("  # math library (50+ functions)")
-    for line in math_funcs.MATH_HELP:
+    for line in _library_modules['math'].MATH_HELP:
         print(f"    {line}")
     print()
     print("  # random library (20+ functions)")
-    for line in random_funcs.RANDOM_HELP:
+    for line in _library_modules['random'].RANDOM_HELP:
         print(f"    {line}")
     print()
     print("  # time/datetime library (20+ functions)")
-    for line in time_funcs.TIME_HELP:
+    for line in _library_modules['time'].TIME_HELP:
         print(f"    {line}")
     print()
     print("  # statistics library (15+ functions)")
-    for line in statistics_funcs.STATISTICS_HELP:
+    for line in _library_modules['statistics'].STATISTICS_HELP:
         print(f"    {line}")
     print()
     print("  # os/path library (30+ functions)")
-    for line in os_funcs.OS_HELP:
+    for line in _library_modules['os'].OS_HELP:
         print(f"    {line}")
     print()
     print("  # re library (10+ functions)")
-    for line in re_funcs.RE_HELP:
+    for line in _library_modules['re'].RE_HELP:
         print(f"    {line}")
     print()
     print("  # collections library (10+ functions)")
-    for line in collections_funcs.COLLECTIONS_HELP:
+    for line in _library_modules['collections'].COLLECTIONS_HELP:
         print(f"    {line}")
     print()
     print("  # itertools library (20+ functions)")
-    for line in itertools_funcs.ITERTOOLS_HELP:
+    for line in _library_modules['itertools'].ITERTOOLS_HELP:
         print(f"    {line}")
     print()
     print("  # json library (4+ functions)")
-    for line in json_funcs.JSON_HELP:
+    for line in _library_modules['json'].JSON_HELP:
         print(f"    {line}")
     print()
     print("  # hashlib library (5+ functions)")
-    for line in hashlib_funcs.HASHLIB_HELP:
+    for line in _library_modules['hashlib'].HASHLIB_HELP:
         print(f"    {line}")
     print()
     print("  # flask library (50+ functions)")
-    for line in flask_funcs.FLASK_HELP:
+    for line in _library_modules['flask'].FLASK_HELP:
         print(f"    {line}")
     print()
     print("  # fastapi library (100+ functions)")
-    for line in fastapi_funcs.FASTAPI_HELP:
+    for line in _library_modules['fastapi'].FASTAPI_HELP:
         print(f"    {line}")
     print()
     print("  # requests library (150+ functions)")
-    for line in requests_funcs.REQUESTS_HELP:
+    for line in _library_modules['requests'].REQUESTS_HELP:
         print(f"    {line}")
     print()
     print("  # sqlite3 library (20+ functions)")
-    for line in sqlite3_funcs.SQLITE3_HELP:
+    for line in _library_modules['sqlite3'].SQLITE3_HELP:
         print(f"    {line}")
     print()
     print("  # asyncio library (50+ functions)")
-    for line in asyncio_funcs.ASYNCIO_HELP:
+    for line in _library_modules['asyncio'].ASYNCIO_HELP:
         print(f"    {line}")
     print()
     print("  # threading library (20+ functions)")
-    for line in threading_funcs.THREADING_HELP:
+    for line in _library_modules['threading'].THREADING_HELP:
         print(f"    {line}")
     print()
     print("  # unittest library (40+ functions)")
-    for line in unittest_funcs.UNITTEST_HELP:
+    for line in _library_modules['unittest'].UNITTEST_HELP:
         print(f"    {line}")
     print()
     print("  # csv library (10+ functions)")
-    for line in csv_funcs.CSV_HELP:
+    for line in _library_modules['csv'].CSV_HELP:
         print(f"    {line}")
     print()
     print("  # logging library (30+ functions)")
-    for line in logging_funcs.LOGGING_HELP:
+    for line in _library_modules['logging'].LOGGING_HELP:
         print(f"    {line}")
     print()
     print("  # argparse library (30+ functions)")
-    for line in argparse_funcs.ARGPARSE_HELP:
+    for line in _library_modules['argparse'].ARGPARSE_HELP:
         print(f"    {line}")
     print()
     print("  # subprocess library (20+ functions)")
-    for line in subprocess_funcs.SUBPROCESS_HELP:
+    for line in _library_modules['subprocess'].SUBPROCESS_HELP:
         print(f"    {line}")
     print()
     print("  # configparser library (20+ functions)")
-    for line in configparser_funcs.CONFIGPARSER_HELP:
+    for line in _library_modules['configparser'].CONFIGPARSER_HELP:
         print(f"    {line}")
     print()
     print("  # dataclasses library (30+ functions)")
-    for line in dataclasses_funcs.DATACLASSES_HELP:
+    for line in _library_modules['dataclasses'].DATACLASSES_HELP:
         print(f"    {line}")
     print()
     print("  # advanced library (100+ functions)")
-    for line in advanced_funcs.ADVANCED_HELP:
+    for line in _library_modules['advanced'].ADVANCED_HELP:
         print(f"    {line}")
     print()
     print("  # xml library (xml.etree.ElementTree)")
-    for line in xml_funcs.XML_HELP:
+    for line in _library_modules['xml'].XML_HELP:
         print(f"    {line}")
     print()
     print("  # archive library (zipfile, tarfile, gzip, bz2, lzma)")
-    for line in archive_funcs.ARCHIVE_HELP:
+    for line in _library_modules['archive'].ARCHIVE_HELP:
         print(f"    {line}")
     print()
     print("  # net library (socket, ssl, http, email, smtp, imap, ftp)")
-    for line in net_funcs.NET_HELP:
+    for line in _library_modules['net'].NET_HELP:
         print(f"    {line}")
     print()
     print("  # devtools library (inspect, ast, dis, pdb, doctest, timeit, ...)")
-    for line in devtools_funcs.DEVTOOLS_HELP:
+    for line in _library_modules['devtools'].DEVTOOLS_HELP:
         print(f"    {line}")
     print()
     print("  # web library (http, urllib, wsgiref, email, mailbox, html)")
-    for line in web_funcs.WEB_HELP:
+    for line in _library_modules['web'].WEB_HELP:
         print(f"    {line}")
     print()
     print("  # datafiles library (io, zipfile, pickle, xml, os.path)")
-    for line in datafiles_funcs.DF_HELP:
+    for line in _library_modules['datafiles'].DF_HELP:
         print(f"    {line}")
     print()
     print("  # syslib library (platform, signal, ctypes, unittest, logging)")
-    for line in syslib_funcs.SYS_HELP:
+    for line in _library_modules['syslib'].SYS_HELP:
         print(f"    {line}")
     print()
     print("  # numpy library")
-    for line in numpy_funcs.NUM_HELP:
+    for line in _library_modules['numpy'].NUM_HELP:
         print(f"    {line}")
     print()
     print("  # scipy library")
-    for line in scipy_funcs.SCI_HELP:
+    for line in _library_modules['scipy'].SCI_HELP:
         print(f"    {line}")
     print()
     print("  # telegram library")
-    for line in telegram_funcs.TG_HELP:
+    for line in _library_modules['telegram'].TG_HELP:
         print(f"    {line}")
     print()
     print("  # redis library")
-    for line in redis_funcs.RD_HELP:
+    for line in _library_modules['redis'].RD_HELP:
         print(f"    {line}")
     print()
     print("  # celery library")
-    for line in celery_funcs.CEL_HELP:
+    for line in _library_modules['celery'].CEL_HELP:
         print(f"    {line}")
     print()
     print("Examples:")
