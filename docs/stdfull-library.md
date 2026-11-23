@@ -1,6 +1,6 @@
 # مكتبة المكتبة القياسية الشاملة — `stdfull`
 
-**9,266 عنصراً عربياً** (الدوال: 6,243، الثوابت: 3,023).
+**9,235 عنصراً عربياً** (الدوال: 6,243، الثوابت: 2,992).
 
 ## الدوال (6,243) — `STDF_FUNCS`
 
@@ -1082,7 +1082,6 @@
 | `الرموز_قياسي_ISNONTERMINAL` | `tokenize.ISNONTERMINAL` |
 | `الرموز_قياسي_ISTERMINAL` | `tokenize.ISTERMINAL` |
 | `الضبط_صدفة_وضع` | `curses.reset_shell_mode` |
-| `المتغيرات` | `ntpath.expandvars` |
 | `المحرك` | `ntpath.splitdrive` |
 | `المفتوح` | `genericpath.sameopenfile` |
 | `المقبس` | `asyncio.trsock.TransportSocket.getsockname` |
@@ -1093,6 +1092,7 @@
 | `امبيجوووس_خيار_خطأ` | `optparse.AmbiguousOptionError` |
 | `امبيجوووس_خيار_خطأ_أضف_ملاحظة` | `optparse.AmbiguousOptionError.add_note` |
 | `امبيجوووس_خيار_خطأ_تتبع_الخطأ` | `optparse.AmbiguousOptionError.with_traceback` |
+| `امتداد_المتغيرات` | `ntpath.expandvars` |
 | `امتداد_حوّل` | `logging.config.dictConfigClass.ext_convert` |
 | `امتداد_ملف_محمّل` | `importlib.machinery.ExtensionFileLoader` |
 | `امتداد_ملف_محمّل_إنشاء_وحدة` | `importlib.machinery.ExtensionFileLoader.create_module` |
@@ -6250,7 +6250,7 @@
 | `يونكس_مخفية` | `getpass.unix_getpass` |
 | `ييق_إلى_RGB` | `colorsys.yiq_to_rgb` |
 
-## الثوابت (3,023) — `STDF_CONSTS`
+## الثوابت (2,992) — `STDF_CONSTS`
 
 | العربي | Python |
 |--------|--------|
@@ -7286,7 +7286,6 @@
 | `ضغط_معامل_مقام` | `compression.zstd.CompressionParameter.denominator` |
 | `طابور_إغلاق_لأسفل_معطيات` | `asyncio.queues.QueueShutDown.args` |
 | `طرفية_حجم_N_مسمّى_حقول` | `posix.terminal_size.n_unnamed_fields` |
-| `طرفية_قياسي_NCC` | `tty.NCC` |
 | `عائم_8` | `pickletools.float8` |
 | `عائم_تمثيل_نمط` | `sys.float_repr_style` |
 | `عائم_معلومة` | `sys.float_info` |
@@ -7805,35 +7804,6 @@
 | `قياسي_IP_RETOPTS` | `socket.IP_RETOPTS` |
 | `قياسي_ISO_DATE_RE` | `http.cookiejar.ISO_DATE_RE` |
 | `قياسي_ITER_KEYS` | `dbm.sqlite3.ITER_KEYS` |
-| `قياسي_I_ATMARK` | `fcntl.I_ATMARK` |
-| `قياسي_I_CANPUT` | `fcntl.I_CANPUT` |
-| `قياسي_I_CKBAND` | `fcntl.I_CKBAND` |
-| `قياسي_I_FDINSERT` | `fcntl.I_FDINSERT` |
-| `قياسي_I_FIND` | `fcntl.I_FIND` |
-| `قياسي_I_FLUSH` | `fcntl.I_FLUSH` |
-| `قياسي_I_FLUSHBAND` | `fcntl.I_FLUSHBAND` |
-| `قياسي_I_GETBAND` | `fcntl.I_GETBAND` |
-| `قياسي_I_GETCLTIME` | `fcntl.I_GETCLTIME` |
-| `قياسي_I_GETSIG` | `fcntl.I_GETSIG` |
-| `قياسي_I_GRDOPT` | `fcntl.I_GRDOPT` |
-| `قياسي_I_GWROPT` | `fcntl.I_GWROPT` |
-| `قياسي_I_LINK` | `fcntl.I_LINK` |
-| `قياسي_I_LIST` | `fcntl.I_LIST` |
-| `قياسي_I_LOOK` | `fcntl.I_LOOK` |
-| `قياسي_I_NREAD` | `fcntl.I_NREAD` |
-| `قياسي_I_PEEK` | `fcntl.I_PEEK` |
-| `قياسي_I_PLINK` | `fcntl.I_PLINK` |
-| `قياسي_I_POP` | `fcntl.I_POP` |
-| `قياسي_I_PUNLINK` | `fcntl.I_PUNLINK` |
-| `قياسي_I_PUSH` | `fcntl.I_PUSH` |
-| `قياسي_I_RECVFD` | `fcntl.I_RECVFD` |
-| `قياسي_I_SENDFD` | `fcntl.I_SENDFD` |
-| `قياسي_I_SETCLTIME` | `fcntl.I_SETCLTIME` |
-| `قياسي_I_SETSIG` | `fcntl.I_SETSIG` |
-| `قياسي_I_SRDOPT` | `fcntl.I_SRDOPT` |
-| `قياسي_I_STR` | `fcntl.I_STR` |
-| `قياسي_I_SWROPT` | `fcntl.I_SWROPT` |
-| `قياسي_I_UNLINK` | `fcntl.I_UNLINK` |
 | `قياسي_I_بف_4_واجهة_أقصى_بالطول` | `ipaddress.IPv4Interface.max_prefixlen` |
 | `قياسي_I_بف_4_واجهة_إصدار` | `ipaddress.IPv4Interface.version` |
 | `قياسي_I_بف_6_واجهة_أقصى_بالطول` | `ipaddress.IPv6Interface.max_prefixlen` |
@@ -8055,7 +8025,6 @@
 | `قياسي_MULTI_STATUS` | `http.server.HTTPStatus.MULTI_STATUS` |
 | `قياسي_NAK` | `curses.ascii.NAK` |
 | `قياسي_NAMESPACE_ERR` | `xml.dom.NAMESPACE_ERR` |
-| `قياسي_NCC` | `termios.NCC` |
 | `قياسي_NEGATE` | `sre_compile.NEGATE` |
 | `قياسي_NETLINK_CRYPTO` | `socket.NETLINK_CRYPTO` |
 | `قياسي_NETLINK_DNRTMSG` | `socket.NETLINK_DNRTMSG` |

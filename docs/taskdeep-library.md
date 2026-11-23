@@ -1983,6 +1983,8 @@
 | `الوصول_قائمة` | `kombu.transport.redis.PrefixedRedisPipeline.acl_list` |
 | `الوصول_مساعدة` | `kombu.transport.redis.PrefixedRedisPipeline.acl_help` |
 | `الوصول_مستخدمون` | `kombu.transport.redis.PrefixedRedisPipeline.acl_users` |
+| `امتداد_مولد_فريد_معرف` | `celery.utils.gen_unique_id` |
+| `امتداد_مولد_مهمة_اسم` | `celery.app.Celery.gen_task_name` |
 | `امسح_كرّر` | `kombu.transport.redis.PrefixedRedisPipeline.scan_iter` |
 | `امق_مدير_احصل_مدير` | `kombu.utils.amq_manager.get_manager` |
 | `انتظر_لأجل_soft_أوقف` | `celery.fixups.django.WorkController.wait_for_soft_shutdown` |
@@ -13118,8 +13120,6 @@
 | `موعداً` | `celery.utils.timer2.Timer.enter` |
 | `موعداً_بعد` | `celery.utils.timer2.Schedule.enter_after` |
 | `موعداً_عند` | `celery.utils.timer2.Schedule.enter_at` |
-| `مولد_فريد_معرف` | `celery.utils.gen_unique_id` |
-| `مولد_مهمة_اسم` | `celery.app.Celery.gen_task_name` |
 | `مونجودب_ترميز_خطأ` | `celery.backends.mongodb.EncodeError` |
 | `مونجودب_ربما_sanitize_رابط` | `celery.backends.mongodb.maybe_sanitize_url` |
 | `مونجودب_زمني` | `celery.backends.mongodb.timedelta` |

@@ -2216,6 +2216,7 @@
 | `المفتاحية_معلومة_فهرس` | `fire.docstrings.KwargInfo.index` |
 | `امتداد_pop_سياق` | `jinja2.ext.pass_context` |
 | `امتداد_حلل_منطقي_قيمة` | `markdown.extensions.parseBoolValue` |
+| `امتداد_خطأ_في_منشئ` | `fire.test_components.ErrorInConstructor` |
 | `امتداد_قالب_اسسيرتيون_خطأ` | `jinja2.ext.TemplateAssertionError` |
 | `امتداد_وسائط_concat` | `jinja2.ext.concat` |
 | `امسح_محددات` | `markdown_it.helpers.parse_link_label.StateInline.scanDelims` |
@@ -4131,7 +4132,6 @@
 | `خطأ_تتبع_الخطأ` | `fire.console.platforms.Error.with_traceback` |
 | `خطأ_رايسير` | `fire.test_components.ErrorRaiser` |
 | `خطأ_رايسير_افشل` | `fire.test_components.ErrorRaiser.fail` |
-| `خطأ_في_منشئ` | `fire.test_components.ErrorInConstructor` |
 | `خلفية_اختياري` | `pathspec.backend.Optional` |
 | `خلفية_حرفي` | `pathspec.backend.Literal` |
 | `خلفية_خلفية_أسماء_تلميح` | `pathspec.backend.BackendNamesHint` |

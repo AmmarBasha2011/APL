@@ -1823,6 +1823,13 @@
 | `النص_محلي_فرييندلي_عدد` | `tornado.locale.GettextLocale.friendly_number` |
 | `النص_محلي_قائمة` | `tornado.locale.GettextLocale.list` |
 | `النقل` | `anyio.itertools.tee` |
+| `امتداد_مولد_أرجع` | `tornado.gen.Return` |
+| `امتداد_مولد_أرجع_قيمة_ignored_خطأ` | `tornado.gen.ReturnValueIgnoredError` |
+| `امتداد_مولد_اختبر` | `tornado.testing.gen_test` |
+| `امتداد_مولد_فردي` | `tornado.gen.singledispatch` |
+| `امتداد_مولد_للانتظار` | `tornado.gen.isawaitable` |
+| `امتداد_مولد_مستقبل_عيّن_exc_معلومة` | `tornado.gen.future_set_exc_info` |
+| `امتداد_مولد_نومي` | `tornado.gen.sleep` |
 | `اناليزي_معامل` | `fastapi.dependencies.utils.analyze_param` |
 | `انتظر_أوقف` | `fastapi.testclient.TestClient.wait_shutdown` |
 | `انتظر_بدء` | `fastapi.testclient.TestClient.wait_startup` |
@@ -3865,13 +3872,6 @@
 | `موجّه_مضيف` | `starlette.applications.Router.host` |
 | `موجّه_ملفات` | `starlette.applications.Router.mount` |
 | `موعداً_متزامن_سياق` | `fastapi.dependencies.utils.AsyncExitStack.enter_async_context` |
-| `مولد_أرجع` | `tornado.gen.Return` |
-| `مولد_أرجع_قيمة_ignored_خطأ` | `tornado.gen.ReturnValueIgnoredError` |
-| `مولد_اختبر` | `tornado.testing.gen_test` |
-| `مولد_فردي` | `tornado.gen.singledispatch` |
-| `مولد_للانتظار` | `tornado.gen.isawaitable` |
-| `مولد_مستقبل_عيّن_exc_معلومة` | `tornado.gen.future_set_exc_info` |
-| `مولد_نومي` | `tornado.gen.sleep` |
 | `مُرمِّزات_افتراضي` | `fastapi.encoders.defaultdict` |
 | `مُرمِّزات_تعداد` | `fastapi.encoders.Enum` |
 | `مُرمِّزات_توثيق` | `fastapi.encoders.Doc` |
@@ -7795,6 +7795,9 @@
 | `الأجزاء_جزء_محتوى_توجّه` | `starlette.formparsers.MultipartPart.content_disposition` |
 | `الأجزاء_جزء_ملف` | `starlette.formparsers.MultipartPart.file` |
 | `الأجزاء_لا_INSTALLED_خطأ` | `fastapi.dependencies.utils.multipart_not_installed_error` |
+| `امتداد_معامل_أمثلة` | `fastapi.params.Param.examples` |
+| `امتداد_مولد_سجّل` | `tornado.locale.gen_log` |
+| `امتداد_مولد_عزم` | `tornado.gen.moment` |
 | `باسيريلواد_ويب_HANDLED_SIGNALS` | `uvicorn.supervisors.basereload.HANDLED_SIGNALS` |
 | `بايدانتك_V_1_لا_دعم_خطأ_معطيات` | `fastapi.encoders.PydanticV1NotSupportedError.args` |
 | `بايدانتك_مخطط_توليد_خطأ_معطيات` | `fastapi.utils.PydanticSchemaGenerationError.args` |
@@ -8013,7 +8016,6 @@
 | `مصادقة_تعليقات` | `starlette.authentication.annotations` |
 | `مصافحة_مهلة` | `anyio.streams.tls.TLSListener.handshake_timeout` |
 | `مطلوب_معامل` | `fastapi.dependencies.utils.RequiredParam` |
-| `معامل_أمثلة` | `fastapi.params.Param.examples` |
 | `معامل_استبعاد` | `fastapi.params.Param.exclude` |
 | `معامل_استبعاد_إذا` | `fastapi.params.Param.exclude_if` |
 | `معامل_اسم_مستعار` | `fastapi.params.Param.serialization_alias` |
@@ -8069,8 +8071,6 @@
 | `مهام_بانتظار_أرسل` | `anyio.streams.memory.MemoryObjectStreamStatistics.tasks_waiting_send` |
 | `مهام_بانتظار_استقبال` | `anyio.streams.memory.MemoryObjectStreamStatistics.tasks_waiting_receive` |
 | `مهمة_معلومة_تعاونية` | `anyio.streams.memory.TaskInfo.coro` |
-| `مولد_سجّل` | `tornado.locale.gen_log` |
-| `مولد_عزم` | `tornado.gen.moment` |
 | `مولّد_نوع_جي_إطار` | `fastapi.encoders.GeneratorType.gi_frame` |
 | `مولّد_نوع_جي_شيفرة` | `fastapi.encoders.GeneratorType.gi_code` |
 | `مولّد_نوع_جي_معلّق` | `fastapi.encoders.GeneratorType.gi_suspended` |

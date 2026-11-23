@@ -1096,6 +1096,11 @@
 | `امبيينت_ضمّ` | `pygments.lexers.ambient.include` |
 | `امبيينت_كلمات` | `pygments.lexers.ambient.words` |
 | `امبيينت_نمطي_كلمات` | `pygments.lexers.ambient.RegexLexer` |
+| `امتداد_مولد_روبيسترينجس_قواعد` | `pygments.lexers.agile.RubyLexer.gen_rubystrings_rules` |
+| `امتداد_مولد_كريستالسترينجس_قواعد` | `pygments.lexers.compiled.CrystalLexer.gen_crystalstrings_rules` |
+| `امتداد_مولد_يليكسير_سيجستر_قواعد` | `pygments.lexers.erlang.gen_elixir_sigstr_rules` |
+| `امتداد_مولد_يليكسير_سيجيل_قواعد` | `pygments.lexers.erlang.ElixirLexer.gen_elixir_sigil_rules` |
+| `امتداد_مولد_يليكسير_نص_قواعد` | `pygments.lexers.erlang.gen_elixir_string_rules` |
 | `امدجبو_كلمات` | `pygments.lexers.amdgpu.words` |
 | `امدجبو_نمطي_كلمات` | `pygments.lexers.amdgpu.RegexLexer` |
 | `انتلر_C_SHARP_كلمات` | `pygments.lexers.parsers.AntlrCSharpLexer` |
@@ -13043,11 +13048,6 @@
 | `موسيل_كلمات_احصل_رموز_معالج` | `pygments.lexers.mosel.MoselLexer.get_tokens_unprocessed` |
 | `موسيل_كلمات_تحليل_نص` | `pygments.lexers.mosel.MoselLexer.analyse_text` |
 | `موسيل_نمطي_كلمات` | `pygments.lexers.mosel.RegexLexer` |
-| `مولد_روبيسترينجس_قواعد` | `pygments.lexers.agile.RubyLexer.gen_rubystrings_rules` |
-| `مولد_كريستالسترينجس_قواعد` | `pygments.lexers.compiled.CrystalLexer.gen_crystalstrings_rules` |
-| `مولد_يليكسير_سيجستر_قواعد` | `pygments.lexers.erlang.gen_elixir_sigstr_rules` |
-| `مولد_يليكسير_سيجيل_قواعد` | `pygments.lexers.erlang.ElixirLexer.gen_elixir_sigil_rules` |
-| `مولد_يليكسير_نص_قواعد` | `pygments.lexers.erlang.gen_elixir_string_rules` |
 | `مونكيي_كلمات` | `pygments.lexers.basic.MonkeyLexer` |
 | `مونكيي_كلمات_أضف_مرشّح` | `pygments.lexers.basic.MonkeyLexer.add_filter` |
 | `مونكيي_كلمات_احصل_رموز` | `pygments.lexers.basic.MonkeyLexer.get_tokens` |
