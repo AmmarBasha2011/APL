@@ -60,21 +60,6 @@
 | 105 | [telegram-library.md](telegram-library.md) | مكتبة `telegram` — بوتات تيليجرام (6429 عنصراً) |
 | 106 | [redis-library.md](redis-library.md) | مكتبة `redis` — تخزين المفاتيح والقيم (6500 عنصراً) |
 | 107 | [celery-library.md](celery-library.md) | مكتبة `celery` — طوابير المهام (6350 عنصراً) |
-| 88 | [`88-weblibs.apl`](../examples/88-weblibs.apl) | الويب والنصوص (weblibs/markdown) |
-| 89 | [`89-webserver.apl`](../examples/89-webserver.apl) | الخوادم (webserver/uvicorn) |
-| 90 | [`90-secauth.apl`](../examples/90-secauth.apl) | الأمان والمصادقة (secauth/jinja2) |
-| 91 | [`91-textdata.apl`](../examples/91-textdata.apl) | النصوص والبيانات (textdata/pathspec) |
-| 92 | [`92-utiltools.apl`](../examples/92-utiltools.apl) | الأدوات (utiltools/dateutil) |
-| 93 | [`93-idlelib.apl`](../examples/93-idlelib.apl) | بيئة التطوير (idlelib) |
-| 94 | [`94-cdp-use.apl`](../examples/94-cdp-use.apl) | المتصفح (cdp_use) |
-| 95 | [`95-acp.apl`](../examples/95-acp.apl) | الوكلاء (acp) |
-| 96 | [`96-aiohttp2.apl`](../examples/96-aiohttp2.apl) | الويب غير المتزامن (aiohttp) |
-| 97 | [`97-stdlib-ext.apl`](../examples/97-stdlib-ext.apl) | المكتبة الموسّعة (stdlib_ext) |
-| 98 | [`98-numpy.apl`](../examples/98-numpy.apl) | الحساب العددي (numpy) |
-| 99 | [`99-scipy.apl`](../examples/99-scipy.apl) | الحساب العلمي (scipy) |
-| 100 | [`100-telegram.apl`](../examples/100-telegram.apl) | بوتات تيليجرام (telegram) |
-| 101 | [`101-redis.apl`](../examples/101-redis.apl) | تخزين ريديس (redis) |
-| 102 | [`102-celery.apl`](../examples/102-celery.apl) | طوابير المهام (celery) |
 
 ---
 
@@ -171,6 +156,21 @@
 | 85 | [`85-syslib-processes.apl`](../examples/85-syslib-processes.apl) | العمليات المتعددة (syslib/multiprocessing) |
 | 86 | [`86-syslib-ctypes.apl`](../examples/86-syslib-ctypes.apl) | ctypes والأنواع (syslib/ctypes) |
 | 87 | [`87-syslib-context.apl`](../examples/87-syslib-context.apl) | السياق وتحليل الأوامر (syslib/contextvars) |
+| 88 | [`88-weblibs.apl`](../examples/88-weblibs.apl) | الويب والنصوص (weblibs/markdown) |
+| 89 | [`89-webserver.apl`](../examples/89-webserver.apl) | الخوادم (webserver/uvicorn) |
+| 90 | [`90-secauth.apl`](../examples/90-secauth.apl) | الأمان والمصادقة (secauth/jinja2) |
+| 91 | [`91-textdata.apl`](../examples/91-textdata.apl) | النصوص والبيانات (textdata/pathspec) |
+| 92 | [`92-utiltools.apl`](../examples/92-utiltools.apl) | الأدوات (utiltools/dateutil) |
+| 93 | [`93-idlelib.apl`](../examples/93-idlelib.apl) | بيئة التطوير (idlelib) |
+| 94 | [`94-cdp-use.apl`](../examples/94-cdp-use.apl) | المتصفح (cdp_use) |
+| 95 | [`95-acp.apl`](../examples/95-acp.apl) | الوكلاء (acp) |
+| 96 | [`96-aiohttp2.apl`](../examples/96-aiohttp2.apl) | الويب غير المتزامن (aiohttp) |
+| 97 | [`97-stdlib-ext.apl`](../examples/97-stdlib-ext.apl) | المكتبة الموسّعة (stdlib_ext) |
+| 98 | [`98-numpy.apl`](../examples/98-numpy.apl) | الحساب العددي (numpy) |
+| 99 | [`99-scipy.apl`](../examples/99-scipy.apl) | الحساب العلمي (scipy) |
+| 100 | [`100-telegram.apl`](../examples/100-telegram.apl) | بوتات تيليجرام (telegram) |
+| 101 | [`101-redis.apl`](../examples/101-redis.apl) | تخزين ريديس (redis) |
+| 102 | [`102-celery.apl`](../examples/102-celery.apl) | طوابير المهام (celery) |
 
 **التشغيل:**
 ```bash
