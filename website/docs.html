@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مرجع اللغة — APL</title>
+<meta name="description" content="APL: لغة برمجة كاملة بالعربي. اكتب بالعربي، وتتحول إلى Python وتعمل مباشرة.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">تخطَّ إلى المحتوى</a>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="index.html"><span class="logo" aria-hidden="true">أ</span> APL</a>
+<nav aria-label="التنقل الرئيسي"><a href="index.html">الرئيسية</a><a href="docs.html" class="on" aria-current="page">مرجع اللغة</a><a href="features.html">المميزات</a><a href="examples.html">الأمثلة</a><a href="libraries.html">المكتبات</a></nav>
+<a class="gh" href="https://github.com/AmmarBasha2011/APL">GitHub</a>
+</div></header>
+<main id="main">
+<div class="wrap doc"><div class="doc-head"><h1>مرجع اللغة</h1><p class="lead">كل الكلمات المفتاحية والتراكيب مع أمثلة قصيرة.</p></div><div class="doc-grid"><aside class="toc" aria-label="فهرس الصفحة"><strong>في هذه الصفحة</strong><a href="#المتغيرات">المتغيرات</a><a href="#الطباعة-والإدخال">الطباعة والإدخال</a><a href="#الشروط">الشروط</a><a href="#الحلقات">الحلقات</a><a href="#List-Comprehensions">List Comprehensions</a><a href="#الدوال">الدوال</a><a href="#الفئات-Classes">الفئات (Classes)</a><a href="#معالجة-الأخطاء">معالجة الأخطاء</a><a href="#الملفات">الملفات</a><a href="#الأنواع">الأنواع</a><a href="#الثوابت">الثوابت</a><a href="#العوامل-المنطقية">العوامل المنطقية</a><a href="#الدوال-المضمنة">الدوال المضمنة</a><a href="#F-Strings">F-Strings</a><a href="#Multi-Line-Strings">Multi-Line Strings</a><a href="#الوقت-والتاريخ">الوقت والتاريخ</a><a href="#التواريخ">التواريخ</a><a href="#JSON">JSON</a><a href="#HTTP">HTTP</a><a href="#التطابق-Match-Case">التطابق (Match/Case)</a><a href="#المزخرفات-Decorators">المزخرفات (Decorators)</a><a href="#العام-خاص">العام/خاص</a><a href="#التحقق-من-النوع">التحقق من النوع</a><a href="#التأكيد">التأكيد</a><a href="#التوليد-Generators">التوليد (Generators)</a><a href="#إدارة-السياق-Context-Managers">إدارة السياق (Context Managers)</a><a href="#الفواصل-المنقوطة-Semicolons">الفواصل المنقوطة (Semicolons)</a><a href="#الحذف">الحذف</a><a href="#الكسر-Break-Continue">الكسر (Break/Continue)</a><a href="#النطاق-اللانهائي">النطاق اللانهائي</a><a href="#الملفات-نسخ-نقل-حذف">الملفات (نسخ/نقل/حذف)</a><a href="#الاستيراد">الاستيراد</a></aside><article class="prose"><h2 id="المتغيرات">المتغيرات</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">المتغير</span> اسم = <span class="s">&quot;عمار&quot;</span>
+<span class="k">المتغير</span> عمر = <span class="n">25</span>
+<span class="k">المتغير</span> س = صحيح(<span class="s">&quot;42&quot;</span>)
+<span class="k">اطبع</span> <span class="s">&quot;الاسم:&quot;</span>, اسم, <span class="s">&quot;| العمر:&quot;</span>, عمر, <span class="s">&quot;| الرقم:&quot;</span>, س</code></pre></div>
+<h2 id="الطباعة-والإدخال">الطباعة والإدخال</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">المتغير</span> اسم = <span class="s">&quot;عمار&quot;</span>
+
+<span class="k">اطبع</span> <span class="s">&quot;مرحبا&quot;</span>                     <span class="c"># print(&quot;مرحبا&quot;)</span>
+<span class="k">اطبع</span> <span class="s">&quot;الاسم:&quot;</span>, اسم              <span class="c"># print(&quot;الاسم:&quot;, اسم)</span>
+<span class="k">اطبع_بدون</span> <span class="s">&quot;نص&quot;</span>                   <span class="c"># print(&quot;نص&quot;, end=&quot;&quot;)</span>
+<span class="k">اطبع</span> <span class="s">&quot;&quot;</span>
+
+<span class="c"># ادخل(&quot;سؤال&quot;) يقرأ من لوحة المفاتيح:</span>
+<span class="c"># المتغير اسم = ادخل(&quot;ما اسمك؟ &quot;)</span></code></pre></div>
+<h2 id="الشروط">الشروط</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">المتغير</span> عمر = <span class="n">20</span>
+
+<span class="k">لو</span> عمر &gt;= <span class="n">18</span>:
+    <span class="k">اطبع</span> <span class="s">&quot;بالغ&quot;</span>
+<span class="k">الا</span> <span class="k">لو</span> عمر &gt; <span class="n">12</span>:
+    <span class="k">اطبع</span> <span class="s">&quot;مراهق&quot;</span>
+<span class="k">الا</span>:
+    <span class="k">اطبع</span> <span class="s">&quot;طفل&quot;</span>
+
+<span class="c"># شرط ثلاثي</span>
+<span class="k">المتغير</span> ن = <span class="n">1</span> <span class="k">إذا</span> <span class="k">صواب</span> <span class="k">والا</span> <span class="n">0</span>
+<span class="k">اطبع</span> <span class="s">&quot;الشرط الثلاثي:&quot;</span>, ن</code></pre></div>
+<h2 id="الحلقات">الحلقات</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">المتغير</span> س = <span class="n">0</span>
+<span class="k">طالما</span> س &lt; <span class="n">3</span>:
+    <span class="k">اطبع</span> <span class="s">&quot;طالما:&quot;</span>, س
+    س = س + <span class="n">1</span>
+
+<span class="k">لكل</span> i <span class="k">في</span> نطاق(<span class="n">3</span>):
+    <span class="k">اطبع</span> <span class="s">&quot;لكل:&quot;</span>, i
+
+<span class="k">المتغير</span> عداد = <span class="n">0</span>
+<span class="k">أبدا</span>:
+    عداد = عداد + <span class="n">1</span>
+    <span class="k">لو</span> عداد &gt;= <span class="n">3</span>:
+        <span class="k">توقف</span>
+<span class="k">اطبع</span> <span class="s">&quot;أبدا توقفت بعد:&quot;</span>, عداد</code></pre></div>
+<h2 id="List-Comprehensions">List Comprehensions</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="c"># [تعبير لكل عنصر في تسلسل]</span>
+<span class="k">المتغير</span> مربعات = [س*س <span class="k">لكل</span> س <span class="k">في</span> نطاق(<span class="n">1</span>, <span class="n">6</span>)]
+<span class="k">اطبع</span> مربعات
+
+<span class="c"># مع شرط</span>
+<span class="k">المتغير</span> زوجي = [س <span class="k">لكل</span> س <span class="k">في</span> نطاق(<span class="n">1</span>, <span class="n">11</span>) <span class="k">لو</span> س % <span class="n">2</span> == <span class="n">0</span>]
+<span class="k">اطبع</span> زوجي</code></pre></div>
+<h2 id="الدوال">الدوال</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">دالة</span> جمع(أ, ب):
+    <span class="k">ارجع</span> أ + ب
+
+<span class="k">المتغير</span> ضعف = <span class="k">سهم</span> س: س * <span class="n">2</span>         <span class="c"># lambda</span>
+
+<span class="c"># Type Hints</span>
+<span class="k">دالة</span> جمع(أ: صحيح, ب: صحيح) -&gt; صحيح:
+    <span class="k">ارجع</span> أ + ب</code></pre></div>
+<h2 id="الفئات-Classes">الفئات (Classes)</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">صنف</span> شخص:
+    <span class="k">دالة_إنشاء</span>(<span class="k">ذات</span>, اسم):
+        <span class="k">ذات</span>.اسم = اسم
+    <span class="k">دالة</span> سلام(<span class="k">ذات</span>):
+        <span class="k">اطبع</span> <span class="s">&quot;مرحبا&quot;</span>, <span class="k">ذات</span>.اسم
+
+<span class="k">صنف</span> طالب(شخص):
+    <span class="k">تمرير</span>
+
+<span class="k">المتغير</span> ش = شخص(<span class="s">&quot;علي&quot;</span>)
+ش.سلام()
+
+<span class="k">المتغير</span> ط = طالب(<span class="s">&quot;سارة&quot;</span>)
+ط.سلام()</code></pre></div>
+<h2 id="معالجة-الأخطاء">معالجة الأخطاء</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">حاول</span>:
+    <span class="k">المتغير</span> س = صحيح(<span class="s">&quot;abc&quot;</span>)
+<span class="k">إمسك</span>:
+    <span class="k">اطبع</span> <span class="s">&quot;رقم غير صحيح&quot;</span>
+
+<span class="k">المتغير</span> س = صحيح(<span class="s">&quot;12&quot;</span>)
+<span class="k">اطبع</span> <span class="s">&quot;صحيح:&quot;</span>, س</code></pre></div>
+<h2 id="الملفات">الملفات</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="c"># المقتطف مستقل: ينشئ ملفاته وينظّفها</span>
+اكتب(<span class="s">&quot;أ.txt&quot;</span>, <span class="s">&quot;محتوى\n&quot;</span>)
+
+<span class="k">مع</span> فتح(<span class="s">&quot;أ.txt&quot;</span>, <span class="s">&quot;r&quot;</span>) <span class="k">مثل</span> ملف:
+    <span class="k">اطبع</span> اقرأ(ملف)
+
+نسخ ملف <span class="s">&quot;أ.txt&quot;</span> إلى <span class="s">&quot;ب.txt&quot;</span>
+<span class="k">اطبع</span> <span class="s">&quot;بعد النسخ:&quot;</span>, موجود(<span class="s">&quot;ب.txt&quot;</span>)
+
+انشئ مجلد <span class="s">&quot;جديد_مجلد&quot;</span>
+<span class="k">اطبع</span> <span class="s">&quot;المجلد:&quot;</span>, هو_مجلد(<span class="s">&quot;جديد_مجلد&quot;</span>)
+
+احذف ملف <span class="s">&quot;ب.txt&quot;</span>
+احذف ملف <span class="s">&quot;أ.txt&quot;</span>
+احذف_مجلد(<span class="s">&quot;جديد_مجلد&quot;</span>)</code></pre></div>
+<h2 id="الأنواع">الأنواع</h2>
+<div class="table-wrap"><table><thead><tr><th>العربي</th><th>Python</th></tr></thead><tbody><tr><td><code>صحيح(...)</code></td><td><code>int(...)</code></td></tr><tr><td><code>نص(...)</code></td><td><code>str(...)</code></td></tr><tr><td><code>عشري(...)</code></td><td><code>float(...)</code></td></tr><tr><td><code>منطق(...)</code></td><td><code>bool(...)</code></td></tr><tr><td><code>قائمة(...)</code></td><td><code>list(...)</code></td></tr><tr><td><code>قاموس(...)</code></td><td><code>dict(...)</code></td></tr></tbody></table></div>
+<h2 id="الثوابت">الثوابت</h2>
+<div class="table-wrap"><table><thead><tr><th>العربي</th><th>القيمة</th></tr></thead><tbody><tr><td><code>صواب</code></td><td><code>True</code></td></tr><tr><td><code>خطأ</code></td><td><code>False</code></td></tr><tr><td><code>لا_شيء</code></td><td><code>None</code></td></tr><tr><td><code>ط</code></td><td><code>math.pi</code></td></tr><tr><td><code>ه</code></td><td><code>math.e</code></td></tr><tr><td><code>تاو</code></td><td><code>math.tau</code></td></tr><tr><td><code>لانهائي_موجب</code></td><td><code>math.inf</code></td></tr></tbody></table></div>
+<h2 id="العوامل-المنطقية">العوامل المنطقية</h2>
+<div class="table-wrap"><table><thead><tr><th>العربي</th><th>Python</th></tr></thead><tbody><tr><td><code>و</code></td><td><code>and</code></td></tr><tr><td><code>أو</code></td><td><code>or</code></td></tr><tr><td><code>ليس</code></td><td><code>not</code></td></tr><tr><td><code>مثل</code></td><td><code>as</code></td></tr><tr><td><code>في</code></td><td><code>in</code></td></tr></tbody></table></div>
+<h2 id="الدوال-المضمنة">الدوال المضمنة</h2>
+<div class="table-wrap"><table><thead><tr><th>العربي</th><th>Python</th><th>الوصف</th></tr></thead><tbody><tr><td><code>نطاق(...)</code></td><td><code>range(...)</code></td><td>نطاق أرقام</td></tr><tr><td><code>طول(...)</code></td><td><code>len(...)</code></td><td>طول</td></tr><tr><td><code>مطلق(...)</code></td><td><code>abs(...)</code></td><td>قيمة مطلقة</td></tr><tr><td><code>قوة(أس, أس)</code></td><td><code>pow(أس, أس)</code></td><td>أس</td></tr><tr><td><code>أكبر(...)</code></td><td><code>max(...)</code></td><td>أكبر</td></tr><tr><td><code>أصغر(...)</code></td><td><code>min(...)</code></td><td>أصغر</td></tr><tr><td><code>مقرب(...)</code></td><td><code>round(...)</code></td><td>تقريب</td></tr><tr><td><code>مجموع(...)</code></td><td><code>sum(...)</code></td><td>مجموع</td></tr><tr><td><code>مفرز(...)</code></td><td><code>sorted(...)</code></td><td>فرز</td></tr><tr><td><code>كل(...)</code></td><td><code>all(...)</code></td><td>كل</td></tr><tr><td><code>أي(...)</code></td><td><code>any(...)</code></td><td>أي</td></tr><tr><td><code>خريطة(...)</code></td><td><code>map(...)</code></td><td>خريطة</td></tr><tr><td><code>فلترة(...)</code></td><td><code>filter(...)</code></td><td>فلترة</td></tr><tr><td><code>تجميع(...)</code></td><td><code>zip(...)</code></td><td>تجميع</td></tr><tr><td><code>نوع(...)</code></td><td><code>type(...)</code></td><td>نوع</td></tr><tr><td><code>عدد(...)</code></td><td><code>enumerate(...)</code></td><td>ترقيم</td></tr><tr><td><code>انتظر(ث)</code></td><td><code>time.sleep(ث)</code></td><td>انتظار</td></tr><tr><td><code>وقت()</code></td><td><code>time.time()</code></td><td>وقت</td></tr><tr><td><code>تمثيل(...)</code></td><td><code>repr(...)</code></td><td>تمثيل</td></tr><tr><td><code>ثنائي(...)</code></td><td><code>bin(...)</code></td><td>ثنائي</td></tr><tr><td><code>سداسي(...)</code></td><td><code>hex(...)</code></td><td>سداسي</td></tr><tr><td><code>ترتيب(...)</code></td><td><code>ord(...)</code></td><td>ترتيب</td></tr><tr><td><code>رمز(...)</code></td><td><code>chr(...)</code></td><td>رمز</td></tr><tr><td><code>اخرج(...)</code></td><td><code>exit(...)</code></td><td>خروج</td></tr></tbody></table></div>
+<h2 id="F-Strings">F-Strings</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">المتغير</span> اسم = <span class="s">&quot;عمار&quot;</span>
+<span class="k">المتغير</span> عمر = <span class="n">25</span>
+<span class="k">اطبع</span> <span class="s">f&quot;الاسم: {اسم}، العمر: {عمر}&quot;</span>
+<span class="k">اطبع</span> <span class="s">f&quot;بعد سنتين: {عمر + 2}&quot;</span></code></pre></div>
+<h2 id="Multi-Line-Strings">Multi-Line Strings</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="c"># ثلاث علامات تنصيص</span>
+<span class="k">المتغير</span> نص = <span class="s">&quot;&quot;&quot;
+مرحبا
+بالعالم
+&quot;&quot;&quot;</span>
+<span class="k">اطبع</span> نص</code></pre></div>
+<h2 id="الوقت-والتاريخ">الوقت والتاريخ</h2>
+<div class="table-wrap"><table><thead><tr><th>العربي</th><th>Python</th><th>الوصف</th></tr></thead><tbody><tr><td><code>وقت()</code></td><td><code>time.time()</code></td><td>وقت بالثواني</td></tr><tr><td><code>وقت_نومي(ث)</code></td><td><code>time.sleep(ث)</code></td><td>انتظار (ثواني)</td></tr><tr><td><code>وقت_نص()</code></td><td><code>time.ctime()</code></td><td>وقت كنص</td></tr><tr><td><code>الآن()</code></td><td><code>datetime.datetime.now()</code></td><td>تاريخ ووقت حالي</td></tr><tr><td><code>اليوم()</code></td><td><code>datetime.date.today()</code></td><td>التاريخ الحالي</td></tr><tr><td><code>سنة_الآن</code></td><td><code>datetime.datetime.now().year</code></td><td>السنة (بدون أقواس)</td></tr><tr><td><code>شهر_الآن</code></td><td><code>datetime.datetime.now().month</code></td><td>الشهر (بدون أقواس)</td></tr><tr><td><code>يوم_الآن</code></td><td><code>datetime.datetime.now().day</code></td><td>اليوم (بدون أقواس)</td></tr><tr><td><code>ساعة_الآن</code></td><td><code>datetime.datetime.now().hour</code></td><td>الساعة (بدون أقواس)</td></tr><tr><td><code>دقيقة_الآن</code></td><td><code>datetime.datetime.now().minute</code></td><td>الدقيقة (بدون أقواس)</td></tr><tr><td><code>ثانية_الآن</code></td><td><code>datetime.datetime.now().second</code></td><td>الثانية (بدون أقواس)</td></tr></tbody></table></div>
+<h2 id="التواريخ">التواريخ</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="c"># دوال التاريخ والوقت</span>
+<span class="k">المتغير</span> طابع = الآن()
+<span class="k">المتغير</span> تاريخ_اليوم = اليوم()
+<span class="k">اطبع</span> <span class="s">&quot;الآن:&quot;</span>, طابع
+<span class="k">اطبع</span> <span class="s">&quot;اليوم:&quot;</span>, تاريخ_اليوم
+
+<span class="c"># خصائص الوقت الحالي (بدون أقواس)</span>
+<span class="k">اطبع</span> <span class="s">&quot;السنة:&quot;</span>, سنة_الآن
+<span class="k">اطبع</span> <span class="s">&quot;الشهر:&quot;</span>, شهر_الآن
+<span class="k">اطبع</span> <span class="s">&quot;يوم الشهر:&quot;</span>, يوم_الآن
+<span class="k">اطبع</span> <span class="s">&quot;الساعة:&quot;</span>, ساعة_الآن
+<span class="k">اطبع</span> <span class="s">&quot;الدقيقة:&quot;</span>, دقيقة_الآن
+<span class="k">اطبع</span> <span class="s">&quot;الثانية:&quot;</span>, ثانية_الآن
+
+<span class="c"># الانتظار</span>
+وقت_نومي(<span class="n">0.1</span>)
+<span class="k">اطبع</span> <span class="s">&quot;انتهى الانتظار&quot;</span></code></pre></div>
+<h2 id="JSON">JSON</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">المتغير</span> بيانات = جسون(<span class="s">&#x27;{&quot;name&quot;: &quot;عمار&quot;}&#x27;</span>)
+<span class="k">المتغير</span> نص = جسون_تحويل(بيانات)</code></pre></div>
+<h2 id="HTTP">HTTP</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">المتغير</span> استجابة = طلب(<span class="s">&quot;https://example.com&quot;</span>)</code></pre></div>
+<h2 id="التطابق-Match-Case">التطابق (Match/Case)</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">المتغير</span> اختيار = <span class="n">2</span>
+<span class="k">المتغير</span> ن = -<span class="n">5</span>
+
+<span class="c"># تطابق أساسي</span>
+<span class="k">حالة</span> اختيار:
+    <span class="k">قيمة</span> <span class="n">1</span>:
+        <span class="k">اطبع</span> <span class="s">&quot;واحد&quot;</span>
+    <span class="k">قيمة</span> <span class="n">2</span>:
+        <span class="k">اطبع</span> <span class="s">&quot;اثنان&quot;</span>
+    <span class="k">افتراضي</span>:
+        <span class="k">اطبع</span> <span class="s">&quot;غير معروف&quot;</span></code></pre></div>
+<h2 id="المزخرفات-Decorators">المزخرفات (Decorators)</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">صنف</span> دائرة:
+    <span class="k">دالة_إنشاء</span>(<span class="k">ذات</span>, نصف):
+        <span class="k">ذات</span>._نصف = نصف
+
+    <span class="k">خاصية</span> نصف_القطر:
+        <span class="k">ارجع</span> <span class="k">ذات</span>._نصف
+
+    <span class="k">محدد</span> نصف_القطر:
+        <span class="k">ذات</span>._نصف = <span class="k">قيمة</span>
+
+<span class="k">المتغير</span> د = دائرة(<span class="n">5</span>)
+<span class="k">اطبع</span> <span class="s">&quot;نصف القطر:&quot;</span>, د.نصف_القطر
+د.نصف_القطر = <span class="n">7</span>
+<span class="k">اطبع</span> <span class="s">&quot;بعد التعديل:&quot;</span>, د.نصف_القطر</code></pre></div>
+<h2 id="العام-خاص">العام/خاص</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">خاص</span> <span class="k">المتغير</span> سر = <span class="n">123</span>
+<span class="k">عام</span> <span class="k">المتغير</span> ظاهر = <span class="s">&quot;علني&quot;</span>
+
+<span class="k">خاص</span> <span class="k">دالة</span> د_سر():
+    <span class="k">ارجع</span> سر
+
+<span class="k">عام</span> <span class="k">دالة</span> د_ظاهر():
+    <span class="k">ارجع</span> ظاهر
+
+<span class="k">اطبع</span> د_ظاهر()</code></pre></div>
+<h2 id="التحقق-من-النوع">التحقق من النوع</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">المتغير</span> س = <span class="n">5</span>
+<span class="k">اطبع</span> <span class="k">من</span>(س, صحيح)
+<span class="k">اطبع</span> <span class="k">من</span>(<span class="s">&quot;نص&quot;</span>, نص)</code></pre></div>
+<h2 id="التأكيد">التأكيد</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">المتغير</span> س = <span class="n">5</span>
+<span class="k">تأكد</span>(س &gt; <span class="n">0</span>)
+<span class="k">اطبع</span> <span class="s">&quot;الشرط صحيح&quot;</span></code></pre></div>
+<h2 id="التوليد-Generators">التوليد (Generators)</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code>دالة_أعداد(حد):
+    <span class="k">لكل</span> س <span class="k">في</span> نطاق(حد):
+        مولد س * <span class="n">2</span>
+
+<span class="k">لكل</span> <span class="k">قيمة</span> <span class="k">في</span> أعداد(<span class="n">4</span>):
+    <span class="k">اطبع</span> <span class="k">قيمة</span></code></pre></div>
+<h2 id="إدارة-السياق-Context-Managers">إدارة السياق (Context Managers)</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code>اكتب(<span class="s">&quot;ملف_سياق.txt&quot;</span>, <span class="s">&quot;سطر تجريبي\n&quot;</span>)
+
+<span class="k">مع</span> فتح(<span class="s">&quot;ملف_سياق.txt&quot;</span>, <span class="s">&quot;r&quot;</span>) <span class="k">مثل</span> ملف:
+    <span class="k">اطبع</span> ملف.read().strip()
+
+with open(<span class="s">&quot;ملف_سياق.txt&quot;</span>) as ملف:
+    print(ملف.read().strip())
+
+احذف_ملف(<span class="s">&quot;ملف_سياق.txt&quot;</span>)</code></pre></div>
+<h2 id="الفواصل-المنقوطة-Semicolons">الفواصل المنقوطة (Semicolons)</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="c"># يمكن استخدام ; لفصل الأوامر (اختياري)</span>
+<span class="k">المتغير</span> س = <span class="n">5</span>
+<span class="k">اطبع</span> س
+
+<span class="c"># أو بدون ;</span>
+<span class="k">المتغير</span> ص = <span class="n">6</span>
+<span class="k">اطبع</span> ص</code></pre></div>
+<h2 id="الحذف">الحذف</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">المتغير</span> س = <span class="n">5</span>
+<span class="k">اطبع</span> <span class="s">&quot;قبل الحذف:&quot;</span>, س
+حذف س
+<span class="k">حاول</span>:
+    <span class="k">اطبع</span> س
+<span class="k">إمسك</span>:
+    <span class="k">اطبع</span> <span class="s">&quot;بعد الحذف: المتغير غير موجود&quot;</span></code></pre></div>
+<h2 id="الكسر-Break-Continue">الكسر (Break/Continue)</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">لكل</span> ع <span class="k">في</span> نطاق(<span class="n">10</span>):
+    <span class="k">لو</span> ع == <span class="n">3</span>:
+        <span class="k">توقف</span>
+    <span class="k">لو</span> ع % <span class="n">2</span> == <span class="n">0</span>:
+        اكمل
+    <span class="k">اطبع</span> <span class="s">&quot;فردي:&quot;</span>, ع</code></pre></div>
+<h2 id="النطاق-اللانهائي">النطاق اللانهائي</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">المتغير</span> عداد = <span class="n">0</span>
+<span class="k">أبدا</span>:
+    عداد = عداد + <span class="n">1</span>
+    <span class="k">لو</span> عداد == <span class="n">3</span>:
+        <span class="k">توقف</span>
+<span class="k">اطبع</span> <span class="s">&quot;توقف عند:&quot;</span>, عداد</code></pre></div>
+<h2 id="الملفات-نسخ-نقل-حذف">الملفات (نسخ/نقل/حذف)</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="c"># المقتطف مستقل: ينشئ ملفاته وينظّفها</span>
+اكتب(<span class="s">&quot;أ.txt&quot;</span>, <span class="s">&quot;محتوى\n&quot;</span>)
+
+نسخ ملف <span class="s">&quot;أ.txt&quot;</span> إلى <span class="s">&quot;ب.txt&quot;</span>
+<span class="k">اطبع</span> <span class="s">&quot;بعد النسخ:&quot;</span>, موجود(<span class="s">&quot;ب.txt&quot;</span>)
+
+نقل ملف <span class="s">&quot;ب.txt&quot;</span> إلى <span class="s">&quot;ج.txt&quot;</span>
+<span class="k">اطبع</span> <span class="s">&quot;بعد النقل:&quot;</span>, موجود(<span class="s">&quot;ج.txt&quot;</span>)
+
+انشئ مجلد <span class="s">&quot;مجلد_جديد&quot;</span>
+<span class="k">اطبع</span> <span class="s">&quot;المجلد:&quot;</span>, هو_مجلد(<span class="s">&quot;مجلد_جديد&quot;</span>)
+
+احذف ملف <span class="s">&quot;أ.txt&quot;</span>
+احذف ملف <span class="s">&quot;ج.txt&quot;</span>
+احذف_مجلد(<span class="s">&quot;مجلد_جديد&quot;</span>)</code></pre></div>
+<h2 id="الاستيراد">الاستيراد</h2>
+<div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="rtl"><code><span class="k">استورد</span> os
+<span class="k">من</span> os <span class="k">استورد</span> path</code></pre></div></article></div></div>
+</main>
+<footer><div class="wrap">
+<p>APL v1.13 — لغة برمجة بالعربي. المصدر على <a href="https://github.com/AmmarBasha2011/APL">GitHub</a>. هذه الصفحات مبنية تلقائيا من ملفات المشروع بواسطة <code>website/build.py</code>.</p>
+</div></footer>
+<script src="app.js"></script>
+</body>
+</html>
