@@ -9,7 +9,7 @@ import base64
 import hashlib
 import json
 from pathlib import Path
-from core.apl_runner import regex_cache as re
+import re
 import sys
 import io
 import tokenize
@@ -43,6 +43,7 @@ def substitute_all(text, user_names):
 
 
 def imports_for(code):
+    from core.apl_runner import regex_cache as re
     # Text mentioning "numpy.x" is data, not an import request. Python 3.14
     # exposes f-string expression tokens separately, so those stay visible.
     try:
