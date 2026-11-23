@@ -71,6 +71,13 @@ def _inline_replace(text: str) -> str:
     if not needs_scan(text):
         return text
 
+    _name_tokens = {}
+    for _index, _name in enumerate(sorted(USER_NAMES, key=len, reverse=True)):
+        _token = f"_APL_NAME_{_index}_END_"
+        text, _count = re.subn(rf"(?<![\w.\u0600-\u06FF]){re.escape(_name)}(?![\w\u0600-\u06FF]|\s*=)", _token, text)
+        if _count:
+            _name_tokens[_token] = _name
+
     strings = {}
     def _save(m):
         idx = len(strings)
@@ -436,4 +443,6 @@ def _inline_replace(text: str) -> str:
     for idx in sorted(strings.keys(), reverse=True):
         raw = strings[idx]
         text = text.replace(f"\x00APL{idx}\x00", _apl_translate_fstring(raw))
+    for _token, _name in _name_tokens.items():
+        text = text.replace(_token, _name)
     return text

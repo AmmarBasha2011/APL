@@ -36,7 +36,9 @@ _RESERVED_KEYS = _build_reserved_keys()  # empty: unused, see docstring
 _APL_FOLD = os.environ.get("APL_NO_FOLD", "") not in ("1", "true", "yes")
 from core.libraries import decimal_funcs, fractions_funcs, string_funcs, secrets_funcs, zoneinfo_funcs, getpass_funcs, operator_funcs, pprint_funcs, math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs, xml_funcs, archive_funcs, net_funcs, devtools_funcs, web_funcs, datafiles_funcs, syslib_funcs, stdlib_ext_funcs, aiohttp_funcs, acp_funcs, cdp_use_funcs, idlelib_funcs, utiltools_funcs, textdata_funcs, secauth_funcs, webserver_funcs, weblibs_funcs, numpy_funcs, scipy_funcs, telegram_funcs, redis_funcs, celery_funcs, numdeep_funcs, botdeep_funcs, taskdeep_funcs, storedeep_funcs, pygdeep_funcs, webdeep_funcs, datadeep_funcs, mediadeep_funcs, secdeep_funcs, utildeep_funcs, stdfull_funcs
 
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+# Respect embedding applications and redirected/captured stdout.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 if sys.platform == "win32":
     import ctypes
     try:
@@ -72,9 +74,27 @@ def _collect_user_names(source: str) -> set:
             m = re.match(pat, stripped)
             if m:
                 names.add(m.group(1))
+    for statement in source.splitlines():
+        match = re.match(r"\s*من\s+\S+\s+استورد\s+(.+)", statement)
+        if match:
+            for name in match.group(1).split(','):
+                names.add(name.strip().split()[-1])
     return names
 
+import threading
+_COMPILE_LOCK = threading.RLock()
+
+
 def transpile(source: str) -> str:
+    # Legacy library tables hold per-compilation name state. Serialize their
+    # use and reset on each invocation, including concurrent embedding calls.
+    with _COMPILE_LOCK:
+        return _transpile(source)
+
+
+def _transpile(source: str) -> str:
+    from core.apl_runner.source import protect, restore
+    source, _literals, _origins = protect(source)
     from core.apl_runner import inline_replacer as _ir
     _ir.USER_NAMES = _collect_user_names(source)
     # Pre-scan for user-defined function names so their call sites are protected
@@ -158,14 +178,16 @@ def transpile(source: str) -> str:
     _class_indent = None      # indent of the innermost open class body
     import core.apl_runner.transpiler as _tp
     _tp._IN_MATCH = False
-    for line in lines:
+    for _source_index, line in enumerate(lines):
         _indent = len(line) - len(line.lstrip())
         try:
             _out = transpile_line(line)
+            result.append(" " * _indent + f"# apl-source:{_origins[_source_index]}")
             result.append(_out)
         except SyntaxError as e:
-            result.append(f"# ERROR: {e}")
-            continue
+            e.lineno = _origins[_source_index]
+            e.offset = _indent + 1
+            raise
         # Track class bodies so a method named "دالة_س" becomes "س" (def س).
         # A comment or blank line inside a method must NOT end the class — only
         # a real statement dedented back to column 0 does. (An earlier flag
@@ -518,7 +540,7 @@ def transpile(source: str) -> str:
             _j = _i + 1
             while _j < len(_lines):
                 _nxt = _lines[_j]
-                if not _nxt.strip():
+                if not _nxt.strip() or _nxt.lstrip().startswith("#"):
                     _j += 1
                     continue
                 _n_ind = len(_nxt) - len(_nxt.lstrip())
@@ -536,7 +558,7 @@ def transpile(source: str) -> str:
         from core.apl_runner.constfold import fold_code
         code = fold_code(code)
 
-    return code
+    return restore(code, _literals)
 
 
 _RUNTIME = """
@@ -1482,31 +1504,8 @@ def _apl_http_json(response):
 
 
 def run_file(filepath: str):
-    from pathlib import Path as _Path
-    from core.apl_runner import cache as _cache
-
-    src_path = _Path(filepath)
-    with open(filepath, "r", encoding="utf-8") as f:
-        source = f.read()
-
-    # Cache hit -> skip transpilation entirely (this is the ~166 us/line cost).
-    body = _cache.load_cached(src_path, source)
-    if body is None:
-        body = transpile(source)
-        _cache.store(src_path, source, body)
-        _cache.prune(src_path)
-
-    python_code = _RUNTIME + "\n" + body
-    try:
-        exec(python_code, {})
-    except Exception as e:
-        msg = _get_error_ar(e)
-        print(f"\u202B{msg}\u202C", file=sys.stderr)
-        #  EXIT NON-ZERO on a real runtime error. Without this an example (or a
-        #  user script) could fail silently and still report success, which is
-        #  exactly how 4 broken examples lived on main unnoticed. CI and
-        #  test_examples.py rely on this.
-        raise SystemExit(1)
+    from core.apl_runner.execution import execute_file
+    execute_file(filepath)
 
 
 def _get_error_ar(e: Exception) -> str:
@@ -1768,8 +1767,10 @@ def run_repl():
 
     # One shared namespace for the whole session, so variables survive between
     # lines (and the runtime prologue is executed only once).
-    _namespace = {}
+    _namespace = {"__name__": "__console__"}
     exec(_RUNTIME, _namespace)
+    from core.apl_runner.interactive import configure, evaluate
+    configure(_namespace)
 
     while True:
         try:
@@ -1809,7 +1810,7 @@ def run_repl():
 
         try:
             # Transpile and execute in the session namespace
-            exec(transpile(line), _namespace)
+            evaluate(line, _namespace)
         except KeyboardInterrupt:
             print("\nGoodbye! 👋")
             break
@@ -1821,7 +1822,7 @@ def run_repl():
             break
 
 
-def main():
+def legacy_main():
     if len(sys.argv) < 2:
         print_help()
         return
@@ -1873,6 +1874,11 @@ def main():
         sys.exit(1)
 
     run_file(filepath)
+
+
+def main():
+    from core.apl_runner.cli import main as cli_main
+    return cli_main()
 
 
 if __name__ == "__main__":

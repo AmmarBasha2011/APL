@@ -209,7 +209,7 @@ def transpile_line(line: str) -> str:
         return f"{indent}else{':' if not rest or rest == ':' else rest}"
     if stripped.startswith("والا_لو") or stripped.startswith("والا لو"):
         cond = stripped.split("لو", 1)[1].strip()
-        return f"{indent}else:\n{indent}    if {_inline_replace(cond)}"
+        return f"{indent}elif {_inline_replace(cond)}"
 
     if stripped.startswith("س إذا"):
         rest = stripped.split("شرط", 1)[1].strip() if "شرط" in stripped else stripped[4:].strip()
