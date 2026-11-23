@@ -24,7 +24,7 @@ _STANDALONE_METHODS = {
     "يبدأ": "startswith", "ينتهي": "endswith", "ضم": "join",
     "فرز": "sort", "عكس": "reverse", "نسخ": "copy",
 }
-from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs, xml_funcs, archive_funcs, net_funcs, devtools_funcs, web_funcs, datafiles_funcs, syslib_funcs, stdlib_ext_funcs, aiohttp_funcs, acp_funcs, cdp_use_funcs, idlelib_funcs, utiltools_funcs, textdata_funcs, secauth_funcs, webserver_funcs, weblibs_funcs
+from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs, xml_funcs, archive_funcs, net_funcs, devtools_funcs, web_funcs, datafiles_funcs, syslib_funcs, stdlib_ext_funcs, aiohttp_funcs, acp_funcs, cdp_use_funcs, idlelib_funcs, utiltools_funcs, textdata_funcs, secauth_funcs, webserver_funcs, weblibs_funcs, numpy_funcs, scipy_funcs, telegram_funcs, redis_funcs, celery_funcs
 
 
 def _replace_type_names(text: str) -> str:
@@ -250,6 +250,26 @@ def _inline_replace(text: str) -> str:
     # --- weblibs ---
     weblibs_funcs.USER_NAMES = USER_NAMES
     text = weblibs_funcs.WEBL_SUBSTITUTE(text)
+
+    # --- numpy ---
+    numpy_funcs.USER_NAMES = USER_NAMES
+    text = numpy_funcs.NUM_SUBSTITUTE(text)
+
+    # --- scipy ---
+    scipy_funcs.USER_NAMES = USER_NAMES
+    text = scipy_funcs.SCI_SUBSTITUTE(text)
+
+    # --- telegram ---
+    telegram_funcs.USER_NAMES = USER_NAMES
+    text = telegram_funcs.TG_SUBSTITUTE(text)
+
+    # --- redis ---
+    redis_funcs.USER_NAMES = USER_NAMES
+    text = redis_funcs.RD_SUBSTITUTE(text)
+
+    # --- celery ---
+    celery_funcs.USER_NAMES = USER_NAMES
+    text = celery_funcs.CEL_SUBSTITUTE(text)
 
     # --- f-string interpolation: translate expressions inside {...} ---
     _APL_FSTR_RE = re.compile(r'(?P<pre>[fF])"[^"\\]*(?:\\.[^"\\]*)*"')

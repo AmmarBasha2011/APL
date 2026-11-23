@@ -33,7 +33,7 @@ _RESERVED_KEYS = _build_reserved_keys()  # empty: unused, see docstring
 
 # Constant folding on by default; APL_NO_FOLD=1 turns it off.
 _APL_FOLD = os.environ.get("APL_NO_FOLD", "") not in ("1", "true", "yes")
-from core.libraries import decimal_funcs, fractions_funcs, string_funcs, secrets_funcs, zoneinfo_funcs, getpass_funcs, operator_funcs, pprint_funcs, math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs, xml_funcs, archive_funcs, net_funcs, devtools_funcs, web_funcs, datafiles_funcs, syslib_funcs, stdlib_ext_funcs, aiohttp_funcs, acp_funcs, cdp_use_funcs, idlelib_funcs, utiltools_funcs, textdata_funcs, secauth_funcs, webserver_funcs, weblibs_funcs
+from core.libraries import decimal_funcs, fractions_funcs, string_funcs, secrets_funcs, zoneinfo_funcs, getpass_funcs, operator_funcs, pprint_funcs, math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs, xml_funcs, archive_funcs, net_funcs, devtools_funcs, web_funcs, datafiles_funcs, syslib_funcs, stdlib_ext_funcs, aiohttp_funcs, acp_funcs, cdp_use_funcs, idlelib_funcs, utiltools_funcs, textdata_funcs, secauth_funcs, webserver_funcs, weblibs_funcs, numpy_funcs, scipy_funcs, telegram_funcs, redis_funcs, celery_funcs
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 if sys.platform == "win32":
@@ -366,6 +366,36 @@ def transpile(source: str) -> str:
                      and ("import " + m) not in code]
         if _sys_mods:
             needs.append("import " + ", ".join(_sys_mods))
+    if re.search(numpy_funcs.IMPORT_CHECK, code):
+        _numpy_mods = [m for m in numpy_funcs.IMPORT_MODULES
+                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
+                        and ("import " + m) not in code]
+        if _numpy_mods:
+            needs.append("import " + ", ".join(_numpy_mods))
+    if re.search(scipy_funcs.IMPORT_CHECK, code):
+        _scipy_mods = [m for m in scipy_funcs.IMPORT_MODULES
+                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
+                        and ("import " + m) not in code]
+        if _scipy_mods:
+            needs.append("import " + ", ".join(_scipy_mods))
+    if re.search(telegram_funcs.IMPORT_CHECK, code):
+        _telegram_mods = [m for m in telegram_funcs.IMPORT_MODULES
+                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
+                        and ("import " + m) not in code]
+        if _telegram_mods:
+            needs.append("import " + ", ".join(_telegram_mods))
+    if re.search(redis_funcs.IMPORT_CHECK, code):
+        _redis_mods = [m for m in redis_funcs.IMPORT_MODULES
+                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
+                        and ("import " + m) not in code]
+        if _redis_mods:
+            needs.append("import " + ", ".join(_redis_mods))
+    if re.search(celery_funcs.IMPORT_CHECK, code):
+        _celery_mods = [m for m in celery_funcs.IMPORT_MODULES
+                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
+                        and ("import " + m) not in code]
+        if _celery_mods:
+            needs.append("import " + ", ".join(_celery_mods))
     if re.search(shutil_funcs.IMPORT_CHECK, code) and "import shutil" not in code:
         needs.append("import shutil")
     if re.search(textwrap_funcs.IMPORT_CHECK, code) and "import textwrap" not in code:
@@ -1634,13 +1664,33 @@ def print_help():
     for line in syslib_funcs.SYS_HELP:
         print(f"    {line}")
     print()
+    print("  # numpy library")
+    for line in numpy_funcs.NUM_HELP:
+        print(f"    {line}")
+    print()
+    print("  # scipy library")
+    for line in scipy_funcs.SCI_HELP:
+        print(f"    {line}")
+    print()
+    print("  # telegram library")
+    for line in telegram_funcs.TG_HELP:
+        print(f"    {line}")
+    print()
+    print("  # redis library")
+    for line in redis_funcs.RD_HELP:
+        print(f"    {line}")
+    print()
+    print("  # celery library")
+    for line in celery_funcs.CEL_HELP:
+        print(f"    {line}")
+    print()
     print("Examples:")
     print("  python apl.py examples/01-calculator.apl")
     print("  python apl.py help")
     print("  python apl.py repl")
 
 
-__version__ = "1.12"
+__version__ = "1.13"
 
 
 def run_repl():
