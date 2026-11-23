@@ -33,7 +33,7 @@ _RESERVED_KEYS = _build_reserved_keys()  # empty: unused, see docstring
 
 # Constant folding on by default; APL_NO_FOLD=1 turns it off.
 _APL_FOLD = os.environ.get("APL_NO_FOLD", "") not in ("1", "true", "yes")
-from core.libraries import decimal_funcs, fractions_funcs, string_funcs, secrets_funcs, zoneinfo_funcs, getpass_funcs, operator_funcs, pprint_funcs, math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs, xml_funcs, archive_funcs, net_funcs, devtools_funcs, web_funcs, datafiles_funcs, syslib_funcs, utiltools_funcs, textdata_funcs, secauth_funcs, webserver_funcs, weblibs_funcs
+from core.libraries import decimal_funcs, fractions_funcs, string_funcs, secrets_funcs, zoneinfo_funcs, getpass_funcs, operator_funcs, pprint_funcs, math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs, xml_funcs, archive_funcs, net_funcs, devtools_funcs, web_funcs, datafiles_funcs, syslib_funcs, stdlib_ext_funcs, aiohttp_funcs, acp_funcs, cdp_use_funcs, idlelib_funcs, utiltools_funcs, textdata_funcs, secauth_funcs, webserver_funcs, weblibs_funcs
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 if sys.platform == "win32":
@@ -330,6 +330,36 @@ def transpile(source: str) -> str:
                         and ("import " + m) not in code]
         if _utiltools_mods:
             needs.append("import " + ", ".join(_utiltools_mods))
+    if re.search(idlelib_funcs.IMPORT_CHECK, code):
+        _idlelib_mods = [m for m in idlelib_funcs.IMPORT_MODULES
+                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
+                        and ("import " + m) not in code]
+        if _idlelib_mods:
+            needs.append("import " + ", ".join(_idlelib_mods))
+    if re.search(cdp_use_funcs.IMPORT_CHECK, code):
+        _cdp_use_mods = [m for m in cdp_use_funcs.IMPORT_MODULES
+                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
+                        and ("import " + m) not in code]
+        if _cdp_use_mods:
+            needs.append("import " + ", ".join(_cdp_use_mods))
+    if re.search(acp_funcs.IMPORT_CHECK, code):
+        _acp_mods = [m for m in acp_funcs.IMPORT_MODULES
+                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
+                        and ("import " + m) not in code]
+        if _acp_mods:
+            needs.append("import " + ", ".join(_acp_mods))
+    if re.search(aiohttp_funcs.IMPORT_CHECK, code):
+        _aiohttp_mods = [m for m in aiohttp_funcs.IMPORT_MODULES
+                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
+                        and ("import " + m) not in code]
+        if _aiohttp_mods:
+            needs.append("import " + ", ".join(_aiohttp_mods))
+    if re.search(stdlib_ext_funcs.IMPORT_CHECK, code):
+        _stdlib_ext_mods = [m for m in stdlib_ext_funcs.IMPORT_MODULES
+                        if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)
+                        and ("import " + m) not in code]
+        if _stdlib_ext_mods:
+            needs.append("import " + ", ".join(_stdlib_ext_mods))
     if re.search(syslib_funcs.IMPORT_CHECK, code):
         _sys_mods = [m for m in syslib_funcs.IMPORT_MODULES
                      if re.search(r"(?<![\w.])" + re.escape(m) + r"\.", code)

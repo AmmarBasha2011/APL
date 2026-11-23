@@ -1,9 +1,16 @@
+"""
+APL Libraries Package
+Each module provides transpilation for a Python standard library module.
+"""
 
+from . import acp_funcs
 from . import advanced_funcs
+from . import aiohttp_funcs
 from . import archive_funcs
 from . import argparse_funcs
 from . import asyncio_funcs
 from . import base64_funcs
+from . import cdp_use_funcs
 from . import collections_funcs
 from . import configparser_funcs
 from . import csv_funcs
@@ -19,6 +26,7 @@ from . import fractions_funcs
 from . import functools_funcs
 from . import getpass_funcs
 from . import hashlib_funcs
+from . import idlelib_funcs
 from . import itertools_funcs
 from . import json_funcs
 from . import logging_funcs
@@ -36,6 +44,7 @@ from . import secrets_funcs
 from . import shutil_funcs
 from . import sqlite3_funcs
 from . import statistics_funcs
+from . import stdlib_ext_funcs
 from . import string_funcs
 from . import subprocess_funcs
 from . import syslib_funcs
@@ -52,13 +61,14 @@ from . import weblibs_funcs
 from . import webserver_funcs
 from . import xml_funcs
 from . import zoneinfo_funcs
-"""
-APL Libraries Package
-Each module provides transpilation for a Python standard library module.
-"""
 
 # Registry: module references for easy access
 LIBRARIES = {
+    "stdlib_ext": stdlib_ext_funcs,
+    "aiohttp": aiohttp_funcs,
+    "acp": acp_funcs,
+    "cdp_use": cdp_use_funcs,
+    "idlelib": idlelib_funcs,
     "utiltools": utiltools_funcs,
     "textdata": textdata_funcs,
     "secauth": secauth_funcs,

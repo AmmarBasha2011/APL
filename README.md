@@ -22,8 +22,8 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 ## المميزات
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
-- **مكتبات بالعربي** — 53 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **92 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **مكتبات بالعربي** — 58 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
+- **97 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -41,7 +41,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 - **مولدات** — `yield` و `yield from` بالعربي
 - **REPL تفاعلي** — جرب الكود سطر بسطر بـ `python apl.py repl`
 
-## المكتبات المتاحة (53 مكتبة)
+## المكتبات المتاحة (58 مكتبة)
 
 | المكتبة | عدد العناصر | الوصف |
 |---------|------------:|-------|
@@ -53,6 +53,11 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | `secauth` | 5495 | الأمان والمصادقة: تشفير وشهادات، قوالب معزولة، تحقق من المخططات، JWT (cryptography / jinja2 / jsonschema / jwt / cffi) |
 | `textdata` | 5492 | النصوص والبيانات: مطابقة الأنماط، أصناف الخصائص، الصور، النماذج الأولية (pathspec / attrs / PIL / markdown / proto) |
 | `utiltools` | 5494 | الأدوات المساعدة: الإصدارات والتواريخ، أشرطة التقدم، مراقبة العمليات (packaging / dateutil / tqdm / psutil / websockets) |
+| `idlelib` | 11138 | بيئة التطوير المدمجة: محرر، إكمال تلقائي، مصحح، إعدادات (idlelib) |
+| `cdp_use` | 10569 | بروتوكول أدوات تطوير كروم CDP (cdp_use) |
+| `acp` | 11180 | بروتوكول العميل-الوكيل ACP (acp) |
+| `aiohttp` | 15592 | عميل وخادم HTTP غير متزامنين (aiohttp) |
+| `stdlib_ext` | 12950 | توسعة المكتبة القياسية (encodings / inspect / doctest / pdb / tracemalloc) |
 | `web` | 2757 | الويب والبريد: عناوين، HTTP، بريد، صناديق، كوكيز، HTML، WSGI، XML-RPC (http / urllib / email / mailbox / html / wsgiref / xmlrpc) |
 | `net` | 1006 | الشبكة: socket و ssl و http و email و SMTP/IMAP/FTP |
 | `fastapi` | 536 | إطار عمل ويب حديث |
@@ -99,7 +104,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | `getpass` | 2 | إدخال كلمات السر دون إظهارها |
 | `pprint` | 2 | طباعة منسّقة للقواميس والقوائم |
 
-**الإجمالي: 41,300 عنصراً في 53 مكتبة** (41,282 مفتاحاً فريداً بعد إزالة التكرار).
+**الإجمالي: 102,729 عنصراً في 58 مكتبة** (102,711 مفتاحاً فريداً بعد إزالة التكرار).
 
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
@@ -226,7 +231,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (92 مثالاً)
+## الأمثلة الجاهزة (97 مثالاً)
 
 مجلد `examples/` يحتوي على **66 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
@@ -278,13 +283,13 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 44 | [`44-tic-tac-toe.apl`](examples/44-tic-tac-toe.apl) | لعبة tic-tac-toe |
 | 45 | [`45-simple-lexer.apl`](examples/45-simple-lexer.apl) | محلّل نصوص بسيط |
 | 46 | [`46-simple-interpreter.apl`](examples/46-simple-interpreter.apl) | مفسّر حسابات مبسّط |
-| 53 | [`47-simple-cache.apl`](examples/47-simple-cache.apl) | كاش بسيط من الصفر |
-| 53 | [`48-text-analyzer-advanced.apl`](examples/48-text-analyzer-advanced.apl) | تحليل نص متقدم |
+| 58 | [`47-simple-cache.apl`](examples/47-simple-cache.apl) | كاش بسيط من الصفر |
+| 58 | [`48-text-analyzer-advanced.apl`](examples/48-text-analyzer-advanced.apl) | تحليل نص متقدم |
 | 49 | [`49-validate-input.apl`](examples/49-validate-input.apl) | التحقق من صحة المدخلات |
 | 50 | [`50-final-showcase.apl`](examples/50-final-showcase.apl) | العرض النهائي (شامل) |
 | 51 | [`51-xml-read.apl`](examples/51-xml-read.apl) | قراءة مستند XML وتحليله |
 | 52 | [`52-xml-build.apl`](examples/52-xml-build.apl) | بناء ملف XML وتعديله وحفظه |
-| 53 | [`53-xml-namespaces.apl`](examples/53-xml-namespaces.apl) | مساحات الأسماء والتحليل التدريجي والباني |
+| 58 | [`53-xml-namespaces.apl`](examples/53-xml-namespaces.apl) | مساحات الأسماء والتحليل التدريجي والباني |
 | 54 | [`54-archive-zip.apl`](examples/54-archive-zip.apl) | أرشيف ZIP: إنشاء، قراءة، تعديل، استخراج |
 | 55 | [`55-archive-compress.apl`](examples/55-archive-compress.apl) | الضغط: gzip و bz2 و xz وأرشيف TAR |
 | 56 | [`56-archive-backup.apl`](examples/56-archive-backup.apl) | أداة نسخ احتياطي حقيقية بالأرشيف |
@@ -324,6 +329,11 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 90 | [`90-secauth.apl`](examples/90-secauth.apl) | الأمان والمصادقة (secauth/jinja2) |
 | 91 | [`91-textdata.apl`](examples/91-textdata.apl) | النصوص والبيانات (textdata/pathspec) |
 | 92 | [`92-utiltools.apl`](examples/92-utiltools.apl) | الأدوات (utiltools/dateutil) |
+| 93 | [`93-idlelib.apl`](examples/93-idlelib.apl) | بيئة التطوير (idlelib) |
+| 94 | [`94-cdp-use.apl`](examples/94-cdp-use.apl) | المتصفح (cdp_use) |
+| 95 | [`95-acp.apl`](examples/95-acp.apl) | الوكلاء (acp) |
+| 96 | [`96-aiohttp2.apl`](examples/96-aiohttp2.apl) | الويب غير المتزامن (aiohttp) |
+| 97 | [`97-stdlib-ext.apl`](examples/97-stdlib-ext.apl) | المكتبة الموسّعة (stdlib_ext) |
 
 ### تشغيل أي مثال
 
@@ -425,4 +435,4 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.12 — 41,515 عنصراً عربياً — 53 مكتبة — 92 مثالاً
+**الإصدار:** APL v1.12 — 41,515 عنصراً عربياً — 58 مكتبة — 97 مثالاً

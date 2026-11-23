@@ -24,7 +24,7 @@ _STANDALONE_METHODS = {
     "يبدأ": "startswith", "ينتهي": "endswith", "ضم": "join",
     "فرز": "sort", "عكس": "reverse", "نسخ": "copy",
 }
-from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs, xml_funcs, archive_funcs, net_funcs, devtools_funcs, web_funcs, datafiles_funcs, syslib_funcs, utiltools_funcs, textdata_funcs, secauth_funcs, webserver_funcs, weblibs_funcs
+from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs, xml_funcs, archive_funcs, net_funcs, devtools_funcs, web_funcs, datafiles_funcs, syslib_funcs, stdlib_ext_funcs, aiohttp_funcs, acp_funcs, cdp_use_funcs, idlelib_funcs, utiltools_funcs, textdata_funcs, secauth_funcs, webserver_funcs, weblibs_funcs
 
 
 def _replace_type_names(text: str) -> str:
@@ -210,6 +210,26 @@ def _inline_replace(text: str) -> str:
     # --- syslib: النظام والتشغيل والتشخيص ---
     syslib_funcs.USER_NAMES = USER_NAMES
     text = syslib_funcs.SYS_SUBSTITUTE(text)
+
+    # --- stdlib_ext ---
+    stdlib_ext_funcs.USER_NAMES = USER_NAMES
+    text = stdlib_ext_funcs.STDL_SUBSTITUTE(text)
+
+    # --- aiohttp ---
+    aiohttp_funcs.USER_NAMES = USER_NAMES
+    text = aiohttp_funcs.AIOH_SUBSTITUTE(text)
+
+    # --- acp ---
+    acp_funcs.USER_NAMES = USER_NAMES
+    text = acp_funcs.ACP_SUBSTITUTE(text)
+
+    # --- cdp_use ---
+    cdp_use_funcs.USER_NAMES = USER_NAMES
+    text = cdp_use_funcs.CDP_SUBSTITUTE(text)
+
+    # --- idlelib ---
+    idlelib_funcs.USER_NAMES = USER_NAMES
+    text = idlelib_funcs.IDLE_SUBSTITUTE(text)
 
     # --- utiltools ---
     utiltools_funcs.USER_NAMES = USER_NAMES
