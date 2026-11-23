@@ -9,7 +9,7 @@ import base64
 import hashlib
 import json
 from pathlib import Path
-import re
+from core.apl_runner import regex_cache as re
 import sys
 import io
 import tokenize
