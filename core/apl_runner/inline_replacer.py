@@ -24,7 +24,7 @@ _STANDALONE_METHODS = {
     "يبدأ": "startswith", "ينتهي": "endswith", "ضم": "join",
     "فرز": "sort", "عكس": "reverse", "نسخ": "copy",
 }
-from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs, xml_funcs, archive_funcs, net_funcs, devtools_funcs, web_funcs, datafiles_funcs, syslib_funcs, stdlib_ext_funcs, aiohttp_funcs, acp_funcs, cdp_use_funcs, idlelib_funcs, utiltools_funcs, textdata_funcs, secauth_funcs, webserver_funcs, weblibs_funcs, numpy_funcs, scipy_funcs, telegram_funcs, redis_funcs, celery_funcs
+from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs, xml_funcs, archive_funcs, net_funcs, devtools_funcs, web_funcs, datafiles_funcs, syslib_funcs, stdlib_ext_funcs, aiohttp_funcs, acp_funcs, cdp_use_funcs, idlelib_funcs, utiltools_funcs, textdata_funcs, secauth_funcs, webserver_funcs, weblibs_funcs, numpy_funcs, scipy_funcs, telegram_funcs, redis_funcs, celery_funcs, numdeep_funcs, botdeep_funcs, taskdeep_funcs, storedeep_funcs, pygdeep_funcs, webdeep_funcs, datadeep_funcs, mediadeep_funcs, secdeep_funcs, utildeep_funcs, stdfull_funcs
 
 
 def _replace_type_names(text: str) -> str:
@@ -270,6 +270,50 @@ def _inline_replace(text: str) -> str:
     # --- celery ---
     celery_funcs.USER_NAMES = USER_NAMES
     text = celery_funcs.CEL_SUBSTITUTE(text)
+
+    # --- numdeep ---
+    numdeep_funcs.USER_NAMES = USER_NAMES
+    text = numdeep_funcs.NUMD_SUBSTITUTE(text)
+
+    # --- botdeep ---
+    botdeep_funcs.USER_NAMES = USER_NAMES
+    text = botdeep_funcs.BOTD_SUBSTITUTE(text)
+
+    # --- taskdeep ---
+    taskdeep_funcs.USER_NAMES = USER_NAMES
+    text = taskdeep_funcs.TSKD_SUBSTITUTE(text)
+
+    # --- storedeep ---
+    storedeep_funcs.USER_NAMES = USER_NAMES
+    text = storedeep_funcs.STOD_SUBSTITUTE(text)
+
+    # --- pygdeep ---
+    pygdeep_funcs.USER_NAMES = USER_NAMES
+    text = pygdeep_funcs.PYGD_SUBSTITUTE(text)
+
+    # --- webdeep ---
+    webdeep_funcs.USER_NAMES = USER_NAMES
+    text = webdeep_funcs.WEBD_SUBSTITUTE(text)
+
+    # --- datadeep ---
+    datadeep_funcs.USER_NAMES = USER_NAMES
+    text = datadeep_funcs.DATD_SUBSTITUTE(text)
+
+    # --- mediadeep ---
+    mediadeep_funcs.USER_NAMES = USER_NAMES
+    text = mediadeep_funcs.MEDD_SUBSTITUTE(text)
+
+    # --- secdeep ---
+    secdeep_funcs.USER_NAMES = USER_NAMES
+    text = secdeep_funcs.SECD_SUBSTITUTE(text)
+
+    # --- utildeep ---
+    utildeep_funcs.USER_NAMES = USER_NAMES
+    text = utildeep_funcs.UTLD_SUBSTITUTE(text)
+
+    # --- stdfull ---
+    stdfull_funcs.USER_NAMES = USER_NAMES
+    text = stdfull_funcs.STDF_SUBSTITUTE(text)
 
     # --- f-string interpolation: translate expressions inside {...} ---
     _APL_FSTR_RE = re.compile(r'(?P<pre>[fF])"[^"\\]*(?:\\.[^"\\]*)*"')

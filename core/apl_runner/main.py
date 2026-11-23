@@ -33,7 +33,7 @@ _RESERVED_KEYS = _build_reserved_keys()  # empty: unused, see docstring
 
 # Constant folding on by default; APL_NO_FOLD=1 turns it off.
 _APL_FOLD = os.environ.get("APL_NO_FOLD", "") not in ("1", "true", "yes")
-from core.libraries import decimal_funcs, fractions_funcs, string_funcs, secrets_funcs, zoneinfo_funcs, getpass_funcs, operator_funcs, pprint_funcs, math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs, xml_funcs, archive_funcs, net_funcs, devtools_funcs, web_funcs, datafiles_funcs, syslib_funcs, stdlib_ext_funcs, aiohttp_funcs, acp_funcs, cdp_use_funcs, idlelib_funcs, utiltools_funcs, textdata_funcs, secauth_funcs, webserver_funcs, weblibs_funcs, numpy_funcs, scipy_funcs, telegram_funcs, redis_funcs, celery_funcs
+from core.libraries import decimal_funcs, fractions_funcs, string_funcs, secrets_funcs, zoneinfo_funcs, getpass_funcs, operator_funcs, pprint_funcs, math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs, xml_funcs, archive_funcs, net_funcs, devtools_funcs, web_funcs, datafiles_funcs, syslib_funcs, stdlib_ext_funcs, aiohttp_funcs, acp_funcs, cdp_use_funcs, idlelib_funcs, utiltools_funcs, textdata_funcs, secauth_funcs, webserver_funcs, weblibs_funcs, numpy_funcs, scipy_funcs, telegram_funcs, redis_funcs, celery_funcs, numdeep_funcs, botdeep_funcs, taskdeep_funcs, storedeep_funcs, pygdeep_funcs, webdeep_funcs, datadeep_funcs, mediadeep_funcs, secdeep_funcs, utildeep_funcs, stdfull_funcs
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 if sys.platform == "win32":
@@ -396,6 +396,72 @@ def transpile(source: str) -> str:
                         and ("import " + m) not in code]
         if _celery_mods:
             needs.append("import " + ", ".join(_celery_mods))
+    if re.search(numdeep_funcs.IMPORT_CHECK, code):
+        _numdeep_mods = [mod for mod in numdeep_funcs.IMPORT_MODULES
+                        if re.search(r"(?<![\w.])" + re.escape(mod) + r"\.", code)
+                        and ("import " + mod) not in code]
+        if _numdeep_mods:
+            needs.append("import " + ", ".join(_numdeep_mods))
+    if re.search(botdeep_funcs.IMPORT_CHECK, code):
+        _botdeep_mods = [mod for mod in botdeep_funcs.IMPORT_MODULES
+                        if re.search(r"(?<![\w.])" + re.escape(mod) + r"\.", code)
+                        and ("import " + mod) not in code]
+        if _botdeep_mods:
+            needs.append("import " + ", ".join(_botdeep_mods))
+    if re.search(taskdeep_funcs.IMPORT_CHECK, code):
+        _taskdeep_mods = [mod for mod in taskdeep_funcs.IMPORT_MODULES
+                        if re.search(r"(?<![\w.])" + re.escape(mod) + r"\.", code)
+                        and ("import " + mod) not in code]
+        if _taskdeep_mods:
+            needs.append("import " + ", ".join(_taskdeep_mods))
+    if re.search(storedeep_funcs.IMPORT_CHECK, code):
+        _storedeep_mods = [mod for mod in storedeep_funcs.IMPORT_MODULES
+                        if re.search(r"(?<![\w.])" + re.escape(mod) + r"\.", code)
+                        and ("import " + mod) not in code]
+        if _storedeep_mods:
+            needs.append("import " + ", ".join(_storedeep_mods))
+    if re.search(pygdeep_funcs.IMPORT_CHECK, code):
+        _pygdeep_mods = [mod for mod in pygdeep_funcs.IMPORT_MODULES
+                        if re.search(r"(?<![\w.])" + re.escape(mod) + r"\.", code)
+                        and ("import " + mod) not in code]
+        if _pygdeep_mods:
+            needs.append("import " + ", ".join(_pygdeep_mods))
+    if re.search(webdeep_funcs.IMPORT_CHECK, code):
+        _webdeep_mods = [mod for mod in webdeep_funcs.IMPORT_MODULES
+                        if re.search(r"(?<![\w.])" + re.escape(mod) + r"\.", code)
+                        and ("import " + mod) not in code]
+        if _webdeep_mods:
+            needs.append("import " + ", ".join(_webdeep_mods))
+    if re.search(datadeep_funcs.IMPORT_CHECK, code):
+        _datadeep_mods = [mod for mod in datadeep_funcs.IMPORT_MODULES
+                        if re.search(r"(?<![\w.])" + re.escape(mod) + r"\.", code)
+                        and ("import " + mod) not in code]
+        if _datadeep_mods:
+            needs.append("import " + ", ".join(_datadeep_mods))
+    if re.search(mediadeep_funcs.IMPORT_CHECK, code):
+        _mediadeep_mods = [mod for mod in mediadeep_funcs.IMPORT_MODULES
+                        if re.search(r"(?<![\w.])" + re.escape(mod) + r"\.", code)
+                        and ("import " + mod) not in code]
+        if _mediadeep_mods:
+            needs.append("import " + ", ".join(_mediadeep_mods))
+    if re.search(secdeep_funcs.IMPORT_CHECK, code):
+        _secdeep_mods = [mod for mod in secdeep_funcs.IMPORT_MODULES
+                        if re.search(r"(?<![\w.])" + re.escape(mod) + r"\.", code)
+                        and ("import " + mod) not in code]
+        if _secdeep_mods:
+            needs.append("import " + ", ".join(_secdeep_mods))
+    if re.search(utildeep_funcs.IMPORT_CHECK, code):
+        _utildeep_mods = [mod for mod in utildeep_funcs.IMPORT_MODULES
+                        if re.search(r"(?<![\w.])" + re.escape(mod) + r"\.", code)
+                        and ("import " + mod) not in code]
+        if _utildeep_mods:
+            needs.append("import " + ", ".join(_utildeep_mods))
+    if re.search(stdfull_funcs.IMPORT_CHECK, code):
+        _stdfull_mods = [mod for mod in stdfull_funcs.IMPORT_MODULES
+                        if re.search(r"(?<![\w.])" + re.escape(mod) + r"\.", code)
+                        and ("import " + mod) not in code]
+        if _stdfull_mods:
+            needs.append("import " + ", ".join(_stdfull_mods))
     if re.search(shutil_funcs.IMPORT_CHECK, code) and "import shutil" not in code:
         needs.append("import shutil")
     if re.search(textwrap_funcs.IMPORT_CHECK, code) and "import textwrap" not in code:

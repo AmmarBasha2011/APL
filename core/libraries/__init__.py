@@ -66,6 +66,17 @@ from . import scipy_funcs
 from . import telegram_funcs
 from . import redis_funcs
 from . import celery_funcs
+from . import numdeep_funcs
+from . import botdeep_funcs
+from . import taskdeep_funcs
+from . import storedeep_funcs
+from . import pygdeep_funcs
+from . import webdeep_funcs
+from . import datadeep_funcs
+from . import mediadeep_funcs
+from . import secdeep_funcs
+from . import utildeep_funcs
+from . import stdfull_funcs
 
 # Registry: module references for easy access
 LIBRARIES = {
@@ -132,6 +143,17 @@ LIBRARIES = {
     "telegram": telegram_funcs,
     "redis": redis_funcs,
     "celery": celery_funcs,
+    "numdeep": numdeep_funcs,
+    "botdeep": botdeep_funcs,
+    "taskdeep": taskdeep_funcs,
+    "storedeep": storedeep_funcs,
+    "pygdeep": pygdeep_funcs,
+    "webdeep": webdeep_funcs,
+    "datadeep": datadeep_funcs,
+    "mediadeep": mediadeep_funcs,
+    "secdeep": secdeep_funcs,
+    "utildeep": utildeep_funcs,
+    "stdfull": stdfull_funcs,
 }
 
 def get_all_funcs():
