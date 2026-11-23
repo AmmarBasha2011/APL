@@ -11,6 +11,8 @@ import json
 from pathlib import Path
 import re
 import sys
+import io
+import tokenize
 
 ENTRIES = json.loads(Path(__file__).with_name('registry.json').read_text(encoding='utf-8'))
 
@@ -41,6 +43,16 @@ def substitute_all(text, user_names):
 
 
 def imports_for(code):
+    # Text mentioning "numpy.x" is data, not an import request. Python 3.14
+    # exposes f-string expression tokens separately, so those stay visible.
+    try:
+        tokens = list(tokenize.generate_tokens(io.StringIO(code).readline))
+        hidden = {tokenize.STRING, tokenize.COMMENT,
+                  getattr(tokenize, 'FSTRING_MIDDLE', -1)}
+        code = tokenize.untokenize([token._replace(string=' ' * len(token.string))
+                                   if token.type in hidden else token for token in tokens])
+    except (tokenize.TokenError, IndentationError, SyntaxError):
+        pass  # Compilation will report malformed generated code separately.
     needs = []
     for entry in ENTRIES:
         check = entry['import_check']

@@ -130,6 +130,12 @@ class CompilerTests(unittest.TestCase):
             result = cli(str(path))
             self.assertEqual(result.returncode, 1)
 
+    def test_literal_does_not_request_optional_import(self):
+        result = cli('-c', 'اطبع "numpy.array http.server flask.route"')
+        self.assertEqual(result.returncode, 0, result.stderr)
+        from core.libraries.registry import imports_for
+        self.assertEqual(imports_for('print("numpy.array")'), [])
+
     def test_taskbook(self):
         with tempfile.TemporaryDirectory() as temp:
             db = str(Path(temp) / 'tasks.db')
