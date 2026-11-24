@@ -6,20 +6,13 @@ Transpiles Arabic time/datetime keywords to Python time/datetime module calls
 TIME_FUNCS = {
     # time module - وقت
     "وقت": "time.time",
-    "وقت_نومي": "time.sleep",
     "وقت_نص": "time.ctime",
     "وقت_عالمي": "time.gmtime",
     "وقت_محلي": "time.localtime",
     "مؤشر_أداء": "time.perf_counter",
-    "وقت_عملية": "time.process_time",
-    "وقت_رتيب": "time.monotonic",
     
     # datetime module - تاريخ ووقت
-    "الآن": "datetime.datetime.now",
-    "اليوم": "datetime.date.today",
-    "تاريخ_ووقت": "datetime.datetime",
     "تاريخ": "datetime.date",
-    "وقت_فقط": "datetime.time",
     "مدة": "datetime.timedelta",
     "من_نص_وقت": "datetime.datetime.strptime",
     "لتنسيق_وقت": "datetime.datetime.strftime",

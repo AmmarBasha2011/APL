@@ -4,7 +4,6 @@ Transpiles Arabic keywords to Python operator module
 """
 
 OPERATOR_FUNCS = {
-    "عامل_جمع": "operator.add",
     "عامل_طرح": "operator.sub",
     "عامل_ضرب": "operator.mul",
     "عامل_قسمة": "operator.truediv",
@@ -14,17 +13,12 @@ OPERATOR_FUNCS = {
     "عامل_سالب": "operator.neg",
     "عامل_مطلق": "operator.abs",
     "مساواة_عامل": "operator.eq",
-    "اختلاف_عامل": "operator.ne",
     "أصغر_عامل": "operator.lt",
-    "أصغر_أو_يساوي_عامل": "operator.le",
     "أكبر_عامل": "operator.gt",
     "أكبر_أو_يساوي_عامل": "operator.ge",
-    "عامل_نفي": "operator.not_",
     "عامل_و": "operator.and_",
     "عامل_أو": "operator.or_",
-    "عامل_أو_حصري": "operator.xor",
     "جالب_عنصر": "operator.itemgetter",
-    "جالب_خاصية": "operator.attrgetter",
     "حجم_تقريبي": "operator.length_hint",
     "بانتظار_الكل": "_apl_operator_all",
     "أي_من_الكل": "_apl_operator_any",

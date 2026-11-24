@@ -5,17 +5,13 @@ Transpiles Arabic keywords to Python shutil module
 
 SHUTIL_FUNCS = {
     "انسخ_ملف": "shutil.copy",
-    "انسخ_ملف_كامل": "shutil.copy2",
     "انسخ_شجرة": "shutil.copytree",
     "انقل_ملف": "shutil.move",
     "احذف_شجرة": "shutil.rmtree",
     "نسخ_محتوى": "shutil.copyfile",
     "الحجم_البشري": "shutil.disk_usage",
-    "ابحث_في_المسار": "shutil.which",
     "أمر_النظام": "shutil.which",
-    "انسخ_الصلاحيات": "shutil.copymode",
     "انسخ_البيانات": "shutil.copyfileobj",
-    "تجاهل_الملفات": "shutil.ignore_patterns",
 }
 
 SHUTIL_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(SHUTIL_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("

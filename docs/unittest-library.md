@@ -2,14 +2,12 @@
 
 مكتبة unittest الكاملة بالعربي، اختبارات الوحدة:
 
-**84 عنصراً عربياً** (الدوال: 84).
+**81 عنصراً عربياً** (الدوال: 84).
 
-## الدوال (84)
+## الدوال (81)
 
 | العربي | Python |
 |--------|--------|
-| `حالة_اختبار` | `unittest.TestCase` |
-| `أنشئ_اختبار` | `unittest.TestCase` |
 | `setUp` | `setUp` |
 | `tearDown` | `tearDown` |
 | `setUpClass` | `setUpClass` |
@@ -78,7 +76,6 @@
 | `نفس_الصف` | `assertTupleEqual` |
 | `نفس_المجموعة` | `assertSetEqual` |
 | `نفس_القاموس` | `assertDictEqual` |
-| `مجموعة_اختبارات` | `unittest.TestSuite` |
 | `أضف_اختبار` | `testSuite.addTest` |
 | `شغل_اختبارات` | `unittest.TextTestRunner` |
 | `نفذ_اختبار` | `testRunner.run` |

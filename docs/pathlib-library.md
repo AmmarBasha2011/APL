@@ -2,43 +2,21 @@
 
 التعامل مع مسارات نظام الملفات ككائنات بدلاً من نصوص.
 
-**61 عنصراً عربياً** (الدوال: 31، دوال الكائنات: 21، الخصائص: 7، المعاملات المسماة: 2).
+**39 عنصراً عربياً** (الدوال: 31، دوال الكائنات: 21، الخصائص: 7، المعاملات المسماة: 2).
 
-## الدوال (31)
+## الدوال (9)
 
 | العربي | Python |
 |--------|--------|
 | `مسار_جديد` | `pathlib.Path` |
-| `درب` | `pathlib.Path` |
-| `أنشئ_مسار` | `pathlib.Path` |
 | `المسار_الحالي` | `pathlib.Path.cwd` |
-| `المسار_المنزل` | `pathlib.Path.home` |
-| `مسار_ادمج` | `pathlib.Path.joinpath` |
-| `مسار_نص` | `pathlib.Path.as_posix` |
-| `مسار_مطلق_كامل` | `pathlib.Path.resolve` |
-| `مسار_نسبي_كامل` | `pathlib.Path.absolute` |
 | `مسار_موجود` | `_apl_path_exists` |
-| `مسار_هو_مجلد` | `pathlib.Path.is_dir` |
-| `مسار_هو_ملف` | `pathlib.Path.is_file` |
-| `مسار_رابط_رمزي` | `pathlib.Path.is_symlink` |
-| `مسار_إحصاء` | `pathlib.Path.stat` |
-| `مسار_لمس` | `pathlib.Path.touch` |
-| `مسار_فتح` | `pathlib.Path.open` |
 | `مسار_اقرأ` | `pathlib.Path.read_text` |
 | `مسار_اكتب` | `pathlib.Path.write_text` |
-| `مسار_اقرأ_ثنائي` | `pathlib.Path.read_bytes` |
-| `مسار_اكتب_ثنائي` | `pathlib.Path.write_bytes` |
 | `مسار_ابحث` | `pathlib.Path.glob` |
-| `مسار_ابحث_الكل` | `pathlib.Path.rglob` |
-| `مسار_إعادة_تسمية` | `pathlib.Path.rename` |
-| `مسار_استبدال` | `pathlib.Path.replace` |
 | `مسار_محتويات` | `pathlib.Path.iterdir` |
-| `مسار_أنشئ_مجلد` | `pathlib.Path.mkdir` |
 | `أنشئ_مجلد_مسار` | `pathlib.Path.mkdir` |
 | `مسار_احذف` | `pathlib.Path.unlink` |
-| `مسار_احذف_مجلد` | `pathlib.Path.rmdir` |
-| `مسار_نفسه` | `pathlib.Path.samefile` |
-| `مسار_أنشئ_رابط` | `pathlib.Path.symlink_to` |
 
 ## دوال الكائنات (21) — `PATHLIB_METHODS`
 

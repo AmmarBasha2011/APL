@@ -5,11 +5,7 @@ Full threading wrapper with Arabic keywords
 
 THREADING_FUNCS = {
     # إنشاء ثريد
-    "ثريد": "threading.Thread",
     "أنشئ_ثريد": "threading.Thread",
-    "مهمة_خيوط": "threading.Thread",
-    "أنشئ_مهمة_خيوط": "threading.Thread",
-    "عامل": "threading.Thread",
     
     # التحكم في الثريد
     "ابدأ_خيوط": "thread.start",
@@ -22,36 +18,30 @@ THREADING_FUNCS = {
     "دايمون": "thread.daemon",
     
     # القفل (Lock)
-    "قفل_خيوط": "threading.Lock",
     "أنشئ_قفل": "threading.Lock",
     "امتلك_خيوط": "lock.acquire",
     "أطلق_خيوط": "lock.release",
     
     # الإشارات (Semaphore)
-    "إشارة_خيوط": "threading.Semaphore",
     "أنشئ_إشارة": "threading.Semaphore",
     
     # الأحداث (Event)
-    "حدث_خيوط": "threading.Event",
     "أنشئ_حدث": "threading.Event",
     "انتظر_حدث_خيوط": "event.wait",
     "أطلق_حدث_خيوط": "event.set",
     "امسح_حدث_خيوط": "event.clear",
     
     # المؤقت (Timer)
-    "مؤقت_خيوط": "threading.Timer",
     "أنشئ_مؤقت_خيوط": "threading.Timer",
     
     # الثريد الحالي
     "ثريد_حالي": "threading.current_thread",
-    "الثريد_الحالي": "threading.current_thread",
     
     # عداد الثريدات
     "عداد_ثريدات": "threading.active_count",
     
     # النوم
     "نوم_خيوط": "time.sleep",
-    "انتظر_ثانية": "time.sleep",
 }
 
 THREADING_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(THREADING_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("

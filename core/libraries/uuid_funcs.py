@@ -6,11 +6,8 @@ Transpiles Arabic keywords to Python uuid module
 UUID_FUNCS = {
     "معرف_فريد": "uuid.uuid4",
     "معرف_نص": "str",
-    "معرف_عشوائي": "uuid.uuid4",
     "معرف_زمني": "uuid.uuid1",
     "معرف_بالاسم": "uuid.uuid3",
-    "معرف_من_نص": "uuid.UUID",
-    "معرف_فارغ": "uuid.UUID",
 }
 
 UUID_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(UUID_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("

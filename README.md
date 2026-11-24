@@ -45,86 +45,86 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 | المكتبة | عدد العناصر | الوصف |
 |---------|------------:|-------|
-| `devtools` | 1123 | أدوات المطوّر: فحص، تصحيح، قياس أداء، ترجمة (inspect / ast / dis / pdb / doctest / timeit / profile / tracemalloc) |
-| `datafiles` | 2631 | البيانات والملفات: مسارات، ضغط، أرشيف، تسلسل، هياكل بيانات، XML، يونيكود (io / zipfile / tarfile / pickle / shelve / array / struct / xml.dom / xml.etree / unicodedata) |
-| `syslib` | 3973 | النظام والتشغيل والتشخيص: منصة، إشارات، موارد، تسجيل، اختبارات، عمليات متعددة، ctypes، سياق (platform / signal / resource / logging / unittest / multiprocessing / concurrent.futures / ctypes / termios) |
-| `weblibs` | 5383 | الويب والنصوص: بث متدفق، قوالب، ماركداون، تورنيدو، سطر الأوامر، تلوين الشيفرة (websockets / jinja2 / markdown / tornado / click / pygments) |
-| `webserver` | 5492 | الخوادم والشبكات: خوادم ASGI/WSGI، عملاء HTTP غير متزامنين، HTTP/1.1 (starlette / uvicorn / httpx / httpcore / h11 / anyio) |
-| `secauth` | 5495 | الأمان والمصادقة: تشفير وشهادات، قوالب معزولة، تحقق من المخططات، JWT (cryptography / jinja2 / jsonschema / jwt / cffi) |
-| `textdata` | 5481 | النصوص والبيانات: مطابقة الأنماط، أصناف الخصائص، الصور، النماذج الأولية (pathspec / attrs / PIL / markdown / proto) |
-| `utiltools` | 5494 | الأدوات المساعدة: الإصدارات والتواريخ، أشرطة التقدم، مراقبة العمليات (packaging / dateutil / tqdm / psutil / websockets) |
-| `idlelib` | 11138 | بيئة التطوير المدمجة: محرر، إكمال تلقائي، مصحح، إعدادات (idlelib) |
-| `cdp_use` | 10569 | بروتوكول أدوات تطوير كروم CDP (cdp_use) |
-| `acp` | 11180 | بروتوكول العميل-الوكيل ACP (acp) |
-| `aiohttp` | 15590 | عميل وخادم HTTP غير متزامنين (aiohttp) |
-| `stdlib_ext` | 12950 | توسعة المكتبة القياسية (encodings / inspect / doctest / pdb / tracemalloc) |
-| `numpy` | 5937 | الحساب العددي: مصفوفات، جبر خطي، تحويلات فورييه، عشوائيات (numpy) |
-| `scipy` | 8396 | الحساب العلمي: تكامل، تحسين، استيفاء، إحصاء، مصفوفات متناثرة (scipy) |
-| `telegram` | 6429 | بوتات تيليجرام: رسائل، محادثات، مستخدمون، لوحات مفاتيح (python-telegram-bot) |
-| `redis` | 6500 | تخزين المفاتيح والقيم والجلسات والمهام الموزعة (redis-py) |
-| `celery` | 6350 | طوابير المهام الموزعة والجدولة الزمنية (celery) |
-| `numdeep` | 12664 | الحساب العددي والعلمي العميق: مصفوفات وجبر خطي وإحصاء وتكامل (numpy / scipy) |
-| `botdeep` | 4317 | بوتات تيليجرام العميقة: كل أنواع الرسائل والتحديثات واللوحات (python-telegram-bot) |
-| `taskdeep` | 18041 | المهام الموزعة العميقة: طوابير ورسائل وجدولة ونتائج (celery / kombu / billiard / amqp) |
-| `storedeep` | 24593 | التخزين العميق: كل أوامر وأنواع redis (redis-py) |
-| `pygdeep` | 30302 | تلوين الشيفرة العميق: كل المُحلّلات والمُنسّقات والأنماط (pygments) |
-| `webdeep` | 8770 | الويب العميق: أطر وخوادم وبروتوكولات (fastapi / starlette / tornado / websockets) |
-| `datadeep` | 15138 | النماذج والتحقق العميق: مخططات وأنواع وتحقق (pydantic / jsonschema) |
-| `mediadeep` | 11440 | الصور والنصوص العميقة: صور وماركداون وقوالب وسطر أوامر (PIL / markdown / jinja2) |
-| `secdeep` | 6190 | الأمان وسحابة جوجل العميقة: تشفير وتوكنات وواجهات API (cryptography / google) |
-| `utildeep` | 1160 | الأدوات العميقة: تواريخ ومناطق ومراقبة وحزم مساعدة (dateutil / pytz / psutil) |
-| `stdfull` | 9235 | المكتبة القياسية الشاملة: كل ما تبقى من وحدات Python القياسية |
-| `web` | 2757 | الويب والبريد: عناوين، HTTP، بريد، صناديق، كوكيز، HTML، WSGI، XML-RPC (http / urllib / email / mailbox / html / wsgiref / xmlrpc) |
-| `net` | 1006 | الشبكة: socket و ssl و http و email و SMTP/IMAP/FTP |
-| `fastapi` | 536 | إطار عمل ويب حديث |
-| `requests` | 244 | HTTP Client كامل |
-| `advanced` | 135 | ميزات متقدمة (decorators, metaclasses, typing) |
-| `asyncio` | 118 | برمجة غير متزامنة |
-| `argparse` | 109 | تحليل وسائط سطر الأوامر |
+| `devtools` | 969 | أدوات المطوّر: فحص، تصحيح، قياس أداء، ترجمة (inspect / ast / dis / pdb / doctest / timeit / profile / tracemalloc) |
+| `datafiles` | 2514 | البيانات والملفات: مسارات، ضغط، أرشيف، تسلسل، هياكل بيانات، XML، يونيكود (io / zipfile / tarfile / pickle / shelve / array / struct / xml.dom / xml.etree / unicodedata) |
+| `syslib` | 3712 | النظام والتشغيل والتشخيص: منصة، إشارات، موارد، تسجيل، اختبارات، عمليات متعددة، ctypes، سياق (platform / signal / resource / logging / unittest / multiprocessing / concurrent.futures / ctypes / termios) |
+| `weblibs` | 1431 | الويب والنصوص: بث متدفق، قوالب، ماركداون، تورنيدو، سطر الأوامر، تلوين الشيفرة (websockets / jinja2 / markdown / tornado / click / pygments) |
+| `webserver` | 1925 | الخوادم والشبكات: خوادم ASGI/WSGI، عملاء HTTP غير متزامنين، HTTP/1.1 (starlette / uvicorn / httpx / httpcore / h11 / anyio) |
+| `secauth` | 1730 | الأمان والمصادقة: تشفير وشهادات، قوالب معزولة، تحقق من المخططات، JWT (cryptography / jinja2 / jsonschema / jwt / cffi) |
+| `textdata` | 1571 | النصوص والبيانات: مطابقة الأنماط، أصناف الخصائص، الصور، النماذج الأولية (pathspec / attrs / PIL / markdown / proto) |
+| `utiltools` | 1401 | الأدوات المساعدة: الإصدارات والتواريخ، أشرطة التقدم، مراقبة العمليات (packaging / dateutil / tqdm / psutil / websockets) |
+| `idlelib` | 720 | بيئة التطوير المدمجة: محرر، إكمال تلقائي، مصحح، إعدادات (idlelib) |
+| `cdp_use` | 1164 | بروتوكول أدوات تطوير كروم CDP (cdp_use) |
+| `acp` | 403 | بروتوكول العميل-الوكيل ACP (acp) |
+| `aiohttp` | 1310 | عميل وخادم HTTP غير متزامنين (aiohttp) |
+| `stdlib_ext` | 6607 | توسعة المكتبة القياسية (encodings / inspect / doctest / pdb / tracemalloc) |
+| `numpy` | 2124 | الحساب العددي: مصفوفات، جبر خطي، تحويلات فورييه، عشوائيات (numpy) |
+| `scipy` | 3913 | الحساب العلمي: تكامل، تحسين، استيفاء، إحصاء، مصفوفات متناثرة (scipy) |
+| `telegram` | 3572 | بوتات تيليجرام: رسائل، محادثات، مستخدمون، لوحات مفاتيح (python-telegram-bot) |
+| `redis` | 2106 | تخزين المفاتيح والقيم والجلسات والمهام الموزعة (redis-py) |
+| `celery` | 2652 | طوابير المهام الموزعة والجدولة الزمنية (celery) |
+| `numdeep` | 936 | الحساب العددي والعلمي العميق: مصفوفات وجبر خطي وإحصاء وتكامل (numpy / scipy) |
+| `botdeep` | 925 | بوتات تيليجرام العميقة: كل أنواع الرسائل والتحديثات واللوحات (python-telegram-bot) |
+| `taskdeep` | 3449 | المهام الموزعة العميقة: طوابير ورسائل وجدولة ونتائج (celery / kombu / billiard / amqp) |
+| `storedeep` | 1501 | التخزين العميق: كل أوامر وأنواع redis (redis-py) |
+| `pygdeep` | 9078 | تلوين الشيفرة العميق: كل المُحلّلات والمُنسّقات والأنماط (pygments) |
+| `webdeep` | 1778 | الويب العميق: أطر وخوادم وبروتوكولات (fastapi / starlette / tornado / websockets) |
+| `datadeep` | 2435 | النماذج والتحقق العميق: مخططات وأنواع وتحقق (pydantic / jsonschema) |
+| `mediadeep` | 3406 | الصور والنصوص العميقة: صور وماركداون وقوالب وسطر أوامر (PIL / markdown / jinja2) |
+| `secdeep` | 2546 | الأمان وسحابة جوجل العميقة: تشفير وتوكنات وواجهات API (cryptography / google) |
+| `utildeep` | 478 | الأدوات العميقة: تواريخ ومناطق ومراقبة وحزم مساعدة (dateutil / pytz / psutil) |
+| `stdfull` | 4326 | المكتبة القياسية الشاملة: كل ما تبقى من وحدات Python القياسية |
+| `web` | 2640 | الويب والبريد: عناوين، HTTP، بريد، صناديق، كوكيز، HTML، WSGI، XML-RPC (http / urllib / email / mailbox / html / wsgiref / xmlrpc) |
+| `net` | 879 | الشبكة: socket و ssl و http و email و SMTP/IMAP/FTP |
+| `fastapi` | 531 | إطار عمل ويب حديث |
+| `requests` | 185 | HTTP Client كامل |
+| `advanced` | 114 | ميزات متقدمة (decorators, metaclasses, typing) |
+| `asyncio` | 101 | برمجة غير متزامنة |
+| `argparse` | 106 | تحليل وسائط سطر الأوامر |
 | `xml` | 109 | قراءة وبناء وتعديل ملفات XML (ElementTree) |
 | `archive` | 106 | أرشيف ZIP و TAR وضغط gzip / bz2 / xz |
-| `logging` | 87 | تسجيل الأحداث |
-| `unittest` | 84 | اختبارات الوحدة |
+| `logging` | 61 | تسجيل الأحداث |
+| `unittest` | 81 | اختبارات الوحدة |
 | `flask` | 78 | إطار عمل ويب |
-| `subprocess` | 74 | أوامر النظام |
-| `dataclasses` | 68 | فئات بيانات، تعدادات، ABC |
+| `subprocess` | 67 | أوامر النظام |
+| `dataclasses` | 51 | فئات بيانات، تعدادات، ABC |
 | `math` | 63 | مثلثات، لوغاريتمات، جذور، تقريب، هندسة |
-| `pathlib` | 61 | التعامل مع المسارات ككائنات |
-| `datetime` | 45 | التاريخ والوقت والتحويل بينهما |
-| `configparser` | 35 | ملفات الإعدادات |
-| `os` | 30 | ملفات، مجلدات، مسارات، فحص |
-| `threading` | 29 | تعدد المهام |
-| `operator` | 26 | المشغّلات كدوال (add, mul, itemgetter) |
-| `time` | 25 | وقت، تاريخ، تأخير، تنسيق |
-| `re` | 25 | تعابير نمطية، بحث، استبدال، تقسيم |
-| `sqlite3` | 24 | قاعدة بيانات محلية |
-| `decimal` | 24 | الحساب العشري الدقيق (بدون أخطاء تقريب) |
+| `pathlib` | 39 | التعامل مع المسارات ككائنات |
+| `datetime` | 19 | التاريخ والوقت والتحويل بينهما |
+| `configparser` | 32 | ملفات الإعدادات |
+| `os` | 20 | ملفات، مجلدات، مسارات، فحص |
+| `threading` | 19 | تعدد المهام |
+| `operator` | 20 | المشغّلات كدوال (add, mul, itemgetter) |
+| `time` | 18 | وقت، تاريخ، تأخير، تنسيق |
+| `re` | 24 | تعابير نمطية، بحث، استبدال، تقسيم |
+| `sqlite3` | 20 | قاعدة بيانات محلية |
+| `decimal` | 21 | الحساب العشري الدقيق (بدون أخطاء تقريب) |
 | `random` | 20 | أرقام عشوائية، توزيعات، خلط |
-| `itertools` | 19 | أدوات تكرار، توافيق، تباديل |
-| `statistics` | 16 | متوسط، وسيط، منوال، تباين، انحراف معياري |
-| `csv` | 13 | ملفات بيانات |
-| `uuid` | 13 | المعرفات الفريدة (UUID) |
-| `urllib` | 13 | تحليل وبناء الروابط وترميزها |
-| `shutil` | 12 | نسخ ونقل وحذف الملفات والمجلدات |
+| `itertools` | 12 | أدوات تكرار، توافيق، تباديل |
+| `statistics` | 15 | متوسط، وسيط، منوال، تباين، انحراف معياري |
+| `csv` | 12 | ملفات بيانات |
+| `uuid` | 10 | المعرفات الفريدة (UUID) |
+| `urllib` | 1 | تحليل وبناء الروابط وترميزها |
+| `shutil` | 8 | نسخ ونقل وحذف الملفات والمجلدات |
 | `base64` | 11 | الترميز وفك الترميز |
-| `json` | 10 | قراءة وكتابة JSON |
+| `json` | 5 | قراءة وكتابة JSON |
 | `string` | 10 | مجموعات الأحرف والرموز الثابتة |
-| `collections` | 9 | Counter, defaultdict, deque |
-| `textwrap` | 9 | تنسيق النصوص ولفّها |
-| `functools` | 9 | أدوات الدوال (partial, cache, wraps) |
-| `fractions` | 8 | الكسور الرياضية الدقيقة |
-| `secrets` | 8 | توليد قيم عشوائية آمنة تشفيرياً |
-| `zoneinfo` | 8 | المناطق الزمنية (IANA) |
-| `hashlib` | 7 | تجزئة وتشفير |
+| `collections` | 3 | Counter, defaultdict, deque |
+| `textwrap` | 5 | تنسيق النصوص ولفّها |
+| `functools` | 2 | أدوات الدوال (partial, cache, wraps) |
+| `fractions` | 6 | الكسور الرياضية الدقيقة |
+| `secrets` | 7 | توليد قيم عشوائية آمنة تشفيرياً |
+| `zoneinfo` | 6 | المناطق الزمنية (IANA) |
+| `hashlib` | 4 | تجزئة وتشفير |
 | `enum` | 7 | أنواع معدودة (Enums) — قيم مسمّاة بدل الأرقام السحرية |
 | `getpass` | 2 | إدخال كلمات السر دون إظهارها |
 | `pprint` | 2 | طباعة منسّقة للقواميس والقوائم |
 
-**الإجمالي: 278,065 عنصراً في 74 مكتبة** (278,047 مفتاحاً فريداً بعد إزالة التكرار).
+**الإجمالي: 76,234 عنصراً في 74 مكتبة** (76,219 مفتاحاً فريداً بعد إزالة التكرار).
 
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
-في `core/apl_runner/patterns.py`، فيصبح عدد العناصر العربية الفريدة في اللغة **278,278 عنصراً**.
+في `core/apl_runner/patterns.py`، فيصبح عدد العناصر العربية الفريدة في اللغة **76,450 عنصراً**.
 
 ## الأمثلة
 
@@ -816,6 +816,8 @@ python test_examples.py     # يشغّل كل الأمثلة ويفحص النت
 | الأمر | ماذا يفحص |
 |-------|-----------|
 | `python scripts/check_libraries.py` | كل عنصر في كل مكتبة يُترجم فعلاً لهدفه + حلّ المسارات + مفيش تكرار ولا تصادم |
+| `python scripts/check_duplicates.py` | لا يوجد مفتاحان عربيان يشيران إلى نفس الكائن الحقيقي (حتى لو اختلف المسار) |
+| `python scripts/check_undefined_names.py` | لا مثال ولا كتلة ```apl في التوثيق تستعمل اسماً محذوفاً أو غير معرَّف (يحوّل ويفحص بـ ruff F821) |
 | `python scripts/check_repo.py` | `compileall` + اتساق النسخة والأرقام في التوثيق + التحميل الكسول + بلوكات `README` |
 | `python test_examples.py` | يشغّل كل الأمثلة الـ 500 ويفحص **مخرجاتها** مش بس عدم الخطأ |
 
@@ -886,7 +888,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 278,065 عنصراً عربياً — 74 مكتبة — 535 مثالاً
+**الإصدار:** APL v1.13 — 76,234 عنصراً عربياً — 74 مكتبة — 535 مثالاً
 
 ## Language platform tools
 

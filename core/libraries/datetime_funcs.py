@@ -15,40 +15,17 @@ DATETIME_KWARGS = {
 DATETIME_FUNCS = {
     "التاريخ_اليوم": "datetime.date.today",
     "التاريخ_الآن": "datetime.datetime.now",
-    "تاريخ_و_وقت_الآن": "datetime.datetime.now",
     "الوقت_عالمي_الآن": "datetime.datetime.utcnow",
-    "الوقت_الآن_فقط": "datetime.datetime.today",
     "حوّل_نص_لتاريخ": "datetime.date.fromisoformat",
-    "حوّل_نص_لوقت": "datetime.datetime.fromisoformat",
-    "التاريخ_إلى_نص": "datetime.date.isoformat",
-    "الوقت_إلى_نص": "datetime.datetime.isoformat",
-    "الوقت_إلى_طابع": "datetime.datetime.timestamp",
-    "من_طابع": "datetime.datetime.fromtimestamp",
-    "نسق_الوقت": "datetime.datetime.strftime",
-    "فك_الوقت": "datetime.datetime.strptime",
-    "فرق_الوقت": "datetime.timedelta",
-    "أضف_أيام": "datetime.timedelta",
-    "أيام_من_التاريخ": "datetime.date.toordinal",
     "التاريخ_من_رقم": "datetime.date.fromordinal",
-    "منطقة_الوقت": "datetime.timezone",
-    "تعويض_ساعات": "datetime.timezone",
-    "استبدل_في_الوقت": "datetime.datetime.replace",
-    "اجمع_تاريخ_و_وقت": "datetime.datetime.combine",
-    "تنسيق_تقويمي": "datetime.datetime.isocalendar",
-    "رقم_يوم_الأسبوع": "datetime.date.weekday",
-    "رقم_الأسبوع": "datetime.date.isoweekday",
-    "ثواني_الفرق": "datetime.timedelta.total_seconds",
 }
 
 DATETIME_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(DATETIME_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 DATETIME_CONSTANTS = {
-    "الحد_الأدنى": "datetime.datetime.min",
-    "الحد_الأقصى": "datetime.datetime.max",
-    "منطقة_ع_ي_تي": "datetime.timezone.utc",
 }
 
-DATETIME_CONSTANT_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(DATETIME_CONSTANTS.keys(), key=len, reverse=True)) + r")(?![\w\u0600-\u06FF])"
+DATETIME_CONSTANT_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + ("|".join(sorted(DATETIME_CONSTANTS.keys(), key=len, reverse=True)) or "(?!)") + r")(?![\w\u0600-\u06FF])"
 
 DATETIME_PROPS = {
     "رقم_السنة": "year",
@@ -59,9 +36,6 @@ DATETIME_PROPS = {
     "رقم_الثانية": "second",
     "رقم_الميكروثانية": "microsecond",
     "أيام_الفرق": "days",
-    "الحد_الأدنى": "datetime.datetime.min",
-    "الحد_الأقصى": "datetime.datetime.max",
-    "منطقة_ع_ي_تي": "datetime.timezone.utc",
 }
 
 DATETIME_PROP_PATTERN = r"\.(" + "|".join(sorted(DATETIME_PROPS.keys(), key=len, reverse=True)) + r")(?=\b)"

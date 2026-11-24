@@ -6,7 +6,6 @@ Transpiles Arabic regex keywords to Python re module calls
 RE_FUNCS = {
     # بحث (Searching)
     "بحث_نمطي": "re.search",
-    "بحث_كامل": "re.match",
     "بحث_شامل": "re.findall",
     "بحث_مكرر": "re.finditer",
     

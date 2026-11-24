@@ -8,14 +8,12 @@ ZONEINFO_FUNCS = {
     "كل_المناطق_الزمنية": "zoneinfo.available_timezones",
     "من_النص_إلى_منطقة": "_apl_zone_from_key",
     "إعادة_ضبط_مسار_المناطق": "zoneinfo.reset_tzpath",
-      "منطقة_من_النص": "zoneinfo.ZoneInfo",
 }
 
 ZONEINFO_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(ZONEINFO_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
 
 ZONEINFO_CONSTANTS = {
     "مسار_المناطق": "zoneinfo.TZPATH",
-    "منطقة_utc": "datetime.timezone.utc",
 }
 
 ZONEINFO_CONSTANT_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(ZONEINFO_CONSTANTS.keys(), key=len, reverse=True)) + r")(?![\w\u0600-\u06FF])"

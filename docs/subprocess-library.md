@@ -2,18 +2,13 @@
 
 مكتبة subprocess الكاملة بالعربي، تشغيل أوامر النظام:
 
-**74 عنصراً عربياً** (الدوال: 74).
+**67 عنصراً عربياً** (الدوال: 74).
 
-## الدوال (74)
+## الدوال (67)
 
 | العربي | Python |
 |--------|--------|
-| `أنشئ_عملية_أوامر` | `subprocess.run` |
 | `عملية` | `subprocess.run` |
-| `نفذ_أوامر` | `subprocess.run` |
-| `شغل_أوامر` | `subprocess.run` |
-| `Process` | `subprocess.Popen` |
-| `أنشئ_Process` | `subprocess.Popen` |
 | `حجة_أوامر` | `args` |
 | `قشرة` | `shell` |
 | `انتظر_أوامر` | `timeout` |
@@ -78,8 +73,6 @@
 | `عمليات_فرعية` | `subprocess` |
 | `Popen` | `subprocess.Popen` |
 | `call` | `subprocess.call` |
-| `check_call` | `subprocess.check_call` |
-| `check_output` | `subprocess.check_output` |
 | `getoutput` | `subprocess.getoutput` |
 | `getstatusoutput` | `subprocess.getstatusoutput` |
 

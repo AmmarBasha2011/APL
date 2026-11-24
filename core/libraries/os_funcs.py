@@ -5,13 +5,7 @@ Transpiles Arabic OS/path keywords to Python os/pathlib module calls
 
 OS_FUNCS = {
     # مسارات (Path operations)
-    "مسار_مطلق": "os.path.abspath",
-    "مسار_نسبي": "os.path.relpath",
-    "اسم_ملف": "os.path.basename",
-    "اسم_مجلد": "os.path.dirname",
-    "امتداد": "os.path.splitext",
     "دمج_مسار": "os.path.join",
-    "فصل_مسار": "os.path.split",
     # مجلدات (Directory operations)
     "مجلد_حالي": "os.getcwd",
     "غير_مجلد": "os.chdir",
@@ -23,15 +17,11 @@ OS_FUNCS = {
     # ملفات (File operations)
     "احذف_ملف": "os.remove",
     "اعد_تسمية": "os.rename",
-    "نسخ_ملف": "shutil.copy",
-    "نقل_ملف": "shutil.move",
     "حجم_ملف": "os.path.getsize",
-    "وقت_تعديل": "os.path.getmtime",
     # فحص (Inspection)
     "موجود": "os.path.exists",
     "هو_ملف": "os.path.isfile",
     "هو_مجلد": "os.path.isdir",
-    "هو_رابط_مطلق": "os.path.isabs",
     # بيئة (Environment)
     "متغير_بيئة": "os.environ.get",
     "معرف_عملية": "os.getpid",

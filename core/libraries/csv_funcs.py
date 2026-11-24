@@ -10,7 +10,6 @@ CSV_FUNCS = {
     "اقرأ_ملف_csv": "open",
     
     # كتابة
-    "اكتب_csv": "csv.writer",
     "اكتب_قاموس": "csv.DictWriter",
     "اكتب_ملف_csv": "open",
     

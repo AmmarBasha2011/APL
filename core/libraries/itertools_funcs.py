@@ -5,23 +5,17 @@ Transpiles Arabic itertools keywords to Python itertools module calls
 
 ITERTOOLS_FUNCS = {
     # مكررات لا نهائية (Infinite Iterators)
-    "عد_لا نهائي": "itertools.count",
     "تكرار_لا نهائي": "itertools.cycle",
     "كرر_لا نهائي": "itertools.repeat",
-    "مدى_لا نهائي": "itertools.count",
     
     # مكررات منتهية (Finite Iterators)
     "تجميع": "itertools.chain",
-    "تجميع_من_قوائم": "itertools.chain.from_iterable",
     "ضغط": "itertools.compress",
-    "فلترة_خاطئة": "itertools.filterfalse",
     "قطّع": "itertools.islice",
-    "اقطع": "itertools.islice",
     
     # توليفات (Combinatoric)
     "توافيق_مع_إرجاع": "itertools.combinations_with_replacement",
     "ناتج_ديكارتي": "itertools.product",
-    "تباديل_مع_إرجاع": "itertools.product",
     
     # تجميع (Grouping)
     "اجمع_مفتاح": "itertools.groupby",
@@ -29,7 +23,6 @@ ITERTOOLS_FUNCS = {
     # مساعدة (Helpers)
     "تراكم": "itertools.accumulate",
     "زوجي": "itertools.zip_longest",
-    "سلسلة": "itertools.chain",
     "فلتر": "filter",
     "خريطة": "map",
 }

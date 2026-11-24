@@ -2,9 +2,9 @@
 
 مكتبة الميزات المتقدمة في Python بالعربي:
 
-**135 عنصراً عربياً** (الدوال: 16، الدوال: 70، الدوال: 2، الدوال: 2، دوال الكائنات: 45).
+**114 عنصراً عربياً** (الدوال: 16، الدوال: 70، الدوال: 2، الدوال: 2، دوال الكائنات: 45).
 
-## الدوال (16) — `ADVANCED_BUILTIN_FUNCS`
+## الدوال (15) — `ADVANCED_BUILTIN_FUNCS`
 
 | العربي | Python |
 |--------|--------|
@@ -14,7 +14,6 @@
 | `قاموس_فاضي` | `dict` |
 | `فلترة_قائمة` | `filter` |
 | `تحويل_قائمة` | `map` |
-| `مصفوفة_من` | `array.array` |
 | `نطاق_أرقام` | `range` |
 | `مجموع_مجمّع` | `sum` |
 | `أقصى_قيمة` | `max` |
@@ -25,15 +24,13 @@
 | `فرز_قائمة` | `sorted` |
 | `استدعاء_الأب` | `_apl_super_init` |
 
-## الدوال (70)
+## الدوال (50)
 
 | العربي | Python |
 |--------|--------|
-| `@wraps_دالة` | `functools.wraps` |
 | `@يلتف` | `functools.wraps` |
 | `@كاش_دالة` | `functools.cache` |
 | `@خاصية_مخزنة_دالة` | `functools.cached_property` |
-| `@توزيع_فردي` | `functools.singledispatch` |
 | `@ترتيب_كامل` | `functools.total_ordering` |
 | `ميتا_فئة` | `type` |
 | `فئة_فوقية` | `type` |
@@ -46,31 +43,13 @@
 | `كل` | `__all__` |
 | `رئيسي_متقدم` | `__main__` |
 | `مسار_بحث_حزم` | `sys.path` |
-| `كومة_دفعة` | `heapq.heappush` |
-| `كومة_سحب` | `heapq.heappop` |
-| `كومة_دفعة_وسحب` | `heapq.heappushpop` |
-| `كومة_استبدال` | `heapq.heapreplace` |
-| `كومة_بناء` | `heapq.heapify` |
 | `كومة_دمج` | `heapq.merge` |
-| `كومة_أكبر` | `heapq.nlargest` |
-| `كومة_أصغر` | `heapq.nsmallest` |
-| `بحث_ثنائي_إدراج` | `bisect.insort` |
-| `بحث_ثنائي_يسار` | `bisect.bisect_left` |
-| `بحث_ثنائي_يمين` | `bisect.bisect_right` |
-| `مرجع_ضعيف_جديد` | `weakref.ref` |
-| `مرجع_ضعيف_وكيل` | `weakref.proxy` |
-| `مرجع_ضعيف_نهائي` | `weakref.finalize` |
 | `متعدد_المعالجات` | `multiprocessing` |
-| `عملية_جديدة` | `multiprocessing.Process` |
 | `Pool_عمليات` | `multiprocessing.Pool` |
 | `مدير_عمليات` | `multiprocessing.Manager` |
 | `أنبوب_عمليات` | `multiprocessing.Pipe` |
 | `قيمة_مشتركة` | `multiprocessing.Value` |
 | `ذاكرة_مشتركة` | `multiprocessing.shared_memory` |
-| `مجموعة_ثريدات` | `concurrent.futures.ThreadPoolExecutor` |
-| `مجموعة_عمليات_نظام` | `concurrent.futures.ProcessPoolExecutor` |
-| `مستقبل_عملية` | `concurrent.futures.Future` |
-| `عند_اكتمال` | `concurrent.futures.as_completed` |
 | `عند_اكتمال_أي` | `concurrent.futures.wait` |
 | `مستقبل_عند_اكتمال` | `future.result` |
 | `مستقبل_استثناء` | `future.exception` |

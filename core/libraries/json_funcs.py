@@ -11,15 +11,10 @@ JSON_FUNCS = {
     "جسون_تحويل": "json.dumps",
     
     # قراءة (Reading)
-    "اقرأ_جسون": "json.loads",
-    "من_جسون": "json.loads",
     
     # كتابة (Writing)
-    "اكتب_جسون": "json.dumps",
-    "ل_جسون": "json.dumps",
     
     # ملفات (Files)
-    "من_ملف_جسون": "json.load",
     "لملف_جسون": "json.dump",
     "اقرأ_ملف_جسون": "_apl_json_load_file",
     "اكتب_ملف_جسون": "_apl_json_dump_file",

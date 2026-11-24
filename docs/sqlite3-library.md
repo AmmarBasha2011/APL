@@ -2,22 +2,18 @@
 
 مكتبة SQLite3 الكاملة بالعربي، قاعدة بيانات محلية:
 
-**24 عنصراً عربياً** (الدوال: 10، دوال الكائنات: 14).
+**20 عنصراً عربياً** (الدوال: 10، دوال الكائنات: 14).
 
-## الدوال (10)
+## الدوال (6)
 
 | العربي | Python |
 |--------|--------|
 | `افتح_قاعدة` | `sqlite3.connect` |
-| `افتح_قاعدة_بيانات` | `sqlite3.connect` |
-| `اتصل_قاعدة` | `sqlite3.connect` |
-| `قاعدة` | `sqlite3.connect` |
 | `مؤشر` | `cursor` |
 | `أنشئ_مؤشر` | `connection.cursor` |
 | `صف_مصنع` | `connection.row_factory` |
 | `نص_مصنع` | `connection.text_factory` |
 | `عزل_مستوى` | `connection.isolation_level` |
-| `نسخ_احتياطي` | `sqlite3.connect` |
 
 ## دوال الكائنات (14) — `SQLITE3_METHODS`
 

@@ -5,10 +5,7 @@ Full configparser wrapper with Arabic keywords
 
 CONFIGPARSER_FUNCS = {
     # الإنشاء
-    "أنشئ_مُكوِّن": "configparser.ConfigParser",
-    "مُكوِّن": "configparser.ConfigParser",
     "مُكوِّن_إعدادات": "configparser.ConfigParser",
-    "محلل_إعدادات": "configparser.ConfigParser",
     
     # التنسيقات
     "افتراضي_إعدادات": "configparser.DEFAULTSECT",

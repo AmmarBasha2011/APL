@@ -6,9 +6,6 @@ Full SQLite3 wrapper with Arabic keywords
 SQLITE3_FUNCS = {
     # الاتصال بقاعدة البيانات
     "افتح_قاعدة": "sqlite3.connect",
-    "افتح_قاعدة_بيانات": "sqlite3.connect",
-    "اتصل_قاعدة": "sqlite3.connect",
-    "قاعدة": "sqlite3.connect",
     
     # المؤشر (Cursor)
     "مؤشر": "cursor",
@@ -32,7 +29,6 @@ SQLITE3_FUNCS = {
     "عزل_مستوى": "connection.isolation_level",
     
     # الدوال المساعدة
-    "نسخ_احتياطي": "sqlite3.connect",
 }
 
 SQLITE3_METHODS = {

@@ -138,8 +138,8 @@
 <div class="table-wrap"><table><thead><tr><th>العربي</th><th>Python</th><th>الوصف</th></tr></thead><tbody><tr><td><code>وقت()</code></td><td><code>time.time()</code></td><td>وقت بالثواني</td></tr><tr><td><code>وقت_نومي(ث)</code></td><td><code>time.sleep(ث)</code></td><td>انتظار (ثواني)</td></tr><tr><td><code>وقت_نص()</code></td><td><code>time.ctime()</code></td><td>وقت كنص</td></tr><tr><td><code>الآن()</code></td><td><code>datetime.datetime.now()</code></td><td>تاريخ ووقت حالي</td></tr><tr><td><code>اليوم()</code></td><td><code>datetime.date.today()</code></td><td>التاريخ الحالي</td></tr><tr><td><code>سنة_الآن</code></td><td><code>datetime.datetime.now().year</code></td><td>السنة (بدون أقواس)</td></tr><tr><td><code>شهر_الآن</code></td><td><code>datetime.datetime.now().month</code></td><td>الشهر (بدون أقواس)</td></tr><tr><td><code>يوم_الآن</code></td><td><code>datetime.datetime.now().day</code></td><td>اليوم (بدون أقواس)</td></tr><tr><td><code>ساعة_الآن</code></td><td><code>datetime.datetime.now().hour</code></td><td>الساعة (بدون أقواس)</td></tr><tr><td><code>دقيقة_الآن</code></td><td><code>datetime.datetime.now().minute</code></td><td>الدقيقة (بدون أقواس)</td></tr><tr><td><code>ثانية_الآن</code></td><td><code>datetime.datetime.now().second</code></td><td>الثانية (بدون أقواس)</td></tr></tbody></table></div>
 <h2 id="التواريخ">التواريخ</h2>
 <div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="ltr"><code><span class="c"># ‎<bdi>دوال التاريخ والوقت</bdi>‎</span>
-‎<bdi><span class="k">المتغير</span></bdi>‎ ‎<bdi>طابع</bdi>‎ = ‎<bdi>الآن</bdi>‎()
-‎<bdi><span class="k">المتغير</span></bdi>‎ ‎<bdi>تاريخ_اليوم</bdi>‎ = ‎<bdi>اليوم</bdi>‎()
+‎<bdi><span class="k">المتغير</span></bdi>‎ ‎<bdi>طابع</bdi>‎ = ‎<bdi>التاريخ_الآن</bdi>‎()
+‎<bdi><span class="k">المتغير</span></bdi>‎ ‎<bdi>تاريخ_اليوم</bdi>‎ = ‎<bdi>التاريخ_اليوم</bdi>‎()
 ‎<bdi><span class="k">اطبع</span></bdi>‎ <span class="s">&quot;‎<bdi>الآن</bdi>‎:&quot;</span>, ‎<bdi>طابع</bdi>‎
 ‎<bdi><span class="k">اطبع</span></bdi>‎ <span class="s">&quot;‎<bdi>اليوم</bdi>‎:&quot;</span>, ‎<bdi>تاريخ_اليوم</bdi>‎
 
@@ -152,7 +152,7 @@
 ‎<bdi><span class="k">اطبع</span></bdi>‎ <span class="s">&quot;‎<bdi>الثانية</bdi>‎:&quot;</span>, ‎<bdi>ثانية_الآن</bdi>‎
 
 <span class="c"># ‎<bdi>الانتظار</bdi>‎</span>
-‎<bdi>وقت_نومي</bdi>‎(<span class="n">0.1</span>)
+‎<bdi>نوم_خيوط</bdi>‎(<span class="n">0.1</span>)
 ‎<bdi><span class="k">اطبع</span></bdi>‎ <span class="s">&quot;‎<bdi>انتهى الانتظار</bdi>‎&quot;</span></code></pre></div>
 <h2 id="JSON">JSON</h2>
 <div class="code"><button class="copy" type="button" aria-label="نسخ الكود">نسخ</button><pre dir="ltr"><code>‎<bdi><span class="k">المتغير</span></bdi>‎ ‎<bdi>بيانات</bdi>‎ = ‎<bdi>جسون</bdi>‎(<span class="s">&#x27;{&quot;name&quot;: &quot;‎<bdi>عمار</bdi>‎&quot;}&#x27;</span>)

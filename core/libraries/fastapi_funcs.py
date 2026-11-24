@@ -36,11 +36,6 @@ FASTAPI_FUNCS = {
     "نقطة_نهاية": "@app.get",
     
     # تشغيل (Running)
-    "شغل_فاست": "uvicorn.run",
-    "شغل_خدمة_فاست": "uvicorn.run",
-    "استمع_فاست": "uvicorn.run",
-    "ابدأ_فاست": "uvicorn.run",
-    "شغل_سريع": "uvicorn.run",
     
     # الطلب (Request)
     "طلب_-fastapi": "Request",

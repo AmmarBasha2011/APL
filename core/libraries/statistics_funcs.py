@@ -6,7 +6,6 @@ Transpiles Arabic statistics keywords to Python statistics module calls
 STATISTICS_FUNCS = {
     # نزعة مركزية (Central Tendency)
     "متوسط": "statistics.mean",
-    "متوسط_حسابي": "statistics.mean",
     "وسيط": "statistics.median",
     "منوال": "statistics.mode",
     "متوسط_توافقي": "statistics.harmonic_mean",

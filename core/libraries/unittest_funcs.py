@@ -5,9 +5,6 @@ Full unittest wrapper with Arabic keywords
 
 UNITTEST_FUNCS = {
     # TestCase
-    "حالة_اختبار": "unittest.TestCase",
-    "أنشئ_اختبار": "unittest.TestCase",
-    "حالة_اختبار": "unittest.TestCase",
     
     # Test fixtures
     "setUp": "setUp",
@@ -84,7 +81,6 @@ UNITTEST_FUNCS = {
     "نفس_القاموس": "assertDictEqual",
     
     # Test Suite
-    "مجموعة_اختبارات": "unittest.TestSuite",
     "أضف_اختبار": "testSuite.addTest",
     
     # Test Runner
