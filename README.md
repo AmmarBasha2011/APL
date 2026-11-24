@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 91 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **740 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **764 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -264,7 +264,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (740 مثالاً)
+## الأمثلة الجاهزة (764 مثالاً)
 
 مجلد `examples/` يحتوي على **740 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
@@ -1010,6 +1010,30 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 738 | [`738-simpson-integrate.apl`](examples/738-simpson-integrate.apl) | تكامل عددي دقيق للدوال |
 | 739 | [`739-horner-eval.apl`](examples/739-horner-eval.apl) | تقييم كثيرات الحدود ومشتقاتها |
 | 740 | [`740-golomb-coding.apl`](examples/740-golomb-coding.apl) | ضغط الأعداد الصحيحة الموجبة |
+| 741 | [`741-hmac-manual.apl`](examples/741-hmac-manual.apl) | بناء HMAC من تجزئة SHA-256 (RFC 2104) |
+| 742 | [`742-hkdf-lite.apl`](examples/742-hkdf-lite.apl) | اشتقاق مفاتيح من مادة أولية (RFC 5869) |
+| 743 | [`743-otp-hotp-lite.apl`](examples/743-otp-hotp-lite.apl) | رموز HOTP من مفتاح وعداد |
+| 744 | [`744-aes-sbox-lite.apl`](examples/744-aes-sbox-lite.apl) | اشتقاق جدول S-Box رياضياً |
+| 745 | [`745-xor-cipher-break.apl`](examples/745-xor-cipher-break.apl) | كسر تشفير XOR بتحليل التكرار |
+| 746 | [`746-vigenere-break.apl`](examples/746-vigenere-break.apl) | كسر فيجنير بطول مفتاح معلوم |
+| 747 | [`747-playfair-lite.apl`](examples/747-playfair-lite.apl) | تشفير ثنائي الحروف التاريخي |
+| 748 | [`748-enigma-lite.apl`](examples/748-enigma-lite.apl) | محاكاة إنجما I التاريخية |
+| 749 | [`749-rail-fence.apl`](examples/749-rail-fence.apl) | تبديل مواضع بقضبان متعرجة |
+| 750 | [`750-greek-numerals.apl`](examples/750-greek-numerals.apl) | النظام الأيوني للأرقام |
+| 751 | [`751-mayan-numerals.apl`](examples/751-mayan-numerals.apl) | النظام العشريني بالنقاط والأصابع |
+| 752 | [`752-emoji-grapheme-split.apl`](examples/752-emoji-grapheme-split.apl) | تقسيم نص لوحدات مرئية صحيحة |
+| 753 | [`753-arabic-reshaper-lite.apl`](examples/753-arabic-reshaper-lite.apl) | حروف عربية بأشكال العرض الأربعة |
+| 754 | [`754-json-path-lite.apl`](examples/754-json-path-lite.apl) | استعلام $.a.b[0] عن بنى متداخلة |
+| 755 | [`755-tokenizer-ar-lite.apl`](examples/755-tokenizer-ar-lite.apl) | كلمات وأرقام وعلامات من نص عربي |
+| 756 | [`756-keyboard-dvorak-lite.apl`](examples/756-keyboard-dvorak-lite.apl) | تحويل QWERTY ودفوراك وكفاءتهما |
+| 757 | [`757-quaternion-rotate.apl`](examples/757-quaternion-rotate.apl) | تدوير متجهات ثلاثية الأبعاد |
+| 758 | [`758-sun-position-lite.apl`](examples/758-sun-position-lite.apl) | ارتفاع الشمس من اليوم وخط العرض |
+| 759 | [`759-fastq-parse.apl`](examples/759-fastq-parse.apl) | تسلسلات مع درجات جودة |
+| 760 | [`760-newick-parse.apl`](examples/760-newick-parse.apl) | أشجار تطور نصية |
+| 761 | [`761-codon-table.apl`](examples/761-codon-table.apl) | ترجمة DNA إلى بروتين |
+| 762 | [`762-upgma-tree.apl`](examples/762-upgma-tree.apl) | شجرة تطور من مصفوفة مسافات |
+| 763 | [`763-boggle-solver.apl`](examples/763-boggle-solver.apl) | كلمات من شبكة حروف متجاورة |
+| 764 | [`764-fft-butterfly-lite.apl`](examples/764-fft-butterfly-lite.apl) | تحويل فورييه السريع يدوياً |
 
 ### تشغيل أي مثال
 
@@ -1110,7 +1134,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 740 مثالاً
+**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 764 مثالاً
 
 ## Language platform tools
 
