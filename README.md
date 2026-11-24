@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 91 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **788 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **812 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -264,9 +264,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (788 مثالاً)
+## الأمثلة الجاهزة (812 مثالاً)
 
-مجلد `examples/` يحتوي على **788 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **812 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1058,6 +1058,30 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 786 | [`786-business-days.apl`](examples/786-business-days.apl) | حساب أيام العمل مع العطلات |
 | 787 | [`787-ipv4-cidr.apl`](examples/787-ipv4-cidr.apl) | تحليل عناوين وشبكات فرعية |
 | 788 | [`788-genetic-algorithm.apl`](examples/788-genetic-algorithm.apl) | حل Ones-Max بالتطور الصناعي |
+| 789 | [`789-lfsr-prng.apl`](examples/789-lfsr-prng.apl) | مسجل إزاحة بخطي راجع 16-بت |
+| 790 | [`790-blum-blum-shub.apl`](examples/790-blum-blum-shub.apl) | مولد عشوائي آمن نظرياً |
+| 791 | [`791-xxhash-lite.apl`](examples/791-xxhash-lite.apl) | تجزية غير تشفيرية سريعة |
+| 792 | [`792-polybius-square.apl`](examples/792-polybius-square.apl) | شفرة الإحداثيات اليونانية |
+| 793 | [`793-nihilist-cipher.apl`](examples/793-nihilist-cipher.apl) | شفرة بوليبيوس بمفتاح دوري |
+| 794 | [`794-dct-lite.apl`](examples/794-dct-lite.apl) | تحويل JPEG الترددي مباشرة |
+| 795 | [`795-elgamal-toy.apl`](examples/795-elgamal-toy.apl) | تشفير بمفتاح عام تعليمي |
+| 796 | [`796-reed-solomon.apl`](examples/796-reed-solomon.apl) | تصحيح أخطاء بحذف وإتلاف |
+| 797 | [`797-quoted-printable.apl`](examples/797-quoted-printable.apl) | ترميز بريد RFC 2045 |
+| 798 | [`798-base85-codec.apl`](examples/798-base85-codec.apl) | ترميز ثنائي-نصي كثيف |
+| 799 | [`799-justify-text.apl`](examples/799-justify-text.apl) | ضبط كامل بعرض ثابت |
+| 800 | [`800-hex-dump.apl`](examples/800-hex-dump.apl) | عارض بايتات بأسلوب hexdump |
+| 801 | [`801-printf-format.apl`](examples/801-printf-format.apl) | تنسيق نصوص بأسلوب C |
+| 802 | [`802-shunting-yard.apl`](examples/802-shunting-yard.apl) | من infix إلى postfix وتقييم |
+| 803 | [`803-knn-classifier.apl`](examples/803-knn-classifier.apl) | تصنيف بأقرب k جيران |
+| 804 | [`804-naive-bayes.apl`](examples/804-naive-bayes.apl) | تصنيف نصوص احتمالي |
+| 805 | [`805-id3-tree.apl`](examples/805-id3-tree.apl) | تعلم شجرة قرار من بيانات |
+| 806 | [`806-discrete-log-bsgs.apl`](examples/806-discrete-log-bsgs.apl) | حل اللوغاريتم بجذر تربيعي |
+| 807 | [`807-integer-partitions.apl`](examples/807-integer-partitions.apl) | عد p(n) وتعديد التقسيمات |
+| 808 | [`808-barcode-code39.apl`](examples/808-barcode-code39.apl) | توليد باركود مع خانة تحقق |
+| 809 | [`809-pbm-image.apl`](examples/809-pbm-image.apl) | صور نقطية بصيغة netpbm |
+| 810 | [`810-ansi-color.apl`](examples/810-ansi-color.apl) | تنسيق طرفية بالتسلسلات |
+| 811 | [`811-hex-color.apl`](examples/811-hex-color.apl) | نسبة تباين WCAG من hex |
+| 812 | [`812-nim-game.apl`](examples/812-nim-game.apl) | استراتيجية نيم المثلى |
 
 ### تشغيل أي مثال
 
@@ -1158,7 +1182,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 788 مثالاً
+**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 812 مثالاً
 
 ## Language platform tools
 
