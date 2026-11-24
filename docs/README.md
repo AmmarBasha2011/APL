@@ -12,15 +12,15 @@
 | 6 | [devtools-library.md](devtools-library.md) | مكتبة `devtools` — أدوات المطوّر: فحص، تصحيح، قياس أداء، ترجمة (inspect / ast / dis / pdb / doctest / timeit / profile / tracemalloc) (1,123 عنصراً) |
 | 7 | [datafiles-library.md](datafiles-library.md) | مكتبة `datafiles` — البيانات والملفات: مسارات، ضغط، أرشيف، تسلسل، هياكل بيانات، XML، يونيكود (io / zipfile / tarfile / pickle / shelve / array / struct / xml.dom / xml.etree / unicodedata) (2,631 عنصراً) |
 | 8 | [syslib-library.md](syslib-library.md) | مكتبة `syslib` — النظام والتشغيل والتشخيص: منصة، إشارات، موارد، تسجيل، اختبارات، عمليات متعددة، ctypes، سياق (platform / signal / resource / logging / unittest / multiprocessing / concurrent.futures / ctypes / termios) (3,973 عنصراً) |
-| 9 | [weblibs-library.md](weblibs-library.md) | مكتبة `weblibs` — الويب والنصوص: بث متدفق، قوالب، ماركداون، تورنيدو، سطر الأوامر، تلوين الشيفرة (websockets / jinja2 / markdown / tornado / click / pygments) (5,496 عنصراً) |
+| 9 | [weblibs-library.md](weblibs-library.md) | مكتبة `weblibs` — الويب والنصوص: بث متدفق، قوالب، ماركداون، تورنيدو، سطر الأوامر، تلوين الشيفرة (websockets / jinja2 / markdown / tornado / click / pygments) (5,393 عنصراً) |
 | 10 | [webserver-library.md](webserver-library.md) | مكتبة `webserver` — الخوادم والشبكات: خوادم ASGI/WSGI، عملاء HTTP غير متزامنين، HTTP/1.1 (starlette / uvicorn / httpx / httpcore / h11 / anyio) (5,492 عنصراً) |
 | 11 | [secauth-library.md](secauth-library.md) | مكتبة `secauth` — الأمان والمصادقة: تشفير وشهادات، قوالب معزولة، تحقق من المخططات، JWT (cryptography / jinja2 / jsonschema / jwt / cffi) (5,495 عنصراً) |
-| 12 | [textdata-library.md](textdata-library.md) | مكتبة `textdata` — النصوص والبيانات: مطابقة الأنماط، أصناف الخصائص، الصور، النماذج الأولية (pathspec / attrs / PIL / markdown / proto) (5,492 عنصراً) |
+| 12 | [textdata-library.md](textdata-library.md) | مكتبة `textdata` — النصوص والبيانات: مطابقة الأنماط، أصناف الخصائص، الصور، النماذج الأولية (pathspec / attrs / PIL / markdown / proto) (5,481 عنصراً) |
 | 13 | [utiltools-library.md](utiltools-library.md) | مكتبة `utiltools` — الأدوات المساعدة: الإصدارات والتواريخ، أشرطة التقدم، مراقبة العمليات (packaging / dateutil / tqdm / psutil / websockets) (5,494 عنصراً) |
 | 14 | [idlelib-library.md](idlelib-library.md) | مكتبة `idlelib` — بيئة التطوير المدمجة: محرر، إكمال تلقائي، مصحح، إعدادات (idlelib) (11,138 عنصراً) |
 | 15 | [cdp_use-library.md](cdp_use-library.md) | مكتبة `cdp_use` — بروتوكول أدوات تطوير كروم CDP (cdp_use) (10,569 عنصراً) |
 | 16 | [acp-library.md](acp-library.md) | مكتبة `acp` — بروتوكول العميل-الوكيل ACP (acp) (11,180 عنصراً) |
-| 17 | [aiohttp-library.md](aiohttp-library.md) | مكتبة `aiohttp` — عميل وخادم HTTP غير متزامنين (aiohttp) (15,592 عنصراً) |
+| 17 | [aiohttp-library.md](aiohttp-library.md) | مكتبة `aiohttp` — عميل وخادم HTTP غير متزامنين (aiohttp) (15,590 عنصراً) |
 | 18 | [stdlib_ext-library.md](stdlib_ext-library.md) | مكتبة `stdlib_ext` — توسعة المكتبة القياسية (encodings / inspect / doctest / pdb / tracemalloc) (12,950 عنصراً) |
 | 19 | [numpy-library.md](numpy-library.md) | مكتبة `numpy` — الحساب العددي: مصفوفات، جبر خطي، تحويلات فورييه، عشوائيات (numpy) (5,937 عنصراً) |
 | 20 | [scipy-library.md](scipy-library.md) | مكتبة `scipy` — الحساب العلمي: تكامل، تحسين، استيفاء، إحصاء، مصفوفات متناثرة (scipy) (8,396 عنصراً) |
@@ -635,15 +635,15 @@ with open("ملف.txt") as f:
 | `devtools` | 1123 | أدوات المطوّر: فحص، تصحيح، قياس أداء، ترجمة (inspect / ast / dis / pdb / doctest / timeit / profile / tracemalloc) |
 | `datafiles` | 2631 | البيانات والملفات: مسارات، ضغط، أرشيف، تسلسل، هياكل بيانات، XML، يونيكود (io / zipfile / tarfile / pickle / shelve / array / struct / xml.dom / xml.etree / unicodedata) |
 | `syslib` | 3973 | النظام والتشغيل والتشخيص: منصة، إشارات، موارد، تسجيل، اختبارات، عمليات متعددة، ctypes، سياق (platform / signal / resource / logging / unittest / multiprocessing / concurrent.futures / ctypes / termios) |
-| `weblibs` | 5496 | الويب والنصوص: بث متدفق، قوالب، ماركداون، تورنيدو، سطر الأوامر، تلوين الشيفرة (websockets / jinja2 / markdown / tornado / click / pygments) |
+| `weblibs` | 5393 | الويب والنصوص: بث متدفق، قوالب، ماركداون، تورنيدو، سطر الأوامر، تلوين الشيفرة (websockets / jinja2 / markdown / tornado / click / pygments) |
 | `webserver` | 5492 | الخوادم والشبكات: خوادم ASGI/WSGI، عملاء HTTP غير متزامنين، HTTP/1.1 (starlette / uvicorn / httpx / httpcore / h11 / anyio) |
 | `secauth` | 5495 | الأمان والمصادقة: تشفير وشهادات، قوالب معزولة، تحقق من المخططات، JWT (cryptography / jinja2 / jsonschema / jwt / cffi) |
-| `textdata` | 5492 | النصوص والبيانات: مطابقة الأنماط، أصناف الخصائص، الصور، النماذج الأولية (pathspec / attrs / PIL / markdown / proto) |
+| `textdata` | 5481 | النصوص والبيانات: مطابقة الأنماط، أصناف الخصائص، الصور، النماذج الأولية (pathspec / attrs / PIL / markdown / proto) |
 | `utiltools` | 5494 | الأدوات المساعدة: الإصدارات والتواريخ، أشرطة التقدم، مراقبة العمليات (packaging / dateutil / tqdm / psutil / websockets) |
 | `idlelib` | 11138 | بيئة التطوير المدمجة: محرر، إكمال تلقائي، مصحح، إعدادات (idlelib) |
 | `cdp_use` | 10569 | بروتوكول أدوات تطوير كروم CDP (cdp_use) |
 | `acp` | 11180 | بروتوكول العميل-الوكيل ACP (acp) |
-| `aiohttp` | 15592 | عميل وخادم HTTP غير متزامنين (aiohttp) |
+| `aiohttp` | 15590 | عميل وخادم HTTP غير متزامنين (aiohttp) |
 | `stdlib_ext` | 12950 | توسعة المكتبة القياسية (encodings / inspect / doctest / pdb / tracemalloc) |
 | `numpy` | 5937 | الحساب العددي: مصفوفات، جبر خطي، تحويلات فورييه، عشوائيات (numpy) |
 | `scipy` | 8396 | الحساب العلمي: تكامل، تحسين، استيفاء، إحصاء، مصفوفات متناثرة (scipy) |
@@ -696,9 +696,9 @@ with open("ملف.txt") as f:
 | `getpass` | 2 | إدخال كلمات السر دون إظهارها |
 | `pprint` | 2 | طباعة منسّقة للقواميس والقوائم |
 
-**الإجمالي: 136,341 عنصراً في 63 مكتبة** (136,323 مفتاحاً فريداً بعد إزالة التكرار).
+**الإجمالي: 136,225 عنصراً في 63 مكتبة** (136,207 مفتاحاً فريداً بعد إزالة التكرار).
 
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
-في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **136,554 عنصراً**،
+في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **136,438 عنصراً**،
 مع **500 مثال جاهز** في `examples/`.
