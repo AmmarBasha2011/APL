@@ -106,9 +106,9 @@
 | 96 | [pkgs_ext2-library.md](pkgs_ext2-library.md) | مكتبة `pkgs_ext2` — حزم متنوعة موسّعة (scrapy / prompt_toolkit / lxml / hypothesis / peewee / arrow / alembic / rich / trio / paramiko / h5py / cryptography / pyasn1 / skimage / yaml / seaborn / pyparsing / bs4 / shapely / babel / redis / pendulum / mako / nacl / typer / google / PIL / kombu / marshmallow / requests / sqlparse / celery / packaging / six / httpx / jinja2 / acp / regex / uvicorn / websockets / markdown / tornado / anyio / httplib2 / pygments / cffi / click / fastapi / httpcore / googleapiclient / tqdm / starlette / dateutil / pydantic / attr / jsonschema / multidict / numpy / scipy) (19,295 عنصراً) |
 
 ---
-## الأمثلة الجاهزة (644 مثالاً)
+## الأمثلة الجاهزة (668 مثالاً)
 
-644 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+668 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -756,6 +756,30 @@
 | 642 | [`642-arabic-light-stemmer.apl`](../examples/642-arabic-light-stemmer.apl) | تجذيع عربي خفيف بقص السوابق واللواحق |
 | 643 | [`643-cairo-taxi-fare.apl`](../examples/643-cairo-taxi-fare.apl) | عداد التاكسي الأبيض بالقاهرة (تقريبي) |
 | 644 | [`644-electricity-bill-egypt.apl`](../examples/644-electricity-bill-egypt.apl) | فاتورة كهرباء منزلية بشرائح (تقريبية) |
+| 645 | [`645-b-tree-insert.apl`](../examples/645-b-tree-insert.apl) | إدخال في شجرة ب مع انقسام العقد الممتلئة |
+| 646 | [`646-treap.apl`](../examples/646-treap.apl) | شجرة بحث متوازنة بأولويات كومة مشتقة |
+| 647 | [`647-lca-binary-lifting.apl`](../examples/647-lca-binary-lifting.apl) | أدنى سلف مشترك بجداول قوى اثنين |
+| 648 | [`648-mo-algorithm.apl`](../examples/648-mo-algorithm.apl) | إجابة استعلامات المدى بإعادة ترتيبها |
+| 649 | [`649-meet-in-middle.apl`](../examples/649-meet-in-middle.apl) | عد المجموعات الجزئية باللقاء في المنتصف |
+| 650 | [`650-gray-code.apl`](../examples/650-gray-code.apl) | تتابع ثنائي يختلف في بت واحد |
+| 651 | [`651-bit-tricks.apl`](../examples/651-bit-tricks.apl) | حيل البتات الشائعة بالإزاحات والأقنعة |
+| 652 | [`652-reservoir-sampling.apl`](../examples/652-reservoir-sampling.apl) | عينة عادلة ثابتة الحجم من تيار |
+| 653 | [`653-weighted-random.apl`](../examples/653-weighted-random.apl) | اختيار عشوائي باحتمال يتناسب مع الوزن |
+| 654 | [`654-count-min-sketch.apl`](../examples/654-count-min-sketch.apl) | تقدير تكرارات بذاكرة ثابتة |
+| 655 | [`655-bresenham-line.apl`](../examples/655-bresenham-line.apl) | رسم خط مستقيم على شبكة بلا فاصلة عائمة |
+| 656 | [`656-iterative-deepening.apl`](../examples/656-iterative-deepening.apl) | بحث يجد أضحل حل بذاكرة البحث العميق |
+| 657 | [`657-suffix-automaton.apl`](../examples/657-suffix-automaton.apl) | بنية مدمجة لكل النصوص الفرعية |
+| 658 | [`658-damerau-levenshtein.apl`](../examples/658-damerau-levenshtein.apl) | مسافة تحرير مع تبديل الحروف المتجاورة |
+| 659 | [`659-arabic-number-parse.apl`](../examples/659-arabic-number-parse.apl) | قراءة الأرقام المشرقية ٠١٢٣ كأعداد |
+| 660 | [`660-arabic-sort-collation.apl`](../examples/660-arabic-sort-collation.apl) | ترتيب الأسماء بالهجائية العربية |
+| 661 | [`661-coptic-calendar.apl`](../examples/661-coptic-calendar.apl) | تحويل التواريخ من وإلى التقويم القبطي |
+| 662 | [`662-kalman-lite.apl`](../examples/662-kalman-lite.apl) | دمج قياسات مزعجة في تقدير مستقر |
+| 663 | [`663-pid-controller.apl`](../examples/663-pid-controller.apl) | متحكم نسبي تكاملي تفاضلي على نظام محاكى |
+| 664 | [`664-shamir-secret.apl`](../examples/664-shamir-secret.apl) | تقسيم سر على حصص لا تكفي بعضها وحدها |
+| 665 | [`665-bidirectional-bfs.apl`](../examples/665-bidirectional-bfs.apl) | أقصر طريق بجبهتين متعاكستين |
+| 666 | [`666-zero-one-bfs.apl`](../examples/666-zero-one-bfs.apl) | أقصر تكلفة بأوزان صفر وواحد |
+| 667 | [`667-mcts-lite.apl`](../examples/667-mcts-lite.apl) | معادلة الاختيار التي تقود بحث مونت كارلو |
+| 668 | [`668-simulated-annealing-tsp.apl`](../examples/668-simulated-annealing-tsp.apl) | تحسين جولة مندوب السفر بالتلدين المحاكى |
 
 **التشغيل:**
 ```bash
@@ -905,4 +929,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,254 عنصراً**،
-مع **644 مثال جاهز** في `examples/`.
+مع **668 مثال جاهز** في `examples/`.
