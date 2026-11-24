@@ -89,9 +89,9 @@
 | 79 | [stdfull-library.md](stdfull-library.md) | مكتبة `stdfull` — المكتبة القياسية الشاملة: كل ما تبقى من وحدات Python القياسية (4,326 عنصراً) |
 
 ---
-## الأمثلة الجاهزة (572 مثالاً)
+## الأمثلة الجاهزة (596 مثالاً)
 
-572 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+596 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -667,6 +667,30 @@
 | 570 | [`570-wordle-feedback.apl`](../examples/570-wordle-feedback.apl) | تقييم ووردل: أخضر/أصفر/رمادي بمرورين |
 | 571 | [`571-mastermind-score.apl`](../examples/571-mastermind-score.apl) | تقييم ماسترمايند: دقيق ولون فقط |
 | 572 | [`572-median-stream.apl`](../examples/572-median-stream.apl) | وسيط تدفق بكوميتين (أدنى وأقصى) |
+| 573 | [`573-tarjan-scc.apl`](../examples/573-tarjan-scc.apl) | خوارزمية تارجان للمكونات القوية في رسم موجه |
+| 574 | [`574-maze-bfs.apl`](../examples/574-maze-bfs.apl) | أقصر طريق في متاهة نصية مع جدران |
+| 575 | [`575-suffix-array.apl`](../examples/575-suffix-array.apl) | مصفوفة السوابق والبحث فيها |
+| 576 | [`576-longest-common-substring.apl`](../examples/576-longest-common-substring.apl) | أطول سلسلة فرعية مشتركة بين نصين |
+| 577 | [`577-min-window-substring.apl`](../examples/577-min-window-substring.apl) | أصغر نافذة تحوي كل أحرف نمط |
+| 578 | [`578-group-anagrams.apl`](../examples/578-group-anagrams.apl) | تجميع الكلمات المتناقضة الأحرف |
+| 579 | [`579-jaro-winkler.apl`](../examples/579-jaro-winkler.apl) | مقياس تشابه الأسماء جارو-وينكلر |
+| 580 | [`580-k-way-merge.apl`](../examples/580-k-way-merge.apl) | دمج عدة قوائم مرتبة بكومة |
+| 581 | [`581-spiral-matrix.apl`](../examples/581-spiral-matrix.apl) | قراءة مصفوفة بالترتيب الحلزوني |
+| 582 | [`582-rotate-matrix.apl`](../examples/582-rotate-matrix.apl) | تدوير مصفوفة 90 درجة |
+| 583 | [`583-partition-subset-dp.apl`](../examples/583-partition-subset-dp.apl) | تقسيم مجموعة إلى نصفين متساويين |
+| 584 | [`584-unbounded-knapsack.apl`](../examples/584-unbounded-knapsack.apl) | حقيبة الظهر غير المحدودة العناصر |
+| 585 | [`585-bitmask-tsp.apl`](../examples/585-bitmask-tsp.apl) | أقصر جولة تزور كل المدن بأقنعة البتات |
+| 586 | [`586-sqrt-decomposition.apl`](../examples/586-sqrt-decomposition.apl) | مجاميع المدى بتحليل الجذر التربيعي |
+| 587 | [`587-circular-buffer.apl`](../examples/587-circular-buffer.apl) | مخزن دائري يكتب فوق الأقدم |
+| 588 | [`588-lfu-cache.apl`](../examples/588-lfu-cache.apl) | ذاكرة مؤقتة تطرد الأقل استخداما |
+| 589 | [`589-pollard-rho.apl`](../examples/589-pollard-rho.apl) | تحليل عدد إلى عوامل بطريقة بولارد-رو |
+| 590 | [`590-linear-diophantine.apl`](../examples/590-linear-diophantine.apl) | حل معادلة ديوفانتية خطية بإقليدس الموسعة |
+| 591 | [`591-stirling-digits.apl`](../examples/591-stirling-digits.apl) | عدد أرقام المضروب باللوغاريتمات دون حسابه |
+| 592 | [`592-matrix-exponentiation.apl`](../examples/592-matrix-exponentiation.apl) | تريبوناتشي برفع مصفوفة لقوة |
+| 593 | [`593-qibla-bearing.apl`](../examples/593-qibla-bearing.apl) | اتجاه القبلة من القاهرة بحساب كروي |
+| 594 | [`594-cairo-metro-fare.apl`](../examples/594-cairo-metro-fare.apl) | تذكرة مترو القاهرة بعدد المحطات (تعريفة مبسطة) |
+| 595 | [`595-egypt-income-tax.apl`](../examples/595-egypt-income-tax.apl) | ضريبة الدخل المصرية بشرائح تصاعدية تقريبية |
+| 596 | [`596-consistent-hashing.apl`](../examples/596-consistent-hashing.apl) | توزيع مفاتيح مستقر على عقد متغيرة |
 
 **التشغيل:**
 ```bash
@@ -799,4 +823,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **76,450 عنصراً**،
-مع **572 مثال جاهز** في `examples/`.
+مع **596 مثال جاهز** في `examples/`.
