@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 91 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **764 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **788 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -264,9 +264,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (764 مثالاً)
+## الأمثلة الجاهزة (788 مثالاً)
 
-مجلد `examples/` يحتوي على **740 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **788 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1034,6 +1034,30 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 762 | [`762-upgma-tree.apl`](examples/762-upgma-tree.apl) | شجرة تطور من مصفوفة مسافات |
 | 763 | [`763-boggle-solver.apl`](examples/763-boggle-solver.apl) | كلمات من شبكة حروف متجاورة |
 | 764 | [`764-fft-butterfly-lite.apl`](examples/764-fft-butterfly-lite.apl) | تحويل فورييه السريع يدوياً |
+| 765 | [`765-rc4-cipher.apl`](examples/765-rc4-cipher.apl) | تشفير تدفقي بجدول تبديل 256 بايت |
+| 766 | [`766-tea-cipher.apl`](examples/766-tea-cipher.apl) | شبكة فيستل صغيرة بمفتاح 128-بت |
+| 767 | [`767-affine-cipher.apl`](examples/767-affine-cipher.apl) | شفرة أحادية الأبجدية الخطية |
+| 768 | [`768-hill-cipher.apl`](examples/768-hill-cipher.apl) | تشفير أزواج الحروف بمصفوفة |
+| 769 | [`769-sha1-manual.apl`](examples/769-sha1-manual.apl) | بناء SHA-1 من المواصفة |
+| 770 | [`770-poly1305-lite.apl`](examples/770-poly1305-lite.apl) | مصادقة رسائل (RFC 8439) |
+| 771 | [`771-bech32-lite.apl`](examples/771-bech32-lite.apl) | ترميز BIP 173 مع مجموع تحقق |
+| 772 | [`772-fibonacci-coding.apl`](examples/772-fibonacci-coding.apl) | شفرة أعداد ذاتية الفصل |
+| 773 | [`773-elias-gamma.apl`](examples/773-elias-gamma.apl) | شفرة عالمية للأعداد الصحيحة |
+| 774 | [`774-natural-sort.apl`](examples/774-natural-sort.apl) | img2 يأتي قبل img10 |
+| 775 | [`775-fuzzy-search.apl`](examples/775-fuzzy-search.apl) | ترتيب مرشحين بأسلوب fzf |
+| 776 | [`776-bm25-lite.apl`](examples/776-bm25-lite.apl) | ترتيب مستندات لاستعلام بحث |
+| 777 | [`777-plural-ar.apl`](examples/777-plural-ar.apl) | صيغ العدد: مفرد ومثنى وجمع |
+| 778 | [`778-needleman-wunsch.apl`](examples/778-needleman-wunsch.apl) | محاذاة تسلسلين من الطرف للطرف |
+| 779 | [`779-forth-lite.apl`](examples/779-forth-lite.apl) | مفسر لغة مكدسية مصغر |
+| 780 | [`780-turing-machine.apl`](examples/780-turing-machine.apl) | محاكاة آلة تورينغ: جمع أحادي |
+| 781 | [`781-l-system.apl`](examples/781-l-system.apl) | توليد نصوص الطحالب وكوخ |
+| 782 | [`782-magic-square.apl`](examples/782-magic-square.apl) | مربعات سحرية فردية الرتبة |
+| 783 | [`783-dragon-curve.apl`](examples/783-dragon-curve.apl) | متتالية منحنى التنين |
+| 784 | [`784-z-order-curve.apl`](examples/784-z-order-curve.apl) | ترميز مورتون للإحداثيات |
+| 785 | [`785-turtle-graphics.apl`](examples/785-turtle-graphics.apl) | رسم بأوامر F وR وL |
+| 786 | [`786-business-days.apl`](examples/786-business-days.apl) | حساب أيام العمل مع العطلات |
+| 787 | [`787-ipv4-cidr.apl`](examples/787-ipv4-cidr.apl) | تحليل عناوين وشبكات فرعية |
+| 788 | [`788-genetic-algorithm.apl`](examples/788-genetic-algorithm.apl) | حل Ones-Max بالتطور الصناعي |
 
 ### تشغيل أي مثال
 
@@ -1134,7 +1158,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 764 مثالاً
+**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 788 مثالاً
 
 ## Language platform tools
 
