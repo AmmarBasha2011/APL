@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 91 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **620 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **644 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -264,9 +264,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (620 مثالاً)
+## الأمثلة الجاهزة (644 مثالاً)
 
-مجلد `examples/` يحتوي على **620 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **644 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -890,6 +890,30 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 618 | [`618-ramadan-countdown.apl`](examples/618-ramadan-countdown.apl) | أيام متبقية لرمضان بالتقويم الاصطلاحي |
 | 619 | [`619-tafqeet.apl`](examples/619-tafqeet.apl) | تحويل المبلغ إلى كلمات عربية |
 | 620 | [`620-skip-list.apl`](examples/620-skip-list.apl) | بحث سريع في قائمة مرتبة بمستويات |
+| 621 | [`621-convex-hull-graham.apl`](examples/621-convex-hull-graham.apl) | أصغر مضلع محدب يحوي النقاط |
+| 622 | [`622-closest-pair.apl`](examples/622-closest-pair.apl) | أقرب زوج نقاط بالفرز والفحص |
+| 623 | [`623-point-in-polygon.apl`](examples/623-point-in-polygon.apl) | هل النقطة داخل المضلع بقذف شعاع |
+| 624 | [`624-line-intersection.apl`](examples/624-line-intersection.apl) | تقاطع القطع المستقيمة باختبارات الاتجاه |
+| 625 | [`625-karatsuba.apl`](examples/625-karatsuba.apl) | ضرب الأعداد الكبيرة بتقسيم أسرع |
+| 626 | [`626-crc32.apl`](examples/626-crc32.apl) | مجموع CRC32 الاختباري بت بت |
+| 627 | [`627-hamming-ecc.apl`](examples/627-hamming-ecc.apl) | شفرة هامنغ (7,4) لتصحيح خطأ أحادي البت |
+| 628 | [`628-glob-match.apl`](examples/628-glob-match.apl) | مطابقة أنماط glob النجمة والاستفهام |
+| 629 | [`629-regex-nfa-lite.apl`](examples/629-regex-nfa-lite.apl) | محرك نمطية مصغر بحرف ونقطة ونجمة |
+| 630 | [`630-json-parser.apl`](examples/630-json-parser.apl) | محلل JSON مصغر من الصفر |
+| 631 | [`631-bytecode-vm.apl`](examples/631-bytecode-vm.apl) | آلة افتراضية كومة مصغرة |
+| 632 | [`632-allocator-first-fit.apl`](examples/632-allocator-first-fit.apl) | محاكي تخصيص ذاكرة بأول ملائم ودمج |
+| 633 | [`633-merkle-tree.apl`](examples/633-merkle-tree.apl) | إثبات سلامة البيانات بشجرة تجزئة |
+| 634 | [`634-leader-election-bully.apl`](examples/634-leader-election-bully.apl) | انتخاب قائد بخوارزمية التنمر |
+| 635 | [`635-vector-clock.apl`](examples/635-vector-clock.apl) | ترتيب الأحداث الموزعة بالساعات المتجهة |
+| 636 | [`636-banker-algorithm.apl`](examples/636-banker-algorithm.apl) | كشف الحالة الآمنة من الجمود |
+| 637 | [`637-page-replacement.apl`](examples/637-page-replacement.apl) | إحلال الصفحات FIFO والأمثل |
+| 638 | [`638-disk-scan.apl`](examples/638-disk-scan.apl) | جدولة القرص بخوارزمية المصعد |
+| 639 | [`639-round-robin.apl`](examples/639-round-robin.apl) | جدولة المعالج بالتناوب الدائري |
+| 640 | [`640-dining-philosophers.apl`](examples/640-dining-philosophers.apl) | تجنب الجمود بترتيب الموارد |
+| 641 | [`641-faraid-lite.apl`](examples/641-faraid-lite.apl) | الأنصبة الشرعية الثابتة المبسطة |
+| 642 | [`642-arabic-light-stemmer.apl`](examples/642-arabic-light-stemmer.apl) | تجذيع عربي خفيف بقص السوابق واللواحق |
+| 643 | [`643-cairo-taxi-fare.apl`](examples/643-cairo-taxi-fare.apl) | عداد التاكسي الأبيض بالقاهرة (تقريبي) |
+| 644 | [`644-electricity-bill-egypt.apl`](examples/644-electricity-bill-egypt.apl) | فاتورة كهرباء منزلية بشرائح (تقريبية) |
 
 ### تشغيل أي مثال
 
@@ -990,7 +1014,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 620 مثالاً
+**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 644 مثالاً
 
 ## Language platform tools
 
