@@ -2,16 +2,13 @@
 
 مكتبة configparser الكاملة بالعربي، قراءة وكتابة ملفات الإعداد:
 
-**35 عنصراً عربياً** (الدوال: 35).
+**32 عنصراً عربياً** (الدوال: 35).
 
-## الدوال (35)
+## الدوال (32)
 
 | العربي | Python |
 |--------|--------|
-| `أنشئ_مُكوِّن` | `configparser.ConfigParser` |
-| `مُكوِّن` | `configparser.ConfigParser` |
 | `مُكوِّن_إعدادات` | `configparser.ConfigParser` |
-| `محلل_إعدادات` | `configparser.ConfigParser` |
 | `افتراضي_إعدادات` | `config.defaults` |
 | `تكوين_افتراضي` | `configparser.DEFAULTSECT` |
 | `اقرأ_إعداد` | `config.read` |

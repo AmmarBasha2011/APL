@@ -5,9 +5,6 @@ Transpiles Arabic keywords to Python decimal module
 
 DECIMAL_FUNCS = {
     "عشري_دقيق": "decimal.Decimal",
-    "من_نص_عشري": "decimal.Decimal",
-    "من_كسر_عشري": "decimal.Decimal",
-    "من_عدد_عشري": "decimal.Decimal",
     "سياق_العشري": "decimal.getcontext",
     "سياق_محلي": "decimal.localcontext",
     "اجمع_عشري": "_apl_decimal_add",

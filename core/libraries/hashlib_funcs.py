@@ -9,13 +9,10 @@ or .encode('utf-8') on string variables.
 HASHLIB_FUNCS = {
     # تجزئة (Hashing)
     "تجزئة_md5": "hashlib.md5",
-    "تجزئة_sha1": "hashlib.sha1",
     "تجزئة_sha256": "hashlib.sha256",
     "تجزئة_sha512": "hashlib.sha512",
     
     # مختصرات (Shortcuts)
-    "md5": "hashlib.md5",
-    "sha256": "hashlib.sha256",
     
     # دوال (Functions)
     "اشتق_مفتاح": "hashlib.pbkdf2_hmac",

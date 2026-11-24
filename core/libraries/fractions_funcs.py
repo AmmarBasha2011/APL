@@ -5,8 +5,6 @@ Transpiles Arabic keywords to Python fractions module
 
 FRACTIONS_FUNCS = {
     "كسر": "fractions.Fraction",
-    "من_عددين": "fractions.Fraction",
-    "من_نص_كسر": "fractions.Fraction",
     "قيمة_كسر": "_apl_fraction_value",
     "مقلوب_كسر": "_apl_fraction_recip",
 }

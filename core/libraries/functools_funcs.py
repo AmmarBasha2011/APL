@@ -4,15 +4,8 @@ Transpiles Arabic keywords to Python functools module
 """
 
 FUNCTOOLS_FUNCS = {
-    "@تغليف_دالة": "functools.wraps",
-    "تغليف_دالة": "functools.wraps",
-    "جزئي_دالة": "functools.partial",
     "كاش_مؤقت_دالة": "functools.lru_cache",
-    "كاش_بلا_حد": "functools.cache",
-    "مقارن_بالعكس": "functools.cmp_to_key",
     "اختصر_دالة": "functools.reduce",
-    "تعيين_ترتيب": "functools.total_ordering",
-    "أقوى_قيمة": "functools.reduce",
 }
 
 FUNCTOOLS_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(FUNCTOOLS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("

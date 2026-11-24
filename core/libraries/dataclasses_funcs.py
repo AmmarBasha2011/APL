@@ -4,16 +4,10 @@ Full dataclasses and enum wrapper with Arabic keywords
 """
 
 DATACLASSES_FUNCS = {
-    "@فئة_بيانات": "dataclasses.dataclass",
-    "@dataclass": "dataclasses.dataclass",
     # Dataclasses
-    "dataclass": "dataclasses.dataclass",
     "فئة_بيانات": "dataclasses.dataclass",
-    "DataClass": "dataclasses.dataclass",
-    "أنشئ_فئة_بيانات": "dataclasses.dataclass",
     
     # خصائص Dataclass
-    "حقول_بيانات": "dataclasses.fields",
     "حقل_بيانات": "dataclasses.field",
     "أنواع": "dataclasses.fields",
     "اسم_حقل": "field.name",
@@ -29,10 +23,7 @@ DATACLASSES_FUNCS = {
     "اختر_اختيار": "field.omit",
     
     # دوال Dataclass
-    "تحويل_لصف": "dataclasses.astuple",
-    "تحويل_لقاموس": "dataclasses.asdict",
     "استبدال_حقل": "dataclasses.replace",
-    "فحص_فئة_بيانات": "dataclasses.is_dataclass",
     "تهيئة_بعد": "__post_init__",
     
     # دوال مساعدة
@@ -40,22 +31,17 @@ DATACLASSES_FUNCS = {
     "اختر_النوع": "dataclasses.KW_ONLY",
     
     # Enum
-    "تعداد": "enum.Enum",
     "Enum": "enum.Enum",
-    "أنشئ_تعداد": "enum.Enum",
     "Flag": "enum.Flag",
     "IntFlag": "enum.IntFlag",
     "IntEnum": "enum.IntEnum",
     "StrEnum": "enum.StrEnum",
     
     # خصائص Enum
-    "أسماء": "enum.Enum",
     "قيم": "EnumType",
-    "EnumType": "enum.EnumType",
     "EnumMeta": "enum.EnumMeta",
     
     # دوال Enum
-    "تلقائي_بيانات": "enum.auto",
     "auto": "enum.auto",
     "فريد": "enum.unique",
     "عضو_تعداد": "EnumMember",
@@ -63,10 +49,7 @@ DATACLASSES_FUNCS = {
     # ABC
     "ABC": "abc.ABC",
     "ABCMeta": "abc.ABCMeta",
-    "مجرد": "abc.ABC",
-    "فئة_مجردة": "abc.ABC",
     "دالة_مجردة": "abc.abstractmethod",
-    "abstract_method": "abc.abstractmethod",
     "خاصية_مجردة": "abc.abstractproperty",
     "static_method": "staticmethod",
     "class_method": "classmethod",

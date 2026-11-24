@@ -2,21 +2,15 @@
 
 كل الدوال من مكتبة `collections` في Python، مترجمة بالكامل:
 
-**9 عنصراً عربياً** (الدوال: 9).
+**3 عنصراً عربياً** (الدوال: 9).
 
-## الدوال (9)
+## الدوال (3)
 
 | العربي | Python |
 |--------|--------|
 | `عداد` | `collections.Counter` |
-| `قاموس_افتراضي` | `collections.defaultdict` |
 | `قائمة_مزدوجة` | `collections.deque` |
-| `صف_مسمى` | `collections.namedtuple` |
-| `سلسلة_مرتبة` | `collections.OrderedDict` |
-| `عد_عناصر` | `collections.Counter` |
 | `عنصر_أكثر` | `collections.Counter.most_common` |
-| `صف_انتظار` | `collections.deque` |
-| `صف_انتظار_محدود` | `collections.deque` |
 
 ## مثال
 

@@ -84,21 +84,10 @@ import re
 SYS_FUNCS = {
     # نداءات الوحدة والأصناف
     # === abc ===
-    "ABC_3": "abc.ABC",
-    "ABC_احصل_ذاكرة_مؤقتة_رمز": "abc.get_cache_token",
-    "ABC_حدّث_دوال_مجردة": "abc.update_abstractmethods",
-    "ABC_خاصية_مجردة": "abc.abstractproperty",
-    "ABC_دالة_ساكنة_مجردة": "abc.abstractstaticmethod",
-    "ABC_دالة_صنف_مجردة": "abc.abstractclassmethod",
     # === ctypes ===
     "C_بايت": "ctypes.c_byte",
-    "C_بايت_غير_سالب": "ctypes.c_ubyte",
-    "C_حجم_T": "ctypes.c_size_t",
     "C_حرف": "ctypes.c_char",
     "C_حقل": "ctypes.CField",
-    "C_صحيح16": "ctypes.c_int16",
-    "C_صحيح16_غير_سالب": "ctypes.c_uint16",
-    "C_صحيح64": "ctypes.c_int64",
     "C_صحيح_غير_سالب": "ctypes.c_uint",
     "C_عائم": "ctypes.c_float",
     "C_عائم_مركّب": "ctypes.c_float_complex",
@@ -106,7 +95,6 @@ SYS_FUNCS = {
     "C_عائم_مضاعف_مركّب": "ctypes.c_longdouble_complex",
     "C_محرف_عريض": "ctypes.c_wchar",
     "C_محرف_عريض_P": "ctypes.c_wchar_p",
-    "C_مخزن_مؤقت": "ctypes.c_buffer",
     "C_مزدوج": "ctypes.c_double",
     "C_مزدوج_مركّب": "ctypes.c_double_complex",
     "C_منطقي": "ctypes.c_bool",
@@ -119,24 +107,9 @@ SYS_FUNCS = {
     "I_خريطة_غير_مرتّب_مكرّر": "multiprocessing.pool.IMapUnorderedIterator",
     "I_خريطة_مكرّر": "multiprocessing.pool.IMapIterator",
     # === ctypes ===
-    "LPBOOL": "ctypes.wintypes.LPBOOL",
-    "LPBYTE": "ctypes.wintypes.LPBYTE",
-    "LPCOLORREF": "ctypes.wintypes.LPCOLORREF",
-    "LPFILETIME": "ctypes.wintypes.LPFILETIME",
-    "LPHANDLE": "ctypes.wintypes.LPHANDLE",
-    "LPINT": "ctypes.wintypes.LPINT",
-    "LPMSG": "ctypes.wintypes.LPMSG",
-    "LPPOINT": "ctypes.wintypes.LPPOINT",
-    "LPRECT": "ctypes.wintypes.LPRECT",
-    "LPSIZE": "ctypes.wintypes.LPSIZE",
-    "LPUINT": "ctypes.wintypes.LPUINT",
-    "LPWIN_32_ابحث_بيانات_a": "ctypes.wintypes.LPWIN32_FIND_DATAA",
-    "LPWIN_32_ابحث_بيانات_w": "ctypes.wintypes.LPWIN32_FIND_DATAW",
-    "LPWORD": "ctypes.wintypes.LPWORD",
     # === multiprocessing ===
     "MAP_نجمة_نجمية": "multiprocessing.pool.starmapstar",
     # === logging ===
-    "NT_حدث_سجل_معالج": "logging.handlers.NTEventLogHandler",
     # === ctypes ===
     "PY_كائن": "ctypes.py_object",
     "PY_مكتبة_ديناميكية": "ctypes.PyDLL",
@@ -163,7 +136,6 @@ SYS_FUNCS = {
     "XML_مُستمع": "multiprocessing.connection.XmlListener",
     # === ctypes ===
     "c_صحيح": "ctypes.c_int",
-    "c_عدم": "ctypes.c_void_p",
     "c_نص": "ctypes.c_char_p",
     # === multiprocessing ===
     "mapstar": "multiprocessing.pool.mapstar",
@@ -176,24 +148,11 @@ SYS_FUNCS = {
     # === platform ===
     "أبطِل_ذاكرة_مؤقتة": "platform.invalidate_caches",
     # === fileinput ===
-    "أدخل_من_ملفات": "fileinput.input",
     # === readline ===
     "أدخل_نص": "readline.insert_text",
     # === unittest ===
-    "أدرج_موعداً_وحدة_سياق": "unittest.enterModuleContext",
     # === pkgutil ===
-    "أدوات_الحزم_صف_مسمّى": "pkgutil.namedtuple",
     # === contextlib ===
-    "أدوات_السياق_إغلاق_غير_متزامن": "contextlib.aclosing",
-    "أدوات_السياق_اخرج_مكدس": "contextlib.ExitStack",
-    "أدوات_السياق_سياق_مُزيّن": "contextlib.ContextDecorator",
-    "أدوات_السياق_غلاف": "contextlib.wraps",
-    "أدوات_السياق_غير_متزامن_اخرج_مكدس": "contextlib.AsyncExitStack",
-    "أدوات_السياق_غير_متزامن_سياق_مُزيّن": "contextlib.AsyncContextDecorator",
-    "أدوات_السياق_غيّر_المجلد": "contextlib.chdir",
-    "أدوات_السياق_مجرد_سياق_مدير": "contextlib.AbstractContextManager",
-    "أدوات_السياق_مجرد_غير_متزامن_سياق_مدير": "contextlib.AbstractAsyncContextManager",
-    "أدوات_السياق_مدير_سياق_غير_متزامن": "contextlib.asynccontextmanager",
     # === zipapp ===
     "أرشيف_مضغوط_تطبيق_خطأ": "zipapp.ZipAppError",
     # === unittest ===
@@ -203,7 +162,6 @@ SYS_FUNCS = {
     "أساس_دوّار_معالج": "logging.handlers.BaseRotatingHandler",
     # === multiprocessing ===
     "أساس_قائمة_وكيل": "multiprocessing.managers.BaseListProxy",
-    "أساس_مجموعة_وكيل": "multiprocessing.managers.BasePoolProxy",
     "أساس_مدير": "multiprocessing.managers.BaseManager",
     # === logging ===
     "أساس_مُضبط": "logging.config.BaseConfigurator",
@@ -234,11 +192,6 @@ SYS_FUNCS = {
     "أعد_توجيه_الإخراج": "contextlib.redirect_stdout",
     "أعد_توجيه_الخطأ": "contextlib.redirect_stderr",
     # === numbers ===
-    "أعداد_حقيقي": "numbers.Real",
-    "أعداد_صحيح": "numbers.Integral",
-    "أعداد_عدد": "numbers.Number",
-    "أعداد_مركّب": "numbers.Complex",
-    "أعداد_نسبي": "numbers.Rational",
     # === readline ===
     "أعيد_العرض": "readline.redisplay",
     # === signal ===
@@ -246,7 +199,6 @@ SYS_FUNCS = {
     # === multiprocessing ===
     "أنبوب": "multiprocessing.Pipe",
     # === pydoc ===
-    "أنبوب_صفّاح": "pydoc.pipe_pager",
     # === platform ===
     "أندرويد_إصدار": "platform.AndroidVer",
     # === venv ===
@@ -254,17 +206,10 @@ SYS_FUNCS = {
     # === unittest ===
     "أنشئ_مخطط_تلقائي": "unittest.mock.create_autospec",
     # === ctypes ===
-    "أنشئ_يونيكود_مخزن_مؤقت": "ctypes.create_unicode_buffer",
     # === types ===
-    "أنواع_اتحاد_نوع": "types.UnionType",
-    "أنواع_تعاونية": "types.coroutine",
-    "أنواع_جديد_صنف": "types.new_class",
-    "أنواع_جهّز_صنف": "types.prepare_class",
-    "أنواع_ديناميكي_صنف_سمة": "types.DynamicClassAttribute",
     # === logging ===
     "أوقف_يستمع": "logging.config.stopListening",
     # === typing ===
-    "أي": "typing.Any",
     # === select ===
     "إبول": "select.epoll",
     # === typing ===
@@ -274,37 +219,23 @@ SYS_FUNCS = {
     # === typing ===
     "إدخال_إخراج": "typing.IO",
     # === io ===
-    "إدخال_إخراج_أساس_2": "io.IOBase",
     # === platform ===
     "إدخال_إخراج_إصدار": "platform.ios_ver",
-    "إدخال_إخراج_إصدار_معلومات": "platform.IOSVersionInfo",
     # === io ===
-    "إدخال_إخراج_افتح_كود": "io.open_code",
-    "إدخال_إخراج_تصاعدي_سطر_جديد_مفكّك": "io.IncrementalNewlineDecoder",
-    "إدخال_إخراج_غير_مدعوم_عملية": "io.UnsupportedOperation",
-    "إدخال_إخراج_قارئ": "io.Reader",
-    "إدخال_إخراج_كاتب": "io.Writer",
-    "إدخال_إخراج_مُخزّن_مؤقتاً_عشوائي": "io.BufferedRandom",
-    "إدخال_إخراج_مُخزّن_مؤقتاً_قراءة_كتابة_زوج": "io.BufferedRWPair",
-    "إدخال_إخراج_نص_ترميز": "io.text_encoding",
     # === fileinput ===
-    "إدخال_اسم_ملف_2": "fileinput.filename",
     # === signal ===
     "إشارات": "signal.Signals",
     # === multiprocessing ===
     "إشارة_مرور": "multiprocessing.Semaphore",
     "إشارة_مرور_اقفل": "multiprocessing.synchronize.SemLock",
-    "إشارة_مرور_فكّ_الرابط": "multiprocessing.synchronize.sem_unlink",
     # === signal ===
     "إشارة_معالجات": "signal.Handlers",
     # === platform ===
     "إصدار_بايثون": "platform.python_version",
     # === sysconfig ===
-    "إعداد_النظام_مسار_حقيقي": "sysconfig.realpath",
     # === ensurepip ===
     "إقلاع": "ensurepip.bootstrap",
     # === dataclasses ===
-    "ابدأ_تهيئة_متغير": "dataclasses.InitVar",
     # === multiprocessing ===
     "اتصال_غلاف": "multiprocessing.connection.ConnectionWrapper",
     # === tty ===
@@ -318,7 +249,6 @@ SYS_FUNCS = {
     "احذف_سجل_عنصر": "readline.remove_history_item",
     # === unittest ===
     "احذف_معالج": "unittest.removeHandler",
-    "احذف_نتيجة": "unittest.removeResult",
     # === types ===
     "احصل_أصلي_أسس": "types.get_original_bases",
     # === typing ===
@@ -342,7 +272,6 @@ SYS_FUNCS = {
     # === pkgutil ===
     "احصل_بيانات": "pkgutil.get_data",
     # === multiprocessing ===
-    "احصل_توليد_افتح_عملية": "multiprocessing.managers.get_spawning_popen",
     # === readline ===
     "احصل_حالي_سجل_طول": "readline.get_current_history_length",
     # === logging ===
@@ -351,22 +280,18 @@ SYS_FUNCS = {
     "احصل_سجل_طول": "readline.get_history_length",
     "احصل_سجل_عنصر": "readline.get_history_item",
     # === unittest ===
-    "احصل_سمة_ظاهرية": "unittest.runner.get_theme",
     # === multiprocessing ===
     "احصل_سياق": "multiprocessing.get_context",
     # === pydoc ===
-    "احصل_صفّاح": "pydoc.get_pager",
     # === rlcompleter ===
     "احصل_صنف_أعضاء": "rlcompleter.get_class_members",
     # === difflib ===
-    "احصل_على_أقرب_التطابقات_2": "difflib.get_close_matches",
     # === resource ===
     "احصل_على_الاستخدام": "resource.getrusage",
     # === pydoc ===
     "احصل_على_التوثيق": "pydoc.getdoc",
     # === getopt ===
     "احصل_على_الخيارات": "getopt.getopt",
-    "احصل_على_الخيارات_خطأ": "getopt.GetoptError",
     # === readline ===
     "احصل_على_السطر": "readline.get_line_buffer",
     # === signal ===
@@ -381,7 +306,6 @@ SYS_FUNCS = {
     "احصل_على_حزم_الموقع": "site.getsitepackages",
     "احصل_على_حزم_موقع_المستخدم": "site.getusersitepackages",
     # === ctypes ===
-    "احصل_على_رقم_الخطأ": "ctypes.get_errno",
     # === pty ===
     "احصل_على_سمات_الطرفية": "pty.tcgetattr",
     # === site ===
@@ -391,7 +315,6 @@ SYS_FUNCS = {
     # === signal ===
     "احصل_على_معالج_الإشارة": "signal.getsignal",
     # === multiprocessing ===
-    "احصل_على_معرف_العملية": "multiprocessing.managers.getpid",
     # === site ===
     "احصل_على_ملف_السجل": "site.gethistoryfile",
     # === multiprocessing ===
@@ -425,18 +348,11 @@ SYS_FUNCS = {
     "احصل_مُكمل_محددات": "readline.get_completer_delims",
     "احصل_نهاية_الفهرس": "readline.get_endidx",
     # === typing ===
-    "احصل_نوع_تلميحات": "typing.get_type_hints",
     # === unittest ===
-    "اختبارات_وحدة_تجاوز": "unittest.skip",
-    "اختبارات_وحدة_محمّل_طابق_نمطياً": "unittest.loader.fnmatch",
-    "اختبارات_وحدة_محمّل_طابق_نمطياً_بالحالة": "unittest.loader.fnmatchcase",
     "اختبارات_وحدة_نتيجة_فشل_سريع": "unittest.result.failfast",
-    "اختبارات_وحدة_وهمي_R_اقفل": "unittest.mock.RLock",
-    "اختبارات_وحدة_وهمي_هو_دالة_تعاونية": "unittest.mock.iscoroutinefunction",
     "اختبر_برنامج": "unittest.TestProgram",
     "اختبر_نتيجة": "unittest.TestResult",
     # === select ===
-    "اختر_عدة": "select.select",
     # === selectors ===
     "اختر_مُنتخِب": "selectors.SelectSelector",
     # === multiprocessing ===
@@ -449,19 +365,15 @@ SYS_FUNCS = {
     # === readline ===
     "استبدل_سجل_عنصر": "readline.replace_history_item",
     # === unittest ===
-    "استبدل_مؤقتاً": "unittest.mock.patch",
     # === multiprocessing ===
     "استثناء_بـ_تتبع": "multiprocessing.pool.ExceptionWithTraceback",
     # === select ===
-    "استطلع_الملفات": "select.poll",
     # === selectors ===
-    "استطلع_مُنتخِب": "selectors.PollSelector",
     # === pydoc ===
     "استيراد_آمن": "pydoc.safeimport",
     "اسم_الأب": "pydoc.parentname",
     "اسم_الصنف": "pydoc.classname",
     # === unicodedata ===
-    "اسم_المحرف_2": "unicodedata.name",
     # === platform ===
     "اسم_النظام_2": "platform.uname",
     "اسم_النظام_نتيجة": "platform.uname_result",
@@ -470,7 +382,6 @@ SYS_FUNCS = {
     # === multiprocessing ===
     "اسمح_اتصال_تحويل_بايكن": "multiprocessing.allow_connection_pickling",
     # === logging ===
-    "اضبط_أساسياً": "logging.basicConfig",
     # === multiprocessing ===
     "اعتباطي_عنوان": "multiprocessing.connection.arbitrary_address",
     # === logging ===
@@ -482,13 +393,11 @@ SYS_FUNCS = {
     # === multiprocessing ===
     "اعمل_وكيل_نوع": "multiprocessing.managers.MakeProxyType",
     # === io ===
-    "افتح_2": "io.open",
     # === pty ===
     "افتح_طرفية_وهمية": "pty.openpty",
     # === signal ===
     "افتراضي_عدد_صحيح_معالج": "signal.default_int_handler",
     # === selectors ===
-    "افتراضي_مُنتخِب": "selectors.DefaultSelector",
     # === pydoc ===
     "افصل_التوثيق": "pydoc.splitdoc",
     # === getopt ===
@@ -504,7 +413,6 @@ SYS_FUNCS = {
     # === pkgutil ===
     "اقرأ_كود": "pkgutil.read_code",
     # === contextlib ===
-    "اكبح_2": "contextlib.suppress",
     # === pydoc ===
     "اكتب_التوثيق": "pydoc.writedoc",
     "اكتب_التوثيقات": "pydoc.writedocs",
@@ -517,19 +425,15 @@ SYS_FUNCS = {
     # === signal ===
     "الإشارات_المعلقة": "signal.sigpending",
     # === logging ===
-    "التقط_تحذيرات": "logging.captureWarnings",
     # === multiprocessing ===
-    "العملية_الحالية": "multiprocessing.current_process",
     # === concurrent ===
     "المكتملة": "concurrent.futures.as_completed",
     # === platform ===
     "المنصة": "platform.platform",
     # === typing ===
-    "امسح_إثقال": "typing.clear_overloads",
     # === readline ===
     "امسح_سجل": "readline.clear_history",
     # === pty ===
-    "انتظر_PID": "pty.waitpid",
     # === signal ===
     "انتظر_إشارة": "signal.sigwait",
     # === tty ===
@@ -538,21 +442,15 @@ SYS_FUNCS = {
     "انتظر_بإشارة": "signal.sigtimedwait",
     "انتظر_معلومات_إشارة": "signal.sigwaitinfo",
     # === ensurepip ===
-    "انسخ2": "ensurepip.copy2",
     # === copy ===
-    "انسخ_3": "copy.copy",
-    "انسخ_استبدل_2": "copy.replace",
     # === contextvars ===
     "انسخ_السياق": "contextvars.copy_context",
     # === copy ===
-    "انسخ_خطأ_2": "copy.Error",
-    "انسخ_عميقاً_3": "copy.deepcopy",
     # === pydoc ===
     "بالأحرف_الأولى": "pydoc.apropos",
     # === ctypes ===
     "بالمرجع": "ctypes.byref",
     # === io ===
-    "بايت_تدفق_2": "io.BytesIO",
     # === platform ===
     "بايثون_إصدار_صف": "platform.python_version_tuple",
     "بايثون_ابنِ": "platform.python_build",
@@ -573,8 +471,6 @@ SYS_FUNCS = {
     "بعيد_تتبع": "multiprocessing.pool.RemoteTraceback",
     "بعيد_خطأ": "multiprocessing.managers.RemoteError",
     # === typing ===
-    "بلا_نوع_تحقق": "typing.no_type_check",
-    "بلا_نوع_تحقق_مُزيّن": "typing.no_type_check_decorator",
     # === resource ===
     "بنية_استخدام": "resource.struct_rusage",
     # === signal ===
@@ -585,17 +481,6 @@ SYS_FUNCS = {
     "بيئة_افتراضية_رئيسي": "venv.main",
     "بيئة_باني": "venv.EnvBuilder",
     # === unicodedata ===
-    "بيانات_معيار_يونيكود": "unicodedata.UCD",
-    "بيانات_يونيكود_بحث": "unicodedata.lookup",
-    "بيانات_يونيكود_تفكيك_2": "unicodedata.decomposition",
-    "بيانات_يونيكود_ثنائي_الاتجاه_2": "unicodedata.bidirectional",
-    "بيانات_يونيكود_رقم": "unicodedata.digit",
-    "بيانات_يونيكود_شرق_آسيوي_عرض": "unicodedata.east_asian_width",
-    "بيانات_يونيكود_عددي": "unicodedata.numeric",
-    "بيانات_يونيكود_عشري": "unicodedata.decimal",
-    "بيانات_يونيكود_معكوس_2": "unicodedata.mirrored",
-    "بيانات_يونيكود_مُركِّب": "unicodedata.combining",
-    "بيانات_يونيكود_هو_موحّد": "unicodedata.is_normalized",
     # === typing ===
     "تأكد_مستحيل": "typing.assert_never",
     # === ensurepip ===
@@ -604,33 +489,11 @@ SYS_FUNCS = {
     # === typing ===
     "تجاوز": "typing.override",
     # === unittest ===
-    "تجاوز_إذا": "unittest.skipIf",
-    "تجاوز_إلا_إذا": "unittest.skipUnless",
     "تجاوز_اختبر": "unittest.SkipTest",
     # === pkgutil ===
     "تجوّل_حزم": "pkgutil.walk_packages",
     # === stringprep ===
-    "تحضير_النص_خريطة_جدول_B2": "stringprep.map_table_b2",
-    "تحضير_النص_خريطة_جدول_B3": "stringprep.map_table_b3",
-    "تحضير_النص_في_جدول_A1": "stringprep.in_table_a1",
-    "تحضير_النص_في_جدول_B1": "stringprep.in_table_b1",
-    "تحضير_النص_في_جدول_D1": "stringprep.in_table_d1",
-    "تحضير_النص_في_جدول_D2": "stringprep.in_table_d2",
-    "تحضير_النص_في_جدول_توحيد11": "stringprep.in_table_c11",
-    "تحضير_النص_في_جدول_توحيد11_توحيد12": "stringprep.in_table_c11_c12",
-    "تحضير_النص_في_جدول_توحيد12": "stringprep.in_table_c12",
-    "تحضير_النص_في_جدول_توحيد21": "stringprep.in_table_c21",
-    "تحضير_النص_في_جدول_توحيد21_توحيد22": "stringprep.in_table_c21_c22",
-    "تحضير_النص_في_جدول_توحيد22": "stringprep.in_table_c22",
-    "تحضير_النص_في_جدول_توحيد3": "stringprep.in_table_c3",
-    "تحضير_النص_في_جدول_توحيد4": "stringprep.in_table_c4",
-    "تحضير_النص_في_جدول_توحيد5": "stringprep.in_table_c5",
-    "تحضير_النص_في_جدول_توحيد6": "stringprep.in_table_c6",
-    "تحضير_النص_في_جدول_توحيد7": "stringprep.in_table_c7",
-    "تحضير_النص_في_جدول_توحيد8": "stringprep.in_table_c8",
-    "تحضير_النص_في_جدول_توحيد9": "stringprep.in_table_c9",
     # === site ===
-    "تحقق_فعّل_موقع_المستخدم": "site.check_enableusersite",
     # === fcntl ===
     "تحكم_إدخال": "fcntl.ioctl",
     # === tty ===
@@ -650,48 +513,28 @@ SYS_FUNCS = {
     "ترابط_مزيج": "unittest.mock.ThreadingMixin",
     "ترابط_وهمي": "unittest.mock.ThreadingMock",
     # === concurrent ===
-    "تزامن_مستقبلات_انتظر": "concurrent.futures.wait",
     "تزامن_مستقبلات_غير_صالح_حالة_خطأ": "concurrent.futures.InvalidStateError",
     # === logging ===
-    "تسجيل_أوقف": "logging.shutdown",
     "تسجيل_إعداد_استمع": "logging.config.listen",
     "تسجيل_إعداد_تحويل_قائمة": "logging.config.ConvertingList",
-    "تسجيل_استثناء": "logging.exception",
     "تسجيل_الإطار_الحالي": "logging.currentframe",
     # === copyreg ===
-    "تسجيل_النسخ_أضف_امتداد": "copyreg.add_extension",
-    "تسجيل_النسخ_احذف_امتداد": "copyreg.remove_extension",
-    "تسجيل_النسخ_امسح_امتداد_ذاكرة_مؤقتة": "copyreg.clear_extension_cache",
-    "تسجيل_النسخ_بايكن_أعلى": "copyreg.pickle_super",
-    "تسجيل_النسخ_بايكن_اتحاد": "copyreg.pickle_union",
-    "تسجيل_النسخ_بايكن_مركّب": "copyreg.pickle_complex",
-    "تسجيل_النسخ_منشئ": "copyreg.constructor",
     # === logging ===
     "تسجيل_حذّر": "logging.warn",
-    "تسجيل_سجل": "logging.log",
     "تسجيل_عطّل": "logging.disable",
     "تسجيل_عيّن_سجل_سجل_مصنع": "logging.setLogRecordFactory",
     "تسجيل_عيّن_مسجّل_صنف": "logging.setLoggerClass",
     "تسجيل_قاتل": "logging.fatal",
     "تسجيل_مدير": "logging.Manager",
     "تسجيل_مرشّح": "logging.Filterer",
-    "تسجيل_معالج": "logging.Handler",
-    "تسجيل_معالجات_HTTP_معالج": "logging.handlers.HTTPHandler",
     # === pydoc ===
     "تصفّح": "pydoc.browse",
     # === zipapp ===
-    "تطبيق_مضغوط_أنشئ_أرشيف": "zipapp.create_archive",
     "تطبيق_مضغوط_رئيسي": "zipapp.main",
     # === enum ===
-    "تعداد_2": "enum.Enum",
-    "تعداد_تحقق": "enum.EnumCheck",
     "تعداد_تحقق_2": "enum.verify",
-    "تعداد_تلقائي": "enum.auto",
     "تعداد_ثنائي": "enum.bin",
-    "تعداد_علامة": "enum.Flag",
-    "تعداد_فريد_2": "enum.unique",
     "تعداد_قاموس": "enum.EnumDict",
-    "تعداد_وصفي": "enum.EnumMeta",
     # === pty ===
     "تفرّع": "pty.fork",
     # === multiprocessing ===
@@ -739,9 +582,7 @@ SYS_FUNCS = {
     # === pydoc ===
     "حدّد": "pydoc.locate",
     # === unittest ===
-    "حزمة_اختبارات": "unittest.TestSuite",
     # === logging ===
-    "حزمة_بيانات_معالج": "logging.handlers.DatagramHandler",
     # === sysconfig ===
     "حلل_إعداد_H": "sysconfig.parse_config_h",
     # === shlex ===
@@ -759,7 +600,6 @@ SYS_FUNCS = {
     # === typing ===
     "حوّل_نوع": "typing.cast",
     # === io ===
-    "خام_إدخال_إخراج_أساس_2": "io.RawIOBase",
     # === multiprocessing ===
     "خام_قيمة": "multiprocessing.RawValue",
     "خام_مصفوفة": "multiprocessing.RawArray",
@@ -775,9 +615,7 @@ SYS_FUNCS = {
     # === unittest ===
     "دالة_اختبر_حالة": "unittest.FunctionTestCase",
     # === graphlib ===
-    "دورة_خطأ": "graphlib.CycleError",
     # === logging ===
-    "دوّار_ملف_معالج": "logging.handlers.RotatingFileHandler",
     "ذاكرة_معالج": "logging.handlers.MemoryHandler",
     # === mmap ===
     "ذاكرة_مُخزَّنة": "mmap.mmap",
@@ -796,19 +634,13 @@ SYS_FUNCS = {
     # === multiprocessing ===
     "سجل_إلى_خطأ_قياسي": "multiprocessing.log_to_stderr",
     # === logging ===
-    "سجّل_تحذيراً": "logging.warning",
-    "سجّل_تصحيحاً": "logging.debug",
-    "سجّل_حرجاً": "logging.critical",
-    "سجّل_خطأ_2": "logging.error",
     # === site ===
     "سجّل_سطر_قراءة": "site.register_readline",
     # === logging ===
-    "سجّل_معلومة": "logging.info",
     # === unittest ===
     "سجّل_نتيجة": "unittest.registerResult",
     "سحري_مزيج": "unittest.mock.MagicMixin",
     "سحري_وكيل": "unittest.mock.MagicProxy",
-    "سحري_وهمي": "unittest.mock.MagicMock",
     # === platform ===
     "سطح_مكتب_حر_نظام_تشغيل_حرّر": "platform.freedesktop_os_release",
     # === cmd ===
@@ -824,7 +656,6 @@ SYS_FUNCS = {
     # === difflib ===
     "سياق_فرق": "difflib.context_diff",
     # === contextvars ===
-    "سياق_متغيرات_رمز_2": "contextvars.Token",
     # === enum ===
     "شامل_تعداد": "enum.global_enum",
     "شامل_تعداد_تمثيل": "enum.global_enum_repr",
@@ -840,18 +671,11 @@ SYS_FUNCS = {
     # === logging ===
     "صالح_معرّف": "logging.config.valid_ident",
     # === ctypes ===
-    "صغير_ترتيب_البايتات_اتحاد": "ctypes.LittleEndianUnion",
-    "صغير_ترتيب_البايتات_بنية": "ctypes.LittleEndianStructure",
     "صغير_مستطيل": "ctypes.wintypes.SMALL_RECT",
     # === pydoc ===
     "صفّاح": "pydoc.pager",
     # === dataclasses ===
-    "صنف_بيانات": "dataclasses.dataclass",
-    "صنف_بيانات_استبدل": "dataclasses.replace",
-    "صنف_بيانات_تكراري_تمثيل": "dataclasses.recursive_repr",
     "صنف_بيانات_حقل": "dataclasses.Field",
-    "صنف_بيانات_حقل_2": "dataclasses.field",
-    "صنف_بيانات_حقول": "dataclasses.fields",
     # === typing ===
     "صنف_بيانات_حوّل": "typing.dataclass_transform",
     # === pydoc ===
@@ -862,8 +686,6 @@ SYS_FUNCS = {
     # === multiprocessing ===
     "طابور_عمليات": "multiprocessing.Queue",
     # === logging ===
-    "طابور_معالج": "logging.handlers.QueueHandler",
-    "طابور_مُستمع": "logging.handlers.QueueListener",
     # === multiprocessing ===
     "طبّق_نتيجة": "multiprocessing.pool.ApplyResult",
     # === tty ===
@@ -871,16 +693,12 @@ SYS_FUNCS = {
     "طرفية_أفرغ": "tty.tcflush",
     "طرفية_خطأ": "tty.error",
     # === pydoc ===
-    "طرفية_صفّاح": "pydoc.tty_pager",
     # === pty ===
-    "طرفية_وهمية_أغلق": "pty.close",
     # === getopt ===
     "طويل_له_معطيات": "getopt.long_has_args",
     # === pydoc ===
     "عادي": "pydoc.plain",
-    "عادي_صفّاح": "pydoc.plain_pager",
     # === multiprocessing ===
-    "عالج_خطأ": "multiprocessing.ProcessError",
     "عالج_محلي_عيّن": "multiprocessing.managers.ProcessLocalSet",
     # === typing ===
     "عام": "typing.Generic",
@@ -889,8 +707,6 @@ SYS_FUNCS = {
     # === multiprocessing ===
     "عام_دوال": "multiprocessing.managers.public_methods",
     # === enum ===
-    "عدد_صحيح_تعداد": "enum.IntEnum",
-    "عدد_صحيح_علامة": "enum.IntFlag",
     # === logging ===
     "عدم_معالج": "logging.NullHandler",
     # === ctypes ===
@@ -901,7 +717,6 @@ SYS_FUNCS = {
     # === multiprocessing ===
     "عملية_2": "multiprocessing.Process",
     # === ctypes ===
-    "عنوان_الكائن": "ctypes.addressof",
     # === multiprocessing ===
     "عنوان_نوع": "multiprocessing.connection.address_type",
     # === signal ===
@@ -918,7 +733,6 @@ SYS_FUNCS = {
     "عيّن_الخروج": "site.setquit",
     # === signal ===
     "عيّن_المؤقّت": "signal.setitimer",
-    "عيّن_المنبّه": "signal.alarm",
     # === site ===
     "عيّن_المُساعد": "site.sethelper",
     # === readline ===
@@ -927,7 +741,6 @@ SYS_FUNCS = {
     # === tty ===
     "عيّن_حجم_النافذة": "tty.tcsetwinsize",
     # === resource ===
-    "عيّن_حد_المورد": "resource.setrlimit",
     # === site ===
     "عيّن_حقوق_النشر": "site.setcopyright",
     # === multiprocessing ===
@@ -945,14 +758,12 @@ SYS_FUNCS = {
     # === ctypes ===
     "عيّن_مؤشر_نوع": "ctypes.SetPointerType",
     # === signal ===
-    "عيّن_معالج_الإشارة": "signal.signal",
     # === readline ===
     "عيّن_مُكمل": "readline.set_completer",
     "عيّن_مُكمل_محددات": "readline.set_completer_delims",
     # === multiprocessing ===
     "عيّن_وكيل": "multiprocessing.managers.SetProxy",
     # === io ===
-    "غلاف_نصي_2": "io.TextIOWrapper",
     # === unittest ===
     "غير_صالح_مواصفة_خطأ": "unittest.mock.InvalidSpecError",
     # === enum ===
@@ -964,7 +775,6 @@ SYS_FUNCS = {
     "غير_متزامن_وهمي": "unittest.mock.AsyncMock",
     "غير_متزامن_وهمي_مزيج": "unittest.mock.AsyncMockMixin",
     # === unicodedata ===
-    "فئة_يونيكود_2": "unicodedata.category",
     # === site ===
     "فعّل_الإكمال": "site.enablerlcompleter",
     # === multiprocessing ===
@@ -974,12 +784,9 @@ SYS_FUNCS = {
     # === multiprocessing ===
     "قابل_للانضمام_طابور": "multiprocessing.JoinableQueue",
     # === io ===
-    "قارئ_مخزّن_2": "io.BufferedReader",
     # === filecmp ===
-    "قارن_ملفين": "filecmp.cmp",
     # === logging ===
     "قاموس_إعداد": "logging.config.dictConfig",
-    "قاموس_مُضبط": "logging.config.DictConfigurator",
     # === multiprocessing ===
     "قاموس_وكيل": "multiprocessing.managers.DictProxy",
     # === getopt ===
@@ -997,14 +804,11 @@ SYS_FUNCS = {
     # === typing ===
     "قيّم_إلى_الأمام_مرجع": "typing.evaluate_forward_ref",
     # === io ===
-    "كاتب_مخزّن_2": "io.BufferedWriter",
     # === ctypes ===
     "كبير_ترتيب_البايتات_اتحاد": "ctypes.BigEndianUnion",
     "كبير_ترتيب_البايتات_بنية": "ctypes.BigEndianStructure",
     # === typing ===
     "كتابة_أخير_2": "typing.final",
-    "كتابة_بروتوكول": "typing.Protocol",
-    "كتابة_تأكد_نوع": "typing.assert_type",
     "كتابة_معامل_مواصفة_وسائط_مفتاحية": "typing.ParamSpecKwargs",
     "كتابة_نص_إدخال_إخراج": "typing.TextIO",
     # === pydoc ===
@@ -1030,7 +834,6 @@ SYS_FUNCS = {
     # === signal ===
     "مؤقّت_خطأ": "signal.ItimerError",
     # === logging ===
-    "مؤقّت_دوّار_ملف_معالج": "logging.handlers.TimedRotatingFileHandler",
     # === platform ===
     "ماك_إصدار": "platform.mac_ver",
     # === multiprocessing ===
@@ -1058,18 +861,14 @@ SYS_FUNCS = {
     "متعدد_معالجة_مشترك_ذاكرة": "multiprocessing.shared_memory.SharedMemory",
     "متعدد_معالجة_مشترك_ذاكرة_قابل_للمشاركة_قائمة": "multiprocessing.shared_memory.ShareableList",
     # === contextvars ===
-    "متغير_سياق": "contextvars.ContextVar",
     # === ctypes ===
     "متغير_منطقي": "ctypes.wintypes.VARIANT_BOOL",
     # === contextvars ===
-    "متغيرات_سياق": "contextvars.Context",
     # === unittest ===
-    "متوقع_فشل": "unittest.expectedFailure",
     # === reprlib ===
     "مثّل_2": "reprlib.repr",
     # === sched ===
     "مجدول_حدث": "sched.Event",
-    "مجدول_وقت": "sched.scheduler",
     # === pydoc ===
     "مجلدات_المسار": "pydoc.pathdirs",
     # === multiprocessing ===
@@ -1082,59 +881,46 @@ SYS_FUNCS = {
     # === multiprocessing ===
     "محدود_إشارة_مرور": "multiprocessing.BoundedSemaphore",
     # === unittest ===
-    "محمّل_اختبارات": "unittest.TestLoader",
     # === multiprocessing ===
-    "مخزن_مؤقت_أكثر_من_قصير": "multiprocessing.BufferTooShort",
     # === contextlib ===
-    "مدير_سياق_2": "contextlib.contextmanager",
     # === multiprocessing ===
     "مدير_عمليات_2": "multiprocessing.Manager",
     # === graphlib ===
-    "مرتّب_توبولوجي_2": "graphlib.TopologicalSorter",
     # === ctypes ===
     "مستطيل": "ctypes.wintypes.RECT",
     # === concurrent ===
-    "مستقبل": "concurrent.futures.Future",
     # === logging ===
     "مسجّل_2": "logging.Logger",
-    "مسجّل_مكيّف": "logging.LoggerAdapter",
     # === typing ===
     "مسمّى_صف": "typing.NamedTuple",
     "مسمّى_صف_وصفي": "typing.NamedTupleMeta",
     # === multiprocessing ===
     "مشترك_ذاكرة_خادم": "multiprocessing.managers.SharedMemoryServer",
     "مشترك_ذاكرة_مدير": "multiprocessing.managers.SharedMemoryManager",
-    "مصادقة_خطأ": "multiprocessing.AuthenticationError",
     # === pydoc ===
     "مصدر_خلاصة": "pydoc.source_synopsis",
     # === multiprocessing ===
     "مصفوفة_مشتركة": "multiprocessing.Array",
     "مصفوفة_وكيل": "multiprocessing.managers.ArrayProxy",
     # === difflib ===
-    "مطابق_التسلسل_2": "difflib.SequenceMatcher",
     # === site ===
     "مطلق_مسارات": "site.abs_paths",
     # === logging ===
-    "معالج_التدفق": "logging.StreamHandler",
-    "معالج_الملف": "logging.FileHandler",
     # === multiprocessing ===
     "معالج_عدّ": "multiprocessing.cpu_count",
     # === typing ===
     "معامل_مواصفة": "typing.ParamSpec",
     "معامل_مواصفة_معطيات": "typing.ParamSpecArgs",
     # === unittest ===
-    "معزول_غير_متزامن_إدخال_إخراج_اختبر_حالة": "unittest.IsolatedAsyncioTestCase",
     # === platform ===
     "معمارية": "platform.architecture",
     "معمارية_الجهاز": "platform.machine",
     # === difflib ===
-    "مفرّق_2": "difflib.Differ",
     # === concurrent ===
     "مفسّر_مجموعة_منفّذ": "concurrent.futures.InterpreterPoolExecutor",
     # === multiprocessing ===
     "مقبس_عميل": "multiprocessing.connection.SocketClient",
     # === logging ===
-    "مقبس_معالج": "logging.handlers.SocketHandler",
     # === multiprocessing ===
     "مقبس_مُستمع": "multiprocessing.connection.SocketListener",
     # === ctypes ===
@@ -1148,14 +934,7 @@ SYS_FUNCS = {
     # === platform ===
     "مكتبة_c_إصدار": "platform.libc_ver",
     # === reprlib ===
-    "مكتبة_التمثيل_احصل_معرّف": "reprlib.get_ident",
     # === difflib ===
-    "مكتبة_الفروق_استعد": "difflib.restore",
-    "مكتبة_الفروق_طابق": "difflib.Match",
-    "مكتبة_الفروق_فرق_بايتات": "difflib.diff_bytes",
-    "مكتبة_الفروق_فرق_متجاور": "difflib.ndiff",
-    "مكتبة_الفروق_هو_حرف_همل": "difflib.IS_CHARACTER_JUNK",
-    "مكتبة_الفروق_هو_سطر_همل": "difflib.IS_LINE_JUNK",
     # === ctypes ===
     "مكتبة_ديناميكية": "ctypes.CDLL",
     "مكتبة_محمّل": "ctypes.LibraryLoader",
@@ -1166,30 +945,13 @@ SYS_FUNCS = {
     # === concurrent ===
     "مكسور_منفّذ": "concurrent.futures.BrokenExecutor",
     # === fileinput ===
-    "ملف_إدخال_2": "fileinput.FileInput",
-    "ملف_إدخال_أغلق_4": "fileinput.close",
     # === io ===
-    "ملف_إدخال_إخراج_2": "io.FileIO",
     # === fileinput ===
-    "ملف_إدخال_الملف_التالي_3": "fileinput.nextfile",
-    "ملف_إدخال_خطاف_مرمّز": "fileinput.hook_encoded",
-    "ملف_إدخال_خطاف_مضغوط": "fileinput.hook_compressed",
-    "ملف_إدخال_رقم_السطر_4": "fileinput.lineno",
-    "ملف_إدخال_رقم_الملف_4": "fileinput.fileno",
-    "ملف_إدخال_سطر_الملف_3": "fileinput.filelineno",
-    "ملف_إدخال_هو_السطر_الأول_3": "fileinput.isfirstline",
     # === logging ===
     "ملف_إعداد": "logging.config.fileConfig",
     # === filecmp ===
-    "ملف_قارن_الملفات": "filecmp.cmpfiles",
-    "ملف_قارن_امسح_ذاكرة_مؤقتة_2": "filecmp.clear_cache",
-    "ملف_قارن_توضيحي": "filecmp.demo",
-    "ملف_قارن_عام_اسم_مستعار": "filecmp.GenericAlias",
-    "ملف_قارن_مقارنة_مجلدات": "filecmp.dircmp",
     # === pydoc ===
-    "ملف_مؤقت_صفّاح": "pydoc.tempfile_pager",
     # === fileinput ===
-    "ملف_هو_إدخال_قياسي_2": "fileinput.isstdin",
     # === ctypes ===
     "ملف_وقت": "ctypes.wintypes.FILETIME",
     # === platform ===
@@ -1199,7 +961,6 @@ SYS_FUNCS = {
     "منصة_البناء": "sysconfig.get_platform",
     # === platform ===
     "منصة_بايثون_تنفيذ": "platform.python_implementation",
-    "منصة_حرّر": "platform.release",
     "منصة_عُقدة": "platform.node",
     "منصة_معالج": "platform.processor",
     # === concurrent ===
@@ -1207,40 +968,29 @@ SYS_FUNCS = {
     "منفّذ_خيوط": "concurrent.futures.ThreadPoolExecutor",
     "منفّذ_عمليات": "concurrent.futures.ProcessPoolExecutor",
     # === multiprocessing ===
-    "مهلة_خطأ": "multiprocessing.TimeoutError",
     # === difflib ===
     "موحّد_فرق": "difflib.unified_diff",
     # === site ===
     "موقع_رئيسي": "site.main",
     # === io ===
-    "مُخزّن_مؤقتاً_إدخال_إخراج_أساس_2": "io.BufferedIOBase",
     # === logging ===
-    "مُراقَب_ملف_معالج": "logging.handlers.WatchedFileHandler",
     # === pydoc ===
     "مُساعد": "pydoc.Helper",
     # === multiprocessing ===
     "مُستمع": "multiprocessing.connection.Listener",
     # === unittest ===
-    "مُشغّل_اختبارات": "unittest.TextTestRunner",
     # === rlcompleter ===
     "مُكمل": "rlcompleter.Completer",
     # === concurrent ===
     "مُلغى_خطأ": "concurrent.futures.CancelledError",
     # === selectors ===
-    "مُنتخِب_ABC_وصفي": "selectors.ABCMeta",
-    "مُنتخِب_دالة_مجردة": "selectors.abstractmethod",
-    "مُنتخِب_مفتاح": "selectors.SelectorKey",
     # === logging ===
-    "مُنسّق_2": "logging.Formatter",
     "نسبة_مئوية_نمط": "logging.PercentStyle",
     # === multiprocessing ===
-    "نسّق_استثناء": "multiprocessing.managers.format_exc",
     # === pydoc ===
     "نسّق_استثناء_فقط": "pydoc.format_exception_only",
     # === shlex ===
-    "نص_إدخال_إخراج": "shlex.StringIO",
     # === io ===
-    "نص_إدخال_إخراج_أساس_2": "io.TextIOBase",
     # === unittest ===
     "نص_اختبر_نتيجة": "unittest.TextTestResult",
     # === signal ===
@@ -1248,7 +998,6 @@ SYS_FUNCS = {
     # === unittest ===
     "نص_الصنف": "unittest.case.strclass",
     # === enum ===
-    "نص_تعداد": "enum.StrEnum",
     # === pydoc ===
     "نص_تمثيل": "pydoc.TextRepr",
     "نص_توثيق": "pydoc.TextDoc",
@@ -1266,7 +1015,6 @@ SYS_FUNCS = {
     "نظام_اسم_مستعار": "platform.system_alias",
     "نظام_التشغيل": "platform.system",
     # === logging ===
-    "نظام_سجل_معالج": "logging.handlers.SysLogHandler",
     # === site ===
     "نفّذ_تخصيص_المستخدم": "site.execusercustomize",
     "نفّذ_تخصيص_الموقع": "site.execsitecustomize",
@@ -1295,19 +1043,14 @@ SYS_FUNCS = {
     "واجهة_سطر": "pydoc.cli",
     "وحدة_ماسح": "pydoc.ModuleScanner",
     # === pkgutil ===
-    "وحدة_معلومات": "pkgutil.ModuleInfo",
     # === unicodedata ===
-    "وحّد_يونيكود_2": "unicodedata.normalize",
     # === sysconfig ===
-    "وسّع_اعمل_ملفاً_متغيرات": "sysconfig.expand_makefile_vars",
     # === pkgutil ===
     "وسّع_مسار": "pkgutil.extend_path",
     # === stat ===
-    "وضع_الملف_2": "stat.filemode",
     # === pty ===
     "ولّد": "pty.spawn",
     # === unittest ===
-    "وهمي": "unittest.mock.Mock",
     "وهمي_افتح": "unittest.mock.mock_open",
     # === platform ===
     "ويندوز32_إصدار": "platform.win32_ver",
@@ -1325,7 +1068,6 @@ SYS_FUNCS = {
     "يدعم_مركّب": "typing.SupportsComplex",
     "يدعم_مطلق": "typing.SupportsAbs",
     # === contextlib ===
-    "يُغلق_2": "contextlib.closing",
 }
 
 
@@ -4425,9 +4167,6 @@ SYS_CONSTS = {
     "تصحيح_فرعي": "multiprocessing.SUBDEBUG",
     # === enum ===
     "تعداد_أخرج": "enum.EJECT",
-    "تعداد_تحقق_فريد": "enum.EnumCheck.UNIQUE",
-    "تعداد_تحقق_مستمر": "enum.EnumCheck.CONTINUOUS",
-    "تعداد_تحقق_مسمّى_علامات": "enum.EnumCheck.NAMED_FLAGS",
     "تعداد_صارم": "enum.STRICT",
     "تعداد_طابق": "enum.CONFORM",
     "تعداد_فريد": "enum.UNIQUE",

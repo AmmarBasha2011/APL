@@ -5,14 +5,9 @@ Full subprocess wrapper with Arabic keywords
 
 SUBPROCESS_FUNCS = {
     # الإنشاء الأساسي
-    "أنشئ_عملية_أوامر": "subprocess.run",
     "عملية": "subprocess.run",
-    "نفذ_أوامر": "subprocess.run",
-    "شغل_أوامر": "subprocess.run",
     
     # العملية الأساسية
-    "Process": "subprocess.Popen",
-    "أنشئ_Process": "subprocess.Popen",
     
     # الخصائص
     "حجة_أوامر": "args",
@@ -103,8 +98,6 @@ SUBPROCESS_FUNCS = {
     "عمليات_فرعية": "subprocess",
     "Popen": "subprocess.Popen",
     "call": "subprocess.call",
-    "check_call": "subprocess.check_call",
-    "check_output": "subprocess.check_output",
     "getoutput": "subprocess.getoutput",
     "getstatusoutput": "subprocess.getstatusoutput",
 }

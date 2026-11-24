@@ -4,15 +4,11 @@ Transpiles Arabic keywords to Python textwrap module
 """
 
 TEXTWRAP_FUNCS = {
-    "التفاف_نص": "textwrap.fill",
     "الالتفاف_نص": "textwrap.fill",
     "التفاف_سطر": "textwrap.wrap",
-    "الالتفاف_سطر": "textwrap.wrap",
     "اختصار_نص": "textwrap.shorten",
     "إزالة_التفافات": "textwrap.dedent",
     "إزاحة_نص": "textwrap.indent",
-    "محاذاة_نص": "textwrap.fill",
-    "حزم_النص": "textwrap.fill",
 }
 
 TEXTWRAP_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(TEXTWRAP_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("

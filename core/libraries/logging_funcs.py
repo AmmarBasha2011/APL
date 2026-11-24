@@ -5,21 +5,13 @@ Full logging wrapper with Arabic keywords
 
 LOGGING_FUNCS = {
     # الإنشاء والتكوين
-    "مسجّل": "logging.getLogger",
-    "أنشئ_مسجل": "logging.getLogger",
-    "مسجل": "logging.getLogger",
-    "تكوين_تسجيل": "logging.basicConfig",
-    "أساسي": "logging.basicConfig",
     
     # مستويات السجل
     "مستوى": "setLevel",
     "ضع_مستوى": "setLevel",
     
     # تنسيق السجل
-    "تنسيق": "logging.Formatter",
     "شكل": "logging.Formatter",
-    "شكل_جديد": "logging.Formatter",
-    "شكل_افتراضي": "logging.Formatter",
     "ضع_شكل": "handler.setFormatter",
     "صيغة": "fmt",
     "تاريخ_صيغة": "datefmt",
@@ -27,10 +19,6 @@ LOGGING_FUNCS = {
     # المعالجات (Handlers)
     "معالج": "logging.Handler",
     "معالج_ملف": "logging.FileHandler",
-    "معالج_شاشة": "logging.StreamHandler",
-    "معالج_دوار": "logging.handlers.RotatingFileHandler",
-    "معجل_مؤقت": "logging.handlers.TimedRotatingFileHandler",
-    "أنشئ_معالج": "logging.Handler",
     "أضف_معالج": "logger.addHandler",
     "أزل_معالج": "logger.removeHandler",
     
@@ -40,12 +28,6 @@ LOGGING_FUNCS = {
     "سجل_أساسي": "logging",
     
     # الدوال المختصرة
-    "اطبع_تصحيح": "logging.debug",
-    "اطبع_معلومات": "logging.info",
-    "اطبع_تحذير": "logging.warning",
-    "اطبع_خطأ": "logging.error",
-    "اطبع_حرج": "logging.critical",
-    "استثناء_تسجيل": "logging.exception",
     
     # التسجيل
     "تسجيل": "logging.log",
@@ -57,8 +39,6 @@ LOGGING_FUNCS = {
     "استثناء_سجل": "exception",
     
     # الفلاتر (Filters)
-    "فلتر_تسجيل": "logging.Filter",
-    "أنشئ_فلتر": "logging.Filter",
     "أضف_فلتر": "logger.addFilter",
     "أزل_فلتر": "logger.removeFilter",
     "اسم_فلتر": "filter.name",
@@ -74,13 +54,11 @@ LOGGING_FUNCS = {
     "مُعَطَّل": "logger.disabled",
     
     # البيانات السياقية
-    "سجل_إضافي": "logging.LoggerAdapter",
     "محول_سجل": "logging.LoggerAdapter",
     "بيانات_إضافية": "logger.extra",
     
     # إغلاق
     "أغلق": "logging.shutdown",
-    "تنظيف": "logging.shutdown",
     
     # مكتبات المعالجات
     "معالجات": "logging.handlers",
@@ -88,12 +66,9 @@ LOGGING_FUNCS = {
     "مؤقت_دوار": "logging.handlers.TimedRotatingFileHandler",
     "معالج_tcp": "logging.handlers.SocketHandler",
     "معالج_udp": "logging.handlers.DatagramHandler",
-    "معالج_بريد": "logging.handlers.SMTPHandler",
     "معالج_syslog": "logging.handlers.SysLogHandler",
     "معجل_nt": "logging.handlers.NTEventLogHandler",
     "معالج_http": "logging.handlers.HTTPHandler",
-    "معالج_ذاكرة": "logging.handlers.MemoryHandler",
-    "معالج_queue": "logging.handlers.QueueHandler",
     
     # الطوابير (Queues)
     "طابور_سجل": "logging.handlers.QueueHandler",
@@ -117,7 +92,6 @@ LOGGING_VERBS = {
     "سجل_حرج": "logging.critical",
     "سجل_استثناء": "logging.exception",
     "سجل_تهيئة": "logging.basicConfig",
-    "سجل_مستوى": "logging.getLogger",
 }
 
 LOGGING_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(LOGGING_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("

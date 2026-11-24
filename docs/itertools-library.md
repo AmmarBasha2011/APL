@@ -2,29 +2,22 @@
 
 كل الدوال من مكتبة `itertools` في Python، مترجمة بالكامل:
 
-**19 عنصراً عربياً** (الدوال: 19).
+**12 عنصراً عربياً** (الدوال: 19).
 
-## الدوال (19)
+## الدوال (12)
 
 | العربي | Python |
 |--------|--------|
-| `عد_لا نهائي` | `itertools.count` |
 | `تكرار_لا نهائي` | `itertools.cycle` |
 | `كرر_لا نهائي` | `itertools.repeat` |
-| `مدى_لا نهائي` | `itertools.count` |
 | `تجميع` | `itertools.chain` |
-| `تجميع_من_قوائم` | `itertools.chain.from_iterable` |
 | `ضغط` | `itertools.compress` |
-| `فلترة_خاطئة` | `itertools.filterfalse` |
 | `قطّع` | `itertools.islice` |
-| `اقطع` | `itertools.islice` |
 | `توافيق_مع_إرجاع` | `itertools.combinations_with_replacement` |
 | `ناتج_ديكارتي` | `itertools.product` |
-| `تباديل_مع_إرجاع` | `itertools.product` |
 | `اجمع_مفتاح` | `itertools.groupby` |
 | `تراكم` | `itertools.accumulate` |
 | `زوجي` | `itertools.zip_longest` |
-| `سلسلة` | `itertools.chain` |
 | `فلتر` | `filter` |
 | `خريطة` | `map` |
 

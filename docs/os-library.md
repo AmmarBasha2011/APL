@@ -2,19 +2,13 @@
 
 كل الدوال من مكتبتين `os` و `pathlib` في Python، مترجمة بالكامل:
 
-**30 عنصراً عربياً** (الدوال: 27، الخصائص: 3).
+**20 عنصراً عربياً** (الدوال: 27، الخصائص: 3).
 
-## الدوال (27)
+## الدوال (17)
 
 | العربي | Python |
 |--------|--------|
-| `مسار_مطلق` | `os.path.abspath` |
-| `مسار_نسبي` | `os.path.relpath` |
-| `اسم_ملف` | `os.path.basename` |
-| `اسم_مجلد` | `os.path.dirname` |
-| `امتداد` | `os.path.splitext` |
 | `دمج_مسار` | `os.path.join` |
-| `فصل_مسار` | `os.path.split` |
 | `مجلد_حالي` | `os.getcwd` |
 | `غير_مجلد` | `os.chdir` |
 | `انشئ_مجلد` | `os.mkdir` |
@@ -24,14 +18,10 @@
 | `قائمة_ملفات` | `os.listdir` |
 | `احذف_ملف` | `os.remove` |
 | `اعد_تسمية` | `os.rename` |
-| `نسخ_ملف` | `shutil.copy` |
-| `نقل_ملف` | `shutil.move` |
 | `حجم_ملف` | `os.path.getsize` |
-| `وقت_تعديل` | `os.path.getmtime` |
 | `موجود` | `os.path.exists` |
 | `هو_ملف` | `os.path.isfile` |
 | `هو_مجلد` | `os.path.isdir` |
-| `هو_رابط_مطلق` | `os.path.isabs` |
 | `متغير_بيئة` | `os.environ.get` |
 | `معرف_عملية` | `os.getpid` |
 | `مجلد_منزل` | `os.path.expanduser` |

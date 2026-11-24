@@ -11,7 +11,6 @@ SECRETS_FUNCS = {
     "سر_في_مجال": "_apl_secret_int",
     "اختر_عشوائي": "secrets.choice",
     "مقارنة_آمنة": "secrets.compare_digest",
-    "مصدر_عشوائي_آمن": "secrets.SystemRandom",
 }
 
 SECRETS_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(SECRETS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("

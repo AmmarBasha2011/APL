@@ -4,24 +4,20 @@
 
 12 دالة
 
-**12 عنصراً عربياً** (الدوال: 12).
+**8 عنصراً عربياً** (الدوال: 12).
 
-## الدوال (12)
+## الدوال (8)
 
 | العربي | Python |
 |--------|--------|
 | `انسخ_ملف` | `shutil.copy` |
-| `انسخ_ملف_كامل` | `shutil.copy2` |
 | `انسخ_شجرة` | `shutil.copytree` |
 | `انقل_ملف` | `shutil.move` |
 | `احذف_شجرة` | `shutil.rmtree` |
 | `نسخ_محتوى` | `shutil.copyfile` |
 | `الحجم_البشري` | `shutil.disk_usage` |
-| `ابحث_في_المسار` | `shutil.which` |
 | `أمر_النظام` | `shutil.which` |
-| `انسخ_الصلاحيات` | `shutil.copymode` |
 | `انسخ_البيانات` | `shutil.copyfileobj` |
-| `تجاهل_الملفات` | `shutil.ignore_patterns` |
 
 ## مثال
 

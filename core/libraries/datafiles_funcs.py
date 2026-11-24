@@ -70,12 +70,9 @@ import re
 DF_FUNCS = {
     # نداءات الوحدة والأصناف
     # === abc ===
-    "ABC_2": "abc.ABC",
     # === numbers ===
-    "ABC_وصفي": "numbers.ABCMeta",
     # === codecs ===
     "ASCII_رمّز": "codecs.ascii_encode",
-    "ASCII_فكّ_ترميز": "codecs.ascii_decode",
     # === bz2 ===
     "BZ_2_ضاغط": "bz2.BZ2Compressor",
     "BZ_2_فكّ_ضغط": "bz2.BZ2Decompressor",
@@ -96,7 +93,6 @@ DF_FUNCS = {
     "NTI": "tarfile.nti",
     "NTS": "tarfile.nts",
     # === xml ===
-    "PI": "xml.etree.ElementTree.PI",
     # === zipfile ===
     "PY_أرشيف_مضغوط_ملف": "zipfile.PyZipFile",
     # === tarfile ===
@@ -104,20 +100,13 @@ DF_FUNCS = {
     # === codecs ===
     "UTF_16_B_رمّز": "codecs.utf_16_be_encode",
     "UTF_16_B_فكّ_ترميز": "codecs.utf_16_be_decode",
-    "UTF_16_EX_فكّ_ترميز": "codecs.utf_16_ex_decode",
     "UTF_16_LE_رمّز": "codecs.utf_16_le_encode",
-    "UTF_16_LE_فكّ_ترميز": "codecs.utf_16_le_decode",
     "UTF_16_رمّز": "codecs.utf_16_encode",
-    "UTF_16_فكّ_ترميز": "codecs.utf_16_decode",
     "UTF_32_B_رمّز": "codecs.utf_32_be_encode",
     "UTF_32_B_فكّ_ترميز": "codecs.utf_32_be_decode",
-    "UTF_32_EX_فكّ_ترميز": "codecs.utf_32_ex_decode",
     "UTF_32_LE_رمّز": "codecs.utf_32_le_encode",
-    "UTF_32_LE_فكّ_ترميز": "codecs.utf_32_le_decode",
     "UTF_32_رمّز": "codecs.utf_32_encode",
-    "UTF_32_فكّ_ترميز": "codecs.utf_32_decode",
     "UTF_7_رمّز": "codecs.utf_7_encode",
-    "UTF_7_فكّ_ترميز": "codecs.utf_7_decode",
     "UTF_8_رمّز": "codecs.utf_8_encode",
     "UTF_8_فكّ_ترميز": "codecs.utf_8_decode",
     # === xml ===
@@ -142,7 +131,6 @@ DF_FUNCS = {
     "أدرج_مرتّباً": "bisect.insort",
     "أدرج_مرتّباً_يسار": "bisect.insort_left",
     # === contextlib ===
-    "أدوات_السياق_مدير_سياق": "contextlib.contextmanager",
     # === zipfile ===
     "أرشيف_مضغوط_امتداد_ملف": "zipfile.ZipExtFile",
     # === heapq ===
@@ -180,11 +168,8 @@ DF_FUNCS = {
     # === xml ===
     "إدخال_مصدر": "xml.sax.InputSource",
     # === contextlib ===
-    "إعادة_توجيه_إخراج_قياسي": "contextlib.redirect_stdout",
-    "إعادة_توجيه_خطأ_قياسي": "contextlib.redirect_stderr",
     "إغلاق_غير_متزامن": "contextlib.aclosing",
     # === xml ===
-    "إكسبات_خطأ": "xml.parsers.expat.ExpatError",
     "إلى_قائمة_نصوص": "xml.etree.ElementTree.tostringlist",
     "إلى_نص_2": "xml.etree.ElementTree.tostring",
     # === unicodedata ===
@@ -193,17 +178,13 @@ DF_FUNCS = {
     "ابحث_عن_مرمّز": "codecs.lookup",
     # === bisect ===
     "ابحث_موضع": "bisect.bisect",
-    "ابحث_يساراً": "bisect.bisect_left",
     # === locale ===
     "اتفاقيات_الإقليم": "locale.localeconv",
     # === copyreg ===
-    "احذف_امتداد": "copyreg.remove_extension",
     # === struct ===
-    "احسب_الحجم": "struct.calcsize",
     # === tarfile ===
     "احسب_مجاميع_الفحص": "tarfile.calc_chksums",
     # === types ===
-    "احصل_أصلي_أساس": "types.get_original_bases",
     # === abc ===
     "احصل_ذاكرة_مؤقتة_رمز": "abc.get_cache_token",
     # === difflib ===
@@ -214,8 +195,6 @@ DF_FUNCS = {
     "احصل_على_الترميز": "locale.getencoding",
     "احصل_على_الترميز_المفضّل": "locale.getpreferredencoding",
     # === codecs ===
-    "احصل_على_القارئ": "codecs.getreader",
-    "احصل_على_الكاتب": "codecs.getwriter",
     # === weakref ===
     "احصل_على_المراجع_الضعيفة": "weakref.getweakrefs",
     # === codecs ===
@@ -245,14 +224,12 @@ DF_FUNCS = {
     # === xml ===
     "احصل_نموذج_كائن_تنفيذ": "xml.dom.getDOMImplementation",
     # === contextlib ===
-    "اخرج_مكدس": "contextlib.ExitStack",
     # === heapq ===
     "ادفع_للكومة": "heapq.heappush",
     "ادفع_للكومة_أقصى": "heapq.heappush_max",
     "ادفع_واسحب": "heapq.heappushpop",
     "ادفع_واسحب_أقصى": "heapq.heappushpop_max",
     # === os ===
-    "اربط_مسارين": "os.path.join",
     # === gettext ===
     "اربط_نطاق_النص": "gettext.bindtextdomain",
     # === locale ===
@@ -306,9 +283,6 @@ DF_FUNCS = {
     "افتح_مرمّزاً": "codecs.open",
     # === os ===
     "افصل_الامتداد": "os.path.splitext",
-    "افصل_الجذر": "os.path.splitroot",
-    "افصل_المحرك": "os.path.splitdrive",
-    "افصل_مسار": "os.path.split",
     # === xml ===
     "اقتبس_سمة": "xml.sax.saxutils.quoteattr",
     # === pickle ===
@@ -320,7 +294,6 @@ DF_FUNCS = {
     # === plistlib ===
     "اقرأ_قائمة": "plistlib.load",
     # === contextlib ===
-    "اكبح": "contextlib.suppress",
     # === gzip ===
     "اكتب32": "gzip.write32u",
     # === pickle ===
@@ -328,21 +301,15 @@ DF_FUNCS = {
     # === plistlib ===
     "اكتب_قائمة": "plistlib.dump",
     # === copyreg ===
-    "امسح_امتداد_ذاكرة_مؤقتة": "copyreg.clear_extension_cache",
     # === copy ===
-    "انسخ_2": "copy.copy",
     "انسخ_استبدل": "copy.replace",
-    "انسخ_خطأ": "copy.Error",
     # === contextvars ===
-    "انسخ_سياق": "contextvars.copy_context",
     # === copy ===
     "انسخ_عميقاً_2": "copy.deepcopy",
     # === tarfile ===
-    "انسخ_كائن_ملف": "tarfile.copyfileobj",
     # === xml ===
     "اهرب_إكس_إم_إم": "xml.sax.saxutils.escape",
     # === os ===
-    "بادئة_مشتركة": "os.path.commonprefix",
     # === tarfile ===
     "بالكامل_موثوق_رشّح": "tarfile.fully_trusted_filter",
     # === io ===
@@ -351,9 +318,7 @@ DF_FUNCS = {
     "بايكن_أعلى": "copyreg.pickle_super",
     "بايكن_اتحاد": "copyreg.pickle_union",
     # === pickle ===
-    "بايكن_احزم": "pickle.pack",
     "بايكن_خطأ_2": "pickle.PickleError",
-    "بايكن_مخزن_مؤقت": "pickle.PickleBuffer",
     # === copyreg ===
     "بايكن_مركّب": "copyreg.pickle_complex",
     # === codecs ===
@@ -364,7 +329,6 @@ DF_FUNCS = {
     "بحث_نمطي_2": "glob.glob",
     "بحث_نمطي_هرب": "glob.escape",
     # === types ===
-    "بسيط_نطاق_اسم": "types.SimpleNamespace",
     # === xml ===
     "بلا_أبناء": "xml.dom.minidom.Childless",
     "بلا_بيانات_مسموح_خطأ": "xml.dom.NoDataAllowedErr",
@@ -373,10 +337,6 @@ DF_FUNCS = {
     "بمفاتيح_مرجع": "weakref.KeyedRef",
     # === struct ===
     "بنية": "struct.Struct",
-    "بنية_احزم_إلى": "struct.pack_into",
-    "بنية_خطأ": "struct.error",
-    "بنية_فكّ_الحزمة_من": "struct.unpack_from",
-    "بنية_كرّر_فكّ_الحزمة": "struct.iter_unpack",
     # === xml ===
     "بيانات_ج_قسم": "xml.dom.minidom.CDATASection",
     # === tarfile ===
@@ -414,13 +374,10 @@ DF_FUNCS = {
     # === xml ===
     "تعريف_نوع_المستند_معالج": "xml.sax.handler.DTDHandler",
     "تعليق": "xml.dom.minidom.Comment",
-    "تعليق_عنصر": "xml.etree.ElementTree.Comment",
     # === glob ===
-    "تكرار_بحث_نمطي": "glob.iglob",
     # === reprlib ===
     "تكراري_تمثيل": "reprlib.recursive_repr",
     # === gettext ===
-    "تنسيق_gnu_ترجمات": "gettext.GNUTranslations",
     # === filecmp ===
     "توضيحي": "filecmp.demo",
     # === gettext ===
@@ -432,7 +389,6 @@ DF_FUNCS = {
     # === types ===
     "جهّز_صنف": "types.prepare_class",
     # === os ===
-    "حجم_ملف_2": "os.path.getsize",
     # === abc ===
     "حدّث_دوال_مجردة": "abc.update_abstractmethods",
     # === xml ===
@@ -448,7 +404,6 @@ DF_FUNCS = {
     "حلل_نصاً": "xml.dom.minidom.parseString",
     "حلل_نصاً_ساكس": "xml.sax.parseString",
     # === types ===
-    "حلّ_أساس": "types.resolve_bases",
     # === pickle ===
     "حمّل_بايكن": "pickle.loads",
     # === plistlib ===
@@ -467,10 +422,8 @@ DF_FUNCS = {
     "خام_إدخال_إخراج_أساس": "io.RawIOBase",
     # === codecs ===
     "خام_يونيكود_هرب_رمّز": "codecs.raw_unicode_escape_encode",
-    "خام_يونيكود_هرب_فكّ_ترميز": "codecs.raw_unicode_escape_decode",
     "خريطة_المحارف_ابنِ": "codecs.charmap_build",
     "خريطة_المحارف_رمّز": "codecs.charmap_encode",
-    "خريطة_المحارف_فكّ_ترميز": "codecs.charmap_decode",
     # === stringprep ===
     "خريطة_جدول_B2": "stringprep.map_table_b2",
     "خريطة_جدول_B3": "stringprep.map_table_b3",
@@ -478,7 +431,6 @@ DF_FUNCS = {
     "خطأ_دورة": "graphlib.CycleError",
     # === xml ===
     "خطأ_مستند_خطأ": "xml.dom.WrongDocumentErr",
-    "خطأ_نص": "xml.parsers.expat.ErrorString",
     # === fileinput ===
     "خطاف_مرمّز": "fileinput.hook_encoded",
     "خطاف_مضغوط": "fileinput.hook_compressed",
@@ -486,7 +438,6 @@ DF_FUNCS = {
     "دالة_ساكنة_مجردة": "abc.abstractstaticmethod",
     "دالة_صنف_مجردة": "abc.abstractclassmethod",
     # === types ===
-    "ديناميكي_صنف_سمة": "types.DynamicClassAttribute",
     # === tarfile ===
     "رأس_خطأ": "tarfile.HeaderError",
     # === unicodedata ===
@@ -507,7 +458,6 @@ DF_FUNCS = {
     # === pickle ===
     "رمّز_طويل": "pickle.encode_long",
     # === copyreg ===
-    "سجّل_بايكن": "copyreg.pickle",
     # === codecs ===
     "سجّل_خطأ": "codecs.register_error",
     # === xml ===
@@ -516,23 +466,18 @@ DF_FUNCS = {
     "سمات_NS_تنفيذ": "xml.sax.xmlreader.AttributesNSImpl",
     "سمات_تنفيذ": "xml.sax.xmlreader.AttributesImpl",
     "سمة": "xml.dom.minidom.Attr",
-    "سمة_قائمة": "xml.dom.minidom.AttributeList",
     # === zipfile ===
-    "سيئ_أرشيف_مضغوط_ملف": "zipfile.BadZipFile",
     # === gzip ===
     "سيئ_ضغط_gzip_ملف": "gzip.BadGzipFile",
     # === contextvars ===
     "سياق": "contextvars.Context",
     # === contextlib ===
-    "سياق_فارغ": "contextlib.nullcontext",
     # === contextvars ===
     "سياق_متغير": "contextvars.ContextVar",
-    "سياق_متغيرات_رمز": "contextvars.Token",
     # === contextlib ===
     "سياق_مُزيّن": "contextlib.ContextDecorator",
     # === xml ===
     "شجرة_باني": "xml.etree.ElementTree.TreeBuilder",
-    "شجرة_عناصر": "xml.etree.ElementTree.ElementTree",
     "شجرة_عناصر_عنصر_شجرة_XML": "xml.etree.ElementTree.XML",
     # === tarfile ===
     "شريط_أرشيف_خطأ": "tarfile.TarError",
@@ -546,18 +491,14 @@ DF_FUNCS = {
     # === weakref ===
     "ضعيف_دالة": "weakref.WeakMethod",
     # === bz2 ===
-    "ضغط_bz2_اضغط": "bz2.compress",
-    "ضغط_bz2_فكّ_الضغط": "bz2.decompress",
     # === gzip ===
     "ضغط_gzip_رئيسي": "gzip.main",
     # === lzma ===
-    "ضغط_lzma_اضغط": "lzma.compress",
     "ضغط_lzma_خطأ": "lzma.LZMAError",
     # === zipfile ===
     "ضغط_lzma_ضاغط": "zipfile.LZMACompressor",
     # === lzma ===
     "ضغط_lzma_ضاغط_2": "lzma.LZMACompressor",
-    "ضغط_lzma_فكّ_الضغط": "lzma.decompress",
     # === zipfile ===
     "ضغط_lzma_فكّ_ضغط": "zipfile.LZMADecompressor",
     # === lzma ===
@@ -574,7 +515,6 @@ DF_FUNCS = {
     # === queue ===
     "طابور_2": "queue.Queue",
     # === xml ===
-    "طابور_اسم": "xml.etree.ElementTree.QName",
     # === queue ===
     "طابور_بأولوية": "queue.PriorityQueue",
     "طابور_بسيط": "queue.SimpleQueue",
@@ -605,7 +545,6 @@ DF_FUNCS = {
     "عُقدة": "xml.dom.Node",
     "عُقدة_2": "xml.dom.minidom.Node",
     # === contextlib ===
-    "غلاف": "contextlib.wraps",
     # === io ===
     "غلاف_نصي": "io.TextIOWrapper",
     # === xml ===
@@ -628,21 +567,16 @@ DF_FUNCS = {
     # === tarfile ===
     "فارغ_رأس_خطأ": "tarfile.EmptyHeaderError",
     # === zipfile ===
-    "فحص_تكرار32": "zipfile.crc32",
     # === difflib ===
     "فرق_بايتات": "difflib.diff_bytes",
-    "فرق_بسياق": "difflib.context_diff",
     "فرق_متجاور": "difflib.ndiff",
-    "فرق_موحّد": "difflib.unified_diff",
     # === pickle ===
     "فك_التحويل_خطأ": "pickle.UnpicklingError",
-    "فكّ_الحزمة": "pickle.unpack",
     # === gzip ===
     "فكّ_الضغط": "gzip.decompress",
     # === codecs ===
     "فكّ_ترميز": "codecs.decode",
     # === pickle ===
-    "فكّ_ترميز_طويل": "pickle.decode_long",
     # === xml ===
     "فكّ_هروب_إكس_إم_إم": "xml.sax.saxutils.unescape",
     "فهرس_حجم_خطأ": "xml.dom.IndexSizeErr",
@@ -681,7 +615,6 @@ DF_FUNCS = {
     "قارن_نصياً": "locale.strcoll",
     # === weakref ===
     "قاموس_قيم_ضعيفة": "weakref.WeakValueDictionary",
-    "قاموس_مفاتيح_ضعيفة": "weakref.WeakKeyDictionary",
     # === unicodedata ===
     "قيمة_عددية": "unicodedata.numeric",
     "قيمة_عشرية": "unicodedata.decimal",
@@ -696,7 +629,6 @@ DF_FUNCS = {
     "كرّر_الترميز": "codecs.iterencode",
     "كرّر_الفك": "codecs.iterdecode",
     # === heapq ===
-    "كومة_ادمج": "heapq.merge",
     # === xml ===
     "كيان": "xml.dom.minidom.Entity",
     "كيان_محلّل": "xml.sax.handler.EntityResolver",
@@ -704,7 +636,6 @@ DF_FUNCS = {
     "لا_موجود_خطأ": "xml.dom.NotFoundErr",
     # === codecs ===
     "لاتيني_1_رمّز": "codecs.latin_1_encode",
-    "لاتيني_1_فكّ_ترميز": "codecs.latin_1_decode",
     # === tarfile ===
     "لاحق_رأس_خطأ": "tarfile.SubsequentHeaderError",
     # === glob ===
@@ -714,9 +645,7 @@ DF_FUNCS = {
     # === reprlib ===
     "مثّل": "reprlib.repr",
     # === numbers ===
-    "مجرد_دالة": "numbers.abstractmethod",
     # === abc ===
-    "مجرد_سمة_صنف": "abc.abstractproperty",
     # === contextlib ===
     "مجرد_سياق_مدير": "contextlib.AbstractContextManager",
     "مجرد_غير_متزامن_سياق_مدير": "contextlib.AbstractAsyncContextManager",
@@ -724,7 +653,6 @@ DF_FUNCS = {
     "محتوى_معالج": "xml.sax.ContentHandler",
     "محدّد": "xml.sax.xmlreader.Locator",
     # === plistlib ===
-    "محلل_أنشئ": "plistlib.ParserCreate",
     # === xml ===
     "محلل_ساكس_2_نموذج_كائن": "xml.dom.pulldom.SAX2DOM",
     # === locale ===
@@ -750,11 +678,6 @@ DF_FUNCS = {
     "مرمّز_معلومات": "codecs.CodecInfo",
     "مرمّز_ملف": "codecs.EncodedFile",
     # === os ===
-    "مسار_حقيقي": "os.path.realpath",
-    "مسار_مشترك": "os.path.commonpath",
-    "مسار_مطلق_2": "os.path.abspath",
-    "مسار_موجود_2": "os.path.exists",
-    "مسار_نسبي_2": "os.path.relpath",
     # === xml ===
     "مستخدم_بيانات_معالج": "xml.dom.UserDataHandler",
     "مستند": "xml.dom.minidom.Document",
@@ -779,7 +702,6 @@ DF_FUNCS = {
     "معيار_يونيكود": "unicodedata.UCD",
     # === difflib ===
     "مفرّق": "difflib.Differ",
-    "مفرّق_HTML": "difflib.HtmlDiff",
     # === pickle ===
     "مفكّك_تحويل": "pickle.Unpickler",
     # === filecmp ===
@@ -798,14 +720,12 @@ DF_FUNCS = {
     # === fileinput ===
     "ملف_إدخال_الملف_التالي": "fileinput.nextfile",
     "ملف_إدخال_رقم_السطر_2": "fileinput.lineno",
-    "ملف_إدخال_رقم_الملف_2": "fileinput.fileno",
     "ملف_إدخال_سطر_الملف": "fileinput.filelineno",
     "ملف_إدخال_هو_السطر_الأول": "fileinput.isfirstline",
     # === tarfile ===
     "ملف_شريط": "tarfile.TarFile",
     "ملف_شريط_رئيسي": "tarfile.main",
     # === filecmp ===
-    "ملف_قارن_امسح_ذاكرة_مؤقتة": "filecmp.clear_cache",
     # === zipfile ===
     "ملف_مضغوط_2": "zipfile.ZipFile",
     "ملف_مضغوط_رئيسي": "zipfile.main",
@@ -819,7 +739,6 @@ DF_FUNCS = {
     # === copyreg ===
     "منشئ": "copyreg.constructor",
     # === os ===
-    "موجود_بترابط": "os.path.lexists",
     # === xml ===
     "مُتعرّف": "xml.dom.minidom.Identified",
     # === pickle ===
@@ -835,13 +754,11 @@ DF_FUNCS = {
     # === xml ===
     "مُستعمَل_سمة_خطأ": "xml.dom.InuseAttributeErr",
     # === reprlib ===
-    "مُمثِّل": "reprlib.Repr",
     # === numbers ===
     "نسبي": "numbers.Rational",
     # === locale ===
     "نسّق_نص": "locale.format_string",
     # === stat ===
-    "نص_IMODE": "stat.S_IMODE",
     # === io ===
     "نص_إدخال_إخراج_أساس": "io.TextIOBase",
     "نص_تدفق": "io.StringIO",
@@ -849,51 +766,29 @@ DF_FUNCS = {
     # === xml ===
     "نص_نموذج_حجم_خطأ": "xml.dom.DomstringSizeErr",
     # === stat ===
-    "نص_نوع_ملف": "stat.S_IFMT",
-    "نص_هو_أنبوب": "stat.S_ISFIFO",
-    "نص_هو_باب": "stat.S_ISDOOR",
-    "نص_هو_جهاز_حرفي": "stat.S_ISCHR",
-    "نص_هو_جهاز_كتلي": "stat.S_ISBLK",
-    "نص_هو_رابط_صلب": "stat.S_ISLNK",
-    "نص_هو_سوار": "stat.S_ISWHT",
-    "نص_هو_مجلد": "stat.S_ISDIR",
-    "نص_هو_مقبس": "stat.S_ISSOCK",
-    "نص_هو_ملف_عادي": "stat.S_ISREG",
-    "نص_هو_منفذ": "stat.S_ISPORT",
     # === xml ===
     "نطاق_اسم_خطأ": "xml.dom.NamespaceErr",
     # === gettext ===
     "نطاق_النص": "gettext.textdomain",
     # === os ===
-    "نفس_الإحصاء": "os.path.samestat",
-    "نفس_الملف": "os.path.samefile",
-    "نفس_الملف_المفتوح": "os.path.sameopenfile",
     # === xml ===
     "نموذج_كائن_استثناء": "xml.dom.DOMException",
     "نموذج_كائن_تنفيذ": "xml.dom.minidom.DOMImplementation",
     "نموذج_كائن_حدث_تدفق": "xml.dom.pulldom.DOMEventStream",
     # === tarfile ===
-    "نهاية_الملف_رأس_خطأ": "tarfile.EOFHeaderError",
     # === xml ===
     "نوع_معلومات": "xml.dom.minidom.TypeInfo",
     # === codecs ===
     "هرب_رمّز": "codecs.escape_encode",
-    "هرب_فكّ_ترميز": "codecs.escape_decode",
     # === lzma ===
-    "هو_تحقق_مدعوم": "lzma.is_check_supported",
     # === difflib ===
     "هو_حرف_همل": "difflib.IS_CHARACTER_JUNK",
     # === os ===
-    "هو_رابط": "os.path.islink",
     # === difflib ===
     "هو_سطر_همل": "difflib.IS_LINE_JUNK",
     # === xml ===
     "هو_عنصر": "xml.etree.ElementTree.iselement",
     # === os ===
-    "هو_مجلد_2": "os.path.isdir",
-    "هو_محرك_جهاز": "os.path.isdevdrive",
-    "هو_مطلق": "os.path.isabs",
-    "هو_ملف_2": "os.path.isfile",
     # === tarfile ===
     "هو_ملف_شريط": "tarfile.is_tarfile",
     # === zipfile ===
@@ -901,35 +796,23 @@ DF_FUNCS = {
     # === unicodedata ===
     "هو_موحّد_2": "unicodedata.is_normalized",
     # === os ===
-    "هو_نقطة_تحميل": "os.path.ismount",
-    "هو_وصلة": "os.path.isjunction",
     # === locale ===
-    "وحّد_الإقليم": "locale.normalize",
     # === os ===
-    "وحّد_الحالة": "os.path.normcase",
-    "وحّد_المسار": "os.path.normpath",
     # === unicodedata ===
     "وحّد_يونيكود": "unicodedata.normalize",
     # === os ===
-    "وسّع_المتغيرات": "os.path.expandvars",
-    "وسّع_المستخدم": "os.path.expanduser",
     # === tarfile ===
     "وصلة_بديل_خطأ": "tarfile.LinkFallbackError",
     "وصلة_خارج_وجهة_خطأ": "tarfile.LinkOutsideDestinationError",
     # === stat ===
     "وضع_الملف": "stat.filemode",
     # === os ===
-    "وقت_الإنشاء": "os.path.getctime",
-    "وقت_التعديل_2": "os.path.getmtime",
-    "وقت_الوصول": "os.path.getatime",
     # === weakref ===
     "وكيل_ضعيف": "weakref.proxy",
     "وكيل_نوع": "weakref.ProxyType",
     # === codecs ===
     "يونيكود_هرب_رمّز": "codecs.unicode_escape_encode",
-    "يونيكود_هرب_فكّ_ترميز": "codecs.unicode_escape_decode",
     # === contextlib ===
-    "يُغلق": "contextlib.closing",
 }
 
 

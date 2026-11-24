@@ -5,8 +5,6 @@ Full argparse wrapper with Arabic keywords
 
 ARGPARSE_FUNCS = {
     # الإنشاء
-    "أنشئ_محلل": "argparse.ArgumentParser",
-    "محلل": "argparse.ArgumentParser",
     "محلل_وسائط": "argparse.ArgumentParser",
     
     # الخصائص
@@ -116,7 +114,6 @@ ARGPARSE_FUNCS = {
     "نوع_صف": "tuple",
     "نوع_مجموعة": "set",
     "نوع_قاموس": "dict",
-    "ملف_وسائط": "argparse.FileType",
     
     # القيم الخاصة
     "واحد": "1",

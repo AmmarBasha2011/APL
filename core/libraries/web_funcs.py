@@ -76,37 +76,26 @@ WEB_FUNCS = {
     "FTP_معالج": "urllib.request.FTPHandler",
     # === xmlrpc ===
     "GZIP_رمّز": "xmlrpc.client.gzip_encode",
-    "GZIP_فكّ_ترميز": "xmlrpc.client.gzip_decode",
     "GZIP_مفكوك_استجابة": "xmlrpc.client.GzipDecodedResponse",
     # === http ===
     "HTTPS_اتصال": "http.client.HTTPSConnection",
     "HTTPS_خادم": "http.server.HTTPSServer",
     # === urllib ===
     "HTTPS_معالج": "urllib.request.HTTPSHandler",
-    "HTTP_أساسي_تصديق_معالج": "urllib.request.HTTPBasicAuthHandler",
-    "HTTP_إعادة_توجيه_معالج": "urllib.request.HTTPRedirectHandler",
     # === http ===
-    "HTTP_اتصال": "http.client.HTTPConnection",
-    "HTTP_استثناء": "http.client.HTTPException",
     "HTTP_استجابة": "http.client.HTTPResponse",
     # === urllib ===
-    "HTTP_افتراضي_خطأ_معالج": "urllib.request.HTTPDefaultErrorHandler",
     # === http ===
     "HTTP_حالة": "http.HTTPStatus",
-    "HTTP_خادم": "http.server.HTTPServer",
     # === urllib ===
     "HTTP_خطأ": "urllib.error.HTTPError",
     "HTTP_خطأ_معالج": "urllib.request.HTTPErrorProcessor",
-    "HTTP_خلاصة_تصديق_معالج": "urllib.request.HTTPDigestAuthHandler",
     # === http ===
     "HTTP_دالة": "http.HTTPMethod",
     "HTTP_رسالة": "http.client.HTTPMessage",
     # === urllib ===
-    "HTTP_كلمة_المرور_مدير": "urllib.request.HTTPPasswordMgr",
-    "HTTP_كلمة_المرور_مدير_بـ_افتراضي_نطاق_حماية": "urllib.request.HTTPPasswordMgrWithDefaultRealm",
     "HTTP_كلمة_المرور_مدير_بـ_سابق_تصديق": "urllib.request.HTTPPasswordMgrWithPriorAuth",
     "HTTP_معالج": "urllib.request.HTTPHandler",
-    "HTTP_ملف_تعريف_معالج": "urllib.request.HTTPCookieProcessor",
     # === wsgiref ===
     "IIS_CGI_معالج": "wsgiref.handlers.IISCGIHandler",
     # === http ===
@@ -116,14 +105,11 @@ WEB_FUNCS = {
     "MH": "mailbox.MH",
     "MH_رسالة": "mailbox.MHMessage",
     # === email ===
-    "MIME_أساس": "email.mime.multipart.MIMEBase",
     "MIME_إصدار_رأس": "email.headerregistry.MIMEVersionHeader",
-    "MIME_تطبيق": "email.mime.application.MIMEApplication",
     "MIME_جزء": "email.message.MIMEPart",
     "MIME_رسالة": "email.mime.message.MIMEMessage",
     "MIME_صوت": "email.mime.audio.MIMEAudio",
     "MIME_صورة": "email.mime.image.MIMEImage",
-    "MIME_غير_متعدد_الأجزاء": "email.mime.text.MIMENonMultipart",
     # === mailbox ===
     "MMDF": "mailbox.MMDF",
     "MMDF_رسالة": "mailbox.MMDFMessage",
@@ -138,7 +124,6 @@ WEB_FUNCS = {
     "WSGI_خادم": "wsgiref.simple_server.WSGIServer",
     # === xmlrpc ===
     "XMLRPC_توثيق_مولّد": "xmlrpc.server.XMLRPCDocGenerator",
-    "XMLRPC_خادم_توقيع": "xmlrpc.server.signature",
     "XMLRPC_عميل_خطأ": "xmlrpc.client.Error",
     "XMLRPC_عميل_هرب": "xmlrpc.client.escape",
     # === http ===
@@ -161,7 +146,6 @@ WEB_FUNCS = {
     # === urllib ===
     "أساس_معالج": "urllib.request.BaseHandler",
     # === http ===
-    "أساس_ملف_تعريف": "http.cookies.BaseCookie",
     # === urllib ===
     "أضف_أساساً": "urllib.response.addbase",
     # === email ===
@@ -169,7 +153,6 @@ WEB_FUNCS = {
     # === urllib ===
     "أضف_خطاف_إغلاق": "urllib.request.addclosehook",
     # === email ===
-    "أضف_مجموعة_محارف": "email.charset.add_charset",
     "أضف_مرمّز": "email.charset.add_codec",
     # === urllib ===
     "أضف_معلومات": "urllib.response.addinfo",
@@ -203,7 +186,6 @@ WEB_FUNCS = {
     "احصل_رسالة_محتوى": "email.contentmanager.get_message_content",
     "احصل_على_العناوين": "email.utils.getaddresses",
     # === webbrowser ===
-    "احصل_على_المتصفح": "webbrowser.get",
     # === xmlrpc ===
     "احصل_على_المحلل": "xmlrpc.client.getparser",
     # === urllib ===
@@ -239,13 +221,9 @@ WEB_FUNCS = {
     "اعمل_خادم_ويب": "wsgiref.simple_server.make_server",
     # === email ===
     "اعمل_رأس": "email.header.make_header",
-    "اعمل_معرف_رسالة": "email.utils.make_msgid",
     # === urllib ===
-    "افتح_العنوان": "urllib.request.urlopen",
     # === webbrowser ===
-    "افتح_المتصفح": "webbrowser.open",
     "افتح_جديد": "webbrowser.open_new",
-    "افتح_جديد_جدولة": "webbrowser.open_new_tab",
     # === http ===
     "افتراضي_ملف_تعريف_سياسة": "http.cookiejar.DefaultCookiePolicy",
     # === urllib ===
@@ -265,7 +243,6 @@ WEB_FUNCS = {
     "افصل_مستخدم": "urllib.parse.splituser",
     "افصل_مضيف": "urllib.parse.splithost",
     "افصل_منفذ": "urllib.parse.splitport",
-    "افصل_نتيجة": "urllib.parse.SplitResult",
     "افصل_نتيجة_بايتات": "urllib.parse.SplitResultBytes",
     "افصل_نوع": "urllib.parse.splittype",
     "اقتبس_عنوان": "urllib.parse.quote",
@@ -276,14 +253,12 @@ WEB_FUNCS = {
     "اقرأ_بيئة": "wsgiref.handlers.read_environ",
     "اكتب_غلاف": "wsgiref.validate.WriteWrapper",
     # === mimetypes ===
-    "الملف_أضف_نوع": "mimetypes.add_type",
     "الملف_تخمين_ملف_نوع": "mimetypes.guess_file_type",
     # === email ===
     "الوقت_المحلي": "email.utils.localtime",
     # === urllib ===
     "امسح_ذاكرة_مؤقتة": "urllib.parse.clear_cache",
     # === email ===
-    "انسخ_عميقاً": "email.generator.deepcopy",
     # === html ===
     "اهرب_من_HTML": "html.escape",
     # === mailbox ===
@@ -294,30 +269,22 @@ WEB_FUNCS = {
     "بايتات_محلل": "email.parser.BytesParser",
     "بايتات_مولّد": "email.generator.BytesGenerator",
     # === wsgiref ===
-    "بايثون_تنفيذ": "wsgiref.simple_server.python_implementation",
     # === xmlrpc ===
     "بروتوكول_خطأ": "xmlrpc.client.ProtocolError",
     # === email ===
     "بريد_MIME_صوت_قاعدة": "email.mime.audio.rule",
     "بريد_MIME_صورة_قاعدة": "email.mime.image.rule",
     "بريد_رأس": "email.header.Header",
-    "بريد_رأس_سجلّ_مجموعة": "email.headerregistry.Group",
     "بريد_رسالة_2": "email.message.Message",
-    "بريد_رسالة_إلكتروني": "email.message.EmailMessage",
     "بريد_رسالة_من_بايتات": "email.message_from_bytes",
-    "بريد_رسالة_من_ملف": "email.message_from_file",
-    "بريد_رسالة_من_نص": "email.message_from_string",
-    "بريد_متعدد_الأجزاء": "email.mime.multipart.MIMEMultipart",
     # === mailbox ===
     "بريد_مجلد_رسالة": "mailbox.MaildirMessage",
     # === email ===
     "بريد_محتوى_مدير": "email.contentmanager.ContentManager",
     # === xmlrpc ===
     "بسيط_XMLRPC_اطلب_معالج": "xmlrpc.server.SimpleXMLRPCRequestHandler",
-    "بسيط_XMLRPC_خادم": "xmlrpc.server.SimpleXMLRPCServer",
     "بسيط_XMLRPC_موزّع": "xmlrpc.server.SimpleXMLRPCDispatcher",
     # === wsgiref ===
-    "بسيط_معالج": "wsgiref.simple_server.SimpleHandler",
     # === http ===
     "بعيد_غير_متصل": "http.client.RemoteDisconnected",
     # === email ===
@@ -353,7 +320,6 @@ WEB_FUNCS = {
     # === wsgiref ===
     "تخمين_مخطط": "wsgiref.util.guess_scheme",
     # === mimetypes ===
-    "تخمين_نوع_الملف": "mimetypes.guess_type",
     # === http ===
     "ترابط_HTTPS_خادم": "http.server.ThreadingHTTPSServer",
     "ترابط_HTTP_خادم": "http.server.ThreadingHTTPServer",
@@ -388,12 +354,9 @@ WEB_FUNCS = {
     "حلل_العنوان": "urllib.parse.urlparse",
     # === email ===
     "حلل_تاريخاً": "email.utils.parsedate",
-    "حلل_تاريخاً_إلى_تاريخ_ووقت": "email.utils.parsedate_to_datetime",
-    "حلل_تاريخاً_منطقة_زمنية": "email.utils.parsedate_tz",
     # === http ===
     "حلل_رؤوس": "http.client.parse_headers",
     # === email ===
-    "حلل_عنواناً": "email.utils.parseaddr",
     # === webbrowser ===
     "حلل_معطيات": "webbrowser.parse_args",
     # === urllib ===
@@ -413,15 +376,12 @@ WEB_FUNCS = {
     # === mailbox ===
     "خارجي_تعارض_خطأ": "mailbox.ExternalClashError",
     # === email ===
-    "خطأ_رسالة_البريد": "email.errors.MessageError",
     # === wsgiref ===
     "خطأ_غلاف": "wsgiref.validate.ErrorWrapper",
     # === webbrowser ===
-    "خلفية_متصفح": "webbrowser.BackgroundBrowser",
     # === urllib ===
     "ذاكرة_مؤقتة_FTP_معالج": "urllib.request.CacheFTPHandler",
     # === email ===
-    "رأس_اكتب_خطأ": "email.generator.HeaderWriteError",
     "رأس_حلل_خطأ": "email.header.HeaderParseError",
     "رأس_خلل": "email.errors.HeaderDefect",
     "رأس_سجلّ": "email.policy.HeaderRegistry",
@@ -432,7 +392,6 @@ WEB_FUNCS = {
     # === email ===
     "رسالة_حلل_خطأ": "email.errors.MessageParseError",
     "رسالة_خلل": "email.errors.MessageDefect",
-    "رسالة_معرف_رأس": "email.headerregistry.MessageIDHeader",
     "رسالة_من_ثنائي_ملف": "email.message_from_binary_file",
     "رمّز_7_أو_8_بت": "email.charset.encode_7or8bit",
     "رمّز_RFC2231": "email.utils.encode_rfc2231",
@@ -448,21 +407,15 @@ WEB_FUNCS = {
     # === email ===
     "سياسة_البريد": "email.policy.EmailPolicy",
     # === urllib ===
-    "صف_مسمّى": "urllib.parse.namedtuple",
     # === mailbox ===
     "صندوق_mbox": "mailbox.mbox",
-    "صندوق_بريد": "mailbox.Mailbox",
-    "صندوق_بريد_خطأ": "mailbox.Error",
-    "صندوق_بريد_رسالة": "mailbox.Message",
     "صندوق_مجلد": "mailbox.Maildir",
     # === urllib ===
-    "طلب_عنوان_2": "urllib.request.Request",
     # === webbrowser ===
     "عام_متصفح": "webbrowser.GenericBrowser",
     # === xmlrpc ===
     "عطل": "xmlrpc.client.Fault",
     # === email ===
-    "علامة_اقتباس": "email.utils.quote",
     # === urllib ===
     "علامة_اقتباس_من_بايتات": "urllib.parse.quote_from_bytes",
     # === http ===
@@ -471,7 +424,6 @@ WEB_FUNCS = {
     "عنوان_إلى_مسار": "urllib.request.url2pathname",
     # === email ===
     "عنوان_بريد": "email.headerregistry.Address",
-    "عنوان_رأس": "email.headerregistry.AddressHeader",
     "عيّن_بايتات_محتوى": "email.contentmanager.set_bytes_content",
     "عيّن_رسالة_محتوى": "email.contentmanager.set_message_content",
     "عيّن_نص_محتوى": "email.contentmanager.set_text_content",
@@ -488,7 +440,6 @@ WEB_FUNCS = {
     "غير_صالح_BASE64_حشو_خلل": "email.errors.InvalidBase64PaddingDefect",
     "غير_صالح_BASE64_طول_خلل": "email.errors.InvalidBase64LengthDefect",
     # === http ===
-    "غير_صالح_URL": "http.client.InvalidURL",
     # === email ===
     "غير_صالح_تاريخ_خلل": "email.errors.InvalidDateDefect",
     "غير_صالح_رأس_خلل": "email.errors.InvalidHeaderDefect",
@@ -499,7 +450,6 @@ WEB_FUNCS = {
     "غير_مطابق": "http.cookiejar.unmatched",
     "غير_منفّذ_ملف_وضع": "http.client.UnimplementedFileMode",
     # === email ===
-    "غير_مهيكل_رأس": "email.headerregistry.UnstructuredHeader",
     # === urllib ===
     "فاتح_مُدير": "urllib.request.OpenerDirector",
     # === email ===
@@ -510,19 +460,15 @@ WEB_FUNCS = {
     # === http ===
     "فعّال_اطلب_مضيف": "http.cookiejar.eff_request_host",
     # === email ===
-    "فكّ_اقتباس": "email.utils.unquote",
     # === urllib ===
     "فكّ_اقتباس_إلى_بايتات": "urllib.parse.unquote_to_bytes",
     "فكّ_اقتباس_عنوان": "urllib.parse.unquote",
-    "فكّ_اقتباس_عنوان_زائد": "urllib.parse.unquote_plus",
     "فكّ_التجزئة_نتيجة": "urllib.parse.DefragResult",
     "فكّ_التجزئة_نتيجة_بايتات": "urllib.parse.DefragResultBytes",
     "فكّ_اللف": "urllib.parse.unwrap",
     # === email ===
     "فكّ_ترميز_B": "email.message.decode_b",
     "فكّ_ترميز_RFC2231": "email.utils.decode_rfc2231",
-    "فكّ_ترميز_رأس": "email.header.decode_header",
-    "فكّ_ترميز_معاملات": "email.utils.decode_params",
     # === html ===
     "فكّ_هروب_HTML": "html.unescape",
     # === email ===
@@ -536,7 +482,6 @@ WEB_FUNCS = {
     # === email ===
     "قديم_رأس_خلل": "email.errors.ObsoleteHeaderDefect",
     # === http ===
-    "قطعة": "http.cookies.Morsel",
     # === webbrowser ===
     "كونكورر": "webbrowser.Konqueror",
     # === http ===
@@ -552,11 +497,8 @@ WEB_FUNCS = {
     # === http ===
     "متساهل_هو_HDN": "http.cookiejar.liberal_is_HDN",
     # === webbrowser ===
-    "متصفح_ويب_خطأ": "webbrowser.Error",
-    "متصفح_ويب_رئيسي": "webbrowser.main",
     "متصفح_ويب_كروم": "webbrowser.Chrome",
     # === xmlrpc ===
-    "متعدد_استدعِ": "xmlrpc.client.MultiCall",
     "متعدد_استدعِ_مكرّر": "xmlrpc.client.MultiCallIterator",
     # === email ===
     "متعدد_الأجزاء_تحويل_خطأ": "email.errors.MultipartConversionError",
@@ -570,7 +512,6 @@ WEB_FUNCS = {
     "مجرد_أساسي_تصديق_معالج": "urllib.request.AbstractBasicAuthHandler",
     "مجرد_خلاصة_تصديق_معالج": "urllib.request.AbstractDigestAuthHandler",
     # === email ===
-    "مجموعة_محارف": "email.message.Charset",
     "مجموعة_محارف_خطأ": "email.errors.CharsetError",
     # === http ===
     "مجهول_بروتوكول": "http.client.UnknownProtocol",
@@ -582,12 +523,10 @@ WEB_FUNCS = {
     "محتوى_أكثر_من_قصير_خطأ": "urllib.error.ContentTooShortError",
     # === email ===
     "محتوى_توجّه_رأس": "email.headerregistry.ContentDispositionHeader",
-    "محتوى_نقل_ترميز_رأس": "email.headerregistry.ContentTransferEncodingHeader",
     "محتوى_نوع_رأس": "email.headerregistry.ContentTypeHeader",
     # === html ===
     "محلل_HTML": "html.parser.HTMLParser",
     # === email ===
-    "محلل_البريد": "email.parser.Parser",
     # === urllib ===
     "محلل_ملف_الروبوتات": "urllib.robotparser.RobotFileParser",
     # === email ===
@@ -601,8 +540,6 @@ WEB_FUNCS = {
     # === urllib ===
     "مضيف_محلي": "urllib.request.localhost",
     # === http ===
-    "معالج_طلبات_HTTP_أساس": "http.server.BaseHTTPRequestHandler",
-    "معالج_طلبات_HTTP_بسيط": "http.server.SimpleHTTPRequestHandler",
     # === email ===
     "مفرد_عنوان_رأس": "email.headerregistry.SingleAddressHeader",
     "مفكوك_مولّد": "email.generator.DecodedGenerator",
@@ -617,8 +554,6 @@ WEB_FUNCS = {
     # === wsgiref ===
     "مكرّر_غلاف": "wsgiref.validate.IteratorWrapper",
     # === http ===
-    "ملف_تعريف": "http.cookiejar.Cookie",
-    "ملف_تعريف_برطمان": "http.cookiejar.CookieJar",
     "ملف_تعريف_بسيط": "http.cookies.SimpleCookie",
     "ملف_تعريف_خطأ": "http.cookies.CookieError",
     "ملف_تعريف_سياسة": "http.cookiejar.CookiePolicy",
@@ -644,22 +579,17 @@ WEB_FUNCS = {
     # === urllib ===
     "نتيجة_أساس": "urllib.parse.ResultBase",
     # === email ===
-    "نسّق_تاريخ_البريد_2": "email.utils.formatdate",
     # === wsgiref ===
     "نسّق_تاريخ_وقت": "wsgiref.handlers.format_date_time",
     # === email ===
-    "نسّق_تاريخ_ووقت": "email.utils.format_datetime",
     # === mailbox ===
     "نسّق_خطأ": "mailbox.FormatError",
     # === email ===
-    "نسّق_عنوان_البريد": "email.utils.formataddr",
     "نص_بريد_2": "email.mime.text.MIMEText",
     # === http ===
     "نطاق_طابق": "http.cookiejar.domain_match",
     # === urllib ===
-    "نظّف_العناوين": "urllib.request.urlcleanup",
     # === mimetypes ===
-    "نوع_الملف_تخمين_كل_امتدادات": "mimetypes.guess_all_extensions",
     # === urllib ===
     "هذا_المضيف": "urllib.request.thishost",
     # === http ===
@@ -674,13 +604,10 @@ WEB_FUNCS = {
     "وسيط_أساسي_تصديق_معالج": "urllib.request.ProxyBasicAuthHandler",
     "وسيط_تجاوز": "urllib.request.proxy_bypass",
     "وسيط_خلاصة_تصديق_معالج": "urllib.request.ProxyDigestAuthHandler",
-    "وسيط_معالج": "urllib.request.ProxyHandler",
     # === http ===
     "وقت_إلى_iso": "http.cookiejar.time2isoz",
     "وقت_إلى_نتسكيب": "http.cookiejar.time2netscape",
-    "وقت_جرينيتش": "http.cookiejar.timegm",
     # === email ===
-    "وقت_من_عناصر_منطقة_زمنية": "email.utils.mktime_tz",
     # === webbrowser ===
     "يونكس_متصفح": "webbrowser.UnixBrowser",
 }
@@ -3116,77 +3043,33 @@ WEB_CONSTS = {
     # === http ===
     "HTTPS_منفذ": "http.client.HTTPS_PORT",
     "HTTP_إصدار_لا_مدعوم": "http.client.HTTP_VERSION_NOT_SUPPORTED",
-    "HTTP_حالة_HTTP_إصدار_لا_مدعوم": "http.HTTPStatus.HTTP_VERSION_NOT_SUPPORTED",
     "HTTP_حالة_URI_أكثر_من_طويل": "http.HTTPStatus.URI_TOO_LONG",
-    "HTTP_حالة_أكثر_من_كثير_طلبات": "http.HTTPStatus.TOO_MANY_REQUESTS",
-    "HTTP_حالة_أكثر_من_مبكر": "http.HTTPStatus.TOO_EARLY",
     "HTTP_حالة_أنا_مستخدم": "http.HTTPStatus.IM_USED",
     "HTTP_حالة_أُنشئ": "http.HTTPStatus.CREATED",
     "HTTP_حالة_إبريق_شاي": "http.HTTPStatus.IM_A_TEAPOT",
-    "HTTP_حالة_استخدم_وسيط": "http.HTTPStatus.USE_PROXY",
-    "HTTP_حالة_استمر": "http.HTTPStatus.CONTINUE",
     "HTTP_حالة_اطلب_رأس_حقول_أكثر_من_كبير": "http.HTTPStatus.REQUEST_HEADER_FIELDS_TOO_LARGE",
-    "HTTP_حالة_اطلب_مهلة": "http.HTTPStatus.REQUEST_TIMEOUT",
-    "HTTP_حالة_انظر_آخر": "http.HTTPStatus.SEE_OTHER",
-    "HTTP_حالة_بالفعل_مُبلّغ": "http.HTTPStatus.ALREADY_REPORTED",
     "HTTP_حالة_بلا_محتوى": "http.HTTPStatus.NO_CONTENT",
     "HTTP_حالة_بوابة_مهلة": "http.HTTPStatus.GATEWAY_TIMEOUT",
-    "HTTP_حالة_تبديل_بروتوكولات": "http.HTTPStatus.SWITCHING_PROTOCOLS",
     "HTTP_حالة_تعارض": "http.HTTPStatus.CONFLICT",
-    "HTTP_حالة_توقّع_فشل": "http.HTTPStatus.EXPECTATION_FAILED",
-    "HTTP_حالة_جزئي_محتوى": "http.HTTPStatus.PARTIAL_CONTENT",
     "HTTP_حالة_حلقة_مكتشف": "http.HTTPStatus.LOOP_DETECTED",
     "HTTP_حالة_خدمة_غير_متاح": "http.HTTPStatus.SERVICE_UNAVAILABLE",
-    "HTTP_حالة_خطأ_الخادم": "http.HTTPStatus.INTERNAL_SERVER_ERROR",
-    "HTTP_حالة_دائم_إعادة_توجيه": "http.HTTPStatus.PERMANENT_REDIRECT",
     "HTTP_حالة_دالة_لا_مسموح": "http.HTTPStatus.METHOD_NOT_ALLOWED",
-    "HTTP_حالة_دفع_مطلوب": "http.HTTPStatus.PAYMENT_REQUIRED",
     "HTTP_حالة_راح": "http.HTTPStatus.GONE",
-    "HTTP_حالة_رقّ_مطلوب": "http.HTTPStatus.UPGRADE_REQUIRED",
-    "HTTP_حالة_سيئ_بوابة": "http.HTTPStatus.BAD_GATEWAY",
-    "HTTP_حالة_شبكة_مصادقة_مطلوب": "http.HTTPStatus.NETWORK_AUTHENTICATION_REQUIRED",
-    "HTTP_حالة_شرط_مسبق_فشل": "http.HTTPStatus.PRECONDITION_FAILED",
     "HTTP_حالة_شرط_مسبق_مطلوب": "http.HTTPStatus.PRECONDITION_REQUIRED",
     "HTTP_حالة_صفّر_محتوى": "http.HTTPStatus.RESET_CONTENT",
     "HTTP_حالة_طلب_سيئ": "http.HTTPStatus.BAD_REQUEST",
-    "HTTP_حالة_طول_مطلوب": "http.HTTPStatus.LENGTH_REQUIRED",
     "HTTP_حالة_غير_قابل_للمعالجة_محتوى": "http.HTTPStatus.UNPROCESSABLE_CONTENT",
     "HTTP_حالة_غير_كافي_تخزين": "http.HTTPStatus.INSUFFICIENT_STORAGE",
-    "HTTP_حالة_غير_متاح_لأجل_قانوني_أسباب": "http.HTTPStatus.UNAVAILABLE_FOR_LEGAL_REASONS",
-    "HTTP_حالة_غير_مدعوم_وسائط_نوع": "http.HTTPStatus.UNSUPPORTED_MEDIA_TYPE",
     "HTTP_حالة_غير_موثوق_معلومات": "http.HTTPStatus.NON_AUTHORITATIVE_INFORMATION",
     "HTTP_حالة_غير_موجود": "http.HTTPStatus.NOT_FOUND",
-    "HTTP_حالة_غير_مُصرّح": "http.HTTPStatus.UNAUTHORIZED",
-    "HTTP_حالة_فشل_اعتماد": "http.HTTPStatus.FAILED_DEPENDENCY",
-    "HTTP_حالة_لا_مقبول": "http.HTTPStatus.NOT_ACCEPTABLE",
     "HTTP_حالة_لا_ممتد": "http.HTTPStatus.NOT_EXTENDED",
-    "HTTP_حالة_لا_منفّذ": "http.HTTPStatus.NOT_IMPLEMENTED",
-    "HTTP_حالة_لا_مُعدّل": "http.HTTPStatus.NOT_MODIFIED",
-    "HTTP_حالة_مؤقت_إعادة_توجيه": "http.HTTPStatus.TEMPORARY_REDIRECT",
-    "HTTP_حالة_مبكر_تلميحات": "http.HTTPStatus.EARLY_HINTS",
-    "HTTP_حالة_متعدد_اختيار": "http.HTTPStatus.MULTIPLE_CHOICES",
     "HTTP_حالة_متعدد_حالة": "http.HTTPStatus.MULTI_STATUS",
     "HTTP_حالة_متغير_أيضاً_يتفاوض": "http.HTTPStatus.VARIANT_ALSO_NEGOTIATES",
     "HTTP_حالة_محتوى_أكثر_من_كبير": "http.HTTPStatus.CONTENT_TOO_LARGE",
     "HTTP_حالة_مدى_لا_قابل_للتحقق": "http.HTTPStatus.RANGE_NOT_SATISFIABLE",
-    "HTTP_حالة_معالجة": "http.HTTPStatus.PROCESSING",
     "HTTP_حالة_مقبول": "http.HTTPStatus.ACCEPTED",
-    "HTTP_حالة_مقفل": "http.HTTPStatus.LOCKED",
-    "HTTP_حالة_ممنوع": "http.HTTPStatus.FORBIDDEN",
-    "HTTP_حالة_منقول_نهائياً": "http.HTTPStatus.MOVED_PERMANENTLY",
     "HTTP_حالة_موجود": "http.HTTPStatus.FOUND",
-    "HTTP_حالة_موجّه_خطأ_اطلب": "http.HTTPStatus.MISDIRECTED_REQUEST",
     "HTTP_حالة_ناجح": "http.HTTPStatus.OK",
-    "HTTP_حالة_وسيط_مصادقة_مطلوب": "http.HTTPStatus.PROXY_AUTHENTICATION_REQUIRED",
-    "HTTP_دالة_أرسل": "http.HTTPMethod.POST",
-    "HTTP_دالة_اتصل": "http.HTTPMethod.CONNECT",
-    "HTTP_دالة_احذف": "http.HTTPMethod.DELETE",
-    "HTTP_دالة_احصل": "http.HTTPMethod.GET",
-    "HTTP_دالة_تتبع": "http.HTTPMethod.TRACE",
-    "HTTP_دالة_خيارات": "http.HTTPMethod.OPTIONS",
-    "HTTP_دالة_رأس": "http.HTTPMethod.HEAD",
-    "HTTP_دالة_رقّع": "http.HTTPMethod.PATCH",
-    "HTTP_دالة_ضع": "http.HTTPMethod.PUT",
     "HTTP_عميل_تعارض": "http.client.CONFLICT",
     "HTTP_عميل_مقبول": "http.client.ACCEPTED",
     "HTTP_عميل_ممنوع": "http.client.FORBIDDEN",

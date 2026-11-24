@@ -17,6 +17,10 @@ echo "== سلامة المكتبات =="
 "$PY" scripts/check_libraries.py $Q
 
 echo
+echo "== لا تكرار في العناصر =="
+"$PY" scripts/check_duplicates.py
+
+echo
 echo "== نظافة الريبو واتساق التوثيق =="
 "$PY" scripts/check_repo.py $Q
 

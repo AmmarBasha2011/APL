@@ -6,18 +6,12 @@ Transpiles Arabic collections keywords to Python collections module calls
 COLLECTIONS_FUNCS = {
     # أنواع خاصة (Specialized Types)
     "عداد": "collections.Counter",
-    "قاموس_افتراضي": "collections.defaultdict",
     "قائمة_مزدوجة": "collections.deque",
-    "صف_مسمى": "collections.namedtuple",
-    "سلسلة_مرتبة": "collections.OrderedDict",
     
     # دوال (Functions)
-    "عد_عناصر": "collections.Counter",
     "عنصر_أكثر": "collections.Counter.most_common",
     
     # فئات (Classes)
-    "صف_انتظار": "collections.deque",
-    "صف_انتظار_محدود": "collections.deque",
 }
 
 COLLECTIONS_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(COLLECTIONS_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("

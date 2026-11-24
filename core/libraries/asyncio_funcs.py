@@ -12,16 +12,12 @@ ASYNCIO_FUNCS = {
     "انتظر_أي": "asyncio.wait_for",
     "اجمع": "asyncio.gather",
     "نوم": "asyncio.sleep",
-    "وقت_حالي": "asyncio.get_event_loop",
     "حلقة": "asyncio.get_event_loop",
     "حلقة_جديدة": "asyncio.new_event_loop",
     "اجعل_حلقة": "asyncio.set_event_loop",
-    "تشغيل": "asyncio.run",
     
     # المهام (Tasks)
     "مهمة_تزامن": "asyncio.Task",
-    "أنشئ_مهمة_جديدة": "asyncio.create_task",
-    "ألغى_مهمة": "task.cancel",
     "حالة_مهمة": "task.done",
     "نتيجة_مهمة": "task.result",
     "استثناء_مهمة": "task.exception",
@@ -50,8 +46,6 @@ ASYNCIO_FUNCS = {
     
     # الطابور (Queue)
     "طابور": "asyncio.Queue",
-    "طابور_محدود": "asyncio.Queue",
-    "طابور_لانهائي": "asyncio.Queue",
     "ضع_في_طابور": "queue.put",
     "احصل_من_طابور": "queue.get",
     "تأكد_طابور": "queue.task_done",
@@ -69,7 +63,6 @@ ASYNCIO_FUNCS = {
     "أبلغ_الكل": "condition.notify_all",
     
     # الأنابيب (Pipes)
-    "استدعاء": "asyncio.StreamReader",
     "مجرى": "asyncio.StreamReader",
     "اتصال_تزامن": "asyncio.StreamWriter",
     "اكتب_مجرى": "writer.write",
@@ -101,21 +94,11 @@ ASYNCIO_FUNCS = {
     "اكتب_لعملية": "process.stdin.write",
     
     # المهلة (Timeout)
-    "مؤقت": "threading.Timer",
-    "أنشئ_مؤقت": "threading.Timer",
     "مهلة_تزامن": "asyncio.timeout",
     "داخل_مهلة": "async with asyncio.timeout",
-    "انتهت_مهلة_تزامن": "asyncio.TimeoutError",
     "ألغى": "asyncio.CancelledError",
-    "ألغى_مهمة": "asyncio.CancelledError",
     
     # الانتظار
-    "انتظر_مجموعة": "asyncio.wait",
-    "اجمع_مهام": "asyncio.gather",
-    "أول_مكتمل": "asyncio.wait",
-    "أول_استثناء": "asyncio.wait",
-    "اكتمل_الكل": "asyncio.wait",
-    "انتظر_أول": "asyncio.wait",
     "مهام_مكتملة": "done",
     "مهام_معلقة": "pending",
     
@@ -147,7 +130,6 @@ ASYNCIO_FUNCS = {
     "اقرأ_كل": "reader.readexactly",
     
     # المهام المتزامنة
-    "تزامن": "asyncio.Lock",
     "غير_متزامن": "async with",
     
     # التعامل مع الأخطاء

@@ -2,76 +2,23 @@
 
 مكتبة HTTP Client بالعربي، متوافقة مع Python requests:
 
-**244 عنصراً عربياً** (الدوال: 244).
+**185 عنصراً عربياً** (الدوال: 244).
 
-## الدوال (244)
+## الدوال (185)
 
 | العربي | Python |
 |--------|--------|
-| `احصل_على` | `requests.get` |
-| `أرسل_إلى` | `requests.post` |
-| `ضع_في` | `requests.put` |
 | `احذف` | `requests.delete` |
-| `صحح` | `requests.patch` |
 | `رأس` | `response.headers.get` |
 | `خيارات` | `requests.options` |
 | `اطلب` | `requests.request` |
-| `طلب_http` | `requests.request` |
 | `اتصل` | `requests.Session` |
 | `get` | `requests.get` |
-| `post` | `requests.post` |
 | `put` | `requests.put` |
-| `delete` | `requests.delete` |
-| `patch` | `requests.patch` |
 | `head` | `requests.head` |
-| `options` | `requests.options` |
-| `request` | `requests.request` |
-| `session` | `requests.Session` |
-| `جيت` | `requests.get` |
-| `جلب` | `requests.get` |
-| `تنزيل_طلبات` | `requests.get` |
-| `visit` | `requests.get` |
-| `تابع` | `requests.get` |
 | `تصفح_طلبات` | `params` |
-| `استعرض` | `requests.get` |
-| `فتش` | `requests.get` |
-| `ابحث` | `requests.get` |
-| `جد` | `requests.get` |
-| `بوست` | `requests.post` |
-| `ارسل` | `requests.post` |
-| `أنزل` | `requests.post` |
-| `رفع_طلبات` | `requests.post` |
-| `سجل_طلبات` | `requests.post` |
-| `احفظ` | `requests.post` |
 | `ادخل` | `requests.post` |
-| `اكتب_طلب` | `requests.post` |
-| `نشر` | `requests.post` |
-| `أعلن` | `requests.post` |
-| `أضف_طلب` | `requests.post` |
-| `ضمن` | `requests.post` |
-| `حط` | `requests.post` |
-| `غير` | `requests.put` |
-| `عدل` | `requests.put` |
-| `حدث` | `requests.put` |
-| `بدل` | `requests.put` |
-| `قلب` | `requests.put` |
-| `تحول` | `requests.put` |
-| `تحديث` | `requests.put` |
-| `تعديل` | `requests.put` |
-| `تبديل` | `requests.put` |
-| `امسح_طلبات` | `requests.delete` |
-| `شيل` | `requests.delete` |
-| `الغي` | `requests.delete` |
-| `انزع` | `requests.delete` |
-| `اطرد` | `requests.delete` |
-| `اقلع` | `requests.delete` |
-| `رمم` | `requests.patch` |
 | `جبر` | `requests.patch` |
-| `كمل` | `requests.patch` |
-| `جلسة_طلبات` | `requests.Session` |
-| `اتصال` | `requests.Session` |
-| `وصلة` | `requests.Session` |
-| `رابطة` | `requests.Session` |
 | `استجابة_طلبات` | `response` |
 | `رد` | `response` |
 | `نتيجة` | `response` |
@@ -162,16 +109,10 @@
 | `تفعيل_الكاش` | `requests.cache.enabled` |
 | `مدة_الطلب` | `response.elapsed.total_seconds` |
 | `سرعة_التنزيل` | `len(response.content) / response.elapsed.total_seconds` |
-| `حمل` | `requests.get` |
-| `حمل_ملف` | `requests.get` |
 | `احفظ_ملف_طلبات` | `open` |
 | `تدفق_طلبات` | `stream` |
 | `محتوى_تدفقي` | `response.iter_content` |
 | `حجم_القطعة` | `chunk_size` |
-| `ارفع` | `requests.post` |
-| `رفع_ملف` | `requests.post` |
-| `متعدد_الأجزاء` | `requests.post` |
-| `افتح_جلسة` | `requests.Session` |
 | `أغلق_جلسة` | `session.close` |
 | `جلسة_جيت` | `session.get` |
 | `جلسة_بوست` | `session.post` |

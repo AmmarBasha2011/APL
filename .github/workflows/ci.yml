@@ -98,6 +98,22 @@ jobs:
       - run: pip install pip-audit
       - run: pip-audit --strict -r requirements.txt
 
+  # لا تكرار في عناصر المكتبات: أي مفتاحين عربيين يشيران إلى نفس الكائن
+  # الحقيقي في Python (حتى بمسارين مختلفين) يُفشلان الـ PR. بدون baseline.
+  no-duplicates:
+    name: لا تكرار في العناصر
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.14"
+          cache: pip
+      - name: تثبيت الحزم الخارجية
+        run: pip install -r requirements.txt
+      - name: فحص التكرار
+        run: python scripts/check_duplicates.py
+
   # تغطية توثيق المكتبات: كل مكتبة لها ملف وكل عنصر مدرج فيه
   docs-coverage:
     name: تغطية التوثيق

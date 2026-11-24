@@ -5,87 +5,32 @@ Full HTTP client with Arabic keywords
 
 REQUESTS_FUNCS = {
     # === الطرق الأساسية (Basic Methods) ===
-    "احصل_على": "requests.get",
-    "أرسل_إلى": "requests.post",
-    "ضع_في": "requests.put",
     "احذف": "requests.delete",
-    "صحح": "requests.patch",
     "رأس": "requests.head",
     "خيارات": "requests.options",
     "اطلب": "requests.request",
-    "طلب_http": "requests.request",
     "اتصل": "requests.Session",
     
     # === اختصارات (Shortcuts) ===
     "get": "requests.get",
-    "post": "requests.post",
     "put": "requests.put",
-    "delete": "requests.delete",
-    "patch": "requests.patch",
     "head": "requests.head",
-    "options": "requests.options",
-    "request": "requests.request",
-    "session": "requests.Session",
     
     # === GET requests ===
-    "جيت": "requests.get",
-    "جلب": "requests.get",
-    "تنزيل_طلبات": "requests.get",
-    "visit": "requests.get",
-    "تابع": "requests.get",
     "تصفح_طلبات": "requests.get",
-    "استعرض": "requests.get",
-    "فتش": "requests.get",
-    "ابحث": "requests.get",
-    "جد": "requests.get",
 
     # === POST requests ===
-    "بوست": "requests.post",
-    "ارسل": "requests.post",
-    "أنزل": "requests.post",
-    "رفع_طلبات": "requests.post",
-    "سجل_طلبات": "requests.post",
-    "احفظ": "requests.post",
     "ادخل": "requests.post",
-    "اكتب_طلب": "requests.post",
-    "نشر": "requests.post",
-    "أعلن": "requests.post",
-    "أضف_طلب": "requests.post",
-    "ضمن": "requests.post",
-    "حط": "requests.post",
     
     # === PUT requests ===
     "put": "requests.put",
-    "غير": "requests.put",
-    "عدل": "requests.put",
-    "حدث": "requests.put",
-    "بدل": "requests.put",
-    "قلب": "requests.put",
-    "تحول": "requests.put",
-    "تحديث": "requests.put",
-    "تعديل": "requests.put",
-    "تبديل": "requests.put",
     
     # === DELETE requests ===
-    "delete": "requests.delete",
-    "امسح_طلبات": "requests.delete",
-    "شيل": "requests.delete",
-    "الغي": "requests.delete",
-    "انزع": "requests.delete",
-    "اطرد": "requests.delete",
-    "اقلع": "requests.delete",
     
     # === PATCH requests ===
-    "patch": "requests.patch",
-    "رمم": "requests.patch",
     "جبر": "requests.patch",
-    "كمل": "requests.patch",
     
     # === Session ===
-    "جلسة_طلبات": "requests.Session",
-    "اتصال": "requests.Session",
-    "وصلة": "requests.Session",
-    "رابطة": "requests.Session",
     
     # === الاستجابة (Response) ===
     "استجابة_طلبات": "response",
@@ -211,20 +156,14 @@ REQUESTS_FUNCS = {
     "سرعة_التنزيل": "len(response.content) / response.elapsed.total_seconds",
     
     # === التحميل (Downloads) ===
-    "حمل": "requests.get",
-    "حمل_ملف": "requests.get",
     "احفظ_ملف_طلبات": "open",
     "تدفق_طلبات": "stream",
     "محتوى_تدفقي": "response.iter_content",
     "حجم_القطعة": "chunk_size",
     
     # === الرفع (Uploads) ===
-    "ارفع": "requests.post",
-    "رفع_ملف": "requests.post",
-    "متعدد_الأجزاء": "requests.post",
     
     # === الجلسات (Sessions) ===
-    "افتح_جلسة": "requests.Session",
     "أغلق_جلسة": "session.close",
     "جلسة_جيت": "session.get",
     "جلسة_بوست": "session.post",
