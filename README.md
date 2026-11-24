@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 91 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **596 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **620 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -264,9 +264,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (596 مثالاً)
+## الأمثلة الجاهزة (620 مثالاً)
 
-مجلد `examples/` يحتوي على **596 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **620 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -866,6 +866,30 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 594 | [`594-cairo-metro-fare.apl`](examples/594-cairo-metro-fare.apl) | تذكرة مترو القاهرة بعدد المحطات (تعريفة مبسطة) |
 | 595 | [`595-egypt-income-tax.apl`](examples/595-egypt-income-tax.apl) | ضريبة الدخل المصرية بشرائح تصاعدية تقريبية |
 | 596 | [`596-consistent-hashing.apl`](examples/596-consistent-hashing.apl) | توزيع مفاتيح مستقر على عقد متغيرة |
+| 597 | [`597-bridges-articulation.apl`](examples/597-bridges-articulation.apl) | كشف الحواف والعقد الحرجة في رسم غير موجه |
+| 598 | [`598-euler-path.apl`](examples/598-euler-path.apl) | مسار يعبر كل حافة مرة واحدة |
+| 599 | [`599-manacher.apl`](examples/599-manacher.apl) | أطول سلسلة متناظرة بخوارزمية ماناكر |
+| 600 | [`600-lz77-lite.apl`](examples/600-lz77-lite.apl) | ضغط LZ77 المبسط وفك الضغط |
+| 601 | [`601-avl-tree.apl`](examples/601-avl-tree.apl) | شجرة بحث ذاتية الاتزان بالتدويرات |
+| 602 | [`602-sparse-table.apl`](examples/602-sparse-table.apl) | أدنى مدى بزمن ثابت بعد تجهيز |
+| 603 | [`603-xor-trie.apl`](examples/603-xor-trie.apl) | أقصى أو-حصري لزوج بشجرة بتات |
+| 604 | [`604-knight-tour.apl`](examples/604-knight-tour.apl) | جولة الحصان بقاعدة وارنسدورف |
+| 605 | [`605-minesweeper-reveal.apl`](examples/605-minesweeper-reveal.apl) | كشف متتال للخلايا الفارغة |
+| 606 | [`606-minimax-ab.apl`](examples/606-minimax-ab.apl) | لعب مثالي في إكس-أو بتقليم ألفا-بيتا |
+| 607 | [`607-othello-flips.apl`](examples/607-othello-flips.apl) | قانونية النقلة وقلب الأقراص |
+| 608 | [`608-puzzle-15.apl`](examples/608-puzzle-15.apl) | هل وضع لغز الخمسة عشر قابل للحل |
+| 609 | [`609-card-war.apl`](examples/609-card-war.apl) | محاكاة لعبة الحرب بالورق |
+| 610 | [`610-snake-step.apl`](examples/610-snake-step.apl) | حركة ونمو واصطدام الثعبان |
+| 611 | [`611-sliding-log-limiter.apl`](examples/611-sliding-log-limiter.apl) | تحديد المعدل بسجل طوابع منزلق |
+| 612 | [`612-ttl-cache.apl`](examples/612-ttl-cache.apl) | ذاكرة مؤقتة بمدة صلاحية |
+| 613 | [`613-undo-stack.apl`](examples/613-undo-stack.apl) | محرر بسجل تراجع وإعادة |
+| 614 | [`614-event-bus.apl`](examples/614-event-bus.apl) | نشر واشتراك بين مكونات منفصلة |
+| 615 | [`615-cron-parser.apl`](examples/615-cron-parser.apl) | موعد الرنة التالية لجدول كرون |
+| 616 | [`616-prayer-times-lite.apl`](examples/616-prayer-times-lite.apl) | مواقيت الصلاة التقريبية للقاهرة بحساب شمسي |
+| 617 | [`617-hijri-calendar-print.apl`](examples/617-hijri-calendar-print.apl) | طباعة شهر هجري كشبكة أسابيع |
+| 618 | [`618-ramadan-countdown.apl`](examples/618-ramadan-countdown.apl) | أيام متبقية لرمضان بالتقويم الاصطلاحي |
+| 619 | [`619-tafqeet.apl`](examples/619-tafqeet.apl) | تحويل المبلغ إلى كلمات عربية |
+| 620 | [`620-skip-list.apl`](examples/620-skip-list.apl) | بحث سريع في قائمة مرتبة بمستويات |
 
 ### تشغيل أي مثال
 
@@ -966,7 +990,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 596 مثالاً
+**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 620 مثالاً
 
 ## Language platform tools
 

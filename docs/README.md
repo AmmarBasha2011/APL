@@ -106,9 +106,9 @@
 | 96 | [pkgs_ext2-library.md](pkgs_ext2-library.md) | مكتبة `pkgs_ext2` — حزم متنوعة موسّعة (scrapy / prompt_toolkit / lxml / hypothesis / peewee / arrow / alembic / rich / trio / paramiko / h5py / cryptography / pyasn1 / skimage / yaml / seaborn / pyparsing / bs4 / shapely / babel / redis / pendulum / mako / nacl / typer / google / PIL / kombu / marshmallow / requests / sqlparse / celery / packaging / six / httpx / jinja2 / acp / regex / uvicorn / websockets / markdown / tornado / anyio / httplib2 / pygments / cffi / click / fastapi / httpcore / googleapiclient / tqdm / starlette / dateutil / pydantic / attr / jsonschema / multidict / numpy / scipy) (19,295 عنصراً) |
 
 ---
-## الأمثلة الجاهزة (596 مثالاً)
+## الأمثلة الجاهزة (620 مثالاً)
 
-596 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+620 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -708,6 +708,30 @@
 | 594 | [`594-cairo-metro-fare.apl`](../examples/594-cairo-metro-fare.apl) | تذكرة مترو القاهرة بعدد المحطات (تعريفة مبسطة) |
 | 595 | [`595-egypt-income-tax.apl`](../examples/595-egypt-income-tax.apl) | ضريبة الدخل المصرية بشرائح تصاعدية تقريبية |
 | 596 | [`596-consistent-hashing.apl`](../examples/596-consistent-hashing.apl) | توزيع مفاتيح مستقر على عقد متغيرة |
+| 597 | [`597-bridges-articulation.apl`](../examples/597-bridges-articulation.apl) | كشف الحواف والعقد الحرجة في رسم غير موجه |
+| 598 | [`598-euler-path.apl`](../examples/598-euler-path.apl) | مسار يعبر كل حافة مرة واحدة |
+| 599 | [`599-manacher.apl`](../examples/599-manacher.apl) | أطول سلسلة متناظرة بخوارزمية ماناكر |
+| 600 | [`600-lz77-lite.apl`](../examples/600-lz77-lite.apl) | ضغط LZ77 المبسط وفك الضغط |
+| 601 | [`601-avl-tree.apl`](../examples/601-avl-tree.apl) | شجرة بحث ذاتية الاتزان بالتدويرات |
+| 602 | [`602-sparse-table.apl`](../examples/602-sparse-table.apl) | أدنى مدى بزمن ثابت بعد تجهيز |
+| 603 | [`603-xor-trie.apl`](../examples/603-xor-trie.apl) | أقصى أو-حصري لزوج بشجرة بتات |
+| 604 | [`604-knight-tour.apl`](../examples/604-knight-tour.apl) | جولة الحصان بقاعدة وارنسدورف |
+| 605 | [`605-minesweeper-reveal.apl`](../examples/605-minesweeper-reveal.apl) | كشف متتال للخلايا الفارغة |
+| 606 | [`606-minimax-ab.apl`](../examples/606-minimax-ab.apl) | لعب مثالي في إكس-أو بتقليم ألفا-بيتا |
+| 607 | [`607-othello-flips.apl`](../examples/607-othello-flips.apl) | قانونية النقلة وقلب الأقراص |
+| 608 | [`608-puzzle-15.apl`](../examples/608-puzzle-15.apl) | هل وضع لغز الخمسة عشر قابل للحل |
+| 609 | [`609-card-war.apl`](../examples/609-card-war.apl) | محاكاة لعبة الحرب بالورق |
+| 610 | [`610-snake-step.apl`](../examples/610-snake-step.apl) | حركة ونمو واصطدام الثعبان |
+| 611 | [`611-sliding-log-limiter.apl`](../examples/611-sliding-log-limiter.apl) | تحديد المعدل بسجل طوابع منزلق |
+| 612 | [`612-ttl-cache.apl`](../examples/612-ttl-cache.apl) | ذاكرة مؤقتة بمدة صلاحية |
+| 613 | [`613-undo-stack.apl`](../examples/613-undo-stack.apl) | محرر بسجل تراجع وإعادة |
+| 614 | [`614-event-bus.apl`](../examples/614-event-bus.apl) | نشر واشتراك بين مكونات منفصلة |
+| 615 | [`615-cron-parser.apl`](../examples/615-cron-parser.apl) | موعد الرنة التالية لجدول كرون |
+| 616 | [`616-prayer-times-lite.apl`](../examples/616-prayer-times-lite.apl) | مواقيت الصلاة التقريبية للقاهرة بحساب شمسي |
+| 617 | [`617-hijri-calendar-print.apl`](../examples/617-hijri-calendar-print.apl) | طباعة شهر هجري كشبكة أسابيع |
+| 618 | [`618-ramadan-countdown.apl`](../examples/618-ramadan-countdown.apl) | أيام متبقية لرمضان بالتقويم الاصطلاحي |
+| 619 | [`619-tafqeet.apl`](../examples/619-tafqeet.apl) | تحويل المبلغ إلى كلمات عربية |
+| 620 | [`620-skip-list.apl`](../examples/620-skip-list.apl) | بحث سريع في قائمة مرتبة بمستويات |
 
 **التشغيل:**
 ```bash
@@ -857,4 +881,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,254 عنصراً**،
-مع **596 مثال جاهز** في `examples/`.
+مع **620 مثال جاهز** في `examples/`.
