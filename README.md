@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 91 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **692 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **716 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -264,9 +264,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (692 مثالاً)
+## الأمثلة الجاهزة (716 مثالاً)
 
-مجلد `examples/` يحتوي على **692 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **716 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -962,6 +962,30 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 690 | [`690-toml-lite.apl`](examples/690-toml-lite.apl) | قراءة ملفات إعداد بصيغة TOML |
 | 691 | [`691-ical-rrule-lite.apl`](examples/691-ical-rrule-lite.apl) | توليد مواعيد متكررة يوميا وأسبوعيا وشهريا |
 | 692 | [`692-mandelbrot-ascii.apl`](examples/692-mandelbrot-ascii.apl) | رسم مجموعة ماندلبروت بالأحرف |
+| 693 | [`693-perlin-noise-1d.apl`](examples/693-perlin-noise-1d.apl) | ضوضاء ناعمة بلا مولد عشوائي |
+| 694 | [`694-bezier-curve.apl`](examples/694-bezier-curve.apl) | تقييم منحنيات بيزييه التربيعية والتكعيبية |
+| 695 | [`695-catmull-rom.apl`](examples/695-catmull-rom.apl) | منحنى يمر بكل نقاط التحكم |
+| 696 | [`696-shoelace-area.apl`](examples/696-shoelace-area.apl) | مساحة ومحيط مضلع من رؤوسه |
+| 697 | [`697-circle-circle-intersection.apl`](examples/697-circle-circle-intersection.apl) | نقاط تلاقي دائرتين وحالاتها الخاصة |
+| 698 | [`698-kmeans-1d.apl`](examples/698-kmeans-1d.apl) | تجميع نقاط على الخط في عنقودين |
+| 699 | [`699-gradient-descent-1d.apl`](examples/699-gradient-descent-1d.apl) | إيجاد أدنى دالة تربيعية بالنزول |
+| 700 | [`700-perceptron-lite.apl`](examples/700-perceptron-lite.apl) | أبسط عصبون يتعلم بوابة منطقية |
+| 701 | [`701-julian-day-number.apl`](examples/701-julian-day-number.apl) | حسابات التواريخ بالأرقام المطلقة |
+| 702 | [`702-wav-header-parse.apl`](examples/702-wav-header-parse.apl) | قراءة حقول ملف صوتي من بايتاته |
+| 703 | [`703-bmp-ascii-render.apl`](examples/703-bmp-ascii-render.apl) | تحويل بكسلات نقطية إلى فن نصي |
+| 704 | [`704-maze-wilson.apl`](examples/704-maze-wilson.apl) | متاهة مثالية بتوزيع منتظم |
+| 705 | [`705-datalog-lite.apl`](examples/705-datalog-lite.apl) | استنتاج علاقات السلف بالإغلاق المتعدي |
+| 706 | [`706-prolog-unify-lite.apl`](examples/706-prolog-unify-lite.apl) | مطابقة الحدود بالتوحيد |
+| 707 | [`707-dpll-sat-lite.apl`](examples/707-dpll-sat-lite.apl) | إشباع صيغ منطقية بالتقسيم |
+| 708 | [`708-expectimax-lite.apl`](examples/708-expectimax-lite.apl) | قرارات مثلى تحت عدم اليقين |
+| 709 | [`709-pagerank-lite.apl`](examples/709-pagerank-lite.apl) | ترتيب صفحات ويب بأهميتها |
+| 710 | [`710-astar-grid.apl`](examples/710-astar-grid.apl) | أقصر طريق حول العوائق |
+| 711 | [`711-tf-idf-lite.apl`](examples/711-tf-idf-lite.apl) | أهم كلمات مستند ضمن مجموعة |
+| 712 | [`712-tashkeel-strip.apl`](examples/712-tashkeel-strip.apl) | تنظيف النص العربي من الحركات |
+| 713 | [`713-stopword-filter-ar.apl`](examples/713-stopword-filter-ar.apl) | حذف الكلمات الشائعة قبل البحث |
+| 714 | [`714-sentence-split-ar.apl`](examples/714-sentence-split-ar.apl) | تقطيع النص إلى جمل بقواعد |
+| 715 | [`715-soundex-en.apl`](examples/715-soundex-en.apl) | رمز صوتي للأسماء الإنجليزية |
+| 716 | [`716-iso-week-date.apl`](examples/716-iso-week-date.apl) | سنة الأسبوع ورقمه ويومه |
 
 ### تشغيل أي مثال
 
@@ -1062,7 +1086,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 692 مثالاً
+**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 716 مثالاً
 
 ## Language platform tools
 
