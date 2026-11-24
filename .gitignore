@@ -26,3 +26,7 @@ benchmarks/*-results.json
 *.egg-info/
 build/
 dist/
+
+# Coverage output
+.coverage
+.coverage.*
