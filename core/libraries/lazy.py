@@ -21,47 +21,8 @@ import sys
 from types import ModuleType
 
 # module basename -> library key it defines (module name without "_funcs")
-_MODULE_NAMES = [
-    "math", "random", "time", "statistics", "os", "re", "collections", "itertools",
-    "json", "hashlib", "flask", "fastapi", "requests", "sqlite3", "asyncio",
-    "threading", "unittest", "csv", "logging", "argparse", "subprocess",
-    "configparser", "dataclasses", "advanced", "datetime", "pathlib", "shutil",
-    "textwrap", "uuid", "base64", "urllib", "functools", "decimal", "fractions",
-    "string", "secrets", "zoneinfo", "getpass", "operator", "pprint", "enum",
-    "xml",
-    "archive",
-    "net",
-    "devtools",
-    "web",
-    "datafiles",
-    "syslib",
-    "stdlib_ext",
-    "aiohttp",
-    "acp",
-    "cdp_use",
-    "idlelib",
-    "utiltools",
-    "textdata",
-    "secauth",
-    "webserver",
-    "weblibs",
-    "numpy",
-    "scipy",
-    "telegram",
-    "redis",
-    "celery",
-    "numdeep",
-    "botdeep",
-    "taskdeep",
-    "storedeep",
-    "pygdeep",
-    "webdeep",
-    "datadeep",
-    "mediadeep",
-    "secdeep",
-    "utildeep",
-    "stdfull",
-]
+from .registry import ENTRIES
+_MODULE_NAMES = [entry['name'] for entry in ENTRIES]
 
 _loaded: dict[str, ModuleType] = {}
 _loading: set[str] = set()
@@ -76,7 +37,14 @@ def load(name: str) -> ModuleType:
     """Import one library module by its short name (e.g. "math")."""
     if name in _loaded:
         return _loaded[name]
-    mod = importlib.import_module("core.libraries." + name + "_funcs")
+    full = "core.libraries." + name + "_funcs"
+    previous = sys.modules.pop(full, None)
+    try:
+        mod = importlib.import_module(full)
+    except BaseException:
+        if previous is not None:
+            sys.modules[full] = previous
+        raise
     _loaded[name] = mod
     return mod
 

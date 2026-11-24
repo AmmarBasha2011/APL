@@ -15,7 +15,9 @@ from core.libraries.xml_funcs import XML_KWARGS
 from core.libraries.argparse_funcs import ARGPARSE_KWARGS
 from core.libraries.archive_funcs import ARCHIVE_KWARGS
 from core.libraries.net_funcs import NET_KWARGS
-from core.libraries import decimal_funcs, fractions_funcs, string_funcs, secrets_funcs, zoneinfo_funcs, getpass_funcs, operator_funcs, pprint_funcs
+from core.libraries.registry import ENTRIES, module, substitute_all
+_library_modules = {entry['name']: module(entry) for entry in ENTRIES}
+globals().update({entry['module']: _library_modules[entry['name']] for entry in ENTRIES})
 
 # Arabic names usable both as methods (.علوي) and standalone (علوي("x"))
 _STANDALONE_METHODS = {
@@ -24,7 +26,7 @@ _STANDALONE_METHODS = {
     "يبدأ": "startswith", "ينتهي": "endswith", "ضم": "join",
     "فرز": "sort", "عكس": "reverse", "نسخ": "copy",
 }
-from core.libraries import math_funcs, random_funcs, time_funcs, statistics_funcs, os_funcs, re_funcs, collections_funcs, itertools_funcs, json_funcs, hashlib_funcs, flask_funcs, fastapi_funcs, requests_funcs, sqlite3_funcs, asyncio_funcs, threading_funcs, unittest_funcs, csv_funcs, logging_funcs, argparse_funcs, subprocess_funcs, configparser_funcs, dataclasses_funcs, advanced_funcs, datetime_funcs, pathlib_funcs, shutil_funcs, textwrap_funcs, uuid_funcs, base64_funcs, urllib_funcs, functools_funcs, enum_funcs, xml_funcs, archive_funcs, net_funcs, devtools_funcs, web_funcs, datafiles_funcs, syslib_funcs, stdlib_ext_funcs, aiohttp_funcs, acp_funcs, cdp_use_funcs, idlelib_funcs, utiltools_funcs, textdata_funcs, secauth_funcs, webserver_funcs, weblibs_funcs, numpy_funcs, scipy_funcs, telegram_funcs, redis_funcs, celery_funcs, numdeep_funcs, botdeep_funcs, taskdeep_funcs, storedeep_funcs, pygdeep_funcs, webdeep_funcs, datadeep_funcs, mediadeep_funcs, secdeep_funcs, utildeep_funcs, stdfull_funcs
+
 
 
 def _replace_type_names(text: str) -> str:
@@ -37,6 +39,7 @@ def _replace_type_names(text: str) -> str:
 # variables, loop targets). A library word must never rewrite a name the user
 # owns: `def رئيسي():` or `المتغير مستخدم = ...` stay exactly as written.
 USER_NAMES: set[str] = set()
+USER_ATTRIBUTES: set[str] = set()
 
 
 def _safe(table, key):
@@ -71,6 +74,18 @@ def _inline_replace(text: str) -> str:
     if not needs_scan(text):
         return text
 
+    _name_tokens = {}
+    for _index, _name in enumerate(sorted(USER_NAMES, key=len, reverse=True)):
+        _token = f"_APL_NAME_{_index}_END_"
+        text, _count = re.subn(rf"(?<![\w.\u0600-\u06FF]){re.escape(_name)}(?![\w\u0600-\u06FF]|\s*=)", _token, text)
+        if _count:
+            _name_tokens[_token] = _name
+
+    for _index, _name in enumerate(sorted(USER_ATTRIBUTES, key=len, reverse=True)):
+        _token = f"_APL_ATTRIBUTE_{_index}_END_"
+        text = re.sub(rf"(?<=\.){re.escape(_name)}(?![\w\u0600-\u06FF])", _token, text)
+        _name_tokens[_token] = _name
+
     strings = {}
     def _save(m):
         idx = len(strings)
@@ -101,219 +116,107 @@ def _inline_replace(text: str) -> str:
     text = re.sub(r"ادخل\s*\(", "input(", text)
     
     # Library patterns first (more specific, longer names)
-    text = re.compile(datetime_funcs.DATETIME_PATTERN).sub(lambda m: f"{_safe(datetime_funcs.DATETIME_FUNCS, m.group(1))}(", text)
-    text = re.compile(pathlib_funcs.PATHLIB_PATTERN).sub(lambda m: f"{_safe(pathlib_funcs.PATHLIB_FUNCS, m.group(1))}(", text)
-    text = re.compile(pathlib_funcs.PATHLIB_METHOD_PATTERN).sub(lambda m: f".{pathlib_funcs.PATHLIB_METHODS[m.group(1)]}(", text)
-    text = re.compile(shutil_funcs.SHUTIL_PATTERN).sub(lambda m: f"{_safe(shutil_funcs.SHUTIL_FUNCS, m.group(1))}(", text)
-    text = re.compile(textwrap_funcs.TEXTWRAP_PATTERN).sub(lambda m: f"{_safe(textwrap_funcs.TEXTWRAP_FUNCS, m.group(1))}(", text)
-    text = re.compile(uuid_funcs.UUID_PATTERN).sub(lambda m: f"{_safe(uuid_funcs.UUID_FUNCS, m.group(1))}(", text)
-    text = re.compile(datetime_funcs.DATETIME_PROP_PATTERN).sub(lambda m: f".{_safe(datetime_funcs.DATETIME_PROPS, m.group(1))}", text)
-    text = re.compile(pathlib_funcs.PATHLIB_PROP_PATTERN).sub(lambda m: f".{_safe(pathlib_funcs.PATHLIB_PROPS, m.group(1))}", text)
-    text = re.compile(uuid_funcs.UUID_PROP_PATTERN).sub(lambda m: f".{_safe(uuid_funcs.UUID_PROPS, m.group(1))}", text)
-    text = re.compile(base64_funcs.BASE64_PATTERN).sub(lambda m: f"{_safe(base64_funcs.BASE64_FUNCS, m.group(1))}(", text)
-    text = re.compile(urllib_funcs.URLLIB_PATTERN).sub(lambda m: f"{_safe(urllib_funcs.URLLIB_FUNCS, m.group(1))}(", text)
-    text = re.compile(functools_funcs.FUNCTOOLS_PATTERN).sub(lambda m: f"{_safe(functools_funcs.FUNCTOOLS_FUNCS, m.group(1))}(", text)
-    text = re.compile(math_funcs.MATH_CONSTANT_PATTERN).sub(lambda m: _safe(math_funcs.MATH_CONSTANTS, m.group(1)), text)
-    text = re.compile(math_funcs.MATH_PATTERN).sub(lambda m: f"{_safe(math_funcs.MATH_FUNCS, m.group(1))}(", text)
-    text = re.compile(random_funcs.RANDOM_PATTERN).sub(lambda m: f"{_safe(random_funcs.RANDOM_FUNCS, m.group(1))}(", text)
-    text = re.compile(time_funcs.TIME_PATTERN).sub(lambda m: f"{_safe(time_funcs.TIME_FUNCS, m.group(1))}(", text)
-    text = re.compile(time_funcs.TIME_PROP_PATTERN).sub(lambda m: f"{_safe(time_funcs.TIME_PROPS, m.group(1))}", text)
-    text = re.compile(statistics_funcs.STATISTICS_PATTERN).sub(lambda m: f"{_safe(statistics_funcs.STATISTICS_FUNCS, m.group(1))}(", text)
-    text = re.compile(os_funcs.OS_PROP_PATTERN).sub(lambda m: f"({_safe(os_funcs.OS_PROPS, m.group(1))})", text)
-    text = re.compile(os_funcs.OS_PATTERN).sub(lambda m: f"{_safe(os_funcs.OS_FUNCS, m.group(1))}(", text)
-    text = re.compile(re_funcs.RE_CONSTANT_PATTERN).sub(lambda m: f"{_safe(re_funcs.RE_CONSTANTS, m.group(1))}", text)
-    text = re.compile(re_funcs.RE_PATTERN).sub(lambda m: f"{_safe(re_funcs.RE_FUNCS, m.group(1))}(", text)
-    text = re.compile(collections_funcs.COLLECTIONS_PATTERN).sub(lambda m: f"{_safe(collections_funcs.COLLECTIONS_FUNCS, m.group(1))}(", text)
-    text = re.compile(itertools_funcs.ITERTOOLS_PATTERN).sub(lambda m: f"{_safe(itertools_funcs.ITERTOOLS_FUNCS, m.group(1))}(", text)
-    text = re.compile(json_funcs.JSON_PATTERN).sub(lambda m: f"{_safe(json_funcs.JSON_FUNCS, m.group(1))}(", text)
-    text = re.compile(hashlib_funcs.HASHLIB_PATTERN).sub(lambda m: f"{_safe(hashlib_funcs.HASHLIB_FUNCS, m.group(1))}(", text)
-    text = re.compile(flask_funcs.FLASK_PATTERN).sub(lambda m: f"{_safe(flask_funcs.FLASK_FUNCS, m.group(1))}(", text)
-    text = re.compile(fastapi_funcs.FASTAPI_PATTERN).sub(lambda m: f"{_safe(fastapi_funcs.FASTAPI_FUNCS, m.group(1))}(", text)
-    text = re.compile(requests_funcs.REQUESTS_PATTERN).sub(lambda m: f"{_safe(requests_funcs.REQUESTS_FUNCS, m.group(1))}(", text)
-    text = re.compile(sqlite3_funcs.SQLITE3_PATTERN).sub(lambda m: f"{_safe(sqlite3_funcs.SQLITE3_FUNCS, m.group(1))}(", text)
-    text = re.compile(sqlite3_funcs.SQLITE3_METHOD_PATTERN).sub(lambda m: f".{sqlite3_funcs.SQLITE3_METHODS[m.group(1)]}(", text)
-    text = re.compile(asyncio_funcs.ASYNCIO_PATTERN).sub(lambda m: f"{_safe(asyncio_funcs.ASYNCIO_FUNCS, m.group(1))}(", text)
-    text = re.compile(threading_funcs.THREADING_PATTERN).sub(lambda m: f"{_safe(threading_funcs.THREADING_FUNCS, m.group(1))}(", text)
-    text = re.compile(unittest_funcs.UNITTEST_PATTERN).sub(lambda m: f"{_safe(unittest_funcs.UNITTEST_FUNCS, m.group(1))}(", text)
-    text = re.compile(csv_funcs.CSV_PATTERN).sub(lambda m: f"{_safe(csv_funcs.CSV_FUNCS, m.group(1))}(", text)
-    text = re.compile(r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(logging_funcs.LOGGING_VERBS, key=len, reverse=True)) + r")\s*\(").sub(lambda m: logging_funcs.LOGGING_VERBS[m.group(1)] + "(", text)
-    text = re.compile(logging_funcs.LOGGING_CONSTANT_PATTERN).sub(lambda m: _safe(logging_funcs.LOGGING_CONSTANTS, m.group(1)), text)
-    text = re.compile(logging_funcs.LOGGING_PATTERN).sub(lambda m: f"{_safe(logging_funcs.LOGGING_FUNCS, m.group(1))}(", text)
-    text = re.compile(r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(argparse_funcs.ARGPARSE_STANDALONE, key=len, reverse=True)) + r")\s*\(").sub(lambda m: argparse_funcs.ARGPARSE_STANDALONE[m.group(1)] + "(", text)
-    text = re.compile(argparse_funcs.ARGPARSE_PATTERN).sub(lambda m: f"{_safe(argparse_funcs.ARGPARSE_FUNCS, m.group(1))}(", text)
-    text = re.compile(subprocess_funcs.SUBPROCESS_PATTERN).sub(lambda m: f"{_safe(subprocess_funcs.SUBPROCESS_FUNCS, m.group(1))}(", text)
-    text = re.compile(configparser_funcs.CONFIGPARSER_PATTERN).sub(lambda m: f"{_safe(configparser_funcs.CONFIGPARSER_FUNCS, m.group(1))}(", text)
-    text = re.compile(dataclasses_funcs.DATACLASSES_PATTERN).sub(lambda m: f"{_safe(dataclasses_funcs.DATACLASSES_FUNCS, m.group(1))}(", text)
-    text = re.compile(r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(advanced_funcs.ADVANCED_ORD_FUNCS, key=len, reverse=True)) + r")\s*\(").sub(lambda m: _safe(advanced_funcs.ADVANCED_ORD_FUNCS, m.group(1)) + "(", text)
-    text = re.compile(r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(advanced_funcs.ADVANCED_BUILTIN_FUNCS, key=len, reverse=True)) + r")\s*\(").sub(lambda m: _safe(advanced_funcs.ADVANCED_BUILTIN_FUNCS, m.group(1)) + "(", text)
-    text = re.compile(r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(advanced_funcs.ADVANCED_STR_FUNCS, key=len, reverse=True)) + r")\s*\(").sub(lambda m: _safe(advanced_funcs.ADVANCED_STR_FUNCS, m.group(1)) + "(", text)
-    text = re.compile(advanced_funcs.ADVANCED_METHOD_PATTERN).sub(lambda m: f".{advanced_funcs.ADVANCED_METHODS[m.group(1)]}(", text)
-    text = re.compile(advanced_funcs.ADVANCED_PATTERN).sub(lambda m: f"{_safe(advanced_funcs.ADVANCED_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['datetime'].DATETIME_PATTERN).sub(lambda m: f"{_safe(_library_modules['datetime'].DATETIME_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['pathlib'].PATHLIB_PATTERN).sub(lambda m: f"{_safe(_library_modules['pathlib'].PATHLIB_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['pathlib'].PATHLIB_METHOD_PATTERN).sub(lambda m: f".{_library_modules['pathlib'].PATHLIB_METHODS[m.group(1)]}(", text)
+    text = re.compile(_library_modules['shutil'].SHUTIL_PATTERN).sub(lambda m: f"{_safe(_library_modules['shutil'].SHUTIL_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['textwrap'].TEXTWRAP_PATTERN).sub(lambda m: f"{_safe(_library_modules['textwrap'].TEXTWRAP_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['uuid'].UUID_PATTERN).sub(lambda m: f"{_safe(_library_modules['uuid'].UUID_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['datetime'].DATETIME_PROP_PATTERN).sub(lambda m: f".{_safe(_library_modules['datetime'].DATETIME_PROPS, m.group(1))}", text)
+    text = re.compile(_library_modules['pathlib'].PATHLIB_PROP_PATTERN).sub(lambda m: f".{_safe(_library_modules['pathlib'].PATHLIB_PROPS, m.group(1))}", text)
+    text = re.compile(_library_modules['uuid'].UUID_PROP_PATTERN).sub(lambda m: f".{_safe(_library_modules['uuid'].UUID_PROPS, m.group(1))}", text)
+    text = re.compile(_library_modules['base64'].BASE64_PATTERN).sub(lambda m: f"{_safe(_library_modules['base64'].BASE64_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['urllib'].URLLIB_PATTERN).sub(lambda m: f"{_safe(_library_modules['urllib'].URLLIB_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['functools'].FUNCTOOLS_PATTERN).sub(lambda m: f"{_safe(_library_modules['functools'].FUNCTOOLS_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['math'].MATH_CONSTANT_PATTERN).sub(lambda m: _safe(_library_modules['math'].MATH_CONSTANTS, m.group(1)), text)
+    text = re.compile(_library_modules['math'].MATH_PATTERN).sub(lambda m: f"{_safe(_library_modules['math'].MATH_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['random'].RANDOM_PATTERN).sub(lambda m: f"{_safe(_library_modules['random'].RANDOM_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['time'].TIME_PATTERN).sub(lambda m: f"{_safe(_library_modules['time'].TIME_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['time'].TIME_PROP_PATTERN).sub(lambda m: f"{_safe(_library_modules['time'].TIME_PROPS, m.group(1))}", text)
+    text = re.compile(_library_modules['statistics'].STATISTICS_PATTERN).sub(lambda m: f"{_safe(_library_modules['statistics'].STATISTICS_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['os'].OS_PROP_PATTERN).sub(lambda m: f"({_safe(_library_modules['os'].OS_PROPS, m.group(1))})", text)
+    text = re.compile(_library_modules['os'].OS_PATTERN).sub(lambda m: f"{_safe(_library_modules['os'].OS_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['re'].RE_CONSTANT_PATTERN).sub(lambda m: f"{_safe(_library_modules['re'].RE_CONSTANTS, m.group(1))}", text)
+    text = re.compile(_library_modules['re'].RE_PATTERN).sub(lambda m: f"{_safe(_library_modules['re'].RE_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['collections'].COLLECTIONS_PATTERN).sub(lambda m: f"{_safe(_library_modules['collections'].COLLECTIONS_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['itertools'].ITERTOOLS_PATTERN).sub(lambda m: f"{_safe(_library_modules['itertools'].ITERTOOLS_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['json'].JSON_PATTERN).sub(lambda m: f"{_safe(_library_modules['json'].JSON_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['hashlib'].HASHLIB_PATTERN).sub(lambda m: f"{_safe(_library_modules['hashlib'].HASHLIB_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['flask'].FLASK_PATTERN).sub(lambda m: f"{_safe(_library_modules['flask'].FLASK_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['fastapi'].FASTAPI_PATTERN).sub(lambda m: f"{_safe(_library_modules['fastapi'].FASTAPI_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['requests'].REQUESTS_PATTERN).sub(lambda m: f"{_safe(_library_modules['requests'].REQUESTS_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['sqlite3'].SQLITE3_PATTERN).sub(lambda m: f"{_safe(_library_modules['sqlite3'].SQLITE3_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['sqlite3'].SQLITE3_METHOD_PATTERN).sub(lambda m: f".{_library_modules['sqlite3'].SQLITE3_METHODS[m.group(1)]}(", text)
+    text = re.compile(_library_modules['asyncio'].ASYNCIO_PATTERN).sub(lambda m: f"{_safe(_library_modules['asyncio'].ASYNCIO_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['threading'].THREADING_PATTERN).sub(lambda m: f"{_safe(_library_modules['threading'].THREADING_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['unittest'].UNITTEST_PATTERN).sub(lambda m: f"{_safe(_library_modules['unittest'].UNITTEST_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['csv'].CSV_PATTERN).sub(lambda m: f"{_safe(_library_modules['csv'].CSV_FUNCS, m.group(1))}(", text)
+    text = re.compile(r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(_library_modules['logging'].LOGGING_VERBS, key=len, reverse=True)) + r")\s*\(").sub(lambda m: _library_modules['logging'].LOGGING_VERBS[m.group(1)] + "(", text)
+    text = re.compile(_library_modules['logging'].LOGGING_CONSTANT_PATTERN).sub(lambda m: _safe(_library_modules['logging'].LOGGING_CONSTANTS, m.group(1)), text)
+    text = re.compile(_library_modules['logging'].LOGGING_PATTERN).sub(lambda m: f"{_safe(_library_modules['logging'].LOGGING_FUNCS, m.group(1))}(", text)
+    text = re.compile(r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(_library_modules['argparse'].ARGPARSE_STANDALONE, key=len, reverse=True)) + r")\s*\(").sub(lambda m: _library_modules['argparse'].ARGPARSE_STANDALONE[m.group(1)] + "(", text)
+    text = re.compile(_library_modules['argparse'].ARGPARSE_PATTERN).sub(lambda m: f"{_safe(_library_modules['argparse'].ARGPARSE_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['subprocess'].SUBPROCESS_PATTERN).sub(lambda m: f"{_safe(_library_modules['subprocess'].SUBPROCESS_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['configparser'].CONFIGPARSER_PATTERN).sub(lambda m: f"{_safe(_library_modules['configparser'].CONFIGPARSER_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['dataclasses'].DATACLASSES_PATTERN).sub(lambda m: f"{_safe(_library_modules['dataclasses'].DATACLASSES_FUNCS, m.group(1))}(", text)
+    text = re.compile(r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(_library_modules['advanced'].ADVANCED_ORD_FUNCS, key=len, reverse=True)) + r")\s*\(").sub(lambda m: _safe(_library_modules['advanced'].ADVANCED_ORD_FUNCS, m.group(1)) + "(", text)
+    text = re.compile(r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(_library_modules['advanced'].ADVANCED_BUILTIN_FUNCS, key=len, reverse=True)) + r")\s*\(").sub(lambda m: _safe(_library_modules['advanced'].ADVANCED_BUILTIN_FUNCS, m.group(1)) + "(", text)
+    text = re.compile(r"(?<![\w\u0600-\u06FF])(" + "|".join(sorted(_library_modules['advanced'].ADVANCED_STR_FUNCS, key=len, reverse=True)) + r")\s*\(").sub(lambda m: _safe(_library_modules['advanced'].ADVANCED_STR_FUNCS, m.group(1)) + "(", text)
+    text = re.compile(_library_modules['advanced'].ADVANCED_METHOD_PATTERN).sub(lambda m: f".{_library_modules['advanced'].ADVANCED_METHODS[m.group(1)]}(", text)
+    text = re.compile(_library_modules['advanced'].ADVANCED_PATTERN).sub(lambda m: f"{_safe(_library_modules['advanced'].ADVANCED_FUNCS, m.group(1))}(", text)
     
-    text = re.compile(datetime_funcs.DATETIME_CONSTANT_PATTERN).sub(lambda m: _safe(datetime_funcs.DATETIME_CONSTANTS, m.group(1)), text)
-    text = re.compile(uuid_funcs.UUID_CONSTANT_PATTERN).sub(lambda m: _safe(uuid_funcs.UUID_CONSTANTS, m.group(1)), text)
+    text = re.compile(_library_modules['datetime'].DATETIME_CONSTANT_PATTERN).sub(lambda m: _safe(_library_modules['datetime'].DATETIME_CONSTANTS, m.group(1)), text)
+    text = re.compile(_library_modules['uuid'].UUID_CONSTANT_PATTERN).sub(lambda m: _safe(_library_modules['uuid'].UUID_CONSTANTS, m.group(1)), text)
 
-    text = re.compile(decimal_funcs.DECIMAL_PATTERN).sub(lambda m: f"{_safe(decimal_funcs.DECIMAL_FUNCS, m.group(1))}(", text)
-    text = re.compile(decimal_funcs.DECIMAL_CONSTANT_PATTERN).sub(lambda m: _safe(decimal_funcs.DECIMAL_CONSTANTS, m.group(1)), text)
-    text = re.compile(fractions_funcs.FRACTIONS_PATTERN).sub(lambda m: f"{_safe(fractions_funcs.FRACTIONS_FUNCS, m.group(1))}(", text)
-    text = re.compile(fractions_funcs.FRACTIONS_METHOD_PATTERN).sub(lambda m: f".{fractions_funcs.FRACTIONS_METHODS[m.group(1)]}(", text)
-    text = re.compile(fractions_funcs.FRACTIONS_PROP_PATTERN).sub(lambda m: f".{_safe(fractions_funcs.FRACTIONS_PROPS, m.group(1))}", text)
-    text = re.compile(string_funcs.STRING_CONSTANT_PATTERN).sub(lambda m: _safe(string_funcs.STRING_CONSTANTS, m.group(1)), text)
-    text = re.compile(string_funcs.STRING_PATTERN).sub(lambda m: f"{_safe(string_funcs.STRING_FUNCS, m.group(1))}(", text)
-    text = re.compile(secrets_funcs.SECRETS_PATTERN).sub(lambda m: f"{_safe(secrets_funcs.SECRETS_FUNCS, m.group(1))}(", text)
-    text = re.compile(zoneinfo_funcs.ZONEINFO_PATTERN).sub(lambda m: f"{_safe(zoneinfo_funcs.ZONEINFO_FUNCS, m.group(1))}(", text)
-    text = re.compile(zoneinfo_funcs.ZONEINFO_CONSTANT_PATTERN).sub(lambda m: _safe(zoneinfo_funcs.ZONEINFO_CONSTANTS, m.group(1)), text)
-    text = re.compile(zoneinfo_funcs.ZONEINFO_PROP_PATTERN).sub(lambda m: f".{_safe(zoneinfo_funcs.ZONEINFO_PROPS, m.group(1))}", text)
-    text = re.compile(getpass_funcs.GETPASS_PATTERN).sub(lambda m: f"{_safe(getpass_funcs.GETPASS_FUNCS, m.group(1))}(", text)
-    text = re.compile(operator_funcs.OPERATOR_PATTERN).sub(lambda m: f"{_safe(operator_funcs.OPERATOR_FUNCS, m.group(1))}(", text)
-    text = re.compile(pprint_funcs.PPRINT_PATTERN).sub(lambda m: f"{_safe(pprint_funcs.PPRINT_FUNCS, m.group(1))}(", text)
-    text = re.compile(enum_funcs.ENUM_PATTERN).sub(
-        lambda m: f"{_safe(enum_funcs.ENUM_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['decimal'].DECIMAL_PATTERN).sub(lambda m: f"{_safe(_library_modules['decimal'].DECIMAL_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['decimal'].DECIMAL_CONSTANT_PATTERN).sub(lambda m: _safe(_library_modules['decimal'].DECIMAL_CONSTANTS, m.group(1)), text)
+    text = re.compile(_library_modules['fractions'].FRACTIONS_PATTERN).sub(lambda m: f"{_safe(_library_modules['fractions'].FRACTIONS_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['fractions'].FRACTIONS_METHOD_PATTERN).sub(lambda m: f".{_library_modules['fractions'].FRACTIONS_METHODS[m.group(1)]}(", text)
+    text = re.compile(_library_modules['fractions'].FRACTIONS_PROP_PATTERN).sub(lambda m: f".{_safe(_library_modules['fractions'].FRACTIONS_PROPS, m.group(1))}", text)
+    text = re.compile(_library_modules['string'].STRING_CONSTANT_PATTERN).sub(lambda m: _safe(_library_modules['string'].STRING_CONSTANTS, m.group(1)), text)
+    text = re.compile(_library_modules['string'].STRING_PATTERN).sub(lambda m: f"{_safe(_library_modules['string'].STRING_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['secrets'].SECRETS_PATTERN).sub(lambda m: f"{_safe(_library_modules['secrets'].SECRETS_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['zoneinfo'].ZONEINFO_PATTERN).sub(lambda m: f"{_safe(_library_modules['zoneinfo'].ZONEINFO_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['zoneinfo'].ZONEINFO_CONSTANT_PATTERN).sub(lambda m: _safe(_library_modules['zoneinfo'].ZONEINFO_CONSTANTS, m.group(1)), text)
+    text = re.compile(_library_modules['zoneinfo'].ZONEINFO_PROP_PATTERN).sub(lambda m: f".{_safe(_library_modules['zoneinfo'].ZONEINFO_PROPS, m.group(1))}", text)
+    text = re.compile(_library_modules['getpass'].GETPASS_PATTERN).sub(lambda m: f"{_safe(_library_modules['getpass'].GETPASS_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['operator'].OPERATOR_PATTERN).sub(lambda m: f"{_safe(_library_modules['operator'].OPERATOR_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['pprint'].PPRINT_PATTERN).sub(lambda m: f"{_safe(_library_modules['pprint'].PPRINT_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['enum'].ENUM_PATTERN).sub(
+        lambda m: f"{_safe(_library_modules['enum'].ENUM_FUNCS, m.group(1))}(", text)
     # --- xml.etree: methods and properties run before the module-level calls,
     # so `عنصر.ابحث_الكل(...)` is not mistaken for a bare function call.
-    text = re.compile(xml_funcs.XML_METHOD_PATTERN).sub(
-        lambda m: f".{xml_funcs.XML_METHODS[m.group(1)]}(", text)
-    text = re.compile(xml_funcs.XML_PROP_PATTERN).sub(
-        lambda m: f".{_safe(xml_funcs.XML_PROPS, m.group(1))}", text)
-    text = re.compile(xml_funcs.XML_CONSTANT_PATTERN).sub(
-        lambda m: _safe(xml_funcs.XML_CONSTANTS, m.group(1)), text)
-    text = re.compile(xml_funcs.XML_PATTERN).sub(
-        lambda m: f"{_safe(xml_funcs.XML_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['xml'].XML_METHOD_PATTERN).sub(
+        lambda m: f".{_library_modules['xml'].XML_METHODS[m.group(1)]}(", text)
+    text = re.compile(_library_modules['xml'].XML_PROP_PATTERN).sub(
+        lambda m: f".{_safe(_library_modules['xml'].XML_PROPS, m.group(1))}", text)
+    text = re.compile(_library_modules['xml'].XML_CONSTANT_PATTERN).sub(
+        lambda m: _safe(_library_modules['xml'].XML_CONSTANTS, m.group(1)), text)
+    text = re.compile(_library_modules['xml'].XML_PATTERN).sub(
+        lambda m: f"{_safe(_library_modules['xml'].XML_FUNCS, m.group(1))}(", text)
 
     # --- archives: methods and properties first, then bare names
-    text = re.compile(archive_funcs.ARCHIVE_METHOD_PATTERN).sub(
-        lambda m: f".{archive_funcs.ARCHIVE_METHODS[m.group(1)]}(", text)
-    text = re.compile(archive_funcs.ARCHIVE_PROP_PATTERN).sub(
-        lambda m: f".{_safe(archive_funcs.ARCHIVE_PROPS, m.group(1))}", text)
-    text = re.compile(archive_funcs.ARCHIVE_CONSTANT_PATTERN).sub(
-        lambda m: _safe(archive_funcs.ARCHIVE_CONSTANTS, m.group(1)), text)
-    text = re.compile(archive_funcs.ARCHIVE_PATTERN).sub(
-        lambda m: f"{_safe(archive_funcs.ARCHIVE_FUNCS, m.group(1))}(", text)
+    text = re.compile(_library_modules['archive'].ARCHIVE_METHOD_PATTERN).sub(
+        lambda m: f".{_library_modules['archive'].ARCHIVE_METHODS[m.group(1)]}(", text)
+    text = re.compile(_library_modules['archive'].ARCHIVE_PROP_PATTERN).sub(
+        lambda m: f".{_safe(_library_modules['archive'].ARCHIVE_PROPS, m.group(1))}", text)
+    text = re.compile(_library_modules['archive'].ARCHIVE_CONSTANT_PATTERN).sub(
+        lambda m: _safe(_library_modules['archive'].ARCHIVE_CONSTANTS, m.group(1)), text)
+    text = re.compile(_library_modules['archive'].ARCHIVE_PATTERN).sub(
+        lambda m: f"{_safe(_library_modules['archive'].ARCHIVE_FUNCS, m.group(1))}(", text)
 
-    # --- network: one whole-word pass instead of four alternation patterns.
-    # 1000 keywords as `a|b|c|...` cost ~13 ms just to compile on every run;
-    # NET_SUBSTITUTE tokenises once and consults the four dicts.
-    text = net_funcs.NET_SUBSTITUTE(text)
-
-    # --- devtools: فحص/تصحيح/قياس: مسح واحد بالكلمات الكاملة ---
-    devtools_funcs.USER_NAMES = USER_NAMES
-    text = devtools_funcs.DEVTOOLS_SUBSTITUTE(text)
-
-    # --- web: الويب والبريد (http, urllib, wsgiref, email, mailbox) ---
-    web_funcs.USER_NAMES = USER_NAMES
-    text = web_funcs.WEB_SUBSTITUTE(text)
-
-    # --- datafiles: البيانات والملفات ---
-    datafiles_funcs.USER_NAMES = USER_NAMES
-    text = datafiles_funcs.DF_SUBSTITUTE(text)
-
-    # --- syslib: النظام والتشغيل والتشخيص ---
-    syslib_funcs.USER_NAMES = USER_NAMES
-    text = syslib_funcs.SYS_SUBSTITUTE(text)
-
-    # --- stdlib_ext ---
-    stdlib_ext_funcs.USER_NAMES = USER_NAMES
-    text = stdlib_ext_funcs.STDL_SUBSTITUTE(text)
-
-    # --- aiohttp ---
-    aiohttp_funcs.USER_NAMES = USER_NAMES
-    text = aiohttp_funcs.AIOH_SUBSTITUTE(text)
-
-    # --- acp ---
-    acp_funcs.USER_NAMES = USER_NAMES
-    text = acp_funcs.ACP_SUBSTITUTE(text)
-
-    # --- cdp_use ---
-    cdp_use_funcs.USER_NAMES = USER_NAMES
-    text = cdp_use_funcs.CDP_SUBSTITUTE(text)
-
-    # --- idlelib ---
-    idlelib_funcs.USER_NAMES = USER_NAMES
-    text = idlelib_funcs.IDLE_SUBSTITUTE(text)
-
-    # --- utiltools ---
-    utiltools_funcs.USER_NAMES = USER_NAMES
-    text = utiltools_funcs.UTIL_SUBSTITUTE(text)
-
-    # --- textdata ---
-    textdata_funcs.USER_NAMES = USER_NAMES
-    text = textdata_funcs.TEXT_SUBSTITUTE(text)
-
-    # --- secauth ---
-    secauth_funcs.USER_NAMES = USER_NAMES
-    text = secauth_funcs.SECA_SUBSTITUTE(text)
-
-    # --- webserver ---
-    webserver_funcs.USER_NAMES = USER_NAMES
-    text = webserver_funcs.WEBS_SUBSTITUTE(text)
-
-    # --- weblibs ---
-    weblibs_funcs.USER_NAMES = USER_NAMES
-    text = weblibs_funcs.WEBL_SUBSTITUTE(text)
-
-    # --- numpy ---
-    numpy_funcs.USER_NAMES = USER_NAMES
-    text = numpy_funcs.NUM_SUBSTITUTE(text)
-
-    # --- scipy ---
-    scipy_funcs.USER_NAMES = USER_NAMES
-    text = scipy_funcs.SCI_SUBSTITUTE(text)
-
-    # --- telegram ---
-    telegram_funcs.USER_NAMES = USER_NAMES
-    text = telegram_funcs.TG_SUBSTITUTE(text)
-
-    # --- redis ---
-    redis_funcs.USER_NAMES = USER_NAMES
-    text = redis_funcs.RD_SUBSTITUTE(text)
-
-    # --- celery ---
-    celery_funcs.USER_NAMES = USER_NAMES
-    text = celery_funcs.CEL_SUBSTITUTE(text)
-
-    # --- numdeep ---
-    numdeep_funcs.USER_NAMES = USER_NAMES
-    text = numdeep_funcs.NUMD_SUBSTITUTE(text)
-
-    # --- botdeep ---
-    botdeep_funcs.USER_NAMES = USER_NAMES
-    text = botdeep_funcs.BOTD_SUBSTITUTE(text)
-
-    # --- taskdeep ---
-    taskdeep_funcs.USER_NAMES = USER_NAMES
-    text = taskdeep_funcs.TSKD_SUBSTITUTE(text)
-
-    # --- storedeep ---
-    storedeep_funcs.USER_NAMES = USER_NAMES
-    text = storedeep_funcs.STOD_SUBSTITUTE(text)
-
-    # --- pygdeep ---
-    pygdeep_funcs.USER_NAMES = USER_NAMES
-    text = pygdeep_funcs.PYGD_SUBSTITUTE(text)
-
-    # --- webdeep ---
-    webdeep_funcs.USER_NAMES = USER_NAMES
-    text = webdeep_funcs.WEBD_SUBSTITUTE(text)
-
-    # --- datadeep ---
-    datadeep_funcs.USER_NAMES = USER_NAMES
-    text = datadeep_funcs.DATD_SUBSTITUTE(text)
-
-    # --- mediadeep ---
-    mediadeep_funcs.USER_NAMES = USER_NAMES
-    text = mediadeep_funcs.MEDD_SUBSTITUTE(text)
-
-    # --- secdeep ---
-    secdeep_funcs.USER_NAMES = USER_NAMES
-    text = secdeep_funcs.SECD_SUBSTITUTE(text)
-
-    # --- utildeep ---
-    utildeep_funcs.USER_NAMES = USER_NAMES
-    text = utildeep_funcs.UTLD_SUBSTITUTE(text)
-
-    # --- stdfull ---
-    stdfull_funcs.USER_NAMES = USER_NAMES
-    text = stdfull_funcs.STDF_SUBSTITUTE(text)
+    # Core language spellings have precedence over library exports. Library
+    # additions must not turn conjunctions or the self alias into objects.
+    _core_tokens = {}
+    _core_words = {"ذات": "ذات", "و": "and", "أو": "or", "ليس": "not",
+                   "صواب": "True", "خطأ": "False", "لا_شيء": "None", "لو": "if"}
+    for _index, (_word, _target) in enumerate(_core_words.items()):
+        _token = f"_APL_CORE_{_index}_END_"
+        text = re.sub(rf"(?<![\w\u0600-\u06FF]){_word}(?![\w\u0600-\u06FF])", _token, text)
+        _core_tokens[_token] = _target
+    text = substitute_all(text, USER_NAMES)
+    for _token, _target in _core_tokens.items():
+        text = text.replace(_token, _target)
 
     # --- f-string interpolation: translate expressions inside {...} ---
     _APL_FSTR_RE = re.compile(r'(?P<pre>[fF])"[^"\\]*(?:\\.[^"\\]*)*"')
@@ -364,7 +267,7 @@ def _inline_replace(text: str) -> str:
     text = _APL_FSTR_RE.sub(_apl_fstr_sub, text)
 
     # Library-specific keyword arguments (e.g. timedelta(days=3))
-    for _kmap in (DATETIME_KWARGS, PATHLIB_KWARGS, XML_KWARGS, ARCHIVE_KWARGS, NET_KWARGS, ARGPARSE_KWARGS, devtools_funcs.DEVTOOLS_KWARGS):
+    for _kmap in (DATETIME_KWARGS, PATHLIB_KWARGS, XML_KWARGS, ARCHIVE_KWARGS, NET_KWARGS, ARGPARSE_KWARGS, _library_modules['devtools'].DEVTOOLS_KWARGS):
         for _ar, _en in _kmap.items():
             text = re.sub(rf"(?<![\w\u0600-\u06FF]){_ar}(?=\s*=)", _en, text)
 
@@ -436,4 +339,6 @@ def _inline_replace(text: str) -> str:
     for idx in sorted(strings.keys(), reverse=True):
         raw = strings[idx]
         text = text.replace(f"\x00APL{idx}\x00", _apl_translate_fstring(raw))
+    for _token, _name in _name_tokens.items():
+        text = text.replace(_token, _name)
     return text

@@ -866,3 +866,8 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 ---
 
 **الإصدار:** APL v1.13 — 278,105 عنصراً عربياً — 74 مكتبة — 511 مثالاً
+
+## Language platform tools
+
+Installable `apl` command, local multi-file projects, VS Code support and an
+optional isolated local playground: [guide](docs/language-platform.md).
