@@ -29,7 +29,7 @@ Markdown==3.10.2
 multidict==6.9.1
 packaging==26.0
 pathspec==1.1.1
-propcache==0.5.2
+propcache==0.5.4
 proto-plus==1.28.3
 psutil==7.2.2
 pycparser==3.0
