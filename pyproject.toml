@@ -8,6 +8,7 @@ version = "1.13"
 description = "APL: Arabic programming with a Python backend"
 readme = "README.md"
 requires-python = ">=3.14"
+license = "Apache-2.0"
 license-files = ["LICENSE"]
 dependencies = []
 
