@@ -48,15 +48,15 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | `devtools` | 1123 | أدوات المطوّر: فحص، تصحيح، قياس أداء، ترجمة (inspect / ast / dis / pdb / doctest / timeit / profile / tracemalloc) |
 | `datafiles` | 2631 | البيانات والملفات: مسارات، ضغط، أرشيف، تسلسل، هياكل بيانات، XML، يونيكود (io / zipfile / tarfile / pickle / shelve / array / struct / xml.dom / xml.etree / unicodedata) |
 | `syslib` | 3973 | النظام والتشغيل والتشخيص: منصة، إشارات، موارد، تسجيل، اختبارات، عمليات متعددة، ctypes، سياق (platform / signal / resource / logging / unittest / multiprocessing / concurrent.futures / ctypes / termios) |
-| `weblibs` | 5496 | الويب والنصوص: بث متدفق، قوالب، ماركداون، تورنيدو، سطر الأوامر، تلوين الشيفرة (websockets / jinja2 / markdown / tornado / click / pygments) |
+| `weblibs` | 5393 | الويب والنصوص: بث متدفق، قوالب، ماركداون، تورنيدو، سطر الأوامر، تلوين الشيفرة (websockets / jinja2 / markdown / tornado / click / pygments) |
 | `webserver` | 5492 | الخوادم والشبكات: خوادم ASGI/WSGI، عملاء HTTP غير متزامنين، HTTP/1.1 (starlette / uvicorn / httpx / httpcore / h11 / anyio) |
 | `secauth` | 5495 | الأمان والمصادقة: تشفير وشهادات، قوالب معزولة، تحقق من المخططات، JWT (cryptography / jinja2 / jsonschema / jwt / cffi) |
-| `textdata` | 5492 | النصوص والبيانات: مطابقة الأنماط، أصناف الخصائص، الصور، النماذج الأولية (pathspec / attrs / PIL / markdown / proto) |
+| `textdata` | 5481 | النصوص والبيانات: مطابقة الأنماط، أصناف الخصائص، الصور، النماذج الأولية (pathspec / attrs / PIL / markdown / proto) |
 | `utiltools` | 5494 | الأدوات المساعدة: الإصدارات والتواريخ، أشرطة التقدم، مراقبة العمليات (packaging / dateutil / tqdm / psutil / websockets) |
 | `idlelib` | 11138 | بيئة التطوير المدمجة: محرر، إكمال تلقائي، مصحح، إعدادات (idlelib) |
 | `cdp_use` | 10569 | بروتوكول أدوات تطوير كروم CDP (cdp_use) |
 | `acp` | 11180 | بروتوكول العميل-الوكيل ACP (acp) |
-| `aiohttp` | 15592 | عميل وخادم HTTP غير متزامنين (aiohttp) |
+| `aiohttp` | 15590 | عميل وخادم HTTP غير متزامنين (aiohttp) |
 | `stdlib_ext` | 12950 | توسعة المكتبة القياسية (encodings / inspect / doctest / pdb / tracemalloc) |
 | `numpy` | 5937 | الحساب العددي: مصفوفات، جبر خطي، تحويلات فورييه، عشوائيات (numpy) |
 | `scipy` | 8396 | الحساب العلمي: تكامل، تحسين، استيفاء، إحصاء، مصفوفات متناثرة (scipy) |
@@ -68,9 +68,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | `taskdeep` | 18041 | المهام الموزعة العميقة: طوابير ورسائل وجدولة ونتائج (celery / kombu / billiard / amqp) |
 | `storedeep` | 24593 | التخزين العميق: كل أوامر وأنواع redis (redis-py) |
 | `pygdeep` | 30302 | تلوين الشيفرة العميق: كل المُحلّلات والمُنسّقات والأنماط (pygments) |
-| `webdeep` | 8808 | الويب العميق: أطر وخوادم وبروتوكولات (fastapi / starlette / tornado / websockets) |
+| `webdeep` | 8770 | الويب العميق: أطر وخوادم وبروتوكولات (fastapi / starlette / tornado / websockets) |
 | `datadeep` | 15138 | النماذج والتحقق العميق: مخططات وأنواع وتحقق (pydantic / jsonschema) |
-| `mediadeep` | 12071 | الصور والنصوص العميقة: صور وماركداون وقوالب وسطر أوامر (PIL / markdown / jinja2) |
+| `mediadeep` | 11470 | الصور والنصوص العميقة: صور وماركداون وقوالب وسطر أوامر (PIL / markdown / jinja2) |
 | `secdeep` | 6190 | الأمان وسحابة جوجل العميقة: تشفير وتوكنات وواجهات API (cryptography / google) |
 | `utildeep` | 1160 | الأدوات العميقة: تواريخ ومناطق ومراقبة وحزم مساعدة (dateutil / pytz / psutil) |
 | `stdfull` | 9235 | المكتبة القياسية الشاملة: كل ما تبقى من وحدات Python القياسية |
@@ -120,11 +120,11 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | `getpass` | 2 | إدخال كلمات السر دون إظهارها |
 | `pprint` | 2 | طباعة منسّقة للقواميس والقوائم |
 
-**الإجمالي: 278,860 عنصراً في 74 مكتبة** (278,842 مفتاحاً فريداً بعد إزالة التكرار).
+**الإجمالي: 278,105 عنصراً في 74 مكتبة** (278,087 مفتاحاً فريداً بعد إزالة التكرار).
 
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
-في `core/apl_runner/patterns.py`، فيصبح عدد العناصر العربية الفريدة في اللغة **279,073 عنصراً**.
+في `core/apl_runner/patterns.py`، فيصبح عدد العناصر العربية الفريدة في اللغة **278,318 عنصراً**.
 
 ## الأمثلة
 
@@ -865,7 +865,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 279,073 عنصراً عربياً — 74 مكتبة — 511 مثالاً
+**الإصدار:** APL v1.13 — 278,105 عنصراً عربياً — 74 مكتبة — 511 مثالاً
 
 ## Language platform tools
 
