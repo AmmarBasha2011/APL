@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 63 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **500 مثال جاهز** — في `examples/`، كلها مختبرة وتعمل
+- **511 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -41,7 +41,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 - **مولدات** — `yield` و `yield from` بالعربي
 - **REPL تفاعلي** — جرب الكود سطر بسطر بـ `python apl.py repl`
 
-## المكتبات المتاحة (63 مكتبة)
+## المكتبات المتاحة (74 مكتبة)
 
 | المكتبة | عدد العناصر | الوصف |
 |---------|------------:|-------|
@@ -63,6 +63,17 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | `telegram` | 6429 | بوتات تيليجرام: رسائل، محادثات، مستخدمون، لوحات مفاتيح (python-telegram-bot) |
 | `redis` | 6500 | تخزين المفاتيح والقيم والجلسات والمهام الموزعة (redis-py) |
 | `celery` | 6350 | طوابير المهام الموزعة والجدولة الزمنية (celery) |
+| `numdeep` | 12664 | الحساب العددي والعلمي العميق: مصفوفات وجبر خطي وإحصاء وتكامل (numpy / scipy) |
+| `botdeep` | 4317 | بوتات تيليجرام العميقة: كل أنواع الرسائل والتحديثات واللوحات (python-telegram-bot) |
+| `taskdeep` | 18041 | المهام الموزعة العميقة: طوابير ورسائل وجدولة ونتائج (celery / kombu / billiard / amqp) |
+| `storedeep` | 24593 | التخزين العميق: كل أوامر وأنواع redis (redis-py) |
+| `pygdeep` | 30302 | تلوين الشيفرة العميق: كل المُحلّلات والمُنسّقات والأنماط (pygments) |
+| `webdeep` | 8770 | الويب العميق: أطر وخوادم وبروتوكولات (fastapi / starlette / tornado / websockets) |
+| `datadeep` | 15138 | النماذج والتحقق العميق: مخططات وأنواع وتحقق (pydantic / jsonschema) |
+| `mediadeep` | 11470 | الصور والنصوص العميقة: صور وماركداون وقوالب وسطر أوامر (PIL / markdown / jinja2) |
+| `secdeep` | 6190 | الأمان وسحابة جوجل العميقة: تشفير وتوكنات وواجهات API (cryptography / google) |
+| `utildeep` | 1160 | الأدوات العميقة: تواريخ ومناطق ومراقبة وحزم مساعدة (dateutil / pytz / psutil) |
+| `stdfull` | 9235 | المكتبة القياسية الشاملة: كل ما تبقى من وحدات Python القياسية |
 | `web` | 2757 | الويب والبريد: عناوين، HTTP، بريد، صناديق، كوكيز، HTML، WSGI، XML-RPC (http / urllib / email / mailbox / html / wsgiref / xmlrpc) |
 | `net` | 1006 | الشبكة: socket و ssl و http و email و SMTP/IMAP/FTP |
 | `fastapi` | 536 | إطار عمل ويب حديث |
@@ -109,11 +120,11 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | `getpass` | 2 | إدخال كلمات السر دون إظهارها |
 | `pprint` | 2 | طباعة منسّقة للقواميس والقوائم |
 
-**الإجمالي: 136,225 عنصراً في 63 مكتبة** (136,207 مفتاحاً فريداً بعد إزالة التكرار).
+**الإجمالي: 278,105 عنصراً في 74 مكتبة** (278,087 مفتاحاً فريداً بعد إزالة التكرار).
 
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
-في `core/apl_runner/patterns.py`، فيصبح عدد العناصر العربية الفريدة في اللغة **136,438 عنصراً**.
+في `core/apl_runner/patterns.py`، فيصبح عدد العناصر العربية الفريدة في اللغة **278,318 عنصراً**.
 
 ## الأمثلة
 
@@ -236,9 +247,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (500 مثال)
+## الأمثلة الجاهزة (511 مثالاً)
 
-مجلد `examples/` يحتوي على **500 برنامج حقيقي** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **511 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -742,6 +753,17 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 498 | [`498-blog-engine.apl`](examples/498-blog-engine.apl) | مولد مدونة ثابتة |
 | 499 | [`499-event-planner.apl`](examples/499-event-planner.apl) | مخطط فعاليات |
 | 500 | [`500-task-manager-suite.apl`](examples/500-task-manager-suite.apl) | نظام إدارة مهام متكامل |
+| 501 | [`501-numdeep.apl`](examples/501-numdeep.apl) | الحساب العلمي العميق (numdeep/numpy) |
+| 502 | [`502-botdeep.apl`](examples/502-botdeep.apl) | بوتات تيليجرام العميقة (botdeep/telegram) |
+| 503 | [`503-taskdeep.apl`](examples/503-taskdeep.apl) | المهام الموزعة العميقة (taskdeep/kombu) |
+| 504 | [`504-storedeep.apl`](examples/504-storedeep.apl) | التخزين العميق (storedeep/redis) |
+| 505 | [`505-pygdeep.apl`](examples/505-pygdeep.apl) | تلوين الشيفرة العميق (pygdeep/pygments) |
+| 506 | [`506-webdeep.apl`](examples/506-webdeep.apl) | الويب العميق (webdeep/fastapi) |
+| 507 | [`507-datadeep.apl`](examples/507-datadeep.apl) | النماذج والتحقق العميق (datadeep/pydantic) |
+| 508 | [`508-mediadeep.apl`](examples/508-mediadeep.apl) | الصور والنصوص العميقة (mediadeep/PIL) |
+| 509 | [`509-secdeep.apl`](examples/509-secdeep.apl) | الأمان العميق (secdeep/cryptography) |
+| 510 | [`510-utildeep.apl`](examples/510-utildeep.apl) | الأدوات العميقة (utildeep/dateutil) |
+| 511 | [`511-stdfull.apl`](examples/511-stdfull.apl) | المكتبة القياسية الشاملة (stdfull) |
 
 ### تشغيل أي مثال
 
@@ -843,4 +865,4 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 136,438 عنصراً عربياً — 63 مكتبة — 500 مثال
+**الإصدار:** APL v1.13 — 278,105 عنصراً عربياً — 74 مكتبة — 511 مثالاً

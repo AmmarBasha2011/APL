@@ -50,6 +50,17 @@ _MODULE_NAMES = [
     "telegram",
     "redis",
     "celery",
+    "numdeep",
+    "botdeep",
+    "taskdeep",
+    "storedeep",
+    "pygdeep",
+    "webdeep",
+    "datadeep",
+    "mediadeep",
+    "secdeep",
+    "utildeep",
+    "stdfull",
 ]
 
 _loaded: dict[str, ModuleType] = {}
