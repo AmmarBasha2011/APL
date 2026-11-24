@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 91 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **644 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **668 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -264,9 +264,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (644 مثالاً)
+## الأمثلة الجاهزة (668 مثالاً)
 
-مجلد `examples/` يحتوي على **644 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **668 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -914,6 +914,30 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 642 | [`642-arabic-light-stemmer.apl`](examples/642-arabic-light-stemmer.apl) | تجذيع عربي خفيف بقص السوابق واللواحق |
 | 643 | [`643-cairo-taxi-fare.apl`](examples/643-cairo-taxi-fare.apl) | عداد التاكسي الأبيض بالقاهرة (تقريبي) |
 | 644 | [`644-electricity-bill-egypt.apl`](examples/644-electricity-bill-egypt.apl) | فاتورة كهرباء منزلية بشرائح (تقريبية) |
+| 645 | [`645-b-tree-insert.apl`](examples/645-b-tree-insert.apl) | إدخال في شجرة ب مع انقسام العقد الممتلئة |
+| 646 | [`646-treap.apl`](examples/646-treap.apl) | شجرة بحث متوازنة بأولويات كومة مشتقة |
+| 647 | [`647-lca-binary-lifting.apl`](examples/647-lca-binary-lifting.apl) | أدنى سلف مشترك بجداول قوى اثنين |
+| 648 | [`648-mo-algorithm.apl`](examples/648-mo-algorithm.apl) | إجابة استعلامات المدى بإعادة ترتيبها |
+| 649 | [`649-meet-in-middle.apl`](examples/649-meet-in-middle.apl) | عد المجموعات الجزئية باللقاء في المنتصف |
+| 650 | [`650-gray-code.apl`](examples/650-gray-code.apl) | تتابع ثنائي يختلف في بت واحد |
+| 651 | [`651-bit-tricks.apl`](examples/651-bit-tricks.apl) | حيل البتات الشائعة بالإزاحات والأقنعة |
+| 652 | [`652-reservoir-sampling.apl`](examples/652-reservoir-sampling.apl) | عينة عادلة ثابتة الحجم من تيار |
+| 653 | [`653-weighted-random.apl`](examples/653-weighted-random.apl) | اختيار عشوائي باحتمال يتناسب مع الوزن |
+| 654 | [`654-count-min-sketch.apl`](examples/654-count-min-sketch.apl) | تقدير تكرارات بذاكرة ثابتة |
+| 655 | [`655-bresenham-line.apl`](examples/655-bresenham-line.apl) | رسم خط مستقيم على شبكة بلا فاصلة عائمة |
+| 656 | [`656-iterative-deepening.apl`](examples/656-iterative-deepening.apl) | بحث يجد أضحل حل بذاكرة البحث العميق |
+| 657 | [`657-suffix-automaton.apl`](examples/657-suffix-automaton.apl) | بنية مدمجة لكل النصوص الفرعية |
+| 658 | [`658-damerau-levenshtein.apl`](examples/658-damerau-levenshtein.apl) | مسافة تحرير مع تبديل الحروف المتجاورة |
+| 659 | [`659-arabic-number-parse.apl`](examples/659-arabic-number-parse.apl) | قراءة الأرقام المشرقية ٠١٢٣ كأعداد |
+| 660 | [`660-arabic-sort-collation.apl`](examples/660-arabic-sort-collation.apl) | ترتيب الأسماء بالهجائية العربية |
+| 661 | [`661-coptic-calendar.apl`](examples/661-coptic-calendar.apl) | تحويل التواريخ من وإلى التقويم القبطي |
+| 662 | [`662-kalman-lite.apl`](examples/662-kalman-lite.apl) | دمج قياسات مزعجة في تقدير مستقر |
+| 663 | [`663-pid-controller.apl`](examples/663-pid-controller.apl) | متحكم نسبي تكاملي تفاضلي على نظام محاكى |
+| 664 | [`664-shamir-secret.apl`](examples/664-shamir-secret.apl) | تقسيم سر على حصص لا تكفي بعضها وحدها |
+| 665 | [`665-bidirectional-bfs.apl`](examples/665-bidirectional-bfs.apl) | أقصر طريق بجبهتين متعاكستين |
+| 666 | [`666-zero-one-bfs.apl`](examples/666-zero-one-bfs.apl) | أقصر تكلفة بأوزان صفر وواحد |
+| 667 | [`667-mcts-lite.apl`](examples/667-mcts-lite.apl) | معادلة الاختيار التي تقود بحث مونت كارلو |
+| 668 | [`668-simulated-annealing-tsp.apl`](examples/668-simulated-annealing-tsp.apl) | تحسين جولة مندوب السفر بالتلدين المحاكى |
 
 ### تشغيل أي مثال
 
@@ -1014,7 +1038,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 644 مثالاً
+**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 668 مثالاً
 
 ## Language platform tools
 
