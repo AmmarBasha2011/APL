@@ -125,3 +125,6 @@ APL-ValueError في ملف مرحبا.apl، السطر 3
 - [مميزات اللغة](language-features.md) — match/case، الأصناف، lambda
 - فهرس المكتبات الـ 74 في [README للتوثيق](README.md)
 - تصفّح `examples/` وابدأ بالنسخ والتعديل
+- تريد أن يكتب وكيل ذكاء اصطناعي مشروعك؟ [برومبت جاهز ودليل](ai-agent-prompt.md)
+- تريد نشر برنامجك على خادم؟ [دليل النشر](deployment.md)
+- تقارن اللغة بغيرها؟ [لماذا APL](why-apl.md)
