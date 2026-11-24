@@ -1,6 +1,6 @@
 # مكتبة الصور والنصوص العميقة — `mediadeep`
 
-**11,470 عنصراً عربياً** (الدوال: 9,334، الثوابت: 2,136).
+**11,440 عنصراً عربياً** (الدوال: 9,321، الثوابت: 2,119).
 
 ## الدوال (9,929) — `MEDD_FUNCS`
 
@@ -2073,11 +2073,6 @@
 | `استخدام_اختبر_موعداً_صنف_سياق` | `fire.helptext_test.UsageTest.enterClassContext` |
 | `استخرج_من_فقط` | `jinja2.ext.extract_from_ast` |
 | `استعلام_ألوان` | `PIL.ImageWin.Dib.query_palette` |
-| `استيريسك_معالج` | `markdown.inlinepatterns.AsteriskProcessor` |
-| `استيريسك_معالج_احصل_كومبيليد_ريج_exp` | `markdown.inlinepatterns.AsteriskProcessor.getCompiledRegExp` |
-| `استيريسك_معالج_معالجة_طابق` | `markdown.inlinepatterns.AsteriskProcessor.handleMatch` |
-| `استيريسك_معالج_نوع` | `markdown.inlinepatterns.AsteriskProcessor.type` |
-| `استيريسك_معالج_هروب` | `markdown.inlinepatterns.AsteriskProcessor.unescape` |
 | `اسم_كـ_نص` | `PIL.PdfParser.PdfName.name_as_str` |
 | `اطبع_رسالة` | `fire.test_components.CallableWithKeywordArgument.print_msg` |
 | `اعمل` | `markdown_it.presets.commonmark.make` |
@@ -2687,11 +2682,7 @@
 | `بناء_توك_قسمة` | `markdown.extensions.toc.TocTreeprocessor.build_toc_div` |
 | `بناء_حوّل` | `PIL.ImageCms.buildTransform` |
 | `بناء_حوّل_من_افتح_شخصي` | `PIL.ImageCms.buildTransformFromOpenProfiles` |
-| `بناء_عنصر` | `markdown.inlinepatterns.AsteriskProcessor.build_element` |
 | `بناء_لوت` | `PIL.ImageMorph.LutBuilder.build_lut` |
-| `بناء_مزدوج` | `markdown.inlinepatterns.AsteriskProcessor.build_double` |
-| `بناء_مزدوج_2` | `markdown.inlinepatterns.AsteriskProcessor.build_double2` |
-| `بناء_مفرد` | `markdown.inlinepatterns.AsteriskProcessor.build_single` |
 | `بوتالبها` | `PIL.AvifImagePlugin.AvifImageFile.putalpha` |
 | `بوتباليتتي` | `PIL.AvifImagePlugin.AvifImageFile.putpalette` |
 | `بوتبيكسيل` | `PIL.AvifImagePlugin.AvifImageFile.putpixel` |
@@ -4052,7 +4043,6 @@
 | `حلل_رابط_وجهة` | `markdown_it.helpers.parse_link_destination.parseLinkDestination` |
 | `حلل_رابط_وجهة_حرف_شيفرة_عند` | `markdown_it.helpers.parse_link_destination.charCodeAt` |
 | `حلل_رابط_وجهة_هروب_كل` | `markdown_it.helpers.parse_link_destination.unescapeAll` |
-| `حلل_فرعي_أنماط` | `markdown.inlinepatterns.AsteriskProcessor.parse_sub_patterns` |
 | `حلل_للتكرار` | `markdown_it.cli.parse.Iterable` |
 | `حلل_ماركداون_IT` | `markdown_it.cli.parse.MarkdownIt` |
 | `حلل_محتوى` | `markdown.extensions.admonition.AdmonitionProcessor.parse_content` |
@@ -9220,9 +9210,6 @@
 | `يكو_ملف_إطار` | `PIL.IcoImagePlugin.IcoFile.frame` |
 | `يكو_ملف_جيتيماجي` | `PIL.IcoImagePlugin.IcoFile.getimage` |
 | `يلليبسي` | `PIL.ImageDraw.ImageDraw.ellipse` |
-| `يم_قوي_عنصر` | `markdown.extensions.legacy_em.EmStrongItem` |
-| `يم_قوي_عنصر_عدد` | `markdown.extensions.legacy_em.EmStrongItem.count` |
-| `يم_قوي_عنصر_فهرس` | `markdown.extensions.legacy_em.EmStrongItem.index` |
 | `يماجيماته_أدنى` | `PIL.ImageMath.imagemath_min` |
 | `يماجيماته_أقصى` | `PIL.ImageMath.imagemath_max` |
 | `يماجيماته_حوّل` | `PIL.ImageMath.imagemath_convert` |
@@ -9620,10 +9607,6 @@
 | `أنا_صورة_إضافة_تعليقات` | `PIL.ImImagePlugin.annotations` |
 | `أنا_صورة_ملف_تنسيق` | `PIL.ImImagePlugin.ImImageFile.format` |
 | `أنا_صورة_ملف_تنسيق_وصف` | `PIL.ImImagePlugin.ImImageFile.format_description` |
-| `أنماط_وسائط_EMPHASIS_RE` | `markdown.inlinepatterns.EMPHASIS_RE` |
-| `أنماط_وسائط_EM_STRONG_2_RE` | `markdown.inlinepatterns.EM_STRONG2_RE` |
-| `أنماط_وسائط_STRONG_EM_2_RE` | `markdown.inlinepatterns.STRONG_EM2_RE` |
-| `أنماط_وسائط_STRONG_EM_RE` | `markdown.inlinepatterns.STRONG_EM_RE` |
 | `أيقونة_رأس_إزاحة` | `PIL.IcoImagePlugin.IconHeader.offset` |
 | `أيقونة_رأس_ارتفاع` | `PIL.IcoImagePlugin.IconHeader.height` |
 | `أيقونة_رأس_حجم` | `PIL.IcoImagePlugin.IconHeader.size` |
@@ -9660,7 +9643,6 @@
 | `ادمونيتيون_معالج_وسائط_RE` | `markdown.extensions.admonition.AdmonitionProcessor.RE` |
 | `استخدام_اختبر_أقصى_فرق` | `fire.helptext_test.UsageTest.maxDiff` |
 | `استخدام_اختبر_طويل_رسالة` | `fire.helptext_test.UsageTest.longMessage` |
-| `استيريسك_معالج_وسائط_ANCESTOR_EXCLUDES` | `markdown.inlinepatterns.AsteriskProcessor.ANCESTOR_EXCLUDES` |
 | `اسمح_أحرف` | `PIL.PdfParser.PdfName.allowed_chars` |
 | `افتح_وسم` | `markdown_it.common.html_re.open_tag` |
 | `افيف_صورة_إضافة_تعليقات` | `PIL.AvifImagePlugin.annotations` |
@@ -10283,7 +10265,6 @@
 | `مهروب_أحرف` | `PIL.PdfParser.PdfParser.escaped_chars` |
 | `مواصفة` | `markdown.htmlparser.spec` |
 | `ميسه_حوّل_دالة` | `PIL.ImageTransform.MeshTransform.method` |
-| `مُنشئ` | `markdown.extensions.legacy_em.EmStrongItem.builder` |
 | `نص_R` | `jinja2.lexer.string_re` |
 | `نص_unicode_حرفي` | `fire.console.text.unicode_literals` |
 | `نص_اربط_تعليقات` | `markdown_it.rules_core.text_join.annotations` |
@@ -10544,10 +10525,7 @@
 | `وسائط_ELLIPSIS_QUESTION_EXCLAMATION_RE` | `markdown_it.rules_core.replacements.ELLIPSIS_QUESTION_EXCLAMATION_RE` |
 | `وسائط_ELLIPSIS_RE` | `markdown_it.rules_core.replacements.ELLIPSIS_RE` |
 | `وسائط_EMAIL_RE` | `markdown_it.rules_inline.autolink.EMAIL_RE` |
-| `وسائط_EMPHASIS_RE` | `markdown.extensions.legacy_em.EMPHASIS_RE` |
 | `وسائط_EM_DASH_RE` | `markdown_it.rules_core.replacements.EM_DASH_RE` |
-| `وسائط_EM_STRONG_2_RE` | `markdown.extensions.legacy_em.EM_STRONG2_RE` |
-| `وسائط_EM_STRONG_RE` | `markdown.inlinepatterns.EM_STRONG_RE` |
 | `وسائط_ENCODE_COMPONENT_CHARS` | `mdurl.ENCODE_COMPONENT_CHARS` |
 | `وسائط_END_RE` | `markdown.extensions.meta.END_RE` |
 | `وسائط_ENV_VAR_MESSAGE` | `fire.console.platforms.PythonVersion.ENV_VAR_MESSAGE` |
@@ -10734,7 +10712,6 @@
 | `وسائط_OTHER` | `wcwidth.grapheme.GCB.OTHER` |
 | `وسائط_PALETTE` | `PIL.XVThumbImagePlugin.PALETTE` |
 | `وسائط_PALETTEINDEXED_8` | `PIL.DdsImagePlugin.DDPF.PALETTEINDEXED8` |
-| `وسائط_PATTERNS` | `markdown.inlinepatterns.AsteriskProcessor.PATTERNS` |
 | `وسائط_PCF_ACCELERATORS` | `PIL.PcfFontFile.PCF_ACCELERATORS` |
 | `وسائط_PCF_BDF_ACCELERATORS` | `PIL.PcfFontFile.PCF_BDF_ACCELERATORS` |
 | `وسائط_PCF_BDF_ENCODINGS` | `PIL.PcfFontFile.PCF_BDF_ENCODINGS` |
@@ -10883,8 +10860,6 @@
 | `وسائط_SIBLING_TAGS` | `markdown.blockprocessors.OListProcessor.SIBLING_TAGS` |
 | `وسائط_SIZE` | `PIL.ImImagePlugin.SIZE` |
 | `وسائط_SIZES` | `PIL.IcnsImagePlugin.IcnsFile.SIZES` |
-| `وسائط_SMART_EMPHASIS_RE` | `markdown.inlinepatterns.SMART_EMPHASIS_RE` |
-| `وسائط_SMART_STRONG_EM_RE` | `markdown.inlinepatterns.SMART_STRONG_EM_RE` |
 | `وسائط_SOFTPROOFING` | `PIL.ImageCms.Flags.SOFTPROOFING` |
 | `وسائط_SOFTWARE` | `PIL.TiffImagePlugin.SOFTWARE` |
 | `وسائط_SPACING_MARK` | `wcwidth.grapheme.GCB.SPACING_MARK` |
@@ -10894,9 +10869,6 @@
 | `وسائط_STRIPBYTECOUNTS` | `PIL.TiffImagePlugin.STRIPBYTECOUNTS` |
 | `وسائط_STRIPOFFSETS` | `PIL.TiffImagePlugin.STRIPOFFSETS` |
 | `وسائط_STRIP_SIZE` | `PIL.TiffImagePlugin.STRIP_SIZE` |
-| `وسائط_STRONG_EM_2_RE` | `markdown.extensions.legacy_em.STRONG_EM2_RE` |
-| `وسائط_STRONG_EM_3_RE` | `markdown.inlinepatterns.STRONG_EM3_RE` |
-| `وسائط_STRONG_EM_RE` | `markdown.extensions.legacy_em.STRONG_EM_RE` |
 | `وسائط_STX` | `markdown.util.STX` |
 | `وسائط_SUBDICT` | `fire.test_components.SUBDICT` |
 | `وسائط_SUBIFD` | `PIL.TiffImagePlugin.SUBIFD` |
@@ -11452,8 +11424,6 @@
 | `يكو_صورة_ملف_تنسيق` | `PIL.IcoImagePlugin.IcoImageFile.format` |
 | `يكو_صورة_ملف_تنسيق_وصف` | `PIL.IcoImagePlugin.IcoImageFile.format_description` |
 | `يم_قوي_عنصر_مُنشئ` | `markdown.inlinepatterns.EmStrongItem.builder` |
-| `يم_قوي_عنصر_نمط` | `markdown.extensions.legacy_em.EmStrongItem.pattern` |
-| `يم_قوي_عنصر_وسوم` | `markdown.extensions.legacy_em.EmStrongItem.tags` |
 | `يمبهاسيس_تعليقات` | `markdown_it.rules_inline.emphasis.annotations` |
 | `يمبوسسيبلي_معطيات` | `jinja2.nodes.Impossible.args` |
 | `يمت_صورة_إضافة_تعليقات` | `PIL.ImtImagePlugin.annotations` |

@@ -1,6 +1,6 @@
 # مكتبة الويب والنصوص — `weblibs`
 
-**5,393 عنصراً عربياً** (الدوال: 797، دوال الكائنات: 3,710، الخصائص: 156، الثوابت: 730).
+**5,383 عنصراً عربياً** (الدوال: 794، دوال الكائنات: 3,710، الخصائص: 156، الثوابت: 723).
 
 ## الدوال (812) — `WEBL_FUNCS`
 
@@ -450,7 +450,6 @@
 | `شجرة_معالج` | `markdown.extensions.abbr.Treeprocessor` |
 | `شجرة_مولّد` | `markdown_it.tree.Generator` |
 | `شجرة_نوع_متغير` | `markdown_it.tree.TypeVar` |
-| `شرطة_سفلية_معالج` | `markdown.extensions.legacy_em.UnderscoreProcessor` |
 | `شغّل_تشغيل_منفّذ` | `tornado.netutil.run_on_executor` |
 | `صفّر_لون` | `pygments.console.reset_color` |
 | `صنف_لا_موجود` | `markdown.extensions.codehilite.ClassNotFound` |
@@ -517,7 +516,6 @@
 | `قديم_اختبر_وصفي` | `markdown.test_tools.LegacyTestMeta` |
 | `قديم_سمات` | `markdown.extensions.legacy_attrs.LegacyAttrs` |
 | `قديم_سمة_امتداد` | `markdown.extensions.legacy_attrs.LegacyAttrExtension` |
-| `قديم_شرطة_سفلية_معالج` | `markdown.extensions.legacy_em.LegacyUnderscoreProcessor` |
 | `قصير_صورة_مرجع_مضمّن_معالج` | `markdown.inlinepatterns.ShortImageReferenceInlineProcessor` |
 | `قصير_مرجع_مضمّن_معالج` | `markdown.inlinepatterns.ShortReferenceInlineProcessor` |
 | `قواعد_احجب_جدول` | `markdown_it.rules_block.table` |
@@ -638,7 +636,6 @@
 | `ماركداون_قديم_سمات_امتداد` | `markdown.extensions.legacy_attrs.Extension` |
 | `ماركداون_محلل_HTML_مستخرج` | `markdown.htmlparser.HTMLExtractor` |
 | `ماركداون_مضمّن_أنماط_أي` | `markdown.inlinepatterns.Any` |
-| `ماركداون_مضمّن_أنماط_شرطة_سفلية_معالج` | `markdown.inlinepatterns.UnderscoreProcessor` |
 | `ماركداون_مضمّن_أنماط_مسمّى_صف` | `markdown.inlinepatterns.NamedTuple` |
 | `ماركداون_مضمّن_أنماط_نمط` | `markdown.inlinepatterns.Pattern` |
 | `ماركداون_مضمّن_معالج` | `markdown.treeprocessors.InlineProcessor` |
@@ -5008,7 +5005,6 @@
 | `داكن_ألوان` | `pygments.console.dark_colors` |
 | `دالة_خلف_وصلة_نص` | `markdown.extensions.footnotes.FN_BACKLINK_TEXT` |
 | `دالة_مرشّح_دالة` | `pygments.filter.FunctionFilter.function` |
-| `ذكي_قوي_R` | `markdown.inlinepatterns.SMART_STRONG_RE` |
 | `رابط_ابحث` | `mdurl.URL.search` |
 | `رابط_اسم_المضيف_2` | `mdurl.URL.hostname` |
 | `رابط_بروتوكول` | `mdurl.URL.protocol` |
@@ -5070,7 +5066,6 @@
 | `شجرة_نوع_متغير_قيّم_قيود` | `markdown_it.tree.TypeVar.evaluate_constraints` |
 | `شجرة_نوع_متغير_قيّم_مقيّد` | `markdown_it.tree.TypeVar.evaluate_bound` |
 | `شجرة_وصفي_2` | `markdown_it.tree.Token.meta` |
-| `شرطة_سفلية_معالج_أنماط` | `markdown.extensions.legacy_em.UnderscoreProcessor.PATTERNS` |
 | `صنف_لا_موجود_معطيات` | `markdown.extensions.codehilite.ClassNotFound.args` |
 | `صورة_مرجع_R` | `markdown.inlinepatterns.IMAGE_REFERENCE_RE` |
 | `صورة_مرجع_مضمّن_معالج_R_وصلة` | `markdown.inlinepatterns.ImageReferenceInlineProcessor.RE_LINK` |
@@ -5139,15 +5134,12 @@
 | `قديم_اختبر_حالة_طويل_رسالة` | `markdown.test_tools.LegacyTestCase.longMessage` |
 | `قديم_اختبر_حالة_فشل_استثناء` | `markdown.test_tools.LegacyTestCase.failureException` |
 | `قديم_سمة_امتداد_إعداد` | `markdown.extensions.legacy_attrs.LegacyAttrExtension.config` |
-| `قديم_شرطة_سفلية_معالج_أنماط` | `markdown.extensions.legacy_em.LegacyUnderscoreProcessor.PATTERNS` |
 | `قصير_صورة_مرجع_مضمّن_معالج_R_وصلة` | `markdown.inlinepatterns.ShortImageReferenceInlineProcessor.RE_LINK` |
 | `قصير_صورة_مرجع_مضمّن_معالج_سطر_جديد_تنظيف_R` | `markdown.inlinepatterns.ShortImageReferenceInlineProcessor.NEWLINE_CLEANUP_RE` |
 | `قصير_مرجع_مضمّن_معالج_R_وصلة` | `markdown.inlinepatterns.ShortReferenceInlineProcessor.RE_LINK` |
 | `قصير_مرجع_مضمّن_معالج_سطر_جديد_تنظيف_R` | `markdown.inlinepatterns.ShortReferenceInlineProcessor.NEWLINE_CLEANUP_RE` |
-| `قوي_R` | `markdown.extensions.legacy_em.STRONG_RE` |
 | `قياسي_أنواع` | `pygments.token.STANDARD_TYPES` |
 | `كيان_R` | `markdown.inlinepatterns.ENTITY_RE` |
-| `لا_قوي_R` | `markdown.inlinepatterns.NOT_STRONG_RE` |
 | `له_واجهة_برمجية_إصدار` | `googleapiclient.model.HAS_API_VERSION` |
 | `ماركداون_HTML_محلل_تسلسل` | `markdown.htmlparser.Sequence` |
 | `ماركداون_HTML_محلل_تعليقات` | `markdown.htmlparser.annotations` |
@@ -5245,10 +5237,8 @@
 | `ماركداون_مسجّل` | `markdown.blockprocessors.logger` |
 | `ماركداون_مضمّن_أنماط_HTML_R` | `markdown.inlinepatterns.HTML_RE` |
 | `ماركداون_مضمّن_أنماط_تعليقات` | `markdown.inlinepatterns.annotations` |
-| `ماركداون_مضمّن_أنماط_قوي_R` | `markdown.inlinepatterns.STRONG_RE` |
 | `ماركداون_مضمّن_أنماط_مجموعة` | `markdown.inlinepatterns.Collection` |
 | `ماركداون_مضمّن_أنماط_نوع_فحص` | `markdown.inlinepatterns.TYPE_CHECKING` |
-| `ماركداون_مضمّن_شرطة_سفلية_معالج_أنماط` | `markdown.inlinepatterns.UnderscoreProcessor.PATTERNS` |
 | `ماركداون_مُسلسِل_HTML_فارغ` | `markdown.serializers.HTML_EMPTY` |
 | `ماركداون_مُسلسِل_تعليقات` | `markdown.serializers.annotations` |
 | `ماركداون_مُسلسِل_حرفي` | `markdown.serializers.Literal` |
