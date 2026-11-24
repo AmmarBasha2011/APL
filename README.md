@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 74 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **535 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **572 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -247,9 +247,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (535 مثالاً)
+## الأمثلة الجاهزة (572 مثالاً)
 
-مجلد `examples/` يحتوي على **535 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **572 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -788,6 +788,43 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 533 | [`533-zakat-calc.apl`](examples/533-zakat-calc.apl) | حساب زكاة المال فوق النصاب |
 | 534 | [`534-electricity-bill.apl`](examples/534-electricity-bill.apl) | فاتورة كهرباء منزلية بشرائح تقريبية |
 | 535 | [`535-vat-invoice.apl`](examples/535-vat-invoice.apl) | فاتورة بضريبة قيمة مضافة 14% |
+| 536 | [`536-prim-mst.apl`](examples/536-prim-mst.apl) | شجرة بريم الممتدة الصغرى |
+| 537 | [`537-a-star.apl`](examples/537-a-star.apl) | بحث A* على شبكة بعوائق مع إعادة بناء المسار |
+| 538 | [`538-topological-lex.apl`](examples/538-topological-lex.apl) | ترتيب طوبولوجي بأصغر تسمية أولاً (خوارزمية كان) |
+| 539 | [`539-rabin-karp.apl`](examples/539-rabin-karp.apl) | بحث رابين-كارب بالتجزئة الدوارة |
+| 540 | [`540-z-algorithm.apl`](examples/540-z-algorithm.apl) | مصفوفة Z للبحث عن نمط |
+| 541 | [`541-aho-corasick.apl`](examples/541-aho-corasick.apl) | أتمتة أهو-كوراسيك للبحث بعدة أنماط معاً |
+| 542 | [`542-huffman-coding.apl`](examples/542-huffman-coding.apl) | ترميز هافمان: شجرة أكواد متغيرة الطول |
+| 543 | [`543-burrows-wheeler.apl`](examples/543-burrows-wheeler.apl) | تحويل بوروز-ويلر وعكسه |
+| 544 | [`544-word-ladder.apl`](examples/544-word-ladder.apl) | سلم الكلمات: أقصر تحويل بحرف واحد (BFS) |
+| 545 | [`545-quickselect.apl`](examples/545-quickselect.apl) | اختيار سريع: ك-أصغر عنصر دون فرز كامل |
+| 546 | [`546-sliding-window-max.apl`](examples/546-sliding-window-max.apl) | أقصى نافذة منزلقة بقائمة رتيبة |
+| 547 | [`547-next-greater-element.apl`](examples/547-next-greater-element.apl) | العنصر الأكبر التالي بمكدس رتيب |
+| 548 | [`548-largest-rectangle.apl`](examples/548-largest-rectangle.apl) | أكبر مستطيل في هيستوجرام بمكدس |
+| 549 | [`549-trapping-rain-water.apl`](examples/549-trapping-rain-water.apl) | حصر مياه الأمطار بين الحواجز بمؤشرين |
+| 550 | [`550-count-inversions.apl`](examples/550-count-inversions.apl) | عدّ المعكوسات بفرز الدمج |
+| 551 | [`551-matrix-chain-dp.apl`](examples/551-matrix-chain-dp.apl) | ترتيب ضرب المصفوفات بأقل كلفة (برمجة ديناميكية) |
+| 552 | [`552-egg-drop-dp.apl`](examples/552-egg-drop-dp.apl) | لغز البيض: أقل محاولات مضمونة (برمجة ديناميكية) |
+| 553 | [`553-miller-rabin.apl`](examples/553-miller-rabin.apl) | اختبار ميلر-رابين للأولية بقواعد حتمية |
+| 554 | [`554-segmented-sieve.apl`](examples/554-segmented-sieve.apl) | الغربال المقطعي: أوليات مجال بعيد |
+| 555 | [`555-egyptian-fractions.apl`](examples/555-egyptian-fractions.apl) | الكسور المصرية: تمثيل كسر بمجموع كسور وحدة |
+| 556 | [`556-newton-sqrt.apl`](examples/556-newton-sqrt.apl) | الجذر التربيعي بطريقة نيوتن-رافسون |
+| 557 | [`557-josephus.apl`](examples/557-josephus.apl) | مسألة جوزيفوس: الناجي من حلقة الإقصاء |
+| 558 | [`558-gaussian-elimination.apl`](examples/558-gaussian-elimination.apl) | حذف جاوس لحل نظام معادلات خطية |
+| 559 | [`559-derangements.apl`](examples/559-derangements.apl) | التباديل المُخلّة: لا عنصر في موضعه |
+| 560 | [`560-continued-fractions.apl`](examples/560-continued-fractions.apl) | الكسر المستمر لجذر غير نسبي |
+| 561 | [`561-egypt-carriers.apl`](examples/561-egypt-carriers.apl) | معرفة شركة المحمول المصرية من مقدمة الرقم |
+| 562 | [`562-currency-change.apl`](examples/562-currency-change.apl) | فك مبلغ إلى فئات الجنيه المصري (بالقروش) |
+| 563 | [`563-gpa-calc.apl`](examples/563-gpa-calc.apl) | المعدل التراكمي بالساعات المعتمدة |
+| 564 | [`564-iban-check.apl`](examples/564-iban-check.apl) | تحقق IBAN بمعيار mod-97 وتوليد رقم تحقق |
+| 565 | [`565-base62-codec.apl`](examples/565-base62-codec.apl) | ترميز base62 لروابط قصيرة |
+| 566 | [`566-circuit-breaker.apl`](examples/566-circuit-breaker.apl) | قاطع الدائرة: حماية من تكرار الفشل |
+| 567 | [`567-semver-compare.apl`](examples/567-semver-compare.apl) | مقارنة إصدارات دلالية semver |
+| 568 | [`568-template-mini.apl`](examples/568-template-mini.apl) | محرك قوالب مصغر بمتغيرات {{اسم}} |
+| 569 | [`569-game-2048.apl`](examples/569-game-2048.apl) | منطق دمج 2048: انزلاق ودمج صف |
+| 570 | [`570-wordle-feedback.apl`](examples/570-wordle-feedback.apl) | تقييم ووردل: أخضر/أصفر/رمادي بمرورين |
+| 571 | [`571-mastermind-score.apl`](examples/571-mastermind-score.apl) | تقييم ماسترمايند: دقيق ولون فقط |
+| 572 | [`572-median-stream.apl`](examples/572-median-stream.apl) | وسيط تدفق بكوميتين (أدنى وأقصى) |
 
 ### تشغيل أي مثال
 
@@ -888,7 +925,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 76,234 عنصراً عربياً — 74 مكتبة — 535 مثالاً
+**الإصدار:** APL v1.13 — 76,234 عنصراً عربياً — 74 مكتبة — 572 مثالاً
 
 ## Language platform tools
 
