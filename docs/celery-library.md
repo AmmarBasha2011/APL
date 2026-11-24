@@ -1,8 +1,8 @@
 # مكتبة طوابير المهام — `celery`
 
-**2,653 عنصراً عربياً** (الدوال: 857، دوال الكائنات: 3,666، الخصائص: 1,444، الثوابت: 383).
+**2,652 عنصراً عربياً** (الدوال: 857، دوال الكائنات: 3,666، الخصائص: 1,444، الثوابت: 383).
 
-## الدوال (655) — `CEL_FUNCS`
+## الدوال (654) — `CEL_FUNCS`
 
 | العربي | Python |
 |--------|--------|
@@ -178,7 +178,6 @@
 | `احصل_ريديس_خطأ_أصناف` | `celery.backends.redis.get_redis_error_classes` |
 | `احصل_سجل_سياسة` | `celery.app.trace.get_log_policy` |
 | `احصل_متاح_تجمع_أسماء` | `celery.concurrency.get_available_pool_names` |
-| `احصل_معرّف_2` | `celery.utils.threads.get_ident` |
 | `احصل_ملف` | `celery.utils.static.get_file` |
 | `احصل_مهمة_اسم` | `celery.app.trace.get_task_name` |
 | `احصل_مهمة_مُسجِّل` | `celery.utils.log.get_task_logger` |
