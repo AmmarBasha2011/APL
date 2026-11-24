@@ -106,9 +106,9 @@
 | 96 | [pkgs_ext2-library.md](pkgs_ext2-library.md) | مكتبة `pkgs_ext2` — حزم متنوعة موسّعة (scrapy / prompt_toolkit / lxml / hypothesis / peewee / arrow / alembic / rich / trio / paramiko / h5py / cryptography / pyasn1 / skimage / yaml / seaborn / pyparsing / bs4 / shapely / babel / redis / pendulum / mako / nacl / typer / google / PIL / kombu / marshmallow / requests / sqlparse / celery / packaging / six / httpx / jinja2 / acp / regex / uvicorn / websockets / markdown / tornado / anyio / httplib2 / pygments / cffi / click / fastapi / httpcore / googleapiclient / tqdm / starlette / dateutil / pydantic / attr / jsonschema / multidict / numpy / scipy) (19,295 عنصراً) |
 
 ---
-## الأمثلة الجاهزة (668 مثالاً)
+## الأمثلة الجاهزة (692 مثالاً)
 
-668 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+692 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -780,6 +780,30 @@
 | 666 | [`666-zero-one-bfs.apl`](../examples/666-zero-one-bfs.apl) | أقصر تكلفة بأوزان صفر وواحد |
 | 667 | [`667-mcts-lite.apl`](../examples/667-mcts-lite.apl) | معادلة الاختيار التي تقود بحث مونت كارلو |
 | 668 | [`668-simulated-annealing-tsp.apl`](../examples/668-simulated-annealing-tsp.apl) | تحسين جولة مندوب السفر بالتلدين المحاكى |
+| 669 | [`669-max-flow-ford-fulkerson.apl`](../examples/669-max-flow-ford-fulkerson.apl) | أقصى تدفق في شبكة بمسارات معززة |
+| 670 | [`670-hungarian-lite.apl`](../examples/670-hungarian-lite.apl) | إسناد عامل لمهمة بأقل كلفة إجمالية |
+| 671 | [`671-hyperloglog-lite.apl`](../examples/671-hyperloglog-lite.apl) | تقدير عدد العناصر المميزة بذاكرة ثابتة |
+| 672 | [`672-lz78.apl`](../examples/672-lz78.apl) | ضغط وفك بقاموس عبارات متنام |
+| 673 | [`673-arithmetic-coding-lite.apl`](../examples/673-arithmetic-coding-lite.apl) | ترميز رسالة ككسر في مدى احتمالي |
+| 674 | [`674-rsa-toy.apl`](../examples/674-rsa-toy.apl) | توليد مفاتيح وتشفير RSA بأعداد صغيرة |
+| 675 | [`675-diffie-hellman-toy.apl`](../examples/675-diffie-hellman-toy.apl) | اشتقاق سر مشترك عبر قناة علنية |
+| 676 | [`676-chacha-quarter-round.apl`](../examples/676-chacha-quarter-round.apl) | العملية الأساسية في تشفير تشاتشا |
+| 677 | [`677-easter-computus.apl`](../examples/677-easter-computus.apl) | تاريخ عيد الفصح الغربي لأي سنة |
+| 678 | [`678-hebrew-calendar-lite.apl`](../examples/678-hebrew-calendar-lite.apl) | تحويل تقريبي من وإلى التقويم العبري |
+| 679 | [`679-smith-waterman.apl`](../examples/679-smith-waterman.apl) | أقوى تشابه جزئي بين تسلسلي DNA |
+| 680 | [`680-moon-phase-lite.apl`](../examples/680-moon-phase-lite.apl) | هل الليلة محاق أم بدر من التاريخ وحده |
+| 681 | [`681-game-of-life.apl`](../examples/681-game-of-life.apl) | مذبذب ونمط ساكن بقواعد كونواي |
+| 682 | [`682-langton-ant.apl`](../examples/682-langton-ant.apl) | فوضى تتحول إلى طريق سريع دوري |
+| 683 | [`683-rule-110.apl`](../examples/683-rule-110.apl) | أتمتة خلوية أولية كاملة حسابيا |
+| 684 | [`684-sprague-grundy.apl`](../examples/684-sprague-grundy.apl) | تحليل الألعاب المحايدة بأرقام غروندي |
+| 685 | [`685-poker-hand-eval-lite.apl`](../examples/685-poker-hand-eval-lite.apl) | تصنيف يد من خمس ورقات |
+| 686 | [`686-fen-parse.apl`](../examples/686-fen-parse.apl) | قراءة موقف شطرنج بترميز فورسيث-إدواردز |
+| 687 | [`687-verhoeff-checksum.apl`](../examples/687-verhoeff-checksum.apl) | رقم تحقق يكشف تبديل الخانات المتجاورة |
+| 688 | [`688-brainfuck-interp.apl`](../examples/688-brainfuck-interp.apl) | مفسر كامل للغة براين فك المصغرة |
+| 689 | [`689-lisp-eval-lite.apl`](../examples/689-lisp-eval-lite.apl) | حساب تعابير البادئة المتداخلة |
+| 690 | [`690-toml-lite.apl`](../examples/690-toml-lite.apl) | قراءة ملفات إعداد بصيغة TOML |
+| 691 | [`691-ical-rrule-lite.apl`](../examples/691-ical-rrule-lite.apl) | توليد مواعيد متكررة يوميا وأسبوعيا وشهريا |
+| 692 | [`692-mandelbrot-ascii.apl`](../examples/692-mandelbrot-ascii.apl) | رسم مجموعة ماندلبروت بالأحرف |
 
 **التشغيل:**
 ```bash
@@ -929,4 +953,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,254 عنصراً**،
-مع **668 مثال جاهز** في `examples/`.
+مع **692 مثال جاهز** في `examples/`.
