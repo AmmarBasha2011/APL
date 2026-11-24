@@ -106,9 +106,9 @@
 | 96 | [pkgs_ext2-library.md](pkgs_ext2-library.md) | مكتبة `pkgs_ext2` — حزم متنوعة موسّعة (scrapy / prompt_toolkit / lxml / hypothesis / peewee / arrow / alembic / rich / trio / paramiko / h5py / cryptography / pyasn1 / skimage / yaml / seaborn / pyparsing / bs4 / shapely / babel / redis / pendulum / mako / nacl / typer / google / PIL / kombu / marshmallow / requests / sqlparse / celery / packaging / six / httpx / jinja2 / acp / regex / uvicorn / websockets / markdown / tornado / anyio / httplib2 / pygments / cffi / click / fastapi / httpcore / googleapiclient / tqdm / starlette / dateutil / pydantic / attr / jsonschema / multidict / numpy / scipy) (19,295 عنصراً) |
 
 ---
-## الأمثلة الجاهزة (812 مثالاً)
+## الأمثلة الجاهزة (836 مثالاً)
 
-812 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+836 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -924,6 +924,30 @@
 | 810 | [`810-ansi-color.apl`](../examples/810-ansi-color.apl) | تنسيق طرفية بالتسلسلات |
 | 811 | [`811-hex-color.apl`](../examples/811-hex-color.apl) | نسبة تباين WCAG من hex |
 | 812 | [`812-nim-game.apl`](../examples/812-nim-game.apl) | استراتيجية نيم المثلى |
+| 813 | [`813-md5-manual.apl`](../examples/813-md5-manual.apl) | بناء MD5 من المواصفة |
+| 814 | [`814-adfgvx.apl`](../examples/814-adfgvx.apl) | شفرة ألمانيا في الحرب الأولى |
+| 815 | [`815-columnar-transposition.apl`](../examples/815-columnar-transposition.apl) | شفرة نقل كلاسيكية |
+| 816 | [`816-robin-hood-hashing.apl`](../examples/816-robin-hood-hashing.apl) | جدول تجزئة بتباين منخفض |
+| 817 | [`817-baudot-code.apl`](../examples/817-baudot-code.apl) | ترميز التليكس التاريخي |
+| 818 | [`818-bifid-cipher.apl`](../examples/818-bifid-cipher.apl) | شفرة تجزيئة بدون مفتاح |
+| 819 | [`819-djb2-hash.apl`](../examples/819-djb2-hash.apl) | تجزية نصوص شهيرة |
+| 820 | [`820-xorshift.apl`](../examples/820-xorshift.apl) | عشوائية سريعة بدون ضرب |
+| 821 | [`821-splitmix.apl`](../examples/821-splitmix.apl) | مولد بذور عالي الجودة |
+| 822 | [`822-pcg-lite.apl`](../examples/822-pcg-lite.apl) | عشوائية مبسطة عالية الجودة |
+| 823 | [`823-zobrist-hashing.apl`](../examples/823-zobrist-hashing.apl) | تجزئة وضعيات اللعب |
+| 824 | [`824-cuckoo-filter.apl`](../examples/824-cuckoo-filter.apl) | عضوية تقريبية قابلة للحذف |
+| 825 | [`825-quasi-random-halton.apl`](../examples/825-quasi-random-halton.apl) | توليد شبه عشوائي متجانس |
+| 826 | [`826-kosaraju.apl`](../examples/826-kosaraju.apl) | مكونات قوية الاتصال |
+| 827 | [`827-gale-shapley.apl`](../examples/827-gale-shapley.apl) | مطابقة مستقرة مضمونة |
+| 828 | [`828-bipartite-matching.apl`](../examples/828-bipartite-matching.apl) | أقصى تطابق بخوارزمية كون |
+| 829 | [`829-hill-climbing.apl`](../examples/829-hill-climbing.apl) | تحسين محلي بسيط |
+| 830 | [`830-tabu-search.apl`](../examples/830-tabu-search.apl) | هروب من الحلول المحلية |
+| 831 | [`831-ant-colony-lite.apl`](../examples/831-ant-colony-lite.apl) | أقصر جولة بالاستعارة النملية |
+| 832 | [`832-particle-swarm-lite.apl`](../examples/832-particle-swarm-lite.apl) | تحسين جماعي مستمر |
+| 833 | [`833-runge-kutta.apl`](../examples/833-runge-kutta.apl) | تكامل ODE بدقة رابعة |
+| 834 | [`834-bisection-method.apl`](../examples/834-bisection-method.apl) | إيجاد جذور الدوال |
+| 835 | [`835-kolmogorov-smirnov.apl`](../examples/835-kolmogorov-smirnov.apl) | اختبار مطابقة التوزيع |
+| 836 | [`836-splay-tree.apl`](../examples/836-splay-tree.apl) | شجرة ذاتية التعديل |
 
 **التشغيل:**
 ```bash
@@ -1073,4 +1097,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,254 عنصراً**،
-مع **812 مثال جاهز** في `examples/`.
+مع **836 مثال جاهز** في `examples/`.
