@@ -13,7 +13,7 @@
 | `خيارات` | `requests.options` |
 | `اطلب` | `requests.request` |
 | `اتصل` | `requests.Session` |
-| `get` | `requests.get` |
+| `جيت` | `requests.get` |
 | `put` | `requests.put` |
 | `head` | `requests.head` |
 | `تصفح_طلبات` | `params` |

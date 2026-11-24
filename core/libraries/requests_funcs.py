@@ -12,7 +12,7 @@ REQUESTS_FUNCS = {
     "اتصل": "requests.Session",
     
     # === اختصارات (Shortcuts) ===
-    "get": "requests.get",
+    "جيت": "requests.get",
     "put": "requests.put",
     "head": "requests.head",
     

@@ -113,6 +113,11 @@ jobs:
         run: pip install -r requirements.txt
       - name: فحص التكرار
         run: python scripts/check_duplicates.py
+      # الأمثلة وكتل ```apl في README والتوثيق: لا اسم محذوف أو غير معرَّف
+      - name: لا أسماء غير معرَّفة في الأمثلة والتوثيق
+        run: |
+          pip install ruff
+          python scripts/check_undefined_names.py
 
   # تغطية توثيق المكتبات: كل مكتبة لها ملف وكل عنصر مدرج فيه
   docs-coverage:

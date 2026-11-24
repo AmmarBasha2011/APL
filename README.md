@@ -154,7 +154,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 ```apl
 # طلب HTTP عبر مكتبة requests (يحتاج اتصالاً بالشبكة)
 حاول:
-    المتغير ر = get("https://api.github.com/zen")
+    المتغير ر = جيت("https://api.github.com/zen")
     اطبع "الحالة:", ر.status_code
     اطبع "الرد:", ر.text.strip()
 إمسك:
@@ -817,6 +817,7 @@ python test_examples.py     # يشغّل كل الأمثلة ويفحص النت
 |-------|-----------|
 | `python scripts/check_libraries.py` | كل عنصر في كل مكتبة يُترجم فعلاً لهدفه + حلّ المسارات + مفيش تكرار ولا تصادم |
 | `python scripts/check_duplicates.py` | لا يوجد مفتاحان عربيان يشيران إلى نفس الكائن الحقيقي (حتى لو اختلف المسار) |
+| `python scripts/check_undefined_names.py` | لا مثال ولا كتلة ```apl في التوثيق تستعمل اسماً محذوفاً أو غير معرَّف (يحوّل ويفحص بـ ruff F821) |
 | `python scripts/check_repo.py` | `compileall` + اتساق النسخة والأرقام في التوثيق + التحميل الكسول + بلوكات `README` |
 | `python test_examples.py` | يشغّل كل الأمثلة الـ 500 ويفحص **مخرجاتها** مش بس عدم الخطأ |
 
