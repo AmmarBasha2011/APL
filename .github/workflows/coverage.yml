@@ -1,0 +1,27 @@
+name: Coverage
+
+# يقيس تغطية الكود (core) عبر فحوص المكتبات ونظافة الريبو،
+# ويفشل لو نزلت التغطية عن الحد الأدنى (20% — حد أولي يُرفع تدريجياً
+# بعد أول تشغيل يقيس الرقم الحقيقي).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  coverage:
+    name: تغطية الكود
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: pip
+      - run: pip install -r requirements.txt coverage
+      - name: قياس التغطية
+        run: |
+          coverage run --source=core -m scripts.check_libraries --quiet || true
+          coverage run --source=core --append -m scripts.check_repo || true
+          coverage report --fail-under=20
