@@ -106,9 +106,9 @@
 | 96 | [pkgs_ext2-library.md](pkgs_ext2-library.md) | مكتبة `pkgs_ext2` — حزم متنوعة موسّعة (scrapy / prompt_toolkit / lxml / hypothesis / peewee / arrow / alembic / rich / trio / paramiko / h5py / cryptography / pyasn1 / skimage / yaml / seaborn / pyparsing / bs4 / shapely / babel / redis / pendulum / mako / nacl / typer / google / PIL / kombu / marshmallow / requests / sqlparse / celery / packaging / six / httpx / jinja2 / acp / regex / uvicorn / websockets / markdown / tornado / anyio / httplib2 / pygments / cffi / click / fastapi / httpcore / googleapiclient / tqdm / starlette / dateutil / pydantic / attr / jsonschema / multidict / numpy / scipy) (19,295 عنصراً) |
 
 ---
-## الأمثلة الجاهزة (620 مثالاً)
+## الأمثلة الجاهزة (644 مثالاً)
 
-620 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+644 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -732,6 +732,30 @@
 | 618 | [`618-ramadan-countdown.apl`](../examples/618-ramadan-countdown.apl) | أيام متبقية لرمضان بالتقويم الاصطلاحي |
 | 619 | [`619-tafqeet.apl`](../examples/619-tafqeet.apl) | تحويل المبلغ إلى كلمات عربية |
 | 620 | [`620-skip-list.apl`](../examples/620-skip-list.apl) | بحث سريع في قائمة مرتبة بمستويات |
+| 621 | [`621-convex-hull-graham.apl`](../examples/621-convex-hull-graham.apl) | أصغر مضلع محدب يحوي النقاط |
+| 622 | [`622-closest-pair.apl`](../examples/622-closest-pair.apl) | أقرب زوج نقاط بالفرز والفحص |
+| 623 | [`623-point-in-polygon.apl`](../examples/623-point-in-polygon.apl) | هل النقطة داخل المضلع بقذف شعاع |
+| 624 | [`624-line-intersection.apl`](../examples/624-line-intersection.apl) | تقاطع القطع المستقيمة باختبارات الاتجاه |
+| 625 | [`625-karatsuba.apl`](../examples/625-karatsuba.apl) | ضرب الأعداد الكبيرة بتقسيم أسرع |
+| 626 | [`626-crc32.apl`](../examples/626-crc32.apl) | مجموع CRC32 الاختباري بت بت |
+| 627 | [`627-hamming-ecc.apl`](../examples/627-hamming-ecc.apl) | شفرة هامنغ (7,4) لتصحيح خطأ أحادي البت |
+| 628 | [`628-glob-match.apl`](../examples/628-glob-match.apl) | مطابقة أنماط glob النجمة والاستفهام |
+| 629 | [`629-regex-nfa-lite.apl`](../examples/629-regex-nfa-lite.apl) | محرك نمطية مصغر بحرف ونقطة ونجمة |
+| 630 | [`630-json-parser.apl`](../examples/630-json-parser.apl) | محلل JSON مصغر من الصفر |
+| 631 | [`631-bytecode-vm.apl`](../examples/631-bytecode-vm.apl) | آلة افتراضية كومة مصغرة |
+| 632 | [`632-allocator-first-fit.apl`](../examples/632-allocator-first-fit.apl) | محاكي تخصيص ذاكرة بأول ملائم ودمج |
+| 633 | [`633-merkle-tree.apl`](../examples/633-merkle-tree.apl) | إثبات سلامة البيانات بشجرة تجزئة |
+| 634 | [`634-leader-election-bully.apl`](../examples/634-leader-election-bully.apl) | انتخاب قائد بخوارزمية التنمر |
+| 635 | [`635-vector-clock.apl`](../examples/635-vector-clock.apl) | ترتيب الأحداث الموزعة بالساعات المتجهة |
+| 636 | [`636-banker-algorithm.apl`](../examples/636-banker-algorithm.apl) | كشف الحالة الآمنة من الجمود |
+| 637 | [`637-page-replacement.apl`](../examples/637-page-replacement.apl) | إحلال الصفحات FIFO والأمثل |
+| 638 | [`638-disk-scan.apl`](../examples/638-disk-scan.apl) | جدولة القرص بخوارزمية المصعد |
+| 639 | [`639-round-robin.apl`](../examples/639-round-robin.apl) | جدولة المعالج بالتناوب الدائري |
+| 640 | [`640-dining-philosophers.apl`](../examples/640-dining-philosophers.apl) | تجنب الجمود بترتيب الموارد |
+| 641 | [`641-faraid-lite.apl`](../examples/641-faraid-lite.apl) | الأنصبة الشرعية الثابتة المبسطة |
+| 642 | [`642-arabic-light-stemmer.apl`](../examples/642-arabic-light-stemmer.apl) | تجذيع عربي خفيف بقص السوابق واللواحق |
+| 643 | [`643-cairo-taxi-fare.apl`](../examples/643-cairo-taxi-fare.apl) | عداد التاكسي الأبيض بالقاهرة (تقريبي) |
+| 644 | [`644-electricity-bill-egypt.apl`](../examples/644-electricity-bill-egypt.apl) | فاتورة كهرباء منزلية بشرائح (تقريبية) |
 
 **التشغيل:**
 ```bash
@@ -881,4 +905,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,254 عنصراً**،
-مع **620 مثال جاهز** في `examples/`.
+مع **644 مثال جاهز** في `examples/`.
