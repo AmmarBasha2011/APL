@@ -1,8 +1,8 @@
 # مكتبة توسعة حزمة sphinx: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى — `sphinx_ext`
 
-**4,657 عنصراً عربياً** (الدوال: 3,781، الثوابت: 876).
+**4,645 عنصراً عربياً** (الدوال: 3,770، الثوابت: 875).
 
-## الدوال (3,781) — `SPHINX_EXT_FUNCS`
+## الدوال (3,770) — `SPHINX_EXT_FUNCS`
 
 | العربي | Python |
 |--------|--------|
@@ -1002,7 +1002,6 @@
 | `سفينكس_بيبليجرافي_حوّل` | `sphinx.builders.latex.transforms.BibliographyTransform` |
 | `سفينكس_بيبليجرافي_حوّل_شغّل` | `sphinx.builders.latex.transforms.BibliographyTransform.run` |
 | `سفينكس_بيتوين` | `sphinx.ext.autodoc.between` |
-| `سفينكس_بيتيست_كونفيجور` | `sphinx.testing.fixtures.pytest_configure` |
 | `سفينكس_بيجمينتس_بريدج` | `sphinx.highlighting.PygmentsBridge` |
 | `سفينكس_بيراميد_نمط` | `sphinx.pygments_styles.PyramidStyle` |
 | `سفينكس_بيكود_خطأ` | `sphinx.errors.PycodeError` |
@@ -2088,13 +2087,6 @@
 | `سفينكس_سفينكس_إميت` | `sphinx.application.Sphinx.emit` |
 | `سفينكس_سفينكس_إميت_فيرستريسولت` | `sphinx.application.Sphinx.emit_firstresult` |
 | `سفينكس_سفينكس_اتصل` | `sphinx.application.Sphinx.connect` |
-| `سفينكس_سفينكس_اختبار_تطبيق` | `sphinx.testing.fixtures.SphinxTestApp` |
-| `سفينكس_سفينكس_اختبار_تطبيق_بولد` | `sphinx.testing.fixtures.SphinxTestApp.build` |
-| `سفينكس_سفينكس_اختبار_تطبيق_تحذير` | `sphinx.testing.fixtures.SphinxTestApp.warning` |
-| `سفينكس_سفينكس_اختبار_تطبيق_ستاتوس` | `sphinx.testing.fixtures.SphinxTestApp.status` |
-| `سفينكس_سفينكس_اختبار_تطبيق_غلاف_لأجل_سكيب_بولدينج` | `sphinx.testing.fixtures.SphinxTestAppWrapperForSkipBuilding` |
-| `سفينكس_سفينكس_اختبار_تطبيق_غلاف_لأجل_سكيب_بولدينج_بولد` | `sphinx.testing.fixtures.SphinxTestAppWrapperForSkipBuilding.build` |
-| `سفينكس_سفينكس_اختبار_تطبيق_كلينوب` | `sphinx.testing.fixtures.SphinxTestApp.cleanup` |
 | `سفينكس_سفينكس_باراليل_خطأ` | `sphinx.errors.SphinxParallelError` |
 | `سفينكس_سفينكس_بريلود_بنّاء` | `sphinx.application.Sphinx.preload_builder` |
 | `سفينكس_سفينكس_بوست_حوّل` | `sphinx.builders.linkcheck.SphinxPostTransform` |
@@ -2437,8 +2429,6 @@
 | `سفينكس_سيلسو` | `sphinx.addnodes.seealso` |
 | `سفينكس_سينتيريد_شغّل` | `sphinx.directives.other.Centered.run` |
 | `سفينكس_سينجليهتمل_إعداد` | `sphinx.builders.singlehtml.setup` |
-| `سفينكس_شاريد_نتيجة` | `sphinx.testing.fixtures.SharedResult` |
-| `سفينكس_شاريد_نتيجة_ريستور` | `sphinx.testing.fixtures.SharedResult.restore` |
 | `سفينكس_شاولد_اكتب` | `sphinx.builders.gettext.should_write` |
 | `سفينكس_شاولد_فلوش` | `sphinx.util.logging.MemoryHandler.shouldFlush` |
 | `سفينكس_شاولد_ولّد_وحدة_صفحة` | `sphinx.ext.viewcode.should_generate_module_page` |
@@ -3291,7 +3281,6 @@
 | `سفينكس_محلل_ضبط` | `sphinx.parsers.Parser.config` |
 | `سفينكس_محللات_إعداد` | `sphinx.parsers.setup` |
 | `سفينكس_محللات_محلل` | `sphinx.parsers.Parser` |
-| `سفينكس_مخزن` | `sphinx.testing.fixtures.SharedResult.store` |
 | `سفينكس_مخصص_ر_ST_ديسباتتشير` | `sphinx.util.docutils.CustomReSTDispatcher` |
 | `سفينكس_مخصص_ر_ST_ديسباتتشير_إنابل` | `sphinx.util.docutils.CustomReSTDispatcher.enable` |
 | `سفينكس_مخصص_ر_ST_ديسباتتشير_ديريكتيف` | `sphinx.util.docutils.CustomReSTDispatcher.directive` |
@@ -3788,7 +3777,7 @@
 | `سفينكس_ولّد_ماين` | `sphinx.ext.autosummary.generate.main` |
 | `سفينكس_يدعم` | `sphinx.writers.xml.PseudoXMLWriter.supports` |
 
-## الثوابت (876) — `SPHINX_EXT_CONSTS`
+## الثوابت (875) — `SPHINX_EXT_CONSTS`
 
 | العربي | Python |
 |--------|--------|
@@ -4474,7 +4463,6 @@
 | `سفينكس_سينتيريد_لديه_محتوى` | `sphinx.directives.other.Centered.has_content` |
 | `سفينكس_سينتينيل` | `sphinx.ext.napoleon.docstring.Deque.sentinel` |
 | `سفينكس_سينوبسيس` | `sphinx.domains.python.ModuleEntry.synopsis` |
-| `سفينكس_شاريد_نتيجة_ذاكرة_مؤقتة` | `sphinx.testing.fixtures.SharedResult.cache` |
 | `سفينكس_شورثاندوف` | `sphinx.builders.latex.SHORTHANDOFF` |
 | `سفينكس_شيفرة_أبتينال_أرجومينتس` | `sphinx.directives.patches.Code.optional_arguments` |
 | `سفينكس_شيفرة_خيار_مواصفة` | `sphinx.directives.patches.Code.option_spec` |

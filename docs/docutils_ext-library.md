@@ -1,6 +1,6 @@
 # مكتبة توسعة حزمة docutils: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى — `docutils_ext`
 
-**3,521 عنصراً عربياً** (الدوال: 2,824، الثوابت: 697).
+**3,520 عنصراً عربياً** (الدوال: 2,824، الثوابت: 696).
 
 ## الدوال (2,824) — `DOCUTILS_EXT_FUNCS`
 
@@ -2831,7 +2831,7 @@
 | `دوكوتيلس_وهيت_فضاء_ديتيكت` | `docutils.utils.math.math2html.WhiteSpace.detect` |
 | `دوكوتيلس_وهيتيسباس_نورماليز_اسم` | `docutils.nodes.whitespace_normalize_name` |
 
-## الثوابت (697) — `DOCUTILS_EXT_CONSTS`
+## الثوابت (696) — `DOCUTILS_EXT_CONSTS`
 
 | العربي | Python |
 |--------|--------|
@@ -3409,7 +3409,6 @@
 | `دوكوتيلس_كولسبيك_فاليد_سمات` | `docutils.nodes.colspec.valid_attributes` |
 | `دوكوتيلس_كومبينينج_دالة_كوماندماب` | `docutils.utils.math.math2html.CombiningFunction.commandmap` |
 | `دوكوتيلس_كومبينينجفونكتينس` | `docutils.utils.math.math2html.FormulaConfig.combiningfunctions` |
-| `دوكوتيلس_كونتينتس` | `docutils.writers.latex2e.PreambleCmds... contents` |
 | `دوكوتيلس_كونتينتس_أبتينال_أرجومينتس` | `docutils.parsers.rst.directives.parts.Contents.optional_arguments` |
 | `دوكوتيلس_كونتينتس_خيار_مواصفة` | `docutils.parsers.rst.directives.parts.Contents.option_spec` |
 | `دوكوتيلس_كونتينتس_فينال_أرجومينت_وهيتيسباس` | `docutils.parsers.rst.directives.parts.Contents.final_argument_whitespace` |

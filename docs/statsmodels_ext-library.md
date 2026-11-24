@@ -1,8 +1,8 @@
 # مكتبة توسعة حزمة statsmodels: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى — `statsmodels_ext`
 
-**5,182 عنصراً عربياً** (الدوال: 3,914، الثوابت: 1,268).
+**5,180 عنصراً عربياً** (الدوال: 3,912، الثوابت: 1,268).
 
-## الدوال (3,914) — `STATSMODELS_EXT_FUNCS`
+## الدوال (3,912) — `STATSMODELS_EXT_FUNCS`
 
 | العربي | Python |
 |--------|--------|
@@ -1421,7 +1421,6 @@
 | `ستاتسموديلس_بيتا_نموذج_هيسين` | `statsmodels.othermod.api.BetaModel.hessian` |
 | `ستاتسموديلس_بيتا_نموذج_هيسين_عامل` | `statsmodels.othermod.api.BetaModel.hessian_factor` |
 | `ستاتسموديلس_بيتيست_تيستير` | `statsmodels.base.PytestTester` |
-| `ستاتسموديلس_بيتيست_ورنس` | `statsmodels.compat.pytest.pytest_warns` |
 | `ستاتسموديلس_بيرتورب_معاملات` | `statsmodels.api.MICEData.perturb_params` |
 | `ستاتسموديلس_بيرفيكت_سيباراتين_تحذير` | `statsmodels.discrete.discrete_model.PerfectSeparationWarning` |
 | `ستاتسموديلس_بيرفيكت_سيباراتين_خطأ` | `statsmodels.discrete.discrete_model.PerfectSeparationError` |
@@ -3134,7 +3133,6 @@
 | `ستاتسموديلس_كيرنيل_كدف_وبول` | `statsmodels.nonparametric.kernels_asymmetric.kernel_cdf_weibull` |
 | `ستاتسموديلس_كيرنيل_متغير` | `statsmodels.sandbox.nonparametric.kernels.CustomKernel.kernel_var` |
 | `ستاتسموديلس_كيم_سموثير_نتائج` | `statsmodels.tsa.regime_switching.markov_switching.KimSmootherResults` |
-| `ستاتسموديلس_لا_ورنينجس_تشيكير` | `statsmodels.compat.pytest.NoWarningsChecker` |
 | `ستاتسموديلس_لاج_إنديسيس` | `statsmodels.tools.grouputils.GroupSorted.lag_indices` |
 | `ستاتسموديلس_لاج_ترتيب_نتائج` | `statsmodels.tsa.vector_ar.var_model.LagOrderResults` |
 | `ستاتسموديلس_لاج_ترتيب_نتائج_سوماري` | `statsmodels.tsa.vector_ar.var_model.LagOrderResults.summary` |

@@ -1006,7 +1006,6 @@ SPHINX_EXT_FUNCS = {
     "سفينكس_بيبليجرافي_حوّل": "sphinx.builders.latex.transforms.BibliographyTransform",
     "سفينكس_بيبليجرافي_حوّل_شغّل": "sphinx.builders.latex.transforms.BibliographyTransform.run",
     "سفينكس_بيتوين": "sphinx.ext.autodoc.between",
-    "سفينكس_بيتيست_كونفيجور": "sphinx.testing.fixtures.pytest_configure",
     "سفينكس_بيجمينتس_بريدج": "sphinx.highlighting.PygmentsBridge",
     "سفينكس_بيراميد_نمط": "sphinx.pygments_styles.PyramidStyle",
     "سفينكس_بيكود_خطأ": "sphinx.errors.PycodeError",
@@ -2092,13 +2091,6 @@ SPHINX_EXT_FUNCS = {
     "سفينكس_سفينكس_إميت": "sphinx.application.Sphinx.emit",
     "سفينكس_سفينكس_إميت_فيرستريسولت": "sphinx.application.Sphinx.emit_firstresult",
     "سفينكس_سفينكس_اتصل": "sphinx.application.Sphinx.connect",
-    "سفينكس_سفينكس_اختبار_تطبيق": "sphinx.testing.fixtures.SphinxTestApp",
-    "سفينكس_سفينكس_اختبار_تطبيق_بولد": "sphinx.testing.fixtures.SphinxTestApp.build",
-    "سفينكس_سفينكس_اختبار_تطبيق_تحذير": "sphinx.testing.fixtures.SphinxTestApp.warning",
-    "سفينكس_سفينكس_اختبار_تطبيق_ستاتوس": "sphinx.testing.fixtures.SphinxTestApp.status",
-    "سفينكس_سفينكس_اختبار_تطبيق_غلاف_لأجل_سكيب_بولدينج": "sphinx.testing.fixtures.SphinxTestAppWrapperForSkipBuilding",
-    "سفينكس_سفينكس_اختبار_تطبيق_غلاف_لأجل_سكيب_بولدينج_بولد": "sphinx.testing.fixtures.SphinxTestAppWrapperForSkipBuilding.build",
-    "سفينكس_سفينكس_اختبار_تطبيق_كلينوب": "sphinx.testing.fixtures.SphinxTestApp.cleanup",
     "سفينكس_سفينكس_باراليل_خطأ": "sphinx.errors.SphinxParallelError",
     "سفينكس_سفينكس_بريلود_بنّاء": "sphinx.application.Sphinx.preload_builder",
     "سفينكس_سفينكس_بوست_حوّل": "sphinx.builders.linkcheck.SphinxPostTransform",
@@ -2441,8 +2433,6 @@ SPHINX_EXT_FUNCS = {
     "سفينكس_سيلسو": "sphinx.addnodes.seealso",
     "سفينكس_سينتيريد_شغّل": "sphinx.directives.other.Centered.run",
     "سفينكس_سينجليهتمل_إعداد": "sphinx.builders.singlehtml.setup",
-    "سفينكس_شاريد_نتيجة": "sphinx.testing.fixtures.SharedResult",
-    "سفينكس_شاريد_نتيجة_ريستور": "sphinx.testing.fixtures.SharedResult.restore",
     "سفينكس_شاولد_اكتب": "sphinx.builders.gettext.should_write",
     "سفينكس_شاولد_فلوش": "sphinx.util.logging.MemoryHandler.shouldFlush",
     "سفينكس_شاولد_ولّد_وحدة_صفحة": "sphinx.ext.viewcode.should_generate_module_page",
@@ -3295,7 +3285,6 @@ SPHINX_EXT_FUNCS = {
     "سفينكس_محلل_ضبط": "sphinx.parsers.Parser.config",
     "سفينكس_محللات_إعداد": "sphinx.parsers.setup",
     "سفينكس_محللات_محلل": "sphinx.parsers.Parser",
-    "سفينكس_مخزن": "sphinx.testing.fixtures.SharedResult.store",
     "سفينكس_مخصص_ر_ST_ديسباتتشير": "sphinx.util.docutils.CustomReSTDispatcher",
     "سفينكس_مخصص_ر_ST_ديسباتتشير_إنابل": "sphinx.util.docutils.CustomReSTDispatcher.enable",
     "سفينكس_مخصص_ر_ST_ديسباتتشير_ديريكتيف": "sphinx.util.docutils.CustomReSTDispatcher.directive",
@@ -4476,7 +4465,6 @@ SPHINX_EXT_CONSTS = {
     "سفينكس_سينتيريد_لديه_محتوى": "sphinx.directives.other.Centered.has_content",
     "سفينكس_سينتينيل": "sphinx.ext.napoleon.docstring.Deque.sentinel",
     "سفينكس_سينوبسيس": "sphinx.domains.python.ModuleEntry.synopsis",
-    "سفينكس_شاريد_نتيجة_ذاكرة_مؤقتة": "sphinx.testing.fixtures.SharedResult.cache",
     "سفينكس_شورثاندوف": "sphinx.builders.latex.SHORTHANDOFF",
     "سفينكس_شيفرة_أبتينال_أرجومينتس": "sphinx.directives.patches.Code.optional_arguments",
     "سفينكس_شيفرة_خيار_مواصفة": "sphinx.directives.patches.Code.option_spec",
@@ -4672,7 +4660,7 @@ SPHINX_EXT_CONSTS = {
     "سفينكس_وصف_نوع_معامل_قائمة_تشيلد_نص_سيباراتور": "sphinx.addnodes.desc_type_parameter_list.child_text_separator",
 }
 
-IMPORT_MODULES = ['sphinx.addnodes', 'sphinx.application', 'sphinx.builders', 'sphinx.builders.changes', 'sphinx.builders.dirhtml', 'sphinx.builders.dummy', 'sphinx.builders.epub3', 'sphinx.builders.gettext', 'sphinx.builders.html', 'sphinx.builders.latex', 'sphinx.builders.latex.constants', 'sphinx.builders.latex.nodes', 'sphinx.builders.latex.theming', 'sphinx.builders.latex.transforms', 'sphinx.builders.linkcheck', 'sphinx.builders.manpage', 'sphinx.builders.singlehtml', 'sphinx.builders.texinfo', 'sphinx.builders.text', 'sphinx.builders.xml', 'sphinx.cmd.build', 'sphinx.cmd.make_mode', 'sphinx.cmd.quickstart', 'sphinx.config', 'sphinx.deprecation', 'sphinx.directives', 'sphinx.directives.admonitions', 'sphinx.directives.code', 'sphinx.directives.other', 'sphinx.directives.patches', 'sphinx.domains', 'sphinx.domains.c', 'sphinx.domains.changeset', 'sphinx.domains.citation', 'sphinx.domains.cpp', 'sphinx.domains.index', 'sphinx.domains.javascript', 'sphinx.domains.math', 'sphinx.domains.python', 'sphinx.domains.rst', 'sphinx.domains.std', 'sphinx.environment', 'sphinx.environment.adapters.toctree', 'sphinx.environment.collectors', 'sphinx.environment.collectors.asset', 'sphinx.environment.collectors.dependencies', 'sphinx.environment.collectors.metadata', 'sphinx.environment.collectors.title', 'sphinx.environment.collectors.toctree', 'sphinx.errors', 'sphinx.events', 'sphinx.ext.apidoc', 'sphinx.ext.autodoc', 'sphinx.ext.autodoc.directive', 'sphinx.ext.autodoc.importer', 'sphinx.ext.autodoc.mock', 'sphinx.ext.autodoc.preserve_defaults', 'sphinx.ext.autodoc.type_comment', 'sphinx.ext.autodoc.typehints', 'sphinx.ext.autosectionlabel', 'sphinx.ext.autosummary', 'sphinx.ext.autosummary.generate', 'sphinx.ext.coverage', 'sphinx.ext.doctest', 'sphinx.ext.duration', 'sphinx.ext.extlinks', 'sphinx.ext.githubpages', 'sphinx.ext.graphviz', 'sphinx.ext.ifconfig', 'sphinx.ext.imgconverter', 'sphinx.ext.imgmath', 'sphinx.ext.inheritance_diagram', 'sphinx.ext.intersphinx', 'sphinx.ext.linkcode', 'sphinx.ext.mathjax', 'sphinx.ext.napoleon', 'sphinx.ext.napoleon.docstring', 'sphinx.ext.todo', 'sphinx.ext.viewcode', 'sphinx.extension', 'sphinx.highlighting', 'sphinx.io', 'sphinx.jinja2glue', 'sphinx.locale', 'sphinx.parsers', 'sphinx.project', 'sphinx.pycode', 'sphinx.pycode.ast', 'sphinx.pycode.parser', 'sphinx.pygments_styles', 'sphinx.registry', 'sphinx.roles', 'sphinx.search', 'sphinx.search.da', 'sphinx.search.de', 'sphinx.search.es', 'sphinx.search.fi', 'sphinx.search.fr', 'sphinx.search.hu', 'sphinx.search.it', 'sphinx.search.ja', 'sphinx.search.nl', 'sphinx.search.no', 'sphinx.search.pt', 'sphinx.search.ro', 'sphinx.search.ru', 'sphinx.search.sv', 'sphinx.search.tr', 'sphinx.search.zh', 'sphinx.testing.fixtures', 'sphinx.testing.restructuredtext', 'sphinx.testing.util', 'sphinx.theming', 'sphinx.transforms', 'sphinx.transforms.compact_bullet_list', 'sphinx.transforms.i18n', 'sphinx.transforms.post_transforms', 'sphinx.transforms.post_transforms.code', 'sphinx.transforms.post_transforms.images', 'sphinx.transforms.references', 'sphinx.util', 'sphinx.util.cfamily', 'sphinx.util.console', 'sphinx.util.display', 'sphinx.util.docstrings', 'sphinx.util.docutils', 'sphinx.util.http_date', 'sphinx.util.i18n', 'sphinx.util.images', 'sphinx.util.inspect', 'sphinx.util.inventory', 'sphinx.util.logging', 'sphinx.util.matching', 'sphinx.util.nodes', 'sphinx.util.osutil', 'sphinx.util.png', 'sphinx.util.requests', 'sphinx.util.rst', 'sphinx.util.tags', 'sphinx.util.template', 'sphinx.util.texescape', 'sphinx.util.typing', 'sphinx.versioning', 'sphinx.writers.html5', 'sphinx.writers.latex', 'sphinx.writers.texinfo', 'sphinx.writers.text', 'sphinx.writers.xml']
+IMPORT_MODULES = ['sphinx.addnodes', 'sphinx.application', 'sphinx.builders', 'sphinx.builders.changes', 'sphinx.builders.dirhtml', 'sphinx.builders.dummy', 'sphinx.builders.epub3', 'sphinx.builders.gettext', 'sphinx.builders.html', 'sphinx.builders.latex', 'sphinx.builders.latex.constants', 'sphinx.builders.latex.nodes', 'sphinx.builders.latex.theming', 'sphinx.builders.latex.transforms', 'sphinx.builders.linkcheck', 'sphinx.builders.manpage', 'sphinx.builders.singlehtml', 'sphinx.builders.texinfo', 'sphinx.builders.text', 'sphinx.builders.xml', 'sphinx.cmd.build', 'sphinx.cmd.make_mode', 'sphinx.cmd.quickstart', 'sphinx.config', 'sphinx.deprecation', 'sphinx.directives', 'sphinx.directives.admonitions', 'sphinx.directives.code', 'sphinx.directives.other', 'sphinx.directives.patches', 'sphinx.domains', 'sphinx.domains.c', 'sphinx.domains.changeset', 'sphinx.domains.citation', 'sphinx.domains.cpp', 'sphinx.domains.index', 'sphinx.domains.javascript', 'sphinx.domains.math', 'sphinx.domains.python', 'sphinx.domains.rst', 'sphinx.domains.std', 'sphinx.environment', 'sphinx.environment.adapters.toctree', 'sphinx.environment.collectors', 'sphinx.environment.collectors.asset', 'sphinx.environment.collectors.dependencies', 'sphinx.environment.collectors.metadata', 'sphinx.environment.collectors.title', 'sphinx.environment.collectors.toctree', 'sphinx.errors', 'sphinx.events', 'sphinx.ext.apidoc', 'sphinx.ext.autodoc', 'sphinx.ext.autodoc.directive', 'sphinx.ext.autodoc.importer', 'sphinx.ext.autodoc.mock', 'sphinx.ext.autodoc.preserve_defaults', 'sphinx.ext.autodoc.type_comment', 'sphinx.ext.autodoc.typehints', 'sphinx.ext.autosectionlabel', 'sphinx.ext.autosummary', 'sphinx.ext.autosummary.generate', 'sphinx.ext.coverage', 'sphinx.ext.doctest', 'sphinx.ext.duration', 'sphinx.ext.extlinks', 'sphinx.ext.githubpages', 'sphinx.ext.graphviz', 'sphinx.ext.ifconfig', 'sphinx.ext.imgconverter', 'sphinx.ext.imgmath', 'sphinx.ext.inheritance_diagram', 'sphinx.ext.intersphinx', 'sphinx.ext.linkcode', 'sphinx.ext.mathjax', 'sphinx.ext.napoleon', 'sphinx.ext.napoleon.docstring', 'sphinx.ext.todo', 'sphinx.ext.viewcode', 'sphinx.extension', 'sphinx.highlighting', 'sphinx.io', 'sphinx.jinja2glue', 'sphinx.locale', 'sphinx.parsers', 'sphinx.project', 'sphinx.pycode', 'sphinx.pycode.ast', 'sphinx.pycode.parser', 'sphinx.pygments_styles', 'sphinx.registry', 'sphinx.roles', 'sphinx.search', 'sphinx.search.da', 'sphinx.search.de', 'sphinx.search.es', 'sphinx.search.fi', 'sphinx.search.fr', 'sphinx.search.hu', 'sphinx.search.it', 'sphinx.search.ja', 'sphinx.search.nl', 'sphinx.search.no', 'sphinx.search.pt', 'sphinx.search.ro', 'sphinx.search.ru', 'sphinx.search.sv', 'sphinx.search.tr', 'sphinx.search.zh', 'sphinx.testing.restructuredtext', 'sphinx.testing.util', 'sphinx.theming', 'sphinx.transforms', 'sphinx.transforms.compact_bullet_list', 'sphinx.transforms.i18n', 'sphinx.transforms.post_transforms', 'sphinx.transforms.post_transforms.code', 'sphinx.transforms.post_transforms.images', 'sphinx.transforms.references', 'sphinx.util', 'sphinx.util.cfamily', 'sphinx.util.console', 'sphinx.util.display', 'sphinx.util.docstrings', 'sphinx.util.docutils', 'sphinx.util.http_date', 'sphinx.util.i18n', 'sphinx.util.images', 'sphinx.util.inspect', 'sphinx.util.inventory', 'sphinx.util.logging', 'sphinx.util.matching', 'sphinx.util.nodes', 'sphinx.util.osutil', 'sphinx.util.png', 'sphinx.util.requests', 'sphinx.util.rst', 'sphinx.util.tags', 'sphinx.util.template', 'sphinx.util.texescape', 'sphinx.util.typing', 'sphinx.versioning', 'sphinx.writers.html5', 'sphinx.writers.latex', 'sphinx.writers.texinfo', 'sphinx.writers.text', 'sphinx.writers.xml']
 IMPORT_CHECK = r"(?<![\w.])(?:sphinx)\."
 IMPORT_STATEMENT = "import " + ", ".join(IMPORT_MODULES)
 

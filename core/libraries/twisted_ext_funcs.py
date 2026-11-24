@@ -7430,7 +7430,6 @@ TWISTED_EXT_CONSTS = {
     "توستيد_ريكتور_سيليكتين_خليط_كومب_بيانات": "twisted.application.app.ReactorSelectionMixin.compData",
     "توستيد_ريكف_سطر_عرض": "twisted.conch.recvline.RecvLine.width",
     "توستيد_ريكف_سطر_هيغت": "twisted.conch.recvline.RecvLine.height",
-    "توستيد_ريكفد": "twisted.protocols.basic.IntNStringReceiver.recvd",
     "توستيد_ريكونيكتينج_عميل_مصنع_ديلاي": "twisted.internet.protocol.ReconnectingClientFactory.delay",
     "توستيد_ريكونيكتينج_عميل_مصنع_عامل": "twisted.internet.protocol.ReconnectingClientFactory.factor",
     "توستيد_ريكونيكتينج_عميل_مصنع_كلوك": "twisted.internet.protocol.ReconnectingClientFactory.clock",

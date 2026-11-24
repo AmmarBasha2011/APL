@@ -70,21 +70,21 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | `pygdeep` | 9078 | تلوين الشيفرة العميق: كل المُحلّلات والمُنسّقات والأنماط (pygments) |
 | `sympy_ext` | 20217 | توسعة حزمة sympy: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى |
 | `plotly_ext` | 11595 | توسعة حزمة plotly: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى |
-| `sqlalchemy_ext` | 8465 | توسعة حزمة sqlalchemy: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى |
-| `twisted_ext` | 8145 | توسعة حزمة twisted: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى |
+| `sqlalchemy_ext` | 8440 | توسعة حزمة sqlalchemy: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى |
+| `twisted_ext` | 8144 | توسعة حزمة twisted: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى |
 | `astropy_ext` | 6591 | توسعة حزمة astropy: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى |
-| `statsmodels_ext` | 5182 | توسعة حزمة statsmodels: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى |
+| `statsmodels_ext` | 5180 | توسعة حزمة statsmodels: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى |
 | `bokeh_ext` | 4955 | توسعة حزمة bokeh: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى |
-| `sphinx_ext` | 4657 | توسعة حزمة sphinx: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى |
+| `sphinx_ext` | 4645 | توسعة حزمة sphinx: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى |
 | `nltk_ext` | 4603 | توسعة حزمة nltk: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى |
-| `openpyxl_ext` | 4574 | توسعة حزمة openpyxl: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى |
+| `openpyxl_ext` | 4404 | توسعة حزمة openpyxl: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى |
 | `pandas_ext` | 4312 | توسعة حزمة pandas: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى |
-| `crypto_ext` | 4112 | توسعة حزمة Crypto: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى |
+| `crypto_ext` | 740 | توسعة حزمة Crypto: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى |
 | `matplotlib_ext` | 4035 | توسعة حزمة matplotlib: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى |
-| `docutils_ext` | 3521 | توسعة حزمة docutils: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى |
+| `docutils_ext` | 3520 | توسعة حزمة docutils: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى |
 | `cv2_ext` | 3298 | توسعة حزمة cv2: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى |
-| `pkgs_ext1` | 20999 | حزم متنوعة موسّعة (selenium / dask / xarray / pyarrow / sklearn / gevent / cdp_use / mpmath / networkx / botocore / jedi / aiohttp / telegram / markdown_it) |
-| `pkgs_ext2` | 19480 | حزم متنوعة موسّعة (scrapy / prompt_toolkit / lxml / hypothesis / peewee / arrow / alembic / rich / trio / paramiko / h5py / cryptography / pyasn1 / skimage / yaml / seaborn / pyparsing / bs4 / shapely / babel / redis / pendulum / mako / nacl / typer / google / PIL / kombu / marshmallow / requests / sqlparse / celery / packaging / six / httpx / jinja2 / acp / regex / uvicorn / websockets / markdown / tornado / anyio / httplib2 / pygments / cffi / click / fastapi / httpcore / googleapiclient / tqdm / starlette / dateutil / pydantic / attr / jsonschema / multidict / numpy / scipy) |
+| `pkgs_ext1` | 20830 | حزم متنوعة موسّعة (selenium / dask / xarray / pyarrow / sklearn / gevent / cdp_use / mpmath / networkx / botocore / jedi / aiohttp / telegram / markdown_it) |
+| `pkgs_ext2` | 19303 | حزم متنوعة موسّعة (scrapy / prompt_toolkit / lxml / hypothesis / peewee / arrow / alembic / rich / trio / paramiko / h5py / cryptography / pyasn1 / skimage / yaml / seaborn / pyparsing / bs4 / shapely / babel / redis / pendulum / mako / nacl / typer / google / PIL / kombu / marshmallow / requests / sqlparse / celery / packaging / six / httpx / jinja2 / acp / regex / uvicorn / websockets / markdown / tornado / anyio / httplib2 / pygments / cffi / click / fastapi / httpcore / googleapiclient / tqdm / starlette / dateutil / pydantic / attr / jsonschema / multidict / numpy / scipy) |
 | `webdeep` | 1778 | الويب العميق: أطر وخوادم وبروتوكولات (fastapi / starlette / tornado / websockets) |
 | `datadeep` | 2435 | النماذج والتحقق العميق: مخططات وأنواع وتحقق (pydantic / jsonschema) |
 | `mediadeep` | 3406 | الصور والنصوص العميقة: صور وماركداون وقوالب وسطر أوامر (PIL / markdown / jinja2) |
@@ -137,11 +137,11 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | `getpass` | 2 | إدخال كلمات السر دون إظهارها |
 | `pprint` | 2 | طباعة منسّقة للقواميس والقوائم |
 
-**الإجمالي: 214,975 عنصراً في 91 مكتبة** (214,960 مفتاحاً فريداً بعد إزالة التكرار).
+**الإجمالي: 211,046 عنصراً في 91 مكتبة** (211,031 مفتاحاً فريداً بعد إزالة التكرار).
 
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
-في `core/apl_runner/patterns.py`، فيصبح عدد العناصر العربية الفريدة في اللغة **215,191 عنصراً**.
+في `core/apl_runner/patterns.py`، فيصبح عدد العناصر العربية الفريدة في اللغة **211,262 عنصراً**.
 
 ## الأمثلة
 
@@ -966,7 +966,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 214,975 عنصراً عربياً — 91 مكتبة — 596 مثالاً
+**الإصدار:** APL v1.13 — 211,046 عنصراً عربياً — 91 مكتبة — 596 مثالاً
 
 ## Language platform tools
 

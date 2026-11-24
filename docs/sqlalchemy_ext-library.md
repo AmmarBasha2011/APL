@@ -1,8 +1,8 @@
 # مكتبة توسعة حزمة sqlalchemy: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى — `sqlalchemy_ext`
 
-**8,465 عنصراً عربياً** (الدوال: 6,530، الثوابت: 1,935).
+**8,440 عنصراً عربياً** (الدوال: 6,505، الثوابت: 1,935).
 
-## الدوال (6,530) — `SQLALCHEMY_EXT_FUNCS`
+## الدوال (6,505) — `SQLALCHEMY_EXT_FUNCS`
 
 | العربي | Python |
 |--------|--------|
@@ -313,7 +313,6 @@
 | `سقلالتشيمي_UOW_ترانساكتين_إكسيكوت` | `sqlalchemy.orm.UOWTransaction.execute` |
 | `سقلالتشيمي_UUID` | `sqlalchemy.UUID` |
 | `سقلالتشيمي_UUID_كيّف_إمولاتيد_إلى_ناتيف` | `sqlalchemy.UUID.adapt_emulated_to_native` |
-| `سقلالتشيمي_X_ديست_هوكس` | `sqlalchemy.testing.plugin.pytestplugin.XDistHooks` |
 | `سقلالتشيمي_YEAR` | `sqlalchemy.dialects.mysql.YEAR` |
 | `سقلالتشيمي_أبجيكت` | `sqlalchemy.orm.InstanceState.object` |
 | `سقلالتشيمي_أبجيكت_أسوسيتين_وكيل_نسخة` | `sqlalchemy.ext.associationproxy.ObjectAssociationProxyInstance` |
@@ -2715,30 +2714,6 @@
 | `سقلالتشيمي_بيتوس_و_عملية` | `sqlalchemy.sql.operators.bitwise_and_op` |
 | `سقلالتشيمي_بيتوين_2` | `sqlalchemy.between` |
 | `سقلالتشيمي_بيتوين_عملية` | `sqlalchemy.sql.operators.between_op` |
-| `سقلالتشيمي_بيتيست_أدوبتين` | `sqlalchemy.testing.plugin.pytestplugin.pytest_addoption` |
-| `سقلالتشيمي_بيتيست_أنكونفيجور` | `sqlalchemy.testing.plugin.pytestplugin.pytest_unconfigure` |
-| `سقلالتشيمي_بيتيست_اصنع_باراميتريز_معرّف` | `sqlalchemy.testing.plugin.pytestplugin.pytest_make_parametrize_id` |
-| `سقلالتشيمي_بيتيست_بيكوليكت_ماكيتيم` | `sqlalchemy.testing.plugin.pytestplugin.pytest_pycollect_makeitem` |
-| `سقلالتشيمي_بيتيست_تيستنوديدون` | `sqlalchemy.testing.plugin.pytestplugin.XDistHooks.pytest_testnodedown` |
-| `سقلالتشيمي_بيتيست_رونتيست_إعداد` | `sqlalchemy.testing.plugin.pytestplugin.pytest_runtest_setup` |
-| `سقلالتشيمي_بيتيست_رونتيست_استدعِ` | `sqlalchemy.testing.plugin.pytestplugin.pytest_runtest_call` |
-| `سقلالتشيمي_بيتيست_رونتيست_تيردون` | `sqlalchemy.testing.plugin.pytestplugin.pytest_runtest_teardown` |
-| `سقلالتشيمي_بيتيست_رونتيست_لوجريبورت` | `sqlalchemy.testing.plugin.pytestplugin.pytest_runtest_logreport` |
-| `سقلالتشيمي_بيتيست_سيسينستارت` | `sqlalchemy.testing.plugin.pytestplugin.pytest_sessionstart` |
-| `سقلالتشيمي_بيتيست_سيسينفينيش` | `sqlalchemy.testing.plugin.pytestplugin.pytest_sessionfinish` |
-| `سقلالتشيمي_بيتيست_فيكستور_دوال` | `sqlalchemy.testing.plugin.pytestplugin.PytestFixtureFunctions` |
-| `سقلالتشيمي_بيتيست_فيكستور_دوال_أضف_إلى_علامة` | `sqlalchemy.testing.plugin.pytestplugin.PytestFixtureFunctions.add_to_marker` |
-| `سقلالتشيمي_بيتيست_فيكستور_دوال_احصل_كورينت_اختبار_اسم` | `sqlalchemy.testing.plugin.pytestplugin.PytestFixtureFunctions.get_current_test_name` |
-| `سقلالتشيمي_بيتيست_فيكستور_دوال_سكيب_اختبار_استثناء` | `sqlalchemy.testing.plugin.pytestplugin.PytestFixtureFunctions.skip_test_exception` |
-| `سقلالتشيمي_بيتيست_فيكستور_دوال_غير_متزامن_اختبار` | `sqlalchemy.testing.plugin.pytestplugin.PytestFixtureFunctions.async_test` |
-| `سقلالتشيمي_بيتيست_فيكستور_دوال_فيكستور` | `sqlalchemy.testing.plugin.pytestplugin.PytestFixtureFunctions.fixture` |
-| `سقلالتشيمي_بيتيست_فيكستور_دوال_كومبيناتينس` | `sqlalchemy.testing.plugin.pytestplugin.PytestFixtureFunctions.combinations` |
-| `سقلالتشيمي_بيتيست_فيكستور_دوال_مارك_أساس_اختبار_صنف` | `sqlalchemy.testing.plugin.pytestplugin.PytestFixtureFunctions.mark_base_test_class` |
-| `سقلالتشيمي_بيتيست_فيكستور_دوال_معامل_إدينت` | `sqlalchemy.testing.plugin.pytestplugin.PytestFixtureFunctions.param_ident` |
-| `سقلالتشيمي_بيتيست_كونفيجور` | `sqlalchemy.testing.plugin.pytestplugin.pytest_configure` |
-| `سقلالتشيمي_بيتيست_كونفيجور_عقدة` | `sqlalchemy.testing.plugin.pytestplugin.XDistHooks.pytest_configure_node` |
-| `سقلالتشيمي_بيتيست_مجموعة_فينيش` | `sqlalchemy.testing.plugin.pytestplugin.pytest_collection_finish` |
-| `سقلالتشيمي_بيتيست_مجموعة_موديفيتيمس` | `sqlalchemy.testing.plugin.pytestplugin.pytest_collection_modifyitems` |
 | `سقلالتشيمي_بيج_صحيح` | `sqlalchemy.BigInteger` |
 | `سقلالتشيمي_بيجينت_2` | `sqlalchemy.BIGINT` |
 | `سقلالتشيمي_بير_مابير` | `sqlalchemy.orm.context.PathRegistry.per_mapper` |
