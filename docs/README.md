@@ -106,9 +106,9 @@
 | 96 | [pkgs_ext2-library.md](pkgs_ext2-library.md) | مكتبة `pkgs_ext2` — حزم متنوعة موسّعة (scrapy / prompt_toolkit / lxml / hypothesis / peewee / arrow / alembic / rich / trio / paramiko / h5py / cryptography / pyasn1 / skimage / yaml / seaborn / pyparsing / bs4 / shapely / babel / redis / pendulum / mako / nacl / typer / google / PIL / kombu / marshmallow / requests / sqlparse / celery / packaging / six / httpx / jinja2 / acp / regex / uvicorn / websockets / markdown / tornado / anyio / httplib2 / pygments / cffi / click / fastapi / httpcore / googleapiclient / tqdm / starlette / dateutil / pydantic / attr / jsonschema / multidict / numpy / scipy) (19,295 عنصراً) |
 
 ---
-## الأمثلة الجاهزة (764 مثالاً)
+## الأمثلة الجاهزة (788 مثالاً)
 
-740 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+788 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -876,6 +876,30 @@
 | 762 | [`762-upgma-tree.apl`](../examples/762-upgma-tree.apl) | شجرة تطور من مصفوفة مسافات |
 | 763 | [`763-boggle-solver.apl`](../examples/763-boggle-solver.apl) | كلمات من شبكة حروف متجاورة |
 | 764 | [`764-fft-butterfly-lite.apl`](../examples/764-fft-butterfly-lite.apl) | تحويل فورييه السريع يدوياً |
+| 765 | [`765-rc4-cipher.apl`](../examples/765-rc4-cipher.apl) | تشفير تدفقي بجدول تبديل 256 بايت |
+| 766 | [`766-tea-cipher.apl`](../examples/766-tea-cipher.apl) | شبكة فيستل صغيرة بمفتاح 128-بت |
+| 767 | [`767-affine-cipher.apl`](../examples/767-affine-cipher.apl) | شفرة أحادية الأبجدية الخطية |
+| 768 | [`768-hill-cipher.apl`](../examples/768-hill-cipher.apl) | تشفير أزواج الحروف بمصفوفة |
+| 769 | [`769-sha1-manual.apl`](../examples/769-sha1-manual.apl) | بناء SHA-1 من المواصفة |
+| 770 | [`770-poly1305-lite.apl`](../examples/770-poly1305-lite.apl) | مصادقة رسائل (RFC 8439) |
+| 771 | [`771-bech32-lite.apl`](../examples/771-bech32-lite.apl) | ترميز BIP 173 مع مجموع تحقق |
+| 772 | [`772-fibonacci-coding.apl`](../examples/772-fibonacci-coding.apl) | شفرة أعداد ذاتية الفصل |
+| 773 | [`773-elias-gamma.apl`](../examples/773-elias-gamma.apl) | شفرة عالمية للأعداد الصحيحة |
+| 774 | [`774-natural-sort.apl`](../examples/774-natural-sort.apl) | img2 يأتي قبل img10 |
+| 775 | [`775-fuzzy-search.apl`](../examples/775-fuzzy-search.apl) | ترتيب مرشحين بأسلوب fzf |
+| 776 | [`776-bm25-lite.apl`](../examples/776-bm25-lite.apl) | ترتيب مستندات لاستعلام بحث |
+| 777 | [`777-plural-ar.apl`](../examples/777-plural-ar.apl) | صيغ العدد: مفرد ومثنى وجمع |
+| 778 | [`778-needleman-wunsch.apl`](../examples/778-needleman-wunsch.apl) | محاذاة تسلسلين من الطرف للطرف |
+| 779 | [`779-forth-lite.apl`](../examples/779-forth-lite.apl) | مفسر لغة مكدسية مصغر |
+| 780 | [`780-turing-machine.apl`](../examples/780-turing-machine.apl) | محاكاة آلة تورينغ: جمع أحادي |
+| 781 | [`781-l-system.apl`](../examples/781-l-system.apl) | توليد نصوص الطحالب وكوخ |
+| 782 | [`782-magic-square.apl`](../examples/782-magic-square.apl) | مربعات سحرية فردية الرتبة |
+| 783 | [`783-dragon-curve.apl`](../examples/783-dragon-curve.apl) | متتالية منحنى التنين |
+| 784 | [`784-z-order-curve.apl`](../examples/784-z-order-curve.apl) | ترميز مورتون للإحداثيات |
+| 785 | [`785-turtle-graphics.apl`](../examples/785-turtle-graphics.apl) | رسم بأوامر F وR وL |
+| 786 | [`786-business-days.apl`](../examples/786-business-days.apl) | حساب أيام العمل مع العطلات |
+| 787 | [`787-ipv4-cidr.apl`](../examples/787-ipv4-cidr.apl) | تحليل عناوين وشبكات فرعية |
+| 788 | [`788-genetic-algorithm.apl`](../examples/788-genetic-algorithm.apl) | حل Ones-Max بالتطور الصناعي |
 
 **التشغيل:**
 ```bash
