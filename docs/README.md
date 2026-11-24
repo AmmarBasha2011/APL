@@ -77,9 +77,9 @@
 | 71 | [taskdeep-library.md](taskdeep-library.md) | مكتبة `taskdeep` — المهام الموزعة العميقة: طوابير ورسائل وجدولة ونتائج (celery / kombu / billiard / amqp) (18,041 عنصراً) |
 | 72 | [storedeep-library.md](storedeep-library.md) | مكتبة `storedeep` — التخزين العميق: كل أوامر وأنواع redis (redis-py) (24,593 عنصراً) |
 | 73 | [pygdeep-library.md](pygdeep-library.md) | مكتبة `pygdeep` — تلوين الشيفرة العميق: كل المُحلّلات والمُنسّقات والأنماط (pygments) (30,302 عنصراً) |
-| 74 | [webdeep-library.md](webdeep-library.md) | مكتبة `webdeep` — الويب العميق: أطر وخوادم وبروتوكولات (fastapi / starlette / tornado / websockets) (8,808 عنصراً) |
+| 74 | [webdeep-library.md](webdeep-library.md) | مكتبة `webdeep` — الويب العميق: أطر وخوادم وبروتوكولات (fastapi / starlette / tornado / websockets) (8,770 عنصراً) |
 | 75 | [datadeep-library.md](datadeep-library.md) | مكتبة `datadeep` — النماذج والتحقق العميق: مخططات وأنواع وتحقق (pydantic / jsonschema) (15,138 عنصراً) |
-| 76 | [mediadeep-library.md](mediadeep-library.md) | مكتبة `mediadeep` — الصور والنصوص العميقة: صور وماركداون وقوالب وسطر أوامر (PIL / markdown / jinja2) (12,071 عنصراً) |
+| 76 | [mediadeep-library.md](mediadeep-library.md) | مكتبة `mediadeep` — الصور والنصوص العميقة: صور وماركداون وقوالب وسطر أوامر (PIL / markdown / jinja2) (11,470 عنصراً) |
 | 77 | [secdeep-library.md](secdeep-library.md) | مكتبة `secdeep` — الأمان وسحابة جوجل العميقة: تشفير وتوكنات وواجهات API (cryptography / google) (6,190 عنصراً) |
 | 78 | [utildeep-library.md](utildeep-library.md) | مكتبة `utildeep` — الأدوات العميقة: تواريخ ومناطق ومراقبة وحزم مساعدة (dateutil / pytz / psutil) (1,160 عنصراً) |
 | 79 | [stdfull-library.md](stdfull-library.md) | مكتبة `stdfull` — المكتبة القياسية الشاملة: كل ما تبقى من وحدات Python القياسية (9,266 عنصراً) |
@@ -666,9 +666,9 @@ with open("ملف.txt") as f:
 | `taskdeep` | 18041 | المهام الموزعة العميقة: طوابير ورسائل وجدولة ونتائج (celery / kombu / billiard / amqp) |
 | `storedeep` | 24593 | التخزين العميق: كل أوامر وأنواع redis (redis-py) |
 | `pygdeep` | 30302 | تلوين الشيفرة العميق: كل المُحلّلات والمُنسّقات والأنماط (pygments) |
-| `webdeep` | 8808 | الويب العميق: أطر وخوادم وبروتوكولات (fastapi / starlette / tornado / websockets) |
+| `webdeep` | 8770 | الويب العميق: أطر وخوادم وبروتوكولات (fastapi / starlette / tornado / websockets) |
 | `datadeep` | 15138 | النماذج والتحقق العميق: مخططات وأنواع وتحقق (pydantic / jsonschema) |
-| `mediadeep` | 12071 | الصور والنصوص العميقة: صور وماركداون وقوالب وسطر أوامر (PIL / markdown / jinja2) |
+| `mediadeep` | 11470 | الصور والنصوص العميقة: صور وماركداون وقوالب وسطر أوامر (PIL / markdown / jinja2) |
 | `secdeep` | 6190 | الأمان وسحابة جوجل العميقة: تشفير وتوكنات وواجهات API (cryptography / google) |
 | `utildeep` | 1160 | الأدوات العميقة: تواريخ ومناطق ومراقبة وحزم مساعدة (dateutil / pytz / psutil) |
 | `stdfull` | 9235 | المكتبة القياسية الشاملة: كل ما تبقى من وحدات Python القياسية |
@@ -718,9 +718,9 @@ with open("ملف.txt") as f:
 | `getpass` | 2 | إدخال كلمات السر دون إظهارها |
 | `pprint` | 2 | طباعة منسّقة للقواميس والقوائم |
 
-**الإجمالي: 278,744 عنصراً في 74 مكتبة** (278,726 مفتاحاً فريداً بعد إزالة التكرار).
+**الإجمالي: 278,105 عنصراً في 74 مكتبة** (278,087 مفتاحاً فريداً بعد إزالة التكرار).
 
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
-في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **278,957 عنصراً**،
+في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **278,318 عنصراً**،
 مع **511 مثال جاهز** في `examples/`.
