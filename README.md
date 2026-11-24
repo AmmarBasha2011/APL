@@ -830,6 +830,8 @@ python benchmarks/run_benchmark.py --iterations 100000 --runs 10 --setup-runs 5 
 
 ## التوثيق الكامل
 
+🚀 **[دليل البداية](docs/getting-started.md)** — من التثبيت إلى أول برنامج
+
 📚 **[فهرس التوثيق](docs/README.md)** — مرجع كامل لكل التفاصيل
 
 ## المتطلبات
