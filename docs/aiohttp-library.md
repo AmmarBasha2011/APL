@@ -1,6 +1,6 @@
 # مكتبة الويب غير المتزامن — `aiohttp`
 
-**15,592 عنصراً عربياً** (الدوال: 1,253، دوال الكائنات: 7,190، الخصائص: 3,711، الثوابت: 3,438).
+**15,590 عنصراً عربياً** (الدوال: 1,252، دوال الكائنات: 7,190، الخصائص: 3,711، الثوابت: 3,437).
 
 ## الدوال (1,253) — `AIOH_FUNCS`
 
@@ -803,7 +803,6 @@
 | `أيو_إتش_تي_تي_بي_ويب_اطلب_تدفق_استجابة` | `aiohttp.web_request.StreamResponse` |
 | `أيو_إتش_تي_تي_بي_ويب_اطلب_تدفق_قارئ` | `aiohttp.web_request.StreamReader` |
 | `أيو_إتش_تي_تي_بي_ويب_اطلب_حلل_HTTP_تاريخ` | `aiohttp.web_request.parse_http_date` |
-| `أيو_إتش_تي_تي_بي_ويب_اطلب_حلل_QSL` | `aiohttp.web_request.parse_qsl` |
 | `أيو_إتش_تي_تي_بي_ويب_اطلب_حلل_ملف_تعريف_رأس` | `aiohttp.web_request.parse_cookie_header` |
 | `أيو_إتش_تي_تي_بي_ويب_اطلب_حوّل_نوع` | `aiohttp.web_request.cast` |
 | `أيو_إتش_تي_تي_بي_ويب_اطلب_خريطة` | `aiohttp.web_request.Mapping` |
@@ -14675,7 +14674,6 @@
 | `أيو_إتش_تي_تي_بي_ويب_بروتوكول_مسجّل_جذر` | `aiohttp.web_protocol.Logger.root` |
 | `أيو_إتش_تي_تي_بي_ويب_بروتوكول_مسجّل_مدير` | `aiohttp.web_protocol.Logger.manager` |
 | `أيو_إتش_تي_تي_بي_ويب_بروتوكول_نوع_فحص` | `aiohttp.web_protocol.TYPE_CHECKING` |
-| `أيو_إتش_تي_تي_بي_ويب_بروتوكول_وقفة_استئناف_قراءة_أخطاء` | `aiohttp.web_protocol.PAUSE_RESUME_READING_ERRORS` |
 | `أيو_إتش_تي_تي_بي_ويب_تحقق_من_الوصول_مسجّل_2_2` | `aiohttp.web.access_logger` |
 | `أيو_إتش_تي_تي_بي_ويب_تحقق_من_الوصول_مسجّل_سجّل_تنسيق` | `aiohttp.web.AccessLogger.log_format` |
 | `أيو_إتش_تي_تي_بي_ويب_تحقق_من_الوصول_مسجّل_سجّل_تنسيق_2` | `aiohttp.web_log.AccessLogger.LOG_FORMAT` |

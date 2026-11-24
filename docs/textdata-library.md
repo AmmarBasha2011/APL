@@ -1,6 +1,6 @@
 # مكتبة النصوص والبيانات — `textdata`
 
-**5,492 عنصراً عربياً** (الدوال: 808، دوال الكائنات: 2,808، الخصائص: 657، الثوابت: 1,219).
+**5,481 عنصراً عربياً** (الدوال: 800، دوال الكائنات: 2,808، الخصائص: 657، الثوابت: 1,216).
 
 ## الدوال (808) — `TEXT_FUNCS`
 
@@ -10,7 +10,6 @@
 | `API_مفتاح` | `fastapi.openapi.models.APIKey` |
 | `API_موجّه` | `fastapi.APIRouter` |
 | `C_مجمّد_قائمة` | `frozenlist.CFrozenList` |
-| `GIF_صورة_إضافة_أي` | `PIL.GifImagePlugin.Any` |
 | `GIF_صورة_إضافة_احصل_على_الرأس` | `PIL.GifImagePlugin.getheader` |
 | `GIF_صورة_إضافة_حوّل_نوع` | `PIL.GifImagePlugin.cast` |
 | `GIF_صورة_إضافة_مؤجَّل_خطأ` | `PIL.GifImagePlugin.DeferredError` |
@@ -246,7 +245,6 @@
 | `إثقال_3` | `pathspec.pathspec.overload` |
 | `إثقال_4` | `pathspec.gitignore.overload` |
 | `إجمالي_ترتيب` | `frozenlist.total_ordering` |
-| `إدخال_إخراج_3` | `PIL.BmpImagePlugin.IO` |
 | `إدخال_قياسي_تدفقات` | `acp.stdio_streams` |
 | `إشارة_2` | `aiosignal.Signal` |
 | `إشعار_خيارات` | `mcp.server.NotificationOptions` |
@@ -393,7 +391,6 @@
 | `تهيئة_اطلب` | `acp.InitializeRequest` |
 | `ثابت_تعريف` | `aiohttp.web.StaticDef` |
 | `ثابت_مورد` | `aiohttp.web.StaticResource` |
-| `ثنائي_إدخال_إخراج_2` | `PIL.ImageFont.BinaryIO` |
 | `جديد_جلسة_استجابة` | `acp.NewSessionResponse` |
 | `جديد_جلسة_اطلب` | `acp.NewSessionRequest` |
 | `جرّد_تسلسلات` | `wcwidth.strip_sequences` |
@@ -592,19 +589,14 @@
 | `صورة_حوّل_معالج` | `PIL.Image.ImageTransformHandler` |
 | `صورة_حوّل_نوع` | `PIL.Image.cast` |
 | `صورة_رشّح_3` | `PIL.ImageFilter.Filter` |
-| `صورة_رشّح_تسلسل` | `PIL.ImageFilter.Sequence` |
 | `صورة_رشّح_حوّل_نوع` | `PIL.ImageFilter.cast` |
 | `صورة_قابل_للتعديل_خريطة` | `PIL.Image.MutableMapping` |
 | `صورة_لوحة_ألوان` | `PIL.ImagePalette.ImagePalette` |
-| `صورة_لوحة_ألوان_إدخال_إخراج` | `PIL.ImagePalette.IO` |
-| `صورة_لوحة_ألوان_تسلسل` | `PIL.ImagePalette.Sequence` |
 | `صورة_لوحة_ألوان_حمّل` | `PIL.ImagePalette.load` |
 | `صورة_لوحة_ألوان_خام` | `PIL.ImagePalette.raw` |
 | `صورة_لوحة_ألوان_عشوائي` | `PIL.ImagePalette.random` |
 | `صورة_مسار` | `PIL.ImagePath.Path` |
 | `صورة_ملف` | `PIL.ImageFile.ImageFile` |
-| `صورة_ملف_أي` | `PIL.ImageFile.Any` |
-| `صورة_ملف_إدخال_إخراج` | `PIL.ImageFile.IO` |
 | `صورة_ملف_حوّل_نوع` | `PIL.ImageFile.cast` |
 | `صورة_ملف_مؤجَّل_خطأ` | `PIL.ImageFile.DeferredError` |
 | `صورة_ملف_محلل` | `PIL.ImageFile.Parser` |
@@ -4952,7 +4944,6 @@
 | `جيت_تجاهل_أساسي_نمط_تعبير_نمطي_2` | `pathspec.gitignore.GitIgnoreBasicPattern.regex` |
 | `جيت_تجاهل_أساسي_نمط_نمط` | `pathspec.pathspec.GitIgnoreBasicPattern.pattern` |
 | `جيت_تجاهل_أساسي_نمط_نمط_2` | `pathspec.gitignore.GitIgnoreBasicPattern.pattern` |
-| `حرفي_2` | `PIL.ImageOps.Literal` |
 | `حرفي_3` | `pathspec.pathspec.Literal` |
 | `حرّر_طرفية_استجابة_نموذج_إعداد` | `acp.ReleaseTerminalResponse.model_config` |
 | `حرّر_طرفية_استجابة_نموذج_حقول` | `acp.ReleaseTerminalResponse.model_fields` |
@@ -5227,7 +5218,6 @@
 | `صورة_لوحة_ألوان_نوع_فحص` | `PIL.ImagePalette.TYPE_CHECKING` |
 | `صورة_لون_تعليقات` | `PIL.ImageColor.annotations` |
 | `صورة_مسار_تعليقات` | `PIL.ImagePath.annotations` |
-| `صورة_مسجّل` | `PIL.Image.logger` |
 | `صورة_معرف` | `PIL.Image.ID` |
 | `صورة_مقام` | `PIL.Image.Quantize.denominator` |
 | `صورة_مقام_2` | `PIL.Image.Transform.denominator` |
@@ -5465,7 +5455,6 @@
 | `مُعدّ_مسبقاً` | `PIL.JpegImagePlugin.presets` |
 | `نسبي_2` | `PIL.TiffTags.RATIONAL` |
 | `نسّق` | `PIL.Image.Image.format` |
-| `نص_أو_بايتات_مسار` | `PIL.ImageFont.StrOrBytesPath` |
 | `نص_قيود_صارم` | `pydantic.StringConstraints.strict` |
 | `نص_مسار` | `dotenv.main.StrPath` |
 | `نص_مسار_2` | `pathspec.pathspec.StrPath` |
