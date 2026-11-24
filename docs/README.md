@@ -106,9 +106,9 @@
 | 96 | [pkgs_ext2-library.md](pkgs_ext2-library.md) | مكتبة `pkgs_ext2` — حزم متنوعة موسّعة (scrapy / prompt_toolkit / lxml / hypothesis / peewee / arrow / alembic / rich / trio / paramiko / h5py / cryptography / pyasn1 / skimage / yaml / seaborn / pyparsing / bs4 / shapely / babel / redis / pendulum / mako / nacl / typer / google / PIL / kombu / marshmallow / requests / sqlparse / celery / packaging / six / httpx / jinja2 / acp / regex / uvicorn / websockets / markdown / tornado / anyio / httplib2 / pygments / cffi / click / fastapi / httpcore / googleapiclient / tqdm / starlette / dateutil / pydantic / attr / jsonschema / multidict / numpy / scipy) (19,295 عنصراً) |
 
 ---
-## الأمثلة الجاهزة (836 مثالاً)
+## الأمثلة الجاهزة (860 مثالاً)
 
-836 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+860 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -948,6 +948,30 @@
 | 834 | [`834-bisection-method.apl`](../examples/834-bisection-method.apl) | إيجاد جذور الدوال |
 | 835 | [`835-kolmogorov-smirnov.apl`](../examples/835-kolmogorov-smirnov.apl) | اختبار مطابقة التوزيع |
 | 836 | [`836-splay-tree.apl`](../examples/836-splay-tree.apl) | شجرة ذاتية التعديل |
+| 837 | [`837-lu-decomposition.apl`](../examples/837-lu-decomposition.apl) | تحليل المصفوفة لحل الأنظمة |
+| 838 | [`838-cholesky-decomposition.apl`](../examples/838-cholesky-decomposition.apl) | تحليل متماثل أسرع من LU |
+| 839 | [`839-gram-schmidt.apl`](../examples/839-gram-schmidt.apl) | بناء قاعدة متعامدة معيارية |
+| 840 | [`840-gauss-jordan.apl`](../examples/840-gauss-jordan.apl) | حل أنظمة المعادلات الخطية |
+| 841 | [`841-thomas-tridiagonal.apl`](../examples/841-thomas-tridiagonal.apl) | حل ثلاثي القطر في زمن خطي |
+| 842 | [`842-sieve-of-atkin.apl`](../examples/842-sieve-of-atkin.apl) | غربال أولي حديث نظرياً |
+| 843 | [`843-wheel-factorization.apl`](../examples/843-wheel-factorization.apl) | قسمة تجريبية مسرعة |
+| 844 | [`844-twin-primes.apl`](../examples/844-twin-primes.apl) | حدسية غير مثبتة حتى اليوم |
+| 845 | [`845-sophie-germain.apl`](../examples/845-sophie-germain.apl) | استخدمت في برهان فيرما |
+| 846 | [`846-emirp.apl`](../examples/846-emirp.apl) | أولية مقلوبة غير متناظرة |
+| 847 | [`847-semiprime.apl`](../examples/847-semiprime.apl) | أساس أمن RSA |
+| 848 | [`848-amicable-numbers.apl`](../examples/848-amicable-numbers.apl) | 220 و284 منذ فيثاغورس |
+| 849 | [`849-kaprekar-number.apl`](../examples/849-kaprekar-number.apl) | كل رباعي يصل إلى 6174 |
+| 850 | [`850-vampire-number.apl`](../examples/850-vampire-number.apl) | 1260 = 21 في 60 |
+| 851 | [`851-taxicab-number.apl`](../examples/851-taxicab-number.apl) | 1729 وحوار رامانوجان |
+| 852 | [`852-abundant-numbers.apl`](../examples/852-abundant-numbers.apl) | أول وفيرة فردية هي 945 |
+| 853 | [`853-trailing-zeros-factorial.apl`](../examples/853-trailing-zeros-factorial.apl) | أسرع من حساب المضروب |
+| 854 | [`854-primorial.apl`](../examples/854-primorial.apl) | مضروب الأولية وبرهان إقليدس |
+| 855 | [`855-gregory-pi.apl`](../examples/855-gregory-pi.apl) | أبسط متسلسلة لط |
+| 856 | [`856-nilakantha-pi.apl`](../examples/856-nilakantha-pi.apl) | مئة حد لخمس خانات |
+| 857 | [`857-machin-pi.apl`](../examples/857-machin-pi.apl) | حسبت ط لمئة خانة عام 1706 |
+| 858 | [`858-aliquot-sequence.apl`](../examples/858-aliquot-sequence.apl) | مصائر: واحد أو كامل أو متحاب |
+| 859 | [`859-recaman-sequence.apl`](../examples/859-recaman-sequence.apl) | متتابعة ذاتية المرجع |
+| 860 | [`860-boyer-moore-search.apl`](../examples/860-boyer-moore-search.apl) | بحث نصي بقفزات طويلة |
 
 **التشغيل:**
 ```bash
@@ -1097,4 +1121,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,254 عنصراً**،
-مع **836 مثال جاهز** في `examples/`.
+مع **860 مثال جاهز** في `examples/`.
