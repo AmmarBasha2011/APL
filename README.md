@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 91 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **716 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **740 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -264,9 +264,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (716 مثالاً)
+## الأمثلة الجاهزة (740 مثالاً)
 
-مجلد `examples/` يحتوي على **716 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **740 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -986,6 +986,30 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 714 | [`714-sentence-split-ar.apl`](examples/714-sentence-split-ar.apl) | تقطيع النص إلى جمل بقواعد |
 | 715 | [`715-soundex-en.apl`](examples/715-soundex-en.apl) | رمز صوتي للأسماء الإنجليزية |
 | 716 | [`716-iso-week-date.apl`](examples/716-iso-week-date.apl) | سنة الأسبوع ورقمه ويومه |
+| 717 | [`717-murmur-lite.apl`](examples/717-murmur-lite.apl) | هاش 32-بت غير تشفيري للسلاسل |
+| 718 | [`718-pearson-hash.apl`](examples/718-pearson-hash.apl) | هاش 8-بت بجدول تبديل ثابت |
+| 719 | [`719-adler32.apl`](examples/719-adler32.apl) | مجموع فحص سريع للبيانات |
+| 720 | [`720-fletcher16.apl`](examples/720-fletcher16.apl) | كشف أخطاء بمجموعين متعاقبين |
+| 721 | [`721-crc16-modbus.apl`](examples/721-crc16-modbus.apl) | فحص دوري لبروتوكول مودباس |
+| 722 | [`722-base58-codec.apl`](examples/722-base58-codec.apl) | ترميز بيتكوين النصي وفكه |
+| 723 | [`723-varint-protobuf.apl`](examples/723-varint-protobuf.apl) | أعداد صحيحة متغيرة الطول |
+| 724 | [`724-zigzag-encoding.apl`](examples/724-zigzag-encoding.apl) | سالب وموجب بأعداد موجبة صغيرة |
+| 725 | [`725-utf8-decode-manual.apl`](examples/725-utf8-decode-manual.apl) | قراءة حروف يونيكود من بايتاتها |
+| 726 | [`726-utf16-surrogates.apl`](examples/726-utf16-surrogates.apl) | حروف فوق U+FFFF بوحدتين |
+| 727 | [`727-punycode-lite.apl`](examples/727-punycode-lite.apl) | أسماء نطاقات دولية بأحرف ASCII |
+| 728 | [`728-phone-t9.apl`](examples/728-phone-t9.apl) | كتابة نص بلوحة هاتف قديمة |
+| 729 | [`729-braille-lite.apl`](examples/729-braille-lite.apl) | تحويل نص إلى خلايا برايل |
+| 730 | [`730-resistor-color-code.apl`](examples/730-resistor-color-code.apl) | قراءة قيم مقاومة من ألوانها |
+| 731 | [`731-dna-transcribe.apl`](examples/731-dna-transcribe.apl) | تحويل تسلسل جيني ومكمله العكسي |
+| 732 | [`732-gc-content.apl`](examples/732-gc-content.apl) | قياس غنى قواعد DNA |
+| 733 | [`733-fasta-parse.apl`](examples/733-fasta-parse.apl) | قراءة ملفات تسلسل جينية |
+| 734 | [`734-protein-mass.apl`](examples/734-protein-mass.apl) | كتلة بروتين من أحماضه الأمينية |
+| 735 | [`735-hebrew-numerals.apl`](examples/735-hebrew-numerals.apl) | كتابة الأعداد بالحروف العبرية |
+| 736 | [`736-chinese-numerals.apl`](examples/736-chinese-numerals.apl) | كتابة الأعداد بالحروف الصينية |
+| 737 | [`737-babylonian-numerals.apl`](examples/737-babylonian-numerals.apl) | النظام الستيني للأعداد |
+| 738 | [`738-simpson-integrate.apl`](examples/738-simpson-integrate.apl) | تكامل عددي دقيق للدوال |
+| 739 | [`739-horner-eval.apl`](examples/739-horner-eval.apl) | تقييم كثيرات الحدود ومشتقاتها |
+| 740 | [`740-golomb-coding.apl`](examples/740-golomb-coding.apl) | ضغط الأعداد الصحيحة الموجبة |
 
 ### تشغيل أي مثال
 
@@ -1086,7 +1110,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 716 مثالاً
+**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 740 مثالاً
 
 ## Language platform tools
 
