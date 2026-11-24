@@ -82,7 +82,7 @@
 | 76 | [mediadeep-library.md](mediadeep-library.md) | مكتبة `mediadeep` — الصور والنصوص العميقة: صور وماركداون وقوالب وسطر أوامر (PIL / markdown / jinja2) (11,440 عنصراً) |
 | 77 | [secdeep-library.md](secdeep-library.md) | مكتبة `secdeep` — الأمان وسحابة جوجل العميقة: تشفير وتوكنات وواجهات API (cryptography / google) (6,190 عنصراً) |
 | 78 | [utildeep-library.md](utildeep-library.md) | مكتبة `utildeep` — الأدوات العميقة: تواريخ ومناطق ومراقبة وحزم مساعدة (dateutil / pytz / psutil) (1,160 عنصراً) |
-| 79 | [stdfull-library.md](stdfull-library.md) | مكتبة `stdfull` — المكتبة القياسية الشاملة: كل ما تبقى من وحدات Python القياسية (9,266 عنصراً) |
+| 79 | [stdfull-library.md](stdfull-library.md) | مكتبة `stdfull` — المكتبة القياسية الشاملة: كل ما تبقى من وحدات Python القياسية (9,235 عنصراً) |
 
 ---
 ## الأمثلة الجاهزة (511 مثالاً)
