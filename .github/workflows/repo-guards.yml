@@ -1,0 +1,28 @@
+name: Repo guards
+
+# حراس الريبو: أحجام الملفات والريبو + أداء الأمثلة.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  sizes:
+    name: أحجام الريبو
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python scripts/check_repo_size.py
+
+  example-perf:
+    name: أداء الأمثلة
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python scripts/check_example_perf.py
