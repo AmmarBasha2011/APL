@@ -32,13 +32,8 @@ _SRC_ROOT = Path(__file__).resolve().parents[2]
 def _engine_fingerprint() -> str:
     """SHA-256 over every engine source file that affects translation."""
     h = hashlib.sha256()
-    for rel in (
-        "core/apl_runner/main.py",
-        "core/apl_runner/transpiler.py",
-        "core/apl_runner/inline_replacer.py",
-        "core/apl_runner/patterns.py",
-        "core/apl_runner/fastpath.py",
-    ):
+    for rel in sorted(str(p.relative_to(_SRC_ROOT))
+                      for p in (_SRC_ROOT / "core/apl_runner").glob("*.py")):
         p = _SRC_ROOT / rel
         try:
             h.update(rel.encode("utf-8"))
@@ -50,7 +45,7 @@ def _engine_fingerprint() -> str:
     # لم يتغيّر مصدره. حصل ده فعلاً مع cProfile.label في Python 3.15.
     lib_dir = _SRC_ROOT / "core" / "libraries"
     if lib_dir.is_dir():
-        for p in sorted(lib_dir.glob("*.py")):
+        for p in sorted([*lib_dir.glob("*.py"), *lib_dir.glob("*.json")]):
             h.update(p.name.encode("utf-8"))
             h.update(p.read_bytes())
     return h.hexdigest()[:12]

@@ -1,0 +1,1 @@
+{"comments":{"lineComment":"#"},"brackets":[["(",")"],["[","]"],["{","}"]],"autoClosingPairs":[{"open":"(","close":")"},{"open":"[","close":"]"},{"open":"{","close":"}"},{"open":"\"","close":"\""},{"open":"'","close":"'"}],"indentationRules":{"increaseIndentPattern":"^.*:\\s*(#.*)?$","decreaseIndentPattern":"^\\s*(والا|الا|except|finally|elif|else)\\b"}}

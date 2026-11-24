@@ -21,3 +21,8 @@ benchmarks/*-results.json
 
 # ملفات قواعد البيانات الناتجة عن تشغيل الأمثلة
 *.db
+
+# Local packaging output
+*.egg-info/
+build/
+dist/
