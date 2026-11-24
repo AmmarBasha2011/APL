@@ -89,9 +89,9 @@
 | 79 | [stdfull-library.md](stdfull-library.md) | مكتبة `stdfull` — المكتبة القياسية الشاملة: كل ما تبقى من وحدات Python القياسية (9,235 عنصراً) |
 
 ---
-## الأمثلة الجاهزة (511 مثالاً)
+## الأمثلة الجاهزة (535 مثالاً)
 
-511 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+535 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -595,6 +595,41 @@
 | 498 | [`498-blog-engine.apl`](../examples/498-blog-engine.apl) | مولد مدونة ثابتة |
 | 499 | [`499-event-planner.apl`](../examples/499-event-planner.apl) | مخطط فعاليات |
 | 500 | [`500-task-manager-suite.apl`](../examples/500-task-manager-suite.apl) | نظام إدارة مهام متكامل |
+| 501 | [`501-numdeep.apl`](../examples/501-numdeep.apl) | الحساب العلمي العميق (numdeep/numpy) |
+| 502 | [`502-botdeep.apl`](../examples/502-botdeep.apl) | بوتات تيليجرام العميقة (botdeep/telegram) |
+| 503 | [`503-taskdeep.apl`](../examples/503-taskdeep.apl) | المهام الموزعة العميقة (taskdeep/kombu) |
+| 504 | [`504-storedeep.apl`](../examples/504-storedeep.apl) | التخزين العميق (storedeep/redis) |
+| 505 | [`505-pygdeep.apl`](../examples/505-pygdeep.apl) | تلوين الشيفرة العميق (pygdeep/pygments) |
+| 506 | [`506-webdeep.apl`](../examples/506-webdeep.apl) | الويب العميق (webdeep/fastapi) |
+| 507 | [`507-datadeep.apl`](../examples/507-datadeep.apl) | النماذج والتحقق العميق (datadeep/pydantic) |
+| 508 | [`508-mediadeep.apl`](../examples/508-mediadeep.apl) | الصور والنصوص العميقة (mediadeep/PIL) |
+| 509 | [`509-secdeep.apl`](../examples/509-secdeep.apl) | الأمان العميق (secdeep/cryptography) |
+| 510 | [`510-utildeep.apl`](../examples/510-utildeep.apl) | الأدوات العميق (utildeep/dateutil) |
+| 511 | [`511-stdfull.apl`](../examples/511-stdfull.apl) | المكتبة القياسية الشاملة (stdfull) |
+| 512 | [`512-dijkstra.apl`](../examples/512-dijkstra.apl) | خوارزمية ديكسترا لأقصر مسار في رسم موزون |
+| 513 | [`513-kmp-search.apl`](../examples/513-kmp-search.apl) | بحث كنوث-موريس-برات عن نمط في نص |
+| 514 | [`514-shell-sort.apl`](../examples/514-shell-sort.apl) | فرز شل بفجوات متناقصة |
+| 515 | [`515-bucket-sort.apl`](../examples/515-bucket-sort.apl) | فرز الحاويات لأعداد كسرية |
+| 516 | [`516-interpolation-search.apl`](../examples/516-interpolation-search.apl) | بحث بالاستكمال في قائمة متجانسة |
+| 517 | [`517-ternary-search.apl`](../examples/517-ternary-search.apl) | بحث ثلاثي في قائمة مفرزة |
+| 518 | [`518-segment-tree.apl`](../examples/518-segment-tree.apl) | شجرة المقاطع لمجاميع المجالات مع تحديث |
+| 519 | [`519-fenwick-tree.apl`](../examples/519-fenwick-tree.apl) | شجرة فينويك للمجاميع البادئة |
+| 520 | [`520-bloom-filter.apl`](../examples/520-bloom-filter.apl) | مرشح بلوم للعضوية التقريبية |
+| 521 | [`521-chinese-remainder.apl`](../examples/521-chinese-remainder.apl) | مبرهنة الباقي الصينية |
+| 522 | [`522-fib-doubling.apl`](../examples/522-fib-doubling.apl) | فيبوناتشي بالمضاعفة السريعة O(log n) |
+| 523 | [`523-house-robber.apl`](../examples/523-house-robber.apl) | لص المنازل (برمجة ديناميكية) |
+| 524 | [`524-word-break.apl`](../examples/524-word-break.apl) | تقطيع نص إلى كلمات قاموس (برمجة ديناميكية) |
+| 525 | [`525-flood-fill-islands.apl`](../examples/525-flood-fill-islands.apl) | عدّ الجزر بملء غامر على شبكة |
+| 526 | [`526-line-diff.apl`](../examples/526-line-diff.apl) | مقارنة نصين سطرياً بأطول تتابع مشترك |
+| 527 | [`527-token-bucket.apl`](../examples/527-token-bucket.apl) | دلو الرموز لتحديد معدل الطلبات |
+| 528 | [`528-luhn-check.apl`](../examples/528-luhn-check.apl) | تحقق لون لأرقام البطاقات |
+| 529 | [`529-isbn13-check.apl`](../examples/529-isbn13-check.apl) | تحقق من ردمك ISBN-13 |
+| 530 | [`530-hijri-convert.apl`](../examples/530-hijri-convert.apl) | تحويل ميلادي إلى هجري (الخوارزمية الكويتية) |
+| 531 | [`531-arabic-indic-digits.apl`](../examples/531-arabic-indic-digits.apl) | تحويل الأرقام بين العربية الغربية والمشرقية |
+| 532 | [`532-egypt-national-id.apl`](../examples/532-egypt-national-id.apl) | قراءة الرقم القومي المصري: الميلاد والمحافظة والنوع |
+| 533 | [`533-zakat-calc.apl`](../examples/533-zakat-calc.apl) | حساب زكاة المال فوق النصاب |
+| 534 | [`534-electricity-bill.apl`](../examples/534-electricity-bill.apl) | فاتورة كهرباء منزلية بشرائح تقريبية |
+| 535 | [`535-vat-invoice.apl`](../examples/535-vat-invoice.apl) | فاتورة بضريبة قيمة مضافة 14% |
 
 **التشغيل:**
 ```bash
@@ -727,4 +762,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **278,278 عنصراً**،
-مع **511 مثال جاهز** في `examples/`.
+مع **535 مثال جاهز** في `examples/`.

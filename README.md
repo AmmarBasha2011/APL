@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 74 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **511 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **535 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -247,9 +247,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (511 مثالاً)
+## الأمثلة الجاهزة (535 مثالاً)
 
-مجلد `examples/` يحتوي على **511 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **535 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -764,6 +764,30 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 509 | [`509-secdeep.apl`](examples/509-secdeep.apl) | الأمان العميق (secdeep/cryptography) |
 | 510 | [`510-utildeep.apl`](examples/510-utildeep.apl) | الأدوات العميقة (utildeep/dateutil) |
 | 511 | [`511-stdfull.apl`](examples/511-stdfull.apl) | المكتبة القياسية الشاملة (stdfull) |
+| 512 | [`512-dijkstra.apl`](examples/512-dijkstra.apl) | خوارزمية ديكسترا لأقصر مسار في رسم موزون |
+| 513 | [`513-kmp-search.apl`](examples/513-kmp-search.apl) | بحث كنوث-موريس-برات عن نمط في نص |
+| 514 | [`514-shell-sort.apl`](examples/514-shell-sort.apl) | فرز شل بفجوات متناقصة |
+| 515 | [`515-bucket-sort.apl`](examples/515-bucket-sort.apl) | فرز الحاويات لأعداد كسرية |
+| 516 | [`516-interpolation-search.apl`](examples/516-interpolation-search.apl) | بحث بالاستكمال في قائمة متجانسة |
+| 517 | [`517-ternary-search.apl`](examples/517-ternary-search.apl) | بحث ثلاثي في قائمة مفرزة |
+| 518 | [`518-segment-tree.apl`](examples/518-segment-tree.apl) | شجرة المقاطع لمجاميع المجالات مع تحديث |
+| 519 | [`519-fenwick-tree.apl`](examples/519-fenwick-tree.apl) | شجرة فينويك للمجاميع البادئة |
+| 520 | [`520-bloom-filter.apl`](examples/520-bloom-filter.apl) | مرشح بلوم للعضوية التقريبية |
+| 521 | [`521-chinese-remainder.apl`](examples/521-chinese-remainder.apl) | مبرهنة الباقي الصينية |
+| 522 | [`522-fib-doubling.apl`](examples/522-fib-doubling.apl) | فيبوناتشي بالمضاعفة السريعة O(log n) |
+| 523 | [`523-house-robber.apl`](examples/523-house-robber.apl) | لص المنازل (برمجة ديناميكية) |
+| 524 | [`524-word-break.apl`](examples/524-word-break.apl) | تقطيع نص إلى كلمات قاموس (برمجة ديناميكية) |
+| 525 | [`525-flood-fill-islands.apl`](examples/525-flood-fill-islands.apl) | عدّ الجزر بملء غامر على شبكة |
+| 526 | [`526-line-diff.apl`](examples/526-line-diff.apl) | مقارنة نصين سطرياً بأطول تتابع مشترك |
+| 527 | [`527-token-bucket.apl`](examples/527-token-bucket.apl) | دلو الرموز لتحديد معدل الطلبات |
+| 528 | [`528-luhn-check.apl`](examples/528-luhn-check.apl) | تحقق لون لأرقام البطاقات |
+| 529 | [`529-isbn13-check.apl`](examples/529-isbn13-check.apl) | تحقق من ردمك ISBN-13 |
+| 530 | [`530-hijri-convert.apl`](examples/530-hijri-convert.apl) | تحويل ميلادي إلى هجري (الخوارزمية الكويتية) |
+| 531 | [`531-arabic-indic-digits.apl`](examples/531-arabic-indic-digits.apl) | تحويل الأرقام بين العربية الغربية والمشرقية |
+| 532 | [`532-egypt-national-id.apl`](examples/532-egypt-national-id.apl) | قراءة الرقم القومي المصري: الميلاد والمحافظة والنوع |
+| 533 | [`533-zakat-calc.apl`](examples/533-zakat-calc.apl) | حساب زكاة المال فوق النصاب |
+| 534 | [`534-electricity-bill.apl`](examples/534-electricity-bill.apl) | فاتورة كهرباء منزلية بشرائح تقريبية |
+| 535 | [`535-vat-invoice.apl`](examples/535-vat-invoice.apl) | فاتورة بضريبة قيمة مضافة 14% |
 
 ### تشغيل أي مثال
 
@@ -862,7 +886,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 278,065 عنصراً عربياً — 74 مكتبة — 511 مثالاً
+**الإصدار:** APL v1.13 — 278,065 عنصراً عربياً — 74 مكتبة — 535 مثالاً
 
 ## Language platform tools
 
