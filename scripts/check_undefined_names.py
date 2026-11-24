@@ -17,7 +17,6 @@ import os
 import re
 import subprocess
 import sys
-import tempfile
 import warnings
 
 warnings.filterwarnings("ignore")
@@ -52,24 +51,22 @@ def sources():
 def main():
     bad = []
     n = 0
-    with tempfile.TemporaryDirectory() as tmp:
-        for name, code in sources():
-            try:
-                py = transpile(code)
-            except Exception:
-                continue  # أخطاء التحويل يغطيها فحص الأمثلة وREADME
-            p = os.path.join(tmp, "t.py")
-            with open(p, "w", encoding="utf-8") as fh:
-                fh.write(py)
-            n += 1
-            r = subprocess.run(
-                ["ruff", "check", "--isolated", "--select", "F821", "--output-format", "concise", p],
-                capture_output=True, text=True)
-            if r.returncode != 0:
-                names = sorted(n for n in set(re.findall(r"Undefined name `([^`]+)`", r.stdout)) if not n.lower().startswith("_apl_"))
-                names = [x for x in names if x not in ALLOWED.get(name, ())]
-                if names:
-                    bad.append((name, names))
+    for name, code in sources():
+        try:
+            py = transpile(code)
+        except Exception:
+            continue  # أخطاء التحويل يغطيها فحص الأمثلة وREADME
+        n += 1
+        r = subprocess.run(
+            ["ruff", "check", "--isolated", "--select", "F821", "--output-format", "concise",
+             "--stdin-filename", "t.py", "-"],
+            input=py, capture_output=True, text=True)
+        if r.returncode != 0:
+            names = sorted(x for x in set(re.findall(r"Undefined name `([^`]+)`", r.stdout))
+                           if not x.lower().startswith("_apl_"))
+            names = [x for x in names if x not in ALLOWED.get(name, ())]
+            if names:
+                bad.append((name, names))
     for name, names in bad:
         print(f"✗ {name}: أسماء غير معرَّفة: {', '.join(names)}")
     if bad:

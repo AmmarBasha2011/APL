@@ -103,6 +103,8 @@ jobs:
   no-duplicates:
     name: لا تكرار في العناصر
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
