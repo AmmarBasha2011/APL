@@ -1,8 +1,8 @@
 # مكتبة حزم متنوعة موسّعة (scrapy / prompt_toolkit / lxml / hypothesis / peewee / arrow / alembic / rich / trio / paramiko / h5py / cryptography / pyasn1 / skimage / yaml / seaborn / pyparsing / bs4 / shapely / babel / redis / pendulum / mako / nacl / typer / google / PIL / kombu / marshmallow / requests / sqlparse / celery / packaging / six / httpx / jinja2 / acp / regex / uvicorn / websockets / markdown / tornado / anyio / httplib2 / pygments / cffi / click / fastapi / httpcore / googleapiclient / tqdm / starlette / dateutil / pydantic / attr / jsonschema / multidict / numpy / scipy) — `pkgs_ext2`
 
-**19,303 عنصراً عربياً** (الدوال: 13,536، الثوابت: 5,767).
+**19,295 عنصراً عربياً** (الدوال: 13,528، الثوابت: 5,767).
 
-## الدوال (13,536) — `PKGS_EXT2_FUNCS`
+## الدوال (13,528) — `PKGS_EXT2_FUNCS`
 
 | العربي | Python |
 |--------|--------|
@@ -3436,9 +3436,6 @@
 | `بيبارسينج_CJK` | `pyparsing.ppu.CJK` |
 | `بيبارسينج_LRU_ميمو` | `pyparsing.LRUMemo` |
 | `بيبارسينج_LRU_ميمو_امسح` | `pyparsing.LRUMemo.clear` |
-| `بيبارسينج_ελληνικά` | `pyparsing.ppu.Ελληνικά` |
-| `بيبارسينج_кириллица` | `pyparsing.ppu.кириллица` |
-| `بيبارسينج_עִברִית` | `pyparsing.ppu.עִברִית` |
 | `بيبارسينج_أبت` | `pyparsing.Opt` |
 | `بيبارسينج_أبت_حلّل_تنفيذ` | `pyparsing.Opt.parseImpl` |
 | `بيبارسينج_أت_سطر_ابدأ` | `pyparsing.AtLineStart` |
@@ -3780,11 +3777,6 @@
 | `بيبارسينج_يتش` | `pyparsing.Each` |
 | `بيبارسينج_يتش_حلّل_تنفيذ` | `pyparsing.Each.parseImpl` |
 | `بيبارسينج_يتش_ستريملين` | `pyparsing.Each.streamline` |
-| `بيبارسينج_देवनागरी` | `pyparsing.ppu.देवनागरी` |
-| `بيبارسينج_ไทย` | `pyparsing.ppu.ไทย` |
-| `بيبارسينج_中文` | `pyparsing.ppu.中文` |
-| `بيبارسينج_日本語` | `pyparsing.ppu.日本語` |
-| `بيبارسينج_한국어` | `pyparsing.ppu.한국어` |
 | `بيجمينتس_إعداد` | `pygments.sphinxext.setup` |
 | `بيجمينتس_بيجمينتس_مستند` | `pygments.sphinxext.PygmentsDoc` |
 | `بيجمينتس_شغّل` | `pygments.sphinxext.PygmentsDoc.run` |
