@@ -6,7 +6,7 @@ import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-GAME = os.path.join(ROOT, "demos", "treasure-game", "game.apl")
+GAME = os.path.join(ROOT, "projects", "treasure-game", "game.apl")
 
 
 def play(commands):

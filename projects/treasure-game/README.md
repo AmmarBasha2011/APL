@@ -5,7 +5,7 @@
 ## التشغيل
 
 ```bash
-python apl.py demos/treasure-game/game.apl
+python apl.py projects/treasure-game/game.apl
 ```
 
 ## الهدف
@@ -27,7 +27,7 @@ python apl.py demos/treasure-game/game.apl
 ## الاختبار
 
 ```bash
-python demos/treasure-game/test_game.py
+python projects/treasure-game/test_game.py
 ```
 
 ## الخريطة

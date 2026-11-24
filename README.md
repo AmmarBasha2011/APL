@@ -824,7 +824,7 @@ python benchmarks/run_benchmark.py
 python benchmarks/run_benchmark.py --iterations 100000 --runs 10 --setup-runs 5 --process-runs 3 --output benchmarks/latest-results.json
 ```
 
-افتح [`benchmark.html`](benchmark.html) لعرض التقرير العربي، أو حمّل إليه ملف JSON الناتج من الاختبار. الصفحة مكتفية ذاتياً ولا تحتاج إلى اتصال بالإنترنت.
+افتح [`benchmarks/benchmark.html`](benchmarks/benchmark.html) لعرض التقرير العربي، أو حمّل إليه ملف JSON الناتج من الاختبار. الصفحة مكتفية ذاتياً ولا تحتاج إلى اتصال بالإنترنت.
 
 > APL في هذا المشروع يحوّل الشيفرة العربية إلى Python؛ لذلك يستخدم قياس التنفيذ الصافي CPython في اللغتين، بينما يُظهر قياس تشغيل الملف كلفة بدء محرك APL والترجمة وذاكرتها المؤقتة.
 
