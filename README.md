@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 91 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **668 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **692 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -264,9 +264,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (668 مثالاً)
+## الأمثلة الجاهزة (692 مثالاً)
 
-مجلد `examples/` يحتوي على **668 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **692 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -938,6 +938,30 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 666 | [`666-zero-one-bfs.apl`](examples/666-zero-one-bfs.apl) | أقصر تكلفة بأوزان صفر وواحد |
 | 667 | [`667-mcts-lite.apl`](examples/667-mcts-lite.apl) | معادلة الاختيار التي تقود بحث مونت كارلو |
 | 668 | [`668-simulated-annealing-tsp.apl`](examples/668-simulated-annealing-tsp.apl) | تحسين جولة مندوب السفر بالتلدين المحاكى |
+| 669 | [`669-max-flow-ford-fulkerson.apl`](examples/669-max-flow-ford-fulkerson.apl) | أقصى تدفق في شبكة بمسارات معززة |
+| 670 | [`670-hungarian-lite.apl`](examples/670-hungarian-lite.apl) | إسناد عامل لمهمة بأقل كلفة إجمالية |
+| 671 | [`671-hyperloglog-lite.apl`](examples/671-hyperloglog-lite.apl) | تقدير عدد العناصر المميزة بذاكرة ثابتة |
+| 672 | [`672-lz78.apl`](examples/672-lz78.apl) | ضغط وفك بقاموس عبارات متنام |
+| 673 | [`673-arithmetic-coding-lite.apl`](examples/673-arithmetic-coding-lite.apl) | ترميز رسالة ككسر في مدى احتمالي |
+| 674 | [`674-rsa-toy.apl`](examples/674-rsa-toy.apl) | توليد مفاتيح وتشفير RSA بأعداد صغيرة |
+| 675 | [`675-diffie-hellman-toy.apl`](examples/675-diffie-hellman-toy.apl) | اشتقاق سر مشترك عبر قناة علنية |
+| 676 | [`676-chacha-quarter-round.apl`](examples/676-chacha-quarter-round.apl) | العملية الأساسية في تشفير تشاتشا |
+| 677 | [`677-easter-computus.apl`](examples/677-easter-computus.apl) | تاريخ عيد الفصح الغربي لأي سنة |
+| 678 | [`678-hebrew-calendar-lite.apl`](examples/678-hebrew-calendar-lite.apl) | تحويل تقريبي من وإلى التقويم العبري |
+| 679 | [`679-smith-waterman.apl`](examples/679-smith-waterman.apl) | أقوى تشابه جزئي بين تسلسلي DNA |
+| 680 | [`680-moon-phase-lite.apl`](examples/680-moon-phase-lite.apl) | هل الليلة محاق أم بدر من التاريخ وحده |
+| 681 | [`681-game-of-life.apl`](examples/681-game-of-life.apl) | مذبذب ونمط ساكن بقواعد كونواي |
+| 682 | [`682-langton-ant.apl`](examples/682-langton-ant.apl) | فوضى تتحول إلى طريق سريع دوري |
+| 683 | [`683-rule-110.apl`](examples/683-rule-110.apl) | أتمتة خلوية أولية كاملة حسابيا |
+| 684 | [`684-sprague-grundy.apl`](examples/684-sprague-grundy.apl) | تحليل الألعاب المحايدة بأرقام غروندي |
+| 685 | [`685-poker-hand-eval-lite.apl`](examples/685-poker-hand-eval-lite.apl) | تصنيف يد من خمس ورقات |
+| 686 | [`686-fen-parse.apl`](examples/686-fen-parse.apl) | قراءة موقف شطرنج بترميز فورسيث-إدواردز |
+| 687 | [`687-verhoeff-checksum.apl`](examples/687-verhoeff-checksum.apl) | رقم تحقق يكشف تبديل الخانات المتجاورة |
+| 688 | [`688-brainfuck-interp.apl`](examples/688-brainfuck-interp.apl) | مفسر كامل للغة براين فك المصغرة |
+| 689 | [`689-lisp-eval-lite.apl`](examples/689-lisp-eval-lite.apl) | حساب تعابير البادئة المتداخلة |
+| 690 | [`690-toml-lite.apl`](examples/690-toml-lite.apl) | قراءة ملفات إعداد بصيغة TOML |
+| 691 | [`691-ical-rrule-lite.apl`](examples/691-ical-rrule-lite.apl) | توليد مواعيد متكررة يوميا وأسبوعيا وشهريا |
+| 692 | [`692-mandelbrot-ascii.apl`](examples/692-mandelbrot-ascii.apl) | رسم مجموعة ماندلبروت بالأحرف |
 
 ### تشغيل أي مثال
 
@@ -1038,7 +1062,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 668 مثالاً
+**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 692 مثالاً
 
 ## Language platform tools
 
