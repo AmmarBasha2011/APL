@@ -843,23 +843,16 @@ python benchmarks/run_benchmark.py --iterations 100000 --runs 10 --setup-runs 5 
 
 ## الرخصة
 
+**Apache License 2.0** — رخصة مفتوحة المصدر معتمدة من OSI.
+
 Ammar Programming Language (APL) — Copyright © 2026 Ammar Al-Khateeb (عمار الخطيب)
 
-This project is open source and free to use. All rights are reserved by the author.
+- ✅ مسموح: الاستخدام الشخصي والتجاري، التعديل، التوزيع، والاستخدام في مشاريع مغلقة المصدر.
+- ✅ تمنحك الرخصة حقاً صريحاً في براءات الاختراع من المساهمين.
+- 📌 الشرط: الاحتفاظ بإشعار حقوق النشر ونص الرخصة مع أي نسخة، وتوضيح التغييرات التي تجريها.
+- ℹ️ لا تمنح الرخصة حق استخدام اسم المشروع أو علامته التجارية.
 
-PERMISSIONS (Free of Charge):
-✅ You may use the Software for any personal, non-commercial purpose.
-✅ You may study, learn from, and modify the Software for your own use.
-
-RESTRICTIONS (Not Permitted WITHOUT Explicit Written Permission):
-❌ Distribution — You may not distribute, share, sublicense, or make the Software available to third parties in any form.
-❌ Commercial Use — You may not sell, rent, lease, sublicense, or otherwise monetize the Software.
-❌ Public Hosting — You may not host the Software on any platform accessible to the public.
-
-ATTRIBUTION:
-"Ammar Programming Language (APL) — Created by Ammar Al-Khateeb (عمار الخطيب) — https://github.com/AmmarBasha2011/APL"
-
-NO WARRANTY: THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
+النص الكامل في ملف [LICENSE](LICENSE).
 
 For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
