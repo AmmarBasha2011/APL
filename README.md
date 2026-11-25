@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1307 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1319 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1307 مثال)
+## الأمثلة الجاهزة (1319 مثال)
 
-مجلد `examples/` يحتوي على **1307 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1319 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1582,6 +1582,18 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1305 | [`1305-remove-nth-from-end.apl`](examples/1305-remove-nth-from-end.apl) | حذف العنصر ذي الترتيب n من النهاية |
 | 1306 | [`1306-odd-even-list.apl`](examples/1306-odd-even-list.apl) | جمع المواضع الفردية ثم الزوجية |
 | 1307 | [`1307-rotate-list-right.apl`](examples/1307-rotate-list-right.apl) | تدوير قائمة k خطوة لليمين |
+| 1308 | [`1308-letter-combinations-count.apl`](examples/1308-letter-combinations-count.apl) | عدد وتركيبات حروف أرقام الهاتف |
+| 1309 | [`1309-permutations-unique.apl`](examples/1309-permutations-unique.apl) | التباديل المختلفة لقائمة فيها تكرار |
+| 1310 | [`1310-subsets-unique.apl`](examples/1310-subsets-unique.apl) | المجموعات الجزئية المختلفة لقائمة فيها تكرار |
+| 1311 | [`1311-combination-sum-two.apl`](examples/1311-combination-sum-two.apl) | تركيبات مجموعها هدف دون إعادة استخدام |
+| 1312 | [`1312-combinations-k.apl`](examples/1312-combinations-k.apl) | كل اختيارات k عنصراً من n |
+| 1313 | [`1313-gray-subsets-order.apl`](examples/1313-gray-subsets-order.apl) | ترتيب المجموعات بحيث يختلف كل جاران بعنصر |
+| 1314 | [`1314-beautiful-arrangement.apl`](examples/1314-beautiful-arrangement.apl) | عدد الترتيبات التي يقسم فيها العدد موضعه أو العكس |
+| 1315 | [`1315-matchsticks-square.apl`](examples/1315-matchsticks-square.apl) | هل تكوّن العيدان مربعاً |
+| 1316 | [`1316-partition-k-subsets.apl`](examples/1316-partition-k-subsets.apl) | هل تقسم القائمة إلى k مجموعات متساوية |
+| 1317 | [`1317-sudoku-solver-mini.apl`](examples/1317-sudoku-solver-mini.apl) | حل سودوكو ٤ في ٤ |
+| 1318 | [`1318-target-sum-combos.apl`](examples/1318-target-sum-combos.apl) | عدد طرق وضع الإشارات لبلوغ هدف |
+| 1319 | [`1319-expression-add-operators.apl`](examples/1319-expression-add-operators.apl) | وضع عمليات بين الأرقام لبلوغ هدف |
 
 ### تشغيل أي مثال
 
@@ -1682,7 +1694,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1307 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1319 مثال
 
 ## Language platform tools
 
