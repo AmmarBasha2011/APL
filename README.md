@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1385 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1408 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1385 مثال)
+## الأمثلة الجاهزة (1408 مثال)
 
-مجلد `examples/` يحتوي على **1385 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1408 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1660,6 +1660,29 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1383 | [`1383-best-sightseeing-pair.apl`](examples/1383-best-sightseeing-pair.apl) | أكبر قيمة لزوج بحسب قيمتيهما والمسافة بينهما |
 | 1384 | [`1384-maximum-gap-sorted.apl`](examples/1384-maximum-gap-sorted.apl) | أكبر فرق بين عنصرين متجاورين بعد الفرز |
 | 1385 | [`1385-good-triplets-count.apl`](examples/1385-good-triplets-count.apl) | عدد الثلاثيات التي فروقها ضمن حدود معينة |
+| 1386 | [`1386-harmonic-fraction.apl`](examples/1386-harmonic-fraction.apl) | مجموع مقلوبات الأعداد حتى ن ككسر مختزل |
+| 1387 | [`1387-digit-factorials.apl`](examples/1387-digit-factorials.apl) | أعداد تساوي مجموع مضروبات أرقامها |
+| 1388 | [`1388-spiral-diagonals-sum.apl`](examples/1388-spiral-diagonals-sum.apl) | مجموع قطري لولب أعداد بحجم فردي |
+| 1389 | [`1389-lattice-paths-count.apl`](examples/1389-lattice-paths-count.apl) | عدد مسارات يمين وأسفل في شبكة مربعة |
+| 1390 | [`1390-sum-of-multiples-below.apl`](examples/1390-sum-of-multiples-below.apl) | مجموع مضاعفات 3 و5 تحت حد معين |
+| 1391 | [`1391-even-fibonacci-sum.apl`](examples/1391-even-fibonacci-sum.apl) | مجموع حدود فيبوناتشي الزوجية حتى حد |
+| 1392 | [`1392-pandigital-check.apl`](examples/1392-pandigital-check.apl) | هل يحتوي عدد كل الأرقام من 1 إلى ن مرة واحدة |
+| 1393 | [`1393-truncatable-primes.apl`](examples/1393-truncatable-primes.apl) | أعداد أولية تبقى أولية عند بتر أرقامها من الجهتين |
+| 1394 | [`1394-circular-primes.apl`](examples/1394-circular-primes.apl) | أعداد أولية تبقى أولية بتدوير أرقامها |
+| 1395 | [`1395-power-digit-sum.apl`](examples/1395-power-digit-sum.apl) | مجموع أرقام العدد 2 مرفوعاً لقوة |
+| 1396 | [`1396-factorial-digit-sum.apl`](examples/1396-factorial-digit-sum.apl) | مجموع أرقام مضروب عدد |
+| 1397 | [`1397-palindromic-product.apl`](examples/1397-palindromic-product.apl) | أكبر عدد متماثل يساوي حاصل ضرب عددين بعدد أرقام معين |
+| 1398 | [`1398-smallest-multiple-lcm.apl`](examples/1398-smallest-multiple-lcm.apl) | أصغر عدد يقبل القسمة على كل الأعداد من 1 إلى ن |
+| 1399 | [`1399-sum-square-difference.apl`](examples/1399-sum-square-difference.apl) | الفرق بين مربع المجموع ومجموع المربعات |
+| 1400 | [`1400-triangle-number-divisors.apl`](examples/1400-triangle-number-divisors.apl) | أول عدد مثلثي له أكثر من عدد معين من القواسم |
+| 1401 | [`1401-pentagonal-numbers.apl`](examples/1401-pentagonal-numbers.apl) | توليد الأعداد الخماسية واختبار الانتماء |
+| 1402 | [`1402-goldbach-other-conjecture.apl`](examples/1402-goldbach-other-conjecture.apl) | أول عدد فردي مركب لا يساوي أولياً زائد ضعف مربع |
+| 1403 | [`1403-longest-collatz-start.apl`](examples/1403-longest-collatz-start.apl) | العدد البادئ الذي يعطي أطول سلسلة كولاتز تحت حد |
+| 1404 | [`1404-polygonal-numbers.apl`](examples/1404-polygonal-numbers.apl) | الحد ن من الأعداد المضلعة لعدد أضلاع ك |
+| 1405 | [`1405-smallest-repunit-divisor.apl`](examples/1405-smallest-repunit-divisor.apl) | أقل طول لعدد كله آحاد يقبل القسمة على ك |
+| 1406 | [`1406-multiplicative-persistence.apl`](examples/1406-multiplicative-persistence.apl) | عدد المرات لضرب الأرقام حتى يبقى رقم واحد |
+| 1407 | [`1407-sum-of-divisors-sigma.apl`](examples/1407-sum-of-divisors-sigma.apl) | مجموع كل قواسم عدد بما فيها نفسه |
+| 1408 | [`1408-champernowne-digit.apl`](examples/1408-champernowne-digit.apl) | الرقم ذو الترتيب ن في تسلسل الأعداد الصحيحة المتتالية |
 
 ### تشغيل أي مثال
 
@@ -1760,7 +1783,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1385 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1408 مثال
 
 ## Language platform tools
 
