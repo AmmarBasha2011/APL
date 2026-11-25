@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1203 مثال)
+## الأمثلة الجاهزة (1218 مثال)
 
-1203 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1218 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1320,6 +1320,21 @@
 | 1201 | [`1201-redundant-connection.apl`](../examples/1201-redundant-connection.apl) | الحافة التي تكوّن حلقة في شجرة |
 | 1202 | [`1202-number-of-provinces.apl`](../examples/1202-number-of-provinces.apl) | عدد المجموعات المتصلة في مصفوفة صلات |
 | 1203 | [`1203-accounts-merge.apl`](../examples/1203-accounts-merge.apl) | دمج حسابات تشترك في بريد |
+| 1204 | [`1204-tree-max-depth-list.apl`](../examples/1204-tree-max-depth-list.apl) | عمق شجرة ثنائية ممثلة بقوائم |
+| 1205 | [`1205-tree-level-order-list.apl`](../examples/1205-tree-level-order-list.apl) | قراءة الشجرة مستوى مستوى |
+| 1206 | [`1206-tree-zigzag-order.apl`](../examples/1206-tree-zigzag-order.apl) | قراءة مستويات الشجرة بالتناوب |
+| 1207 | [`1207-tree-path-sum.apl`](../examples/1207-tree-path-sum.apl) | هل يوجد مسار من الجذر لورقة بمجموع معين |
+| 1208 | [`1208-tree-all-paths.apl`](../examples/1208-tree-all-paths.apl) | كل مسارات الجذر إلى الأوراق |
+| 1209 | [`1209-tree-lca.apl`](../examples/1209-tree-lca.apl) | أقرب سلف مشترك في شجرة بحث ثنائية |
+| 1210 | [`1210-tree-symmetric.apl`](../examples/1210-tree-symmetric.apl) | هل الشجرة صورة مرآة لنفسها |
+| 1211 | [`1211-tree-invert.apl`](../examples/1211-tree-invert.apl) | تبديل الفرعين الأيسر والأيمن في كل عقدة |
+| 1212 | [`1212-tree-diameter-list.apl`](../examples/1212-tree-diameter-list.apl) | أطول مسار بين أي عقدتين |
+| 1213 | [`1213-tree-serialize.apl`](../examples/1213-tree-serialize.apl) | تحويل شجرة إلى نص وإعادتها |
+| 1214 | [`1214-build-tree-preorder-inorder.apl`](../examples/1214-build-tree-preorder-inorder.apl) | إعادة بناء شجرة من القراءتين المسبقة والمتوسطة |
+| 1215 | [`1215-sorted-list-to-bst.apl`](../examples/1215-sorted-list-to-bst.apl) | بناء شجرة بحث متوازنة من قائمة مرتبة |
+| 1216 | [`1216-bst-validate.apl`](../examples/1216-bst-validate.apl) | هل الشجرة شجرة بحث صحيحة |
+| 1217 | [`1217-bst-kth-smallest.apl`](../examples/1217-bst-kth-smallest.apl) | العنصر ذو الترتيب k في شجرة بحث |
+| 1218 | [`1218-bst-insert-delete.apl`](../examples/1218-bst-insert-delete.apl) | إدراج وحذف في شجرة بحث ثنائية |
 
 **التشغيل:**
 ```bash
@@ -1474,4 +1489,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1203 مثال جاهز** في `examples/`.
+مع **1218 مثال جاهز** في `examples/`.

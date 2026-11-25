@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1203 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1218 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1203 مثال)
+## الأمثلة الجاهزة (1218 مثال)
 
-مجلد `examples/` يحتوي على **1203 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1218 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1478,6 +1478,21 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1201 | [`1201-redundant-connection.apl`](examples/1201-redundant-connection.apl) | الحافة التي تكوّن حلقة في شجرة |
 | 1202 | [`1202-number-of-provinces.apl`](examples/1202-number-of-provinces.apl) | عدد المجموعات المتصلة في مصفوفة صلات |
 | 1203 | [`1203-accounts-merge.apl`](examples/1203-accounts-merge.apl) | دمج حسابات تشترك في بريد |
+| 1204 | [`1204-tree-max-depth-list.apl`](examples/1204-tree-max-depth-list.apl) | عمق شجرة ثنائية ممثلة بقوائم |
+| 1205 | [`1205-tree-level-order-list.apl`](examples/1205-tree-level-order-list.apl) | قراءة الشجرة مستوى مستوى |
+| 1206 | [`1206-tree-zigzag-order.apl`](examples/1206-tree-zigzag-order.apl) | قراءة مستويات الشجرة بالتناوب |
+| 1207 | [`1207-tree-path-sum.apl`](examples/1207-tree-path-sum.apl) | هل يوجد مسار من الجذر لورقة بمجموع معين |
+| 1208 | [`1208-tree-all-paths.apl`](examples/1208-tree-all-paths.apl) | كل مسارات الجذر إلى الأوراق |
+| 1209 | [`1209-tree-lca.apl`](examples/1209-tree-lca.apl) | أقرب سلف مشترك في شجرة بحث ثنائية |
+| 1210 | [`1210-tree-symmetric.apl`](examples/1210-tree-symmetric.apl) | هل الشجرة صورة مرآة لنفسها |
+| 1211 | [`1211-tree-invert.apl`](examples/1211-tree-invert.apl) | تبديل الفرعين الأيسر والأيمن في كل عقدة |
+| 1212 | [`1212-tree-diameter-list.apl`](examples/1212-tree-diameter-list.apl) | أطول مسار بين أي عقدتين |
+| 1213 | [`1213-tree-serialize.apl`](examples/1213-tree-serialize.apl) | تحويل شجرة إلى نص وإعادتها |
+| 1214 | [`1214-build-tree-preorder-inorder.apl`](examples/1214-build-tree-preorder-inorder.apl) | إعادة بناء شجرة من القراءتين المسبقة والمتوسطة |
+| 1215 | [`1215-sorted-list-to-bst.apl`](examples/1215-sorted-list-to-bst.apl) | بناء شجرة بحث متوازنة من قائمة مرتبة |
+| 1216 | [`1216-bst-validate.apl`](examples/1216-bst-validate.apl) | هل الشجرة شجرة بحث صحيحة |
+| 1217 | [`1217-bst-kth-smallest.apl`](examples/1217-bst-kth-smallest.apl) | العنصر ذو الترتيب k في شجرة بحث |
+| 1218 | [`1218-bst-insert-delete.apl`](examples/1218-bst-insert-delete.apl) | إدراج وحذف في شجرة بحث ثنائية |
 
 ### تشغيل أي مثال
 
@@ -1578,7 +1593,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1203 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1218 مثال
 
 ## Language platform tools
 
