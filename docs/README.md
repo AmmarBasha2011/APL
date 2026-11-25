@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1162 مثال)
+## الأمثلة الجاهزة (1189 مثال)
 
-1162 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1189 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1279,6 +1279,33 @@
 | 1160 | [`1160-longest-substring-k-distinct.apl`](../examples/1160-longest-substring-k-distinct.apl) | أطول نص جزئي بحد أقصى k حرفاً مختلفاً |
 | 1161 | [`1161-fruit-baskets.apl`](../examples/1161-fruit-baskets.apl) | أطول مقطع بنوعين من الفاكهة |
 | 1162 | [`1162-min-window-substring.apl`](../examples/1162-min-window-substring.apl) | أصغر نص جزئي يحوي كل حروف نمط |
+| 1163 | [`1163-valid-sudoku-board.apl`](../examples/1163-valid-sudoku-board.apl) | التحقق من صحة لوحة سودوكو جزئية |
+| 1164 | [`1164-longest-common-subarray.apl`](../examples/1164-longest-common-subarray.apl) | أطول مقطع متصل مشترك بين قائمتين |
+| 1165 | [`1165-distinct-subsequences.apl`](../examples/1165-distinct-subsequences.apl) | عدد طرق تكوين نص هدف كمتتالية من نص |
+| 1166 | [`1166-wildcard-matching.apl`](../examples/1166-wildcard-matching.apl) | مطابقة نص بنمط فيه ? و * |
+| 1167 | [`1167-regex-matching-dp.apl`](../examples/1167-regex-matching-dp.apl) | مطابقة نص بنمط فيه . و * |
+| 1168 | [`1168-burst-balloons.apl`](../examples/1168-burst-balloons.apl) | أقصى عملات من تفجير البالونات |
+| 1169 | [`1169-palindrome-pairs-count.apl`](../examples/1169-palindrome-pairs-count.apl) | أزواج كلمات يكوّن لصقها كلمة متناظرة |
+| 1170 | [`1170-shortest-palindrome.apl`](../examples/1170-shortest-palindrome.apl) | إضافة أقل حروف في البداية لنص ليصير متناظراً |
+| 1171 | [`1171-count-palindromic-substrings.apl`](../examples/1171-count-palindromic-substrings.apl) | عدد النصوص الجزئية المتناظرة |
+| 1172 | [`1172-longest-palindromic-substring-center.apl`](../examples/1172-longest-palindromic-substring-center.apl) | أطول نص جزئي متناظر |
+| 1173 | [`1173-sliding-window-median.apl`](../examples/1173-sliding-window-median.apl) | وسيط كل نافذة بطول k |
+| 1174 | [`1174-median-two-sorted.apl`](../examples/1174-median-two-sorted.apl) | وسيط قائمتين مرتبتين |
+| 1175 | [`1175-running-median-stream.apl`](../examples/1175-running-median-stream.apl) | وسيط بعد كل رقم جديد |
+| 1176 | [`1176-meeting-scheduler-slot.apl`](../examples/1176-meeting-scheduler-slot.apl) | أول فترة مشتركة بين جدولين |
+| 1177 | [`1177-interval-intersections.apl`](../examples/1177-interval-intersections.apl) | تقاطع قائمتين من المجالات |
+| 1178 | [`1178-insert-interval.apl`](../examples/1178-insert-interval.apl) | إدراج مجال جديد ودمج ما يتداخل |
+| 1179 | [`1179-non-overlapping-intervals.apl`](../examples/1179-non-overlapping-intervals.apl) | أقل حذف لتصبح المجالات غير متداخلة |
+| 1180 | [`1180-min-arrows-balloons.apl`](../examples/1180-min-arrows-balloons.apl) | أقل سهام لتفجير بالونات |
+| 1181 | [`1181-car-fleet.apl`](../examples/1181-car-fleet.apl) | عدد الأساطيل التي تصل للهدف |
+| 1182 | [`1182-asteroid-field-sim.apl`](../examples/1182-asteroid-field-sim.apl) | محاكاة تصادم الكويكبات |
+| 1183 | [`1183-decode-string-nested.apl`](../examples/1183-decode-string-nested.apl) | فك صيغة k[نص] المتداخلة |
+| 1184 | [`1184-basic-calculator.apl`](../examples/1184-basic-calculator.apl) | تقييم عبارة فيها جمع وطرح وأقواس |
+| 1185 | [`1185-basic-calculator-two.apl`](../examples/1185-basic-calculator-two.apl) | تقييم عبارة فيها أربع عمليات |
+| 1186 | [`1186-evaluate-rpn.apl`](../examples/1186-evaluate-rpn.apl) | تقييم عبارة بصيغة البوستفيكس |
+| 1187 | [`1187-infix-to-postfix.apl`](../examples/1187-infix-to-postfix.apl) | تحويل عبارة وسطية إلى لاحقة |
+| 1188 | [`1188-min-remove-valid-parens.apl`](../examples/1188-min-remove-valid-parens.apl) | حذف أقل عدد أقواس لتصير العبارة صالحة |
+| 1189 | [`1189-score-of-parentheses.apl`](../examples/1189-score-of-parentheses.apl) | حساب درجة عبارة أقواس متوازنة |
 
 **التشغيل:**
 ```bash
@@ -1433,4 +1460,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1162 مثال جاهز** في `examples/`.
+مع **1189 مثال جاهز** في `examples/`.
