@@ -106,9 +106,9 @@
 | 96 | [pkgs_ext2-library.md](pkgs_ext2-library.md) | مكتبة `pkgs_ext2` — حزم متنوعة موسّعة (scrapy / prompt_toolkit / lxml / hypothesis / peewee / arrow / alembic / rich / trio / paramiko / h5py / cryptography / pyasn1 / skimage / yaml / seaborn / pyparsing / bs4 / shapely / babel / redis / pendulum / mako / nacl / typer / google / PIL / kombu / marshmallow / requests / sqlparse / celery / packaging / six / httpx / jinja2 / acp / regex / uvicorn / websockets / markdown / tornado / anyio / httplib2 / pygments / cffi / click / fastapi / httpcore / googleapiclient / tqdm / starlette / dateutil / pydantic / attr / jsonschema / multidict / numpy / scipy) (19,295 عنصراً) |
 
 ---
-## الأمثلة الجاهزة (884 مثالاً)
+## الأمثلة الجاهزة (908 مثالاً)
 
-884 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+908 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -996,6 +996,30 @@
 | 882 | [`882-floyd-cycle.apl`](../examples/882-floyd-cycle.apl) | دورة بذاكرة ثابتة |
 | 883 | [`883-balanced-ternary.apl`](../examples/883-balanced-ternary.apl) | تمثيل فريد للسالب والموجب |
 | 884 | [`884-zeckendorf.apl`](../examples/884-zeckendorf.apl) | جشع فريد لكل عدد |
+| 885 | [`885-thue-morse.apl`](../examples/885-thue-morse.apl) | خالية من التكرار الثلاثي |
+| 886 | [`886-kolakoski.apl`](../examples/886-kolakoski.apl) | متتابعة مولدة لنفسها |
+| 887 | [`887-hofstadter-q.apl`](../examples/887-hofstadter-q.apl) | تكرارية ميتافيبوناتشي |
+| 888 | [`888-fusc-diatomic.apl`](../examples/888-fusc-diatomic.apl) | تعد شجرة كوكينس |
+| 889 | [`889-motzkin-numbers.apl`](../examples/889-motzkin-numbers.apl) | تنعيم كاتالان بخطوة مستوية |
+| 890 | [`890-schroder-numbers.apl`](../examples/890-schroder-numbers.apl) | تقارب ضعفي مع كاتالان |
+| 891 | [`891-delannoy-numbers.apl`](../examples/891-delannoy-numbers.apl) | وسطاء المسارات القطرية |
+| 892 | [`892-narayana-numbers.apl`](../examples/892-narayana-numbers.apl) | تنعيم كاتالان بعدد القمم |
+| 893 | [`893-eulerian-numbers.apl`](../examples/893-eulerian-numbers.apl) | مجموع الصف مضروب ن |
+| 894 | [`894-cantor-pairing.apl`](../examples/894-cantor-pairing.apl) | فك ببحث مثلثي ثنائي |
+| 895 | [`895-cantor-set.apl`](../examples/895-cantor-set.apl) | عضوية في فراكتل |
+| 896 | [`896-exponential-search.apl`](../examples/896-exponential-search.apl) | بحث في مصفوفة غير محدودة |
+| 897 | [`897-fibonacci-search.apl`](../examples/897-fibonacci-search.apl) | لوصول غير متجانس الكلفة |
+| 898 | [`898-move-to-front.apl`](../examples/898-move-to-front.apl) | ضغط يستغل التكرار الموضعي |
+| 899 | [`899-distinct-subsequences.apl`](../examples/899-distinct-subsequences.apl) | عد بلا تكرار |
+| 900 | [`900-lyndon-words.apl`](../examples/900-lyndon-words.apl) | أدنى من كل تدويراتها |
+| 901 | [`901-minimal-rotation.apl`](../examples/901-minimal-rotation.apl) | مطابقة السلاسل الدائرية |
+| 902 | [`902-shannon-entropy.apl`](../examples/902-shannon-entropy.apl) | متوسط المعلومة بالبت |
+| 903 | [`903-kl-divergence.apl`](../examples/903-kl-divergence.apl) | بعد احتمالي غير متماثل |
+| 904 | [`904-gini-coefficient.apl`](../examples/904-gini-coefficient.apl) | قياس عدم المساواة |
+| 905 | [`905-kendall-tau.apl`](../examples/905-kendall-tau.apl) | ارتباط ترتيبي |
+| 906 | [`906-skewness-kurtosis.apl`](../examples/906-skewness-kurtosis.apl) | قياس شكل التوزيع |
+| 907 | [`907-negabinary.apl`](../examples/907-negabinary.apl) | سالب وموجب بلا بت إشارة |
+| 908 | [`908-iqr-outliers.apl`](../examples/908-iqr-outliers.apl) | فرز ووسائط وربيعيات |
 
 **التشغيل:**
 ```bash
@@ -1145,4 +1169,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,254 عنصراً**،
-مع **884 مثال جاهز** في `examples/`.
+مع **908 مثال جاهز** في `examples/`.

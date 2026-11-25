@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 91 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **884 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **908 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -264,9 +264,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (884 مثالاً)
+## الأمثلة الجاهزة (908 مثالاً)
 
-مجلد `examples/` يحتوي على **884 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **908 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1154,6 +1154,30 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 882 | [`882-floyd-cycle.apl`](examples/882-floyd-cycle.apl) | دورة بذاكرة ثابتة |
 | 883 | [`883-balanced-ternary.apl`](examples/883-balanced-ternary.apl) | تمثيل فريد للسالب والموجب |
 | 884 | [`884-zeckendorf.apl`](examples/884-zeckendorf.apl) | جشع فريد لكل عدد |
+| 885 | [`885-thue-morse.apl`](examples/885-thue-morse.apl) | خالية من التكرار الثلاثي |
+| 886 | [`886-kolakoski.apl`](examples/886-kolakoski.apl) | متتابعة مولدة لنفسها |
+| 887 | [`887-hofstadter-q.apl`](examples/887-hofstadter-q.apl) | تكرارية ميتافيبوناتشي |
+| 888 | [`888-fusc-diatomic.apl`](examples/888-fusc-diatomic.apl) | تعد شجرة كوكينس |
+| 889 | [`889-motzkin-numbers.apl`](examples/889-motzkin-numbers.apl) | تنعيم كاتالان بخطوة مستوية |
+| 890 | [`890-schroder-numbers.apl`](examples/890-schroder-numbers.apl) | تقارب ضعفي مع كاتالان |
+| 891 | [`891-delannoy-numbers.apl`](examples/891-delannoy-numbers.apl) | وسطاء المسارات القطرية |
+| 892 | [`892-narayana-numbers.apl`](examples/892-narayana-numbers.apl) | تنعيم كاتالان بعدد القمم |
+| 893 | [`893-eulerian-numbers.apl`](examples/893-eulerian-numbers.apl) | مجموع الصف مضروب ن |
+| 894 | [`894-cantor-pairing.apl`](examples/894-cantor-pairing.apl) | فك ببحث مثلثي ثنائي |
+| 895 | [`895-cantor-set.apl`](examples/895-cantor-set.apl) | عضوية في فراكتل |
+| 896 | [`896-exponential-search.apl`](examples/896-exponential-search.apl) | بحث في مصفوفة غير محدودة |
+| 897 | [`897-fibonacci-search.apl`](examples/897-fibonacci-search.apl) | لوصول غير متجانس الكلفة |
+| 898 | [`898-move-to-front.apl`](examples/898-move-to-front.apl) | ضغط يستغل التكرار الموضعي |
+| 899 | [`899-distinct-subsequences.apl`](examples/899-distinct-subsequences.apl) | عد بلا تكرار |
+| 900 | [`900-lyndon-words.apl`](examples/900-lyndon-words.apl) | أدنى من كل تدويراتها |
+| 901 | [`901-minimal-rotation.apl`](examples/901-minimal-rotation.apl) | مطابقة السلاسل الدائرية |
+| 902 | [`902-shannon-entropy.apl`](examples/902-shannon-entropy.apl) | متوسط المعلومة بالبت |
+| 903 | [`903-kl-divergence.apl`](examples/903-kl-divergence.apl) | بعد احتمالي غير متماثل |
+| 904 | [`904-gini-coefficient.apl`](examples/904-gini-coefficient.apl) | قياس عدم المساواة |
+| 905 | [`905-kendall-tau.apl`](examples/905-kendall-tau.apl) | ارتباط ترتيبي |
+| 906 | [`906-skewness-kurtosis.apl`](examples/906-skewness-kurtosis.apl) | قياس شكل التوزيع |
+| 907 | [`907-negabinary.apl`](examples/907-negabinary.apl) | سالب وموجب بلا بت إشارة |
+| 908 | [`908-iqr-outliers.apl`](examples/908-iqr-outliers.apl) | فرز ووسائط وربيعيات |
 
 ### تشغيل أي مثال
 
@@ -1254,7 +1278,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 884 مثالاً
+**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 908 مثالاً
 
 ## Language platform tools
 
