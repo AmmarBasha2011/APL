@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1343 مثال)
+## الأمثلة الجاهزة (1357 مثال)
 
-1343 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1357 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1460,6 +1460,20 @@
 | 1341 | [`1341-count-sorted-vowels.apl`](../examples/1341-count-sorted-vowels.apl) | عدد نصوص من حروف العلة مرتبة أبجدياً بطول معين |
 | 1342 | [`1342-paint-fence.apl`](../examples/1342-paint-fence.apl) | عدد طرق طلاء سور بلا ثلاثة ألواح متتالية بنفس اللون |
 | 1343 | [`1343-min-refueling-stops.apl`](../examples/1343-min-refueling-stops.apl) | أقل عدد محطات وقود للوصول إلى الهدف |
+| 1344 | [`1344-evaluate-division.apl`](../examples/1344-evaluate-division.apl) | حساب نسب بين متغيرات من معادلات معروفة |
+| 1345 | [`1345-reverse-pairs-count.apl`](../examples/1345-reverse-pairs-count.apl) | عدد أزواج i<j حيث العنصر الأول أكبر من ضعف الثاني |
+| 1346 | [`1346-alien-dictionary-order.apl`](../examples/1346-alien-dictionary-order.apl) | استنتاج ترتيب الحروف من كلمات مرتبة |
+| 1347 | [`1347-possible-bipartition.apl`](../examples/1347-possible-bipartition.apl) | تقسيم أشخاص إلى مجموعتين لا يتنافر أعضاء كل منهما |
+| 1348 | [`1348-reconstruct-itinerary.apl`](../examples/1348-reconstruct-itinerary.apl) | ترتيب تذاكر طيران في رحلة واحدة بأصغر ترتيب أبجدي |
+| 1349 | [`1349-eventual-safe-states.apl`](../examples/1349-eventual-safe-states.apl) | العقد التي كل مساراتها تنتهي بعقدة طرفية |
+| 1350 | [`1350-swim-rising-water.apl`](../examples/1350-swim-rising-water.apl) | أقل زمن للوصول من الزاوية إلى الزاوية |
+| 1351 | [`1351-word-break-sentences.apl`](../examples/1351-word-break-sentences.apl) | كل الجمل الممكنة بتقسيم نص إلى كلمات من قاموس |
+| 1352 | [`1352-count-smaller-after-self.apl`](../examples/1352-count-smaller-after-self.apl) | لكل عنصر عدد العناصر الأصغر منه على يمينه |
+| 1353 | [`1353-k-closest-points.apl`](../examples/1353-k-closest-points.apl) | أقرب ك نقطة إلى نقطة الأصل |
+| 1354 | [`1354-min-height-trees.apl`](../examples/1354-min-height-trees.apl) | جذور تعطي أقل ارتفاع لشجرة غير موجهة |
+| 1355 | [`1355-prison-cells-days.apl`](../examples/1355-prison-cells-days.apl) | حالة ثماني زنازين بعد عدد كبير من الأيام |
+| 1356 | [`1356-champagne-tower.apl`](../examples/1356-champagne-tower.apl) | كمية السائل في كأس معين في برج كؤوس |
+| 1357 | [`1357-rabbits-in-forest.apl`](../examples/1357-rabbits-in-forest.apl) | أقل عدد ممكن للأرانب من إجابات عددها حولها |
 
 **التشغيل:**
 ```bash
@@ -1614,4 +1628,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1343 مثال جاهز** في `examples/`.
+مع **1357 مثال جاهز** في `examples/`.
