@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1025 مثال)
+## الأمثلة الجاهزة (1050 مثال)
 
-1025 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1050 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1142,6 +1142,31 @@
 | 1023 | [`1023-bin-packing-ffd.apl`](../examples/1023-bin-packing-ffd.apl) | تقدير أقل عدد صناديق |
 | 1024 | [`1024-pythagorean-triples.apl`](../examples/1024-pythagorean-triples.apl) | كل ثلاثيات الأعداد حتى حد |
 | 1025 | [`1025-binary-gap.apl`](../examples/1025-binary-gap.apl) | أطول سلسلة أصفار بين واحدين |
+| 1026 | [`1026-min-add-parens.apl`](../examples/1026-min-add-parens.apl) | أقل إضافات لتوازن الأقواس |
+| 1027 | [`1027-longest-valid-parens.apl`](../examples/1027-longest-valid-parens.apl) | أطول جزء متوازن متصل |
+| 1028 | [`1028-longest-consecutive.apl`](../examples/1028-longest-consecutive.apl) | أطول أعداد متتابعة غير مرتبة |
+| 1029 | [`1029-subarray-sum-k.apl`](../examples/1029-subarray-sum-k.apl) | عدد الأجزاء المتصلة بمجموع معين |
+| 1030 | [`1030-longest-no-repeat.apl`](../examples/1030-longest-no-repeat.apl) | أطول جزء بحروف مختلفة |
+| 1031 | [`1031-min-size-subarray.apl`](../examples/1031-min-size-subarray.apl) | أقصر جزء مجموعه لا يقل عن هدف |
+| 1032 | [`1032-rotate-string.apl`](../examples/1032-rotate-string.apl) | هل نص دوران لنص آخر |
+| 1033 | [`1033-reverse-words-spaces.apl`](../examples/1033-reverse-words-spaces.apl) | عكس ترتيب الكلمات وحذف الفراغ الزائد |
+| 1034 | [`1034-valid-mountain.apl`](../examples/1034-valid-mountain.apl) | هل القائمة تصعد ثم تهبط |
+| 1035 | [`1035-sorted-squares.apl`](../examples/1035-sorted-squares.apl) | مربعات قائمة مرتبة بلا فرز جديد |
+| 1036 | [`1036-sorted-intersection.apl`](../examples/1036-sorted-intersection.apl) | العناصر المشتركة بلا تكرار |
+| 1037 | [`1037-duplicate-within-k.apl`](../examples/1037-duplicate-within-k.apl) | هل يتكرر عنصر خلال مسافة محددة |
+| 1038 | [`1038-remove-element.apl`](../examples/1038-remove-element.apl) | حذف كل ظهور لقيمة وإرجاع الطول الجديد |
+| 1039 | [`1039-search-rotated.apl`](../examples/1039-search-rotated.apl) | إيجاد قيمة في قائمة مرتبة مدورة |
+| 1040 | [`1040-find-peak.apl`](../examples/1040-find-peak.apl) | فهرس عنصر أكبر من جاريه |
+| 1041 | [`1041-first-last-position.apl`](../examples/1041-first-last-position.apl) | حدود ظهور قيمة في قائمة مرتبة |
+| 1042 | [`1042-integer-sqrt.apl`](../examples/1042-integer-sqrt.apl) | أكبر عدد مربعه لا يتجاوز العدد |
+| 1043 | [`1043-power-of-three.apl`](../examples/1043-power-of-three.apl) | هل العدد قوة للثلاثة |
+| 1044 | [`1044-add-binary.apl`](../examples/1044-add-binary.apl) | جمع عددين ثنائيين مكتوبين نصاً |
+| 1045 | [`1045-multiply-strings.apl`](../examples/1045-multiply-strings.apl) | ضرب عددين كبيرين مكتوبين نصاً |
+| 1046 | [`1046-string-compress.apl`](../examples/1046-string-compress.apl) | اختصار التكرار المتتالي |
+| 1047 | [`1047-length-last-word.apl`](../examples/1047-length-last-word.apl) | طول آخر كلمة في جملة |
+| 1048 | [`1048-count-bits-table.apl`](../examples/1048-count-bits-table.apl) | عدد الآحاد الثنائية لكل عدد حتى ن |
+| 1049 | [`1049-first-missing-positive.apl`](../examples/1049-first-missing-positive.apl) | أصغر عدد موجب غائب |
+| 1050 | [`1050-h-index.apl`](../examples/1050-h-index.apl) | أكبر ه بحيث ه أبحاث لكل منها ه استشهاداً |
 
 **التشغيل:**
 ```bash
@@ -1296,4 +1321,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1025 مثال جاهز** في `examples/`.
+مع **1050 مثال جاهز** في `examples/`.
