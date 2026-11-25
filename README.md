@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1319 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1329 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1319 مثال)
+## الأمثلة الجاهزة (1329 مثال)
 
-مجلد `examples/` يحتوي على **1319 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1329 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1594,6 +1594,16 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1317 | [`1317-sudoku-solver-mini.apl`](examples/1317-sudoku-solver-mini.apl) | حل سودوكو ٤ في ٤ |
 | 1318 | [`1318-target-sum-combos.apl`](examples/1318-target-sum-combos.apl) | عدد طرق وضع الإشارات لبلوغ هدف |
 | 1319 | [`1319-expression-add-operators.apl`](examples/1319-expression-add-operators.apl) | وضع عمليات بين الأرقام لبلوغ هدف |
+| 1320 | [`1320-rotate-matrix-in-place.apl`](examples/1320-rotate-matrix-in-place.apl) | تدوير مصفوفة بنقلها ثم عكس الصفوف |
+| 1321 | [`1321-transpose-matrix.apl`](examples/1321-transpose-matrix.apl) | تبديل الصفوف والأعمدة في مصفوفة مستطيلة |
+| 1322 | [`1322-toeplitz-check.apl`](examples/1322-toeplitz-check.apl) | هل كل قطر في المصفوفة ثابت |
+| 1323 | [`1323-lonely-pixel.apl`](examples/1323-lonely-pixel.apl) | عدد البكسلات السوداء الوحيدة في صفها وعمودها |
+| 1324 | [`1324-island-perimeter.apl`](examples/1324-island-perimeter.apl) | محيط جزيرة في شبكة |
+| 1325 | [`1325-max-area-island.apl`](examples/1325-max-area-island.apl) | أكبر جزيرة في شبكة |
+| 1326 | [`1326-number-of-distinct-islands.apl`](examples/1326-number-of-distinct-islands.apl) | عدد أشكال الجزر المختلفة |
+| 1327 | [`1327-shortest-bridge.apl`](examples/1327-shortest-bridge.apl) | أقل عدد خانات ماء لربط جزيرتين |
+| 1328 | [`1328-minimum-knight-moves.apl`](examples/1328-minimum-knight-moves.apl) | أقل عدد حركات حصان بين خانتين |
+| 1329 | [`1329-open-the-lock.apl`](examples/1329-open-the-lock.apl) | أقل عدد لفات لفتح قفل رقمي |
 
 ### تشغيل أي مثال
 
@@ -1694,7 +1704,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1319 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1329 مثال
 
 ## Language platform tools
 
