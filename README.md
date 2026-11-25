@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1218 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1236 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1218 مثال)
+## الأمثلة الجاهزة (1236 مثال)
 
-مجلد `examples/` يحتوي على **1218 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1236 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1493,6 +1493,24 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1216 | [`1216-bst-validate.apl`](examples/1216-bst-validate.apl) | هل الشجرة شجرة بحث صحيحة |
 | 1217 | [`1217-bst-kth-smallest.apl`](examples/1217-bst-kth-smallest.apl) | العنصر ذو الترتيب k في شجرة بحث |
 | 1218 | [`1218-bst-insert-delete.apl`](examples/1218-bst-insert-delete.apl) | إدراج وحذف في شجرة بحث ثنائية |
+| 1219 | [`1219-single-number-two.apl`](examples/1219-single-number-two.apl) | الرقم الذي يظهر مرة بين أرقام تظهر ثلاثاً |
+| 1220 | [`1220-single-number-three.apl`](examples/1220-single-number-three.apl) | الرقمان اللذان يظهران مرة بين أزواج |
+| 1221 | [`1221-hamming-weight-table.apl`](examples/1221-hamming-weight-table.apl) | عدد البتات المضبوطة في عدد |
+| 1222 | [`1222-reverse-bits.apl`](examples/1222-reverse-bits.apl) | عكس ترتيب بتات عدد من اثنين وثلاثين بتاً |
+| 1223 | [`1223-power-of-two-check.apl`](examples/1223-power-of-two-check.apl) | التحقق من أن العدد قوة اثنين أو أربعة |
+| 1224 | [`1224-subsets-bitmask.apl`](examples/1224-subsets-bitmask.apl) | توليد كل المجموعات الجزئية بقناع بتات |
+| 1225 | [`1225-max-xor-pair.apl`](examples/1225-max-xor-pair.apl) | أكبر نتيجة xor بين زوج من القائمة |
+| 1226 | [`1226-gcd-of-strings.apl`](examples/1226-gcd-of-strings.apl) | أكبر نص يقسم نصين بالتكرار |
+| 1227 | [`1227-pow-mod-recursive.apl`](examples/1227-pow-mod-recursive.apl) | حساب a أس b بباقي m |
+| 1228 | [`1228-count-primes-segment.apl`](examples/1228-count-primes-segment.apl) | عدد الأوليات أقل من n |
+| 1229 | [`1229-ugly-number-two.apl`](examples/1229-ugly-number-two.apl) | العدد القبيح ذو الترتيب n |
+| 1230 | [`1230-super-ugly.apl`](examples/1230-super-ugly.apl) | العدد القبيح بقائمة أوليات معطاة |
+| 1231 | [`1231-kth-missing-positive.apl`](examples/1231-kth-missing-positive.apl) | الرقم الموجب المفقود ذو الترتيب k |
+| 1232 | [`1232-split-array-largest-sum.apl`](examples/1232-split-array-largest-sum.apl) | تقسيم قائمة إلى m أجزاء بأصغر أكبر مجموع |
+| 1233 | [`1233-koko-bananas.apl`](examples/1233-koko-bananas.apl) | أقل سرعة أكل لإنهاء الأكوام في h ساعة |
+| 1234 | [`1234-ship-packages.apl`](examples/1234-ship-packages.apl) | أقل سعة سفينة لشحن الطرود خلال d يوماً |
+| 1235 | [`1235-find-min-rotated-dup.apl`](examples/1235-find-min-rotated-dup.apl) | أصغر عنصر في قائمة مدورة فيها تكرار |
+| 1236 | [`1236-search-insert-position.apl`](examples/1236-search-insert-position.apl) | موضع إدراج قيمة في قائمة مرتبة |
 
 ### تشغيل أي مثال
 
@@ -1593,7 +1611,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1218 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1236 مثال
 
 ## Language platform tools
 
