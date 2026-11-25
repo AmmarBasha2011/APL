@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1430 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1450 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1430 مثال)
+## الأمثلة الجاهزة (1450 مثال)
 
-مجلد `examples/` يحتوي على **1430 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1450 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1705,6 +1705,26 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1428 | [`1428-sort-vowels-in-string.apl`](examples/1428-sort-vowels-in-string.apl) | فرز حروف العلة في مواضعها وإبقاء الباقي |
 | 1429 | [`1429-max-nesting-depth.apl`](examples/1429-max-nesting-depth.apl) | أقصى عمق لتداخل الأقواس في تعبير |
 | 1430 | [`1430-remove-outer-parentheses.apl`](examples/1430-remove-outer-parentheses.apl) | حذف أقواس المستوى الأول من كل جزء أولي |
+| 1431 | [`1431-heron-area.apl`](examples/1431-heron-area.apl) | مساحة مثلث من أطوال أضلاعه الثلاثة |
+| 1432 | [`1432-rectangle-overlap.apl`](examples/1432-rectangle-overlap.apl) | هل يتداخل مستطيلان بمساحة موجبة |
+| 1433 | [`1433-polygon-centroid.apl`](examples/1433-polygon-centroid.apl) | مركز ثقل مضلع بصيغة الحذاء |
+| 1434 | [`1434-angle-type-vectors.apl`](examples/1434-angle-type-vectors.apl) | هل الزاوية بين متجهين حادة أم قائمة أم منفرجة |
+| 1435 | [`1435-rotate-point-quarter.apl`](examples/1435-rotate-point-quarter.apl) | تدوير نقطة حول الأصل بمضاعفات تسعين درجة |
+| 1436 | [`1436-reflect-point.apl`](examples/1436-reflect-point.apl) | انعكاس نقطة حول المحور السيني أو الصادي أو القطر |
+| 1437 | [`1437-collinear-three-points.apl`](examples/1437-collinear-three-points.apl) | هل تقع ثلاث نقاط على خط مستقيم |
+| 1438 | [`1438-max-points-on-line.apl`](examples/1438-max-points-on-line.apl) | أكبر عدد نقاط تقع على خط واحد |
+| 1439 | [`1439-valid-square-points.apl`](examples/1439-valid-square-points.apl) | هل تشكل أربع نقاط مربعاً |
+| 1440 | [`1440-convex-polygon-check.apl`](examples/1440-convex-polygon-check.apl) | هل مضلع محدب |
+| 1441 | [`1441-min-area-rectangle.apl`](examples/1441-min-area-rectangle.apl) | أصغر مساحة لمستطيل أضلاعه موازية للمحاور من نقاط |
+| 1442 | [`1442-largest-triangle-area.apl`](examples/1442-largest-triangle-area.apl) | أكبر مساحة لمثلث رؤوسه من مجموعة نقاط |
+| 1443 | [`1443-boomerang-points.apl`](examples/1443-boomerang-points.apl) | هل ثلاث نقاط متمايزة وغير مستقيمة |
+| 1444 | [`1444-manhattan-chebyshev.apl`](examples/1444-manhattan-chebyshev.apl) | مسافتان بين نقطتين على شبكة |
+| 1445 | [`1445-line-slope-reduced.apl`](examples/1445-line-slope-reduced.apl) | ميل خط يمر بنقطتين ككسر مختزل |
+| 1446 | [`1446-point-line-side.apl`](examples/1446-point-line-side.apl) | هل تقع نقطة يسار خط موجه أو يمينه أو عليه |
+| 1447 | [`1447-lattice-points-on-segment.apl`](examples/1447-lattice-points-on-segment.apl) | عدد النقاط الصحيحة على قطعة مستقيمة بين نقطتين |
+| 1448 | [`1448-pick-theorem-interior.apl`](examples/1448-pick-theorem-interior.apl) | عدد النقاط الشبكية داخل مضلع شبكي |
+| 1449 | [`1449-bounding-box-points.apl`](examples/1449-bounding-box-points.apl) | أصغر مستطيل يحيط بمجموعة نقاط |
+| 1450 | [`1450-ulam-spiral-position.apl`](examples/1450-ulam-spiral-position.apl) | إحداثيات العدد ن في لولب مربع يبدأ من الأصل |
 
 ### تشغيل أي مثال
 
@@ -1805,7 +1825,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1430 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1450 مثال
 
 ## Language platform tools
 
