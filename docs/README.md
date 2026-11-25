@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1521 مثال)
+## الأمثلة الجاهزة (1545 مثال)
 
-1521 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1545 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1638,6 +1638,30 @@
 | 1519 | [`1519-arabic-letter-count.apl`](../examples/1519-arabic-letter-count.apl) | نتجاهل المسافات وعلامات الترقيم |
 | 1520 | [`1520-abjad-numeral-value.apl`](../examples/1520-abjad-numeral-value.apl) | كل حرف عربي له قيمة عددية في حساب الجمل |
 | 1521 | [`1521-vowel-consonant-split.apl`](../examples/1521-vowel-consonant-split.apl) | فصل حروف العلة عن بقية الحروف |
+| 1522 | [`1522-population-std-dev.apl`](../examples/1522-population-std-dev.apl) | جذر متوسط مربعات الانحراف عن المتوسط |
+| 1523 | [`1523-mode-of-list.apl`](../examples/1523-mode-of-list.apl) | القيمة الأكثر تكراراً وأصغرها عند التعادل |
+| 1524 | [`1524-mean-absolute-deviation.apl`](../examples/1524-mean-absolute-deviation.apl) | متوسط بعد كل قيمة عن المتوسط |
+| 1525 | [`1525-geometric-mean-pair.apl`](../examples/1525-geometric-mean-pair.apl) | جذر حاصل ضرب القيم |
+| 1526 | [`1526-z-score-of-value.apl`](../examples/1526-z-score-of-value.apl) | كم انحرافاً معيارياً تبعد القيمة عن المتوسط |
+| 1527 | [`1527-min-max-normalize.apl`](../examples/1527-min-max-normalize.apl) | إعادة قياس القيم إلى المجال من 0 إلى 1 |
+| 1528 | [`1528-histogram-buckets.apl`](../examples/1528-histogram-buckets.apl) | عد القيم في مجالات متساوية العرض |
+| 1529 | [`1529-running-total-list.apl`](../examples/1529-running-total-list.apl) | كل عنصر مجموع ما قبله ونفسه |
+| 1530 | [`1530-prefix-xor-array.apl`](../examples/1530-prefix-xor-array.apl) | نتيجة XOR لكل عناصر البداية حتى كل موضع |
+| 1531 | [`1531-trailing-zero-bits.apl`](../examples/1531-trailing-zero-bits.apl) | عدد الأصفار على يمين آخر واحد |
+| 1532 | [`1532-highest-set-bit-position.apl`](../examples/1532-highest-set-bit-position.apl) | رتبة أعلى واحد في العدد |
+| 1533 | [`1533-isolate-lowest-bit.apl`](../examples/1533-isolate-lowest-bit.apl) | إبقاء أدنى واحد وتصفير الباقي |
+| 1534 | [`1534-power-of-four-check.apl`](../examples/1534-power-of-four-check.apl) | قوة اثنين موضع بتها زوجي |
+| 1535 | [`1535-set-clear-toggle-bit.apl`](../examples/1535-set-clear-toggle-bit.apl) | ثلاث عمليات أساسية على بت واحد |
+| 1536 | [`1536-reverse-byte-bits.apl`](../examples/1536-reverse-byte-bits.apl) | قلب ترتيب ثمانية بتات |
+| 1537 | [`1537-range-bitwise-and.apl`](../examples/1537-range-bitwise-and.apl) | نتيجة AND لكل الأعداد من م إلى ن |
+| 1538 | [`1538-frequency-counter-dict.apl`](../examples/1538-frequency-counter-dict.apl) | كم مرة ظهر كل عنصر |
+| 1539 | [`1539-group-words-by-length.apl`](../examples/1539-group-words-by-length.apl) | قاموس طول الكلمة إلى قائمة كلماتها |
+| 1540 | [`1540-invert-dictionary.apl`](../examples/1540-invert-dictionary.apl) | المفاتيح قيماً والقيم مفاتيح |
+| 1541 | [`1541-merge-dicts-sum.apl`](../examples/1541-merge-dicts-sum.apl) | المفاتيح المشتركة تُجمع قيمها |
+| 1542 | [`1542-nested-dict-path-get.apl`](../examples/1542-nested-dict-path-get.apl) | الوصول لقيمة عميقة بقائمة مفاتيح |
+| 1543 | [`1543-deep-copy-nested-list.apl`](../examples/1543-deep-copy-nested-list.apl) | نسخة لا تتأثر بتعديل الأصل |
+| 1544 | [`1544-quartile-bounds.apl`](../examples/1544-quartile-bounds.apl) | الربيع الأول والثالث بطريقة الوسيط |
+| 1545 | [`1545-range-of-list.apl`](../examples/1545-range-of-list.apl) | الفرق بين أكبر وأصغر قيمة |
 
 **التشغيل:**
 ```bash
@@ -1792,4 +1816,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1521 مثال جاهز** في `examples/`.
+مع **1545 مثال جاهز** في `examples/`.
