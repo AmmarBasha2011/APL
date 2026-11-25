@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1569 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1593 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1569 مثال)
+## الأمثلة الجاهزة (1593 مثال)
 
-مجلد `examples/` يحتوي على **1569 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1593 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1844,6 +1844,30 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1567 | [`1567-longest-word-in-text.apl`](examples/1567-longest-word-in-text.apl) | أول كلمة بأكبر طول |
 | 1568 | [`1568-sum-digits-in-text.apl`](examples/1568-sum-digits-in-text.apl) | نجمع الأرقام المبعثرة في نص |
 | 1569 | [`1569-swap-letter-case.apl`](examples/1569-swap-letter-case.apl) | الكبير يصير صغيراً والعكس |
+| 1570 | [`1570-remove-adjacent-duplicates-stack.apl`](examples/1570-remove-adjacent-duplicates-stack.apl) | حذف زوج الحرفين المتساويين المتجاورين تكراراً |
+| 1571 | [`1571-boats-to-save-people.apl`](examples/1571-boats-to-save-people.apl) | أقل عدد قوارب يحمل كل منها شخصين بحد وزن |
+| 1572 | [`1572-minimum-platforms-needed.apl`](examples/1572-minimum-platforms-needed.apl) | أقصى عدد قطارات في المحطة معاً |
+| 1573 | [`1573-activity-selection-count.apl`](examples/1573-activity-selection-count.apl) | أنشطة لا تتداخل بأكبر عدد ممكن |
+| 1574 | [`1574-fractional-knapsack-value.apl`](examples/1574-fractional-knapsack-value.apl) | نأخذ الأعلى قيمة لكل وزن ويجوز التجزئة |
+| 1575 | [`1575-hand-of-straights-check.apl`](examples/1575-hand-of-straights-check.apl) | تقسيم أرقام إلى مجموعات متتالية بحجم ثابت |
+| 1576 | [`1576-monotonic-array-check.apl`](examples/1576-monotonic-array-check.apl) | تصاعدية أو تنازلية بالكامل |
+| 1577 | [`1577-sliding-window-maximum-naive.apl`](examples/1577-sliding-window-maximum-naive.apl) | أكبر عنصر لكل نافذة بطول ثابت |
+| 1578 | [`1578-sort-stack-with-temp.apl`](examples/1578-sort-stack-with-temp.apl) | نرتب مكدساً بمكدس إضافي واحد فقط |
+| 1579 | [`1579-tiny-stack-vm.apl`](examples/1579-tiny-stack-vm.apl) | تنفيذ تعليمات push وadd وmul |
+| 1580 | [`1580-bank-ledger-balance.apl`](examples/1580-bank-ledger-balance.apl) | إيداع وسحب مع رفض السحب الزائد |
+| 1581 | [`1581-inventory-restock-alerts.apl`](examples/1581-inventory-restock-alerts.apl) | أصناف نزل مخزونها تحت الحد |
+| 1582 | [`1582-door-state-machine.apl`](examples/1582-door-state-machine.apl) | باب يفتح ويغلق ويقفل وفق جدول انتقالات |
+| 1583 | [`1583-library-overdue-fine.apl`](examples/1583-library-overdue-fine.apl) | غرامة تتضاعف بعد أسبوع |
+| 1584 | [`1584-majority-element-vote.apl`](examples/1584-majority-element-vote.apl) | عنصر يظهر أكثر من نصف المرات |
+| 1585 | [`1585-pair-sum-two-pointers.apl`](examples/1585-pair-sum-two-pointers.apl) | قائمة مرتبة وهدف: هل يوجد زوج مجموعه الهدف |
+| 1586 | [`1586-pairs-with-given-difference.apl`](examples/1586-pairs-with-given-difference.apl) | عدد الأزواج التي فرقها قيمة محددة |
+| 1587 | [`1587-intersection-of-sorted-lists.apl`](examples/1587-intersection-of-sorted-lists.apl) | العناصر المشتركة بمرور واحد |
+| 1588 | [`1588-remove-duplicates-sorted-list.apl`](examples/1588-remove-duplicates-sorted-list.apl) | نبقي نسخة واحدة من كل قيمة |
+| 1589 | [`1589-rotate-left-by-k.apl`](examples/1589-rotate-left-by-k.apl) | نقل أول ك عناصر إلى النهاية |
+| 1590 | [`1590-contains-duplicate-set.apl`](examples/1590-contains-duplicate-set.apl) | نكتشف أول تكرار بقاموس |
+| 1591 | [`1591-valid-anagram-counts.apl`](examples/1591-valid-anagram-counts.apl) | نفس الحروف بنفس التكرار |
+| 1592 | [`1592-sorted-squares-two-pointers.apl`](examples/1592-sorted-squares-two-pointers.apl) | مربعات قائمة مرتبة بالأعداد السالبة |
+| 1593 | [`1593-peak-element-index.apl`](examples/1593-peak-element-index.apl) | عنصر أكبر من جاريه |
 
 ### تشغيل أي مثال
 
@@ -1944,7 +1968,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1569 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1593 مثال
 
 ## Language platform tools
 
