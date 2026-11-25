@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1291 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1307 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1291 مثال)
+## الأمثلة الجاهزة (1307 مثال)
 
-مجلد `examples/` يحتوي على **1291 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1307 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1566,6 +1566,22 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1289 | [`1289-min-ascii-delete-sum.apl`](examples/1289-min-ascii-delete-sum.apl) | أقل مجموع رموز محذوفة لتساوي نصين |
 | 1290 | [`1290-palindrome-removal.apl`](examples/1290-palindrome-removal.apl) | أقل حذف لتصبح السلسلة متناظرة |
 | 1291 | [`1291-restore-ip-addresses.apl`](examples/1291-restore-ip-addresses.apl) | كل العناوين الصالحة من سلسلة أرقام |
+| 1292 | [`1292-hash-map-design.apl`](examples/1292-hash-map-design.apl) | تنفيذ خريطة بسلاسل داخل سطول |
+| 1293 | [`1293-hash-set-design.apl`](examples/1293-hash-set-design.apl) | تنفيذ مجموعة تضيف وتحذف وتفحص |
+| 1294 | [`1294-my-calendar.apl`](examples/1294-my-calendar.apl) | حجز مواعيد بلا تداخل |
+| 1295 | [`1295-my-calendar-two.apl`](examples/1295-my-calendar-two.apl) | السماح بحجز مزدوج ومنع الثلاثي |
+| 1296 | [`1296-data-stream-first-bad.apl`](examples/1296-data-stream-first-bad.apl) | أول إصدار سيئ بأقل عدد استدعاءات |
+| 1297 | [`1297-guess-higher-lower.apl`](examples/1297-guess-higher-lower.apl) | تخمين رقم بإرشادات أعلى وأقل |
+| 1298 | [`1298-random-pick-weight.apl`](examples/1298-random-pick-weight.apl) | اختيار فهرس بحسب أوزانه |
+| 1299 | [`1299-shuffle-array-lcg.apl`](examples/1299-shuffle-array-lcg.apl) | خلط قائمة بمولد أرقام يمكن إعادة إنتاجه |
+| 1300 | [`1300-reservoir-sampling-fixed.apl`](examples/1300-reservoir-sampling-fixed.apl) | اختيار عنصر من تدفق بلا معرفة طوله |
+| 1301 | [`1301-linked-list-cycle-array.apl`](examples/1301-linked-list-cycle-array.apl) | كشف حلقة في قائمة مترابطة مخزنة بمصفوفة تالي |
+| 1302 | [`1302-linked-list-middle-array.apl`](examples/1302-linked-list-middle-array.apl) | عقدة المنتصف بمؤشر سريع وبطيء |
+| 1303 | [`1303-reverse-linked-list-arrays.apl`](examples/1303-reverse-linked-list-arrays.apl) | عكس قائمة مخزنة بمصفوفة التالي |
+| 1304 | [`1304-palindrome-linked-list.apl`](examples/1304-palindrome-linked-list.apl) | هل قائمة مترابطة متناظرة |
+| 1305 | [`1305-remove-nth-from-end.apl`](examples/1305-remove-nth-from-end.apl) | حذف العنصر ذي الترتيب n من النهاية |
+| 1306 | [`1306-odd-even-list.apl`](examples/1306-odd-even-list.apl) | جمع المواضع الفردية ثم الزوجية |
+| 1307 | [`1307-rotate-list-right.apl`](examples/1307-rotate-list-right.apl) | تدوير قائمة k خطوة لليمين |
 
 ### تشغيل أي مثال
 
@@ -1666,7 +1682,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1291 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1307 مثال
 
 ## Language platform tools
 
