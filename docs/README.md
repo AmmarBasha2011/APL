@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1545 مثال)
+## الأمثلة الجاهزة (1569 مثال)
 
-1545 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1569 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1662,6 +1662,30 @@
 | 1543 | [`1543-deep-copy-nested-list.apl`](../examples/1543-deep-copy-nested-list.apl) | نسخة لا تتأثر بتعديل الأصل |
 | 1544 | [`1544-quartile-bounds.apl`](../examples/1544-quartile-bounds.apl) | الربيع الأول والثالث بطريقة الوسيط |
 | 1545 | [`1545-range-of-list.apl`](../examples/1545-range-of-list.apl) | الفرق بين أكبر وأصغر قيمة |
+| 1546 | [`1546-dot-product-3d.apl`](../examples/1546-dot-product-3d.apl) | مجموع حاصل ضرب المركبات المتناظرة |
+| 1547 | [`1547-cross-product-3d.apl`](../examples/1547-cross-product-3d.apl) | متجه عمودي على المتجهين |
+| 1548 | [`1548-vector-length-3d.apl`](../examples/1548-vector-length-3d.apl) | جذر مجموع مربعات المركبات |
+| 1549 | [`1549-distance-between-3d-points.apl`](../examples/1549-distance-between-3d-points.apl) | جذر مجموع مربعات فروق الإحداثيات |
+| 1550 | [`1550-cube-space-diagonal.apl`](../examples/1550-cube-space-diagonal.apl) | القطر الذي يعبر المكعب من ركن لركن |
+| 1551 | [`1551-square-pyramid-volume.apl`](../examples/1551-square-pyramid-volume.apl) | ثلث مساحة القاعدة في الارتفاع |
+| 1552 | [`1552-triangular-prism-volume.apl`](../examples/1552-triangular-prism-volume.apl) | مساحة المثلث في طول المنشور |
+| 1553 | [`1553-box-surface-area.apl`](../examples/1553-box-surface-area.apl) | ستة أوجه في ثلاثة أزواج |
+| 1554 | [`1554-midpoint-3d-points.apl`](../examples/1554-midpoint-3d-points.apl) | متوسط كل إحداثي |
+| 1555 | [`1555-centroid-of-3d-points.apl`](../examples/1555-centroid-of-3d-points.apl) | متوسط إحداثيات عدة نقاط |
+| 1556 | [`1556-trapezoid-area-value.apl`](../examples/1556-trapezoid-area-value.apl) | نصف مجموع القاعدتين في الارتفاع |
+| 1557 | [`1557-rhombus-area-diagonals.apl`](../examples/1557-rhombus-area-diagonals.apl) | نصف حاصل ضرب القطرين |
+| 1558 | [`1558-point-to-line-distance.apl`](../examples/1558-point-to-line-distance.apl) | أقصر مسافة بين نقطة ومستقيم يمر بنقطتين |
+| 1559 | [`1559-perpendicular-vectors-check.apl`](../examples/1559-perpendicular-vectors-check.apl) | الجداء النقطي صفر |
+| 1560 | [`1560-day-of-year-number.apl`](../examples/1560-day-of-year-number.apl) | كم يوماً مضى من بداية السنة |
+| 1561 | [`1561-quarter-of-year.apl`](../examples/1561-quarter-of-year.apl) | أي ربع مالي يقع فيه الشهر |
+| 1562 | [`1562-leap-years-between.apl`](../examples/1562-leap-years-between.apl) | من غير المرور على كل سنة |
+| 1563 | [`1563-month-number-to-name.apl`](../examples/1563-month-number-to-name.apl) | الشهور الميلادية بأسمائها العربية |
+| 1564 | [`1564-count-words-in-text.apl`](../examples/1564-count-words-in-text.apl) | كلمات تفصل بينها مسافات متعددة |
+| 1565 | [`1565-capitalize-each-word.apl`](../examples/1565-capitalize-each-word.apl) | أول حرف من كل كلمة كبير والباقي صغير |
+| 1566 | [`1566-remove-vowels-text.apl`](../examples/1566-remove-vowels-text.apl) | إبقاء بقية الحروف بترتيبها |
+| 1567 | [`1567-longest-word-in-text.apl`](../examples/1567-longest-word-in-text.apl) | أول كلمة بأكبر طول |
+| 1568 | [`1568-sum-digits-in-text.apl`](../examples/1568-sum-digits-in-text.apl) | نجمع الأرقام المبعثرة في نص |
+| 1569 | [`1569-swap-letter-case.apl`](../examples/1569-swap-letter-case.apl) | الكبير يصير صغيراً والعكس |
 
 **التشغيل:**
 ```bash
@@ -1816,4 +1840,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1545 مثال جاهز** في `examples/`.
+مع **1569 مثال جاهز** في `examples/`.
