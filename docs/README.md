@@ -106,9 +106,9 @@
 | 96 | [pkgs_ext2-library.md](pkgs_ext2-library.md) | مكتبة `pkgs_ext2` — حزم متنوعة موسّعة (scrapy / prompt_toolkit / lxml / hypothesis / peewee / arrow / alembic / rich / trio / paramiko / h5py / cryptography / pyasn1 / skimage / yaml / seaborn / pyparsing / bs4 / shapely / babel / redis / pendulum / mako / nacl / typer / google / PIL / kombu / marshmallow / requests / sqlparse / celery / packaging / six / httpx / jinja2 / acp / regex / uvicorn / websockets / markdown / tornado / anyio / httplib2 / pygments / cffi / click / fastapi / httpcore / googleapiclient / tqdm / starlette / dateutil / pydantic / attr / jsonschema / multidict / numpy / scipy) (19,295 عنصراً) |
 
 ---
-## الأمثلة الجاهزة (980 مثالاً)
+## الأمثلة الجاهزة (1000 مثال)
 
-980 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1000 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1092,6 +1092,26 @@
 | 978 | [`978-hilbert.apl`](../examples/978-hilbert.apl) | ملء فضاء يحفظ الجوار |
 | 979 | [`979-k-nearest.apl`](../examples/979-k-nearest.apl) | تصنيف بلا نموذج مدرب |
 | 980 | [`980-zeller.apl`](../examples/980-zeller.apl) | أي تاريخ إلى يوم أسبوع |
+| 981 | [`981-cubic-spline.apl`](../examples/981-cubic-spline.apl) | منحنى أملس مار بالنقاط |
+| 982 | [`982-hamiltonian-path.apl`](../examples/982-hamiltonian-path.apl) | زيارة كل عقدة مرة |
+| 983 | [`983-two-sat.apl`](../examples/983-two-sat.apl) | حل ومستحيل بتعيينات |
+| 984 | [`984-optimal-bst.apl`](../examples/984-optimal-bst.apl) | أدنى كلفة بحث متوقعة |
+| 985 | [`985-carmichael.apl`](../examples/985-carmichael.apl) | مركبة تنتحل الأولية |
+| 986 | [`986-tonelli-shanks.apl`](../examples/986-tonelli-shanks.apl) | أساس التوقيع الرقمي |
+| 987 | [`987-strassen.apl`](../examples/987-strassen.apl) | مصفوفات بلا حلقات |
+| 988 | [`988-boruvka.apl`](../examples/988-boruvka.apl) | أقدم خوارزمية امتداد |
+| 989 | [`989-min-cost-flow.apl`](../examples/989-min-cost-flow.apl) | نقل بأرخص الطرق |
+| 990 | [`990-qr-decomposition.apl`](../examples/990-qr-decomposition.apl) | أساس حل المربعات الصغرى |
+| 991 | [`991-dbscan.apl`](../examples/991-dbscan.apl) | عناقيد بلا عدد مسبق |
+| 992 | [`992-apriori.apl`](../examples/992-apriori.apl) | أصناف تُشترى معاً |
+| 993 | [`993-rod-cutting.apl`](../examples/993-rod-cutting.apl) | أقصى ثمن للتقطيع |
+| 994 | [`994-lazy-segment-tree.apl`](../examples/994-lazy-segment-tree.apl) | إضافة مدى واستعلام |
+| 995 | [`995-ring-buffer.apl`](../examples/995-ring-buffer.apl) | طابور بسعة ثابتة |
+| 996 | [`996-bigint-multiply.apl`](../examples/996-bigint-multiply.apl) | حساب بلا حد للطول |
+| 997 | [`997-pi-spigot.apl`](../examples/997-pi-spigot.apl) | ط بلا كسور عائمة |
+| 998 | [`998-midi-freq.apl`](../examples/998-midi-freq.apl) | من رقم النوتة للهرتز |
+| 999 | [`999-floyd-steinberg.apl`](../examples/999-floyd-steinberg.apl) | رمادي إلى ثنائي بسلاسة |
+| 1000 | [`1000-convolution.apl`](../examples/1000-convolution.apl) | أساس معالجة الإشارات |
 
 **التشغيل:**
 ```bash
@@ -1241,4 +1261,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,254 عنصراً**،
-مع **980 مثال جاهز** في `examples/`.
+مع **1000 مثال جاهز** في `examples/`.

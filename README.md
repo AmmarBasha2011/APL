@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 91 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **980 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1000 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -264,9 +264,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (980 مثالاً)
+## الأمثلة الجاهزة (1000 مثال)
 
-مجلد `examples/` يحتوي على **980 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1000 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1250,6 +1250,26 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 978 | [`978-hilbert.apl`](examples/978-hilbert.apl) | ملء فضاء يحفظ الجوار |
 | 979 | [`979-k-nearest.apl`](examples/979-k-nearest.apl) | تصنيف بلا نموذج مدرب |
 | 980 | [`980-zeller.apl`](examples/980-zeller.apl) | أي تاريخ إلى يوم أسبوع |
+| 981 | [`981-cubic-spline.apl`](examples/981-cubic-spline.apl) | منحنى أملس مار بالنقاط |
+| 982 | [`982-hamiltonian-path.apl`](examples/982-hamiltonian-path.apl) | زيارة كل عقدة مرة |
+| 983 | [`983-two-sat.apl`](examples/983-two-sat.apl) | حل ومستحيل بتعيينات |
+| 984 | [`984-optimal-bst.apl`](examples/984-optimal-bst.apl) | أدنى كلفة بحث متوقعة |
+| 985 | [`985-carmichael.apl`](examples/985-carmichael.apl) | مركبة تنتحل الأولية |
+| 986 | [`986-tonelli-shanks.apl`](examples/986-tonelli-shanks.apl) | أساس التوقيع الرقمي |
+| 987 | [`987-strassen.apl`](examples/987-strassen.apl) | مصفوفات بلا حلقات |
+| 988 | [`988-boruvka.apl`](examples/988-boruvka.apl) | أقدم خوارزمية امتداد |
+| 989 | [`989-min-cost-flow.apl`](examples/989-min-cost-flow.apl) | نقل بأرخص الطرق |
+| 990 | [`990-qr-decomposition.apl`](examples/990-qr-decomposition.apl) | أساس حل المربعات الصغرى |
+| 991 | [`991-dbscan.apl`](examples/991-dbscan.apl) | عناقيد بلا عدد مسبق |
+| 992 | [`992-apriori.apl`](examples/992-apriori.apl) | أصناف تُشترى معاً |
+| 993 | [`993-rod-cutting.apl`](examples/993-rod-cutting.apl) | أقصى ثمن للتقطيع |
+| 994 | [`994-lazy-segment-tree.apl`](examples/994-lazy-segment-tree.apl) | إضافة مدى واستعلام |
+| 995 | [`995-ring-buffer.apl`](examples/995-ring-buffer.apl) | طابور بسعة ثابتة |
+| 996 | [`996-bigint-multiply.apl`](examples/996-bigint-multiply.apl) | حساب بلا حد للطول |
+| 997 | [`997-pi-spigot.apl`](examples/997-pi-spigot.apl) | ط بلا كسور عائمة |
+| 998 | [`998-midi-freq.apl`](examples/998-midi-freq.apl) | من رقم النوتة للهرتز |
+| 999 | [`999-floyd-steinberg.apl`](examples/999-floyd-steinberg.apl) | رمادي إلى ثنائي بسلاسة |
+| 1000 | [`1000-convolution.apl`](examples/1000-convolution.apl) | أساس معالجة الإشارات |
 
 ### تشغيل أي مثال
 
@@ -1350,7 +1370,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 980 مثالاً
+**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 1000 مثال
 
 ## Language platform tools
 
