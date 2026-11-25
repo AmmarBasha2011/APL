@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1075 مثال)
+## الأمثلة الجاهزة (1101 مثال)
 
-1075 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1101 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1192,6 +1192,32 @@
 | 1073 | [`1073-next-permutation.apl`](../examples/1073-next-permutation.apl) | التبديل الأكبر التالي بالترتيب المعجمي |
 | 1074 | [`1074-pivot-index.apl`](../examples/1074-pivot-index.apl) | موضع مجموع ما قبله يساوي مجموع ما بعده |
 | 1075 | [`1075-valid-triangle-count.apl`](../examples/1075-valid-triangle-count.apl) | كم ثلاثية أضلاع تكوّن مثلثاً |
+| 1076 | [`1076-digit-product-minus-sum.apl`](../examples/1076-digit-product-minus-sum.apl) | ضرب خانات عدد ناقص جمعها |
+| 1077 | [`1077-reverse-integer.apl`](../examples/1077-reverse-integer.apl) | عكس خانات عدد مع حد 32 بت |
+| 1078 | [`1078-add-without-plus.apl`](../examples/1078-add-without-plus.apl) | الجمع بعمليات البتات فقط |
+| 1079 | [`1079-number-complement.apl`](../examples/1079-number-complement.apl) | قلب بتات العدد دون الأصفار الأمامية |
+| 1080 | [`1080-nth-digit.apl`](../examples/1080-nth-digit.apl) | الخانة ن في 123456789101112 |
+| 1081 | [`1081-self-dividing.apl`](../examples/1081-self-dividing.apl) | أعداد تقبل القسمة على كل خانة فيها |
+| 1082 | [`1082-to-base-k.apl`](../examples/1082-to-base-k.apl) | كتابة عدد في أساس من 2 إلى 16 |
+| 1083 | [`1083-excel-title-number.apl`](../examples/1083-excel-title-number.apl) | تحويل اسم العمود لرقمه |
+| 1084 | [`1084-bulb-switcher.apl`](../examples/1084-bulb-switcher.apl) | كم مصباح يبقى مضاء بعد ن جولة |
+| 1085 | [`1085-water-jug.apl`](../examples/1085-water-jug.apl) | هل نقيس كمية بإبريقين |
+| 1086 | [`1086-valid-perfect-square.apl`](../examples/1086-valid-perfect-square.apl) | هل العدد مربع كامل بلا جذر مضمن |
+| 1087 | [`1087-arranging-coins.apl`](../examples/1087-arranging-coins.apl) | عدد الصفوف الكاملة في سلم عملات |
+| 1088 | [`1088-detect-capital.apl`](../examples/1088-detect-capital.apl) | هل كتابة الكلمة بالأحرف الكبيرة صحيحة |
+| 1089 | [`1089-repeated-substring.apl`](../examples/1089-repeated-substring.apl) | هل النص تكرار لجزء منه |
+| 1090 | [`1090-license-key-format.apl`](../examples/1090-license-key-format.apl) | إعادة تجميع المفتاح بمجموعات متساوية |
+| 1091 | [`1091-to-lower-manual.apl`](../examples/1091-to-lower-manual.apl) | تحويل الأحرف اللاتينية الكبيرة لصغيرة |
+| 1092 | [`1092-unique-emails.apl`](../examples/1092-unique-emails.apl) | عدد العناوين المختلفة فعلاً |
+| 1093 | [`1093-goat-latin.apl`](../examples/1093-goat-latin.apl) | تحويل الجملة بقواعد لغة الماعز |
+| 1094 | [`1094-defang-ip.apl`](../examples/1094-defang-ip.apl) | كتابة النقاط بين أقواس |
+| 1095 | [`1095-route-circle.apl`](../examples/1095-route-circle.apl) | هل تعيد الحركات الروبوت لنقطة البداية |
+| 1096 | [`1096-baseball-game.apl`](../examples/1096-baseball-game.apl) | حساب النقاط بقواعد ملغاة ومضاعفة ومجموع |
+| 1097 | [`1097-can-place-flowers.apl`](../examples/1097-can-place-flowers.apl) | هل نزرع عدداً من الزهور دون تجاور |
+| 1098 | [`1098-lemonade-change.apl`](../examples/1098-lemonade-change.apl) | هل نعيد الباقي لكل زبون |
+| 1099 | [`1099-height-checker.apl`](../examples/1099-height-checker.apl) | عدد الطلاب الواقفين في غير موضعهم |
+| 1100 | [`1100-check-pangram.apl`](../examples/1100-check-pangram.apl) | هل تحوي الجملة كل حروف الأبجدية |
+| 1101 | [`1101-max-69-number.apl`](../examples/1101-max-69-number.apl) | أكبر عدد بتغيير خانة واحدة من 6 إلى 9 |
 
 **التشغيل:**
 ```bash
@@ -1346,4 +1372,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1075 مثال جاهز** في `examples/`.
+مع **1101 مثال جاهز** في `examples/`.
