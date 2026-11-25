@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1218 مثال)
+## الأمثلة الجاهزة (1236 مثال)
 
-1218 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1236 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1335,6 +1335,24 @@
 | 1216 | [`1216-bst-validate.apl`](../examples/1216-bst-validate.apl) | هل الشجرة شجرة بحث صحيحة |
 | 1217 | [`1217-bst-kth-smallest.apl`](../examples/1217-bst-kth-smallest.apl) | العنصر ذو الترتيب k في شجرة بحث |
 | 1218 | [`1218-bst-insert-delete.apl`](../examples/1218-bst-insert-delete.apl) | إدراج وحذف في شجرة بحث ثنائية |
+| 1219 | [`1219-single-number-two.apl`](../examples/1219-single-number-two.apl) | الرقم الذي يظهر مرة بين أرقام تظهر ثلاثاً |
+| 1220 | [`1220-single-number-three.apl`](../examples/1220-single-number-three.apl) | الرقمان اللذان يظهران مرة بين أزواج |
+| 1221 | [`1221-hamming-weight-table.apl`](../examples/1221-hamming-weight-table.apl) | عدد البتات المضبوطة في عدد |
+| 1222 | [`1222-reverse-bits.apl`](../examples/1222-reverse-bits.apl) | عكس ترتيب بتات عدد من اثنين وثلاثين بتاً |
+| 1223 | [`1223-power-of-two-check.apl`](../examples/1223-power-of-two-check.apl) | التحقق من أن العدد قوة اثنين أو أربعة |
+| 1224 | [`1224-subsets-bitmask.apl`](../examples/1224-subsets-bitmask.apl) | توليد كل المجموعات الجزئية بقناع بتات |
+| 1225 | [`1225-max-xor-pair.apl`](../examples/1225-max-xor-pair.apl) | أكبر نتيجة xor بين زوج من القائمة |
+| 1226 | [`1226-gcd-of-strings.apl`](../examples/1226-gcd-of-strings.apl) | أكبر نص يقسم نصين بالتكرار |
+| 1227 | [`1227-pow-mod-recursive.apl`](../examples/1227-pow-mod-recursive.apl) | حساب a أس b بباقي m |
+| 1228 | [`1228-count-primes-segment.apl`](../examples/1228-count-primes-segment.apl) | عدد الأوليات أقل من n |
+| 1229 | [`1229-ugly-number-two.apl`](../examples/1229-ugly-number-two.apl) | العدد القبيح ذو الترتيب n |
+| 1230 | [`1230-super-ugly.apl`](../examples/1230-super-ugly.apl) | العدد القبيح بقائمة أوليات معطاة |
+| 1231 | [`1231-kth-missing-positive.apl`](../examples/1231-kth-missing-positive.apl) | الرقم الموجب المفقود ذو الترتيب k |
+| 1232 | [`1232-split-array-largest-sum.apl`](../examples/1232-split-array-largest-sum.apl) | تقسيم قائمة إلى m أجزاء بأصغر أكبر مجموع |
+| 1233 | [`1233-koko-bananas.apl`](../examples/1233-koko-bananas.apl) | أقل سرعة أكل لإنهاء الأكوام في h ساعة |
+| 1234 | [`1234-ship-packages.apl`](../examples/1234-ship-packages.apl) | أقل سعة سفينة لشحن الطرود خلال d يوماً |
+| 1235 | [`1235-find-min-rotated-dup.apl`](../examples/1235-find-min-rotated-dup.apl) | أصغر عنصر في قائمة مدورة فيها تكرار |
+| 1236 | [`1236-search-insert-position.apl`](../examples/1236-search-insert-position.apl) | موضع إدراج قيمة في قائمة مرتبة |
 
 **التشغيل:**
 ```bash
@@ -1489,4 +1507,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1218 مثال جاهز** في `examples/`.
+مع **1236 مثال جاهز** في `examples/`.
