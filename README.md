@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1189 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1203 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1189 مثال)
+## الأمثلة الجاهزة (1203 مثال)
 
-مجلد `examples/` يحتوي على **1189 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1203 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1464,6 +1464,20 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1187 | [`1187-infix-to-postfix.apl`](examples/1187-infix-to-postfix.apl) | تحويل عبارة وسطية إلى لاحقة |
 | 1188 | [`1188-min-remove-valid-parens.apl`](examples/1188-min-remove-valid-parens.apl) | حذف أقل عدد أقواس لتصير العبارة صالحة |
 | 1189 | [`1189-score-of-parentheses.apl`](examples/1189-score-of-parentheses.apl) | حساب درجة عبارة أقواس متوازنة |
+| 1190 | [`1190-lfu-cache.apl`](examples/1190-lfu-cache.apl) | ذاكرة تطرد الأقل استخداماً |
+| 1191 | [`1191-all-oone.apl`](examples/1191-all-oone.apl) | زيادة ونقصان مفاتيح مع أكبر وأصغر عدّاد |
+| 1192 | [`1192-design-twitter.apl`](examples/1192-design-twitter.apl) | نشر ومتابعة وخلاصة أحدث عشر تغريدات |
+| 1193 | [`1193-file-system-tree.apl`](examples/1193-file-system-tree.apl) | مجلدات وملفات في الذاكرة |
+| 1194 | [`1194-shortest-path-binary-matrix.apl`](examples/1194-shortest-path-binary-matrix.apl) | أقصر مسار بثماني اتجاهات |
+| 1195 | [`1195-rotting-oranges.apl`](examples/1195-rotting-oranges.apl) | دقائق لتعفن كل البرتقال |
+| 1196 | [`1196-walls-and-gates.apl`](examples/1196-walls-and-gates.apl) | مسافة كل غرفة لأقرب بوابة |
+| 1197 | [`1197-surrounded-regions.apl`](examples/1197-surrounded-regions.apl) | قلب الخانات المحاصرة بالجدران |
+| 1198 | [`1198-pacific-atlantic.apl`](examples/1198-pacific-atlantic.apl) | خانات يصل ماؤها للمحيطين |
+| 1199 | [`1199-clone-graph-copy.apl`](examples/1199-clone-graph-copy.apl) | نسخ رسم بياني مع التحقق من الاستقلال |
+| 1200 | [`1200-course-schedule-order.apl`](examples/1200-course-schedule-order.apl) | ترتيب دراسة مقررات لها متطلبات |
+| 1201 | [`1201-redundant-connection.apl`](examples/1201-redundant-connection.apl) | الحافة التي تكوّن حلقة في شجرة |
+| 1202 | [`1202-number-of-provinces.apl`](examples/1202-number-of-provinces.apl) | عدد المجموعات المتصلة في مصفوفة صلات |
+| 1203 | [`1203-accounts-merge.apl`](examples/1203-accounts-merge.apl) | دمج حسابات تشترك في بريد |
 
 ### تشغيل أي مثال
 
@@ -1564,7 +1578,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1189 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1203 مثال
 
 ## Language platform tools
 
