@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1269 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1280 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1269 مثال)
+## الأمثلة الجاهزة (1280 مثال)
 
-مجلد `examples/` يحتوي على **1269 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1280 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1544,6 +1544,17 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1267 | [`1267-minesweeper-count.apl`](examples/1267-minesweeper-count.apl) | عدد الألغام المجاورة لكل خانة |
 | 1268 | [`1268-spiral-matrix-two.apl`](examples/1268-spiral-matrix-two.apl) | ملء مصفوفة بأرقام متتالية بشكل حلزوني |
 | 1269 | [`1269-diagonal-traverse.apl`](examples/1269-diagonal-traverse.apl) | قراءة المصفوفة بالأقطار المتناوبة |
+| 1270 | [`1270-prefix-sum-2d.apl`](examples/1270-prefix-sum-2d.apl) | مجموع منطقة في مصفوفة بزمن ثابت |
+| 1271 | [`1271-difference-array.apl`](examples/1271-difference-array.apl) | تطبيق زيادات على مجالات بمسح واحد |
+| 1272 | [`1272-corporate-flight-bookings.apl`](examples/1272-corporate-flight-bookings.apl) | عدد المقاعد المحجوزة لكل رحلة |
+| 1273 | [`1273-car-pooling.apl`](examples/1273-car-pooling.apl) | هل تكفي سعة السيارة لكل الرحلات |
+| 1274 | [`1274-range-addition-sorted.apl`](examples/1274-range-addition-sorted.apl) | أقصى تداخل بين مجالات |
+| 1275 | [`1275-skyline-heights.apl`](examples/1275-skyline-heights.apl) | خط الأفق لمجموعة مباني |
+| 1276 | [`1276-merge-sorted-streams.apl`](examples/1276-merge-sorted-streams.apl) | دمج عدة قوائم مرتبة |
+| 1277 | [`1277-smallest-range-k-lists.apl`](examples/1277-smallest-range-k-lists.apl) | أصغر مدى يحوي رقماً من كل قائمة |
+| 1278 | [`1278-kth-largest-quickselect.apl`](examples/1278-kth-largest-quickselect.apl) | العنصر ذو الترتيب k من الأكبر |
+| 1279 | [`1279-sort-colors-three-way.apl`](examples/1279-sort-colors-three-way.apl) | فرز قيم من ثلاثة أنواع بمسح واحد |
+| 1280 | [`1280-merge-intervals-count.apl`](examples/1280-merge-intervals-count.apl) | عدد المجالات الناتجة من دمج المتداخلة |
 
 ### تشغيل أي مثال
 
@@ -1644,7 +1655,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1269 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1280 مثال
 
 ## Language platform tools
 
