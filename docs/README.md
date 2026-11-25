@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1151 مثال)
+## الأمثلة الجاهزة (1162 مثال)
 
-1151 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1162 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1268,6 +1268,17 @@
 | 1149 | [`1149-sum-of-squares.apl`](../examples/1149-sum-of-squares.apl) | هل العدد مجموع مربعين |
 | 1150 | [`1150-longest-turbulent.apl`](../examples/1150-longest-turbulent.apl) | أطول قائمة جزئية تتناوب فيها المقارنات |
 | 1151 | [`1151-squares-of-digits-cycle.apl`](../examples/1151-squares-of-digits-cycle.apl) | طول الدورة في مربعات أرقام العدد |
+| 1152 | [`1152-kth-smallest-matrix.apl`](../examples/1152-kth-smallest-matrix.apl) | العنصر ذو الترتيب k في مصفوفة مرتبة |
+| 1153 | [`1153-two-sum-sorted.apl`](../examples/1153-two-sum-sorted.apl) | زوج مجموعه هدف في قائمة مرتبة |
+| 1154 | [`1154-three-sum.apl`](../examples/1154-three-sum.apl) | ثلاثيات مجموعها صفر |
+| 1155 | [`1155-four-sum-count.apl`](../examples/1155-four-sum-count.apl) | عدد رباعيات مجموعها صفر من أربع قوائم |
+| 1156 | [`1156-sort-by-frequency.apl`](../examples/1156-sort-by-frequency.apl) | ترتيب الحروف حسب عدد تكرارها |
+| 1157 | [`1157-top-k-frequent.apl`](../examples/1157-top-k-frequent.apl) | أكثر k عناصر تكراراً |
+| 1158 | [`1158-group-anagrams-key.apl`](../examples/1158-group-anagrams-key.apl) | تجميع الكلمات التي لها نفس الحروف |
+| 1159 | [`1159-isomorphic-groups.apl`](../examples/1159-isomorphic-groups.apl) | توقيع يعرف نمط تكرار الحروف في الكلمة |
+| 1160 | [`1160-longest-substring-k-distinct.apl`](../examples/1160-longest-substring-k-distinct.apl) | أطول نص جزئي بحد أقصى k حرفاً مختلفاً |
+| 1161 | [`1161-fruit-baskets.apl`](../examples/1161-fruit-baskets.apl) | أطول مقطع بنوعين من الفاكهة |
+| 1162 | [`1162-min-window-substring.apl`](../examples/1162-min-window-substring.apl) | أصغر نص جزئي يحوي كل حروف نمط |
 
 **التشغيل:**
 ```bash
@@ -1422,4 +1433,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1151 مثال جاهز** في `examples/`.
+مع **1162 مثال جاهز** في `examples/`.

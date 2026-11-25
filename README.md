@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1151 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1162 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1151 مثال)
+## الأمثلة الجاهزة (1162 مثال)
 
-مجلد `examples/` يحتوي على **1151 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1162 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1426,6 +1426,17 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1149 | [`1149-sum-of-squares.apl`](examples/1149-sum-of-squares.apl) | هل العدد مجموع مربعين |
 | 1150 | [`1150-longest-turbulent.apl`](examples/1150-longest-turbulent.apl) | أطول قائمة جزئية تتناوب فيها المقارنات |
 | 1151 | [`1151-squares-of-digits-cycle.apl`](examples/1151-squares-of-digits-cycle.apl) | طول الدورة في مربعات أرقام العدد |
+| 1152 | [`1152-kth-smallest-matrix.apl`](examples/1152-kth-smallest-matrix.apl) | العنصر ذو الترتيب k في مصفوفة مرتبة |
+| 1153 | [`1153-two-sum-sorted.apl`](examples/1153-two-sum-sorted.apl) | زوج مجموعه هدف في قائمة مرتبة |
+| 1154 | [`1154-three-sum.apl`](examples/1154-three-sum.apl) | ثلاثيات مجموعها صفر |
+| 1155 | [`1155-four-sum-count.apl`](examples/1155-four-sum-count.apl) | عدد رباعيات مجموعها صفر من أربع قوائم |
+| 1156 | [`1156-sort-by-frequency.apl`](examples/1156-sort-by-frequency.apl) | ترتيب الحروف حسب عدد تكرارها |
+| 1157 | [`1157-top-k-frequent.apl`](examples/1157-top-k-frequent.apl) | أكثر k عناصر تكراراً |
+| 1158 | [`1158-group-anagrams-key.apl`](examples/1158-group-anagrams-key.apl) | تجميع الكلمات التي لها نفس الحروف |
+| 1159 | [`1159-isomorphic-groups.apl`](examples/1159-isomorphic-groups.apl) | توقيع يعرف نمط تكرار الحروف في الكلمة |
+| 1160 | [`1160-longest-substring-k-distinct.apl`](examples/1160-longest-substring-k-distinct.apl) | أطول نص جزئي بحد أقصى k حرفاً مختلفاً |
+| 1161 | [`1161-fruit-baskets.apl`](examples/1161-fruit-baskets.apl) | أطول مقطع بنوعين من الفاكهة |
+| 1162 | [`1162-min-window-substring.apl`](examples/1162-min-window-substring.apl) | أصغر نص جزئي يحوي كل حروف نمط |
 
 ### تشغيل أي مثال
 
@@ -1526,7 +1537,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1151 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1162 مثال
 
 ## Language platform tools
 
