@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1329 مثال)
+## الأمثلة الجاهزة (1343 مثال)
 
-1329 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1343 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1446,6 +1446,20 @@
 | 1327 | [`1327-shortest-bridge.apl`](../examples/1327-shortest-bridge.apl) | أقل عدد خانات ماء لربط جزيرتين |
 | 1328 | [`1328-minimum-knight-moves.apl`](../examples/1328-minimum-knight-moves.apl) | أقل عدد حركات حصان بين خانتين |
 | 1329 | [`1329-open-the-lock.apl`](../examples/1329-open-the-lock.apl) | أقل عدد لفات لفتح قفل رقمي |
+| 1330 | [`1330-dungeon-game.apl`](../examples/1330-dungeon-game.apl) | أقل صحة ابتدائية للوصول إلى الأميرة |
+| 1331 | [`1331-last-stone-weight-two.apl`](../examples/1331-last-stone-weight-two.apl) | أقل وزن متبق بتحطيم الأحجار |
+| 1332 | [`1332-stone-game.apl`](../examples/1332-stone-game.apl) | أفضل فارق نقاط للاعب الأول في لعبة أكوام |
+| 1333 | [`1333-predict-the-winner.apl`](../examples/1333-predict-the-winner.apl) | هل ينتهي اللاعب الأول بمجموع لا يقل عن الثاني |
+| 1334 | [`1334-largest-divisible-subset.apl`](../examples/1334-largest-divisible-subset.apl) | أكبر مجموعة كل زوج فيها يقبل أحدهما القسمة على الآخر |
+| 1335 | [`1335-sum-subarray-minimums.apl`](../examples/1335-sum-subarray-minimums.apl) | مجموع أصغر عنصر في كل مصفوفة جزئية |
+| 1336 | [`1336-jump-game-three.apl`](../examples/1336-jump-game-three.apl) | هل نصل إلى قيمة صفر بقفز يميناً أو يساراً |
+| 1337 | [`1337-cheapest-flights-k-stops.apl`](../examples/1337-cheapest-flights-k-stops.apl) | أرخص سعر بعدد محدود من التوقفات |
+| 1338 | [`1338-network-delay-time.apl`](../examples/1338-network-delay-time.apl) | زمن وصول إشارة من عقدة إلى كل العقد |
+| 1339 | [`1339-path-min-effort.apl`](../examples/1339-path-min-effort.apl) | مسار في شبكة ارتفاعات بأقل فارق أقصى بين خطوتين |
+| 1340 | [`1340-longest-increasing-path-matrix.apl`](../examples/1340-longest-increasing-path-matrix.apl) | أطول مسار تزداد قيمه في مصفوفة |
+| 1341 | [`1341-count-sorted-vowels.apl`](../examples/1341-count-sorted-vowels.apl) | عدد نصوص من حروف العلة مرتبة أبجدياً بطول معين |
+| 1342 | [`1342-paint-fence.apl`](../examples/1342-paint-fence.apl) | عدد طرق طلاء سور بلا ثلاثة ألواح متتالية بنفس اللون |
+| 1343 | [`1343-min-refueling-stops.apl`](../examples/1343-min-refueling-stops.apl) | أقل عدد محطات وقود للوصول إلى الهدف |
 
 **التشغيل:**
 ```bash
@@ -1600,4 +1614,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1329 مثال جاهز** في `examples/`.
+مع **1343 مثال جاهز** في `examples/`.
