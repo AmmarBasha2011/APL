@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1329 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1341 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1329 مثال)
+## الأمثلة الجاهزة (1341 مثال)
 
-مجلد `examples/` يحتوي على **1329 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1341 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1604,6 +1604,18 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1327 | [`1327-shortest-bridge.apl`](examples/1327-shortest-bridge.apl) | أقل عدد خانات ماء لربط جزيرتين |
 | 1328 | [`1328-minimum-knight-moves.apl`](examples/1328-minimum-knight-moves.apl) | أقل عدد حركات حصان بين خانتين |
 | 1329 | [`1329-open-the-lock.apl`](examples/1329-open-the-lock.apl) | أقل عدد لفات لفتح قفل رقمي |
+| 1330 | [`1330-delete-and-earn.apl`](examples/1330-delete-and-earn.apl) | أقصى نقاط بحذف أرقام وجيرانها |
+| 1331 | [`1331-longest-common-substring.apl`](examples/1331-longest-common-substring.apl) | أطول مقطع متصل مشترك بين نصين |
+| 1332 | [`1332-min-ascii-delete-sum.apl`](examples/1332-min-ascii-delete-sum.apl) | أقل مجموع أكواد حروف محذوفة لتساوي نصين |
+| 1333 | [`1333-interleaving-string.apl`](examples/1333-interleaving-string.apl) | هل نص ثالث تداخل لنصين بالترتيب |
+| 1334 | [`1334-distinct-subsequences.apl`](examples/1334-distinct-subsequences.apl) | عدد طرق تكوين نص هدف كمتتالية من نص |
+| 1335 | [`1335-wildcard-matching.apl`](examples/1335-wildcard-matching.apl) | مطابقة نص مع نمط فيه ? و * |
+| 1336 | [`1336-maximal-square.apl`](examples/1336-maximal-square.apl) | مساحة أكبر مربع من الآحاد |
+| 1337 | [`1337-dungeon-game.apl`](examples/1337-dungeon-game.apl) | أقل صحة ابتدائية للوصول إلى الأميرة |
+| 1338 | [`1338-burst-balloons.apl`](examples/1338-burst-balloons.apl) | أقصى عملات بفرقعة بالونات بترتيب مناسب |
+| 1339 | [`1339-target-sum-ways.apl`](examples/1339-target-sum-ways.apl) | عدد طرق وضع + أو - لبلوغ هدف |
+| 1340 | [`1340-ones-and-zeroes.apl`](examples/1340-ones-and-zeroes.apl) | أكبر مجموعة نصوص ثنائية ضمن حد أصفار وآحاد |
+| 1341 | [`1341-last-stone-weight-two.apl`](examples/1341-last-stone-weight-two.apl) | أقل وزن متبق بتحطيم الأحجار |
 
 ### تشغيل أي مثال
 
@@ -1704,7 +1716,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1329 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1341 مثال
 
 ## Language platform tools
 
