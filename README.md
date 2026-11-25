@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1450 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1475 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1450 مثال)
+## الأمثلة الجاهزة (1475 مثال)
 
-مجلد `examples/` يحتوي على **1450 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1475 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1725,6 +1725,31 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1448 | [`1448-pick-theorem-interior.apl`](examples/1448-pick-theorem-interior.apl) | عدد النقاط الشبكية داخل مضلع شبكي |
 | 1449 | [`1449-bounding-box-points.apl`](examples/1449-bounding-box-points.apl) | أصغر مستطيل يحيط بمجموعة نقاط |
 | 1450 | [`1450-ulam-spiral-position.apl`](examples/1450-ulam-spiral-position.apl) | إحداثيات العدد ن في لولب مربع يبدأ من الأصل |
+| 1451 | [`1451-single-server-queue.apl`](examples/1451-single-server-queue.apl) | متوسط انتظار العملاء أمام شباك واحد |
+| 1452 | [`1452-robot-bounded-circle.apl`](examples/1452-robot-bounded-circle.apl) | هل يبقى الروبوت في مسار محدود إذا كرر التعليمات |
+| 1453 | [`1453-dice-sum-distribution.apl`](examples/1453-dice-sum-distribution.apl) | عدد طرق كل مجموع عند رمي نردين |
+| 1454 | [`1454-english-ordinal-suffix.apl`](examples/1454-english-ordinal-suffix.apl) | إضافة st أو nd أو rd أو th للرقم |
+| 1455 | [`1455-fibonacci-word-build.apl`](examples/1455-fibonacci-word-build.apl) | كلمة تبنى بدمج الكلمتين السابقتين |
+| 1456 | [`1456-bit-count-kernighan.apl`](examples/1456-bit-count-kernighan.apl) | عدد الآحاد في التمثيل الثنائي |
+| 1457 | [`1457-swap-with-xor.apl`](examples/1457-swap-with-xor.apl) | تبديل بلا متغير ثالث |
+| 1458 | [`1458-csv-line-split.apl`](examples/1458-csv-line-split.apl) | فصل الحقول مع احترام علامات الاقتباس |
+| 1459 | [`1459-thermostat-hysteresis.apl`](examples/1459-thermostat-hysteresis.apl) | تشغيل وإيقاف المكيف دون تذبذب |
+| 1460 | [`1460-tiered-discount.apl`](examples/1460-tiered-discount.apl) | سعر الوحدة يقل كلما زادت الكمية |
+| 1461 | [`1461-income-tax-brackets.apl`](examples/1461-income-tax-brackets.apl) | الضريبة تتصاعد بحسب شريحة كل جزء من الدخل |
+| 1462 | [`1462-clock-hands-angle.apl`](examples/1462-clock-hands-angle.apl) | أصغر زاوية بين عقرب الساعات والدقائق |
+| 1463 | [`1463-seconds-to-clock.apl`](examples/1463-seconds-to-clock.apl) | تحويل عدد الثواني إلى صيغة ساعة |
+| 1464 | [`1464-age-in-days.apl`](examples/1464-age-in-days.apl) | عدد الأيام بين تاريخين بلا مكتبات |
+| 1465 | [`1465-next-calendar-day.apl`](examples/1465-next-calendar-day.apl) | حساب التاريخ بعد يوم واحد |
+| 1466 | [`1466-score-ranking-ties.apl`](examples/1466-score-ranking-ties.apl) | اللاعبون بنفس النتيجة يأخذون نفس المركز |
+| 1467 | [`1467-league-points-table.apl`](examples/1467-league-points-table.apl) | نقاط الفوز ثلاث والتعادل واحدة |
+| 1468 | [`1468-knockout-bracket-rounds.apl`](examples/1468-knockout-bracket-rounds.apl) | عدد المباريات والجولات لعدد فرق معين |
+| 1469 | [`1469-next-bus-arrival.apl`](examples/1469-next-bus-arrival.apl) | أقرب حافلة بعد وقت الوصول |
+| 1470 | [`1470-greedy-word-wrap.apl`](examples/1470-greedy-word-wrap.apl) | توزيع كلمات على أسطر بعرض أقصى |
+| 1471 | [`1471-center-text-padding.apl`](examples/1471-center-text-padding.apl) | وضع النص في منتصف عرض معين |
+| 1472 | [`1472-camel-to-snake-case.apl`](examples/1472-camel-to-snake-case.apl) | تحويل أسماء المتغيرات بين الأنماط |
+| 1473 | [`1473-title-to-slug.apl`](examples/1473-title-to-slug.apl) | تحويل عنوان إلى رابط بحروف صغيرة وشرطات |
+| 1474 | [`1474-number-to-english-words.apl`](examples/1474-number-to-english-words.apl) | كتابة الأعداد حتى الآلاف بالإنجليزية |
+| 1475 | [`1475-unit-conversion-chain.apl`](examples/1475-unit-conversion-chain.apl) | كل وحدة تُحول إلى المتر أولاً |
 
 ### تشغيل أي مثال
 
@@ -1825,7 +1850,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1450 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1475 مثال
 
 ## Language platform tools
 
