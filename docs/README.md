@@ -104,6 +104,11 @@
 | 94 | [cv2_ext-library.md](cv2_ext-library.md) | مكتبة `cv2_ext` — توسعة حزمة cv2: أصنافها ودوالها وطرقها وثوابتها التي لا تغطّيها مكتبات APL الأخرى (3,298 عنصراً) |
 | 95 | [pkgs_ext1-library.md](pkgs_ext1-library.md) | مكتبة `pkgs_ext1` — حزم متنوعة موسّعة (selenium / dask / xarray / pyarrow / sklearn / gevent / cdp_use / mpmath / networkx / botocore / jedi / aiohttp / telegram / markdown_it) (20,830 عنصراً) |
 | 96 | [pkgs_ext2-library.md](pkgs_ext2-library.md) | مكتبة `pkgs_ext2` — حزم متنوعة موسّعة (scrapy / prompt_toolkit / lxml / hypothesis / peewee / arrow / alembic / rich / trio / paramiko / h5py / cryptography / pyasn1 / skimage / yaml / seaborn / pyparsing / bs4 / shapely / babel / redis / pendulum / mako / nacl / typer / google / PIL / kombu / marshmallow / requests / sqlparse / celery / packaging / six / httpx / jinja2 / acp / regex / uvicorn / websockets / markdown / tornado / anyio / httplib2 / pygments / cffi / click / fastapi / httpcore / googleapiclient / tqdm / starlette / dateutil / pydantic / attr / jsonschema / multidict / numpy / scipy) (19,295 عنصراً) |
+| 97 | [more_itertools-library.md](more_itertools-library.md) | مكتبة `more_itertools` — أدوات التكرار الإضافية من حزمة more_itertools |
+| 98 | [humanize-library.md](humanize-library.md) | مكتبة `humanize` — تحويل الأرقام والأزمنة والأحجام لصيغة مقروءة من حزمة humanize |
+| 99 | [tenacity-library.md](tenacity-library.md) | مكتبة `tenacity` — إعادة المحاولة بسياسات إيقاف وانتظار من حزمة tenacity |
+| 100 | [cachetools-library.md](cachetools-library.md) | مكتبة `cachetools` — ذواكر مؤقتة بسياسات إخلاء متعددة من حزمة cachetools |
+| 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
 ## الأمثلة الجاهزة (1000 مثال)
@@ -1160,7 +1165,7 @@ with open("ملف.txt") as f:
 اطبع س
 ```
 
-## المكتبات المتاحة (91 مكتبة)
+## المكتبات المتاحة (96 مكتبة)
 
 | المكتبة | عدد العناصر | الوصف |
 |---------|------------:|-------|
@@ -1255,10 +1260,15 @@ with open("ملف.txt") as f:
 | `enum` | 7 | أنواع معدودة (Enums) — قيم مسمّاة بدل الأرقام السحرية |
 | `getpass` | 2 | إدخال كلمات السر دون إظهارها |
 | `pprint` | 2 | طباعة منسّقة للقواميس والقوائم |
+| `more_itertools` | 188 | أدوات التكرار الإضافية من حزمة more_itertools |
+| `humanize` | 25 | تحويل الأرقام والأزمنة والأحجام لصيغة مقروءة من حزمة humanize |
+| `tenacity` | 72 | إعادة المحاولة بسياسات إيقاف وانتظار من حزمة tenacity |
+| `cachetools` | 38 | ذواكر مؤقتة بسياسات إخلاء متعددة من حزمة cachetools |
+| `sortedcontainers` | 70 | قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
-**الإجمالي: 211,038 عنصراً في 91 مكتبة** (211,023 مفتاحاً فريداً بعد إزالة التكرار).
+**الإجمالي: 211,431 عنصراً في 96 مكتبة** (211,416 مفتاحاً فريداً بعد إزالة التكرار).
 
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
-في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,254 عنصراً**،
+في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
 مع **1000 مثال جاهز** في `examples/`.
