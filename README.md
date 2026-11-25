@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1000 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1025 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1000 مثال)
+## الأمثلة الجاهزة (1025 مثال)
 
-مجلد `examples/` يحتوي على **1000 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1025 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1275,6 +1275,31 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 998 | [`998-midi-freq.apl`](examples/998-midi-freq.apl) | من رقم النوتة للهرتز |
 | 999 | [`999-floyd-steinberg.apl`](examples/999-floyd-steinberg.apl) | رمادي إلى ثنائي بسلاسة |
 | 1000 | [`1000-convolution.apl`](examples/1000-convolution.apl) | أساس معالجة الإشارات |
+| 1001 | [`1001-ugly-numbers.apl`](examples/1001-ugly-numbers.apl) | ترتيب أعداد عواملها 2 و3 و5 |
+| 1002 | [`1002-container-water.apl`](examples/1002-container-water.apl) | أقصى مساحة بين عمودين |
+| 1003 | [`1003-move-zeroes.apl`](examples/1003-move-zeroes.apl) | دفع الأصفار للنهاية مع حفظ الترتيب |
+| 1004 | [`1004-missing-number.apl`](examples/1004-missing-number.apl) | إيجاد رقم ناقص من متتالية |
+| 1005 | [`1005-single-number-xor.apl`](examples/1005-single-number-xor.apl) | العنصر الذي لا يتكرر |
+| 1006 | [`1006-plus-one.apl`](examples/1006-plus-one.apl) | إضافة واحد لعدد مخزن أرقاماً |
+| 1007 | [`1007-merge-sorted-arrays.apl`](examples/1007-merge-sorted-arrays.apl) | الدمج بالترتيب في مرور واحد |
+| 1008 | [`1008-first-unique-char.apl`](examples/1008-first-unique-char.apl) | فهرس أول حرف يظهر مرة واحدة |
+| 1009 | [`1009-isomorphic-strings.apl`](examples/1009-isomorphic-strings.apl) | تطابق نمط الحروف بين نصين |
+| 1010 | [`1010-ransom-note.apl`](examples/1010-ransom-note.apl) | هل تكفي حروف المجلة للرسالة |
+| 1011 | [`1011-best-time-stock.apl`](examples/1011-best-time-stock.apl) | أقصى ربح من صفقة واحدة |
+| 1012 | [`1012-jump-game.apl`](examples/1012-jump-game.apl) | هل نصل للنهاية بخطوات محددة |
+| 1013 | [`1013-gas-station.apl`](examples/1013-gas-station.apl) | نقطة بداية دورة كاملة |
+| 1014 | [`1014-candy-distribution.apl`](examples/1014-candy-distribution.apl) | أقل حلوى تحقق شرط الجيران |
+| 1015 | [`1015-partition-labels.apl`](examples/1015-partition-labels.apl) | أكبر عدد أجزاء لا يتكرر حرفها |
+| 1016 | [`1016-daily-temperatures.apl`](examples/1016-daily-temperatures.apl) | عدد الأيام حتى يوم أدفأ |
+| 1017 | [`1017-asteroid-collision.apl`](examples/1017-asteroid-collision.apl) | محاكاة تصادم كويكبات متقابلة |
+| 1018 | [`1018-decode-ways.apl`](examples/1018-decode-ways.apl) | عدد طرق قراءة رقم كحروف |
+| 1019 | [`1019-unique-paths.apl`](examples/1019-unique-paths.apl) | عدد مسارات يمين وأسفل في شبكة |
+| 1020 | [`1020-min-path-sum.apl`](examples/1020-min-path-sum.apl) | أرخص طريق من الزاوية للزاوية |
+| 1021 | [`1021-max-product-subarray.apl`](examples/1021-max-product-subarray.apl) | أكبر ضرب لعناصر متجاورة |
+| 1022 | [`1022-house-robber-circular.apl`](examples/1022-house-robber-circular.apl) | أقصى سرقة في صف دائري |
+| 1023 | [`1023-bin-packing-ffd.apl`](examples/1023-bin-packing-ffd.apl) | تقدير أقل عدد صناديق |
+| 1024 | [`1024-pythagorean-triples.apl`](examples/1024-pythagorean-triples.apl) | كل ثلاثيات الأعداد حتى حد |
+| 1025 | [`1025-binary-gap.apl`](examples/1025-binary-gap.apl) | أطول سلسلة أصفار بين واحدين |
 
 ### تشغيل أي مثال
 
@@ -1375,7 +1400,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1000 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1025 مثال
 
 ## Language platform tools
 
