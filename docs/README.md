@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1050 مثال)
+## الأمثلة الجاهزة (1075 مثال)
 
-1050 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1075 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1167,6 +1167,31 @@
 | 1048 | [`1048-count-bits-table.apl`](../examples/1048-count-bits-table.apl) | عدد الآحاد الثنائية لكل عدد حتى ن |
 | 1049 | [`1049-first-missing-positive.apl`](../examples/1049-first-missing-positive.apl) | أصغر عدد موجب غائب |
 | 1050 | [`1050-h-index.apl`](../examples/1050-h-index.apl) | أكبر ه بحيث ه أبحاث لكل منها ه استشهاداً |
+| 1051 | [`1051-set-matrix-zeroes.apl`](../examples/1051-set-matrix-zeroes.apl) | تصفير صف وعمود كل خانة صفرية |
+| 1052 | [`1052-remove-dup-twice.apl`](../examples/1052-remove-dup-twice.apl) | السماح بتكرارين لكل قيمة في قائمة مرتبة |
+| 1053 | [`1053-pascal-row.apl`](../examples/1053-pascal-row.apl) | بناء صف محدد من مثلث باسكال |
+| 1054 | [`1054-word-pattern.apl`](../examples/1054-word-pattern.apl) | هل تتبع الكلمات نمط الحروف |
+| 1055 | [`1055-reverse-vowels.apl`](../examples/1055-reverse-vowels.apl) | عكس مواضع حروف العلة فقط |
+| 1056 | [`1056-find-substring.apl`](../examples/1056-find-substring.apl) | فهرس أول ظهور لنص داخل نص |
+| 1057 | [`1057-contiguous-array.apl`](../examples/1057-contiguous-array.apl) | أطول جزء بأصفار وآحاد متساوية |
+| 1058 | [`1058-coin-change-ways.apl`](../examples/1058-coin-change-ways.apl) | عدد التراكيب التي تبلغ مبلغاً |
+| 1059 | [`1059-perfect-squares-dp.apl`](../examples/1059-perfect-squares-dp.apl) | أقل عدد مربعات مجموعها ن |
+| 1060 | [`1060-target-sum-ways.apl`](../examples/1060-target-sum-ways.apl) | عدد طرق وضع الإشارات للوصول لهدف |
+| 1061 | [`1061-min-cuts-palindrome.apl`](../examples/1061-min-cuts-palindrome.apl) | أقل قطع تجعل كل جزء متناظراً |
+| 1062 | [`1062-longest-palindromic-subseq.apl`](../examples/1062-longest-palindromic-subseq.apl) | أطول تتابع غير متصل يقرأ بالاتجاهين |
+| 1063 | [`1063-interleaving-string.apl`](../examples/1063-interleaving-string.apl) | هل نص مدموج من نصين بحفظ ترتيب كل منهما |
+| 1064 | [`1064-falling-path-sum.apl`](../examples/1064-falling-path-sum.apl) | أقل مجموع نزول بخطوة أو قطر |
+| 1065 | [`1065-triangle-min-path.apl`](../examples/1065-triangle-min-path.apl) | أقل مجموع من قمة المثلث لقاعدته |
+| 1066 | [`1066-maximal-square.apl`](../examples/1066-maximal-square.apl) | مساحة أكبر مربع كله آحاد |
+| 1067 | [`1067-stock-cooldown.apl`](../examples/1067-stock-cooldown.apl) | أقصى ربح مع يوم راحة بعد كل بيع |
+| 1068 | [`1068-stock-two-transactions.apl`](../examples/1068-stock-two-transactions.apl) | أقصى ربح بصفقتين على الأكثر |
+| 1069 | [`1069-longest-palindrome-build.apl`](../examples/1069-longest-palindrome-build.apl) | طول أطول متناظر من حروف نص |
+| 1070 | [`1070-ones-with-flips.apl`](../examples/1070-ones-with-flips.apl) | أطول جزء آحاد بعد قلب عدد محدود من الأصفار |
+| 1071 | [`1071-anagram-indices.apl`](../examples/1071-anagram-indices.apl) | كل مواضع بدء جناس نص داخل نص |
+| 1072 | [`1072-shortest-unsorted.apl`](../examples/1072-shortest-unsorted.apl) | طول أقصر جزء لو رتبناه رتبت القائمة |
+| 1073 | [`1073-next-permutation.apl`](../examples/1073-next-permutation.apl) | التبديل الأكبر التالي بالترتيب المعجمي |
+| 1074 | [`1074-pivot-index.apl`](../examples/1074-pivot-index.apl) | موضع مجموع ما قبله يساوي مجموع ما بعده |
+| 1075 | [`1075-valid-triangle-count.apl`](../examples/1075-valid-triangle-count.apl) | كم ثلاثية أضلاع تكوّن مثلثاً |
 
 **التشغيل:**
 ```bash
@@ -1321,4 +1346,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1050 مثال جاهز** في `examples/`.
+مع **1075 مثال جاهز** في `examples/`.
