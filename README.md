@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1258 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1269 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1258 مثال)
+## الأمثلة الجاهزة (1269 مثال)
 
-مجلد `examples/` يحتوي على **1258 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1269 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1533,6 +1533,17 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1256 | [`1256-paint-house.apl`](examples/1256-paint-house.apl) | أقل كلفة لطلاء صف بيوت بلا لونين متجاورين |
 | 1257 | [`1257-delete-and-earn.apl`](examples/1257-delete-and-earn.apl) | أقصى نقاط بحذف رقم وجيرانه |
 | 1258 | [`1258-maximal-rectangle-binary.apl`](examples/1258-maximal-rectangle-binary.apl) | أكبر مستطيل من الآحاد في مصفوفة |
+| 1259 | [`1259-rate-limiter-window.apl`](examples/1259-rate-limiter-window.apl) | السماح بعدد طلبات في نافذة زمنية |
+| 1260 | [`1260-parking-lot-slots.apl`](examples/1260-parking-lot-slots.apl) | موقف بأحجام متعددة |
+| 1261 | [`1261-elevator-sim.apl`](examples/1261-elevator-sim.apl) | مصعد يخدم طلبات بالترتيب |
+| 1262 | [`1262-bank-transfer-ledger.apl`](examples/1262-bank-transfer-ledger.apl) | تحويلات بين حسابات مع التراجع عند الفشل |
+| 1263 | [`1263-shopping-offers.apl`](examples/1263-shopping-offers.apl) | أقل سعر لقائمة مشتريات مع عروض حزم |
+| 1264 | [`1264-candy-split-sim.apl`](examples/1264-candy-split-sim.apl) | توزيع حلوى بزيادة تدريجية |
+| 1265 | [`1265-josephus-list.apl`](examples/1265-josephus-list.apl) | ترتيب إقصاء دائري |
+| 1266 | [`1266-tic-tac-toe-winner.apl`](examples/1266-tic-tac-toe-winner.apl) | تحديد الفائز في لوحة إكس أو |
+| 1267 | [`1267-minesweeper-count.apl`](examples/1267-minesweeper-count.apl) | عدد الألغام المجاورة لكل خانة |
+| 1268 | [`1268-spiral-matrix-two.apl`](examples/1268-spiral-matrix-two.apl) | ملء مصفوفة بأرقام متتالية بشكل حلزوني |
+| 1269 | [`1269-diagonal-traverse.apl`](examples/1269-diagonal-traverse.apl) | قراءة المصفوفة بالأقطار المتناوبة |
 
 ### تشغيل أي مثال
 
@@ -1633,7 +1644,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1258 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1269 مثال
 
 ## Language platform tools
 

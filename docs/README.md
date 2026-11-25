@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1258 مثال)
+## الأمثلة الجاهزة (1269 مثال)
 
-1258 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1269 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1375,6 +1375,17 @@
 | 1256 | [`1256-paint-house.apl`](../examples/1256-paint-house.apl) | أقل كلفة لطلاء صف بيوت بلا لونين متجاورين |
 | 1257 | [`1257-delete-and-earn.apl`](../examples/1257-delete-and-earn.apl) | أقصى نقاط بحذف رقم وجيرانه |
 | 1258 | [`1258-maximal-rectangle-binary.apl`](../examples/1258-maximal-rectangle-binary.apl) | أكبر مستطيل من الآحاد في مصفوفة |
+| 1259 | [`1259-rate-limiter-window.apl`](../examples/1259-rate-limiter-window.apl) | السماح بعدد طلبات في نافذة زمنية |
+| 1260 | [`1260-parking-lot-slots.apl`](../examples/1260-parking-lot-slots.apl) | موقف بأحجام متعددة |
+| 1261 | [`1261-elevator-sim.apl`](../examples/1261-elevator-sim.apl) | مصعد يخدم طلبات بالترتيب |
+| 1262 | [`1262-bank-transfer-ledger.apl`](../examples/1262-bank-transfer-ledger.apl) | تحويلات بين حسابات مع التراجع عند الفشل |
+| 1263 | [`1263-shopping-offers.apl`](../examples/1263-shopping-offers.apl) | أقل سعر لقائمة مشتريات مع عروض حزم |
+| 1264 | [`1264-candy-split-sim.apl`](../examples/1264-candy-split-sim.apl) | توزيع حلوى بزيادة تدريجية |
+| 1265 | [`1265-josephus-list.apl`](../examples/1265-josephus-list.apl) | ترتيب إقصاء دائري |
+| 1266 | [`1266-tic-tac-toe-winner.apl`](../examples/1266-tic-tac-toe-winner.apl) | تحديد الفائز في لوحة إكس أو |
+| 1267 | [`1267-minesweeper-count.apl`](../examples/1267-minesweeper-count.apl) | عدد الألغام المجاورة لكل خانة |
+| 1268 | [`1268-spiral-matrix-two.apl`](../examples/1268-spiral-matrix-two.apl) | ملء مصفوفة بأرقام متتالية بشكل حلزوني |
+| 1269 | [`1269-diagonal-traverse.apl`](../examples/1269-diagonal-traverse.apl) | قراءة المصفوفة بالأقطار المتناوبة |
 
 **التشغيل:**
 ```bash
@@ -1529,4 +1540,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1258 مثال جاهز** في `examples/`.
+مع **1269 مثال جاهز** في `examples/`.
