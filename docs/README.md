@@ -106,9 +106,9 @@
 | 96 | [pkgs_ext2-library.md](pkgs_ext2-library.md) | مكتبة `pkgs_ext2` — حزم متنوعة موسّعة (scrapy / prompt_toolkit / lxml / hypothesis / peewee / arrow / alembic / rich / trio / paramiko / h5py / cryptography / pyasn1 / skimage / yaml / seaborn / pyparsing / bs4 / shapely / babel / redis / pendulum / mako / nacl / typer / google / PIL / kombu / marshmallow / requests / sqlparse / celery / packaging / six / httpx / jinja2 / acp / regex / uvicorn / websockets / markdown / tornado / anyio / httplib2 / pygments / cffi / click / fastapi / httpcore / googleapiclient / tqdm / starlette / dateutil / pydantic / attr / jsonschema / multidict / numpy / scipy) (19,295 عنصراً) |
 
 ---
-## الأمثلة الجاهزة (908 مثالاً)
+## الأمثلة الجاهزة (932 مثالاً)
 
-908 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+932 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1020,6 +1020,30 @@
 | 906 | [`906-skewness-kurtosis.apl`](../examples/906-skewness-kurtosis.apl) | قياس شكل التوزيع |
 | 907 | [`907-negabinary.apl`](../examples/907-negabinary.apl) | سالب وموجب بلا بت إشارة |
 | 908 | [`908-iqr-outliers.apl`](../examples/908-iqr-outliers.apl) | فرز ووسائط وربيعيات |
+| 909 | [`909-dutch-national-flag.apl`](../examples/909-dutch-national-flag.apl) | فرز ثلاثي في مكانه |
+| 910 | [`910-cycle-sort.apl`](../examples/910-cycle-sort.apl) | أقل كتابات ممكنة |
+| 911 | [`911-sliding-window-maximum.apl`](../examples/911-sliding-window-maximum.apl) | كل عنصر يعالج مرة |
+| 912 | [`912-longest-increasing-subsequence.apl`](../examples/912-longest-increasing-subsequence.apl) | طول في n log n |
+| 913 | [`913-lru-cache.apl`](../examples/913-lru-cache.apl) | إخلاء الأقدم عند الامتلاء |
+| 914 | [`914-hyperloglog.apl`](../examples/914-hyperloglog.apl) | عد تقريبي بذاكرة ثابتة |
+| 915 | [`915-bipartite-check.apl`](../examples/915-bipartite-check.apl) | لا جارين بلون واحد |
+| 916 | [`916-bridges.apl`](../examples/916-bridges.apl) | أضلاع حذفها يفصل |
+| 917 | [`917-matrix-chain.apl`](../examples/917-matrix-chain.apl) | أقل عدد عمليات |
+| 918 | [`918-recaman.apl`](../examples/918-recaman.apl) | قفزات بحجم الموضع |
+| 919 | [`919-van-eck.apl`](../examples/919-van-eck.apl) | صفر للجديد |
+| 920 | [`920-egyptian-fraction.apl`](../examples/920-egyptian-fraction.apl) | تمثيل قديم للكسور |
+| 921 | [`921-continued-fraction.apl`](../examples/921-continued-fraction.apl) | أفضل تقريب كسري |
+| 922 | [`922-kaprekar.apl`](../examples/922-kaprekar.apl) | كل رباعي يبلغ 6174 |
+| 923 | [`923-huffman.apl`](../examples/923-huffman.apl) | شيفرات مثلى بلا بادئة |
+| 924 | [`924-lz77.apl`](../examples/924-lz77.apl) | أساس ZIP و gzip |
+| 925 | [`925-base64.apl`](../examples/925-base64.apl) | أبجدية 64 قابلة للطباعة |
+| 926 | [`926-varint.apl`](../examples/926-varint.apl) | أعداد صغيرة ببايتات أقل |
+| 927 | [`927-kmeans.apl`](../examples/927-kmeans.apl) | تقسيم نقاط لمجموعات |
+| 928 | [`928-logistic-regression.apl`](../examples/928-logistic-regression.apl) | تصنيف ثنائي احتمالي |
+| 929 | [`929-median-of-medians.apl`](../examples/929-median-of-medians.apl) | اختيار خطي بأسوأ حالة |
+| 930 | [`930-golden-section.apl`](../examples/930-golden-section.apl) | تقليل بلا مشتقات |
+| 931 | [`931-soundex.apl`](../examples/931-soundex.apl) | أسماء متشابهة الصوت |
+| 932 | [`932-jaro-winkler.apl`](../examples/932-jaro-winkler.apl) | قياس تقارب الأسماء |
 
 **التشغيل:**
 ```bash
@@ -1169,4 +1193,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,254 عنصراً**،
-مع **908 مثال جاهز** في `examples/`.
+مع **932 مثال جاهز** في `examples/`.
