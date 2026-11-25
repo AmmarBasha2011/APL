@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1357 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1371 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1357 مثال)
+## الأمثلة الجاهزة (1371 مثال)
 
-مجلد `examples/` يحتوي على **1357 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1371 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1632,6 +1632,20 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1355 | [`1355-prison-cells-days.apl`](examples/1355-prison-cells-days.apl) | حالة ثماني زنازين بعد عدد كبير من الأيام |
 | 1356 | [`1356-champagne-tower.apl`](examples/1356-champagne-tower.apl) | كمية السائل في كأس معين في برج كؤوس |
 | 1357 | [`1357-rabbits-in-forest.apl`](examples/1357-rabbits-in-forest.apl) | أقل عدد ممكن للأرانب من إجابات عددها حولها |
+| 1358 | [`1358-sliding-puzzle.apl`](examples/1358-sliding-puzzle.apl) | أقل حركات لحل لغز انزلاق بثلاثة في اثنين |
+| 1359 | [`1359-smallest-string-with-swaps.apl`](examples/1359-smallest-string-with-swaps.apl) | أصغر نص بتبديل أي حرفين ضمن أزواج مسموحة |
+| 1360 | [`1360-number-of-islands.apl`](examples/1360-number-of-islands.apl) | عدد الجزر المتصلة أفقياً ورأسياً في شبكة |
+| 1361 | [`1361-max-consecutive-ones-three.apl`](examples/1361-max-consecutive-ones-three.apl) | أطول سلسلة آحاد بقلب عدد محدود من الأصفار |
+| 1362 | [`1362-subarrays-k-different.apl`](examples/1362-subarrays-k-different.apl) | عدد المصفوفات الجزئية التي فيها ك قيمة مختلفة بالضبط |
+| 1363 | [`1363-permutation-in-string.apl`](examples/1363-permutation-in-string.apl) | هل يحتوي نص على تبديل لنص آخر |
+| 1364 | [`1364-longest-repeating-replacement.apl`](examples/1364-longest-repeating-replacement.apl) | أطول نص متماثل الحروف بعد ك استبدال |
+| 1365 | [`1365-partition-stable.apl`](examples/1365-partition-stable.apl) | نقل العناصر الأصغر من محور للأمام مع حفظ الترتيب |
+| 1366 | [`1366-remove-duplicate-letters.apl`](examples/1366-remove-duplicate-letters.apl) | أصغر نص بترتيب أبجدي بعد حذف تكرار الحروف |
+| 1367 | [`1367-pattern-one-three-two.apl`](examples/1367-pattern-one-three-two.apl) | هل توجد ثلاثة عناصر بنمط أصغر ثم أكبر ثم وسط |
+| 1368 | [`1368-bus-routes-min.apl`](examples/1368-bus-routes-min.apl) | أقل عدد حافلات للوصول من محطة إلى أخرى |
+| 1369 | [`1369-jump-game-four.apl`](examples/1369-jump-game-four.apl) | أقل قفزات للوصول لآخر موضع مع القفز بين القيم المتساوية |
+| 1370 | [`1370-guess-number-cost.apl`](examples/1370-guess-number-cost.apl) | أقل مال يضمن الفوز في لعبة التخمين |
+| 1371 | [`1371-can-i-win.apl`](examples/1371-can-i-win.apl) | لعبة اختيار أرقام بدون تكرار للوصول إلى مجموع |
 
 ### تشغيل أي مثال
 
@@ -1732,7 +1746,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1357 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1371 مثال
 
 ## Language platform tools
 
