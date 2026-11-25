@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1280 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1291 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1280 مثال)
+## الأمثلة الجاهزة (1291 مثال)
 
-مجلد `examples/` يحتوي على **1280 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1291 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1555,6 +1555,17 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1278 | [`1278-kth-largest-quickselect.apl`](examples/1278-kth-largest-quickselect.apl) | العنصر ذو الترتيب k من الأكبر |
 | 1279 | [`1279-sort-colors-three-way.apl`](examples/1279-sort-colors-three-way.apl) | فرز قيم من ثلاثة أنواع بمسح واحد |
 | 1280 | [`1280-merge-intervals-count.apl`](examples/1280-merge-intervals-count.apl) | عدد المجالات الناتجة من دمج المتداخلة |
+| 1281 | [`1281-longest-increasing-triplet.apl`](examples/1281-longest-increasing-triplet.apl) | هل توجد ثلاثة عناصر متزايدة بالترتيب |
+| 1282 | [`1282-russian-doll.apl`](examples/1282-russian-doll.apl) | أكبر عدد مظاريف متداخلة |
+| 1283 | [`1283-lis-count.apl`](examples/1283-lis-count.apl) | عدد المتتاليات المتزايدة الأطول |
+| 1284 | [`1284-max-sum-increasing.apl`](examples/1284-max-sum-increasing.apl) | أكبر مجموع لمتتالية متزايدة |
+| 1285 | [`1285-bitonic-subsequence.apl`](examples/1285-bitonic-subsequence.apl) | أطول متتالية تزداد ثم تنقص |
+| 1286 | [`1286-longest-chain-pairs.apl`](examples/1286-longest-chain-pairs.apl) | أطول سلسلة أزواج متتابعة |
+| 1287 | [`1287-min-deletions-sorted.apl`](examples/1287-min-deletions-sorted.apl) | أقل حذف لتصبح القائمة متزايدة |
+| 1288 | [`1288-shortest-supersequence.apl`](examples/1288-shortest-supersequence.apl) | طول أقصر نص يحوي نصين كمتتاليتين |
+| 1289 | [`1289-min-ascii-delete-sum.apl`](examples/1289-min-ascii-delete-sum.apl) | أقل مجموع رموز محذوفة لتساوي نصين |
+| 1290 | [`1290-palindrome-removal.apl`](examples/1290-palindrome-removal.apl) | أقل حذف لتصبح السلسلة متناظرة |
+| 1291 | [`1291-restore-ip-addresses.apl`](examples/1291-restore-ip-addresses.apl) | كل العناوين الصالحة من سلسلة أرقام |
 
 ### تشغيل أي مثال
 
@@ -1655,7 +1666,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1280 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1291 مثال
 
 ## Language platform tools
 

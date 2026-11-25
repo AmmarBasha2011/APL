@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1280 مثال)
+## الأمثلة الجاهزة (1291 مثال)
 
-1280 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1291 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1397,6 +1397,17 @@
 | 1278 | [`1278-kth-largest-quickselect.apl`](../examples/1278-kth-largest-quickselect.apl) | العنصر ذو الترتيب k من الأكبر |
 | 1279 | [`1279-sort-colors-three-way.apl`](../examples/1279-sort-colors-three-way.apl) | فرز قيم من ثلاثة أنواع بمسح واحد |
 | 1280 | [`1280-merge-intervals-count.apl`](../examples/1280-merge-intervals-count.apl) | عدد المجالات الناتجة من دمج المتداخلة |
+| 1281 | [`1281-longest-increasing-triplet.apl`](../examples/1281-longest-increasing-triplet.apl) | هل توجد ثلاثة عناصر متزايدة بالترتيب |
+| 1282 | [`1282-russian-doll.apl`](../examples/1282-russian-doll.apl) | أكبر عدد مظاريف متداخلة |
+| 1283 | [`1283-lis-count.apl`](../examples/1283-lis-count.apl) | عدد المتتاليات المتزايدة الأطول |
+| 1284 | [`1284-max-sum-increasing.apl`](../examples/1284-max-sum-increasing.apl) | أكبر مجموع لمتتالية متزايدة |
+| 1285 | [`1285-bitonic-subsequence.apl`](../examples/1285-bitonic-subsequence.apl) | أطول متتالية تزداد ثم تنقص |
+| 1286 | [`1286-longest-chain-pairs.apl`](../examples/1286-longest-chain-pairs.apl) | أطول سلسلة أزواج متتابعة |
+| 1287 | [`1287-min-deletions-sorted.apl`](../examples/1287-min-deletions-sorted.apl) | أقل حذف لتصبح القائمة متزايدة |
+| 1288 | [`1288-shortest-supersequence.apl`](../examples/1288-shortest-supersequence.apl) | طول أقصر نص يحوي نصين كمتتاليتين |
+| 1289 | [`1289-min-ascii-delete-sum.apl`](../examples/1289-min-ascii-delete-sum.apl) | أقل مجموع رموز محذوفة لتساوي نصين |
+| 1290 | [`1290-palindrome-removal.apl`](../examples/1290-palindrome-removal.apl) | أقل حذف لتصبح السلسلة متناظرة |
+| 1291 | [`1291-restore-ip-addresses.apl`](../examples/1291-restore-ip-addresses.apl) | كل العناوين الصالحة من سلسلة أرقام |
 
 **التشغيل:**
 ```bash
@@ -1551,4 +1562,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1280 مثال جاهز** في `examples/`.
+مع **1291 مثال جاهز** في `examples/`.
