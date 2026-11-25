@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1408 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1430 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1408 مثال)
+## الأمثلة الجاهزة (1430 مثال)
 
-مجلد `examples/` يحتوي على **1408 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1430 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1683,6 +1683,28 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1406 | [`1406-multiplicative-persistence.apl`](examples/1406-multiplicative-persistence.apl) | عدد المرات لضرب الأرقام حتى يبقى رقم واحد |
 | 1407 | [`1407-sum-of-divisors-sigma.apl`](examples/1407-sum-of-divisors-sigma.apl) | مجموع كل قواسم عدد بما فيها نفسه |
 | 1408 | [`1408-champernowne-digit.apl`](examples/1408-champernowne-digit.apl) | الرقم ذو الترتيب ن في تسلسل الأعداد الصحيحة المتتالية |
+| 1409 | [`1409-longest-uncommon-subsequence.apl`](examples/1409-longest-uncommon-subsequence.apl) | أطول متتالية جزئية موجودة في نص واحد فقط |
+| 1410 | [`1410-reverse-each-word.apl`](examples/1410-reverse-each-word.apl) | عكس حروف كل كلمة مع بقاء ترتيب الكلمات |
+| 1411 | [`1411-buddy-strings.apl`](examples/1411-buddy-strings.apl) | هل يتساوى النصان بتبديل حرفين في أحدهما |
+| 1412 | [`1412-backspace-compare.apl`](examples/1412-backspace-compare.apl) | مقارنة نصين حيث العلامة # تمسح الحرف السابق |
+| 1413 | [`1413-keyboard-row-words.apl`](examples/1413-keyboard-row-words.apl) | كلمات تكتب كلها من صف واحد في لوحة المفاتيح |
+| 1414 | [`1414-reverse-string-k-groups.apl`](examples/1414-reverse-string-k-groups.apl) | عكس أول ك حرف من كل 2ك حرف |
+| 1415 | [`1415-student-attendance-record.apl`](examples/1415-student-attendance-record.apl) | هل يستحق الطالب الجائزة بحسب غيابه وتأخره |
+| 1416 | [`1416-long-pressed-name.apl`](examples/1416-long-pressed-name.apl) | هل نص مكتوب هو الاسم مع ضغط بعض الحروف طويلاً |
+| 1417 | [`1417-di-string-match.apl`](examples/1417-di-string-match.apl) | تبديل يوافق نمط الزيادة والنقصان |
+| 1418 | [`1418-shortest-completing-word.apl`](examples/1418-shortest-completing-word.apl) | أقصر كلمة تحوي كل حروف لوحة الترخيص |
+| 1419 | [`1419-camelcase-matching.apl`](examples/1419-camelcase-matching.apl) | هل يطابق كل استعلام نمط الأحرف الكبيرة |
+| 1420 | [`1420-number-of-segments.apl`](examples/1420-number-of-segments.apl) | عدد الكلمات المفصولة بمسافات في نص |
+| 1421 | [`1421-count-binary-substrings.apl`](examples/1421-count-binary-substrings.apl) | عدد المقاطع التي فيها أصفار وآحاد متتالية بعدد متساو |
+| 1422 | [`1422-repeated-dna-sequences.apl`](examples/1422-repeated-dna-sequences.apl) | كل مقطع من عشرة حروف يظهر أكثر من مرة |
+| 1423 | [`1423-base-seven.apl`](examples/1423-base-seven.apl) | تحويل عدد صحيح إلى النظام السباعي |
+| 1424 | [`1424-add-large-strings.apl`](examples/1424-add-large-strings.apl) | جمع عددين كبيرين مكتوبين كنصين بدون تحويل |
+| 1425 | [`1425-repeated-string-match.apl`](examples/1425-repeated-string-match.apl) | أقل تكرار لنص أول ليحتوي نصاً ثانياً |
+| 1426 | [`1426-next-closest-time.apl`](examples/1426-next-closest-time.apl) | أقرب وقت لاحق يستخدم نفس أرقام الوقت المعطى |
+| 1427 | [`1427-sentence-similarity-pairs.apl`](examples/1427-sentence-similarity-pairs.apl) | هل جملتان متشابهتان بحسب أزواج كلمات متشابهة |
+| 1428 | [`1428-sort-vowels-in-string.apl`](examples/1428-sort-vowels-in-string.apl) | فرز حروف العلة في مواضعها وإبقاء الباقي |
+| 1429 | [`1429-max-nesting-depth.apl`](examples/1429-max-nesting-depth.apl) | أقصى عمق لتداخل الأقواس في تعبير |
+| 1430 | [`1430-remove-outer-parentheses.apl`](examples/1430-remove-outer-parentheses.apl) | حذف أقواس المستوى الأول من كل جزء أولي |
 
 ### تشغيل أي مثال
 
@@ -1783,7 +1805,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1408 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1430 مثال
 
 ## Language platform tools
 
