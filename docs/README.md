@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1475 مثال)
+## الأمثلة الجاهزة (1498 مثال)
 
-1475 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1498 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1592,6 +1592,29 @@
 | 1473 | [`1473-title-to-slug.apl`](../examples/1473-title-to-slug.apl) | تحويل عنوان إلى رابط بحروف صغيرة وشرطات |
 | 1474 | [`1474-number-to-english-words.apl`](../examples/1474-number-to-english-words.apl) | كتابة الأعداد حتى الآلاف بالإنجليزية |
 | 1475 | [`1475-unit-conversion-chain.apl`](../examples/1475-unit-conversion-chain.apl) | كل وحدة تُحول إلى المتر أولاً |
+| 1476 | [`1476-anti-diagonal-sum.apl`](../examples/1476-anti-diagonal-sum.apl) | مجموع القطر الرئيسي والثانوي دون عد المركز مرتين |
+| 1477 | [`1477-matrix-trace-value.apl`](../examples/1477-matrix-trace-value.apl) | مجموع عناصر القطر الرئيسي |
+| 1478 | [`1478-identity-matrix-check.apl`](../examples/1478-identity-matrix-check.apl) | القطر آحاد وما عداه أصفار |
+| 1479 | [`1479-matrix-saddle-point.apl`](../examples/1479-matrix-saddle-point.apl) | عنصر أصغر ما في صفه وأكبر ما في عموده |
+| 1480 | [`1480-row-and-column-sums.apl`](../examples/1480-row-and-column-sums.apl) | جمع كل صف وكل عمود في مرور واحد |
+| 1481 | [`1481-pascal-triangle-row.apl`](../examples/1481-pascal-triangle-row.apl) | الصف رقم ن بدون بناء كل المثلث |
+| 1482 | [`1482-wave-sort-array.apl`](../examples/1482-wave-sort-array.apl) | مصفوفة تتبادل فيها القمم والقيعان |
+| 1483 | [`1483-gnome-sort-steps.apl`](../examples/1483-gnome-sort-steps.apl) | فرز ببساطة: تقدم إن صح الترتيب وإلا بدل وارجع |
+| 1484 | [`1484-cocktail-shaker-sort.apl`](../examples/1484-cocktail-shaker-sort.apl) | فقاعات تذهب وتعود في الاتجاهين |
+| 1485 | [`1485-comb-sort-gap.apl`](../examples/1485-comb-sort-gap.apl) | فرز بفجوة تتقلص تدريجياً |
+| 1486 | [`1486-stooge-sort-recursive.apl`](../examples/1486-stooge-sort-recursive.apl) | فرز تراجعي بطيء لكنه يعمل |
+| 1487 | [`1487-is-sorted-check.apl`](../examples/1487-is-sorted-check.apl) | فحص الترتيب التصاعدي أو التنازلي |
+| 1488 | [`1488-partition-around-pivot.apl`](../examples/1488-partition-around-pivot.apl) | الأصغر يسار والأكبر يمين |
+| 1489 | [`1489-ackermann-function.apl`](../examples/1489-ackermann-function.apl) | دالة تراجعية تنمو بسرعة هائلة |
+| 1490 | [`1490-even-odd-mutual.apl`](../examples/1490-even-odd-mutual.apl) | دالتان تستدعي كل منهما الأخرى |
+| 1491 | [`1491-nested-list-depth.apl`](../examples/1491-nested-list-depth.apl) | أقصى مستوى تداخل في قائمة |
+| 1492 | [`1492-query-string-parse.apl`](../examples/1492-query-string-parse.apl) | تحويل a=1&b=2 إلى قاموس |
+| 1493 | [`1493-time-string-parse.apl`](../examples/1493-time-string-parse.apl) | تحويل 14:30 إلى دقائق مع التحقق |
+| 1494 | [`1494-ipv4-address-valid.apl`](../examples/1494-ipv4-address-valid.apl) | أربعة أجزاء كل منها من 0 إلى 255 |
+| 1495 | [`1495-mac-address-valid.apl`](../examples/1495-mac-address-valid.apl) | ستة أزواج سداسية عشرية |
+| 1496 | [`1496-phone-number-format.apl`](../examples/1496-phone-number-format.apl) | تجميع الأرقام في أجزاء مقروءة |
+| 1497 | [`1497-lucky-numbers-matrix.apl`](../examples/1497-lucky-numbers-matrix.apl) | أصغر في صفه وأكبر في عموده |
+| 1498 | [`1498-subset-sum-count.apl`](../examples/1498-subset-sum-count.apl) | كم مجموعة جزئية مجموعها قيمة معينة |
 
 **التشغيل:**
 ```bash
@@ -1746,4 +1769,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1475 مثال جاهز** في `examples/`.
+مع **1498 مثال جاهز** في `examples/`.
