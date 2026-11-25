@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1126 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1151 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1126 مثال)
+## الأمثلة الجاهزة (1151 مثال)
 
-مجلد `examples/` يحتوي على **1126 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1151 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1401,6 +1401,31 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1124 | [`1124-underground-system.apl`](examples/1124-underground-system.apl) | متوسط زمن الرحلة بين محطتين |
 | 1125 | [`1125-undo-redo-editor.apl`](examples/1125-undo-redo-editor.apl) | كتابة وتراجع وإعادة |
 | 1126 | [`1126-vending-machine.apl`](examples/1126-vending-machine.apl) | إدخال نقود وصرف منتج وباقٍ |
+| 1127 | [`1127-spiral-matrix.apl`](examples/1127-spiral-matrix.apl) | قراءة مصفوفة بشكل حلزوني |
+| 1128 | [`1128-rotate-image.apl`](examples/1128-rotate-image.apl) | تدوير مصفوفة مربعة تسعين درجة |
+| 1129 | [`1129-game-of-life.apl`](examples/1129-game-of-life.apl) | خطوة واحدة من لعبة الحياة |
+| 1130 | [`1130-gray-code.apl`](examples/1130-gray-code.apl) | توليد تسلسل غراي |
+| 1131 | [`1131-jump-game-two.apl`](examples/1131-jump-game-two.apl) | أقل عدد قفزات للوصول للنهاية |
+| 1132 | [`1132-bulls-and-cows.apl`](examples/1132-bulls-and-cows.apl) | مقارنة تخمين برقم سري |
+| 1133 | [`1133-partition-equal-subset.apl`](examples/1133-partition-equal-subset.apl) | هل نقسم القائمة إلى نصفين بمجموع واحد |
+| 1134 | [`1134-unique-paths-obstacles.apl`](examples/1134-unique-paths-obstacles.apl) | عدد المسارات في شبكة فيها عوائق |
+| 1135 | [`1135-meeting-rooms.apl`](examples/1135-meeting-rooms.apl) | أقل عدد قاعات لجدول اجتماعات |
+| 1136 | [`1136-summary-ranges.apl`](examples/1136-summary-ranges.apl) | تلخيص أرقام متتالية بمجالات |
+| 1137 | [`1137-missing-ranges.apl`](examples/1137-missing-ranges.apl) | إيجاد المجالات الناقصة بين حدين |
+| 1138 | [`1138-remove-k-digits.apl`](examples/1138-remove-k-digits.apl) | أصغر عدد بعد حذف k رقماً |
+| 1139 | [`1139-largest-number.apl`](examples/1139-largest-number.apl) | ترتيب أرقام لتكوين أكبر عدد |
+| 1140 | [`1140-find-duplicate-floyd.apl`](examples/1140-find-duplicate-floyd.apl) | إيجاد الرقم المكرر دون تعديل القائمة |
+| 1141 | [`1141-integer-break.apl`](examples/1141-integer-break.apl) | أكبر حاصل ضرب لأجزاء عدد |
+| 1142 | [`1142-search-2d-matrix.apl`](examples/1142-search-2d-matrix.apl) | بحث عن قيمة في مصفوفة مرتبة |
+| 1143 | [`1143-star-parentheses.apl`](examples/1143-star-parentheses.apl) | صحة أقواس فيها نجمة تعمل كأي شيء |
+| 1144 | [`1144-max-circular-subarray.apl`](examples/1144-max-circular-subarray.apl) | أكبر مجموع لقائمة جزئية في قائمة دائرية |
+| 1145 | [`1145-wiggle-sort.apl`](examples/1145-wiggle-sort.apl) | ترتيب يتناوب بين الأصغر والأكبر |
+| 1146 | [`1146-candy-crush-1d.apl`](examples/1146-candy-crush-1d.apl) | إزالة ثلاثة متتالية فأكثر من نفس النوع |
+| 1147 | [`1147-task-scheduler-cooldown.apl`](examples/1147-task-scheduler-cooldown.apl) | أقل وقت لتنفيذ مهام مع فترة تبريد |
+| 1148 | [`1148-subarray-product-less.apl`](examples/1148-subarray-product-less.apl) | عدّ القوائم الجزئية بجداء أقل من k |
+| 1149 | [`1149-sum-of-squares.apl`](examples/1149-sum-of-squares.apl) | هل العدد مجموع مربعين |
+| 1150 | [`1150-longest-turbulent.apl`](examples/1150-longest-turbulent.apl) | أطول قائمة جزئية تتناوب فيها المقارنات |
+| 1151 | [`1151-squares-of-digits-cycle.apl`](examples/1151-squares-of-digits-cycle.apl) | طول الدورة في مربعات أرقام العدد |
 
 ### تشغيل أي مثال
 
@@ -1501,7 +1526,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1126 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1151 مثال
 
 ## Language platform tools
 
