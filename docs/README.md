@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1319 مثال)
+## الأمثلة الجاهزة (1329 مثال)
 
-1319 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1329 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1436,6 +1436,16 @@
 | 1317 | [`1317-sudoku-solver-mini.apl`](../examples/1317-sudoku-solver-mini.apl) | حل سودوكو ٤ في ٤ |
 | 1318 | [`1318-target-sum-combos.apl`](../examples/1318-target-sum-combos.apl) | عدد طرق وضع الإشارات لبلوغ هدف |
 | 1319 | [`1319-expression-add-operators.apl`](../examples/1319-expression-add-operators.apl) | وضع عمليات بين الأرقام لبلوغ هدف |
+| 1320 | [`1320-rotate-matrix-in-place.apl`](../examples/1320-rotate-matrix-in-place.apl) | تدوير مصفوفة بنقلها ثم عكس الصفوف |
+| 1321 | [`1321-transpose-matrix.apl`](../examples/1321-transpose-matrix.apl) | تبديل الصفوف والأعمدة في مصفوفة مستطيلة |
+| 1322 | [`1322-toeplitz-check.apl`](../examples/1322-toeplitz-check.apl) | هل كل قطر في المصفوفة ثابت |
+| 1323 | [`1323-lonely-pixel.apl`](../examples/1323-lonely-pixel.apl) | عدد البكسلات السوداء الوحيدة في صفها وعمودها |
+| 1324 | [`1324-island-perimeter.apl`](../examples/1324-island-perimeter.apl) | محيط جزيرة في شبكة |
+| 1325 | [`1325-max-area-island.apl`](../examples/1325-max-area-island.apl) | أكبر جزيرة في شبكة |
+| 1326 | [`1326-number-of-distinct-islands.apl`](../examples/1326-number-of-distinct-islands.apl) | عدد أشكال الجزر المختلفة |
+| 1327 | [`1327-shortest-bridge.apl`](../examples/1327-shortest-bridge.apl) | أقل عدد خانات ماء لربط جزيرتين |
+| 1328 | [`1328-minimum-knight-moves.apl`](../examples/1328-minimum-knight-moves.apl) | أقل عدد حركات حصان بين خانتين |
+| 1329 | [`1329-open-the-lock.apl`](../examples/1329-open-the-lock.apl) | أقل عدد لفات لفتح قفل رقمي |
 
 **التشغيل:**
 ```bash
@@ -1590,4 +1600,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1319 مثال جاهز** في `examples/`.
+مع **1329 مثال جاهز** في `examples/`.
