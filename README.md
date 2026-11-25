@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 91 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **956 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **980 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -264,9 +264,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (956 مثالاً)
+## الأمثلة الجاهزة (980 مثالاً)
 
-مجلد `examples/` يحتوي على **956 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **980 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1226,6 +1226,30 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 954 | [`954-tf-idf.apl`](examples/954-tf-idf.apl) | أهمية مصطلح لوثيقة |
 | 955 | [`955-segment-intersection.apl`](examples/955-segment-intersection.apl) | جداء تبادلي بإشارات |
 | 956 | [`956-lagrange.apl`](examples/956-lagrange.apl) | كثير حدود مار بنقاط |
+| 957 | [`957-majority-vote.apl`](examples/957-majority-vote.apl) | أغلبية بذاكرة ثابتة |
+| 958 | [`958-weighted-interval.apl`](examples/958-weighted-interval.apl) | أقصى ربح بلا تداخل |
+| 959 | [`959-job-sequencing.apl`](examples/959-job-sequencing.apl) | أقصى ربح قبل الموعد |
+| 960 | [`960-cryptarithmetic.apl`](examples/960-cryptarithmetic.apl) | SEND+MORE=MONEY |
+| 961 | [`961-tree-diameter.apl`](examples/961-tree-diameter.apl) | أطول مسار بين عقدتين |
+| 962 | [`962-viterbi.apl`](examples/962-viterbi.apl) | فك ملاحظات ماركوف |
+| 963 | [`963-simhash.apl`](examples/963-simhash.apl) | تقارب وثائق بمسافة هامنغ |
+| 964 | [`964-fisher-yates.apl`](examples/964-fisher-yates.apl) | خلط عادل بمرور واحد |
+| 965 | [`965-bresenham.apl`](examples/965-bresenham.apl) | رسم خطوط بلا كسور |
+| 966 | [`966-bezier.apl`](examples/966-bezier.apl) | أساس منحنيات الرسم |
+| 967 | [`967-mortgage-amortization.apl`](examples/967-mortgage-amortization.apl) | فائدة تتناقص وأصل ينمو |
+| 968 | [`968-rdp.apl`](examples/968-rdp.apl) | ضغط مسارات الخرائط |
+| 969 | [`969-exponential-smoothing.apl`](examples/969-exponential-smoothing.apl) | سلسلة زمنية ملساء |
+| 970 | [`970-pell-equation.apl`](examples/970-pell-equation.apl) | حلول ديوفانتية صحيحة |
+| 971 | [`971-geohash.apl`](examples/971-geohash.apl) | عنوان نصي لإحداثيات |
+| 972 | [`972-baby-step-giant-step.apl`](examples/972-baby-step-giant-step.apl) | لوغاريتم منفصل بجذر الزمن |
+| 973 | [`973-fermat-factorization.apl`](examples/973-fermat-factorization.apl) | تحليل قريب من مربع |
+| 974 | [`974-ear-clipping.apl`](examples/974-ear-clipping.apl) | مضلع إلى مثلثات |
+| 975 | [`975-legendre-symbol.apl`](examples/975-legendre-symbol.apl) | باقٍ تربيعي أم لا |
+| 976 | [`976-barnsley-fern.apl`](examples/976-barnsley-fern.apl) | فركتال نباتي واقعي |
+| 977 | [`977-median-filter.apl`](examples/977-median-filter.apl) | إزالة الشوائب النبضية |
+| 978 | [`978-hilbert.apl`](examples/978-hilbert.apl) | ملء فضاء يحفظ الجوار |
+| 979 | [`979-k-nearest.apl`](examples/979-k-nearest.apl) | تصنيف بلا نموذج مدرب |
+| 980 | [`980-zeller.apl`](examples/980-zeller.apl) | أي تاريخ إلى يوم أسبوع |
 
 ### تشغيل أي مثال
 
@@ -1326,7 +1350,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 956 مثالاً
+**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 980 مثالاً
 
 ## Language platform tools
 
