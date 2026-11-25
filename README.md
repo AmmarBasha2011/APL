@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 91 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **932 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **956 مثالاً جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -264,9 +264,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (932 مثالاً)
+## الأمثلة الجاهزة (956 مثالاً)
 
-مجلد `examples/` يحتوي على **932 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **956 برنامجاً حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1202,6 +1202,30 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 930 | [`930-golden-section.apl`](examples/930-golden-section.apl) | تقليل بلا مشتقات |
 | 931 | [`931-soundex.apl`](examples/931-soundex.apl) | أسماء متشابهة الصوت |
 | 932 | [`932-jaro-winkler.apl`](examples/932-jaro-winkler.apl) | قياس تقارب الأسماء |
+| 933 | [`933-kmp.apl`](examples/933-kmp.apl) | بحث بلا رجوع في النص |
+| 934 | [`934-longest-common-subsequence.apl`](examples/934-longest-common-subsequence.apl) | أساس diff الحيوي |
+| 935 | [`935-regex-matcher.apl`](examples/935-regex-matcher.apl) | مطابقة نمط كامل |
+| 936 | [`936-arithmetic-coding.apl`](examples/936-arithmetic-coding.apl) | سلسلة كاملة في كسر |
+| 937 | [`937-lzw.apl`](examples/937-lzw.apl) | أساس GIF |
+| 938 | [`938-bitonic-sort.apl`](examples/938-bitonic-sort.apl) | فرز قابل للتوازي |
+| 939 | [`939-pancake-sort.apl`](examples/939-pancake-sort.apl) | قلبتان لكل عنصر |
+| 940 | [`940-cholesky.apl`](examples/940-cholesky.apl) | للموجبة التعريف |
+| 941 | [`941-simpson-rule.apl`](examples/941-simpson-rule.apl) | تكامل بقطع مكافئ |
+| 942 | [`942-dft.apl`](examples/942-dft.apl) | من الزمن للتردد |
+| 943 | [`943-haar-wavelet.apl`](examples/943-haar-wavelet.apl) | أبسط تحويل مويجي |
+| 944 | [`944-kalman.apl`](examples/944-kalman.apl) | دمج قياسات مضججة |
+| 945 | [`945-lucas-theorem.apl`](examples/945-lucas-theorem.apl) | C(n,k) مودولو أولي |
+| 946 | [`946-primitive-root.apl`](examples/946-primitive-root.apl) | مولد مودولو أولي |
+| 947 | [`947-shamir.apl`](examples/947-shamir.apl) | ك حصة تكفي وأقل لا |
+| 948 | [`948-hamming-code.apl`](examples/948-hamming-code.apl) | تصحيح خطأ واحد |
+| 949 | [`949-rule-30.apl`](examples/949-rule-30.apl) | فوضى من قاعدة بسيطة |
+| 950 | [`950-maze-generation.apl`](examples/950-maze-generation.apl) | متاهة مثالية بشجرة |
+| 951 | [`951-sudoku.apl`](examples/951-sudoku.apl) | صف وعمود وصندوق |
+| 952 | [`952-interval-scheduling.apl`](examples/952-interval-scheduling.apl) | أكبر عدد مهام متوافقة |
+| 953 | [`953-egg-drop.apl`](examples/953-egg-drop.apl) | محاولات مضمونة |
+| 954 | [`954-tf-idf.apl`](examples/954-tf-idf.apl) | أهمية مصطلح لوثيقة |
+| 955 | [`955-segment-intersection.apl`](examples/955-segment-intersection.apl) | جداء تبادلي بإشارات |
+| 956 | [`956-lagrange.apl`](examples/956-lagrange.apl) | كثير حدود مار بنقاط |
 
 ### تشغيل أي مثال
 
@@ -1302,7 +1326,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 932 مثالاً
+**الإصدار:** APL v1.13 — 211,038 عنصراً عربياً — 91 مكتبة — 956 مثالاً
 
 ## Language platform tools
 

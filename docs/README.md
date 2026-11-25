@@ -106,9 +106,9 @@
 | 96 | [pkgs_ext2-library.md](pkgs_ext2-library.md) | مكتبة `pkgs_ext2` — حزم متنوعة موسّعة (scrapy / prompt_toolkit / lxml / hypothesis / peewee / arrow / alembic / rich / trio / paramiko / h5py / cryptography / pyasn1 / skimage / yaml / seaborn / pyparsing / bs4 / shapely / babel / redis / pendulum / mako / nacl / typer / google / PIL / kombu / marshmallow / requests / sqlparse / celery / packaging / six / httpx / jinja2 / acp / regex / uvicorn / websockets / markdown / tornado / anyio / httplib2 / pygments / cffi / click / fastapi / httpcore / googleapiclient / tqdm / starlette / dateutil / pydantic / attr / jsonschema / multidict / numpy / scipy) (19,295 عنصراً) |
 
 ---
-## الأمثلة الجاهزة (932 مثالاً)
+## الأمثلة الجاهزة (956 مثالاً)
 
-932 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+956 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1044,6 +1044,30 @@
 | 930 | [`930-golden-section.apl`](../examples/930-golden-section.apl) | تقليل بلا مشتقات |
 | 931 | [`931-soundex.apl`](../examples/931-soundex.apl) | أسماء متشابهة الصوت |
 | 932 | [`932-jaro-winkler.apl`](../examples/932-jaro-winkler.apl) | قياس تقارب الأسماء |
+| 933 | [`933-kmp.apl`](../examples/933-kmp.apl) | بحث بلا رجوع في النص |
+| 934 | [`934-longest-common-subsequence.apl`](../examples/934-longest-common-subsequence.apl) | أساس diff الحيوي |
+| 935 | [`935-regex-matcher.apl`](../examples/935-regex-matcher.apl) | مطابقة نمط كامل |
+| 936 | [`936-arithmetic-coding.apl`](../examples/936-arithmetic-coding.apl) | سلسلة كاملة في كسر |
+| 937 | [`937-lzw.apl`](../examples/937-lzw.apl) | أساس GIF |
+| 938 | [`938-bitonic-sort.apl`](../examples/938-bitonic-sort.apl) | فرز قابل للتوازي |
+| 939 | [`939-pancake-sort.apl`](../examples/939-pancake-sort.apl) | قلبتان لكل عنصر |
+| 940 | [`940-cholesky.apl`](../examples/940-cholesky.apl) | للموجبة التعريف |
+| 941 | [`941-simpson-rule.apl`](../examples/941-simpson-rule.apl) | تكامل بقطع مكافئ |
+| 942 | [`942-dft.apl`](../examples/942-dft.apl) | من الزمن للتردد |
+| 943 | [`943-haar-wavelet.apl`](../examples/943-haar-wavelet.apl) | أبسط تحويل مويجي |
+| 944 | [`944-kalman.apl`](../examples/944-kalman.apl) | دمج قياسات مضججة |
+| 945 | [`945-lucas-theorem.apl`](../examples/945-lucas-theorem.apl) | C(n,k) مودولو أولي |
+| 946 | [`946-primitive-root.apl`](../examples/946-primitive-root.apl) | مولد مودولو أولي |
+| 947 | [`947-shamir.apl`](../examples/947-shamir.apl) | ك حصة تكفي وأقل لا |
+| 948 | [`948-hamming-code.apl`](../examples/948-hamming-code.apl) | تصحيح خطأ واحد |
+| 949 | [`949-rule-30.apl`](../examples/949-rule-30.apl) | فوضى من قاعدة بسيطة |
+| 950 | [`950-maze-generation.apl`](../examples/950-maze-generation.apl) | متاهة مثالية بشجرة |
+| 951 | [`951-sudoku.apl`](../examples/951-sudoku.apl) | صف وعمود وصندوق |
+| 952 | [`952-interval-scheduling.apl`](../examples/952-interval-scheduling.apl) | أكبر عدد مهام متوافقة |
+| 953 | [`953-egg-drop.apl`](../examples/953-egg-drop.apl) | محاولات مضمونة |
+| 954 | [`954-tf-idf.apl`](../examples/954-tf-idf.apl) | أهمية مصطلح لوثيقة |
+| 955 | [`955-segment-intersection.apl`](../examples/955-segment-intersection.apl) | جداء تبادلي بإشارات |
+| 956 | [`956-lagrange.apl`](../examples/956-lagrange.apl) | كثير حدود مار بنقاط |
 
 **التشغيل:**
 ```bash
@@ -1193,4 +1217,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,254 عنصراً**،
-مع **932 مثال جاهز** في `examples/`.
+مع **956 مثال جاهز** في `examples/`.
