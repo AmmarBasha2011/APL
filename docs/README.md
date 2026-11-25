@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1371 مثال)
+## الأمثلة الجاهزة (1385 مثال)
 
-1371 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1385 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1488,6 +1488,20 @@
 | 1369 | [`1369-jump-game-four.apl`](../examples/1369-jump-game-four.apl) | أقل قفزات للوصول لآخر موضع مع القفز بين القيم المتساوية |
 | 1370 | [`1370-guess-number-cost.apl`](../examples/1370-guess-number-cost.apl) | أقل مال يضمن الفوز في لعبة التخمين |
 | 1371 | [`1371-can-i-win.apl`](../examples/1371-can-i-win.apl) | لعبة اختيار أرقام بدون تكرار للوصول إلى مجموع |
+| 1372 | [`1372-rectangle-area-union.apl`](../examples/1372-rectangle-area-union.apl) | مساحة اتحاد مستطيلين متوازيي الأضلاع مع المحاور |
+| 1373 | [`1373-poor-pigs.apl`](../examples/1373-poor-pigs.apl) | أقل عدد خنازير لإيجاد الدلو المسموم |
+| 1374 | [`1374-stone-game-two.apl`](../examples/1374-stone-game-two.apl) | أقصى حجارة للاعب الأول عندما يأخذ حتى ضعف م أكوام |
+| 1375 | [`1375-flip-game-moves.apl`](../examples/1375-flip-game-moves.apl) | كل الحالات التالية بقلب علامتين متجاورتين |
+| 1376 | [`1376-subarray-sums-divisible.apl`](../examples/1376-subarray-sums-divisible.apl) | عدد المصفوفات الجزئية التي يقبل مجموعها القسمة على ك |
+| 1377 | [`1377-max-stack-ops.apl`](../examples/1377-max-stack-ops.apl) | مكدس يدعم أعلى وأقصى وحذف الأقصى |
+| 1378 | [`1378-paint-house-k-colors.apl`](../examples/1378-paint-house-k-colors.apl) | أقل تكلفة لطلاء صف بيوت بلا لونين متجاورين متماثلين |
+| 1379 | [`1379-min-cost-tickets.apl`](../examples/1379-min-cost-tickets.apl) | أقل تكلفة لتذاكر يوم وأسبوع وشهر تغطي أيام سفر |
+| 1380 | [`1380-longest-arithmetic-subsequence.apl`](../examples/1380-longest-arithmetic-subsequence.apl) | أطول متتالية جزئية بفارق ثابت |
+| 1381 | [`1381-arithmetic-slices-count.apl`](../examples/1381-arithmetic-slices-count.apl) | عدد المصفوفات الجزئية الحسابية بطول ثلاثة فأكثر |
+| 1382 | [`1382-wiggle-subsequence-length.apl`](../examples/1382-wiggle-subsequence-length.apl) | أطول متتالية جزئية فروقها تتناوب بين موجب وسالب |
+| 1383 | [`1383-best-sightseeing-pair.apl`](../examples/1383-best-sightseeing-pair.apl) | أكبر قيمة لزوج بحسب قيمتيهما والمسافة بينهما |
+| 1384 | [`1384-maximum-gap-sorted.apl`](../examples/1384-maximum-gap-sorted.apl) | أكبر فرق بين عنصرين متجاورين بعد الفرز |
+| 1385 | [`1385-good-triplets-count.apl`](../examples/1385-good-triplets-count.apl) | عدد الثلاثيات التي فروقها ضمن حدود معينة |
 
 **التشغيل:**
 ```bash
@@ -1642,4 +1656,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1371 مثال جاهز** في `examples/`.
+مع **1385 مثال جاهز** في `examples/`.
