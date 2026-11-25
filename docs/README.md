@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1236 مثال)
+## الأمثلة الجاهزة (1246 مثال)
 
-1236 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1246 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1353,6 +1353,16 @@
 | 1234 | [`1234-ship-packages.apl`](../examples/1234-ship-packages.apl) | أقل سعة سفينة لشحن الطرود خلال d يوماً |
 | 1235 | [`1235-find-min-rotated-dup.apl`](../examples/1235-find-min-rotated-dup.apl) | أصغر عنصر في قائمة مدورة فيها تكرار |
 | 1236 | [`1236-search-insert-position.apl`](../examples/1236-search-insert-position.apl) | موضع إدراج قيمة في قائمة مرتبة |
+| 1237 | [`1237-longest-common-prefix-trie.apl`](../examples/1237-longest-common-prefix-trie.apl) | أطول بادئة مشتركة بمقارنة الأول والأخير |
+| 1238 | [`1238-valid-word-abbreviation.apl`](../examples/1238-valid-word-abbreviation.apl) | هل الاختصار الرقمي يطابق الكلمة |
+| 1239 | [`1239-compare-versions.apl`](../examples/1239-compare-versions.apl) | مقارنة رقمي إصدارين |
+| 1240 | [`1240-simplify-path.apl`](../examples/1240-simplify-path.apl) | تبسيط مسار ملف فيه نقطة ونقطتان |
+| 1241 | [`1241-longest-absolute-path.apl`](../examples/1241-longest-absolute-path.apl) | أطول مسار لملف في نظام ملفات نصي |
+| 1242 | [`1242-integer-to-english.apl`](../examples/1242-integer-to-english.apl) | كتابة عدد بالكلمات الإنجليزية |
+| 1243 | [`1243-count-and-say-iter.apl`](../examples/1243-count-and-say-iter.apl) | تسلسل عد وقل الدوري |
+| 1244 | [`1244-multiply-strings-big.apl`](../examples/1244-multiply-strings-big.apl) | ضرب عددين كبيرين مخزنين كأرقام |
+| 1245 | [`1245-add-two-digit-lists.apl`](../examples/1245-add-two-digit-lists.apl) | جمع عددين مخزنين رقماً رقماً بترتيب معكوس |
+| 1246 | [`1246-fraction-to-decimal.apl`](../examples/1246-fraction-to-decimal.apl) | تحويل كسر إلى عدد عشري مع الدورة بين قوسين |
 
 **التشغيل:**
 ```bash
@@ -1507,4 +1517,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1236 مثال جاهز** في `examples/`.
+مع **1246 مثال جاهز** في `examples/`.
