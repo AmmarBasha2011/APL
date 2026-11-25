@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1246 مثال)
+## الأمثلة الجاهزة (1280 مثال)
 
-1246 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1280 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1363,6 +1363,40 @@
 | 1244 | [`1244-multiply-strings-big.apl`](../examples/1244-multiply-strings-big.apl) | ضرب عددين كبيرين مخزنين كأرقام |
 | 1245 | [`1245-add-two-digit-lists.apl`](../examples/1245-add-two-digit-lists.apl) | جمع عددين مخزنين رقماً رقماً بترتيب معكوس |
 | 1246 | [`1246-fraction-to-decimal.apl`](../examples/1246-fraction-to-decimal.apl) | تحويل كسر إلى عدد عشري مع الدورة بين قوسين |
+| 1247 | [`1247-ones-and-zeroes.apl`](../examples/1247-ones-and-zeroes.apl) | أكبر مجموعة نصوص ضمن حد أصفار وآحاد |
+| 1248 | [`1248-last-stone-weight.apl`](../examples/1248-last-stone-weight.apl) | تحطيم أثقل حجرين حتى يبقى حجر |
+| 1249 | [`1249-reorganize-string.apl`](../examples/1249-reorganize-string.apl) | ترتيب الحروف بحيث لا يتجاور حرفان متماثلان |
+| 1250 | [`1250-task-assign-workers.apl`](../examples/1250-task-assign-workers.apl) | إسناد المهام الأثقل إلى الأقدر |
+| 1251 | [`1251-boats-to-save.apl`](../examples/1251-boats-to-save.apl) | أقل عدد قوارب بحد حمولة |
+| 1252 | [`1252-assign-cookies.apl`](../examples/1252-assign-cookies.apl) | أكبر عدد أطفال يرضون بالكعك |
+| 1253 | [`1253-queue-reconstruction.apl`](../examples/1253-queue-reconstruction.apl) | إعادة ترتيب أشخاص بحسب الطول وعدد الأطول أمامهم |
+| 1254 | [`1254-minimum-cost-sticks.apl`](../examples/1254-minimum-cost-sticks.apl) | وصل عصي بأقل كلفة |
+| 1255 | [`1255-min-cost-climbing.apl`](../examples/1255-min-cost-climbing.apl) | أقل كلفة لبلوغ قمة السلم |
+| 1256 | [`1256-paint-house.apl`](../examples/1256-paint-house.apl) | أقل كلفة لطلاء صف بيوت بلا لونين متجاورين |
+| 1257 | [`1257-delete-and-earn.apl`](../examples/1257-delete-and-earn.apl) | أقصى نقاط بحذف رقم وجيرانه |
+| 1258 | [`1258-maximal-rectangle-binary.apl`](../examples/1258-maximal-rectangle-binary.apl) | أكبر مستطيل من الآحاد في مصفوفة |
+| 1259 | [`1259-rate-limiter-window.apl`](../examples/1259-rate-limiter-window.apl) | السماح بعدد طلبات في نافذة زمنية |
+| 1260 | [`1260-parking-lot-slots.apl`](../examples/1260-parking-lot-slots.apl) | موقف بأحجام متعددة |
+| 1261 | [`1261-elevator-sim.apl`](../examples/1261-elevator-sim.apl) | مصعد يخدم طلبات بالترتيب |
+| 1262 | [`1262-bank-transfer-ledger.apl`](../examples/1262-bank-transfer-ledger.apl) | تحويلات بين حسابات مع التراجع عند الفشل |
+| 1263 | [`1263-shopping-offers.apl`](../examples/1263-shopping-offers.apl) | أقل سعر لقائمة مشتريات مع عروض حزم |
+| 1264 | [`1264-candy-split-sim.apl`](../examples/1264-candy-split-sim.apl) | توزيع حلوى بزيادة تدريجية |
+| 1265 | [`1265-josephus-list.apl`](../examples/1265-josephus-list.apl) | ترتيب إقصاء دائري |
+| 1266 | [`1266-tic-tac-toe-winner.apl`](../examples/1266-tic-tac-toe-winner.apl) | تحديد الفائز في لوحة إكس أو |
+| 1267 | [`1267-minesweeper-count.apl`](../examples/1267-minesweeper-count.apl) | عدد الألغام المجاورة لكل خانة |
+| 1268 | [`1268-spiral-matrix-two.apl`](../examples/1268-spiral-matrix-two.apl) | ملء مصفوفة بأرقام متتالية بشكل حلزوني |
+| 1269 | [`1269-diagonal-traverse.apl`](../examples/1269-diagonal-traverse.apl) | قراءة المصفوفة بالأقطار المتناوبة |
+| 1270 | [`1270-prefix-sum-2d.apl`](../examples/1270-prefix-sum-2d.apl) | مجموع منطقة في مصفوفة بزمن ثابت |
+| 1271 | [`1271-difference-array.apl`](../examples/1271-difference-array.apl) | تطبيق زيادات على مجالات بمسح واحد |
+| 1272 | [`1272-corporate-flight-bookings.apl`](../examples/1272-corporate-flight-bookings.apl) | عدد المقاعد المحجوزة لكل رحلة |
+| 1273 | [`1273-car-pooling.apl`](../examples/1273-car-pooling.apl) | هل تكفي سعة السيارة لكل الرحلات |
+| 1274 | [`1274-range-addition-sorted.apl`](../examples/1274-range-addition-sorted.apl) | أقصى تداخل بين مجالات |
+| 1275 | [`1275-skyline-heights.apl`](../examples/1275-skyline-heights.apl) | خط الأفق لمجموعة مباني |
+| 1276 | [`1276-merge-sorted-streams.apl`](../examples/1276-merge-sorted-streams.apl) | دمج عدة قوائم مرتبة |
+| 1277 | [`1277-smallest-range-k-lists.apl`](../examples/1277-smallest-range-k-lists.apl) | أصغر مدى يحوي رقماً من كل قائمة |
+| 1278 | [`1278-kth-largest-quickselect.apl`](../examples/1278-kth-largest-quickselect.apl) | العنصر ذو الترتيب k من الأكبر |
+| 1279 | [`1279-sort-colors-three-way.apl`](../examples/1279-sort-colors-three-way.apl) | فرز قيم من ثلاثة أنواع بمسح واحد |
+| 1280 | [`1280-merge-intervals-count.apl`](../examples/1280-merge-intervals-count.apl) | عدد المجالات الناتجة من دمج المتداخلة |
 
 **التشغيل:**
 ```bash
@@ -1517,4 +1551,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1246 مثال جاهز** في `examples/`.
+مع **1280 مثال جاهز** في `examples/`.
