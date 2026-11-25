@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1498 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1521 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1498 مثال)
+## الأمثلة الجاهزة (1521 مثال)
 
-مجلد `examples/` يحتوي على **1498 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1521 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1773,6 +1773,29 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1496 | [`1496-phone-number-format.apl`](examples/1496-phone-number-format.apl) | تجميع الأرقام في أجزاء مقروءة |
 | 1497 | [`1497-lucky-numbers-matrix.apl`](examples/1497-lucky-numbers-matrix.apl) | أصغر في صفه وأكبر في عموده |
 | 1498 | [`1498-subset-sum-count.apl`](examples/1498-subset-sum-count.apl) | كم مجموعة جزئية مجموعها قيمة معينة |
+| 1499 | [`1499-blackjack-hand-score.apl`](examples/1499-blackjack-hand-score.apl) | حساب قيمة اليد مع احتساب الآص بأحد أو أحد عشر |
+| 1500 | [`1500-tennis-game-score.apl`](examples/1500-tennis-game-score.apl) | من عدد نقاط كل لاعب إلى النتيجة المعلنة |
+| 1501 | [`1501-fisher-yates-lcg.apl`](examples/1501-fisher-yates-lcg.apl) | خلط يمكن إعادته لأن المولد محدد البذرة |
+| 1502 | [`1502-longest-coin-streak.apl`](examples/1502-longest-coin-streak.apl) | أطول تتابع لنفس الوجه |
+| 1503 | [`1503-queen-attack-check.apl`](examples/1503-queen-attack-check.apl) | هل يهاجم الوزير خانة معينة |
+| 1504 | [`1504-king-moves-count.apl`](examples/1504-king-moves-count.apl) | كم خانة يستطيع الملك الوصول إليها |
+| 1505 | [`1505-atbash-cipher-text.apl`](examples/1505-atbash-cipher-text.apl) | قلب الأبجدية: الأول يصبح الأخير |
+| 1506 | [`1506-a1z26-cipher.apl`](examples/1506-a1z26-cipher.apl) | كل حرف يمثله ترتيبه في الأبجدية |
+| 1507 | [`1507-integer-to-binary-string.apl`](examples/1507-integer-to-binary-string.apl) | كتابة عدد بالنظام الثنائي بالقسمة المتكررة |
+| 1508 | [`1508-hex-digits-encode.apl`](examples/1508-hex-digits-encode.apl) | تحويل عدد إلى نظام 16 بأرقامه وحروفه |
+| 1509 | [`1509-delta-encode-list.apl`](examples/1509-delta-encode-list.apl) | تخزين الفرق بين كل عنصرين متتاليين |
+| 1510 | [`1510-run-length-decode-string.apl`](examples/1510-run-length-decode-string.apl) | من 3a2b إلى aaabb |
+| 1511 | [`1511-simple-interest-total.apl`](examples/1511-simple-interest-total.apl) | المبلغ بعد فترة بنسبة ثابتة على الأصل |
+| 1512 | [`1512-net-present-value.apl`](examples/1512-net-present-value.apl) | قيمة تدفقات مستقبلية اليوم |
+| 1513 | [`1513-straight-line-depreciation.apl`](examples/1513-straight-line-depreciation.apl) | قيمة الأصل بعد سنوات بإهلاك ثابت |
+| 1514 | [`1514-break-even-units.apl`](examples/1514-break-even-units.apl) | كم وحدة يجب بيعها لتغطية التكاليف |
+| 1515 | [`1515-markup-vs-margin.apl`](examples/1515-markup-vs-margin.apl) | الفرق بين نسبة الزيادة ونسبة الربح من البيع |
+| 1516 | [`1516-atm-notes-dispense.apl`](examples/1516-atm-notes-dispense.apl) | أقل عدد أوراق لمبلغ معين |
+| 1517 | [`1517-invoice-total-with-vat.apl`](examples/1517-invoice-total-with-vat.apl) | مجموع البنود ثم ضريبة القيمة المضافة |
+| 1518 | [`1518-late-fee-days.apl`](examples/1518-late-fee-days.apl) | فترة سماح ثم غرامة يومية بحد أقصى |
+| 1519 | [`1519-arabic-letter-count.apl`](examples/1519-arabic-letter-count.apl) | نتجاهل المسافات وعلامات الترقيم |
+| 1520 | [`1520-abjad-numeral-value.apl`](examples/1520-abjad-numeral-value.apl) | كل حرف عربي له قيمة عددية في حساب الجمل |
+| 1521 | [`1521-vowel-consonant-split.apl`](examples/1521-vowel-consonant-split.apl) | فصل حروف العلة عن بقية الحروف |
 
 ### تشغيل أي مثال
 
@@ -1873,7 +1896,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1498 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1521 مثال
 
 ## Language platform tools
 
