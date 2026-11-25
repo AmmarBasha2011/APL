@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1101 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1126 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1101 مثال)
+## الأمثلة الجاهزة (1126 مثال)
 
-مجلد `examples/` يحتوي على **1101 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1126 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1376,6 +1376,31 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1099 | [`1099-height-checker.apl`](examples/1099-height-checker.apl) | عدد الطلاب الواقفين في غير موضعهم |
 | 1100 | [`1100-check-pangram.apl`](examples/1100-check-pangram.apl) | هل تحوي الجملة كل حروف الأبجدية |
 | 1101 | [`1101-max-69-number.apl`](examples/1101-max-69-number.apl) | أكبر عدد بتغيير خانة واحدة من 6 إلى 9 |
+| 1102 | [`1102-min-stack.apl`](examples/1102-min-stack.apl) | مكدس يعرف أدنى قيمة فيه في زمن ثابت |
+| 1103 | [`1103-queue-two-stacks.apl`](examples/1103-queue-two-stacks.apl) | طابور مبني من مكدسين |
+| 1104 | [`1104-circular-deque.apl`](examples/1104-circular-deque.apl) | طابور بطرفين على مصفوفة ثابتة |
+| 1105 | [`1105-hit-counter.apl`](examples/1105-hit-counter.apl) | عدد الزيارات في آخر 300 ثانية |
+| 1106 | [`1106-moving-average.apl`](examples/1106-moving-average.apl) | متوسط آخر ك قيم في تدفق |
+| 1107 | [`1107-logger-rate-limit.apl`](examples/1107-logger-rate-limit.apl) | منع تكرار رسالة قبل عشر ثوانٍ |
+| 1108 | [`1108-phone-directory.apl`](examples/1108-phone-directory.apl) | إعطاء الأرقام وإعادتها |
+| 1109 | [`1109-text-editor.apl`](examples/1109-text-editor.apl) | إضافة وحذف وتحريك مؤشر |
+| 1110 | [`1110-browser-history.apl`](examples/1110-browser-history.apl) | زيارة ورجوع وتقدم |
+| 1111 | [`1111-snapshot-array.apl`](examples/1111-snapshot-array.apl) | مصفوفة تحفظ لقطات من حالاتها |
+| 1112 | [`1112-time-map.apl`](examples/1112-time-map.apl) | قراءة قيمة مفتاح كما كانت في وقت ما |
+| 1113 | [`1113-randomized-set.apl`](examples/1113-randomized-set.apl) | إدخال وحذف في زمن ثابت |
+| 1114 | [`1114-first-unique-stream.apl`](examples/1114-first-unique-stream.apl) | أول عنصر لم يتكرر حتى الآن |
+| 1115 | [`1115-product-of-numbers.apl`](examples/1115-product-of-numbers.apl) | ضرب آخر ك عدداً من تدفق |
+| 1116 | [`1116-bank-system.apl`](examples/1116-bank-system.apl) | إيداع وسحب وتحويل بين حسابات |
+| 1117 | [`1117-stock-spanner.apl`](examples/1117-stock-spanner.apl) | عدد الأيام المتتالية بسعر لا يتجاوز اليوم |
+| 1118 | [`1118-kth-largest-stream.apl`](examples/1118-kth-largest-stream.apl) | الترتيب ك من الأكبر مع كل إدخال |
+| 1119 | [`1119-range-sum-query.apl`](examples/1119-range-sum-query.apl) | مجموع أي مدى في زمن ثابت |
+| 1120 | [`1120-matrix-region-sum.apl`](examples/1120-matrix-region-sum.apl) | مجموع مستطيل في مصفوفة |
+| 1121 | [`1121-peeking-iterator.apl`](examples/1121-peeking-iterator.apl) | مكرر يعرض التالي دون استهلاكه |
+| 1122 | [`1122-flatten-nested.apl`](examples/1122-flatten-nested.apl) | مكرر يمر على أعداد داخل قوائم متعددة المستويات |
+| 1123 | [`1123-zigzag-iterator.apl`](examples/1123-zigzag-iterator.apl) | أخذ عنصر من كل قائمة بالتناوب |
+| 1124 | [`1124-underground-system.apl`](examples/1124-underground-system.apl) | متوسط زمن الرحلة بين محطتين |
+| 1125 | [`1125-undo-redo-editor.apl`](examples/1125-undo-redo-editor.apl) | كتابة وتراجع وإعادة |
+| 1126 | [`1126-vending-machine.apl`](examples/1126-vending-machine.apl) | إدخال نقود وصرف منتج وباقٍ |
 
 ### تشغيل أي مثال
 
@@ -1476,7 +1501,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1101 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1126 مثال
 
 ## Language platform tools
 
