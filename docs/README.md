@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1246 مثال)
+## الأمثلة الجاهزة (1258 مثال)
 
-1246 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1258 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1363,6 +1363,18 @@
 | 1244 | [`1244-multiply-strings-big.apl`](../examples/1244-multiply-strings-big.apl) | ضرب عددين كبيرين مخزنين كأرقام |
 | 1245 | [`1245-add-two-digit-lists.apl`](../examples/1245-add-two-digit-lists.apl) | جمع عددين مخزنين رقماً رقماً بترتيب معكوس |
 | 1246 | [`1246-fraction-to-decimal.apl`](../examples/1246-fraction-to-decimal.apl) | تحويل كسر إلى عدد عشري مع الدورة بين قوسين |
+| 1247 | [`1247-ones-and-zeroes.apl`](../examples/1247-ones-and-zeroes.apl) | أكبر مجموعة نصوص ضمن حد أصفار وآحاد |
+| 1248 | [`1248-last-stone-weight.apl`](../examples/1248-last-stone-weight.apl) | تحطيم أثقل حجرين حتى يبقى حجر |
+| 1249 | [`1249-reorganize-string.apl`](../examples/1249-reorganize-string.apl) | ترتيب الحروف بحيث لا يتجاور حرفان متماثلان |
+| 1250 | [`1250-task-assign-workers.apl`](../examples/1250-task-assign-workers.apl) | إسناد المهام الأثقل إلى الأقدر |
+| 1251 | [`1251-boats-to-save.apl`](../examples/1251-boats-to-save.apl) | أقل عدد قوارب بحد حمولة |
+| 1252 | [`1252-assign-cookies.apl`](../examples/1252-assign-cookies.apl) | أكبر عدد أطفال يرضون بالكعك |
+| 1253 | [`1253-queue-reconstruction.apl`](../examples/1253-queue-reconstruction.apl) | إعادة ترتيب أشخاص بحسب الطول وعدد الأطول أمامهم |
+| 1254 | [`1254-minimum-cost-sticks.apl`](../examples/1254-minimum-cost-sticks.apl) | وصل عصي بأقل كلفة |
+| 1255 | [`1255-min-cost-climbing.apl`](../examples/1255-min-cost-climbing.apl) | أقل كلفة لبلوغ قمة السلم |
+| 1256 | [`1256-paint-house.apl`](../examples/1256-paint-house.apl) | أقل كلفة لطلاء صف بيوت بلا لونين متجاورين |
+| 1257 | [`1257-delete-and-earn.apl`](../examples/1257-delete-and-earn.apl) | أقصى نقاط بحذف رقم وجيرانه |
+| 1258 | [`1258-maximal-rectangle-binary.apl`](../examples/1258-maximal-rectangle-binary.apl) | أكبر مستطيل من الآحاد في مصفوفة |
 
 **التشغيل:**
 ```bash
@@ -1517,4 +1529,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1246 مثال جاهز** في `examples/`.
+مع **1258 مثال جاهز** في `examples/`.
