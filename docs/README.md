@@ -106,9 +106,9 @@
 | 96 | [pkgs_ext2-library.md](pkgs_ext2-library.md) | مكتبة `pkgs_ext2` — حزم متنوعة موسّعة (scrapy / prompt_toolkit / lxml / hypothesis / peewee / arrow / alembic / rich / trio / paramiko / h5py / cryptography / pyasn1 / skimage / yaml / seaborn / pyparsing / bs4 / shapely / babel / redis / pendulum / mako / nacl / typer / google / PIL / kombu / marshmallow / requests / sqlparse / celery / packaging / six / httpx / jinja2 / acp / regex / uvicorn / websockets / markdown / tornado / anyio / httplib2 / pygments / cffi / click / fastapi / httpcore / googleapiclient / tqdm / starlette / dateutil / pydantic / attr / jsonschema / multidict / numpy / scipy) (19,295 عنصراً) |
 
 ---
-## الأمثلة الجاهزة (860 مثالاً)
+## الأمثلة الجاهزة (884 مثالاً)
 
-860 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+884 برنامجاً حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -972,6 +972,30 @@
 | 858 | [`858-aliquot-sequence.apl`](../examples/858-aliquot-sequence.apl) | مصائر: واحد أو كامل أو متحاب |
 | 859 | [`859-recaman-sequence.apl`](../examples/859-recaman-sequence.apl) | متتابعة ذاتية المرجع |
 | 860 | [`860-boyer-moore-search.apl`](../examples/860-boyer-moore-search.apl) | بحث نصي بقفزات طويلة |
+| 861 | [`861-lucas-numbers.apl`](../examples/861-lucas-numbers.apl) | نظير فيبوناتشي بالنسبة الذهبية |
+| 862 | [`862-pell-numbers.apl`](../examples/862-pell-numbers.apl) | تقارب النسبة الفضية |
+| 863 | [`863-jacobsthal-numbers.apl`](../examples/863-jacobsthal-numbers.apl) | صيغة مغلقة بقوى اثنين |
+| 864 | [`864-stirling-second.apl`](../examples/864-stirling-second.apl) | تكرارية k*S+S |
+| 865 | [`865-bell-numbers.apl`](../examples/865-bell-numbers.apl) | عدد تقسيمات المجموعة |
+| 866 | [`866-three-sum.apl`](../examples/866-three-sum.apl) | ثلاثيات صفرية فريدة |
+| 867 | [`867-integral-image.apl`](../examples/867-integral-image.apl) | مجاميع مستطيلات في O(1) |
+| 868 | [`868-difference-array.apl`](../examples/868-difference-array.apl) | تراكم مؤجل واحد |
+| 869 | [`869-stein-gcd.apl`](../examples/869-stein-gcd.apl) | قاسم مشترك للعتاد |
+| 870 | [`870-russian-peasant.apl`](../examples/870-russian-peasant.apl) | ضرب بلا جدول ضرب |
+| 871 | [`871-gauss-seidel.apl`](../examples/871-gauss-seidel.apl) | حل تكراري للأنظمة |
+| 872 | [`872-power-iteration.apl`](../examples/872-power-iteration.apl) | أكبر قيمة ذاتية |
+| 873 | [`873-euler-method.apl`](../examples/873-euler-method.apl) | أبسط تكامل ODE |
+| 874 | [`874-jarvis-march.apl`](../examples/874-jarvis-march.apl) | غلاف محدب بسيط |
+| 875 | [`875-monty-hall.apl`](../examples/875-monty-hall.apl) | التبديل يفوز بثلثين |
+| 876 | [`876-birthday-paradox.apl`](../examples/876-birthday-paradox.apl) | 23 تكفي لخمسين بالمئة |
+| 877 | [`877-coupon-collector.apl`](../examples/877-coupon-collector.apl) | متوسط جمع الأنواع |
+| 878 | [`878-farey-sequence.apl`](../examples/878-farey-sequence.apl) | خاصية الجارين bc-ad=1 |
+| 879 | [`879-stern-brocot.apl`](../examples/879-stern-brocot.apl) | مسار L/R لكل كسر |
+| 880 | [`880-lehmer-code.apl`](../examples/880-lehmer-code.apl) | رتبة التبديل في n! |
+| 881 | [`881-damm-algorithm.apl`](../examples/881-damm-algorithm.apl) | يكشف الأخطاء والتبديلات |
+| 882 | [`882-floyd-cycle.apl`](../examples/882-floyd-cycle.apl) | دورة بذاكرة ثابتة |
+| 883 | [`883-balanced-ternary.apl`](../examples/883-balanced-ternary.apl) | تمثيل فريد للسالب والموجب |
+| 884 | [`884-zeckendorf.apl`](../examples/884-zeckendorf.apl) | جشع فريد لكل عدد |
 
 **التشغيل:**
 ```bash
@@ -1121,4 +1145,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,254 عنصراً**،
-مع **860 مثال جاهز** في `examples/`.
+مع **884 مثال جاهز** في `examples/`.
