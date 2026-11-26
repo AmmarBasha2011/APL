@@ -2,7 +2,7 @@
 # Add two numbers stored as digit lists
 # Demonstrates: قوائم
 #
-# Run:  python apl.py examples/1616-add-two-digit-lists.apl
+# Run:  python apl.py examples/1616-digit-lists-addition-carry.apl
 
 # الرقم الأول هو الآحاد
 # نحمل المرحّل للخانة التالية

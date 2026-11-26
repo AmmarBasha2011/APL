@@ -1890,7 +1890,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1613 | [`1613-connected-components-count.apl`](examples/1613-connected-components-count.apl) | كم مجموعة منفصلة من الرؤوس المتصلة |
 | 1614 | [`1614-undirected-graph-has-cycle.apl`](examples/1614-undirected-graph-has-cycle.apl) | هل يحتوي الرسم على دورة |
 | 1615 | [`1615-island-count-grid.apl`](examples/1615-island-count-grid.apl) | مجموعات الواحدات المتجاورة أفقياً ورأسياً |
-| 1616 | [`1616-add-two-digit-lists.apl`](examples/1616-add-two-digit-lists.apl) | الأرقام معكوسة والمرحّل يمتد |
+| 1616 | [`1616-digit-lists-addition-carry.apl`](examples/1616-digit-lists-addition-carry.apl) | الأرقام معكوسة والمرحّل يمتد |
 | 1617 | [`1617-merge-k-sorted-lists.apl`](examples/1617-merge-k-sorted-lists.apl) | قائمة واحدة مرتبة من عدة قوائم |
 
 ### تشغيل أي مثال
