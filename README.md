@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 101 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **2158 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **2218 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -274,9 +274,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (2158 مثال)
+## الأمثلة الجاهزة (2218 مثال)
 
-مجلد `examples/` يحتوي على **2158 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **2218 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -2438,6 +2438,66 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 2156 | [`2156-inventory-class-add-remove-stock.apl`](examples/2156-inventory-class-add-remove-stock.apl) | الكميات في قاموس والسحب لا يتجاوز المتاح |
 | 2157 | [`2157-todo-list-class-complete-and-remaining.apl`](examples/2157-todo-list-class-complete-and-remaining.apl) | نضيف المهام وننجزها ونعد المتبقي |
 | 2158 | [`2158-shopping-cart-class-total-with-discount.apl`](examples/2158-shopping-cart-class-total-with-discount.apl) | المجموع بعد خصم نسبة مئوية |
+| 2159 | [`2159-sum-multiples-of-seven-below-limit.apl`](examples/2159-sum-multiples-of-seven-below-limit.apl) | نجمع مضاعفات 7 الأصغر من ن |
+| 2160 | [`2160-count-digits-equal-to-three-in-range.apl`](examples/2160-count-digits-equal-to-three-in-range.apl) | نعد الأعداد من 1 إلى ن التي فيها 3 |
+| 2161 | [`2161-sum-of-squares-of-digits-total.apl`](examples/2161-sum-of-squares-of-digits-total.apl) | نربع كل رقم ونجمع |
+| 2162 | [`2162-product-of-digits-nonzero-only.apl`](examples/2162-product-of-digits-nonzero-only.apl) | نتجاهل الأصفار في الضرب |
+| 2163 | [`2163-count-even-digits-in-number.apl`](examples/2163-count-even-digits-in-number.apl) | نعد الأرقام الزوجية |
+| 2164 | [`2164-largest-digit-of-number.apl`](examples/2164-largest-digit-of-number.apl) | نبحث عن أكبر رقم |
+| 2165 | [`2165-smallest-digit-of-number.apl`](examples/2165-smallest-digit-of-number.apl) | نبحث عن أصغر رقم |
+| 2166 | [`2166-reverse-digits-as-number.apl`](examples/2166-reverse-digits-as-number.apl) | نعكس النص ونحوله لعدد |
+| 2167 | [`2167-is-number-palindrome-digits.apl`](examples/2167-is-number-palindrome-digits.apl) | نقارن العدد بمعكوسه |
+| 2168 | [`2168-count-trailing-zeros-of-number.apl`](examples/2168-count-trailing-zeros-of-number.apl) | نقسم على 10 ما دام ممكنا |
+| 2169 | [`2169-factorial-trailing-zeros-count.apl`](examples/2169-factorial-trailing-zeros-count.apl) | نجمع ن//5 ثم ن//25 وهكذا |
+| 2170 | [`2170-triangular-number-formula-check.apl`](examples/2170-triangular-number-formula-check.apl) | ن(ن+1)/2 |
+| 2171 | [`2171-pentagonal-number-formula.apl`](examples/2171-pentagonal-number-formula.apl) | ن(3ن-1)/2 |
+| 2172 | [`2172-hexagonal-number-formula.apl`](examples/2172-hexagonal-number-formula.apl) | ن(2ن-1) |
+| 2173 | [`2173-centered-square-number-formula.apl`](examples/2173-centered-square-number-formula.apl) | ن²+(ن-1)² |
+| 2174 | [`2174-pronic-number-product-of-consecutive.apl`](examples/2174-pronic-number-product-of-consecutive.apl) | ن(ن+1) |
+| 2175 | [`2175-sum-of-cubes-first-n-loop.apl`](examples/2175-sum-of-cubes-first-n-loop.apl) | نجمع ي³ بحلقة |
+| 2176 | [`2176-sum-of-odd-numbers-first-n.apl`](examples/2176-sum-of-odd-numbers-first-n.apl) | يساوي ن² |
+| 2177 | [`2177-count-divisors-by-trial.apl`](examples/2177-count-divisors-by-trial.apl) | نجرب كل عدد |
+| 2178 | [`2178-sum-proper-divisors-total.apl`](examples/2178-sum-proper-divisors-total.apl) | نستثني العدد نفسه |
+| 2179 | [`2179-is-perfect-number-by-divisors.apl`](examples/2179-is-perfect-number-by-divisors.apl) | مجموع القواسم الفعلية يساوي العدد |
+| 2180 | [`2180-is-abundant-number-check.apl`](examples/2180-is-abundant-number-check.apl) | مجموع قواسمه أكبر منه |
+| 2181 | [`2181-is-deficient-number-check.apl`](examples/2181-is-deficient-number-check.apl) | مجموع قواسمه أقل منه |
+| 2182 | [`2182-largest-prime-factor-simple.apl`](examples/2182-largest-prime-factor-simple.apl) | نقسم على العوامل تباعا |
+| 2183 | [`2183-count-distinct-prime-factors.apl`](examples/2183-count-distinct-prime-factors.apl) | نعد كل عامل مرة |
+| 2184 | [`2184-euler-totient-by-gcd-count.apl`](examples/2184-euler-totient-by-gcd-count.apl) | نعد الأعداد الأولية نسبيا |
+| 2185 | [`2185-collatz-steps-to-one-count.apl`](examples/2185-collatz-steps-to-one-count.apl) | نطبق القاعدة حتى 1 |
+| 2186 | [`2186-binary-ones-count-loop.apl`](examples/2186-binary-ones-count-loop.apl) | نقسم على 2 |
+| 2187 | [`2187-binary-length-of-number.apl`](examples/2187-binary-length-of-number.apl) | عدد الخانات الثنائية |
+| 2188 | [`2188-is-power-of-two-bit-trick.apl`](examples/2188-is-power-of-two-bit-trick.apl) | ن & (ن-1) يساوي صفر |
+| 2189 | [`2189-next-power-of-two-at-least.apl`](examples/2189-next-power-of-two-at-least.apl) | نضاعف حتى نصل |
+| 2190 | [`2190-xor-of-range-one-to-n.apl`](examples/2190-xor-of-range-one-to-n.apl) | نطبق XOR تراكميا |
+| 2191 | [`2191-gray-code-of-number.apl`](examples/2191-gray-code-of-number.apl) | ن ^ (ن >> 1) |
+| 2192 | [`2192-fibonacci-mod-ten-last-digit.apl`](examples/2192-fibonacci-mod-ten-last-digit.apl) | نحتفظ بالباقي |
+| 2193 | [`2193-tribonacci-nth-term-loop.apl`](examples/2193-tribonacci-nth-term-loop.apl) | مجموع ثلاثة سابقة |
+| 2194 | [`2194-lucas-number-nth-loop.apl`](examples/2194-lucas-number-nth-loop.apl) | يبدأ 2 و1 |
+| 2195 | [`2195-catalan-number-by-recurrence.apl`](examples/2195-catalan-number-by-recurrence.apl) | ك(ن+1)=ك(ن)*2(2ن+1)/(ن+2) |
+| 2196 | [`2196-central-binomial-coefficient.apl`](examples/2196-central-binomial-coefficient.apl) | (2ن اختر ن) |
+| 2197 | [`2197-stirling-triangle-row-sum-bell.apl`](examples/2197-stirling-triangle-row-sum-bell.apl) | مثلث بيل |
+| 2198 | [`2198-digital-root-formula-mod-nine.apl`](examples/2198-digital-root-formula-mod-nine.apl) | 1+(ن-1)%9 |
+| 2199 | [`2199-harshad-number-divisible-by-digit-sum.apl`](examples/2199-harshad-number-divisible-by-digit-sum.apl) | يقبل القسمة على مجموع أرقامه |
+| 2200 | [`2200-happy-number-cycle-detect.apl`](examples/2200-happy-number-cycle-detect.apl) | نكرر مجموع مربعات الأرقام |
+| 2201 | [`2201-smith-like-digit-sum-equals-factor-sum.apl`](examples/2201-smith-like-digit-sum-equals-factor-sum.apl) | مجموع أرقامه يساوي مجموع أرقام عوامله |
+| 2202 | [`2202-count-vowels-latin-letters.apl`](examples/2202-count-vowels-latin-letters.apl) | نعد aeiou |
+| 2203 | [`2203-count-uppercase-letters-in-text.apl`](examples/2203-count-uppercase-letters-in-text.apl) | نعد الأحرف الكبيرة |
+| 2204 | [`2204-count-digits-in-text.apl`](examples/2204-count-digits-in-text.apl) | نعد الأرقام |
+| 2205 | [`2205-swap-case-by-ord-offset.apl`](examples/2205-swap-case-by-ord-offset.apl) | نستخدم ord وchr |
+| 2206 | [`2206-caesar-shift-three-lowercase.apl`](examples/2206-caesar-shift-three-lowercase.apl) | نزيح الأحرف الصغيرة |
+| 2207 | [`2207-alphabet-position-sum-of-word.apl`](examples/2207-alphabet-position-sum-of-word.apl) | a=1 ... z=26 |
+| 2208 | [`2208-is-isogram-no-repeated-letters.apl`](examples/2208-is-isogram-no-repeated-letters.apl) | لا يتكرر حرف |
+| 2209 | [`2209-is-pangram-all-letters-present.apl`](examples/2209-is-pangram-all-letters-present.apl) | كل حروف a-z |
+| 2210 | [`2210-first-repeated-character-in-text.apl`](examples/2210-first-repeated-character-in-text.apl) | أول حرف يظهر ثانية |
+| 2211 | [`2211-run-length-encode-compact-string.apl`](examples/2211-run-length-encode-compact-string.apl) | نكتب الحرف وعدده |
+| 2212 | [`2212-longest-run-of-same-character.apl`](examples/2212-longest-run-of-same-character.apl) | أكبر تكرار متتال |
+| 2213 | [`2213-remove-adjacent-duplicate-letters.apl`](examples/2213-remove-adjacent-duplicate-letters.apl) | نبقي حرفا واحدا للشوط |
+| 2214 | [`2214-count-words-split-spaces.apl`](examples/2214-count-words-split-spaces.apl) | نقسم على المسافات |
+| 2215 | [`2215-title-case-first-letters.apl`](examples/2215-title-case-first-letters.apl) | نكبر أول حرف |
+| 2216 | [`2216-acronym-from-first-letters-upper.apl`](examples/2216-acronym-from-first-letters-upper.apl) | نأخذ أول حرف |
+| 2217 | [`2217-hamming-weight-of-text-bits.apl`](examples/2217-hamming-weight-of-text-bits.apl) | نعد الآحاد لكل رمز |
+| 2218 | [`2218-vowel-consonant-difference-text.apl`](examples/2218-vowel-consonant-difference-text.apl) | نطرح الصامتة من الصوتية |
 
 ### تشغيل أي مثال
 
@@ -2538,7 +2598,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 2158 مثال
+**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 2218 مثال
 
 ## Language platform tools
 
