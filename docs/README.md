@@ -116,9 +116,9 @@
 | 106 | [black-library.md](black-library.md) | مكتبة `black` — منسّق شيفرة بايثون من حزمة black |
 
 ---
-## الأمثلة الجاهزة (2103 مثال)
+## الأمثلة الجاهزة (2158 مثال)
 
-2103 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+2158 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -2225,6 +2225,61 @@
 | 2101 | [`2101-lucas-numbers-first-terms.apl`](../examples/2101-lucas-numbers-first-terms.apl) | تبدأ بـ 2 و1 وكل حد مجموع السابقين |
 | 2102 | [`2102-tribonacci-nth-iterative.apl`](../examples/2102-tribonacci-nth-iterative.apl) | كل حد مجموع ثلاثة حدود سابقة |
 | 2103 | [`2103-padovan-sequence-terms-list.apl`](../examples/2103-padovan-sequence-terms-list.apl) | كل حد مجموع الحدين قبل الأخير بخطوة وخطوتين |
+| 2104 | [`2104-digit-sum-repeat-until-one-digit.apl`](../examples/2104-digit-sum-repeat-until-one-digit.apl) | نكرر جمع الأرقام حتى يبقى رقم واحد |
+| 2105 | [`2105-narcissistic-numbers-three-digits-list.apl`](../examples/2105-narcissistic-numbers-three-digits-list.apl) | العدد يساوي مجموع مكعبات أرقامه |
+| 2106 | [`2106-automorphic-number-square-ends-with.apl`](../examples/2106-automorphic-number-square-ends-with.apl) | مربعه ينتهي بنفسه |
+| 2107 | [`2107-kaprekar-number-split-square-check.apl`](../examples/2107-kaprekar-number-split-square-check.apl) | نقسم المربع إلى جزأين مجموعهما العدد |
+| 2108 | [`2108-perfect-power-base-exponent-test.apl`](../examples/2108-perfect-power-base-exponent-test.apl) | نجرب كل أساس ونرفعه حتى نبلغ العدد |
+| 2109 | [`2109-sum-of-two-squares-representable.apl`](../examples/2109-sum-of-two-squares-representable.apl) | نجرب كل زوج أول لا يتجاوز الجذر |
+| 2110 | [`2110-pythagorean-triples-hypotenuse-limit-count.apl`](../examples/2110-pythagorean-triples-hypotenuse-limit-count.apl) | نعد الثلاثيات a<b<c بوتر لا يتجاوز الحد |
+| 2111 | [`2111-gcd-of-fibonacci-numbers-property.apl`](../examples/2111-gcd-of-fibonacci-numbers-property.apl) | gcd(F(m),F(n)) = F(gcd(m,n)) |
+| 2112 | [`2112-sum-of-primes-below-limit-trial.apl`](../examples/2112-sum-of-primes-below-limit-trial.apl) | نجمع كل أولي أصغر من الحد |
+| 2113 | [`2113-nth-prime-by-counting-primes.apl`](../examples/2113-nth-prime-by-counting-primes.apl) | نعد الأوليات حتى نبلغ الترتيب المطلوب |
+| 2114 | [`2114-largest-prime-gap-below-limit.apl`](../examples/2114-largest-prime-gap-below-limit.apl) | نتتبع الفرق بين كل أولي والسابق |
+| 2115 | [`2115-emirp-prime-whose-reverse-is-prime.apl`](../examples/2115-emirp-prime-whose-reverse-is-prime.apl) | أولي ومعكوس أرقامه أولي مختلف عنه |
+| 2116 | [`2116-circular-prime-all-rotations-prime.apl`](../examples/2116-circular-prime-all-rotations-prime.apl) | كل دوران لأرقامه أولي |
+| 2117 | [`2117-sophie-germain-prime-double-plus-one.apl`](../examples/2117-sophie-germain-prime-double-plus-one.apl) | p أولي و2p+1 أولي أيضا |
+| 2118 | [`2118-mersenne-primes-for-small-exponents.apl`](../examples/2118-mersenne-primes-for-small-exponents.apl) | نختبر 2 أس p ناقص 1 للأسس الأولية |
+| 2119 | [`2119-perfect-numbers-from-mersenne-primes.apl`](../examples/2119-perfect-numbers-from-mersenne-primes.apl) | العدد التام يساوي 2^(p-1) × (2^p-1) |
+| 2120 | [`2120-factorion-digit-factorial-sum-check.apl`](../examples/2120-factorion-digit-factorial-sum-check.apl) | 145 يساوي 1!+4!+5! |
+| 2121 | [`2121-reverse-and-add-steps-to-palindrome.apl`](../examples/2121-reverse-and-add-steps-to-palindrome.apl) | نجمع العدد مع معكوسه حتى يصير متماثلا |
+| 2122 | [`2122-harmonic-number-partial-sum-rounded.apl`](../examples/2122-harmonic-number-partial-sum-rounded.apl) | H(n) مجموع مقلوبات 1 إلى n |
+| 2123 | [`2123-geometric-series-sum-closed-form.apl`](../examples/2123-geometric-series-sum-closed-form.apl) | a(r^n - 1)/(r - 1) عندما r لا يساوي 1 |
+| 2124 | [`2124-arithmetic-series-term-and-sum.apl`](../examples/2124-arithmetic-series-term-and-sum.apl) | الحد n = a + (n-1)d |
+| 2125 | [`2125-triangular-number-index-or-minus-one.apl`](../examples/2125-triangular-number-index-or-minus-one.apl) | نجد k الذي يحقق k(k+1)/2 = n |
+| 2126 | [`2126-ways-to-write-as-consecutive-sum.apl`](../examples/2126-ways-to-write-as-consecutive-sum.apl) | نبدأ من كل عدد ونجمع حتى نبلغ العدد |
+| 2127 | [`2127-pentagonal-numbers-first-terms.apl`](../examples/2127-pentagonal-numbers-first-terms.apl) | الحد n يساوي n(3n-1)/2 |
+| 2128 | [`2128-hexagonal-number-membership-test.apl`](../examples/2128-hexagonal-number-membership-test.apl) | الحد n يساوي n(2n-1) |
+| 2129 | [`2129-centered-hexagonal-numbers-list.apl`](../examples/2129-centered-hexagonal-numbers-list.apl) | الحد n يساوي 3n(n-1)+1 |
+| 2130 | [`2130-ulam-numbers-first-terms.apl`](../examples/2130-ulam-numbers-first-terms.apl) | كل حد له تمثيل وحيد كمجموع حدين مختلفين سابقين |
+| 2131 | [`2131-kaprekar-routine-steps-to-6174.apl`](../examples/2131-kaprekar-routine-steps-to-6174.apl) | نطرح الأصغر من الأكبر لأرقام العدد حتى 6174 |
+| 2132 | [`2132-vowel-count-for-each-word.apl`](../examples/2132-vowel-count-for-each-word.apl) | نرجع قائمة بعدد العلل لكل كلمة |
+| 2133 | [`2133-title-case-keep-small-words-lower.apl`](../examples/2133-title-case-keep-small-words-lower.apl) | الكلمات الصغيرة تبقى صغيرة إلا في أول العنوان |
+| 2134 | [`2134-acronym-from-phrase-initials.apl`](../examples/2134-acronym-from-phrase-initials.apl) | نأخذ أول حرف من كل كلمة ونكبره |
+| 2135 | [`2135-syllable-estimate-by-vowel-groups.apl`](../examples/2135-syllable-estimate-by-vowel-groups.apl) | كل مجموعة علل متتالية مقطع واحد |
+| 2136 | [`2136-longest-character-run-with-its-char.apl`](../examples/2136-longest-character-run-with-its-char.apl) | نرجع الحرف وطول أطول مجموعة |
+| 2137 | [`2137-caesar-shift-between-two-words.apl`](../examples/2137-caesar-shift-between-two-words.apl) | نحدد الإزاحة الثابتة التي تحول الأولى للثانية |
+| 2138 | [`2138-hamming-distance-between-two-strings.apl`](../examples/2138-hamming-distance-between-two-strings.apl) | عدد المواضع المختلفة بين نصين بنفس الطول |
+| 2139 | [`2139-swap-letter-case-with-ascii-codes.apl`](../examples/2139-swap-letter-case-with-ascii-codes.apl) | نضيف 32 للكبيرة ونطرحها من الصغيرة |
+| 2140 | [`2140-count-upper-lower-digit-characters.apl`](../examples/2140-count-upper-lower-digit-characters.apl) | ثلاثة عدادات في مرور واحد |
+| 2141 | [`2141-pangram-missing-letters-string.apl`](../examples/2141-pangram-missing-letters-string.apl) | نرجع الأحرف التي لم تظهر |
+| 2142 | [`2142-longest-common-substring-dp-table.apl`](../examples/2142-longest-common-substring-dp-table.apl) | جدول يمتد قطريا عند تطابق الحرفين |
+| 2143 | [`2143-count-distinct-substrings-small-string.apl`](../examples/2143-count-distinct-substrings-small-string.apl) | نجمع كل الشرائح في قاموس |
+| 2144 | [`2144-lexicographically-smallest-string-rotation.apl`](../examples/2144-lexicographically-smallest-string-rotation.apl) | نقارن كل الدورانات |
+| 2145 | [`2145-generate-all-balanced-parentheses.apl`](../examples/2145-generate-all-balanced-parentheses.apl) | نضيف فتحة إن بقي منها وإغلاقا إن زاد عدد الفتحات |
+| 2146 | [`2146-binary-strings-without-adjacent-ones-count.apl`](../examples/2146-binary-strings-without-adjacent-ones-count.apl) | يتبع فيبوناتشي |
+| 2147 | [`2147-permutation-lexicographic-rank-factorial.apl`](../examples/2147-permutation-lexicographic-rank-factorial.apl) | نعد الحروف الأصغر المتبقية ونضرب بالمضروب |
+| 2148 | [`2148-nth-permutation-of-string-factoradic.apl`](../examples/2148-nth-permutation-of-string-factoradic.apl) | نختار الحرف بقسمة الرتبة على المضروب |
+| 2149 | [`2149-min-stack-class-constant-time-minimum.apl`](../examples/2149-min-stack-class-constant-time-minimum.apl) | مكدس ثان يتتبع الأصغر |
+| 2150 | [`2150-counter-class-step-and-reset.apl`](../examples/2150-counter-class-step-and-reset.apl) | قيمة تزيد بخطوة محددة |
+| 2151 | [`2151-bank-account-class-no-overdraft.apl`](../examples/2151-bank-account-class-no-overdraft.apl) | السحب يفشل إن زاد عن الرصيد |
+| 2152 | [`2152-rectangle-class-area-perimeter-square.apl`](../examples/2152-rectangle-class-area-perimeter-square.apl) | المساحة والمحيط وهل هو مربع |
+| 2153 | [`2153-fraction-class-add-and-reduce.apl`](../examples/2153-fraction-class-add-and-reduce.apl) | الجمع يرجع كسرا مختصرا |
+| 2154 | [`2154-vector-two-d-class-add-dot.apl`](../examples/2154-vector-two-d-class-add-dot.apl) | الجمع والضرب النقطي والطول المربع |
+| 2155 | [`2155-playlist-class-next-previous-wrap.apl`](../examples/2155-playlist-class-next-previous-wrap.apl) | التنقل يلتف بين البداية والنهاية |
+| 2156 | [`2156-inventory-class-add-remove-stock.apl`](../examples/2156-inventory-class-add-remove-stock.apl) | الكميات في قاموس والسحب لا يتجاوز المتاح |
+| 2157 | [`2157-todo-list-class-complete-and-remaining.apl`](../examples/2157-todo-list-class-complete-and-remaining.apl) | نضيف المهام وننجزها ونعد المتبقي |
+| 2158 | [`2158-shopping-cart-class-total-with-discount.apl`](../examples/2158-shopping-cart-class-total-with-discount.apl) | المجموع بعد خصم نسبة مئوية |
 
 **التشغيل:**
 ```bash
@@ -2384,4 +2439,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **227,195 عنصراً**،
-مع **2103 مثال جاهز** في `examples/`.
+مع **2158 مثال جاهز** في `examples/`.
