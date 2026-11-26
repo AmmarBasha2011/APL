@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 101 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1941 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1968 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -274,9 +274,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1941 مثال)
+## الأمثلة الجاهزة (1968 مثال)
 
-مجلد `examples/` يحتوي على **1941 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1968 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -2221,6 +2221,33 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1939 | [`1939-bank-single-teller-total-wait.apl`](examples/1939-bank-single-teller-total-wait.apl) | العميل ينتظر حتى يفرغ الصراف |
 | 1940 | [`1940-round-robin-finish-times.apl`](examples/1940-round-robin-finish-times.apl) | كل عملية تأخذ حصة زمنية ثم تعود للطابور |
 | 1941 | [`1941-longest-valid-parentheses-length.apl`](examples/1941-longest-valid-parentheses-length.apl) | نخزن مواضع الأقواس في مكدس |
+| 1942 | [`1942-parking-fee-first-hour-then-hourly.apl`](examples/1942-parking-fee-first-hour-then-hourly.apl) | أول ساعة بسعر ثابت ثم سعر أقل لكل ساعة بسقف يومي |
+| 1943 | [`1943-library-fine-days-late.apl`](examples/1943-library-fine-days-late.apl) | أيام سماح ثم غرامة يومية بسقف لكل كتاب |
+| 1944 | [`1944-disk-scheduling-sstf-total-movement.apl`](examples/1944-disk-scheduling-sstf-total-movement.apl) | نخدم الطلب الأقرب لرأس القرص ونجمع المسافات |
+| 1945 | [`1945-disk-scheduling-scan-elevator-order.apl`](examples/1945-disk-scheduling-scan-elevator-order.apl) | نتحرك لأعلى نخدم الطلبات ثم نعود ونخدم الباقي |
+| 1946 | [`1946-fifo-page-replacement-fault-count.apl`](examples/1946-fifo-page-replacement-fault-count.apl) | نطرد أقدم صفحة عند امتلاء الإطارات ونعد الأخطاء |
+| 1947 | [`1947-lru-page-replacement-fault-count.apl`](examples/1947-lru-page-replacement-fault-count.apl) | نطرد الصفحة الأقدم استخداما ونعد الأخطاء |
+| 1948 | [`1948-bank-overdraft-ledger-fees.apl`](examples/1948-bank-overdraft-ledger-fees.apl) | نطبق العمليات ونخصم رسما عند نزول الرصيد تحت الصفر |
+| 1949 | [`1949-weighted-grade-book-average.apl`](examples/1949-weighted-grade-book-average.apl) | نضرب كل درجة بوزنها ونقسم على مجموع الأوزان |
+| 1950 | [`1950-longest-warm-streak-days.apl`](examples/1950-longest-warm-streak-days.apl) | نعد الأيام المتتالية التي تتجاوز حدا معينا |
+| 1951 | [`1951-word-ladder-shortest-length-bfs.apl`](examples/1951-word-ladder-shortest-length-bfs.apl) | بحث بالعرض عبر كلمات تختلف بحرف واحد |
+| 1952 | [`1952-excel-column-title-from-number.apl`](examples/1952-excel-column-title-from-number.apl) | نحول رقم العمود إلى حروف على أساس 26 بدون صفر |
+| 1953 | [`1953-excel-column-letters-to-index.apl`](examples/1953-excel-column-letters-to-index.apl) | نعامل الاسم كعدد بأساس 26 من 1 إلى 26 |
+| 1954 | [`1954-collatz-longest-chain-start-below.apl`](examples/1954-collatz-longest-chain-start-below.apl) | نخزن أطوال السلاسل لتفادي إعادة الحساب |
+| 1955 | [`1955-happy-number-cycle-detection-set.apl`](examples/1955-happy-number-cycle-detection-set.apl) | نكرر مجموع مربعات الأرقام حتى نصل 1 أو ندخل دورة |
+| 1956 | [`1956-look-and-say-nth-term.apl`](examples/1956-look-and-say-nth-term.apl) | كل حد يصف الحد السابق بعد مجموعات الأرقام المتكررة |
+| 1957 | [`1957-hamming-distance-sum-all-pairs.apl`](examples/1957-hamming-distance-sum-all-pairs.apl) | نعد لكل بت كم عددا فيه واحد وكم فيه صفر |
+| 1958 | [`1958-luhn-card-number-validator.apl`](examples/1958-luhn-card-number-validator.apl) | نضاعف كل رقم ثان من اليمين ونتحقق من قابلية المجموع للقسمة على 10 |
+| 1959 | [`1959-isbn-ten-checksum-validate.apl`](examples/1959-isbn-ten-checksum-validate.apl) | مجموع الأرقام مضروبة بأوزان من 10 إلى 1 يقبل القسمة على 11 |
+| 1960 | [`1960-time-add-minutes-wrap-clock.apl`](examples/1960-time-add-minutes-wrap-clock.apl) | نحول الوقت إلى دقائق ونعيد الباقي على 1440 |
+| 1961 | [`1961-day-of-year-with-leap-rule.apl`](examples/1961-day-of-year-with-leap-rule.apl) | نجمع أيام الأشهر السابقة ونراعي السنة الكبيسة |
+| 1962 | [`1962-matrix-diagonal-difference-abs.apl`](examples/1962-matrix-diagonal-difference-abs.apl) | مجموع القطر الرئيسي ناقص مجموع القطر الثانوي |
+| 1963 | [`1963-bulls-and-cows-score-guess.apl`](examples/1963-bulls-and-cows-score-guess.apl) | ثور لرقم صحيح في مكانه وبقرة لرقم صحيح في مكان خاطئ |
+| 1964 | [`1964-merge-row-left-2048-rule.apl`](examples/1964-merge-row-left-2048-rule.apl) | نزيح الأرقام لليسار وندمج المتساوين المتجاورين مرة واحدة |
+| 1965 | [`1965-minesweeper-neighbor-count-board.apl`](examples/1965-minesweeper-neighbor-count-board.apl) | لكل خلية خالية نعد الألغام في الخلايا الثماني المجاورة |
+| 1966 | [`1966-bracket-min-insertions-balance.apl`](examples/1966-bracket-min-insertions-balance.apl) | نعد الإغلاقات الزائدة والفتحات غير المغلقة |
+| 1967 | [`1967-run-length-encode-pairs-list.apl`](examples/1967-run-length-encode-pairs-list.apl) | نحول النص إلى قائمة أزواج حرف وعدد |
+| 1968 | [`1968-pascal-triangle-row-sum-powers.apl`](examples/1968-pascal-triangle-row-sum-powers.apl) | مجموع الصف ن يساوي 2 أس ن |
 
 ### تشغيل أي مثال
 
@@ -2321,7 +2348,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 1941 مثال
+**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 1968 مثال
 
 ## Language platform tools
 
