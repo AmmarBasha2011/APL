@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 101 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1806 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1828 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -274,9 +274,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1806 مثال)
+## الأمثلة الجاهزة (1828 مثال)
 
-مجلد `examples/` يحتوي على **1806 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1828 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -2086,6 +2086,28 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1804 | [`1804-manhattan-closest-pair-brute.apl`](examples/1804-manhattan-closest-pair-brute.apl) | نقارن كل زوج |
 | 1805 | [`1805-shoelace-polygon-twice-area.apl`](examples/1805-shoelace-polygon-twice-area.apl) | نجمع الجداءات المتقاطعة |
 | 1806 | [`1806-circle-lattice-points-count.apl`](examples/1806-circle-lattice-points-count.apl) | نعد النقاط ذات الإحداثيات الصحيحة |
+| 1807 | [`1807-group-words-by-length-dict.apl`](examples/1807-group-words-by-length-dict.apl) | قاموس يربط الطول بقائمة كلمات |
+| 1808 | [`1808-invert-dictionary-values.apl`](examples/1808-invert-dictionary-values.apl) | القيم تصبح مفاتيح |
+| 1809 | [`1809-merge-two-dicts-sum.apl`](examples/1809-merge-two-dicts-sum.apl) | المفاتيح المشتركة تجمع قيمها |
+| 1810 | [`1810-most-common-character-count.apl`](examples/1810-most-common-character-count.apl) | نعد الحروف ونختار الأعلى |
+| 1811 | [`1811-isomorphic-strings-check.apl`](examples/1811-isomorphic-strings-check.apl) | كل حرف يقابل حرفاً واحداً |
+| 1812 | [`1812-word-pattern-match-check.apl`](examples/1812-word-pattern-match-check.apl) | حرف النمط يقابل كلمة واحدة |
+| 1813 | [`1813-common-prefix-of-words.apl`](examples/1813-common-prefix-of-words.apl) | نقارن الحروف بالموضع |
+| 1814 | [`1814-count-and-say-sequence.apl`](examples/1814-count-and-say-sequence.apl) | كل حد يصف الحد السابق |
+| 1815 | [`1815-reverse-words-in-sentence.apl`](examples/1815-reverse-words-in-sentence.apl) | الكلمات بترتيب معكوس |
+| 1816 | [`1816-title-case-length-check.apl`](examples/1816-title-case-length-check.apl) | كم كلمة تبدأ بحرف كبير |
+| 1817 | [`1817-string-rotation-check.apl`](examples/1817-string-rotation-check.apl) | النص الثاني داخل مضاعف الأول |
+| 1818 | [`1818-balanced-binary-split-count.apl`](examples/1818-balanced-binary-split-count.apl) | أجزاء فيها عدد الأصفار يساوي الآحاد |
+| 1819 | [`1819-alternating-bits-check.apl`](examples/1819-alternating-bits-check.apl) | كل بتين متجاورين مختلفان |
+| 1820 | [`1820-complement-of-binary-number.apl`](examples/1820-complement-of-binary-number.apl) | نقلب كل بتات العدد دون الأصفار البادئة |
+| 1821 | [`1821-binary-gap-longest-zeros.apl`](examples/1821-binary-gap-longest-zeros.apl) | أصفار بين واحدين |
+| 1822 | [`1822-counting-bits-up-to-n.apl`](examples/1822-counting-bits-up-to-n.apl) | نبني الجدول من النصف |
+| 1823 | [`1823-fraction-add-lowest-terms.apl`](examples/1823-fraction-add-lowest-terms.apl) | نوحد المقامات ثم نختصر |
+| 1824 | [`1824-repeating-decimal-cycle-length.apl`](examples/1824-repeating-decimal-cycle-length.apl) | نتتبع البواقي حتى تتكرر |
+| 1825 | [`1825-running-average-window-list.apl`](examples/1825-running-average-window-list.apl) | متوسط كل نافذة من ك عناصر |
+| 1826 | [`1826-max-consecutive-ones-run.apl`](examples/1826-max-consecutive-ones-run.apl) | نعد الآحاد المتتالية |
+| 1827 | [`1827-move-zeros-to-end-stable.apl`](examples/1827-move-zeros-to-end-stable.apl) | نحافظ على ترتيب غير الأصفار |
+| 1828 | [`1828-sort-colors-dutch-flag.apl`](examples/1828-sort-colors-dutch-flag.apl) | ثلاثة مؤشرات تكفي |
 
 ### تشغيل أي مثال
 
@@ -2186,7 +2208,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 1806 مثال
+**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 1828 مثال
 
 ## Language platform tools
 

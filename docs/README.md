@@ -116,9 +116,9 @@
 | 106 | [black-library.md](black-library.md) | مكتبة `black` — منسّق شيفرة بايثون من حزمة black |
 
 ---
-## الأمثلة الجاهزة (1806 مثال)
+## الأمثلة الجاهزة (1828 مثال)
 
-1806 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1828 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1928,6 +1928,28 @@
 | 1804 | [`1804-manhattan-closest-pair-brute.apl`](../examples/1804-manhattan-closest-pair-brute.apl) | نقارن كل زوج |
 | 1805 | [`1805-shoelace-polygon-twice-area.apl`](../examples/1805-shoelace-polygon-twice-area.apl) | نجمع الجداءات المتقاطعة |
 | 1806 | [`1806-circle-lattice-points-count.apl`](../examples/1806-circle-lattice-points-count.apl) | نعد النقاط ذات الإحداثيات الصحيحة |
+| 1807 | [`1807-group-words-by-length-dict.apl`](../examples/1807-group-words-by-length-dict.apl) | قاموس يربط الطول بقائمة كلمات |
+| 1808 | [`1808-invert-dictionary-values.apl`](../examples/1808-invert-dictionary-values.apl) | القيم تصبح مفاتيح |
+| 1809 | [`1809-merge-two-dicts-sum.apl`](../examples/1809-merge-two-dicts-sum.apl) | المفاتيح المشتركة تجمع قيمها |
+| 1810 | [`1810-most-common-character-count.apl`](../examples/1810-most-common-character-count.apl) | نعد الحروف ونختار الأعلى |
+| 1811 | [`1811-isomorphic-strings-check.apl`](../examples/1811-isomorphic-strings-check.apl) | كل حرف يقابل حرفاً واحداً |
+| 1812 | [`1812-word-pattern-match-check.apl`](../examples/1812-word-pattern-match-check.apl) | حرف النمط يقابل كلمة واحدة |
+| 1813 | [`1813-common-prefix-of-words.apl`](../examples/1813-common-prefix-of-words.apl) | نقارن الحروف بالموضع |
+| 1814 | [`1814-count-and-say-sequence.apl`](../examples/1814-count-and-say-sequence.apl) | كل حد يصف الحد السابق |
+| 1815 | [`1815-reverse-words-in-sentence.apl`](../examples/1815-reverse-words-in-sentence.apl) | الكلمات بترتيب معكوس |
+| 1816 | [`1816-title-case-length-check.apl`](../examples/1816-title-case-length-check.apl) | كم كلمة تبدأ بحرف كبير |
+| 1817 | [`1817-string-rotation-check.apl`](../examples/1817-string-rotation-check.apl) | النص الثاني داخل مضاعف الأول |
+| 1818 | [`1818-balanced-binary-split-count.apl`](../examples/1818-balanced-binary-split-count.apl) | أجزاء فيها عدد الأصفار يساوي الآحاد |
+| 1819 | [`1819-alternating-bits-check.apl`](../examples/1819-alternating-bits-check.apl) | كل بتين متجاورين مختلفان |
+| 1820 | [`1820-complement-of-binary-number.apl`](../examples/1820-complement-of-binary-number.apl) | نقلب كل بتات العدد دون الأصفار البادئة |
+| 1821 | [`1821-binary-gap-longest-zeros.apl`](../examples/1821-binary-gap-longest-zeros.apl) | أصفار بين واحدين |
+| 1822 | [`1822-counting-bits-up-to-n.apl`](../examples/1822-counting-bits-up-to-n.apl) | نبني الجدول من النصف |
+| 1823 | [`1823-fraction-add-lowest-terms.apl`](../examples/1823-fraction-add-lowest-terms.apl) | نوحد المقامات ثم نختصر |
+| 1824 | [`1824-repeating-decimal-cycle-length.apl`](../examples/1824-repeating-decimal-cycle-length.apl) | نتتبع البواقي حتى تتكرر |
+| 1825 | [`1825-running-average-window-list.apl`](../examples/1825-running-average-window-list.apl) | متوسط كل نافذة من ك عناصر |
+| 1826 | [`1826-max-consecutive-ones-run.apl`](../examples/1826-max-consecutive-ones-run.apl) | نعد الآحاد المتتالية |
+| 1827 | [`1827-move-zeros-to-end-stable.apl`](../examples/1827-move-zeros-to-end-stable.apl) | نحافظ على ترتيب غير الأصفار |
+| 1828 | [`1828-sort-colors-dutch-flag.apl`](../examples/1828-sort-colors-dutch-flag.apl) | ثلاثة مؤشرات تكفي |
 
 **التشغيل:**
 ```bash
@@ -2087,4 +2109,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **227,195 عنصراً**،
-مع **1806 مثال جاهز** في `examples/`.
+مع **1828 مثال جاهز** في `examples/`.
