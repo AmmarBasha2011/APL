@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1706 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1723 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1706 مثال)
+## الأمثلة الجاهزة (1723 مثال)
 
-مجلد `examples/` يحتوي على **1706 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1723 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1981,6 +1981,23 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1704 | [`1704-two-sum-indices-pair.apl`](examples/1704-two-sum-indices-pair.apl) | نبحث عن المكمل بقاموس |
 | 1705 | [`1705-jump-game-reachable.apl`](examples/1705-jump-game-reachable.apl) | أبعد موضع يمكن بلوغه |
 | 1706 | [`1706-min-jumps-to-end.apl`](examples/1706-min-jumps-to-end.apl) | نوسع مدى كل قفزة |
+| 1707 | [`1707-grid-shortest-path-bfs-steps.apl`](examples/1707-grid-shortest-path-bfs-steps.apl) | نستكشف الجيران طبقة طبقة |
+| 1708 | [`1708-flood-fill-region-size.apl`](examples/1708-flood-fill-region-size.apl) | نملأ الخلايا المتجاورة المتشابهة |
+| 1709 | [`1709-count-islands-grid.apl`](examples/1709-count-islands-grid.apl) | كل مجموعة من الآحاد المتصلة جزيرة |
+| 1710 | [`1710-topological-order-kahn.apl`](examples/1710-topological-order-kahn.apl) | نأخذ العقد بلا اعتماديات أولاً |
+| 1711 | [`1711-graph-bipartite-check.apl`](examples/1711-graph-bipartite-check.apl) | نلون العقد بلونين |
+| 1712 | [`1712-graph-components-dfs-total.apl`](examples/1712-graph-components-dfs-total.apl) | نستكشف كل عقدة لم تزر |
+| 1713 | [`1713-tree-depth-from-pairs.apl`](examples/1713-tree-depth-from-pairs.apl) | نتتبع الآباء حتى الجذر |
+| 1714 | [`1714-tree-leaf-count-nested.apl`](examples/1714-tree-leaf-count-nested.apl) | القوائم فروع والأرقام أوراق |
+| 1715 | [`1715-nested-list-flatten-depth.apl`](examples/1715-nested-list-flatten-depth.apl) | كم مستوى من القوائم داخل بعض |
+| 1716 | [`1716-recursive-digit-root.apl`](examples/1716-recursive-digit-root.apl) | نجمع الأرقام حتى يبقى رقم واحد |
+| 1717 | [`1717-tower-of-hanoi-move-count.apl`](examples/1717-tower-of-hanoi-move-count.apl) | نحسب النقلات بالاستدعاء الذاتي |
+| 1718 | [`1718-string-run-length-decode.apl`](examples/1718-string-run-length-decode.apl) | نعيد بناء النص من الحرف والعدد |
+| 1719 | [`1719-string-word-frequency-top.apl`](examples/1719-string-word-frequency-top.apl) | نعد الكلمات ونأخذ الأكثر |
+| 1720 | [`1720-bank-account-balance-simulation.apl`](examples/1720-bank-account-balance-simulation.apl) | نطبق الإيداع والسحب ونرفض الزائد |
+| 1721 | [`1721-inventory-restock-needed.apl`](examples/1721-inventory-restock-needed.apl) | نقارن الكمية بحد الطلب |
+| 1722 | [`1722-elevator-floor-travel-sum.apl`](examples/1722-elevator-floor-travel-sum.apl) | نجمع الفروق بين الطوابق المتتالية |
+| 1723 | [`1723-parking-lot-fee-calculator.apl`](examples/1723-parking-lot-fee-calculator.apl) | الساعة الأولى بسعر والباقي بسعر أقل |
 
 ### تشغيل أي مثال
 
@@ -2081,7 +2098,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1706 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1723 مثال
 
 ## Language platform tools
 
