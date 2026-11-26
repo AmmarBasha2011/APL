@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 101 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **2284 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **2334 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -274,9 +274,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (2284 مثال)
+## الأمثلة الجاهزة (2334 مثال)
 
-مجلد `examples/` يحتوي على **2284 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **2334 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -2564,6 +2564,56 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 2282 | [`2282-seconds-to-clock-text-hh-mm-ss.apl`](examples/2282-seconds-to-clock-text-hh-mm-ss.apl) | نملأ بالأصفار |
 | 2283 | [`2283-leap-year-gregorian-rule-check.apl`](examples/2283-leap-year-gregorian-rule-check.apl) | قاعدة 4 و100 و400 |
 | 2284 | [`2284-celsius-to-fahrenheit-integer.apl`](examples/2284-celsius-to-fahrenheit-integer.apl) | ف=س*9/5+32 |
+| 2285 | [`2285-matrix-trace-main-diagonal-sum.apl`](examples/2285-matrix-trace-main-diagonal-sum.apl) | مجموع القطر |
+| 2286 | [`2286-matrix-anti-diagonal-sum.apl`](examples/2286-matrix-anti-diagonal-sum.apl) | م[ي][ن-1-ي] |
+| 2287 | [`2287-matrix-transpose-square-build.apl`](examples/2287-matrix-transpose-square-build.apl) | نبدل الصفوف والأعمدة |
+| 2288 | [`2288-matrix-sum-of-all-cells.apl`](examples/2288-matrix-sum-of-all-cells.apl) | نمر على الصفوف |
+| 2289 | [`2289-matrix-row-sums-list.apl`](examples/2289-matrix-row-sums-list.apl) | مجموع كل صف |
+| 2290 | [`2290-matrix-column-sums-list.apl`](examples/2290-matrix-column-sums-list.apl) | مجموع كل عمود |
+| 2291 | [`2291-matrix-max-cell-value.apl`](examples/2291-matrix-max-cell-value.apl) | أكبر قيمة |
+| 2292 | [`2292-matrix-is-symmetric-check.apl`](examples/2292-matrix-is-symmetric-check.apl) | م = منقولها |
+| 2293 | [`2293-matrix-is-identity-check.apl`](examples/2293-matrix-is-identity-check.apl) | قطر 1 وغيره 0 |
+| 2294 | [`2294-matrix-scale-rows-doubled.apl`](examples/2294-matrix-scale-rows-doubled.apl) | نبني الصفوف |
+| 2295 | [`2295-matrix-flip-rows-vertical.apl`](examples/2295-matrix-flip-rows-vertical.apl) | ترتيب الصفوف عكسا |
+| 2296 | [`2296-matrix-flip-each-row-horizontal.apl`](examples/2296-matrix-flip-each-row-horizontal.apl) | نعكس كل صف |
+| 2297 | [`2297-matrix-rotate-clockwise-square.apl`](examples/2297-matrix-rotate-clockwise-square.apl) | منقول ثم عكس الصفوف |
+| 2298 | [`2298-matrix-spiral-order-walk.apl`](examples/2298-matrix-spiral-order-walk.apl) | نقشر الطبقات |
+| 2299 | [`2299-matrix-determinant-two-by-two-or-three.apl`](examples/2299-matrix-determinant-two-by-two-or-three.apl) | نفك على الصف الأول |
+| 2300 | [`2300-matrix-count-zero-cells.apl`](examples/2300-matrix-count-zero-cells.apl) | نعد الأصفار |
+| 2301 | [`2301-matrix-border-sum-cells.apl`](examples/2301-matrix-border-sum-cells.apl) | الصف الأول والأخير والأعمدة |
+| 2302 | [`2302-matrix-multiply-by-itself-trace.apl`](examples/2302-matrix-multiply-by-itself-trace.apl) | نضرب ونجمع القطر |
+| 2303 | [`2303-matrix-row-with-largest-sum-index.apl`](examples/2303-matrix-row-with-largest-sum-index.apl) | نقارن المجاميع |
+| 2304 | [`2304-matrix-count-negative-cells.apl`](examples/2304-matrix-count-negative-cells.apl) | نعد السالب |
+| 2305 | [`2305-palindrome-ignoring-spaces-lowercase.apl`](examples/2305-palindrome-ignoring-spaces-lowercase.apl) | نحذف المسافات |
+| 2306 | [`2306-count-substring-ab-overlapping.apl`](examples/2306-count-substring-ab-overlapping.apl) | نمر على المواضع |
+| 2307 | [`2307-string-compress-length-after-rle.apl`](examples/2307-string-compress-length-after-rle.apl) | نحسب طول الترميز |
+| 2308 | [`2308-anagram-key-sorted-letters.apl`](examples/2308-anagram-key-sorted-letters.apl) | الحروف مرتبة |
+| 2309 | [`2309-replace-spaces-with-dashes-lower.apl`](examples/2309-replace-spaces-with-dashes-lower.apl) | slug بسيط |
+| 2310 | [`2310-count-each-letter-a-b-c.apl`](examples/2310-count-each-letter-a-b-c.apl) | نعد ثلاثة حروف |
+| 2311 | [`2311-last-word-length-of-text.apl`](examples/2311-last-word-length-of-text.apl) | نقسم ونأخذ الأخيرة |
+| 2312 | [`2312-longest-word-length-in-text.apl`](examples/2312-longest-word-length-in-text.apl) | نقارن الأطوال |
+| 2313 | [`2313-reverse-each-word-in-place.apl`](examples/2313-reverse-each-word-in-place.apl) | نبقي ترتيب الكلمات |
+| 2314 | [`2314-reverse-word-order-in-text.apl`](examples/2314-reverse-word-order-in-text.apl) | نعكس القائمة |
+| 2315 | [`2315-is-string-all-digits-check.apl`](examples/2315-is-string-all-digits-check.apl) | نتحقق من كل رمز |
+| 2316 | [`2316-digits-to-sum-from-text-mixed.apl`](examples/2316-digits-to-sum-from-text-mixed.apl) | نتجاهل الحروف |
+| 2317 | [`2317-balanced-brackets-round-only.apl`](examples/2317-balanced-brackets-round-only.apl) | نعد العمق |
+| 2318 | [`2318-max-nesting-depth-parentheses.apl`](examples/2318-max-nesting-depth-parentheses.apl) | أعلى عداد |
+| 2319 | [`2319-first-once-only-letter-position.apl`](examples/2319-first-once-only-letter-position.apl) | يظهر مرة واحدة |
+| 2320 | [`2320-common-prefix-length-with-hello.apl`](examples/2320-common-prefix-length-with-hello.apl) | نقارن حرفا بحرف |
+| 2321 | [`2321-count-words-longer-than-three.apl`](examples/2321-count-words-longer-than-three.apl) | نفحص الطول |
+| 2322 | [`2322-remove-vowels-from-latin-text.apl`](examples/2322-remove-vowels-from-latin-text.apl) | نبقي الصامتة |
+| 2323 | [`2323-char-frequency-max-count.apl`](examples/2323-char-frequency-max-count.apl) | أعلى عدد |
+| 2324 | [`2324-binary-string-to-decimal-manual.apl`](examples/2324-binary-string-to-decimal-manual.apl) | نضاعف ونضيف |
+| 2325 | [`2325-hex-string-to-decimal-manual.apl`](examples/2325-hex-string-to-decimal-manual.apl) | نستخدم الموضع في الأرقام |
+| 2326 | [`2326-roman-numeral-to-integer-simple.apl`](examples/2326-roman-numeral-to-integer-simple.apl) | نطرح عند الأصغر قبل الأكبر |
+| 2327 | [`2327-vowel-start-word-count.apl`](examples/2327-vowel-start-word-count.apl) | أول حرف |
+| 2328 | [`2328-string-sorted-letters-descending.apl`](examples/2328-string-sorted-letters-descending.apl) | فرز عكسي |
+| 2329 | [`2329-is-sorted-string-letters.apl`](examples/2329-is-sorted-string-letters.apl) | نقارن المتجاورات |
+| 2330 | [`2330-hamming-distance-to-abcde.apl`](examples/2330-hamming-distance-to-abcde.apl) | نعد الاختلافات |
+| 2331 | [`2331-word-lengths-list-of-text.apl`](examples/2331-word-lengths-list-of-text.apl) | قائمة بأطوال الكلمات |
+| 2332 | [`2332-first-letters-joined-string.apl`](examples/2332-first-letters-joined-string.apl) | أول حرف لكل كلمة |
+| 2333 | [`2333-pad-number-string-with-zeros-five.apl`](examples/2333-pad-number-string-with-zeros-five.apl) | zfill |
+| 2334 | [`2334-count-spaces-in-text.apl`](examples/2334-count-spaces-in-text.apl) | نعد " " |
 
 ### تشغيل أي مثال
 
@@ -2664,7 +2714,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 2284 مثال
+**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 2334 مثال
 
 ## Language platform tools
 
