@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1640 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1665 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1640 مثال)
+## الأمثلة الجاهزة (1665 مثال)
 
-مجلد `examples/` يحتوي على **1640 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1665 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1915,6 +1915,31 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1638 | [`1638-arranging-coins-staircase.apl`](examples/1638-arranging-coins-staircase.apl) | كم صفاً كاملاً يمكن بناؤه |
 | 1639 | [`1639-minimum-days-for-bouquets.apl`](examples/1639-minimum-days-for-bouquets.apl) | نبحث عن أول يوم تكتمل فيه الباقات |
 | 1640 | [`1640-nth-root-binary-search.apl`](examples/1640-nth-root-binary-search.apl) | أكبر عدد صحيح قوته ن لا تتجاوز العدد |
+| 1641 | [`1641-gcd-of-number-list.apl`](examples/1641-gcd-of-number-list.apl) | نطبق خوارزمية إقليدس على القائمة كلها |
+| 1642 | [`1642-lcm-of-number-list.apl`](examples/1642-lcm-of-number-list.apl) | نحسب المضاعف عنصراً بعنصر |
+| 1643 | [`1643-count-coprime-below.apl`](examples/1643-count-coprime-below.apl) | كم عدداً أصغر من ن لا يشاركه قاسماً |
+| 1644 | [`1644-sum-of-proper-divisors.apl`](examples/1644-sum-of-proper-divisors.apl) | كل قواسم العدد عدا نفسه |
+| 1645 | [`1645-deficient-number-check.apl`](examples/1645-deficient-number-check.apl) | مجموع قواسمه الفعلية أقل منه |
+| 1646 | [`1646-sum-of-digit-squares.apl`](examples/1646-sum-of-digit-squares.apl) | نربع كل رقم ونجمع |
+| 1647 | [`1647-pronic-number-check.apl`](examples/1647-pronic-number-check.apl) | حاصل ضرب عددين متتاليين |
+| 1648 | [`1648-triangular-number-check.apl`](examples/1648-triangular-number-check.apl) | مجموع الأعداد من 1 إلى ك |
+| 1649 | [`1649-hexagonal-number-nth.apl`](examples/1649-hexagonal-number-nth.apl) | القانون ن×(2ن-1) |
+| 1650 | [`1650-fibonacci-membership-check.apl`](examples/1650-fibonacci-membership-check.apl) | نولد المتتالية حتى نصل العدد |
+| 1651 | [`1651-padovan-sequence-nth.apl`](examples/1651-padovan-sequence-nth.apl) | كل حد مجموع حدين قبل ثلاثة وقبل اثنين |
+| 1652 | [`1652-integer-partition-count.apl`](examples/1652-integer-partition-count.apl) | بكم طريقة يُكتب العدد كمجموع أعداد موجبة |
+| 1653 | [`1653-mobius-function-value.apl`](examples/1653-mobius-function-value.apl) | صفر إذا قبل القسمة على مربع وإلا حسب عدد العوامل |
+| 1654 | [`1654-extended-euclid-coefficients.apl`](examples/1654-extended-euclid-coefficients.apl) | نجد س وص بحيث أ س + ب ص = القاسم |
+| 1655 | [`1655-convert-to-any-base.apl`](examples/1655-convert-to-any-base.apl) | كتابة عدد بأساس بين 2 و16 |
+| 1656 | [`1656-product-of-digits.apl`](examples/1656-product-of-digits.apl) | نضرب كل رقم في الآخر |
+| 1657 | [`1657-smallest-prime-factor-table.apl`](examples/1657-smallest-prime-factor-table.apl) | غربال يسجل أصغر عامل لكل عدد |
+| 1658 | [`1658-perfect-power-check.apl`](examples/1658-perfect-power-check.apl) | يساوي أساساً مرفوعاً لأس أكبر من واحد |
+| 1659 | [`1659-radical-of-number.apl`](examples/1659-radical-of-number.apl) | حاصل ضرب عوامله الأولية المختلفة |
+| 1660 | [`1660-automorphic-number-check.apl`](examples/1660-automorphic-number-check.apl) | مربعه ينتهي بنفسه |
+| 1661 | [`1661-palindromic-prime-check.apl`](examples/1661-palindromic-prime-check.apl) | أولي يقرأ من اليسار كاليمين |
+| 1662 | [`1662-distinct-prime-factor-count.apl`](examples/1662-distinct-prime-factor-count.apl) | كم عاملاً أولياً مختلفاً في تحليل العدد |
+| 1663 | [`1663-square-free-check.apl`](examples/1663-square-free-check.apl) | لا يقبل القسمة على مربع أكبر من واحد |
+| 1664 | [`1664-consecutive-sum-ways.apl`](examples/1664-consecutive-sum-ways.apl) | بكم طريقة يساوي العدد مجموع أعداد موجبة متتالية |
+| 1665 | [`1665-trailing-zeros-of-factorial.apl`](examples/1665-trailing-zeros-of-factorial.apl) | عدد الأصفار في نهاية ن! |
 
 ### تشغيل أي مثال
 
@@ -2015,7 +2040,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1640 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1665 مثال
 
 ## Language platform tools
 
