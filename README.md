@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 101 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1783 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1806 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -274,9 +274,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1783 مثال)
+## الأمثلة الجاهزة (1806 مثال)
 
-مجلد `examples/` يحتوي على **1783 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1806 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -2063,6 +2063,29 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1781 | [`1781-subarray-sum-equals-target-count.apl`](examples/1781-subarray-sum-equals-target-count.apl) | مجاميع تراكمية وقاموس |
 | 1782 | [`1782-longest-consecutive-run-set.apl`](examples/1782-longest-consecutive-run-set.apl) | نبدأ من بدايات المتتاليات فقط |
 | 1783 | [`1783-pair-count-with-difference-k.apl`](examples/1783-pair-count-with-difference-k.apl) | نبحث عن العدد زائد الفرق |
+| 1784 | [`1784-happy-number-check-loop.apl`](examples/1784-happy-number-check-loop.apl) | مجموع مربعات الأرقام يصل إلى واحد |
+| 1785 | [`1785-ugly-number-nth.apl`](examples/1785-ugly-number-nth.apl) | عوامله الأولية 2 و3 و5 فقط |
+| 1786 | [`1786-kaprekar-routine-steps.apl`](examples/1786-kaprekar-routine-steps.apl) | فرق الترتيب التنازلي والتصاعدي |
+| 1787 | [`1787-collatz-longest-under-limit.apl`](examples/1787-collatz-longest-under-limit.apl) | نختبر كل بداية تحت الحد |
+| 1788 | [`1788-sum-multiples-three-five-limit.apl`](examples/1788-sum-multiples-three-five-limit.apl) | مضاعفات 3 أو 5 |
+| 1789 | [`1789-largest-prime-factor-of.apl`](examples/1789-largest-prime-factor-of.apl) | نقسم على أصغر عامل مراراً |
+| 1790 | [`1790-count-digit-occurrences-range.apl`](examples/1790-count-digit-occurrences-range.apl) | نعد رقماً في كل الأعداد من 1 إلى ن |
+| 1791 | [`1791-reverse-integer-digits.apl`](examples/1791-reverse-integer-digits.apl) | نبني العدد المعكوس رقماً رقماً |
+| 1792 | [`1792-armstrong-numbers-below.apl`](examples/1792-armstrong-numbers-below.apl) | مجموع الأرقام مرفوعة لعددها |
+| 1793 | [`1793-number-to-english-words-small.apl`](examples/1793-number-to-english-words-small.apl) | نحول أعداداً أقل من مئة إلى كلمات |
+| 1794 | [`1794-excel-column-title-number.apl`](examples/1794-excel-column-title-number.apl) | نظام عد بالأحرف يبدأ من واحد |
+| 1795 | [`1795-excel-column-number-from-title.apl`](examples/1795-excel-column-number-from-title.apl) | عكس الترقيم بالأحرف |
+| 1796 | [`1796-binary-add-two-strings.apl`](examples/1796-binary-add-two-strings.apl) | جمع بالحمل من اليمين |
+| 1797 | [`1797-single-number-xor-trick.apl`](examples/1797-single-number-xor-trick.apl) | كل مكرر يلغي نفسه |
+| 1798 | [`1798-hamming-distance-two-numbers.apl`](examples/1798-hamming-distance-two-numbers.apl) | عدد البتات المختلفة |
+| 1799 | [`1799-reverse-bits-eight.apl`](examples/1799-reverse-bits-eight.apl) | البت الأخير يصبح الأول |
+| 1800 | [`1800-lowest-set-bit-isolate.apl`](examples/1800-lowest-set-bit-isolate.apl) | ن & (-ن) يعطي أدنى بت |
+| 1801 | [`1801-swap-without-temp-xor.apl`](examples/1801-swap-without-temp-xor.apl) | ثلاث عمليات XOR تكفي |
+| 1802 | [`1802-point-on-segment-check.apl`](examples/1802-point-on-segment-check.apl) | استقامة ثم داخل الحدود |
+| 1803 | [`1803-rectangles-intersect-area.apl`](examples/1803-rectangles-intersect-area.apl) | نحسب التداخل في كل محور |
+| 1804 | [`1804-manhattan-closest-pair-brute.apl`](examples/1804-manhattan-closest-pair-brute.apl) | نقارن كل زوج |
+| 1805 | [`1805-shoelace-polygon-twice-area.apl`](examples/1805-shoelace-polygon-twice-area.apl) | نجمع الجداءات المتقاطعة |
+| 1806 | [`1806-circle-lattice-points-count.apl`](examples/1806-circle-lattice-points-count.apl) | نعد النقاط ذات الإحداثيات الصحيحة |
 
 ### تشغيل أي مثال
 
@@ -2163,7 +2186,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 1783 مثال
+**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 1806 مثال
 
 ## Language platform tools
 
