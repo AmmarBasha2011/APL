@@ -124,3 +124,8 @@ humanize==4.17.0
 tenacity==9.2.1
 cachetools==8.0.2
 sortedcontainers==2.4.0
+mypy==2.4.1
+polars==2.2.0
+Faker==40.63.0
+openai==2.54.0
+black==26.10.1
