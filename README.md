@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 101 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1924 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1941 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -274,9 +274,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1924 مثال)
+## الأمثلة الجاهزة (1941 مثال)
 
-مجلد `examples/` يحتوي على **1924 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1941 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -2204,6 +2204,23 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1922 | [`1922-ticket-queue-wait-time.apl`](examples/1922-ticket-queue-wait-time.apl) | كل شخص يشتري تذكرة في ثانية |
 | 1923 | [`1923-spell-number-english-under-thousand.apl`](examples/1923-spell-number-english-under-thousand.apl) | نقسم العدد لمئات وعشرات وآحاد |
 | 1924 | [`1924-gray-code-sequence-generate.apl`](examples/1924-gray-code-sequence-generate.apl) | كل رقمين متتاليين يختلفان ببت واحد |
+| 1925 | [`1925-lcs-length-two-strings-table.apl`](examples/1925-lcs-length-two-strings-table.apl) | جدول يقارن بادئات النصين |
+| 1926 | [`1926-levenshtein-edit-distance-table.apl`](examples/1926-levenshtein-edit-distance-table.apl) | أقل عدد إدراج وحذف واستبدال |
+| 1927 | [`1927-longest-palindrome-expand-center.apl`](examples/1927-longest-palindrome-expand-center.apl) | نوسع حول كل مركز |
+| 1928 | [`1928-count-distinct-subsequence-matches.apl`](examples/1928-count-distinct-subsequence-matches.apl) | كم طريقة نكون بها النص الهدف |
+| 1929 | [`1929-sudoku-four-by-four-validator.apl`](examples/1929-sudoku-four-by-four-validator.apl) | كل صف وعمود ومربع فيه ١ إلى ٤ |
+| 1930 | [`1930-symmetric-difference-of-lists.apl`](examples/1930-symmetric-difference-of-lists.apl) | العناصر الموجودة في قائمة واحدة فقط |
+| 1931 | [`1931-is-subset-of-list-check.apl`](examples/1931-is-subset-of-list-check.apl) | كل عنصر يجب أن يوجد في الأكبر |
+| 1932 | [`1932-run-length-encode-plain-text.apl`](examples/1932-run-length-encode-plain-text.apl) | نكتب الحرف وعدد تكراره |
+| 1933 | [`1933-run-length-decode-single-digit.apl`](examples/1933-run-length-decode-single-digit.apl) | نكرر كل حرف حسب العدد بعده |
+| 1934 | [`1934-longest-common-prefix-of-words.apl`](examples/1934-longest-common-prefix-of-words.apl) | نقارن الحروف عمودا بعمود |
+| 1935 | [`1935-pad-right-fixed-width-column.apl`](examples/1935-pad-right-fixed-width-column.apl) | نكمل بحرف حتى العرض المطلوب |
+| 1936 | [`1936-count-vowels-in-english-text.apl`](examples/1936-count-vowels-in-english-text.apl) | نعد a e i o u |
+| 1937 | [`1937-affine-cipher-lowercase-encode.apl`](examples/1937-affine-cipher-lowercase-encode.apl) | نضرب الموقع ثم نجمع |
+| 1938 | [`1938-rail-fence-cipher-encode.apl`](examples/1938-rail-fence-cipher-encode.apl) | نكتب الحروف متعرجة على صفوف |
+| 1939 | [`1939-bank-single-teller-total-wait.apl`](examples/1939-bank-single-teller-total-wait.apl) | العميل ينتظر حتى يفرغ الصراف |
+| 1940 | [`1940-round-robin-finish-times.apl`](examples/1940-round-robin-finish-times.apl) | كل عملية تأخذ حصة زمنية ثم تعود للطابور |
+| 1941 | [`1941-longest-valid-parentheses-length.apl`](examples/1941-longest-valid-parentheses-length.apl) | نخزن مواضع الأقواس في مكدس |
 
 ### تشغيل أي مثال
 
@@ -2304,7 +2321,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 1924 مثال
+**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 1941 مثال
 
 ## Language platform tools
 
