@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 101 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **2025 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **2054 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -274,9 +274,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (2025 مثال)
+## الأمثلة الجاهزة (2054 مثال)
 
-مجلد `examples/` يحتوي على **2025 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **2054 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -2305,6 +2305,35 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 2023 | [`2023-continued-fraction-of-rational-number.apl`](examples/2023-continued-fraction-of-rational-number.apl) | نكرر القسمة الصحيحة كخوارزمية إقليدس |
 | 2024 | [`2024-egyptian-fraction-greedy-expansion.apl`](examples/2024-egyptian-fraction-greedy-expansion.apl) | نطرح أكبر كسر وحدة ممكن في كل خطوة |
 | 2025 | [`2025-farey-sequence-term-count.apl`](examples/2025-farey-sequence-term-count.apl) | نولد الحد التالي من الحدين السابقين بصيغة مباشرة |
+| 2026 | [`2026-reverse-word-order-collapse-spaces.apl`](examples/2026-reverse-word-order-collapse-spaces.apl) | نقسم عند المسافات ونعكس القائمة ونجمعها بمسافة واحدة |
+| 2027 | [`2027-is-subsequence-two-pointer-scan.apl`](examples/2027-is-subsequence-two-pointer-scan.apl) | نمشي على النص الثاني ونطابق حروف الأول بالترتيب |
+| 2028 | [`2028-common-prefix-shrink-until-match.apl`](examples/2028-common-prefix-shrink-until-match.apl) | نقص البادئة حتى تبدأ بها كل كلمة |
+| 2029 | [`2029-compress-repeats-only-if-shorter.apl`](examples/2029-compress-repeats-only-if-shorter.apl) | نكتب الحرف وعدده ونرجع الأصل إن لم يقصر |
+| 2030 | [`2030-one-edit-distance-string-check.apl`](examples/2030-one-edit-distance-string-check.apl) | إدراج أو حذف أو استبدال حرف واحد |
+| 2031 | [`2031-isomorphic-strings-two-way-map.apl`](examples/2031-isomorphic-strings-two-way-map.apl) | كل حرف يقابل حرفا واحدا في الاتجاهين |
+| 2032 | [`2032-word-pattern-bijection-check.apl`](examples/2032-word-pattern-bijection-check.apl) | كل حرف يقابل كلمة واحدة والعكس |
+| 2033 | [`2033-first-unique-character-position.apl`](examples/2033-first-unique-character-position.apl) | نعد التكرارات ثم نبحث عن أول عدد يساوي واحد |
+| 2034 | [`2034-ransom-note-letter-budget.apl`](examples/2034-ransom-note-letter-budget.apl) | نخصم حروف الرسالة من رصيد حروف المجلة |
+| 2035 | [`2035-string-rotation-doubled-search.apl`](examples/2035-string-rotation-doubled-search.apl) | نبحث عن الأول داخل الثاني مكررا مرتين |
+| 2036 | [`2036-substring-count-overlapping-matches.apl`](examples/2036-substring-count-overlapping-matches.apl) | نفحص كل موضع بداية ممكن |
+| 2037 | [`2037-characters-sorted-by-frequency-desc.apl`](examples/2037-characters-sorted-by-frequency-desc.apl) | الأكثر تكرارا أولا والتعادل بالترتيب الأبجدي |
+| 2038 | [`2038-palindrome-allow-one-deletion.apl`](examples/2038-palindrome-allow-one-deletion.apl) | عند أول اختلاف نجرب حذف أحد الحرفين |
+| 2039 | [`2039-longest-unique-substring-last-seen.apl`](examples/2039-longest-unique-substring-last-seen.apl) | نخزن آخر موضع لكل حرف ونحرك بداية النافذة |
+| 2040 | [`2040-reverse-integer-with-32-bit-guard.apl`](examples/2040-reverse-integer-with-32-bit-guard.apl) | نرجع صفرا إن تجاوز المعكوس حد 32 بت |
+| 2041 | [`2041-palindrome-number-reverse-half.apl`](examples/2041-palindrome-number-reverse-half.apl) | نعكس نصف الأرقام فقط ونقارن |
+| 2042 | [`2042-add-binary-strings-with-carry.apl`](examples/2042-add-binary-strings-with-carry.apl) | نجمع من اليمين مع الحمل |
+| 2043 | [`2043-add-decimal-strings-manual-carry.apl`](examples/2043-add-decimal-strings-manual-carry.apl) | جمع خانة بخانة مع حمل |
+| 2044 | [`2044-plus-one-digit-list-carry.apl`](examples/2044-plus-one-digit-list-carry.apl) | نمشي من اليمين ونحمل عند التسعة |
+| 2045 | [`2045-count-set-bits-for-zero-to-n.apl`](examples/2045-count-set-bits-for-zero-to-n.apl) | عدد بتات i يساوي عدد بتات i/2 زائد آخر بت |
+| 2046 | [`2046-power-of-base-check-by-division.apl`](examples/2046-power-of-base-check-by-division.apl) | نقسم على الأساس طالما يقبل القسمة |
+| 2047 | [`2047-reverse-bits-of-32-bit-integer.apl`](examples/2047-reverse-bits-of-32-bit-integer.apl) | نأخذ آخر بت ونضعه في بداية الناتج 32 مرة |
+| 2048 | [`2048-hamming-weight-kernighan-loop.apl`](examples/2048-hamming-weight-kernighan-loop.apl) | كل خطوة تمسح أقل بت واحد |
+| 2049 | [`2049-number-complement-flip-all-bits.apl`](examples/2049-number-complement-flip-all-bits.apl) | نصنع قناعا من آحاد بطول العدد ونطبق XOR |
+| 2050 | [`2050-bitwise-and-of-number-range-prefix.apl`](examples/2050-bitwise-and-of-number-range-prefix.apl) | النتيجة هي البادئة الثنائية المشتركة بين الطرفين |
+| 2051 | [`2051-add-two-integers-with-xor-and-carry.apl`](examples/2051-add-two-integers-with-xor-and-carry.apl) | XOR يعطي المجموع بلا حمل وAND مزاحا يعطي الحمل |
+| 2052 | [`2052-maximum-xor-of-any-pair-brute.apl`](examples/2052-maximum-xor-of-any-pair-brute.apl) | نجرب كل الأزواج ونحتفظ بالأكبر |
+| 2053 | [`2053-gray-code-binary-conversion-both-ways.apl`](examples/2053-gray-code-binary-conversion-both-ways.apl) | غراي يساوي n XOR n>>1 والعكس بطي الإزاحات |
+| 2054 | [`2054-parity-of-bits-xor-fold.apl`](examples/2054-parity-of-bits-xor-fold.apl) | نطوي العدد على نفسه بإزاحات متناقصة |
 
 ### تشغيل أي مثال
 
@@ -2405,7 +2434,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 2025 مثال
+**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 2054 مثال
 
 ## Language platform tools
 
