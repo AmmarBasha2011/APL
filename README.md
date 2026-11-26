@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 101 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **2398 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **2458 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -274,9 +274,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (2398 مثال)
+## الأمثلة الجاهزة (2458 مثال)
 
-مجلد `examples/` يحتوي على **2398 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **2458 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -2678,6 +2678,66 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 2396 | [`2396-class-toggle-switch-state-flips.apl`](examples/2396-class-toggle-switch-state-flips.apl) | يقلب الحالة |
 | 2397 | [`2397-class-accumulator-history-list.apl`](examples/2397-class-accumulator-history-list.apl) | يحفظ القيم |
 | 2398 | [`2398-class-parking-lot-capacity-park-leave.apl`](examples/2398-class-parking-lot-capacity-park-leave.apl) | سعة محدودة |
+| 2399 | [`2399-sum-multiples-of-2-below-limit-v2.apl`](examples/2399-sum-multiples-of-2-below-limit-v2.apl) | نجمع مضاعفات 2 الأصغر من ن |
+| 2400 | [`2400-sum-multiples-of-4-below-limit-v2.apl`](examples/2400-sum-multiples-of-4-below-limit-v2.apl) | نجمع مضاعفات 4 الأصغر من ن |
+| 2401 | [`2401-sum-multiples-of-5-below-limit-v2.apl`](examples/2401-sum-multiples-of-5-below-limit-v2.apl) | نجمع مضاعفات 5 الأصغر من ن |
+| 2402 | [`2402-count-multiples-of-2-up-to-limit.apl`](examples/2402-count-multiples-of-2-up-to-limit.apl) | نعد المضاعفات من 1 إلى ن |
+| 2403 | [`2403-count-multiples-of-4-up-to-limit.apl`](examples/2403-count-multiples-of-4-up-to-limit.apl) | نعد المضاعفات من 1 إلى ن |
+| 2404 | [`2404-count-multiples-of-5-up-to-limit.apl`](examples/2404-count-multiples-of-5-up-to-limit.apl) | نعد المضاعفات من 1 إلى ن |
+| 2405 | [`2405-list-multiply-each-by-2.apl`](examples/2405-list-multiply-each-by-2.apl) | نبني قائمة جديدة |
+| 2406 | [`2406-list-multiply-each-by-4.apl`](examples/2406-list-multiply-each-by-4.apl) | نبني قائمة جديدة |
+| 2407 | [`2407-list-multiply-each-by-5.apl`](examples/2407-list-multiply-each-by-5.apl) | نبني قائمة جديدة |
+| 2408 | [`2408-list-add-2-to-each-item.apl`](examples/2408-list-add-2-to-each-item.apl) | نزيد كل عنصر |
+| 2409 | [`2409-list-add-4-to-each-item.apl`](examples/2409-list-add-4-to-each-item.apl) | نزيد كل عنصر |
+| 2410 | [`2410-list-add-5-to-each-item.apl`](examples/2410-list-add-5-to-each-item.apl) | نزيد كل عنصر |
+| 2411 | [`2411-list-count-greater-than-2.apl`](examples/2411-list-count-greater-than-2.apl) | نعد الأكبر |
+| 2412 | [`2412-list-count-greater-than-4.apl`](examples/2412-list-count-greater-than-4.apl) | نعد الأكبر |
+| 2413 | [`2413-list-count-greater-than-5.apl`](examples/2413-list-count-greater-than-5.apl) | نعد الأكبر |
+| 2414 | [`2414-list-keep-divisible-by-2.apl`](examples/2414-list-keep-divisible-by-2.apl) | نصفي القائمة |
+| 2415 | [`2415-list-keep-divisible-by-4.apl`](examples/2415-list-keep-divisible-by-4.apl) | نصفي القائمة |
+| 2416 | [`2416-list-keep-divisible-by-5.apl`](examples/2416-list-keep-divisible-by-5.apl) | نصفي القائمة |
+| 2417 | [`2417-digit-sum-of-2-to-the-power-n.apl`](examples/2417-digit-sum-of-2-to-the-power-n.apl) | نحسب القوة ثم نجمع الأرقام |
+| 2418 | [`2418-digit-sum-of-4-to-the-power-n.apl`](examples/2418-digit-sum-of-4-to-the-power-n.apl) | نحسب القوة ثم نجمع الأرقام |
+| 2419 | [`2419-digit-sum-of-5-to-the-power-n.apl`](examples/2419-digit-sum-of-5-to-the-power-n.apl) | نحسب القوة ثم نجمع الأرقام |
+| 2420 | [`2420-sum-of-remainders-mod-2-up-to-n.apl`](examples/2420-sum-of-remainders-mod-2-up-to-n.apl) | نجمع ي % 2 |
+| 2421 | [`2421-sum-of-remainders-mod-4-up-to-n.apl`](examples/2421-sum-of-remainders-mod-4-up-to-n.apl) | نجمع ي % 4 |
+| 2422 | [`2422-sum-of-remainders-mod-5-up-to-n.apl`](examples/2422-sum-of-remainders-mod-5-up-to-n.apl) | نجمع ي % 5 |
+| 2423 | [`2423-number-to-base-2-string-v2.apl`](examples/2423-number-to-base-2-string-v2.apl) | قسمة متكررة |
+| 2424 | [`2424-number-to-base-4-string-v2.apl`](examples/2424-number-to-base-4-string-v2.apl) | قسمة متكررة |
+| 2425 | [`2425-number-to-base-5-string-v2.apl`](examples/2425-number-to-base-5-string-v2.apl) | قسمة متكررة |
+| 2426 | [`2426-count-numbers-below-hundred-with-digit-sum-2.apl`](examples/2426-count-numbers-below-hundred-with-digit-sum-2.apl) | نعد الأعداد |
+| 2427 | [`2427-count-numbers-below-hundred-with-digit-sum-4.apl`](examples/2427-count-numbers-below-hundred-with-digit-sum-4.apl) | نعد الأعداد |
+| 2428 | [`2428-count-numbers-below-hundred-with-digit-sum-5.apl`](examples/2428-count-numbers-below-hundred-with-digit-sum-5.apl) | نعد الأعداد |
+| 2429 | [`2429-list-take-every-2th-item.apl`](examples/2429-list-take-every-2th-item.apl) | شريحة بخطوة |
+| 2430 | [`2430-list-take-every-3th-item.apl`](examples/2430-list-take-every-3th-item.apl) | شريحة بخطوة |
+| 2431 | [`2431-list-take-every-4th-item.apl`](examples/2431-list-take-every-4th-item.apl) | شريحة بخطوة |
+| 2432 | [`2432-list-rotate-left-by-1.apl`](examples/2432-list-rotate-left-by-1.apl) | نقص ونلصق |
+| 2433 | [`2433-list-rotate-left-by-2.apl`](examples/2433-list-rotate-left-by-2.apl) | نقص ونلصق |
+| 2434 | [`2434-list-rotate-left-by-3.apl`](examples/2434-list-rotate-left-by-3.apl) | نقص ونلصق |
+| 2435 | [`2435-nth-term-arithmetic-sequence-step-2.apl`](examples/2435-nth-term-arithmetic-sequence-step-2.apl) | أ + (ن-1)*2 |
+| 2436 | [`2436-nth-term-arithmetic-sequence-step-4.apl`](examples/2436-nth-term-arithmetic-sequence-step-4.apl) | أ + (ن-1)*4 |
+| 2437 | [`2437-nth-term-arithmetic-sequence-step-5.apl`](examples/2437-nth-term-arithmetic-sequence-step-5.apl) | أ + (ن-1)*5 |
+| 2438 | [`2438-sum-of-powers-of-2-up-to-n.apl`](examples/2438-sum-of-powers-of-2-up-to-n.apl) | نجمع 2^ي |
+| 2439 | [`2439-sum-of-powers-of-4-up-to-n.apl`](examples/2439-sum-of-powers-of-4-up-to-n.apl) | نجمع 4^ي |
+| 2440 | [`2440-sum-of-powers-of-5-up-to-n.apl`](examples/2440-sum-of-powers-of-5-up-to-n.apl) | نجمع 5^ي |
+| 2441 | [`2441-clamp-list-values-to-max-2.apl`](examples/2441-clamp-list-values-to-max-2.apl) | نقص ما يزيد |
+| 2442 | [`2442-clamp-list-values-to-max-4.apl`](examples/2442-clamp-list-values-to-max-4.apl) | نقص ما يزيد |
+| 2443 | [`2443-clamp-list-values-to-max-5.apl`](examples/2443-clamp-list-values-to-max-5.apl) | نقص ما يزيد |
+| 2444 | [`2444-caesar-shift-by-1-lowercase.apl`](examples/2444-caesar-shift-by-1-lowercase.apl) | نزيح الأحرف الصغيرة |
+| 2445 | [`2445-caesar-shift-by-5-lowercase.apl`](examples/2445-caesar-shift-by-5-lowercase.apl) | نزيح الأحرف الصغيرة |
+| 2446 | [`2446-caesar-shift-by-13-lowercase.apl`](examples/2446-caesar-shift-by-13-lowercase.apl) | نزيح الأحرف الصغيرة |
+| 2447 | [`2447-repeat-text-2-times-with-dash.apl`](examples/2447-repeat-text-2-times-with-dash.apl) | نكرر ونفصل |
+| 2448 | [`2448-repeat-text-4-times-with-dash.apl`](examples/2448-repeat-text-4-times-with-dash.apl) | نكرر ونفصل |
+| 2449 | [`2449-repeat-text-5-times-with-dash.apl`](examples/2449-repeat-text-5-times-with-dash.apl) | نكرر ونفصل |
+| 2450 | [`2450-pad-number-with-zeros-to-width-3.apl`](examples/2450-pad-number-with-zeros-to-width-3.apl) | zfill |
+| 2451 | [`2451-pad-number-with-zeros-to-width-8.apl`](examples/2451-pad-number-with-zeros-to-width-8.apl) | zfill |
+| 2452 | [`2452-pad-number-with-zeros-to-width-10.apl`](examples/2452-pad-number-with-zeros-to-width-10.apl) | zfill |
+| 2453 | [`2453-truncate-text-to-first-3-chars.apl`](examples/2453-truncate-text-to-first-3-chars.apl) | شريحة |
+| 2454 | [`2454-truncate-text-to-first-5-chars.apl`](examples/2454-truncate-text-to-first-5-chars.apl) | شريحة |
+| 2455 | [`2455-truncate-text-to-first-8-chars.apl`](examples/2455-truncate-text-to-first-8-chars.apl) | شريحة |
+| 2456 | [`2456-count-triples-sum-to-6-small.apl`](examples/2456-count-triples-sum-to-6-small.apl) | أ<=ب<=ج موجبة |
+| 2457 | [`2457-count-triples-sum-to-9-small.apl`](examples/2457-count-triples-sum-to-9-small.apl) | أ<=ب<=ج موجبة |
+| 2458 | [`2458-count-triples-sum-to-12-small.apl`](examples/2458-count-triples-sum-to-12-small.apl) | أ<=ب<=ج موجبة |
 
 ### تشغيل أي مثال
 
@@ -2778,7 +2838,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 2398 مثال
+**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 2458 مثال
 
 ## Language platform tools
 
