@@ -116,9 +116,9 @@
 | 106 | [black-library.md](black-library.md) | مكتبة `black` — منسّق شيفرة بايثون من حزمة black |
 
 ---
-## الأمثلة الجاهزة (2833 مثال)
+## الأمثلة الجاهزة (2964 مثال)
 
-2833 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+2964 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -2955,6 +2955,137 @@
 | 2831 | [`2831-count-letter-e-in-text-v7.apl`](../examples/2831-count-letter-e-in-text-v7.apl) | نعد ظهور الحرف |
 | 2832 | [`2832-count-letter-i-in-text-v8.apl`](../examples/2832-count-letter-i-in-text-v8.apl) | نعد ظهور الحرف |
 | 2833 | [`2833-count-letter-o-in-text-v9.apl`](../examples/2833-count-letter-o-in-text-v9.apl) | نعد ظهور الحرف |
+| 2834 | [`2834-sum-multiples-of-20-below-limit-v2.apl`](../examples/2834-sum-multiples-of-20-below-limit-v2.apl) | نجمع مضاعفات 20 الأصغر من ن |
+| 2835 | [`2835-sum-multiples-of-21-below-limit-v2.apl`](../examples/2835-sum-multiples-of-21-below-limit-v2.apl) | نجمع مضاعفات 21 الأصغر من ن |
+| 2836 | [`2836-sum-multiples-of-22-below-limit-v2.apl`](../examples/2836-sum-multiples-of-22-below-limit-v2.apl) | نجمع مضاعفات 22 الأصغر من ن |
+| 2837 | [`2837-sum-multiples-of-23-below-limit-v2.apl`](../examples/2837-sum-multiples-of-23-below-limit-v2.apl) | نجمع مضاعفات 23 الأصغر من ن |
+| 2838 | [`2838-sum-multiples-of-24-below-limit-v2.apl`](../examples/2838-sum-multiples-of-24-below-limit-v2.apl) | نجمع مضاعفات 24 الأصغر من ن |
+| 2839 | [`2839-count-multiples-of-20-up-to-limit.apl`](../examples/2839-count-multiples-of-20-up-to-limit.apl) | نعد المضاعفات من 1 إلى ن |
+| 2840 | [`2840-count-multiples-of-21-up-to-limit.apl`](../examples/2840-count-multiples-of-21-up-to-limit.apl) | نعد المضاعفات من 1 إلى ن |
+| 2841 | [`2841-count-multiples-of-22-up-to-limit.apl`](../examples/2841-count-multiples-of-22-up-to-limit.apl) | نعد المضاعفات من 1 إلى ن |
+| 2842 | [`2842-count-multiples-of-23-up-to-limit.apl`](../examples/2842-count-multiples-of-23-up-to-limit.apl) | نعد المضاعفات من 1 إلى ن |
+| 2843 | [`2843-count-multiples-of-24-up-to-limit.apl`](../examples/2843-count-multiples-of-24-up-to-limit.apl) | نعد المضاعفات من 1 إلى ن |
+| 2844 | [`2844-list-multiply-each-by-20.apl`](../examples/2844-list-multiply-each-by-20.apl) | نبني قائمة جديدة |
+| 2845 | [`2845-list-multiply-each-by-21.apl`](../examples/2845-list-multiply-each-by-21.apl) | نبني قائمة جديدة |
+| 2846 | [`2846-list-multiply-each-by-22.apl`](../examples/2846-list-multiply-each-by-22.apl) | نبني قائمة جديدة |
+| 2847 | [`2847-list-multiply-each-by-23.apl`](../examples/2847-list-multiply-each-by-23.apl) | نبني قائمة جديدة |
+| 2848 | [`2848-list-multiply-each-by-24.apl`](../examples/2848-list-multiply-each-by-24.apl) | نبني قائمة جديدة |
+| 2849 | [`2849-list-add-20-to-each-item.apl`](../examples/2849-list-add-20-to-each-item.apl) | نزيد كل عنصر |
+| 2850 | [`2850-list-add-21-to-each-item.apl`](../examples/2850-list-add-21-to-each-item.apl) | نزيد كل عنصر |
+| 2851 | [`2851-list-add-22-to-each-item.apl`](../examples/2851-list-add-22-to-each-item.apl) | نزيد كل عنصر |
+| 2852 | [`2852-list-add-23-to-each-item.apl`](../examples/2852-list-add-23-to-each-item.apl) | نزيد كل عنصر |
+| 2853 | [`2853-list-add-24-to-each-item.apl`](../examples/2853-list-add-24-to-each-item.apl) | نزيد كل عنصر |
+| 2854 | [`2854-list-count-greater-than-20.apl`](../examples/2854-list-count-greater-than-20.apl) | نعد الأكبر |
+| 2855 | [`2855-list-count-greater-than-21.apl`](../examples/2855-list-count-greater-than-21.apl) | نعد الأكبر |
+| 2856 | [`2856-list-count-greater-than-22.apl`](../examples/2856-list-count-greater-than-22.apl) | نعد الأكبر |
+| 2857 | [`2857-list-count-greater-than-23.apl`](../examples/2857-list-count-greater-than-23.apl) | نعد الأكبر |
+| 2858 | [`2858-list-count-greater-than-24.apl`](../examples/2858-list-count-greater-than-24.apl) | نعد الأكبر |
+| 2859 | [`2859-list-keep-divisible-by-20.apl`](../examples/2859-list-keep-divisible-by-20.apl) | نصفي القائمة |
+| 2860 | [`2860-list-keep-divisible-by-21.apl`](../examples/2860-list-keep-divisible-by-21.apl) | نصفي القائمة |
+| 2861 | [`2861-list-keep-divisible-by-22.apl`](../examples/2861-list-keep-divisible-by-22.apl) | نصفي القائمة |
+| 2862 | [`2862-list-keep-divisible-by-23.apl`](../examples/2862-list-keep-divisible-by-23.apl) | نصفي القائمة |
+| 2863 | [`2863-list-keep-divisible-by-24.apl`](../examples/2863-list-keep-divisible-by-24.apl) | نصفي القائمة |
+| 2864 | [`2864-digit-sum-of-20-to-the-power-n.apl`](../examples/2864-digit-sum-of-20-to-the-power-n.apl) | نحسب القوة ثم نجمع الأرقام |
+| 2865 | [`2865-digit-sum-of-21-to-the-power-n.apl`](../examples/2865-digit-sum-of-21-to-the-power-n.apl) | نحسب القوة ثم نجمع الأرقام |
+| 2866 | [`2866-digit-sum-of-22-to-the-power-n.apl`](../examples/2866-digit-sum-of-22-to-the-power-n.apl) | نحسب القوة ثم نجمع الأرقام |
+| 2867 | [`2867-digit-sum-of-23-to-the-power-n.apl`](../examples/2867-digit-sum-of-23-to-the-power-n.apl) | نحسب القوة ثم نجمع الأرقام |
+| 2868 | [`2868-digit-sum-of-24-to-the-power-n.apl`](../examples/2868-digit-sum-of-24-to-the-power-n.apl) | نحسب القوة ثم نجمع الأرقام |
+| 2869 | [`2869-sum-of-remainders-mod-20-up-to-n.apl`](../examples/2869-sum-of-remainders-mod-20-up-to-n.apl) | نجمع ي % 20 |
+| 2870 | [`2870-sum-of-remainders-mod-21-up-to-n.apl`](../examples/2870-sum-of-remainders-mod-21-up-to-n.apl) | نجمع ي % 21 |
+| 2871 | [`2871-sum-of-remainders-mod-22-up-to-n.apl`](../examples/2871-sum-of-remainders-mod-22-up-to-n.apl) | نجمع ي % 22 |
+| 2872 | [`2872-sum-of-remainders-mod-23-up-to-n.apl`](../examples/2872-sum-of-remainders-mod-23-up-to-n.apl) | نجمع ي % 23 |
+| 2873 | [`2873-sum-of-remainders-mod-24-up-to-n.apl`](../examples/2873-sum-of-remainders-mod-24-up-to-n.apl) | نجمع ي % 24 |
+| 2874 | [`2874-count-numbers-below-hundred-with-digit-sum-20.apl`](../examples/2874-count-numbers-below-hundred-with-digit-sum-20.apl) | نعد الأعداد |
+| 2875 | [`2875-count-numbers-below-hundred-with-digit-sum-21.apl`](../examples/2875-count-numbers-below-hundred-with-digit-sum-21.apl) | نعد الأعداد |
+| 2876 | [`2876-count-numbers-below-hundred-with-digit-sum-22.apl`](../examples/2876-count-numbers-below-hundred-with-digit-sum-22.apl) | نعد الأعداد |
+| 2877 | [`2877-count-numbers-below-hundred-with-digit-sum-23.apl`](../examples/2877-count-numbers-below-hundred-with-digit-sum-23.apl) | نعد الأعداد |
+| 2878 | [`2878-count-numbers-below-hundred-with-digit-sum-24.apl`](../examples/2878-count-numbers-below-hundred-with-digit-sum-24.apl) | نعد الأعداد |
+| 2879 | [`2879-list-take-every-20th-item.apl`](../examples/2879-list-take-every-20th-item.apl) | شريحة بخطوة |
+| 2880 | [`2880-list-take-every-21th-item.apl`](../examples/2880-list-take-every-21th-item.apl) | شريحة بخطوة |
+| 2881 | [`2881-list-take-every-22th-item.apl`](../examples/2881-list-take-every-22th-item.apl) | شريحة بخطوة |
+| 2882 | [`2882-list-take-every-23th-item.apl`](../examples/2882-list-take-every-23th-item.apl) | شريحة بخطوة |
+| 2883 | [`2883-list-take-every-24th-item.apl`](../examples/2883-list-take-every-24th-item.apl) | شريحة بخطوة |
+| 2884 | [`2884-list-rotate-left-by-19.apl`](../examples/2884-list-rotate-left-by-19.apl) | نقص ونلصق |
+| 2885 | [`2885-list-rotate-left-by-20.apl`](../examples/2885-list-rotate-left-by-20.apl) | نقص ونلصق |
+| 2886 | [`2886-list-rotate-left-by-21.apl`](../examples/2886-list-rotate-left-by-21.apl) | نقص ونلصق |
+| 2887 | [`2887-list-rotate-left-by-22.apl`](../examples/2887-list-rotate-left-by-22.apl) | نقص ونلصق |
+| 2888 | [`2888-list-rotate-left-by-23.apl`](../examples/2888-list-rotate-left-by-23.apl) | نقص ونلصق |
+| 2889 | [`2889-nth-term-arithmetic-sequence-step-20.apl`](../examples/2889-nth-term-arithmetic-sequence-step-20.apl) | أ + (ن-1)*20 |
+| 2890 | [`2890-nth-term-arithmetic-sequence-step-21.apl`](../examples/2890-nth-term-arithmetic-sequence-step-21.apl) | أ + (ن-1)*21 |
+| 2891 | [`2891-nth-term-arithmetic-sequence-step-22.apl`](../examples/2891-nth-term-arithmetic-sequence-step-22.apl) | أ + (ن-1)*22 |
+| 2892 | [`2892-nth-term-arithmetic-sequence-step-23.apl`](../examples/2892-nth-term-arithmetic-sequence-step-23.apl) | أ + (ن-1)*23 |
+| 2893 | [`2893-nth-term-arithmetic-sequence-step-24.apl`](../examples/2893-nth-term-arithmetic-sequence-step-24.apl) | أ + (ن-1)*24 |
+| 2894 | [`2894-sum-of-powers-of-20-up-to-n.apl`](../examples/2894-sum-of-powers-of-20-up-to-n.apl) | نجمع 20^ي |
+| 2895 | [`2895-sum-of-powers-of-21-up-to-n.apl`](../examples/2895-sum-of-powers-of-21-up-to-n.apl) | نجمع 21^ي |
+| 2896 | [`2896-sum-of-powers-of-22-up-to-n.apl`](../examples/2896-sum-of-powers-of-22-up-to-n.apl) | نجمع 22^ي |
+| 2897 | [`2897-sum-of-powers-of-23-up-to-n.apl`](../examples/2897-sum-of-powers-of-23-up-to-n.apl) | نجمع 23^ي |
+| 2898 | [`2898-sum-of-powers-of-24-up-to-n.apl`](../examples/2898-sum-of-powers-of-24-up-to-n.apl) | نجمع 24^ي |
+| 2899 | [`2899-clamp-list-values-to-max-20.apl`](../examples/2899-clamp-list-values-to-max-20.apl) | نقص ما يزيد |
+| 2900 | [`2900-clamp-list-values-to-max-21.apl`](../examples/2900-clamp-list-values-to-max-21.apl) | نقص ما يزيد |
+| 2901 | [`2901-clamp-list-values-to-max-22.apl`](../examples/2901-clamp-list-values-to-max-22.apl) | نقص ما يزيد |
+| 2902 | [`2902-clamp-list-values-to-max-23.apl`](../examples/2902-clamp-list-values-to-max-23.apl) | نقص ما يزيد |
+| 2903 | [`2903-clamp-list-values-to-max-24.apl`](../examples/2903-clamp-list-values-to-max-24.apl) | نقص ما يزيد |
+| 2904 | [`2904-caesar-shift-by-19-lowercase.apl`](../examples/2904-caesar-shift-by-19-lowercase.apl) | نزيح الأحرف الصغيرة |
+| 2905 | [`2905-caesar-shift-by-20-lowercase.apl`](../examples/2905-caesar-shift-by-20-lowercase.apl) | نزيح الأحرف الصغيرة |
+| 2906 | [`2906-caesar-shift-by-21-lowercase.apl`](../examples/2906-caesar-shift-by-21-lowercase.apl) | نزيح الأحرف الصغيرة |
+| 2907 | [`2907-caesar-shift-by-22-lowercase.apl`](../examples/2907-caesar-shift-by-22-lowercase.apl) | نزيح الأحرف الصغيرة |
+| 2908 | [`2908-caesar-shift-by-23-lowercase.apl`](../examples/2908-caesar-shift-by-23-lowercase.apl) | نزيح الأحرف الصغيرة |
+| 2909 | [`2909-repeat-text-20-times-with-dash.apl`](../examples/2909-repeat-text-20-times-with-dash.apl) | نكرر ونفصل |
+| 2910 | [`2910-repeat-text-21-times-with-dash.apl`](../examples/2910-repeat-text-21-times-with-dash.apl) | نكرر ونفصل |
+| 2911 | [`2911-repeat-text-22-times-with-dash.apl`](../examples/2911-repeat-text-22-times-with-dash.apl) | نكرر ونفصل |
+| 2912 | [`2912-repeat-text-23-times-with-dash.apl`](../examples/2912-repeat-text-23-times-with-dash.apl) | نكرر ونفصل |
+| 2913 | [`2913-repeat-text-24-times-with-dash.apl`](../examples/2913-repeat-text-24-times-with-dash.apl) | نكرر ونفصل |
+| 2914 | [`2914-pad-number-with-zeros-to-width-20.apl`](../examples/2914-pad-number-with-zeros-to-width-20.apl) | zfill |
+| 2915 | [`2915-pad-number-with-zeros-to-width-21.apl`](../examples/2915-pad-number-with-zeros-to-width-21.apl) | zfill |
+| 2916 | [`2916-pad-number-with-zeros-to-width-22.apl`](../examples/2916-pad-number-with-zeros-to-width-22.apl) | zfill |
+| 2917 | [`2917-pad-number-with-zeros-to-width-23.apl`](../examples/2917-pad-number-with-zeros-to-width-23.apl) | zfill |
+| 2918 | [`2918-pad-number-with-zeros-to-width-24.apl`](../examples/2918-pad-number-with-zeros-to-width-24.apl) | zfill |
+| 2919 | [`2919-truncate-text-to-first-19-chars.apl`](../examples/2919-truncate-text-to-first-19-chars.apl) | شريحة |
+| 2920 | [`2920-truncate-text-to-first-20-chars.apl`](../examples/2920-truncate-text-to-first-20-chars.apl) | شريحة |
+| 2921 | [`2921-truncate-text-to-first-21-chars.apl`](../examples/2921-truncate-text-to-first-21-chars.apl) | شريحة |
+| 2922 | [`2922-truncate-text-to-first-22-chars.apl`](../examples/2922-truncate-text-to-first-22-chars.apl) | شريحة |
+| 2923 | [`2923-truncate-text-to-first-23-chars.apl`](../examples/2923-truncate-text-to-first-23-chars.apl) | شريحة |
+| 2924 | [`2924-count-triples-sum-to-24-small.apl`](../examples/2924-count-triples-sum-to-24-small.apl) | أ<=ب<=ج موجبة |
+| 2925 | [`2925-count-triples-sum-to-25-small.apl`](../examples/2925-count-triples-sum-to-25-small.apl) | أ<=ب<=ج موجبة |
+| 2926 | [`2926-count-triples-sum-to-26-small.apl`](../examples/2926-count-triples-sum-to-26-small.apl) | أ<=ب<=ج موجبة |
+| 2927 | [`2927-square-of-radius-times-22-area-approx.apl`](../examples/2927-square-of-radius-times-22-area-approx.apl) | المساحة ≈ 22×نق²/7 |
+| 2928 | [`2928-square-of-radius-times-3-area-approx.apl`](../examples/2928-square-of-radius-times-3-area-approx.apl) | المساحة ≈ 3×نق²/7 |
+| 2929 | [`2929-square-of-radius-times-6-area-approx.apl`](../examples/2929-square-of-radius-times-6-area-approx.apl) | المساحة ≈ 6×نق²/7 |
+| 2930 | [`2930-rectangle-area-scaled-by-2.apl`](../examples/2930-rectangle-area-scaled-by-2.apl) | نكبر الضلعين |
+| 2931 | [`2931-rectangle-area-scaled-by-3.apl`](../examples/2931-rectangle-area-scaled-by-3.apl) | نكبر الضلعين |
+| 2932 | [`2932-rectangle-area-scaled-by-4.apl`](../examples/2932-rectangle-area-scaled-by-4.apl) | نكبر الضلعين |
+| 2933 | [`2933-interior-angle-sum-of-polygon-plus-1.apl`](../examples/2933-interior-angle-sum-of-polygon-plus-1.apl) | (ن-2)*180 |
+| 2934 | [`2934-interior-angle-sum-of-polygon-plus-2.apl`](../examples/2934-interior-angle-sum-of-polygon-plus-2.apl) | (ن-2)*180 |
+| 2935 | [`2935-interior-angle-sum-of-polygon-plus-3.apl`](../examples/2935-interior-angle-sum-of-polygon-plus-3.apl) | (ن-2)*180 |
+| 2936 | [`2936-sum-of-ord-values-offset-1.apl`](../examples/2936-sum-of-ord-values-offset-1.apl) | نجمع ord+1 |
+| 2937 | [`2937-sum-of-ord-values-offset-2.apl`](../examples/2937-sum-of-ord-values-offset-2.apl) | نجمع ord+2 |
+| 2938 | [`2938-sum-of-ord-values-offset-3.apl`](../examples/2938-sum-of-ord-values-offset-3.apl) | نجمع ord+3 |
+| 2939 | [`2939-linear-recurrence-a-n-equals-2-times-previous-plus-one.apl`](../examples/2939-linear-recurrence-a-n-equals-2-times-previous-plus-one.apl) | نكرر القاعدة |
+| 2940 | [`2940-linear-recurrence-a-n-equals-3-times-previous-plus-one.apl`](../examples/2940-linear-recurrence-a-n-equals-3-times-previous-plus-one.apl) | نكرر القاعدة |
+| 2941 | [`2941-linear-recurrence-a-n-equals-4-times-previous-plus-one.apl`](../examples/2941-linear-recurrence-a-n-equals-4-times-previous-plus-one.apl) | نكرر القاعدة |
+| 2942 | [`2942-top-1-largest-items-sorted-desc.apl`](../examples/2942-top-1-largest-items-sorted-desc.apl) | نرتب تنازليا ونقطع |
+| 2943 | [`2943-top-2-largest-items-sorted-desc.apl`](../examples/2943-top-2-largest-items-sorted-desc.apl) | نرتب تنازليا ونقطع |
+| 2944 | [`2944-top-3-largest-items-sorted-desc.apl`](../examples/2944-top-3-largest-items-sorted-desc.apl) | نرتب تنازليا ونقطع |
+| 2945 | [`2945-bottom-1-smallest-items-sorted.apl`](../examples/2945-bottom-1-smallest-items-sorted.apl) | نرتب ونقطع |
+| 2946 | [`2946-bottom-2-smallest-items-sorted.apl`](../examples/2946-bottom-2-smallest-items-sorted.apl) | نرتب ونقطع |
+| 2947 | [`2947-bottom-3-smallest-items-sorted.apl`](../examples/2947-bottom-3-smallest-items-sorted.apl) | نرتب ونقطع |
+| 2948 | [`2948-shift-left-by-1-then-mask-byte.apl`](../examples/2948-shift-left-by-1-then-mask-byte.apl) | نزيح ونقطع 8 بتات |
+| 2949 | [`2949-shift-left-by-2-then-mask-byte.apl`](../examples/2949-shift-left-by-2-then-mask-byte.apl) | نزيح ونقطع 8 بتات |
+| 2950 | [`2950-shift-left-by-3-then-mask-byte.apl`](../examples/2950-shift-left-by-3-then-mask-byte.apl) | نزيح ونقطع 8 بتات |
+| 2951 | [`2951-shift-left-by-4-then-mask-byte.apl`](../examples/2951-shift-left-by-4-then-mask-byte.apl) | نزيح ونقطع 8 بتات |
+| 2952 | [`2952-shift-right-by-1-bits.apl`](../examples/2952-shift-right-by-1-bits.apl) | نزيح لليمين |
+| 2953 | [`2953-shift-right-by-2-bits.apl`](../examples/2953-shift-right-by-2-bits.apl) | نزيح لليمين |
+| 2954 | [`2954-shift-right-by-3-bits.apl`](../examples/2954-shift-right-by-3-bits.apl) | نزيح لليمين |
+| 2955 | [`2955-shift-right-by-4-bits.apl`](../examples/2955-shift-right-by-4-bits.apl) | نزيح لليمين |
+| 2956 | [`2956-max-sum-of-window-size-2.apl`](../examples/2956-max-sum-of-window-size-2.apl) | نزلق النافذة |
+| 2957 | [`2957-max-sum-of-window-size-3.apl`](../examples/2957-max-sum-of-window-size-3.apl) | نزلق النافذة |
+| 2958 | [`2958-max-sum-of-window-size-4.apl`](../examples/2958-max-sum-of-window-size-4.apl) | نزلق النافذة |
+| 2959 | [`2959-multiplication-table-row-of-3.apl`](../examples/2959-multiplication-table-row-of-3.apl) | من 1 إلى ن |
+| 2960 | [`2960-multiplication-table-row-of-6.apl`](../examples/2960-multiplication-table-row-of-6.apl) | من 1 إلى ن |
+| 2961 | [`2961-multiplication-table-row-of-9.apl`](../examples/2961-multiplication-table-row-of-9.apl) | من 1 إلى ن |
+| 2962 | [`2962-sum-of-squares-from-1-to-n.apl`](../examples/2962-sum-of-squares-from-1-to-n.apl) | نجمع المربعات |
+| 2963 | [`2963-sum-of-squares-from-2-to-n.apl`](../examples/2963-sum-of-squares-from-2-to-n.apl) | نجمع المربعات |
+| 2964 | [`2964-sum-of-squares-from-5-to-n.apl`](../examples/2964-sum-of-squares-from-5-to-n.apl) | نجمع المربعات |
 
 **التشغيل:**
 ```bash
@@ -3114,4 +3245,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **227,195 عنصراً**،
-مع **2833 مثال جاهز** في `examples/`.
+مع **2964 مثال جاهز** في `examples/`.
