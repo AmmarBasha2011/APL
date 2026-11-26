@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1665 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1686 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1665 مثال)
+## الأمثلة الجاهزة (1686 مثال)
 
-مجلد `examples/` يحتوي على **1665 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1686 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1940,6 +1940,27 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1663 | [`1663-square-free-check.apl`](examples/1663-square-free-check.apl) | لا يقبل القسمة على مربع أكبر من واحد |
 | 1664 | [`1664-consecutive-sum-ways.apl`](examples/1664-consecutive-sum-ways.apl) | بكم طريقة يساوي العدد مجموع أعداد موجبة متتالية |
 | 1665 | [`1665-trailing-zeros-of-factorial.apl`](examples/1665-trailing-zeros-of-factorial.apl) | عدد الأصفار في نهاية ن! |
+| 1666 | [`1666-intervals-total-covered-length.apl`](examples/1666-intervals-total-covered-length.apl) | ندمج الفترات المتداخلة ونجمع أطوالها |
+| 1667 | [`1667-intervals-any-overlap-check.apl`](examples/1667-intervals-any-overlap-check.apl) | نرتب ونقارن كل فترة بسابقتها |
+| 1668 | [`1668-set-union-of-lists.apl`](examples/1668-set-union-of-lists.apl) | كل عنصر يظهر مرة واحدة |
+| 1669 | [`1669-set-intersection-of-lists.apl`](examples/1669-set-intersection-of-lists.apl) | العناصر المشتركة دون تكرار |
+| 1670 | [`1670-set-symmetric-difference-lists.apl`](examples/1670-set-symmetric-difference-lists.apl) | عناصر في إحداهما فقط |
+| 1671 | [`1671-array-rotate-left-by-k.apl`](examples/1671-array-rotate-left-by-k.apl) | نقل أول ك عناصر إلى النهاية |
+| 1672 | [`1672-count-inversions-pairs.apl`](examples/1672-count-inversions-pairs.apl) | أزواج مرتبة بعكس الترتيب الصاعد |
+| 1673 | [`1673-subset-sum-reachable.apl`](examples/1673-subset-sum-reachable.apl) | هل نصل الهدف بجمع بعض العناصر |
+| 1674 | [`1674-binary-strings-of-length-n.apl`](examples/1674-binary-strings-of-length-n.apl) | نولدها بالترتيب |
+| 1675 | [`1675-balanced-parentheses-count.apl`](examples/1675-balanced-parentheses-count.apl) | عدد الأنماط الصحيحة لـ ن زوج |
+| 1676 | [`1676-squared-distance-two-points.apl`](examples/1676-squared-distance-two-points.apl) | نتجنب الجذر بالأعداد الصحيحة |
+| 1677 | [`1677-dot-product-of-vectors.apl`](examples/1677-dot-product-of-vectors.apl) | مجموع حاصل ضرب المركبات المتقابلة |
+| 1678 | [`1678-cross-product-sign-turn.apl`](examples/1678-cross-product-sign-turn.apl) | الجداء الاتجاهي يحدد اليمين أو اليسار |
+| 1679 | [`1679-bounding-box-of-points.apl`](examples/1679-bounding-box-of-points.apl) | أصغر وأكبر إحداثي في كل بعد |
+| 1680 | [`1680-integer-polygon-perimeter-squares.apl`](examples/1680-integer-polygon-perimeter-squares.apl) | نمر على الأضلاع بإغلاق المضلع |
+| 1681 | [`1681-min-heap-manual-push-pop.apl`](examples/1681-min-heap-manual-push-pop.apl) | نبني الكومة بإصلاح الموضع |
+| 1682 | [`1682-sliding-window-max-simple.apl`](examples/1682-sliding-window-max-simple.apl) | نأخذ أكبر عنصر في كل نافذة بطول ك |
+| 1683 | [`1683-linked-list-array-pairs-reverse.apl`](examples/1683-linked-list-array-pairs-reverse.apl) | نمثل الروابط بمصفوفة المؤشرات |
+| 1684 | [`1684-permutations-of-three-lists.apl`](examples/1684-permutations-of-three-lists.apl) | نولد كل الترتيبات بالتراجع |
+| 1685 | [`1685-subsets-with-target-sum-count.apl`](examples/1685-subsets-with-target-sum-count.apl) | نعد الطرق بجدول |
+| 1686 | [`1686-grid-path-count-obstacles.apl`](examples/1686-grid-path-count-obstacles.apl) | نعد المسارات يميناً وأسفل |
 
 ### تشغيل أي مثال
 
@@ -2040,7 +2061,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1665 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1686 مثال
 
 ## Language platform tools
 
