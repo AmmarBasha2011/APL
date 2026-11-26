@@ -116,9 +116,9 @@
 | 106 | [black-library.md](black-library.md) | مكتبة `black` — منسّق شيفرة بايثون من حزمة black |
 
 ---
-## الأمثلة الجاهزة (2218 مثال)
+## الأمثلة الجاهزة (2284 مثال)
 
-2218 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+2284 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -2340,6 +2340,72 @@
 | 2216 | [`2216-acronym-from-first-letters-upper.apl`](../examples/2216-acronym-from-first-letters-upper.apl) | نأخذ أول حرف |
 | 2217 | [`2217-hamming-weight-of-text-bits.apl`](../examples/2217-hamming-weight-of-text-bits.apl) | نعد الآحاد لكل رمز |
 | 2218 | [`2218-vowel-consonant-difference-text.apl`](../examples/2218-vowel-consonant-difference-text.apl) | نطرح الصامتة من الصوتية |
+| 2219 | [`2219-list-sum-of-evens-only.apl`](../examples/2219-list-sum-of-evens-only.apl) | نجمع الزوجية فقط |
+| 2220 | [`2220-list-count-of-positive-items.apl`](../examples/2220-list-count-of-positive-items.apl) | نعد القيم الأكبر من صفر |
+| 2221 | [`2221-list-max-minus-min-range.apl`](../examples/2221-list-max-minus-min-range.apl) | أكبر ناقص أصغر |
+| 2222 | [`2222-list-second-largest-distinct.apl`](../examples/2222-list-second-largest-distinct.apl) | نرتب ونتجاهل المكرر |
+| 2223 | [`2223-list-index-of-maximum-first.apl`](../examples/2223-list-index-of-maximum-first.apl) | أول موضع للقيمة الكبرى |
+| 2224 | [`2224-list-prefix-sums-running-total.apl`](../examples/2224-list-prefix-sums-running-total.apl) | مجموع حتى كل موضع |
+| 2225 | [`2225-list-differences-adjacent-pairs.apl`](../examples/2225-list-differences-adjacent-pairs.apl) | ق[ي+1]-ق[ي] |
+| 2226 | [`2226-list-is-sorted-ascending-check.apl`](../examples/2226-list-is-sorted-ascending-check.apl) | نقارن كل زوج |
+| 2227 | [`2227-list-remove-duplicates-keep-order.apl`](../examples/2227-list-remove-duplicates-keep-order.apl) | نبقي أول ظهور |
+| 2228 | [`2228-list-rotate-left-by-one.apl`](../examples/2228-list-rotate-left-by-one.apl) | أول عنصر للنهاية |
+| 2229 | [`2229-list-rotate-right-by-one.apl`](../examples/2229-list-rotate-right-by-one.apl) | آخر عنصر للبداية |
+| 2230 | [`2230-list-every-second-element-slice.apl`](../examples/2230-list-every-second-element-slice.apl) | شريحة بخطوة 2 |
+| 2231 | [`2231-list-square-each-element.apl`](../examples/2231-list-square-each-element.apl) | نبني قائمة جديدة |
+| 2232 | [`2232-list-keep-values-above-average.apl`](../examples/2232-list-keep-values-above-average.apl) | نقارن بالمتوسط |
+| 2233 | [`2233-list-count-inversions-pairs.apl`](../examples/2233-list-count-inversions-pairs.apl) | أزواج ي<ك وق[ي]>ق[ك] |
+| 2234 | [`2234-list-pair-sum-count-equals-ten.apl`](../examples/2234-list-pair-sum-count-equals-ten.apl) | نعد الأزواج |
+| 2235 | [`2235-list-most-frequent-smallest-tie.apl`](../examples/2235-list-most-frequent-smallest-tie.apl) | عند التعادل الأصغر |
+| 2236 | [`2236-list-alternating-sum-signs.apl`](../examples/2236-list-alternating-sum-signs.apl) | +ثم- بالتناوب |
+| 2237 | [`2237-list-dot-product-with-itself.apl`](../examples/2237-list-dot-product-with-itself.apl) | مجموع المربعات |
+| 2238 | [`2238-list-median-sorted-middle.apl`](../examples/2238-list-median-sorted-middle.apl) | للمنتصف بعد الترتيب |
+| 2239 | [`2239-list-product-of-all-items.apl`](../examples/2239-list-product-of-all-items.apl) | نضرب الكل |
+| 2240 | [`2240-list-max-subarray-kadane-sum.apl`](../examples/2240-list-max-subarray-kadane-sum.apl) | خوارزمية كادان |
+| 2241 | [`2241-list-longest-increasing-run-length.apl`](../examples/2241-list-longest-increasing-run-length.apl) | نعد التزايد المتتالي |
+| 2242 | [`2242-list-flatten-pairs-sum-first-second.apl`](../examples/2242-list-flatten-pairs-sum-first-second.apl) | ق[ي]+ق[ي+1] |
+| 2243 | [`2243-list-merge-two-halves-interleave.apl`](../examples/2243-list-merge-two-halves-interleave.apl) | النصف الأول مع الثاني |
+| 2244 | [`2244-list-binary-search-position-of-seven.apl`](../examples/2244-list-binary-search-position-of-seven.apl) | في قائمة مرتبة |
+| 2245 | [`2245-list-count-zero-crossings-sign-change.apl`](../examples/2245-list-count-zero-crossings-sign-change.apl) | نعد عبور الصفر |
+| 2246 | [`2246-list-min-gap-between-sorted-values.apl`](../examples/2246-list-min-gap-between-sorted-values.apl) | نرتب ونقارن المتجاورات |
+| 2247 | [`2247-list-equilibrium-index-left-right.apl`](../examples/2247-list-equilibrium-index-left-right.apl) | مجموع اليسار يساوي اليمين |
+| 2248 | [`2248-list-majority-element-over-half.apl`](../examples/2248-list-majority-element-over-half.apl) | يظهر أكثر من النصف |
+| 2249 | [`2249-list-two-sum-indices-target-nine.apl`](../examples/2249-list-two-sum-indices-target-nine.apl) | أول زوج مجموعه 9 |
+| 2250 | [`2250-list-count-subarrays-sum-equals-six.apl`](../examples/2250-list-count-subarrays-sum-equals-six.apl) | نجرب كل مقطع |
+| 2251 | [`2251-list-move-zeros-to-end.apl`](../examples/2251-list-move-zeros-to-end.apl) | نحافظ على ترتيب الباقي |
+| 2252 | [`2252-list-partition-evens-before-odds.apl`](../examples/2252-list-partition-evens-before-odds.apl) | نفصل ونجمع |
+| 2253 | [`2253-list-intersection-with-fixed-set.apl`](../examples/2253-list-intersection-with-fixed-set.apl) | القيم الموجودة في 2 و4 و6 |
+| 2254 | [`2254-list-histogram-counts-of-small-values.apl`](../examples/2254-list-histogram-counts-of-small-values.apl) | نعد كل قيمة من 0 إلى 4 |
+| 2255 | [`2255-list-sum-of-digits-of-all-items.apl`](../examples/2255-list-sum-of-digits-of-all-items.apl) | نجمع أرقام كل عدد |
+| 2256 | [`2256-list-build-multiplication-row.apl`](../examples/2256-list-build-multiplication-row.apl) | نضرب كل عنصر في 3 |
+| 2257 | [`2257-list-count-elements-greater-than-previous.apl`](../examples/2257-list-count-elements-greater-than-previous.apl) | نقارن بالسابق |
+| 2258 | [`2258-list-first-missing-positive-small.apl`](../examples/2258-list-first-missing-positive-small.apl) | أصغر موجب غائب |
+| 2259 | [`2259-list-sum-of-corner-and-center-items.apl`](../examples/2259-list-sum-of-corner-and-center-items.apl) | ق[0]+ق[-1]+ق[ن//2] |
+| 2260 | [`2260-list-reverse-in-place-swap-ends.apl`](../examples/2260-list-reverse-in-place-swap-ends.apl) | نبدل الأطراف |
+| 2261 | [`2261-list-bubble-sort-pass-count-swaps.apl`](../examples/2261-list-bubble-sort-pass-count-swaps.apl) | نعد التبديلات |
+| 2262 | [`2262-list-selection-sort-result-copy.apl`](../examples/2262-list-selection-sort-result-copy.apl) | نختار الأصغر |
+| 2263 | [`2263-list-insertion-sort-result-copy.apl`](../examples/2263-list-insertion-sort-result-copy.apl) | ندرج كل عنصر |
+| 2264 | [`2264-count-primes-below-limit-sieve-list.apl`](../examples/2264-count-primes-below-limit-sieve-list.apl) | غربال إراتوستينس |
+| 2265 | [`2265-sum-primes-up-to-sieve.apl`](../examples/2265-sum-primes-up-to-sieve.apl) | نجمع الأولية حتى ن |
+| 2266 | [`2266-nth-prime-by-counting-loop.apl`](../examples/2266-nth-prime-by-counting-loop.apl) | نعد حتى الوصول |
+| 2267 | [`2267-twin-prime-pairs-count-below.apl`](../examples/2267-twin-prime-pairs-count-below.apl) | أولي وأولي+2 |
+| 2268 | [`2268-goldbach-first-pair-smaller-prime.apl`](../examples/2268-goldbach-first-pair-smaller-prime.apl) | أصغر أولي ن-ب أولي |
+| 2269 | [`2269-sum-of-two-squares-representation-count.apl`](../examples/2269-sum-of-two-squares-representation-count.apl) | أزواج أ<=ب |
+| 2270 | [`2270-integer-square-root-binary-search.apl`](../examples/2270-integer-square-root-binary-search.apl) | بحث ثنائي |
+| 2271 | [`2271-is-perfect-square-via-root-loop.apl`](../examples/2271-is-perfect-square-via-root-loop.apl) | نجرب الجذر |
+| 2272 | [`2272-sum-of-integers-divisible-by-three-or-five.apl`](../examples/2272-sum-of-integers-divisible-by-three-or-five.apl) | تحت الحد ن |
+| 2273 | [`2273-fizzbuzz-count-of-both-multiples.apl`](../examples/2273-fizzbuzz-count-of-both-multiples.apl) | نعد حتى ن |
+| 2274 | [`2274-number-of-ways-climb-stairs-steps-one-two.apl`](../examples/2274-number-of-ways-climb-stairs-steps-one-two.apl) | خطوة أو خطوتان |
+| 2275 | [`2275-coin-change-ways-one-five-ten.apl`](../examples/2275-coin-change-ways-one-five-ten.apl) | برمجة ديناميكية |
+| 2276 | [`2276-min-coins-greedy-twentyfive-ten-five-one.apl`](../examples/2276-min-coins-greedy-twentyfive-ten-five-one.apl) | عملات أمريكية |
+| 2277 | [`2277-number-to-roman-numerals-small.apl`](../examples/2277-number-to-roman-numerals-small.apl) | حتى 3999 |
+| 2278 | [`2278-number-to-binary-string-manual.apl`](../examples/2278-number-to-binary-string-manual.apl) | قسمة متكررة |
+| 2279 | [`2279-number-to-hex-string-manual.apl`](../examples/2279-number-to-hex-string-manual.apl) | قسمة على 16 |
+| 2280 | [`2280-number-to-base-three-string.apl`](../examples/2280-number-to-base-three-string.apl) | قسمة على 3 |
+| 2281 | [`2281-days-to-weeks-and-days-text.apl`](../examples/2281-days-to-weeks-and-days-text.apl) | نقسم على 7 |
+| 2282 | [`2282-seconds-to-clock-text-hh-mm-ss.apl`](../examples/2282-seconds-to-clock-text-hh-mm-ss.apl) | نملأ بالأصفار |
+| 2283 | [`2283-leap-year-gregorian-rule-check.apl`](../examples/2283-leap-year-gregorian-rule-check.apl) | قاعدة 4 و100 و400 |
+| 2284 | [`2284-celsius-to-fahrenheit-integer.apl`](../examples/2284-celsius-to-fahrenheit-integer.apl) | ف=س*9/5+32 |
 
 **التشغيل:**
 ```bash
@@ -2499,4 +2565,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **227,195 عنصراً**،
-مع **2218 مثال جاهز** في `examples/`.
+مع **2284 مثال جاهز** في `examples/`.
