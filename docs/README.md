@@ -116,9 +116,9 @@
 | 106 | [black-library.md](black-library.md) | مكتبة `black` — منسّق شيفرة بايثون من حزمة black |
 
 ---
-## الأمثلة الجاهزة (3121 مثال)
+## الأمثلة الجاهزة (3270 مثال)
 
-3121 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+3270 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -3243,6 +3243,155 @@
 | 3119 | [`3119-sum-of-squares-from-3-to-n.apl`](../examples/3119-sum-of-squares-from-3-to-n.apl) | نجمع المربعات |
 | 3120 | [`3120-sum-of-squares-from-4-to-n.apl`](../examples/3120-sum-of-squares-from-4-to-n.apl) | نجمع المربعات |
 | 3121 | [`3121-sum-of-squares-from-6-to-n.apl`](../examples/3121-sum-of-squares-from-6-to-n.apl) | نجمع المربعات |
+| 3122 | [`3122-sum-multiples-of-30-below-limit-v2.apl`](../examples/3122-sum-multiples-of-30-below-limit-v2.apl) | نجمع مضاعفات 30 الأصغر من ن |
+| 3123 | [`3123-sum-multiples-of-31-below-limit-v2.apl`](../examples/3123-sum-multiples-of-31-below-limit-v2.apl) | نجمع مضاعفات 31 الأصغر من ن |
+| 3124 | [`3124-sum-multiples-of-32-below-limit-v2.apl`](../examples/3124-sum-multiples-of-32-below-limit-v2.apl) | نجمع مضاعفات 32 الأصغر من ن |
+| 3125 | [`3125-sum-multiples-of-33-below-limit-v2.apl`](../examples/3125-sum-multiples-of-33-below-limit-v2.apl) | نجمع مضاعفات 33 الأصغر من ن |
+| 3126 | [`3126-sum-multiples-of-34-below-limit-v2.apl`](../examples/3126-sum-multiples-of-34-below-limit-v2.apl) | نجمع مضاعفات 34 الأصغر من ن |
+| 3127 | [`3127-count-multiples-of-30-up-to-limit.apl`](../examples/3127-count-multiples-of-30-up-to-limit.apl) | نعد المضاعفات من 1 إلى ن |
+| 3128 | [`3128-count-multiples-of-31-up-to-limit.apl`](../examples/3128-count-multiples-of-31-up-to-limit.apl) | نعد المضاعفات من 1 إلى ن |
+| 3129 | [`3129-count-multiples-of-32-up-to-limit.apl`](../examples/3129-count-multiples-of-32-up-to-limit.apl) | نعد المضاعفات من 1 إلى ن |
+| 3130 | [`3130-count-multiples-of-33-up-to-limit.apl`](../examples/3130-count-multiples-of-33-up-to-limit.apl) | نعد المضاعفات من 1 إلى ن |
+| 3131 | [`3131-count-multiples-of-34-up-to-limit.apl`](../examples/3131-count-multiples-of-34-up-to-limit.apl) | نعد المضاعفات من 1 إلى ن |
+| 3132 | [`3132-list-multiply-each-by-30.apl`](../examples/3132-list-multiply-each-by-30.apl) | نبني قائمة جديدة |
+| 3133 | [`3133-list-multiply-each-by-31.apl`](../examples/3133-list-multiply-each-by-31.apl) | نبني قائمة جديدة |
+| 3134 | [`3134-list-multiply-each-by-32.apl`](../examples/3134-list-multiply-each-by-32.apl) | نبني قائمة جديدة |
+| 3135 | [`3135-list-multiply-each-by-33.apl`](../examples/3135-list-multiply-each-by-33.apl) | نبني قائمة جديدة |
+| 3136 | [`3136-list-multiply-each-by-34.apl`](../examples/3136-list-multiply-each-by-34.apl) | نبني قائمة جديدة |
+| 3137 | [`3137-list-add-30-to-each-item.apl`](../examples/3137-list-add-30-to-each-item.apl) | نزيد كل عنصر |
+| 3138 | [`3138-list-add-31-to-each-item.apl`](../examples/3138-list-add-31-to-each-item.apl) | نزيد كل عنصر |
+| 3139 | [`3139-list-add-32-to-each-item.apl`](../examples/3139-list-add-32-to-each-item.apl) | نزيد كل عنصر |
+| 3140 | [`3140-list-add-33-to-each-item.apl`](../examples/3140-list-add-33-to-each-item.apl) | نزيد كل عنصر |
+| 3141 | [`3141-list-add-34-to-each-item.apl`](../examples/3141-list-add-34-to-each-item.apl) | نزيد كل عنصر |
+| 3142 | [`3142-list-count-greater-than-30.apl`](../examples/3142-list-count-greater-than-30.apl) | نعد الأكبر |
+| 3143 | [`3143-list-count-greater-than-31.apl`](../examples/3143-list-count-greater-than-31.apl) | نعد الأكبر |
+| 3144 | [`3144-list-count-greater-than-32.apl`](../examples/3144-list-count-greater-than-32.apl) | نعد الأكبر |
+| 3145 | [`3145-list-count-greater-than-33.apl`](../examples/3145-list-count-greater-than-33.apl) | نعد الأكبر |
+| 3146 | [`3146-list-count-greater-than-34.apl`](../examples/3146-list-count-greater-than-34.apl) | نعد الأكبر |
+| 3147 | [`3147-list-keep-divisible-by-30.apl`](../examples/3147-list-keep-divisible-by-30.apl) | نصفي القائمة |
+| 3148 | [`3148-list-keep-divisible-by-31.apl`](../examples/3148-list-keep-divisible-by-31.apl) | نصفي القائمة |
+| 3149 | [`3149-list-keep-divisible-by-32.apl`](../examples/3149-list-keep-divisible-by-32.apl) | نصفي القائمة |
+| 3150 | [`3150-list-keep-divisible-by-33.apl`](../examples/3150-list-keep-divisible-by-33.apl) | نصفي القائمة |
+| 3151 | [`3151-list-keep-divisible-by-34.apl`](../examples/3151-list-keep-divisible-by-34.apl) | نصفي القائمة |
+| 3152 | [`3152-digit-sum-of-30-to-the-power-n.apl`](../examples/3152-digit-sum-of-30-to-the-power-n.apl) | نحسب القوة ثم نجمع الأرقام |
+| 3153 | [`3153-digit-sum-of-31-to-the-power-n.apl`](../examples/3153-digit-sum-of-31-to-the-power-n.apl) | نحسب القوة ثم نجمع الأرقام |
+| 3154 | [`3154-digit-sum-of-32-to-the-power-n.apl`](../examples/3154-digit-sum-of-32-to-the-power-n.apl) | نحسب القوة ثم نجمع الأرقام |
+| 3155 | [`3155-digit-sum-of-33-to-the-power-n.apl`](../examples/3155-digit-sum-of-33-to-the-power-n.apl) | نحسب القوة ثم نجمع الأرقام |
+| 3156 | [`3156-digit-sum-of-34-to-the-power-n.apl`](../examples/3156-digit-sum-of-34-to-the-power-n.apl) | نحسب القوة ثم نجمع الأرقام |
+| 3157 | [`3157-sum-of-remainders-mod-30-up-to-n.apl`](../examples/3157-sum-of-remainders-mod-30-up-to-n.apl) | نجمع ي % 30 |
+| 3158 | [`3158-sum-of-remainders-mod-31-up-to-n.apl`](../examples/3158-sum-of-remainders-mod-31-up-to-n.apl) | نجمع ي % 31 |
+| 3159 | [`3159-sum-of-remainders-mod-32-up-to-n.apl`](../examples/3159-sum-of-remainders-mod-32-up-to-n.apl) | نجمع ي % 32 |
+| 3160 | [`3160-sum-of-remainders-mod-33-up-to-n.apl`](../examples/3160-sum-of-remainders-mod-33-up-to-n.apl) | نجمع ي % 33 |
+| 3161 | [`3161-sum-of-remainders-mod-34-up-to-n.apl`](../examples/3161-sum-of-remainders-mod-34-up-to-n.apl) | نجمع ي % 34 |
+| 3162 | [`3162-count-numbers-below-hundred-with-digit-sum-30.apl`](../examples/3162-count-numbers-below-hundred-with-digit-sum-30.apl) | نعد الأعداد |
+| 3163 | [`3163-count-numbers-below-hundred-with-digit-sum-31.apl`](../examples/3163-count-numbers-below-hundred-with-digit-sum-31.apl) | نعد الأعداد |
+| 3164 | [`3164-count-numbers-below-hundred-with-digit-sum-32.apl`](../examples/3164-count-numbers-below-hundred-with-digit-sum-32.apl) | نعد الأعداد |
+| 3165 | [`3165-count-numbers-below-hundred-with-digit-sum-33.apl`](../examples/3165-count-numbers-below-hundred-with-digit-sum-33.apl) | نعد الأعداد |
+| 3166 | [`3166-count-numbers-below-hundred-with-digit-sum-34.apl`](../examples/3166-count-numbers-below-hundred-with-digit-sum-34.apl) | نعد الأعداد |
+| 3167 | [`3167-list-take-every-30th-item.apl`](../examples/3167-list-take-every-30th-item.apl) | شريحة بخطوة |
+| 3168 | [`3168-list-take-every-31th-item.apl`](../examples/3168-list-take-every-31th-item.apl) | شريحة بخطوة |
+| 3169 | [`3169-list-take-every-32th-item.apl`](../examples/3169-list-take-every-32th-item.apl) | شريحة بخطوة |
+| 3170 | [`3170-list-take-every-33th-item.apl`](../examples/3170-list-take-every-33th-item.apl) | شريحة بخطوة |
+| 3171 | [`3171-list-take-every-34th-item.apl`](../examples/3171-list-take-every-34th-item.apl) | شريحة بخطوة |
+| 3172 | [`3172-list-rotate-left-by-30.apl`](../examples/3172-list-rotate-left-by-30.apl) | نقص ونلصق |
+| 3173 | [`3173-list-rotate-left-by-31.apl`](../examples/3173-list-rotate-left-by-31.apl) | نقص ونلصق |
+| 3174 | [`3174-list-rotate-left-by-32.apl`](../examples/3174-list-rotate-left-by-32.apl) | نقص ونلصق |
+| 3175 | [`3175-list-rotate-left-by-33.apl`](../examples/3175-list-rotate-left-by-33.apl) | نقص ونلصق |
+| 3176 | [`3176-list-rotate-left-by-34.apl`](../examples/3176-list-rotate-left-by-34.apl) | نقص ونلصق |
+| 3177 | [`3177-nth-term-arithmetic-sequence-step-30.apl`](../examples/3177-nth-term-arithmetic-sequence-step-30.apl) | أ + (ن-1)*30 |
+| 3178 | [`3178-nth-term-arithmetic-sequence-step-31.apl`](../examples/3178-nth-term-arithmetic-sequence-step-31.apl) | أ + (ن-1)*31 |
+| 3179 | [`3179-nth-term-arithmetic-sequence-step-32.apl`](../examples/3179-nth-term-arithmetic-sequence-step-32.apl) | أ + (ن-1)*32 |
+| 3180 | [`3180-nth-term-arithmetic-sequence-step-33.apl`](../examples/3180-nth-term-arithmetic-sequence-step-33.apl) | أ + (ن-1)*33 |
+| 3181 | [`3181-nth-term-arithmetic-sequence-step-34.apl`](../examples/3181-nth-term-arithmetic-sequence-step-34.apl) | أ + (ن-1)*34 |
+| 3182 | [`3182-sum-of-powers-of-30-up-to-n.apl`](../examples/3182-sum-of-powers-of-30-up-to-n.apl) | نجمع 30^ي |
+| 3183 | [`3183-sum-of-powers-of-31-up-to-n.apl`](../examples/3183-sum-of-powers-of-31-up-to-n.apl) | نجمع 31^ي |
+| 3184 | [`3184-sum-of-powers-of-32-up-to-n.apl`](../examples/3184-sum-of-powers-of-32-up-to-n.apl) | نجمع 32^ي |
+| 3185 | [`3185-sum-of-powers-of-33-up-to-n.apl`](../examples/3185-sum-of-powers-of-33-up-to-n.apl) | نجمع 33^ي |
+| 3186 | [`3186-sum-of-powers-of-34-up-to-n.apl`](../examples/3186-sum-of-powers-of-34-up-to-n.apl) | نجمع 34^ي |
+| 3187 | [`3187-clamp-list-values-to-max-30.apl`](../examples/3187-clamp-list-values-to-max-30.apl) | نقص ما يزيد |
+| 3188 | [`3188-clamp-list-values-to-max-31.apl`](../examples/3188-clamp-list-values-to-max-31.apl) | نقص ما يزيد |
+| 3189 | [`3189-clamp-list-values-to-max-32.apl`](../examples/3189-clamp-list-values-to-max-32.apl) | نقص ما يزيد |
+| 3190 | [`3190-clamp-list-values-to-max-33.apl`](../examples/3190-clamp-list-values-to-max-33.apl) | نقص ما يزيد |
+| 3191 | [`3191-clamp-list-values-to-max-34.apl`](../examples/3191-clamp-list-values-to-max-34.apl) | نقص ما يزيد |
+| 3192 | [`3192-repeat-text-30-times-with-dash.apl`](../examples/3192-repeat-text-30-times-with-dash.apl) | نكرر ونفصل |
+| 3193 | [`3193-repeat-text-31-times-with-dash.apl`](../examples/3193-repeat-text-31-times-with-dash.apl) | نكرر ونفصل |
+| 3194 | [`3194-repeat-text-32-times-with-dash.apl`](../examples/3194-repeat-text-32-times-with-dash.apl) | نكرر ونفصل |
+| 3195 | [`3195-repeat-text-33-times-with-dash.apl`](../examples/3195-repeat-text-33-times-with-dash.apl) | نكرر ونفصل |
+| 3196 | [`3196-repeat-text-34-times-with-dash.apl`](../examples/3196-repeat-text-34-times-with-dash.apl) | نكرر ونفصل |
+| 3197 | [`3197-pad-number-with-zeros-to-width-30.apl`](../examples/3197-pad-number-with-zeros-to-width-30.apl) | zfill |
+| 3198 | [`3198-pad-number-with-zeros-to-width-31.apl`](../examples/3198-pad-number-with-zeros-to-width-31.apl) | zfill |
+| 3199 | [`3199-pad-number-with-zeros-to-width-32.apl`](../examples/3199-pad-number-with-zeros-to-width-32.apl) | zfill |
+| 3200 | [`3200-pad-number-with-zeros-to-width-33.apl`](../examples/3200-pad-number-with-zeros-to-width-33.apl) | zfill |
+| 3201 | [`3201-pad-number-with-zeros-to-width-34.apl`](../examples/3201-pad-number-with-zeros-to-width-34.apl) | zfill |
+| 3202 | [`3202-truncate-text-to-first-30-chars.apl`](../examples/3202-truncate-text-to-first-30-chars.apl) | شريحة |
+| 3203 | [`3203-truncate-text-to-first-31-chars.apl`](../examples/3203-truncate-text-to-first-31-chars.apl) | شريحة |
+| 3204 | [`3204-truncate-text-to-first-32-chars.apl`](../examples/3204-truncate-text-to-first-32-chars.apl) | شريحة |
+| 3205 | [`3205-truncate-text-to-first-33-chars.apl`](../examples/3205-truncate-text-to-first-33-chars.apl) | شريحة |
+| 3206 | [`3206-truncate-text-to-first-34-chars.apl`](../examples/3206-truncate-text-to-first-34-chars.apl) | شريحة |
+| 3207 | [`3207-sum-of-integers-from-15-to-n.apl`](../examples/3207-sum-of-integers-from-15-to-n.apl) | نجمع بحلقة |
+| 3208 | [`3208-sum-of-integers-from-16-to-n.apl`](../examples/3208-sum-of-integers-from-16-to-n.apl) | نجمع بحلقة |
+| 3209 | [`3209-sum-of-integers-from-17-to-n.apl`](../examples/3209-sum-of-integers-from-17-to-n.apl) | نجمع بحلقة |
+| 3210 | [`3210-sum-of-integers-from-18-to-n.apl`](../examples/3210-sum-of-integers-from-18-to-n.apl) | نجمع بحلقة |
+| 3211 | [`3211-sum-of-integers-from-19-to-n.apl`](../examples/3211-sum-of-integers-from-19-to-n.apl) | نجمع بحلقة |
+| 3212 | [`3212-count-numbers-with-exactly-15-divisors-below-limit.apl`](../examples/3212-count-numbers-with-exactly-15-divisors-below-limit.apl) | نعد القواسم لكل عدد |
+| 3213 | [`3213-count-numbers-with-exactly-16-divisors-below-limit.apl`](../examples/3213-count-numbers-with-exactly-16-divisors-below-limit.apl) | نعد القواسم لكل عدد |
+| 3214 | [`3214-count-numbers-with-exactly-17-divisors-below-limit.apl`](../examples/3214-count-numbers-with-exactly-17-divisors-below-limit.apl) | نعد القواسم لكل عدد |
+| 3215 | [`3215-count-numbers-with-exactly-18-divisors-below-limit.apl`](../examples/3215-count-numbers-with-exactly-18-divisors-below-limit.apl) | نعد القواسم لكل عدد |
+| 3216 | [`3216-count-numbers-with-exactly-19-divisors-below-limit.apl`](../examples/3216-count-numbers-with-exactly-19-divisors-below-limit.apl) | نعد القواسم لكل عدد |
+| 3217 | [`3217-list-count-items-with-remainder-one-mod-15.apl`](../examples/3217-list-count-items-with-remainder-one-mod-15.apl) | نعد |
+| 3218 | [`3218-list-count-items-with-remainder-one-mod-16.apl`](../examples/3218-list-count-items-with-remainder-one-mod-16.apl) | نعد |
+| 3219 | [`3219-list-count-items-with-remainder-one-mod-17.apl`](../examples/3219-list-count-items-with-remainder-one-mod-17.apl) | نعد |
+| 3220 | [`3220-list-count-items-with-remainder-one-mod-18.apl`](../examples/3220-list-count-items-with-remainder-one-mod-18.apl) | نعد |
+| 3221 | [`3221-list-count-items-with-remainder-one-mod-19.apl`](../examples/3221-list-count-items-with-remainder-one-mod-19.apl) | نعد |
+| 3222 | [`3222-price-after-15-percent-discount-integer.apl`](../examples/3222-price-after-15-percent-discount-integer.apl) | نطرح الخصم |
+| 3223 | [`3223-price-after-16-percent-discount-integer.apl`](../examples/3223-price-after-16-percent-discount-integer.apl) | نطرح الخصم |
+| 3224 | [`3224-price-after-17-percent-discount-integer.apl`](../examples/3224-price-after-17-percent-discount-integer.apl) | نطرح الخصم |
+| 3225 | [`3225-price-after-18-percent-discount-integer.apl`](../examples/3225-price-after-18-percent-discount-integer.apl) | نطرح الخصم |
+| 3226 | [`3226-price-after-19-percent-discount-integer.apl`](../examples/3226-price-after-19-percent-discount-integer.apl) | نطرح الخصم |
+| 3227 | [`3227-price-with-15-percent-tax-integer.apl`](../examples/3227-price-with-15-percent-tax-integer.apl) | نضيف الضريبة |
+| 3228 | [`3228-price-with-16-percent-tax-integer.apl`](../examples/3228-price-with-16-percent-tax-integer.apl) | نضيف الضريبة |
+| 3229 | [`3229-price-with-17-percent-tax-integer.apl`](../examples/3229-price-with-17-percent-tax-integer.apl) | نضيف الضريبة |
+| 3230 | [`3230-price-with-18-percent-tax-integer.apl`](../examples/3230-price-with-18-percent-tax-integer.apl) | نضيف الضريبة |
+| 3231 | [`3231-price-with-19-percent-tax-integer.apl`](../examples/3231-price-with-19-percent-tax-integer.apl) | نضيف الضريبة |
+| 3232 | [`3232-split-bill-among-15-people-ceiling.apl`](../examples/3232-split-bill-among-15-people-ceiling.apl) | نقرب لأعلى |
+| 3233 | [`3233-split-bill-among-16-people-ceiling.apl`](../examples/3233-split-bill-among-16-people-ceiling.apl) | نقرب لأعلى |
+| 3234 | [`3234-split-bill-among-17-people-ceiling.apl`](../examples/3234-split-bill-among-17-people-ceiling.apl) | نقرب لأعلى |
+| 3235 | [`3235-split-bill-among-18-people-ceiling.apl`](../examples/3235-split-bill-among-18-people-ceiling.apl) | نقرب لأعلى |
+| 3236 | [`3236-split-bill-among-19-people-ceiling.apl`](../examples/3236-split-bill-among-19-people-ceiling.apl) | نقرب لأعلى |
+| 3237 | [`3237-minutes-to-hours-and-minutes-base-15.apl`](../examples/3237-minutes-to-hours-and-minutes-base-15.apl) | نقسم على 15 |
+| 3238 | [`3238-minutes-to-hours-and-minutes-base-16.apl`](../examples/3238-minutes-to-hours-and-minutes-base-16.apl) | نقسم على 16 |
+| 3239 | [`3239-minutes-to-hours-and-minutes-base-17.apl`](../examples/3239-minutes-to-hours-and-minutes-base-17.apl) | نقسم على 17 |
+| 3240 | [`3240-minutes-to-hours-and-minutes-base-18.apl`](../examples/3240-minutes-to-hours-and-minutes-base-18.apl) | نقسم على 18 |
+| 3241 | [`3241-minutes-to-hours-and-minutes-base-19.apl`](../examples/3241-minutes-to-hours-and-minutes-base-19.apl) | نقسم على 19 |
+| 3242 | [`3242-count-words-with-length-at-least-15.apl`](../examples/3242-count-words-with-length-at-least-15.apl) | نعد الكلمات |
+| 3243 | [`3243-count-words-with-length-at-least-16.apl`](../examples/3243-count-words-with-length-at-least-16.apl) | نعد الكلمات |
+| 3244 | [`3244-count-words-with-length-at-least-17.apl`](../examples/3244-count-words-with-length-at-least-17.apl) | نعد الكلمات |
+| 3245 | [`3245-count-words-with-length-at-least-18.apl`](../examples/3245-count-words-with-length-at-least-18.apl) | نعد الكلمات |
+| 3246 | [`3246-count-words-with-length-at-least-19.apl`](../examples/3246-count-words-with-length-at-least-19.apl) | نعد الكلمات |
+| 3247 | [`3247-square-of-radius-times-17-area-approx.apl`](../examples/3247-square-of-radius-times-17-area-approx.apl) | المساحة ≈ 17×نق²/7 |
+| 3248 | [`3248-square-of-radius-times-19-area-approx.apl`](../examples/3248-square-of-radius-times-19-area-approx.apl) | المساحة ≈ 19×نق²/7 |
+| 3249 | [`3249-square-of-radius-times-23-area-approx.apl`](../examples/3249-square-of-radius-times-23-area-approx.apl) | المساحة ≈ 23×نق²/7 |
+| 3250 | [`3250-rectangle-area-scaled-by-8.apl`](../examples/3250-rectangle-area-scaled-by-8.apl) | نكبر الضلعين |
+| 3251 | [`3251-rectangle-area-scaled-by-9.apl`](../examples/3251-rectangle-area-scaled-by-9.apl) | نكبر الضلعين |
+| 3252 | [`3252-rectangle-area-scaled-by-10.apl`](../examples/3252-rectangle-area-scaled-by-10.apl) | نكبر الضلعين |
+| 3253 | [`3253-interior-angle-sum-of-polygon-plus-7.apl`](../examples/3253-interior-angle-sum-of-polygon-plus-7.apl) | (ن-2)*180 |
+| 3254 | [`3254-interior-angle-sum-of-polygon-plus-8.apl`](../examples/3254-interior-angle-sum-of-polygon-plus-8.apl) | (ن-2)*180 |
+| 3255 | [`3255-interior-angle-sum-of-polygon-plus-9.apl`](../examples/3255-interior-angle-sum-of-polygon-plus-9.apl) | (ن-2)*180 |
+| 3256 | [`3256-interior-angle-sum-of-polygon-plus-10.apl`](../examples/3256-interior-angle-sum-of-polygon-plus-10.apl) | (ن-2)*180 |
+| 3257 | [`3257-sum-of-ord-values-offset-7.apl`](../examples/3257-sum-of-ord-values-offset-7.apl) | نجمع ord+7 |
+| 3258 | [`3258-sum-of-ord-values-offset-8.apl`](../examples/3258-sum-of-ord-values-offset-8.apl) | نجمع ord+8 |
+| 3259 | [`3259-sum-of-ord-values-offset-9.apl`](../examples/3259-sum-of-ord-values-offset-9.apl) | نجمع ord+9 |
+| 3260 | [`3260-linear-recurrence-a-n-equals-8-times-previous-plus-one.apl`](../examples/3260-linear-recurrence-a-n-equals-8-times-previous-plus-one.apl) | نكرر القاعدة |
+| 3261 | [`3261-linear-recurrence-a-n-equals-9-times-previous-plus-one.apl`](../examples/3261-linear-recurrence-a-n-equals-9-times-previous-plus-one.apl) | نكرر القاعدة |
+| 3262 | [`3262-linear-recurrence-a-n-equals-10-times-previous-plus-one.apl`](../examples/3262-linear-recurrence-a-n-equals-10-times-previous-plus-one.apl) | نكرر القاعدة |
+| 3263 | [`3263-top-6-largest-items-sorted-desc.apl`](../examples/3263-top-6-largest-items-sorted-desc.apl) | نرتب تنازليا ونقطع |
+| 3264 | [`3264-bottom-6-smallest-items-sorted.apl`](../examples/3264-bottom-6-smallest-items-sorted.apl) | نرتب ونقطع |
+| 3265 | [`3265-multiplication-table-row-of-14.apl`](../examples/3265-multiplication-table-row-of-14.apl) | من 1 إلى ن |
+| 3266 | [`3266-multiplication-table-row-of-15.apl`](../examples/3266-multiplication-table-row-of-15.apl) | من 1 إلى ن |
+| 3267 | [`3267-multiplication-table-row-of-16.apl`](../examples/3267-multiplication-table-row-of-16.apl) | من 1 إلى ن |
+| 3268 | [`3268-sum-of-squares-from-7-to-n.apl`](../examples/3268-sum-of-squares-from-7-to-n.apl) | نجمع المربعات |
+| 3269 | [`3269-sum-of-squares-from-8-to-n.apl`](../examples/3269-sum-of-squares-from-8-to-n.apl) | نجمع المربعات |
+| 3270 | [`3270-sum-of-squares-from-9-to-n.apl`](../examples/3270-sum-of-squares-from-9-to-n.apl) | نجمع المربعات |
 
 **التشغيل:**
 ```bash
@@ -3402,4 +3551,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **227,195 عنصراً**،
-مع **3121 مثال جاهز** في `examples/`.
+مع **3270 مثال جاهز** في `examples/`.
