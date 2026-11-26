@@ -116,9 +116,9 @@
 | 106 | [black-library.md](black-library.md) | مكتبة `black` — منسّق شيفرة بايثون من حزمة black |
 
 ---
-## الأمثلة الجاهزة (1888 مثال)
+## الأمثلة الجاهزة (1907 مثال)
 
-1888 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1907 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -2010,6 +2010,25 @@
 | 1886 | [`1886-union-find-count-groups.apl`](../examples/1886-union-find-count-groups.apl) | ندمج المجموعات ونعد الجذور |
 | 1887 | [`1887-redundant-edge-cycle-detect.apl`](../examples/1887-redundant-edge-cycle-detect.apl) | أول حافة تصل عنصرين متصلين أصلاً |
 | 1888 | [`1888-minimum-spanning-tree-kruskal.apl`](../examples/1888-minimum-spanning-tree-kruskal.apl) | نضيف أرخص حافة لا تكون دورة |
+| 1889 | [`1889-caesar-shift-lowercase-text.apl`](../examples/1889-caesar-shift-lowercase-text.apl) | نزيح كل حرف بعدد ثابت |
+| 1890 | [`1890-atbash-lowercase-text.apl`](../examples/1890-atbash-lowercase-text.apl) | كل حرف يقابل حرفه المعكوس |
+| 1891 | [`1891-rot13-lowercase-text.apl`](../examples/1891-rot13-lowercase-text.apl) | إزاحة ثابتة قدرها ١٣ |
+| 1892 | [`1892-vigenere-lowercase-encode.apl`](../examples/1892-vigenere-lowercase-encode.apl) | مفتاح كلمة يحدد الإزاحة لكل حرف |
+| 1893 | [`1893-count-subsets-with-target-sum.apl`](../examples/1893-count-subsets-with-target-sum.apl) | نختار العنصر أو نتركه |
+| 1894 | [`1894-n-queens-count-solutions.apl`](../examples/1894-n-queens-count-solutions.apl) | نضع ملكة في كل صف بلا تهديد |
+| 1895 | [`1895-count-derangements-backtracking.apl`](../examples/1895-count-derangements-backtracking.apl) | لا يبقى عنصر في مكانه |
+| 1896 | [`1896-list-combinations-n-choose-k.apl`](../examples/1896-list-combinations-n-choose-k.apl) | نبني توافيق بحجم ثابت |
+| 1897 | [`1897-count-palindrome-partitions.apl`](../examples/1897-count-palindrome-partitions.apl) | نقطع النص إلى أجزاء متماثلة |
+| 1898 | [`1898-text-center-with-padding.apl`](../examples/1898-text-center-with-padding.apl) | نضيف حشوا على الجانبين |
+| 1899 | [`1899-word-wrap-line-count.apl`](../examples/1899-word-wrap-line-count.apl) | نلف الكلمات على عرض محدد |
+| 1900 | [`1900-format-thousands-separator.apl`](../examples/1900-format-thousands-separator.apl) | نضع فاصلة كل ثلاث خانات |
+| 1901 | [`1901-month-length-leap-aware.apl`](../examples/1901-month-length-leap-aware.apl) | فبراير يتغير في السنة الكبيسة |
+| 1902 | [`1902-ordinal-day-of-year-calc.apl`](../examples/1902-ordinal-day-of-year-calc.apl) | نجمع أيام الشهور السابقة |
+| 1903 | [`1903-weekday-from-date-sakamoto.apl`](../examples/1903-weekday-from-date-sakamoto.apl) | خوارزمية ساكاموتو |
+| 1904 | [`1904-linked-list-reverse-by-arrays.apl`](../examples/1904-linked-list-reverse-by-arrays.apl) | نغير اتجاه المؤشرات |
+| 1905 | [`1905-linked-list-middle-node-fast-slow.apl`](../examples/1905-linked-list-middle-node-fast-slow.apl) | مؤشر سريع وآخر بطيء |
+| 1906 | [`1906-linked-list-detect-cycle-floyd.apl`](../examples/1906-linked-list-detect-cycle-floyd.apl) | السريع يلحق البطيء عند وجود دورة |
+| 1907 | [`1907-merge-two-sorted-linked-lists.apl`](../examples/1907-merge-two-sorted-linked-lists.apl) | نأخذ الأصغر من الرأسين |
 
 **التشغيل:**
 ```bash
@@ -2169,4 +2188,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **227,195 عنصراً**،
-مع **1888 مثال جاهز** في `examples/`.
+مع **1907 مثال جاهز** في `examples/`.

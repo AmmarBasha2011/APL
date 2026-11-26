@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 101 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1888 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1907 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -274,9 +274,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1888 مثال)
+## الأمثلة الجاهزة (1907 مثال)
 
-مجلد `examples/` يحتوي على **1888 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1907 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -2168,6 +2168,25 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1886 | [`1886-union-find-count-groups.apl`](examples/1886-union-find-count-groups.apl) | ندمج المجموعات ونعد الجذور |
 | 1887 | [`1887-redundant-edge-cycle-detect.apl`](examples/1887-redundant-edge-cycle-detect.apl) | أول حافة تصل عنصرين متصلين أصلاً |
 | 1888 | [`1888-minimum-spanning-tree-kruskal.apl`](examples/1888-minimum-spanning-tree-kruskal.apl) | نضيف أرخص حافة لا تكون دورة |
+| 1889 | [`1889-caesar-shift-lowercase-text.apl`](examples/1889-caesar-shift-lowercase-text.apl) | نزيح كل حرف بعدد ثابت |
+| 1890 | [`1890-atbash-lowercase-text.apl`](examples/1890-atbash-lowercase-text.apl) | كل حرف يقابل حرفه المعكوس |
+| 1891 | [`1891-rot13-lowercase-text.apl`](examples/1891-rot13-lowercase-text.apl) | إزاحة ثابتة قدرها ١٣ |
+| 1892 | [`1892-vigenere-lowercase-encode.apl`](examples/1892-vigenere-lowercase-encode.apl) | مفتاح كلمة يحدد الإزاحة لكل حرف |
+| 1893 | [`1893-count-subsets-with-target-sum.apl`](examples/1893-count-subsets-with-target-sum.apl) | نختار العنصر أو نتركه |
+| 1894 | [`1894-n-queens-count-solutions.apl`](examples/1894-n-queens-count-solutions.apl) | نضع ملكة في كل صف بلا تهديد |
+| 1895 | [`1895-count-derangements-backtracking.apl`](examples/1895-count-derangements-backtracking.apl) | لا يبقى عنصر في مكانه |
+| 1896 | [`1896-list-combinations-n-choose-k.apl`](examples/1896-list-combinations-n-choose-k.apl) | نبني توافيق بحجم ثابت |
+| 1897 | [`1897-count-palindrome-partitions.apl`](examples/1897-count-palindrome-partitions.apl) | نقطع النص إلى أجزاء متماثلة |
+| 1898 | [`1898-text-center-with-padding.apl`](examples/1898-text-center-with-padding.apl) | نضيف حشوا على الجانبين |
+| 1899 | [`1899-word-wrap-line-count.apl`](examples/1899-word-wrap-line-count.apl) | نلف الكلمات على عرض محدد |
+| 1900 | [`1900-format-thousands-separator.apl`](examples/1900-format-thousands-separator.apl) | نضع فاصلة كل ثلاث خانات |
+| 1901 | [`1901-month-length-leap-aware.apl`](examples/1901-month-length-leap-aware.apl) | فبراير يتغير في السنة الكبيسة |
+| 1902 | [`1902-ordinal-day-of-year-calc.apl`](examples/1902-ordinal-day-of-year-calc.apl) | نجمع أيام الشهور السابقة |
+| 1903 | [`1903-weekday-from-date-sakamoto.apl`](examples/1903-weekday-from-date-sakamoto.apl) | خوارزمية ساكاموتو |
+| 1904 | [`1904-linked-list-reverse-by-arrays.apl`](examples/1904-linked-list-reverse-by-arrays.apl) | نغير اتجاه المؤشرات |
+| 1905 | [`1905-linked-list-middle-node-fast-slow.apl`](examples/1905-linked-list-middle-node-fast-slow.apl) | مؤشر سريع وآخر بطيء |
+| 1906 | [`1906-linked-list-detect-cycle-floyd.apl`](examples/1906-linked-list-detect-cycle-floyd.apl) | السريع يلحق البطيء عند وجود دورة |
+| 1907 | [`1907-merge-two-sorted-linked-lists.apl`](examples/1907-merge-two-sorted-linked-lists.apl) | نأخذ الأصغر من الرأسين |
 
 ### تشغيل أي مثال
 
@@ -2268,7 +2287,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 1888 مثال
+**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 1907 مثال
 
 ## Language platform tools
 
