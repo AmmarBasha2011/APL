@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1569 مثال)
+## الأمثلة الجاهزة (1593 مثال)
 
-1569 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1593 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1686,6 +1686,30 @@
 | 1567 | [`1567-longest-word-in-text.apl`](../examples/1567-longest-word-in-text.apl) | أول كلمة بأكبر طول |
 | 1568 | [`1568-sum-digits-in-text.apl`](../examples/1568-sum-digits-in-text.apl) | نجمع الأرقام المبعثرة في نص |
 | 1569 | [`1569-swap-letter-case.apl`](../examples/1569-swap-letter-case.apl) | الكبير يصير صغيراً والعكس |
+| 1570 | [`1570-remove-adjacent-duplicates-stack.apl`](../examples/1570-remove-adjacent-duplicates-stack.apl) | حذف زوج الحرفين المتساويين المتجاورين تكراراً |
+| 1571 | [`1571-boats-to-save-people.apl`](../examples/1571-boats-to-save-people.apl) | أقل عدد قوارب يحمل كل منها شخصين بحد وزن |
+| 1572 | [`1572-minimum-platforms-needed.apl`](../examples/1572-minimum-platforms-needed.apl) | أقصى عدد قطارات في المحطة معاً |
+| 1573 | [`1573-activity-selection-count.apl`](../examples/1573-activity-selection-count.apl) | أنشطة لا تتداخل بأكبر عدد ممكن |
+| 1574 | [`1574-fractional-knapsack-value.apl`](../examples/1574-fractional-knapsack-value.apl) | نأخذ الأعلى قيمة لكل وزن ويجوز التجزئة |
+| 1575 | [`1575-hand-of-straights-check.apl`](../examples/1575-hand-of-straights-check.apl) | تقسيم أرقام إلى مجموعات متتالية بحجم ثابت |
+| 1576 | [`1576-monotonic-array-check.apl`](../examples/1576-monotonic-array-check.apl) | تصاعدية أو تنازلية بالكامل |
+| 1577 | [`1577-sliding-window-maximum-naive.apl`](../examples/1577-sliding-window-maximum-naive.apl) | أكبر عنصر لكل نافذة بطول ثابت |
+| 1578 | [`1578-sort-stack-with-temp.apl`](../examples/1578-sort-stack-with-temp.apl) | نرتب مكدساً بمكدس إضافي واحد فقط |
+| 1579 | [`1579-tiny-stack-vm.apl`](../examples/1579-tiny-stack-vm.apl) | تنفيذ تعليمات push وadd وmul |
+| 1580 | [`1580-bank-ledger-balance.apl`](../examples/1580-bank-ledger-balance.apl) | إيداع وسحب مع رفض السحب الزائد |
+| 1581 | [`1581-inventory-restock-alerts.apl`](../examples/1581-inventory-restock-alerts.apl) | أصناف نزل مخزونها تحت الحد |
+| 1582 | [`1582-door-state-machine.apl`](../examples/1582-door-state-machine.apl) | باب يفتح ويغلق ويقفل وفق جدول انتقالات |
+| 1583 | [`1583-library-overdue-fine.apl`](../examples/1583-library-overdue-fine.apl) | غرامة تتضاعف بعد أسبوع |
+| 1584 | [`1584-majority-element-vote.apl`](../examples/1584-majority-element-vote.apl) | عنصر يظهر أكثر من نصف المرات |
+| 1585 | [`1585-pair-sum-two-pointers.apl`](../examples/1585-pair-sum-two-pointers.apl) | قائمة مرتبة وهدف: هل يوجد زوج مجموعه الهدف |
+| 1586 | [`1586-pairs-with-given-difference.apl`](../examples/1586-pairs-with-given-difference.apl) | عدد الأزواج التي فرقها قيمة محددة |
+| 1587 | [`1587-intersection-of-sorted-lists.apl`](../examples/1587-intersection-of-sorted-lists.apl) | العناصر المشتركة بمرور واحد |
+| 1588 | [`1588-remove-duplicates-sorted-list.apl`](../examples/1588-remove-duplicates-sorted-list.apl) | نبقي نسخة واحدة من كل قيمة |
+| 1589 | [`1589-rotate-left-by-k.apl`](../examples/1589-rotate-left-by-k.apl) | نقل أول ك عناصر إلى النهاية |
+| 1590 | [`1590-contains-duplicate-set.apl`](../examples/1590-contains-duplicate-set.apl) | نكتشف أول تكرار بقاموس |
+| 1591 | [`1591-valid-anagram-counts.apl`](../examples/1591-valid-anagram-counts.apl) | نفس الحروف بنفس التكرار |
+| 1592 | [`1592-sorted-squares-two-pointers.apl`](../examples/1592-sorted-squares-two-pointers.apl) | مربعات قائمة مرتبة بالأعداد السالبة |
+| 1593 | [`1593-peak-element-index.apl`](../examples/1593-peak-element-index.apl) | عنصر أكبر من جاريه |
 
 **التشغيل:**
 ```bash
@@ -1840,4 +1864,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1569 مثال جاهز** في `examples/`.
+مع **1593 مثال جاهز** في `examples/`.
