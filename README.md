@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 101 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1848 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1870 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -274,9 +274,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1848 مثال)
+## الأمثلة الجاهزة (1870 مثال)
 
-مجلد `examples/` يحتوي على **1848 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1870 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -2128,6 +2128,28 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1846 | [`1846-three-sum-zero-count.apl`](examples/1846-three-sum-zero-count.apl) | نثبت عنصراً ونبحث بمؤشرين |
 | 1847 | [`1847-remove-element-in-place-count.apl`](examples/1847-remove-element-in-place-count.apl) | نكتب غير المحذوف في المقدمة |
 | 1848 | [`1848-valid-palindrome-ignore-nonalnum.apl`](examples/1848-valid-palindrome-ignore-nonalnum.apl) | نتجاوز غير الحروف والأرقام |
+| 1849 | [`1849-days-in-month-with-leap.apl`](examples/1849-days-in-month-with-leap.apl) | فبراير يتغير حسب السنة |
+| 1850 | [`1850-add-days-to-date-simple.apl`](examples/1850-add-days-to-date-simple.apl) | نتحرك يوماً يوماً عبر الأشهر |
+| 1851 | [`1851-time-add-minutes-clock.apl`](examples/1851-time-add-minutes-clock.apl) | ساعة ودقيقة بنظام أربع وعشرين |
+| 1852 | [`1852-seconds-to-hms-format.apl`](examples/1852-seconds-to-hms-format.apl) | نقسم على 3600 ثم 60 |
+| 1853 | [`1853-overlap-minutes-between-ranges.apl`](examples/1853-overlap-minutes-between-ranges.apl) | نحسب تقاطع فترتين زمنيتين |
+| 1854 | [`1854-weekday-index-after-days.apl`](examples/1854-weekday-index-after-days.apl) | نحرك اليوم بمقياس سبعة |
+| 1855 | [`1855-age-in-years-from-dates.apl`](examples/1855-age-in-years-from-dates.apl) | نطرح السنوات ونصحح قبل عيد الميلاد |
+| 1856 | [`1856-leap-years-count-in-range.apl`](examples/1856-leap-years-count-in-range.apl) | نعد من سنة إلى أخرى |
+| 1857 | [`1857-sum-of-two-largest-distinct.apl`](examples/1857-sum-of-two-largest-distinct.apl) | نتتبع أكبر قيمتين مختلفتين |
+| 1858 | [`1858-second-smallest-distinct-value.apl`](examples/1858-second-smallest-distinct-value.apl) | نتتبع أصغر قيمتين |
+| 1859 | [`1859-array-equilibrium-index-find.apl`](examples/1859-array-equilibrium-index-find.apl) | مجموع اليسار يساوي مجموع اليمين |
+| 1860 | [`1860-array-leaders-from-right.apl`](examples/1860-array-leaders-from-right.apl) | عناصر أكبر من كل ما على يمينها |
+| 1861 | [`1861-array-chunk-split-size.apl`](examples/1861-array-chunk-split-size.apl) | كل جزء بحجم ثابت |
+| 1862 | [`1862-interleave-two-lists-alternate.apl`](examples/1862-interleave-two-lists-alternate.apl) | عنصر من كل قائمة بالدور |
+| 1863 | [`1863-histogram-text-bars.apl`](examples/1863-histogram-text-bars.apl) | نرسم كل عدد بنجوم |
+| 1864 | [`1864-pyramid-rows-star-count.apl`](examples/1864-pyramid-rows-star-count.apl) | الصف ك فيه 2ك-1 نجمة |
+| 1865 | [`1865-multiplication-table-row-list.apl`](examples/1865-multiplication-table-row-list.apl) | مضاعفات عدد حتى عشرة |
+| 1866 | [`1866-celsius-fahrenheit-integer-table.apl`](examples/1866-celsius-fahrenheit-integer-table.apl) | تحويل بأعداد صحيحة عند مضاعفات الخمسة |
+| 1867 | [`1867-sum-arithmetic-progression-terms.apl`](examples/1867-sum-arithmetic-progression-terms.apl) | نستخدم صيغة المجموع |
+| 1868 | [`1868-compound-interest-integer-years.apl`](examples/1868-compound-interest-integer-years.apl) | نضيف نسبة مئوية كل سنة |
+| 1869 | [`1869-loan-payoff-months-count.apl`](examples/1869-loan-payoff-months-count.apl) | قسط ثابت وفائدة شهرية |
+| 1870 | [`1870-discount-tier-price-calc.apl`](examples/1870-discount-tier-price-calc.apl) | الخصم يزيد مع الكمية |
 
 ### تشغيل أي مثال
 
@@ -2228,7 +2250,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 1848 مثال
+**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 1870 مثال
 
 ## Language platform tools
 
