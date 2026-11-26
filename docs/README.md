@@ -116,9 +116,9 @@
 | 106 | [black-library.md](black-library.md) | مكتبة `black` — منسّق شيفرة بايثون من حزمة black |
 
 ---
-## الأمثلة الجاهزة (1828 مثال)
+## الأمثلة الجاهزة (1848 مثال)
 
-1828 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1848 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1950,6 +1950,26 @@
 | 1826 | [`1826-max-consecutive-ones-run.apl`](../examples/1826-max-consecutive-ones-run.apl) | نعد الآحاد المتتالية |
 | 1827 | [`1827-move-zeros-to-end-stable.apl`](../examples/1827-move-zeros-to-end-stable.apl) | نحافظ على ترتيب غير الأصفار |
 | 1828 | [`1828-sort-colors-dutch-flag.apl`](../examples/1828-sort-colors-dutch-flag.apl) | ثلاثة مؤشرات تكفي |
+| 1829 | [`1829-power-set-size-recursive.apl`](../examples/1829-power-set-size-recursive.apl) | نعد المجموعات الجزئية بالتكرار |
+| 1830 | [`1830-recursive-binary-search-index.apl`](../examples/1830-recursive-binary-search-index.apl) | نقسم المدى بالاستدعاء الذاتي |
+| 1831 | [`1831-search-rotated-sorted-array.apl`](../examples/1831-search-rotated-sorted-array.apl) | نحدد النصف المرتب أولاً |
+| 1832 | [`1832-find-minimum-rotated-array.apl`](../examples/1832-find-minimum-rotated-array.apl) | نقارن المنتصف بالنهاية |
+| 1833 | [`1833-first-last-position-sorted.apl`](../examples/1833-first-last-position-sorted.apl) | حدان بحث ثنائي |
+| 1834 | [`1834-integer-sqrt-binary-search.apl`](../examples/1834-integer-sqrt-binary-search.apl) | أكبر عدد مربعه لا يتجاوز ن |
+| 1835 | [`1835-peak-element-binary-search.apl`](../examples/1835-peak-element-binary-search.apl) | نتبع الاتجاه الصاعد |
+| 1836 | [`1836-koko-eating-bananas-speed.apl`](../examples/1836-koko-eating-bananas-speed.apl) | بحث ثنائي على الإجابة |
+| 1837 | [`1837-ship-packages-capacity-days.apl`](../examples/1837-ship-packages-capacity-days.apl) | بحث ثنائي على السعة |
+| 1838 | [`1838-search-insert-position-sorted.apl`](../examples/1838-search-insert-position-sorted.apl) | أول موضع لا يقل عن الهدف |
+| 1839 | [`1839-matrix-search-sorted-rows.apl`](../examples/1839-matrix-search-sorted-rows.apl) | نبدأ من الزاوية العلوية اليمنى |
+| 1840 | [`1840-kth-smallest-in-matrix-sorted.apl`](../examples/1840-kth-smallest-in-matrix-sorted.apl) | نجمع ونرتب |
+| 1841 | [`1841-insertion-sort-shift-count.apl`](../examples/1841-insertion-sort-shift-count.apl) | نعد حركات العناصر |
+| 1842 | [`1842-bubble-sort-pass-count.apl`](../examples/1842-bubble-sort-pass-count.apl) | نتوقف حين لا يحدث تبديل |
+| 1843 | [`1843-quick-select-kth-element.apl`](../examples/1843-quick-select-kth-element.apl) | نقسم حول محور |
+| 1844 | [`1844-sort-by-absolute-value-stable.apl`](../examples/1844-sort-by-absolute-value-stable.apl) | نرتب الأزواج بالمطلق ثم الأصلي |
+| 1845 | [`1845-squares-sorted-from-both-ends.apl`](../examples/1845-squares-sorted-from-both-ends.apl) | نملأ من الأكبر |
+| 1846 | [`1846-three-sum-zero-count.apl`](../examples/1846-three-sum-zero-count.apl) | نثبت عنصراً ونبحث بمؤشرين |
+| 1847 | [`1847-remove-element-in-place-count.apl`](../examples/1847-remove-element-in-place-count.apl) | نكتب غير المحذوف في المقدمة |
+| 1848 | [`1848-valid-palindrome-ignore-nonalnum.apl`](../examples/1848-valid-palindrome-ignore-nonalnum.apl) | نتجاوز غير الحروف والأرقام |
 
 **التشغيل:**
 ```bash
@@ -2109,4 +2129,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **227,195 عنصراً**،
-مع **1828 مثال جاهز** في `examples/`.
+مع **1848 مثال جاهز** في `examples/`.
