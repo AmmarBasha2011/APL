@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 101 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1995 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **2025 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -274,9 +274,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1995 مثال)
+## الأمثلة الجاهزة (2025 مثال)
 
-مجلد `examples/` يحتوي على **1995 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **2025 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -2275,6 +2275,36 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1993 | [`1993-text-pyramid-rows-centered.apl`](examples/1993-text-pyramid-rows-centered.apl) | كل صف يضيف نجمتين مع مسافات بادئة |
 | 1994 | [`1994-matrix-zigzag-diagonal-traverse.apl`](examples/1994-matrix-zigzag-diagonal-traverse.apl) | نجمع خلايا كل قطر ونعكس الاتجاه بالتناوب |
 | 1995 | [`1995-count-pairs-with-given-difference.apl`](examples/1995-count-pairs-with-given-difference.apl) | نبحث عن القيمة زائد الفارق في مجموعة القيم الفريدة |
+| 1996 | [`1996-reverse-first-k-elements-of-list.apl`](examples/1996-reverse-first-k-elements-of-list.apl) | نقتطع البداية ونعكسها ثم نلصق الباقي |
+| 1997 | [`1997-rotate-list-left-by-k-steps.apl`](examples/1997-rotate-list-left-by-k-steps.apl) | نأخذ ك باقي القسمة على الطول ونبدل الجزءين |
+| 1998 | [`1998-missing-number-xor-trick.apl`](examples/1998-missing-number-xor-trick.apl) | نجري XOR على كل الفهارس وكل القيم فيبقى العدد الناقص |
+| 1999 | [`1999-single-number-among-pairs-xor.apl`](examples/1999-single-number-among-pairs-xor.apl) | XOR لكل القيم يلغي الأزواج |
+| 2000 | [`2000-two-sum-sorted-two-pointers.apl`](examples/2000-two-sum-sorted-two-pointers.apl) | مؤشر من كل طرف نقربهما حسب المجموع |
+| 2001 | [`2001-three-sum-zero-unique-triplet-count.apl`](examples/2001-three-sum-zero-unique-triplet-count.apl) | نرتب ونثبت عنصرا ونبحث عن الباقي بمؤشرين |
+| 2002 | [`2002-container-with-most-water-area.apl`](examples/2002-container-with-most-water-area.apl) | المساحة تحددها الأقصر من الجدارين والمسافة بينهما |
+| 2003 | [`2003-remove-value-from-list-new-copy.apl`](examples/2003-remove-value-from-list-new-copy.apl) | نبني قائمة بكل العناصر المختلفة عن القيمة |
+| 2004 | [`2004-move-zeroes-to-end-stable.apl`](examples/2004-move-zeroes-to-end-stable.apl) | نحافظ على ترتيب غير الأصفار |
+| 2005 | [`2005-majority-element-boyer-moore-vote.apl`](examples/2005-majority-element-boyer-moore-vote.apl) | مرشح وعداد يلغي الأصوات المتعارضة |
+| 2006 | [`2006-max-consecutive-ones-with-k-flips.apl`](examples/2006-max-consecutive-ones-with-k-flips.apl) | نافذة متحركة تسمح بعدد محدود من الأصفار |
+| 2007 | [`2007-subarray-sum-equals-k-prefix-map.apl`](examples/2007-subarray-sum-equals-k-prefix-map.apl) | مجموع البادئات وقاموس تكرارها |
+| 2008 | [`2008-longest-consecutive-run-hash-set.apl`](examples/2008-longest-consecutive-run-hash-set.apl) | نبدأ العد من الأعداد التي لا يسبقها عدد في المجموعة |
+| 2009 | [`2009-valid-mountain-array-check.apl`](examples/2009-valid-mountain-array-check.apl) | تصعد بشدة ثم تنزل بشدة بقمة داخلية |
+| 2010 | [`2010-find-peak-element-binary-search.apl`](examples/2010-find-peak-element-binary-search.apl) | نتحرك نحو الجار الأكبر |
+| 2011 | [`2011-search-in-rotated-sorted-list.apl`](examples/2011-search-in-rotated-sorted-list.apl) | نحدد النصف المرتب في كل خطوة |
+| 2012 | [`2012-first-last-position-sorted-target.apl`](examples/2012-first-last-position-sorted-target.apl) | حد أدنى للقيمة وحد أدنى للقيمة التالية |
+| 2013 | [`2013-integer-sqrt-newton-iteration.apl`](examples/2013-integer-sqrt-newton-iteration.apl) | نكرر المتوسط حتى لا ينقص التقدير |
+| 2014 | [`2014-modular-power-square-and-multiply.apl`](examples/2014-modular-power-square-and-multiply.apl) | نربع الأساس ونضرب عند البت الواحد في الأس |
+| 2015 | [`2015-nth-ugly-number-three-pointers.apl`](examples/2015-nth-ugly-number-three-pointers.apl) | أعداد عواملها الأولية 2 و3 و5 فقط |
+| 2016 | [`2016-goldbach-smallest-prime-pair.apl`](examples/2016-goldbach-smallest-prime-pair.apl) | نجد أصغر أولي يكمل العدد الزوجي إلى أولي |
+| 2017 | [`2017-twin-primes-pairs-up-to-limit.apl`](examples/2017-twin-primes-pairs-up-to-limit.apl) | أوليان يفصل بينهما عدد زوجي واحد |
+| 2018 | [`2018-prime-factorization-exponent-pairs.apl`](examples/2018-prime-factorization-exponent-pairs.apl) | نرجع قائمة أزواج العامل والأس |
+| 2019 | [`2019-euler-totient-from-prime-factors.apl`](examples/2019-euler-totient-from-prime-factors.apl) | لكل عامل أولي نضرب في واحد ناقص مقلوبه |
+| 2020 | [`2020-modular-inverse-brute-force-search.apl`](examples/2020-modular-inverse-brute-force-search.apl) | نبحث عن x يجعل a*x يساوي 1 بالباقي m |
+| 2021 | [`2021-chinese-remainder-two-moduli-search.apl`](examples/2021-chinese-remainder-two-moduli-search.apl) | نبحث في مضاعفات حاصل ضرب المقياسين |
+| 2022 | [`2022-fraction-add-reduced-lowest-terms.apl`](examples/2022-fraction-add-reduced-lowest-terms.apl) | نوحد المقامات ونقسم على القاسم المشترك الأكبر |
+| 2023 | [`2023-continued-fraction-of-rational-number.apl`](examples/2023-continued-fraction-of-rational-number.apl) | نكرر القسمة الصحيحة كخوارزمية إقليدس |
+| 2024 | [`2024-egyptian-fraction-greedy-expansion.apl`](examples/2024-egyptian-fraction-greedy-expansion.apl) | نطرح أكبر كسر وحدة ممكن في كل خطوة |
+| 2025 | [`2025-farey-sequence-term-count.apl`](examples/2025-farey-sequence-term-count.apl) | نولد الحد التالي من الحدين السابقين بصيغة مباشرة |
 
 ### تشغيل أي مثال
 
@@ -2375,7 +2405,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 1995 مثال
+**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 2025 مثال
 
 ## Language platform tools
 
