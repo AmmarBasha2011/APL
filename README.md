@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1593 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1617 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1593 مثال)
+## الأمثلة الجاهزة (1617 مثال)
 
-مجلد `examples/` يحتوي على **1593 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1617 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1868,6 +1868,30 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1591 | [`1591-valid-anagram-counts.apl`](examples/1591-valid-anagram-counts.apl) | نفس الحروف بنفس التكرار |
 | 1592 | [`1592-sorted-squares-two-pointers.apl`](examples/1592-sorted-squares-two-pointers.apl) | مربعات قائمة مرتبة بالأعداد السالبة |
 | 1593 | [`1593-peak-element-index.apl`](examples/1593-peak-element-index.apl) | عنصر أكبر من جاريه |
+| 1594 | [`1594-binary-tree-height.apl`](examples/1594-binary-tree-height.apl) | أطول مسار من الجذر إلى ورقة |
+| 1595 | [`1595-tree-node-count.apl`](examples/1595-tree-node-count.apl) | العقدة الجذر مع كل عقد الفرعين |
+| 1596 | [`1596-tree-leaf-count.apl`](examples/1596-tree-leaf-count.apl) | العقد التي بلا أبناء |
+| 1597 | [`1597-tree-values-sum.apl`](examples/1597-tree-values-sum.apl) | نجمع قيمة كل عقدة |
+| 1598 | [`1598-invert-binary-tree.apl`](examples/1598-invert-binary-tree.apl) | تبديل الابن الأيسر بالأيمن في كل عقدة |
+| 1599 | [`1599-symmetric-tree-check.apl`](examples/1599-symmetric-tree-check.apl) | الشجرة صورة مرآة لنفسها |
+| 1600 | [`1600-valid-bst-check.apl`](examples/1600-valid-bst-check.apl) | كل عقدة بين حدين |
+| 1601 | [`1601-bst-search-value.apl`](examples/1601-bst-search-value.apl) | ننزل يساراً أو يميناً بحسب المقارنة |
+| 1602 | [`1602-kth-smallest-in-bst.apl`](examples/1602-kth-smallest-in-bst.apl) | الترتيب المتوسط يعطي القيم مرتبة |
+| 1603 | [`1603-lca-in-bst.apl`](examples/1603-lca-in-bst.apl) | نفترق عند أول عقدة تقع بين القيمتين |
+| 1604 | [`1604-same-tree-check.apl`](examples/1604-same-tree-check.apl) | نفس الشكل ونفس القيم |
+| 1605 | [`1605-tree-minimum-depth.apl`](examples/1605-tree-minimum-depth.apl) | أقصر مسار إلى ورقة |
+| 1606 | [`1606-tree-from-sorted-array.apl`](examples/1606-tree-from-sorted-array.apl) | الوسط جذراً والنصفان فرعان |
+| 1607 | [`1607-tree-level-order-lists.apl`](examples/1607-tree-level-order-lists.apl) | قائمة لكل مستوى بالترتيب من الأعلى |
+| 1608 | [`1608-tree-right-side-view.apl`](examples/1608-tree-right-side-view.apl) | آخر عقدة في كل مستوى |
+| 1609 | [`1609-tree-root-to-leaf-paths.apl`](examples/1609-tree-root-to-leaf-paths.apl) | كل المسارات الكاملة من الجذر |
+| 1610 | [`1610-count-good-nodes-tree.apl`](examples/1610-count-good-nodes-tree.apl) | عقدة لا يوجد في طريقها أكبر منها |
+| 1611 | [`1611-graph-node-degrees.apl`](examples/1611-graph-node-degrees.apl) | عدد الأضلاع المتصلة بكل رأس |
+| 1612 | [`1612-adjacency-matrix-from-edges.apl`](examples/1612-adjacency-matrix-from-edges.apl) | 1 إذا اتصل رأسان و0 غير ذلك |
+| 1613 | [`1613-connected-components-count.apl`](examples/1613-connected-components-count.apl) | كم مجموعة منفصلة من الرؤوس المتصلة |
+| 1614 | [`1614-undirected-graph-has-cycle.apl`](examples/1614-undirected-graph-has-cycle.apl) | هل يحتوي الرسم على دورة |
+| 1615 | [`1615-island-count-grid.apl`](examples/1615-island-count-grid.apl) | مجموعات الواحدات المتجاورة أفقياً ورأسياً |
+| 1616 | [`1616-digit-lists-addition-carry.apl`](examples/1616-digit-lists-addition-carry.apl) | الأرقام معكوسة والمرحّل يمتد |
+| 1617 | [`1617-merge-k-sorted-lists.apl`](examples/1617-merge-k-sorted-lists.apl) | قائمة واحدة مرتبة من عدة قوائم |
 
 ### تشغيل أي مثال
 
@@ -1968,7 +1992,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1593 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1617 مثال
 
 ## Language platform tools
 
