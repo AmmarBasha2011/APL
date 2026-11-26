@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 101 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **2054 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **2103 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -274,9 +274,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (2054 مثال)
+## الأمثلة الجاهزة (2103 مثال)
 
-مجلد `examples/` يحتوي على **2054 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **2103 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -2334,6 +2334,55 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 2052 | [`2052-maximum-xor-of-any-pair-brute.apl`](examples/2052-maximum-xor-of-any-pair-brute.apl) | نجرب كل الأزواج ونحتفظ بالأكبر |
 | 2053 | [`2053-gray-code-binary-conversion-both-ways.apl`](examples/2053-gray-code-binary-conversion-both-ways.apl) | غراي يساوي n XOR n>>1 والعكس بطي الإزاحات |
 | 2054 | [`2054-parity-of-bits-xor-fold.apl`](examples/2054-parity-of-bits-xor-fold.apl) | نطوي العدد على نفسه بإزاحات متناقصة |
+| 2055 | [`2055-insertion-sort-count-shifts.apl`](examples/2055-insertion-sort-count-shifts.apl) | كل إزاحة تعني عنصرا أكبر تجاوزناه |
+| 2056 | [`2056-bubble-sort-swap-count-passes.apl`](examples/2056-bubble-sort-swap-count-passes.apl) | نبدل الجارين غير المرتبين ونعد التبديلات |
+| 2057 | [`2057-selection-sort-compare-count.apl`](examples/2057-selection-sort-compare-count.apl) | عدد المقارنات ثابت مهما كان الترتيب |
+| 2058 | [`2058-counting-sort-small-integer-range.apl`](examples/2058-counting-sort-small-integer-range.apl) | نعد كل قيمة ثم نكتبها بالترتيب |
+| 2059 | [`2059-radix-sort-least-significant-digit.apl`](examples/2059-radix-sort-least-significant-digit.apl) | نوزع الأعداد على سلال حسب كل خانة |
+| 2060 | [`2060-bucket-sort-by-tens-group.apl`](examples/2060-bucket-sort-by-tens-group.apl) | نوزع الأعداد من 0 إلى 99 على عشر سلال |
+| 2061 | [`2061-merge-sorted-lists-drop-duplicates.apl`](examples/2061-merge-sorted-lists-drop-duplicates.apl) | نأخذ الأصغر ونتجاهل القيمة إن كررت الأخيرة |
+| 2062 | [`2062-kth-largest-quickselect-partition.apl`](examples/2062-kth-largest-quickselect-partition.apl) | نقسم حول محور ونتابع في الجزء المناسب |
+| 2063 | [`2063-order-numbers-by-count-then-size.apl`](examples/2063-order-numbers-by-count-then-size.apl) | الأقل تكرارا أولا وعند التعادل الأصغر قيمة |
+| 2064 | [`2064-sort-colors-dutch-flag-three-way.apl`](examples/2064-sort-colors-dutch-flag-three-way.apl) | ثلاثة مؤشرات تفرز 0 و1 و2 بمرور واحد |
+| 2065 | [`2065-wiggle-sort-adjacent-swaps.apl`](examples/2065-wiggle-sort-adjacent-swaps.apl) | نجعل القائمة صعودا ونزولا بالتناوب |
+| 2066 | [`2066-transpose-rectangular-matrix.apl`](examples/2066-transpose-rectangular-matrix.apl) | العنصر i,j يصبح j,i |
+| 2067 | [`2067-matrix-row-sums-and-column-sums.apl`](examples/2067-matrix-row-sums-and-column-sums.apl) | نرجع قائمتين من المجاميع |
+| 2068 | [`2068-matrix-saddle-point-row-min-column-max.apl`](examples/2068-matrix-saddle-point-row-min-column-max.apl) | أصغر قيمة في صفها وأكبر قيمة في عمودها |
+| 2069 | [`2069-matrix-symmetric-check-transpose-equal.apl`](examples/2069-matrix-symmetric-check-transpose-equal.apl) | العنصر i,j يساوي j,i لكل الأزواج |
+| 2070 | [`2070-pascal-matrix-lower-triangular-build.apl`](examples/2070-pascal-matrix-lower-triangular-build.apl) | كل عنصر مجموع العنصر فوقه والذي قبله |
+| 2071 | [`2071-matrix-trace-and-identity-build.apl`](examples/2071-matrix-trace-and-identity-build.apl) | الأثر مجموع القطر الرئيسي |
+| 2072 | [`2072-fibonacci-by-2x2-matrix-power.apl`](examples/2072-fibonacci-by-2x2-matrix-power.apl) | نرفع مصفوفة فيبوناتشي إلى الأس ن بالتربيع |
+| 2073 | [`2073-spiral-matrix-fill-n-by-n.apl`](examples/2073-spiral-matrix-fill-n-by-n.apl) | نكتب الأرقام من 1 حلزونيا |
+| 2074 | [`2074-flood-fill-image-paint-bucket-stack.apl`](examples/2074-flood-fill-image-paint-bucket-stack.apl) | نلون كل الخلايا المتصلة بنفس اللون |
+| 2075 | [`2075-game-of-life-blinker-oscillation.apl`](examples/2075-game-of-life-blinker-oscillation.apl) | النمط الوامض يعود لحاله بعد خطوتين |
+| 2076 | [`2076-rotate-matrix-counterclockwise-ninety.apl`](examples/2076-rotate-matrix-counterclockwise-ninety.apl) | العمود الأخير يصبح الصف الأول |
+| 2077 | [`2077-checkerboard-text-pattern-rows.apl`](examples/2077-checkerboard-text-pattern-rows.apl) | علامتان متناوبتان في كل صف |
+| 2078 | [`2078-right-aligned-staircase-text.apl`](examples/2078-right-aligned-staircase-text.apl) | كل صف يزيد علامة ويقل مسافة |
+| 2079 | [`2079-diamond-text-pattern-odd-width.apl`](examples/2079-diamond-text-pattern-odd-width.apl) | هرم ثم هرم مقلوب |
+| 2080 | [`2080-simple-interest-and-final-amount.apl`](examples/2080-simple-interest-and-final-amount.apl) | الفائدة = الأصل × النسبة × المدة على 100 |
+| 2081 | [`2081-percentage-change-rounded-one-decimal.apl`](examples/2081-percentage-change-rounded-one-decimal.apl) | الفرق على القيمة الأصلية مضروبا في 100 |
+| 2082 | [`2082-chained-discounts-final-price.apl`](examples/2082-chained-discounts-final-price.apl) | كل خصم يطبق على السعر الناتج من الذي قبله |
+| 2083 | [`2083-bill-split-with-tip-ceiling-cents.apl`](examples/2083-bill-split-with-tip-ceiling-cents.apl) | نقرب نصيب كل شخص لأعلى |
+| 2084 | [`2084-change-making-greedy-coin-counts.apl`](examples/2084-change-making-greedy-coin-counts.apl) | نأخذ أكبر فئة ممكنة أولا |
+| 2085 | [`2085-round-cents-to-nearest-five.apl`](examples/2085-round-cents-to-nearest-five.apl) | نضيف 2 ونقسم على 5 ونضرب |
+| 2086 | [`2086-weekday-sakamoto-method.apl`](examples/2086-weekday-sakamoto-method.apl) | صيغة قصيرة تعطي 0 للأحد |
+| 2087 | [`2087-days-between-dates-julian-day-number.apl`](examples/2087-days-between-dates-julian-day-number.apl) | نحول كل تاريخ إلى رقم يوم ونطرح |
+| 2088 | [`2088-century-number-from-year.apl`](examples/2088-century-number-from-year.apl) | السنة 100 آخر القرن الأول |
+| 2089 | [`2089-fizzbuzz-generalized-rule-list.apl`](examples/2089-fizzbuzz-generalized-rule-list.apl) | كل قاعدة قاسم وكلمة |
+| 2090 | [`2090-clock-hands-smaller-angle.apl`](examples/2090-clock-hands-smaller-angle.apl) | عقرب الساعة 30 درجة للساعة و0.5 للدقيقة والدقائق 6 درجات |
+| 2091 | [`2091-first-of-month-sundays-count-century.apl`](examples/2091-first-of-month-sundays-count-century.apl) | نعد أول الأشهر التي كانت أحدا بين 1901 و2000 |
+| 2092 | [`2092-friday-thirteenth-count-in-year.apl`](examples/2092-friday-thirteenth-count-in-year.apl) | نفحص يوم 13 من كل شهر |
+| 2093 | [`2093-tower-of-hanoi-move-list-recursive.apl`](examples/2093-tower-of-hanoi-move-list-recursive.apl) | ننقل ن-1 ثم القرص الأكبر ثم ن-1 مرة أخرى |
+| 2094 | [`2094-ackermann-function-small-inputs.apl`](examples/2094-ackermann-function-small-inputs.apl) | دالة تنمو بسرعة هائلة |
+| 2095 | [`2095-catalan-numbers-dp-convolution.apl`](examples/2095-catalan-numbers-dp-convolution.apl) | كل حد مجموع حاصل ضرب الحدود المتقابلة |
+| 2096 | [`2096-bell-numbers-triangle-method.apl`](examples/2096-bell-numbers-triangle-method.apl) | أول عنصر في كل صف هو عدد بيل |
+| 2097 | [`2097-stirling-second-kind-recurrence.apl`](examples/2097-stirling-second-kind-recurrence.apl) | عدد طرق تقسيم ن عنصرا إلى ك مجموعات |
+| 2098 | [`2098-derangement-count-recurrence.apl`](examples/2098-derangement-count-recurrence.apl) | تبديلات لا يبقى فيها عنصر في مكانه |
+| 2099 | [`2099-integer-partition-count-dp.apl`](examples/2099-integer-partition-count-dp.apl) | طرق كتابة العدد كمجموع أعداد موجبة |
+| 2100 | [`2100-binomial-coefficient-multiplicative-loop.apl`](examples/2100-binomial-coefficient-multiplicative-loop.apl) | نضرب ونقسم تباعا لنتجنب المضروب الكبير |
+| 2101 | [`2101-lucas-numbers-first-terms.apl`](examples/2101-lucas-numbers-first-terms.apl) | تبدأ بـ 2 و1 وكل حد مجموع السابقين |
+| 2102 | [`2102-tribonacci-nth-iterative.apl`](examples/2102-tribonacci-nth-iterative.apl) | كل حد مجموع ثلاثة حدود سابقة |
+| 2103 | [`2103-padovan-sequence-terms-list.apl`](examples/2103-padovan-sequence-terms-list.apl) | كل حد مجموع الحدين قبل الأخير بخطوة وخطوتين |
 
 ### تشغيل أي مثال
 
@@ -2434,7 +2483,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 2054 مثال
+**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 2103 مثال
 
 ## Language platform tools
 
