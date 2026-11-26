@@ -116,9 +116,9 @@
 | 106 | [black-library.md](black-library.md) | مكتبة `black` — منسّق شيفرة بايثون من حزمة black |
 
 ---
-## الأمثلة الجاهزة (1870 مثال)
+## الأمثلة الجاهزة (1888 مثال)
 
-1870 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1888 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1992,6 +1992,24 @@
 | 1868 | [`1868-compound-interest-integer-years.apl`](../examples/1868-compound-interest-integer-years.apl) | نضيف نسبة مئوية كل سنة |
 | 1869 | [`1869-loan-payoff-months-count.apl`](../examples/1869-loan-payoff-months-count.apl) | قسط ثابت وفائدة شهرية |
 | 1870 | [`1870-discount-tier-price-calc.apl`](../examples/1870-discount-tier-price-calc.apl) | الخصم يزيد مع الكمية |
+| 1871 | [`1871-heap-array-is-valid-min.apl`](../examples/1871-heap-array-is-valid-min.apl) | كل أب أصغر من ابنيه |
+| 1872 | [`1872-heapify-build-min-heap.apl`](../examples/1872-heapify-build-min-heap.apl) | ننزل كل أب غير فرعي |
+| 1873 | [`1873-top-k-largest-by-sort.apl`](../examples/1873-top-k-largest-by-sort.apl) | نرتب ونأخذ آخر ك |
+| 1874 | [`1874-running-median-small-list.apl`](../examples/1874-running-median-small-list.apl) | نحافظ على قائمة مرتبة |
+| 1875 | [`1875-mode-of-list-smallest.apl`](../examples/1875-mode-of-list-smallest.apl) | القيمة الأكثر تكراراً |
+| 1876 | [`1876-range-and-spread-of-list.apl`](../examples/1876-range-and-spread-of-list.apl) | الفرق بين الأكبر والأصغر |
+| 1877 | [`1877-variance-integer-scaled.apl`](../examples/1877-variance-integer-scaled.apl) | ن×مجموع المربعات - مربع المجموع |
+| 1878 | [`1878-prefix-sum-range-queries.apl`](../examples/1878-prefix-sum-range-queries.apl) | مجاميع تراكمية |
+| 1879 | [`1879-difference-array-range-add.apl`](../examples/1879-difference-array-range-add.apl) | نضيف على مدى بعمليتين |
+| 1880 | [`1880-rectangle-sum-prefix-2d.apl`](../examples/1880-rectangle-sum-prefix-2d.apl) | نبني جدولاً تراكمياً ثنائي |
+| 1881 | [`1881-tree-heights-from-parent-list.apl`](../examples/1881-tree-heights-from-parent-list.apl) | أطول سلسلة من الجذر |
+| 1882 | [`1882-lowest-common-ancestor-parents.apl`](../examples/1882-lowest-common-ancestor-parents.apl) | نصعد من العقدتين حتى نلتقي |
+| 1883 | [`1883-tree-diameter-parents-path.apl`](../examples/1883-tree-diameter-parents-path.apl) | أطول مسار بين عقدتين |
+| 1884 | [`1884-dijkstra-small-graph-distance.apl`](../examples/1884-dijkstra-small-graph-distance.apl) | نختار أقرب عقدة غير مزارة |
+| 1885 | [`1885-floyd-warshall-all-pairs-small.apl`](../examples/1885-floyd-warshall-all-pairs-small.apl) | نجرب كل عقدة وسيطة |
+| 1886 | [`1886-union-find-count-groups.apl`](../examples/1886-union-find-count-groups.apl) | ندمج المجموعات ونعد الجذور |
+| 1887 | [`1887-redundant-edge-cycle-detect.apl`](../examples/1887-redundant-edge-cycle-detect.apl) | أول حافة تصل عنصرين متصلين أصلاً |
+| 1888 | [`1888-minimum-spanning-tree-kruskal.apl`](../examples/1888-minimum-spanning-tree-kruskal.apl) | نضيف أرخص حافة لا تكون دورة |
 
 **التشغيل:**
 ```bash
@@ -2151,4 +2169,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **227,195 عنصراً**،
-مع **1870 مثال جاهز** في `examples/`.
+مع **1888 مثال جاهز** في `examples/`.
