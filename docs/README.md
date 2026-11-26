@@ -116,9 +116,9 @@
 | 106 | [black-library.md](black-library.md) | مكتبة `black` — منسّق شيفرة بايثون من حزمة black |
 
 ---
-## الأمثلة الجاهزة (1907 مثال)
+## الأمثلة الجاهزة (1924 مثال)
 
-1907 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1924 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -2029,6 +2029,23 @@
 | 1905 | [`1905-linked-list-middle-node-fast-slow.apl`](../examples/1905-linked-list-middle-node-fast-slow.apl) | مؤشر سريع وآخر بطيء |
 | 1906 | [`1906-linked-list-detect-cycle-floyd.apl`](../examples/1906-linked-list-detect-cycle-floyd.apl) | السريع يلحق البطيء عند وجود دورة |
 | 1907 | [`1907-merge-two-sorted-linked-lists.apl`](../examples/1907-merge-two-sorted-linked-lists.apl) | نأخذ الأصغر من الرأسين |
+| 1908 | [`1908-roman-numeral-to-integer-parse.apl`](../examples/1908-roman-numeral-to-integer-parse.apl) | الرمز الأصغر قبل الأكبر يطرح |
+| 1909 | [`1909-integer-to-roman-numeral-build.apl`](../examples/1909-integer-to-roman-numeral-build.apl) | نطرح أكبر قيمة ممكنة مرارا |
+| 1910 | [`1910-decimal-to-any-base-string.apl`](../examples/1910-decimal-to-any-base-string.apl) | نقسم على الأساس ونجمع البواقي |
+| 1911 | [`1911-parse-string-in-any-base.apl`](../examples/1911-parse-string-in-any-base.apl) | نضرب الناتج بالأساس ونضيف الخانة |
+| 1912 | [`1912-josephus-queue-simulation.apl`](../examples/1912-josephus-queue-simulation.apl) | نحذف كل شخص ك في الدائرة |
+| 1913 | [`1913-hot-potato-queue-last-player.apl`](../examples/1913-hot-potato-queue-last-player.apl) | نمرر الكرة ثم نخرج اللاعب |
+| 1914 | [`1914-bit-dp-count-hamiltonian-paths.apl`](../examples/1914-bit-dp-count-hamiltonian-paths.apl) | القناع يمثل العقد المزارة |
+| 1915 | [`1915-bit-dp-min-cost-assignment.apl`](../examples/1915-bit-dp-min-cost-assignment.apl) | القناع يمثل المهام المسندة |
+| 1916 | [`1916-tic-tac-toe-winner-check.apl`](../examples/1916-tic-tac-toe-winner-check.apl) | نفحص الصفوف والأعمدة والقطرين |
+| 1917 | [`1917-nim-game-winning-position.apl`](../examples/1917-nim-game-winning-position.apl) | الموقف رابح إن كان مجموع xor غير صفر |
+| 1918 | [`1918-stone-game-subtract-dp.apl`](../examples/1918-stone-game-subtract-dp.apl) | الموقف خاسر إن كانت كل الحركات تؤدي لموقف رابح |
+| 1919 | [`1919-matrix-spiral-order-traverse.apl`](../examples/1919-matrix-spiral-order-traverse.apl) | أربع حدود تضيق تدريجيا |
+| 1920 | [`1920-matrix-rotate-ninety-degrees.apl`](../examples/1920-matrix-rotate-ninety-degrees.apl) | الصف الأخير يصبح العمود الأول |
+| 1921 | [`1921-pascal-triangle-row-build.apl`](../examples/1921-pascal-triangle-row-build.apl) | كل عنصر مجموع العنصرين فوقه |
+| 1922 | [`1922-ticket-queue-wait-time.apl`](../examples/1922-ticket-queue-wait-time.apl) | كل شخص يشتري تذكرة في ثانية |
+| 1923 | [`1923-spell-number-english-under-thousand.apl`](../examples/1923-spell-number-english-under-thousand.apl) | نقسم العدد لمئات وعشرات وآحاد |
+| 1924 | [`1924-gray-code-sequence-generate.apl`](../examples/1924-gray-code-sequence-generate.apl) | كل رقمين متتاليين يختلفان ببت واحد |
 
 **التشغيل:**
 ```bash
@@ -2188,4 +2205,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **227,195 عنصراً**،
-مع **1907 مثال جاهز** في `examples/`.
+مع **1924 مثال جاهز** في `examples/`.
