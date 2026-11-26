@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1769 مثال)
+## الأمثلة الجاهزة (1783 مثال)
 
-1769 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1783 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1886,6 +1886,20 @@
 | 1767 | [`1767-date-days-between-years-simple.apl`](../examples/1767-date-days-between-years-simple.apl) | نجمع أطوال السنوات مع الكبيسة |
 | 1768 | [`1768-weekday-from-date-zeller.apl`](../examples/1768-weekday-from-date-zeller.apl) | معادلة تحسب اليوم من التاريخ |
 | 1769 | [`1769-clock-angle-between-hands.apl`](../examples/1769-clock-angle-between-hands.apl) | نحسب موضع كل عقرب بالدرجات |
+| 1770 | [`1770-next-greater-element-stack.apl`](../examples/1770-next-greater-element-stack.apl) | لكل عنصر أول عنصر أكبر منه على يمينه |
+| 1771 | [`1771-daily-temperatures-wait-days.apl`](../examples/1771-daily-temperatures-wait-days.apl) | كم يوماً حتى ترتفع الحرارة |
+| 1772 | [`1772-largest-rectangle-histogram.apl`](../examples/1772-largest-rectangle-histogram.apl) | مكدس يحفظ أعمدة صاعدة |
+| 1773 | [`1773-valid-brackets-three-kinds.apl`](../examples/1773-valid-brackets-three-kinds.apl) | كل قوس يغلق بنظيره |
+| 1774 | [`1774-min-add-parentheses-fix.apl`](../examples/1774-min-add-parentheses-fix.apl) | نعد الأقواس غير المتزنة |
+| 1775 | [`1775-postfix-expression-evaluate.apl`](../examples/1775-postfix-expression-evaluate.apl) | الأعداد تدخل المكدس والعمليات تأخذ آخر عددين |
+| 1776 | [`1776-infix-to-postfix-simple.apl`](../examples/1776-infix-to-postfix-simple.apl) | نرتب العمليات بأولوياتها |
+| 1777 | [`1777-simplify-unix-path.apl`](../examples/1777-simplify-unix-path.apl) | نعالج النقطتين والنقطة |
+| 1778 | [`1778-decode-nested-repeat-string.apl`](../examples/1778-decode-nested-repeat-string.apl) | 3[ab] تعني ababab |
+| 1779 | [`1779-longest-substring-no-repeat.apl`](../examples/1779-longest-substring-no-repeat.apl) | نافذة تتمدد وتنكمش |
+| 1780 | [`1780-min-window-sum-at-least.apl`](../examples/1780-min-window-sum-at-least.apl) | نافذة متحركة على أعداد موجبة |
+| 1781 | [`1781-subarray-sum-equals-target-count.apl`](../examples/1781-subarray-sum-equals-target-count.apl) | مجاميع تراكمية وقاموس |
+| 1782 | [`1782-longest-consecutive-run-set.apl`](../examples/1782-longest-consecutive-run-set.apl) | نبدأ من بدايات المتتاليات فقط |
+| 1783 | [`1783-pair-count-with-difference-k.apl`](../examples/1783-pair-count-with-difference-k.apl) | نبحث عن العدد زائد الفرق |
 
 **التشغيل:**
 ```bash
@@ -2040,4 +2054,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1769 مثال جاهز** في `examples/`.
+مع **1783 مثال جاهز** في `examples/`.
