@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1746 مثال)
+## الأمثلة الجاهزة (1769 مثال)
 
-1746 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1769 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1863,6 +1863,29 @@
 | 1744 | [`1744-stock-profit-many-trades.apl`](../examples/1744-stock-profit-many-trades.apl) | نجمع كل صعود |
 | 1745 | [`1745-gas-station-start-index.apl`](../examples/1745-gas-station-start-index.apl) | من أين نبدأ لنكمل الدائرة |
 | 1746 | [`1746-candy-distribution-min-total.apl`](../examples/1746-candy-distribution-min-total.apl) | كل طفل أكثر تقييماً من جاره يأخذ أكثر |
+| 1747 | [`1747-matrix-transpose-rectangular.apl`](../examples/1747-matrix-transpose-rectangular.apl) | الصف يصبح عموداً |
+| 1748 | [`1748-matrix-multiply-small.apl`](../examples/1748-matrix-multiply-small.apl) | صف في عمود |
+| 1749 | [`1749-matrix-rotate-quarter-turn.apl`](../examples/1749-matrix-rotate-quarter-turn.apl) | نقلب ثم نعكس الصفوف |
+| 1750 | [`1750-matrix-row-column-max-sums.apl`](../examples/1750-matrix-row-column-max-sums.apl) | نقارن مجاميع الصفوف والأعمدة |
+| 1751 | [`1751-pascal-triangle-row-nth.apl`](../examples/1751-pascal-triangle-row-nth.apl) | كل عنصر مجموع الفوقيين |
+| 1752 | [`1752-n-choose-k-iterative.apl`](../examples/1752-n-choose-k-iterative.apl) | نضرب ونقسم تدريجياً |
+| 1753 | [`1753-combinations-of-size-two.apl`](../examples/1753-combinations-of-size-two.apl) | نختار كل زوجين مختلفين |
+| 1754 | [`1754-subsets-of-list-bitmask.apl`](../examples/1754-subsets-of-list-bitmask.apl) | كل رقم ثنائي يمثل مجموعة |
+| 1755 | [`1755-generate-parentheses-all.apl`](../examples/1755-generate-parentheses-all.apl) | نضيف قوساً مفتوحاً أو مغلقاً بشرط |
+| 1756 | [`1756-word-break-possible.apl`](../examples/1756-word-break-possible.apl) | هل نغطي النص بكلمات القاموس |
+| 1757 | [`1757-climbing-stairs-ways-count.apl`](../examples/1757-climbing-stairs-ways-count.apl) | خطوة أو خطوتان في كل مرة |
+| 1758 | [`1758-longest-increasing-subsequence-len.apl`](../examples/1758-longest-increasing-subsequence-len.apl) | نحسب لكل عنصر أطول متتالية تنتهي به |
+| 1759 | [`1759-knapsack-zero-one-value.apl`](../examples/1759-knapsack-zero-one-value.apl) | أقصى قيمة ضمن سعة محدودة |
+| 1760 | [`1760-unique-paths-grid-count.apl`](../examples/1760-unique-paths-grid-count.apl) | يمين وأسفل فقط |
+| 1761 | [`1761-min-path-sum-triangle.apl`](../examples/1761-min-path-sum-triangle.apl) | ننزل من القمة للقاعدة |
+| 1762 | [`1762-decode-ways-digit-string.apl`](../examples/1762-decode-ways-digit-string.apl) | الأرقام من 1 إلى 26 حروف |
+| 1763 | [`1763-perfect-squares-min-count.apl`](../examples/1763-perfect-squares-min-count.apl) | كم مربعاً يكفي لتكوين العدد |
+| 1764 | [`1764-linked-list-middle-node-index.apl`](../examples/1764-linked-list-middle-node-index.apl) | مؤشر سريع وآخر بطيء |
+| 1765 | [`1765-linked-list-cycle-detect-floyd.apl`](../examples/1765-linked-list-cycle-detect-floyd.apl) | سرعتان تلتقيان داخل الدورة |
+| 1766 | [`1766-linked-list-remove-nth-from-end.apl`](../examples/1766-linked-list-remove-nth-from-end.apl) | نحسب الطول ثم نعيد الربط |
+| 1767 | [`1767-date-days-between-years-simple.apl`](../examples/1767-date-days-between-years-simple.apl) | نجمع أطوال السنوات مع الكبيسة |
+| 1768 | [`1768-weekday-from-date-zeller.apl`](../examples/1768-weekday-from-date-zeller.apl) | معادلة تحسب اليوم من التاريخ |
+| 1769 | [`1769-clock-angle-between-hands.apl`](../examples/1769-clock-angle-between-hands.apl) | نحسب موضع كل عقرب بالدرجات |
 
 **التشغيل:**
 ```bash
@@ -2017,4 +2040,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1746 مثال جاهز** في `examples/`.
+مع **1769 مثال جاهز** في `examples/`.
