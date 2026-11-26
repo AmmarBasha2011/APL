@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1617 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1640 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1617 مثال)
+## الأمثلة الجاهزة (1640 مثال)
 
-مجلد `examples/` يحتوي على **1617 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1640 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1892,6 +1892,29 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1615 | [`1615-island-count-grid.apl`](examples/1615-island-count-grid.apl) | مجموعات الواحدات المتجاورة أفقياً ورأسياً |
 | 1616 | [`1616-digit-lists-addition-carry.apl`](examples/1616-digit-lists-addition-carry.apl) | الأرقام معكوسة والمرحّل يمتد |
 | 1617 | [`1617-merge-k-sorted-lists.apl`](examples/1617-merge-k-sorted-lists.apl) | قائمة واحدة مرتبة من عدة قوائم |
+| 1618 | [`1618-binary-search-first-occurrence.apl`](examples/1618-binary-search-first-occurrence.apl) | موضع أول نسخة من قيمة مكررة في قائمة مرتبة |
+| 1619 | [`1619-binary-search-last-occurrence.apl`](examples/1619-binary-search-last-occurrence.apl) | موضع آخر نسخة من قيمة مكررة |
+| 1620 | [`1620-sorted-lower-bound.apl`](examples/1620-sorted-lower-bound.apl) | أول موضع قيمته لا تقل عن الهدف |
+| 1621 | [`1621-sorted-upper-bound.apl`](examples/1621-sorted-upper-bound.apl) | أول موضع قيمته أكبر من الهدف |
+| 1622 | [`1622-integer-square-root-binary.apl`](examples/1622-integer-square-root-binary.apl) | أكبر عدد صحيح مربعه لا يتجاوز العدد |
+| 1623 | [`1623-count-occurrences-sorted.apl`](examples/1623-count-occurrences-sorted.apl) | الفرق بين الحد الأعلى والأدنى |
+| 1624 | [`1624-floor-and-ceiling-sorted.apl`](examples/1624-floor-and-ceiling-sorted.apl) | أكبر عنصر لا يزيد وأصغر عنصر لا ينقص |
+| 1625 | [`1625-koko-eating-bananas.apl`](examples/1625-koko-eating-bananas.apl) | أقل سرعة تنهي بها الأكوام قبل مرور الساعات |
+| 1626 | [`1626-mountain-array-peak.apl`](examples/1626-mountain-array-peak.apl) | تصعد ثم تهبط: نجد موضع القمة |
+| 1627 | [`1627-sorted-matrix-staircase-search.apl`](examples/1627-sorted-matrix-staircase-search.apl) | صفوف وأعمدة مرتبة: نبدأ من الركن العلوي الأيمن |
+| 1628 | [`1628-rotation-count-sorted.apl`](examples/1628-rotation-count-sorted.apl) | موضع أصغر عنصر هو عدد الدورات |
+| 1629 | [`1629-cyclic-sort-one-to-n.apl`](examples/1629-cyclic-sort-one-to-n.apl) | كل رقم يوضع في خانته مباشرة |
+| 1630 | [`1630-set-mismatch-find.apl`](examples/1630-set-mismatch-find.apl) | مجموعة 1 إلى ن فيها رقم مكرر وآخر مفقود |
+| 1631 | [`1631-three-sum-closest-target.apl`](examples/1631-three-sum-closest-target.apl) | ثلاثة أعداد مجموعها الأقرب إلى الهدف |
+| 1632 | [`1632-minimum-meeting-rooms.apl`](examples/1632-minimum-meeting-rooms.apl) | أقصى عدد اجتماعات متزامنة |
+| 1633 | [`1633-moving-average-from-stream.apl`](examples/1633-moving-average-from-stream.apl) | متوسط آخر ك قيمة عند كل وصول |
+| 1634 | [`1634-smallest-letter-greater-than.apl`](examples/1634-smallest-letter-greater-than.apl) | في قائمة حروف مرتبة مع الالتفاف |
+| 1635 | [`1635-k-closest-elements-sorted.apl`](examples/1635-k-closest-elements-sorted.apl) | العناصر الأقرب إلى قيمة معينة |
+| 1636 | [`1636-kth-missing-positive-number.apl`](examples/1636-kth-missing-positive-number.apl) | الأرقام الغائبة من قائمة مرتبة |
+| 1637 | [`1637-perfect-square-binary-check.apl`](examples/1637-perfect-square-binary-check.apl) | بلا استخدام الجذر |
+| 1638 | [`1638-arranging-coins-staircase.apl`](examples/1638-arranging-coins-staircase.apl) | كم صفاً كاملاً يمكن بناؤه |
+| 1639 | [`1639-minimum-days-for-bouquets.apl`](examples/1639-minimum-days-for-bouquets.apl) | نبحث عن أول يوم تكتمل فيه الباقات |
+| 1640 | [`1640-nth-root-binary-search.apl`](examples/1640-nth-root-binary-search.apl) | أكبر عدد صحيح قوته ن لا تتجاوز العدد |
 
 ### تشغيل أي مثال
 
@@ -1992,7 +2015,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1617 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1640 مثال
 
 ## Language platform tools
 
