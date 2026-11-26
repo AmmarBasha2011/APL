@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 96 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **1723 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **1746 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -269,9 +269,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (1723 مثال)
+## الأمثلة الجاهزة (1746 مثال)
 
-مجلد `examples/` يحتوي على **1723 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **1746 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1998,6 +1998,29 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 1721 | [`1721-inventory-restock-needed.apl`](examples/1721-inventory-restock-needed.apl) | نقارن الكمية بحد الطلب |
 | 1722 | [`1722-elevator-floor-travel-sum.apl`](examples/1722-elevator-floor-travel-sum.apl) | نجمع الفروق بين الطوابق المتتالية |
 | 1723 | [`1723-parking-lot-fee-calculator.apl`](examples/1723-parking-lot-fee-calculator.apl) | الساعة الأولى بسعر والباقي بسعر أقل |
+| 1724 | [`1724-counting-sort-small-range.apl`](examples/1724-counting-sort-small-range.apl) | نعد تكرار كل قيمة ثم نعيد كتابتها |
+| 1725 | [`1725-selection-sort-swap-count.apl`](examples/1725-selection-sort-swap-count.apl) | نعد التبديلات الفعلية |
+| 1726 | [`1726-merge-two-sorted-lists.apl`](examples/1726-merge-two-sorted-lists.apl) | نأخذ الأصغر من الرأسين |
+| 1727 | [`1727-sort-by-frequency-then-value.apl`](examples/1727-sort-by-frequency-then-value.apl) | الأكثر تكراراً أولاً وعند التعادل الأصغر |
+| 1728 | [`1728-majority-boyer-moore-candidate.apl`](examples/1728-majority-boyer-moore-candidate.apl) | نلغي كل عنصرين مختلفين |
+| 1729 | [`1729-remove-duplicates-sorted-count.apl`](examples/1729-remove-duplicates-sorted-count.apl) | نقارن كل عنصر بسابقه |
+| 1730 | [`1730-missing-number-in-range.apl`](examples/1730-missing-number-in-range.apl) | الفرق بين المجموع المتوقع والفعلي |
+| 1731 | [`1731-first-unique-character-index.apl`](examples/1731-first-unique-character-index.apl) | نعد الحروف ثم نبحث عن أول عدد واحد |
+| 1732 | [`1732-anagram-pair-check-sorted.apl`](examples/1732-anagram-pair-check-sorted.apl) | كلمتان جناس إذا تطابقت حروفهما مرتبة |
+| 1733 | [`1733-string-compress-char-counts.apl`](examples/1733-string-compress-char-counts.apl) | نكتب الحرف وبعده عدد تكراره المتتالي |
+| 1734 | [`1734-caesar-shift-lowercase-only.apl`](examples/1734-caesar-shift-lowercase-only.apl) | نزيح الحروف الصغيرة فقط |
+| 1735 | [`1735-vowel-consonant-count-pair.apl`](examples/1735-vowel-consonant-count-pair.apl) | نصنف كل حرف لاتيني |
+| 1736 | [`1736-capitalize-each-word-simple.apl`](examples/1736-capitalize-each-word-simple.apl) | نكبر الحرف الأول من كل كلمة |
+| 1737 | [`1737-fizz-buzz-count-range.apl`](examples/1737-fizz-buzz-count-range.apl) | نعد كل فئة في المدى |
+| 1738 | [`1738-meeting-rooms-needed-count.apl`](examples/1738-meeting-rooms-needed-count.apl) | أقصى عدد اجتماعات متزامنة |
+| 1739 | [`1739-job-scheduling-earliest-deadline.apl`](examples/1739-job-scheduling-earliest-deadline.apl) | نرتب بالموعد ونحسب أقصى تأخير |
+| 1740 | [`1740-round-robin-turnaround-time.apl`](examples/1740-round-robin-turnaround-time.apl) | كل مهمة تأخذ حصة زمنية بالدور |
+| 1741 | [`1741-two-pointer-container-water.apl`](examples/1741-two-pointer-container-water.apl) | نتحرك من الجدار الأقصر |
+| 1742 | [`1742-trapping-rain-water-total.apl`](examples/1742-trapping-rain-water-total.apl) | الماء فوق كل عمود بحسب الجدارين |
+| 1743 | [`1743-best-time-buy-sell-once.apl`](examples/1743-best-time-buy-sell-once.apl) | نتتبع أقل سعر ورأس الربح |
+| 1744 | [`1744-stock-profit-many-trades.apl`](examples/1744-stock-profit-many-trades.apl) | نجمع كل صعود |
+| 1745 | [`1745-gas-station-start-index.apl`](examples/1745-gas-station-start-index.apl) | من أين نبدأ لنكمل الدائرة |
+| 1746 | [`1746-candy-distribution-min-total.apl`](examples/1746-candy-distribution-min-total.apl) | كل طفل أكثر تقييماً من جاره يأخذ أكثر |
 
 ### تشغيل أي مثال
 
@@ -2098,7 +2121,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1723 مثال
+**الإصدار:** APL v1.13 — 211,431 عنصراً عربياً — 96 مكتبة — 1746 مثال
 
 ## Language platform tools
 
