@@ -116,9 +116,9 @@
 | 106 | [black-library.md](black-library.md) | مكتبة `black` — منسّق شيفرة بايثون من حزمة black |
 
 ---
-## الأمثلة الجاهزة (1968 مثال)
+## الأمثلة الجاهزة (1995 مثال)
 
-1968 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1995 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -2090,6 +2090,33 @@
 | 1966 | [`1966-bracket-min-insertions-balance.apl`](../examples/1966-bracket-min-insertions-balance.apl) | نعد الإغلاقات الزائدة والفتحات غير المغلقة |
 | 1967 | [`1967-run-length-encode-pairs-list.apl`](../examples/1967-run-length-encode-pairs-list.apl) | نحول النص إلى قائمة أزواج حرف وعدد |
 | 1968 | [`1968-pascal-triangle-row-sum-powers.apl`](../examples/1968-pascal-triangle-row-sum-powers.apl) | مجموع الصف ن يساوي 2 أس ن |
+| 1969 | [`1969-tennis-game-score-from-points.apl`](../examples/1969-tennis-game-score-from-points.apl) | نحول النقاط إلى 15 و30 و40 مع التعادل والأفضلية |
+| 1970 | [`1970-bowling-score-ten-frames.apl`](../examples/1970-bowling-score-ten-frames.apl) | الضربة القاضية والضربة الاحتياطية تضيفان نقاط الرميات التالية |
+| 1971 | [`1971-stair-climb-ways-one-two-three.apl`](../examples/1971-stair-climb-ways-one-two-three.apl) | عدد الطرق للدرجة ن مجموع الطرق للثلاث درجات قبلها |
+| 1972 | [`1972-longest-run-in-coin-flips.apl`](../examples/1972-longest-run-in-coin-flips.apl) | نعد أطول سلسلة متطابقة من H أو T |
+| 1973 | [`1973-snake-case-to-title-words.apl`](../examples/1973-snake-case-to-title-words.apl) | نقسم عند الشرطة السفلية ونكبر أول حرف في كل جزء |
+| 1974 | [`1974-phone-keypad-combination-count.apl`](../examples/1974-phone-keypad-combination-count.apl) | نضرب عدد الأحرف على كل زر |
+| 1975 | [`1975-t9-word-to-digit-sequence.apl`](../examples/1975-t9-word-to-digit-sequence.apl) | كل حرف يقابل الزر الذي يحمله |
+| 1976 | [`1976-seven-segment-lit-segments-total.apl`](../examples/1976-seven-segment-lit-segments-total.apl) | كل رقم يضيء عددا ثابتا من القطع |
+| 1977 | [`1977-binary-nibble-grouped-string.apl`](../examples/1977-binary-nibble-grouped-string.apl) | نملأ بأصفار حتى مضاعف الأربعة ونفصل بشرطة سفلية |
+| 1978 | [`1978-ipv4-address-format-validate.apl`](../examples/1978-ipv4-address-format-validate.apl) | أربعة أجزاء رقمية بين 0 و255 بلا أصفار بادئة |
+| 1979 | [`1979-ipv4-to-integer-and-back.apl`](../examples/1979-ipv4-to-integer-and-back.apl) | العنوان أربع خانات بأساس 256 |
+| 1980 | [`1980-cidr-usable-host-count.apl`](../examples/1980-cidr-usable-host-count.apl) | عدد العناوين اثنان أس 32 ناقص البادئة ناقص عنوانين محجوزين |
+| 1981 | [`1981-hex-color-to-rgb-triple.apl`](../examples/1981-hex-color-to-rgb-triple.apl) | نقرأ كل زوج حروف كعدد بأساس 16 |
+| 1982 | [`1982-rgb-to-gray-luma-integer.apl`](../examples/1982-rgb-to-gray-luma-integer.apl) | مجموع موزون بأوزان 299 و587 و114 على 1000 |
+| 1983 | [`1983-mac-address-normalize-format.apl`](../examples/1983-mac-address-normalize-format.apl) | نزيل الفواصل المختلفة ونكتب بحروف صغيرة مع نقطتين |
+| 1984 | [`1984-semantic-version-compare-three-parts.apl`](../examples/1984-semantic-version-compare-three-parts.apl) | نقارن الأجزاء رقميا ونكمل الناقص بأصفار |
+| 1985 | [`1985-file-size-human-readable-units.apl`](../examples/1985-file-size-human-readable-units.apl) | نقسم على 1024 حتى نصل لوحدة مناسبة |
+| 1986 | [`1986-seconds-to-hours-minutes-seconds-text.apl`](../examples/1986-seconds-to-hours-minutes-seconds-text.apl) | نقسم على 3600 ثم 60 ونملأ الصفر البادئ |
+| 1987 | [`1987-pluralize-count-with-noun-rules.apl`](../examples/1987-pluralize-count-with-noun-rules.apl) | نضيف s أو es أو نبدل y بـ ies حسب آخر الاسم |
+| 1988 | [`1988-balanced-ternary-digits-from-int.apl`](../examples/1988-balanced-ternary-digits-from-int.apl) | الخانات 1 و0 وT حيث T تساوي ناقص واحد |
+| 1989 | [`1989-negabinary-digits-from-int.apl`](../examples/1989-negabinary-digits-from-int.apl) | الأساس ناقص اثنين يمثل كل الأعداد بلا إشارة |
+| 1990 | [`1990-factorial-trailing-zeros-count-fives.apl`](../examples/1990-factorial-trailing-zeros-count-fives.apl) | عدد الأصفار يساوي عدد الخماسات في العوامل |
+| 1991 | [`1991-count-digit-occurrences-up-to-n.apl`](../examples/1991-count-digit-occurrences-up-to-n.apl) | نمر على كل عدد من 1 إلى ن ونعد الرقم المطلوب |
+| 1992 | [`1992-abundant-deficient-perfect-classify.apl`](../examples/1992-abundant-deficient-perfect-classify.apl) | نقارن مجموع القواسم الحقيقية بالعدد نفسه |
+| 1993 | [`1993-text-pyramid-rows-centered.apl`](../examples/1993-text-pyramid-rows-centered.apl) | كل صف يضيف نجمتين مع مسافات بادئة |
+| 1994 | [`1994-matrix-zigzag-diagonal-traverse.apl`](../examples/1994-matrix-zigzag-diagonal-traverse.apl) | نجمع خلايا كل قطر ونعكس الاتجاه بالتناوب |
+| 1995 | [`1995-count-pairs-with-given-difference.apl`](../examples/1995-count-pairs-with-given-difference.apl) | نبحث عن القيمة زائد الفارق في مجموعة القيم الفريدة |
 
 **التشغيل:**
 ```bash
@@ -2249,4 +2276,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **227,195 عنصراً**،
-مع **1968 مثال جاهز** في `examples/`.
+مع **1995 مثال جاهز** في `examples/`.
