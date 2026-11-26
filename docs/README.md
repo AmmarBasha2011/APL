@@ -111,9 +111,9 @@
 | 101 | [sortedcontainers-library.md](sortedcontainers-library.md) | مكتبة `sortedcontainers` — قوائم وقواميس ومجموعات مرتبة من حزمة sortedcontainers |
 
 ---
-## الأمثلة الجاهزة (1686 مثال)
+## الأمثلة الجاهزة (1706 مثال)
 
-1686 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
+1706 برنامج حقيقياً مكتوبة بالكامل بالعربي، جميعها مختبرة وتعمل بلا أخطاء:
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -1803,6 +1803,26 @@
 | 1684 | [`1684-permutations-of-three-lists.apl`](../examples/1684-permutations-of-three-lists.apl) | نولد كل الترتيبات بالتراجع |
 | 1685 | [`1685-subsets-with-target-sum-count.apl`](../examples/1685-subsets-with-target-sum-count.apl) | نعد الطرق بجدول |
 | 1686 | [`1686-grid-path-count-obstacles.apl`](../examples/1686-grid-path-count-obstacles.apl) | نعد المسارات يميناً وأسفل |
+| 1687 | [`1687-edit-distance-two-words.apl`](../examples/1687-edit-distance-two-words.apl) | أقل عمليات إدراج وحذف واستبدال |
+| 1688 | [`1688-longest-common-subsequence-length.apl`](../examples/1688-longest-common-subsequence-length.apl) | طول أطول متتالية مشتركة بين نصين |
+| 1689 | [`1689-count-set-bits-in-range.apl`](../examples/1689-count-set-bits-in-range.apl) | نجمع عدد الآحاد الثنائية لكل عدد |
+| 1690 | [`1690-is-power-of-two-bit.apl`](../examples/1690-is-power-of-two-bit.apl) | ن & (ن-1) تساوي صفراً |
+| 1691 | [`1691-gray-code-sequence.apl`](../examples/1691-gray-code-sequence.apl) | كل رقمين متتاليين يختلفان ببت واحد |
+| 1692 | [`1692-day-of-year-from-date.apl`](../examples/1692-day-of-year-from-date.apl) | نجمع أيام الشهور السابقة |
+| 1693 | [`1693-matrix-main-diagonal-sum.apl`](../examples/1693-matrix-main-diagonal-sum.apl) | القطر الرئيسي والثانوي دون عد المركز مرتين |
+| 1694 | [`1694-matrix-spiral-order-list.apl`](../examples/1694-matrix-spiral-order-list.apl) | نقرأ الحواف من الخارج للداخل |
+| 1695 | [`1695-queue-via-two-stacks.apl`](../examples/1695-queue-via-two-stacks.apl) | نقلب المكدس عند الحاجة |
+| 1696 | [`1696-thousands-separator-format.apl`](../examples/1696-thousands-separator-format.apl) | نضع فاصلة كل ثلاثة أرقام |
+| 1697 | [`1697-roman-numeral-to-integer.apl`](../examples/1697-roman-numeral-to-integer.apl) | نطرح الرمز الأصغر قبل الأكبر |
+| 1698 | [`1698-integer-to-roman-numeral.apl`](../examples/1698-integer-to-roman-numeral.apl) | نطرح أكبر قيمة ممكنة مراراً |
+| 1699 | [`1699-longest-palindromic-substring-length.apl`](../examples/1699-longest-palindromic-substring-length.apl) | نوسع من كل مركز |
+| 1700 | [`1700-coin-change-min-coins.apl`](../examples/1700-coin-change-min-coins.apl) | نبني الحل لكل مبلغ أصغر |
+| 1701 | [`1701-house-robber-max-sum.apl`](../examples/1701-house-robber-max-sum.apl) | لا نأخذ عنصرين متجاورين |
+| 1702 | [`1702-max-subarray-kadane.apl`](../examples/1702-max-subarray-kadane.apl) | خوارزمية كادان |
+| 1703 | [`1703-product-except-self-list.apl`](../examples/1703-product-except-self-list.apl) | ضرب البادئة في اللاحقة |
+| 1704 | [`1704-two-sum-indices-pair.apl`](../examples/1704-two-sum-indices-pair.apl) | نبحث عن المكمل بقاموس |
+| 1705 | [`1705-jump-game-reachable.apl`](../examples/1705-jump-game-reachable.apl) | أبعد موضع يمكن بلوغه |
+| 1706 | [`1706-min-jumps-to-end.apl`](../examples/1706-min-jumps-to-end.apl) | نوسع مدى كل قفزة |
 
 **التشغيل:**
 ```bash
@@ -1957,4 +1977,4 @@ with open("ملف.txt") as f:
 تشمل العناصر: الدوال، خصائص الكائنات، دوال الكائن المتسلسلة، الثوابت، والمعاملات العربية.
 إضافة إلى 231 عنصراً في اللغة الأساسية (كلمات مفتاحية، أنواع، ثوابت، أنماط، دوال مضمّنة)
 في `core/apl_runner/patterns.py`، فيصبح إجمالي العناصر العربية الفريدة **211,647 عنصراً**،
-مع **1686 مثال جاهز** في `examples/`.
+مع **1706 مثال جاهز** في `examples/`.
