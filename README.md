@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 101 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **2334 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **2398 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -274,9 +274,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (2334 مثال)
+## الأمثلة الجاهزة (2398 مثال)
 
-مجلد `examples/` يحتوي على **2334 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **2398 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -2614,6 +2614,70 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 2332 | [`2332-first-letters-joined-string.apl`](examples/2332-first-letters-joined-string.apl) | أول حرف لكل كلمة |
 | 2333 | [`2333-pad-number-string-with-zeros-five.apl`](examples/2333-pad-number-string-with-zeros-five.apl) | zfill |
 | 2334 | [`2334-count-spaces-in-text.apl`](examples/2334-count-spaces-in-text.apl) | نعد " " |
+| 2335 | [`2335-list-sum-of-squares-of-odd-items.apl`](examples/2335-list-sum-of-squares-of-odd-items.apl) | نربع الفردي فقط |
+| 2336 | [`2336-list-count-items-equal-to-first.apl`](examples/2336-list-count-items-equal-to-first.apl) | نقارن بالعنصر الأول |
+| 2337 | [`2337-list-last-minus-first-difference.apl`](examples/2337-list-last-minus-first-difference.apl) | فرق الطرفين |
+| 2338 | [`2338-list-take-first-three-items.apl`](examples/2338-list-take-first-three-items.apl) | شريحة |
+| 2339 | [`2339-list-drop-first-two-items.apl`](examples/2339-list-drop-first-two-items.apl) | شريحة من 2 |
+| 2340 | [`2340-list-take-last-two-items.apl`](examples/2340-list-take-last-two-items.apl) | شريحة سالبة |
+| 2341 | [`2341-list-chunk-sum-of-pairs-nonoverlap.apl`](examples/2341-list-chunk-sum-of-pairs-nonoverlap.apl) | نقفز بخطوتين |
+| 2342 | [`2342-list-replace-negatives-with-zero.apl`](examples/2342-list-replace-negatives-with-zero.apl) | نبني قائمة |
+| 2343 | [`2343-list-absolute-values-each.apl`](examples/2343-list-absolute-values-each.apl) | abs لكل عنصر |
+| 2344 | [`2344-list-cumulative-max-running.apl`](examples/2344-list-cumulative-max-running.apl) | أكبر قيمة حتى الآن |
+| 2345 | [`2345-list-cumulative-min-running.apl`](examples/2345-list-cumulative-min-running.apl) | أصغر قيمة حتى الآن |
+| 2346 | [`2346-list-range-of-indices-where-even.apl`](examples/2346-list-range-of-indices-where-even.apl) | فهارس الزوجي |
+| 2347 | [`2347-list-count-local-peaks-strict.apl`](examples/2347-list-count-local-peaks-strict.apl) | أكبر من الجارين |
+| 2348 | [`2348-list-count-local-valleys-strict.apl`](examples/2348-list-count-local-valleys-strict.apl) | أصغر من الجارين |
+| 2349 | [`2349-list-sum-between-min-and-max-positions.apl`](examples/2349-list-sum-between-min-and-max-positions.apl) | المواضع الأولى |
+| 2350 | [`2350-list-score-grades-count-passing.apl`](examples/2350-list-score-grades-count-passing.apl) | 50 فأكثر |
+| 2351 | [`2351-list-average-rounded-two-places.apl`](examples/2351-list-average-rounded-two-places.apl) | round(...,2) |
+| 2352 | [`2352-list-weighted-sum-by-position.apl`](examples/2352-list-weighted-sum-by-position.apl) | ق[ي]*(ي+1) |
+| 2353 | [`2353-list-is-arithmetic-progression.apl`](examples/2353-list-is-arithmetic-progression.apl) | فرق ثابت |
+| 2354 | [`2354-list-is-geometric-progression-int.apl`](examples/2354-list-is-geometric-progression-int.apl) | نسبة ثابتة |
+| 2355 | [`2355-list-count-palindromic-numbers.apl`](examples/2355-list-count-palindromic-numbers.apl) | نقارن النص بمعكوسه |
+| 2356 | [`2356-list-gcd-of-all-items.apl`](examples/2356-list-gcd-of-all-items.apl) | نطبق إقليدس تباعا |
+| 2357 | [`2357-list-lcm-of-all-items.apl`](examples/2357-list-lcm-of-all-items.apl) | نطبق على الأزواج |
+| 2358 | [`2358-list-bits-or-of-all-items.apl`](examples/2358-list-bits-or-of-all-items.apl) | نجمع بـ | |
+| 2359 | [`2359-list-bits-and-of-all-items.apl`](examples/2359-list-bits-and-of-all-items.apl) | نطبق & |
+| 2360 | [`2360-list-single-number-xor-unique.apl`](examples/2360-list-single-number-xor-unique.apl) | المكرر يلغي نفسه |
+| 2361 | [`2361-sum-of-first-n-fibonacci-numbers.apl`](examples/2361-sum-of-first-n-fibonacci-numbers.apl) | نجمع الحدود |
+| 2362 | [`2362-count-fibonacci-numbers-below-limit.apl`](examples/2362-count-fibonacci-numbers-below-limit.apl) | نولد حتى الحد |
+| 2363 | [`2363-number-of-digits-by-division-loop.apl`](examples/2363-number-of-digits-by-division-loop.apl) | نقسم على 10 |
+| 2364 | [`2364-sum-of-digits-recursive-style-loop.apl`](examples/2364-sum-of-digits-recursive-style-loop.apl) | ن % 10 |
+| 2365 | [`2365-alternating-digit-sum-from-right.apl`](examples/2365-alternating-digit-sum-from-right.apl) | نبدأ من اليمين بإشارة + |
+| 2366 | [`2366-divisible-by-eleven-via-alternating-sum.apl`](examples/2366-divisible-by-eleven-via-alternating-sum.apl) | المجموع المتناوب يقبل 11 |
+| 2367 | [`2367-sum-of-multiples-of-n-up-to-hundred.apl`](examples/2367-sum-of-multiples-of-n-up-to-hundred.apl) | نقفز بخطوة ن |
+| 2368 | [`2368-count-lattice-points-in-circle-radius.apl`](examples/2368-count-lattice-points-in-circle-radius.apl) | س²+ص² ≤ نق² |
+| 2369 | [`2369-pythagorean-triples-count-up-to.apl`](examples/2369-pythagorean-triples-count-up-to.apl) | أ<ب<ج<=ن |
+| 2370 | [`2370-sum-of-squares-minus-square-of-sum.apl`](examples/2370-sum-of-squares-minus-square-of-sum.apl) | مسألة أويلر |
+| 2371 | [`2371-nth-triangular-number-with-most-divisors-small.apl`](examples/2371-nth-triangular-number-with-most-divisors-small.apl) | نعد قواسم ن(ن+1)/2 |
+| 2372 | [`2372-digit-factorial-sum-of-number.apl`](examples/2372-digit-factorial-sum-of-number.apl) | لكل رقم مضروبه |
+| 2373 | [`2373-persistence-multiplicative-steps.apl`](examples/2373-persistence-multiplicative-steps.apl) | نضرب الأرقام حتى رقم واحد |
+| 2374 | [`2374-additive-persistence-steps.apl`](examples/2374-additive-persistence-steps.apl) | نجمع الأرقام حتى رقم واحد |
+| 2375 | [`2375-reverse-and-add-palindrome-steps.apl`](examples/2375-reverse-and-add-palindrome-steps.apl) | خطوات الوصول لعدد متناظر |
+| 2376 | [`2376-ugly-number-check-two-three-five.apl`](examples/2376-ugly-number-check-two-three-five.apl) | عوامله 2 و3 و5 فقط |
+| 2377 | [`2377-count-bits-to-flip-between-n-and-forty-two.apl`](examples/2377-count-bits-to-flip-between-n-and-forty-two.apl) | XOR مع 42 ثم عد الآحاد |
+| 2378 | [`2378-reverse-bits-of-byte-value.apl`](examples/2378-reverse-bits-of-byte-value.apl) | 8 بتات |
+| 2379 | [`2379-isolate-lowest-set-bit-value.apl`](examples/2379-isolate-lowest-set-bit-value.apl) | ن & (-ن) |
+| 2380 | [`2380-clear-lowest-set-bit-value.apl`](examples/2380-clear-lowest-set-bit-value.apl) | ن & (ن-1) |
+| 2381 | [`2381-swap-adjacent-bit-pairs-byte.apl`](examples/2381-swap-adjacent-bit-pairs-byte.apl) | أقنعة 0xAA و0x55 |
+| 2382 | [`2382-triangular-root-check-is-triangular.apl`](examples/2382-triangular-root-check-is-triangular.apl) | نجمع حتى التجاوز |
+| 2383 | [`2383-sum-of-first-n-primes-loop.apl`](examples/2383-sum-of-first-n-primes-loop.apl) | نعد الأولية |
+| 2384 | [`2384-power-mod-fast-exponent-seven.apl`](examples/2384-power-mod-fast-exponent-seven.apl) | سبعة أس ن مقياس 13 |
+| 2385 | [`2385-digits-of-pi-style-sum-reciprocal-int.apl`](examples/2385-digits-of-pi-style-sum-reciprocal-int.apl) | نضرب بألف ونجمع |
+| 2386 | [`2386-class-counter-increment-reset.apl`](examples/2386-class-counter-increment-reset.apl) | عداد بسيط |
+| 2387 | [`2387-class-stack-push-pop-size.apl`](examples/2387-class-stack-push-pop-size.apl) | دفع وسحب |
+| 2388 | [`2388-class-queue-enqueue-dequeue-front.apl`](examples/2388-class-queue-enqueue-dequeue-front.apl) | أول داخل أول خارج |
+| 2389 | [`2389-class-rectangle-area-perimeter-square-check.apl`](examples/2389-class-rectangle-area-perimeter-square-check.apl) | مساحة ومحيط |
+| 2390 | [`2390-class-bank-account-deposit-withdraw-limit.apl`](examples/2390-class-bank-account-deposit-withdraw-limit.apl) | لا يسحب أكثر من الرصيد |
+| 2391 | [`2391-class-temperature-converter-two-units.apl`](examples/2391-class-temperature-converter-two-units.apl) | سلسيوس وفهرنهايت |
+| 2392 | [`2392-class-point-distance-squared-and-move.apl`](examples/2392-class-point-distance-squared-and-move.apl) | نقطة تتحرك |
+| 2393 | [`2393-class-vector-add-dot-length-squared.apl`](examples/2393-class-vector-add-dot-length-squared.apl) | جمع وجداء |
+| 2394 | [`2394-class-student-grades-average-best.apl`](examples/2394-class-student-grades-average-best.apl) | متوسط وأعلى درجة |
+| 2395 | [`2395-class-inventory-add-remove-count.apl`](examples/2395-class-inventory-add-remove-count.apl) | أصناف وكميات |
+| 2396 | [`2396-class-toggle-switch-state-flips.apl`](examples/2396-class-toggle-switch-state-flips.apl) | يقلب الحالة |
+| 2397 | [`2397-class-accumulator-history-list.apl`](examples/2397-class-accumulator-history-list.apl) | يحفظ القيم |
+| 2398 | [`2398-class-parking-lot-capacity-park-leave.apl`](examples/2398-class-parking-lot-capacity-park-leave.apl) | سعة محدودة |
 
 ### تشغيل أي مثال
 
@@ -2714,7 +2778,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 2334 مثال
+**الإصدار:** APL v1.13 — 226,979 عنصراً عربياً — 101 مكتبة — 2398 مثال
 
 ## Language platform tools
 
