@@ -326,6 +326,17 @@ def _install_from_folder(source, name_hint=None, origin=None):
         print('  محتاجة من Python: ' + '، '.join(requires))
         print('  لو مش متسطبة: pip install ' + ' '.join(
             requirement.split('>')[0].split('=')[0] for requirement in requires))
+    libraries = [name for name in (meta.get('libraries') or []) if isinstance(name, str)]
+    if libraries:
+        from core.libraries.registry import ENTRIES
+        installed = {entry['name'] for entry in ENTRIES}
+        missing = [name for name in libraries if name not in installed]
+        if missing:
+            print('  محتاجة مكتبات APL: ' + '، '.join(missing))
+            print('  نزّلها بـ: ' + ' ثم '.join(
+                f'عمار مكتبة تحميل {name}' for name in missing))
+        else:
+            print('  محتاجة مكتبات APL (مثبتة): ' + '، '.join(libraries))
     if origin:
         print(f'  المصدر: {origin}')
     requires = meta.get('requires') or []
@@ -344,6 +355,14 @@ def _library_install(spec):
     local = Path(spec).expanduser()
     if local.is_dir():
         return _install_from_folder(local)
+    # A plain name: the shipped index says which repo it is, by library name or
+    # by the real Python package it wraps.
+    if '/' not in spec and not spec.lower().startswith('http'):
+        item = _index_match(spec.strip())
+        if item and item.get('repo'):
+            owner, _, repo = item['repo'].partition('/')
+            if owner and repo:
+                spec = item['repo']
     source = _split_source(spec)
     if source is None:
         return _error(f'مش عارف أجيب مكتبة من: {spec}')
@@ -398,6 +417,21 @@ def _library_index():
         return []
 
 
+def _index_match(word):
+    """The published library a name refers to.
+
+    A library answers to its own name and to the real Python package it wraps,
+    so a user who knows the Python package can install the Arabic wrapper by
+    that name.
+    """
+    needle = word.lower()
+    for item in _library_index():
+        names = [str(item.get('name') or '').lower(), str(item.get('package') or '').lower()]
+        if needle in names:
+            return item
+    return None
+
+
 def _library_search(word):
     """Search the shipped index and the installed packages, then GitHub."""
     import json
@@ -412,7 +446,8 @@ def _library_search(word):
         for entry in hits:
             print(f'  {entry["name"]} — {entry.get("title") or ""}')
     catalogue = [item for item in _library_index()
-                 if needle in ' '.join((item.get('name', ''), item.get('title', ''))).lower()]
+                 if needle in ' '.join((item.get('name', ''), item.get('title', ''),
+                                        item.get('package') or '')).lower()]
     if catalogue:
         print(f'متاحة للتحميل ({len(catalogue)}):')
         for item in catalogue:
