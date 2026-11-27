@@ -42,6 +42,8 @@ ALIASES = {
     'مثال': 'example', 'أمثلة': 'example', 'امثلة': 'example',
     'تنسيق': 'format', 'نسّق': 'format', 'format': 'format',
     'مسار': 'path', 'المسار': 'path', 'path': 'path',
+    'بناء': 'build', 'ابن': 'build', 'ابنِ': 'build', 'حزّم': 'build',
+    'build': 'build', 'exe': 'build',
     # English spellings
     'run': 'run', 'check': 'check', 'transpile': 'transpile', 'repl': 'repl',
     'version': 'version', 'help': 'help', 'clear-cache': 'clear-cache',
@@ -722,6 +724,51 @@ def _example(rest):
     return 0
 
 
+def _build(rest):
+    """عمار بناء [ملف.apl] [--اسم اسم] — ملف تنفيذي مستقل.
+
+    بلا ملف: يبني ملف تنفيذي للمفسّر نفسه. مع ملف: يبني ملف تنفيذي للبرنامج،
+    ومصدر البرنامج بيكون جواه، فبيشتغل على أي جهاز من غير APL ومن غير بايثون.
+    """
+    import importlib.util
+    script = Path(__file__).resolve().parent.parent / 'tools' / 'build_program.py'
+    if not script.is_file():
+        return _error('أمر بناء محتاج نسخة الريبو كاملة (مجلد tools).')
+    spec = importlib.util.spec_from_file_location('apl_build_program', script)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    if not rest:
+        return _error('حدد الملف. مثال: عمار بناء برنامج.apl')
+    name = None
+    args = []
+    index = 0
+    while index < len(rest):
+        item = rest[index]
+        if item in ('--اسم', '--name') and index + 1 < len(rest):
+            name = rest[index + 1]
+            index += 2
+            continue
+        if not item.startswith('-'):
+            args.append(item)
+        index += 1
+    if not args:
+        return _error('حدد الملف. مثال: عمار بناء برنامج.apl')
+    target = Path(args[0])
+    if not target.is_file():
+        return _error(f'مفيش ملف اسمه {target}')
+    print(f'بيبني ملف تنفيذي من {target}… (بياخد دقيقة تقريبًا)')
+    outcome = module.build(target, name=name)
+    if not outcome.get('ok'):
+        if outcome.get('needs'):
+            print('بناء ملف تنفيذي محتاج PyInstaller. ثبّته بـ: pip install pyinstaller',
+                  file=sys.stderr)
+        return _error(outcome.get('error') or 'البناء فشل')
+    size = outcome.get('size') or 0
+    print(f'تم: {outcome["path"]} ({size // 1024} كيلوبايت)')
+    print('  الملف ده بيشتغل لوحده على أي جهاز، من غير APL ومن غير بايثون.')
+    return 0
+
+
 def _library(rest):
     if not rest:
         return _library_usage()
@@ -798,6 +845,8 @@ def main(argv=None):
         return _format(argv)
     if command == 'path':
         return _path(argv)
+    if command == 'build':
+        return _build(argv)
     return _error(f'أمر غير معروف: {first}')
 
 
