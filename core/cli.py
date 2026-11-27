@@ -185,105 +185,244 @@ def _execute_code(rest):
 
 def _library_usage():
     print('الاستخدام: عمار مكتبة [تحميل|قائمة|بحث|حذف]')
-    print('  عمار مكتبة تحميل <اسم>    تحميل مكتبة')
-    print('  عمار مكتبة قائمة [الكل]   المكتبات المثبتة أو كل المكتبات')
-    print('  عمار مكتبة بحث <كلمة>     البحث في المكتبات')
-    print('  عمار مكتبة حذف <اسم>      حذف مكتبة محمّلة')
+    print('  عمار مكتبة تحميل <اسم>            تحميل مكتبة من GitHub')
+    print('  عمار مكتبة تحميل <مالك/ريبو>      تحميل من ريبو معيّن')
+    print('  عمار مكتبة تحميل <رابط>           تحميل من رابط GitHub كامل')
+    print('  عمار مكتبة قائمة                  المكتبات المثبتة')
+    print('  عمار مكتبة بحث <كلمة>             البحث في المثبتة وعلى GitHub')
+    print('  عمار مكتبة حذف <اسم>              حذف مكتبة مثبتة')
     return 0
 
 
-def _library_install(name):
+# --------------------------------------------------------------------------
+# مدير الحزم: كل مكتبة ريبو GitHub مستقل فيه apl-library.json وكودها
+# --------------------------------------------------------------------------
+
+DEFAULT_OWNER = 'AmmarBasha2011'
+DEFAULT_PREFIX = 'apl-'
+
+
+def _split_source(spec):
+    """Turn what the user typed into (owner, repo), or None for a local path.
+
+    numpy                     -> AmmarBasha2011/apl-numpy
+    someone/mylib             -> someone/mylib
+    https://github.com/a/b    -> a/b
+    ./مكتبتي  or /path/lib    -> None (installed from disk)
+    """
+    text = spec.strip().rstrip('/')
+    if not text:
+        return None
+    if text.startswith(('http://', 'https://')):
+        parts = [part for part in text.split('/') if part]
+        if 'github.com' in parts:
+            index = parts.index('github.com')
+            rest = parts[index + 1:]
+            if len(rest) >= 2:
+                return rest[0], rest[1].removesuffix('.git')
+        return None
+    if Path(text).expanduser().is_dir():
+        return None
+    if text.count('/') == 1:
+        owner, repo = text.split('/')
+        return owner, repo.removesuffix('.git')
+    return DEFAULT_OWNER, text if text.startswith(DEFAULT_PREFIX) else DEFAULT_PREFIX + text
+
+
+def _download_tarball(owner, repo):
+    """Fetch a repository tarball; returns bytes, or None when not found."""
     import urllib.error
     import urllib.request
+    for ref in ('HEAD', 'refs/heads/main', 'refs/heads/master'):
+        url = f'https://codeload.github.com/{owner}/{repo}/tar.gz/{ref}'
+        request = urllib.request.Request(url, headers={'User-Agent': 'APL-package-manager'})
+        try:
+            with urllib.request.urlopen(request, timeout=60) as response:
+                return response.read()
+        except urllib.error.HTTPError as error:
+            if error.code == 404:
+                continue
+            raise
+        except (urllib.error.URLError, OSError) as error:
+            raise RuntimeError(str(error)) from error
+    return None
+
+
+def _unpack(data, target):
+    """Extract a GitHub tarball and return the folder holding the project."""
+    import io
+    import tarfile
+    with tarfile.open(fileobj=io.BytesIO(data), mode='r:gz') as archive:
+        for member in archive.getmembers():
+            parts = Path(member.name).parts
+            if not parts or parts[0] in ('..', '/') or member.name.startswith('/'):
+                raise ValueError('أرشيف غير آمن')
+            if member.issym() or member.islnk():
+                continue
+            archive.extract(member, target)
+    roots = [path for path in Path(target).iterdir() if path.is_dir()]
+    return roots[0] if len(roots) == 1 else Path(target)
+
+
+def _read_package(folder):
+    """Read apl-library.json from a library folder, or None when absent."""
+    import json
+    path = Path(folder) / 'apl-library.json'
+    if not path.is_file():
+        return None
+    try:
+        meta = json.loads(path.read_text(encoding='utf-8'))
+    except ValueError as error:
+        raise ValueError(f'apl-library.json مش JSON سليم: {error}') from error
+    if not isinstance(meta, dict):
+        raise ValueError('apl-library.json لازم يكون كائن JSON')
+    return meta
+
+
+def _install_from_folder(source, name_hint=None):
+    """Copy one library folder into the library home and load it once."""
+    import shutil
     from core.libraries import registry
-    if not _catalog_by_name():
-        return _error('مفيش مخزن مكتبات متاح دلوقتي: APL مش بيشحن مكتبات مع نفسه، '
-                      'ومفيش قائمة مكتبات معرّفة. حط ملف المكتبة في '
-                      + str(_library_folder()) + ' أو عرّف APL_LIBRARY_SOURCE.')
-    item = _catalog_by_name().get(name)
-    if item is None:
-        names = sorted(_catalog_by_name())
-        close = difflib.get_close_matches(name, names, n=3)
-        hint = f' هل تقصد: {"، ".join(close)}؟' if close else ''
-        return _error(f'مكتبة غير معروفة: {name}.{hint}')
-    if item['bundled']:
-        print(f'مكتبة {name} جزء من APL ومثبتة بالفعل.')
-        return 0
-    folder = _library_folder()
-    target = folder / (item['module'] + '.py')
-    url = LIBRARY_SOURCE + item['module'] + '.py'
-    request = urllib.request.Request(url, headers={'User-Agent': 'APL-library-manager'})
+    source = Path(source)
+    meta = _read_package(source)
+    if meta is None:
+        return _error(f'مفيش apl-library.json في {source}، مش مكتبة APL.')
+    name = (meta.get('name') or name_hint or source.name).strip()
+    entry = meta.get('entry') or f'{name}_funcs.py'
+    entry_path = source / entry
+    if not entry_path.is_file():
+        return _error(f'الملف {entry} المذكور في apl-library.json مش موجود في المكتبة.')
     try:
-        with urllib.request.urlopen(request, timeout=30) as response:
-            data = response.read()
-    except urllib.error.HTTPError as error:
-        return _error(f'تعذر تحميل {name} من المكتبة المركزية ({error.code}).')
-    except (urllib.error.URLError, OSError) as error:
-        return _error(f'تعذر الاتصال بمصدر المكتبات: {error}')
-    try:
-        compile(data, url, 'exec')
+        compile(entry_path.read_text(encoding='utf-8'), str(entry_path), 'exec')
     except SyntaxError as error:
-        return _error(f'ملف المكتبة تالف: {error}')
-    folder.mkdir(parents=True, exist_ok=True)
-    target.write_bytes(data)
-    try:
-        registry.module(dict(item, bundled=False))
-    except Exception as error:
-        target.unlink(missing_ok=True)
-        return _error(f'المكتبة اتحملت بس مش بتشتغل: {error}')
+        return _error(f'كود المكتبة فيه خطأ صياغة: {error}')
+    home = _library_folder()
+    home.mkdir(parents=True, exist_ok=True)
+    target = home / name
+    if target.exists():
+        shutil.rmtree(target)
+    shutil.copytree(source, target, ignore=shutil.ignore_patterns('.git', '__pycache__'))
     registry.refresh()
-    print(f'تم تحميل مكتبة {name} ({_size(item["size_kb"])}) إلى {target}')
-    if item.get('package'):
-        print(f'المكتبة دي بتستخدم حزمة Python اسمها {item["package"]}.')
-        print(f'لو مش مثبتة: pip install {item["package"]}')
+    version = meta.get('version') or '؟'
+    print(f'تم تثبيت مكتبة {name} ({version}) في {target}')
+    title = meta.get('title')
+    if title:
+        print(f'  {title}')
+    requires = meta.get('requires') or []
+    if requires:
+        print('  محتاجة من Python: ' + '، '.join(requires))
+        print('  لو مش متسطبة: pip install ' + ' '.join(
+            requirement.split('>')[0].split('=')[0] for requirement in requires))
+    entry_meta = next((item for item in registry.ENTRIES if item['name'] == name), None)
+    if entry_meta is not None:
+        try:
+            registry.module(entry_meta)
+        except ImportError as error:
+            print(f'  تنبيه: المكتبة اتثبتت بس حزمة Python ناقصة ({error}).')
     return 0
+
+
+def _library_install(spec):
+    """عمار مكتبة تحميل <اسم|مالك/ريبو|رابط|مسار>"""
+    import shutil
+    import tempfile
+    local = Path(spec).expanduser()
+    if local.is_dir():
+        return _install_from_folder(local)
+    source = _split_source(spec)
+    if source is None:
+        return _error(f'مش عارف أجيب مكتبة من: {spec}')
+    owner, repo = source
+    try:
+        data = _download_tarball(owner, repo)
+    except RuntimeError as error:
+        return _error(f'تعذر الاتصال بـ GitHub: {error}')
+    if data is None:
+        return _error(f'مفيش ريبو اسمه {owner}/{repo} على GitHub. '
+                      'اتأكد من الاسم، أو استخدم مالك/ريبو.')
+    workdir = Path(tempfile.mkdtemp(prefix='apl-lib-'))
+    try:
+        folder = _unpack(data, workdir)
+        hint = repo[len(DEFAULT_PREFIX):] if repo.startswith(DEFAULT_PREFIX) else repo
+        return _install_from_folder(folder, hint)
+    except ValueError as error:
+        return _error(str(error))
+    finally:
+        shutil.rmtree(workdir, ignore_errors=True)
 
 
 def _library_list(show_all):
-    from core.libraries.registry import CATALOG, installed_modules
-    installed = set(installed_modules())
-    names = sorted(CATALOG[m]['name'] if m in CATALOG else m for m in installed)
-    available = sorted(item['name'] for m, item in CATALOG.items() if m not in installed)
-    print(f'المكتبات المثبتة ({len(names)}): {"، ".join(names) if names else "لا شيء"}')
+    from core.libraries.registry import ENTRIES
+    if not ENTRIES:
+        print('مفيش مكتبات مثبتة.')
+        print(f'مجلد المكتبات: {_library_folder()}')
+        print('نزّل واحدة بـ: عمار مكتبة تحميل <اسم>')
+        return 0
+    print(f'المكتبات المثبتة ({len(ENTRIES)}):')
+    for entry in ENTRIES:
+        version = entry.get('version') or ''
+        title = entry.get('title') or ''
+        line = f'  {entry["name"]}'
+        if version:
+            line += f' {version}'
+        if title:
+            line += f' — {title}'
+        print(line)
     print(f'مجلد المكتبات: {_library_folder()}')
-    if available:
-        if show_all:
-            print(f'متاحة للتحميل ({len(available)}): {"، ".join(available)}')
-        else:
-            print(f'متاحة للتحميل ({len(available)}) — اعرض الأسماء بـ: عمار مكتبة قائمة الكل')
-    else:
-        print('مفيش مكتبات معرّفة للتحميل.')
     return 0
 
 
 def _library_search(word):
-    from core.libraries.registry import CATALOG, installed_modules
-    installed = set(installed_modules())
-    hits = []
-    for module, item in CATALOG.items():
-        haystack = ' '.join((item['name'], module, item.get('title') or ''))
-        if word.lower() in haystack.lower():
-            state = 'مثبتة' if module in installed else 'متاحة'
-            hits.append(f'  {item["name"]} — {state} — {item.get("title") or ""}')
-    if not hits:
-        if not CATALOG:
-            return _error('مفيش قائمة مكتبات معرّفة دلوقتي.')
-        return _error(f'مفيش مكتبة فيها: {word}')
-    print(f'نتائج البحث عن "{word}" ({len(hits)}):')
-    print('\n'.join(hits))
+    """Search installed packages, then the public GitHub organisation."""
+    import json
+    import urllib.error
+    import urllib.request
+    from core.libraries.registry import ENTRIES
+    needle = word.lower()
+    hits = [entry for entry in ENTRIES
+            if needle in ' '.join((entry['name'], entry.get('title') or '')).lower()]
+    if hits:
+        print(f'مثبتة عندك ({len(hits)}):')
+        for entry in hits:
+            print(f'  {entry["name"]} — {entry.get("title") or ""}')
+    url = ('https://api.github.com/search/repositories?q=' + word
+           + f'+user:{DEFAULT_OWNER}+in:name&per_page=10')
+    request = urllib.request.Request(url, headers={'User-Agent': 'APL-package-manager',
+                                                   'Accept': 'application/vnd.github+json'})
+    try:
+        with urllib.request.urlopen(request, timeout=20) as response:
+            payload = json.loads(response.read().decode('utf-8'))
+    except (urllib.error.URLError, OSError, ValueError):
+        if not hits:
+            print('مفيش نتائج محليًا، وتعذر البحث على GitHub دلوقتي.')
+        return 0 if hits else 1
+    found = payload.get('items') or []
+    if not found:
+        print(f'مفيش مكتبة على GitHub فيها: {word}')
+        return 0 if hits else 1
+    print(f'على GitHub ({len(found)}):')
+    for item in found:
+        name = item['name']
+        if name.startswith(DEFAULT_PREFIX):
+            name = name[len(DEFAULT_PREFIX):]
+        print(f'  {name} — {item.get("description") or ""}')
+    print('نزّل واحدة بـ: عمار مكتبة تحميل <الاسم>')
     return 0
 
 
 def _library_remove(name):
+    import shutil
     from core.libraries import registry
-    item = _catalog_by_name().get(name)
-    if item is not None and item.get('bundled'):
-        return _error(f'مكتبة {name} جزء من APL، مش ممكن تتحذف.')
-    module = item['module'] if item is not None else name
-    target = _library_folder() / (module + '.py')
-    if not target.is_file():
-        return _error(f'مكتبة {name} مش محمّلة أصلاً.')
-    target.unlink()
+    home = _library_folder()
+    folder = home / name
+    if folder.is_dir():
+        shutil.rmtree(folder)
+    else:
+        files = list(home.glob(f'{name}_funcs.py')) if home.is_dir() else []
+        if not files:
+            return _error(f'مكتبة {name} مش مثبتة أصلاً.')
+        for path in files:
+            path.unlink()
     registry.refresh()
     print(f'تم حذف مكتبة {name}.')
     return 0
