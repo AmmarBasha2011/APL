@@ -87,6 +87,19 @@ def transpile(source: str) -> str:
         return _transpile(source)
 
 
+_DIGITS = {ord(c): str(i) for i, c in enumerate('٠١٢٣٤٥٦٧٨٩')}
+_DIGITS.update({ord(c): str(i) for i, c in enumerate('۰۱۲۳۴۵۶۷۸۹')})
+
+
+def _arabic_digits(source: str) -> str:
+    """٠١٢٣ and ۰۱۲۳ are digits too.
+
+    Literals are already replaced by placeholders when this runs, so text inside
+    strings keeps its own spelling and only real code is normalised.
+    """
+    return source.translate(_DIGITS)
+
+
 def _transpile(source: str) -> str:
     # "استورد "ملف.apl"" pulls another APL file into this program. It has to be
     # rewritten before literals are protected, because the path is a literal.
@@ -102,6 +115,7 @@ def _transpile(source: str) -> str:
     )
     from core.runner.source import protect, restore
     source, _literals, _origins = protect(source)
+    source = _arabic_digits(source)
     from core.runner import inline_replacer as _ir
     _ir.USER_NAMES = _collect_user_names(source)
     # Pre-scan for user-defined function names so their call sites are protected
