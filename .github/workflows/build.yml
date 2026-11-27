@@ -31,22 +31,12 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: تثبيت PyInstaller
-        run: python -m pip install --upgrade pip pyinstaller
+      - name: تثبيت أدوات البناء
+        run: |
+          python -m pip install --upgrade pip pyinstaller tzdata
 
       - name: بناء الملف التنفيذي
-        shell: bash
-        run: |
-          set -euo pipefail
-          sep=":"
-          if [ "${{ runner.os }}" = "Windows" ]; then sep=";"; fi
-          python -m PyInstaller \
-            --onefile --console --name apl \
-            --paths . \
-            --add-data "core/libraries/registry.json${sep}core/libraries" \
-            --add-data "core/libraries/index.json${sep}core/libraries" \
-            --collect-submodules core.libraries \
-            apl.py
+        run: python tools/build_exe.py
 
       - name: تجهيز الحزمة
         shell: bash

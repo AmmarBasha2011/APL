@@ -23,6 +23,7 @@ Thumbs.db
 *.egg-info/
 build/
 dist/
+*.spec
 
 # Coverage output
 .coverage
