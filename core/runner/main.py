@@ -1268,6 +1268,7 @@ def print_library_help():
 def print_help():
     """Print help information"""
     print("APL - Ammar Programming Language")
+    print("مبنية على Python - رخصة PSF-2.0 | https://www.python.org/psf/license/")
     print()
     print("الاستخدام:")
     print("  عمار شغل ملف.apl [وسائط]   تشغيل برنامج APL")

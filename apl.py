@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
-# APL - Ammar Programming Language
-# Entry point — runs the core runner
+# APL - لغة عمار البرمجية
+# Copyright (c) 2026 Ammar Elkhateeb (AmmarBasha2011)
+# Distributed under the Python Software Foundation License Version 2 (PSF-2.0),
+# the same license as Python. See LICENSE and NOTICE.
+"""Entry point: `python apl.py` or the عمار command."""
 
 import sys, os
 
