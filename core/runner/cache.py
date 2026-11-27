@@ -19,6 +19,7 @@ from __future__ import annotations
 import hashlib
 import os
 from pathlib import Path
+import sys
 
 ENV_DISABLE = "APL_NO_CACHE"
 CACHE_DIRNAME = "__pycache__"
@@ -55,6 +56,11 @@ _ENGINE_TAG = "apl-cache-v1"
 
 
 def enabled() -> bool:
+    # A frozen build (PyInstaller) has no engine sources to fingerprint, so a
+    # cache written by an older binary could serve a stale translation. The
+    # cache only makes sense when the engine is source on disk.
+    if getattr(sys, "frozen", False):
+        return False
     return os.environ.get(ENV_DISABLE, "") not in ("1", "true", "yes")
 
 
