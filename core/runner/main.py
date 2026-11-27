@@ -1248,18 +1248,40 @@ def transpile_to_code(source: str) -> str:
     return transpile(source)
 
 
+def print_library_help():
+    """Print the Arabic vocabulary of every installed library."""
+    for _entry in ENTRIES:
+        _mod = _library_modules[_entry['name']]
+        _lines = []
+        for _attr in dir(_mod):
+            if _attr.endswith('_HELP'):
+                _value = getattr(_mod, _attr)
+                if isinstance(_value, (list, tuple)):
+                    _lines = list(_value)
+                    break
+        print(f"  # مكتبة {_entry['name']}")
+        for _line in _lines:
+            print(f"    {_line}")
+        print()
+
+
 def print_help():
     """Print help information"""
     print("APL - Ammar Programming Language")
     print()
-    print("Usage:")
-    print("  python apl.py <file.apl>    Run an APL file")
-    print("  python apl.py -c '<code>'   Execute code directly")
-    print("  python apl.py help          Show this help")
-    print("  python apl.py --version     Show the version")
-    print("  python apl.py repl          Start interactive REPL")
-    print("  python apl.py --clear-cache  Delete cached transpilations")
-    print("  python apl.py               Show help")
+    print("الاستخدام:")
+    print("  عمار شغل ملف.apl [وسائط]   تشغيل برنامج APL")
+    print("  عمار فحص ملف.apl           فحص الصياغة بدون تشغيل")
+    print("  عمار ترجمة ملف.apl         طباعة كود Python المترجم")
+    print("  عمار طرفية                 موجه تفاعلي")
+    print("  عمار -c '<كود>'            تنفيذ كود مباشرة")
+    print("  عمار مكتبة تحميل <اسم>     تحميل مكتبة")
+    print("  عمار مكتبة قائمة           المكتبات المثبتة")
+    print("  عمار نسخة                  رقم الإصدار")
+    print("  عمار مساعدة                هذه المساعدة")
+    print("  عمار مسح-الكاش             حذف الترجمات المخزنة")
+    print()
+    print("  python apl.py ملف.apl      نفس الأمر بدون التثبيت")
     print()
     print("Environment switches:")
     print("  APL_NO_CACHE=1   Disable the transpilation cache")
@@ -1316,21 +1338,11 @@ def print_help():
         print(f"  {cmd}")
     
     print()
-    print("Libraries:")
-    print("Libraries:")
-    for _entry in ENTRIES:
-        _mod = _library_modules[_entry['name']]
-        _lines = []
-        for _attr in dir(_mod):
-            if _attr.endswith('_HELP'):
-                _value = getattr(_mod, _attr)
-                if isinstance(_value, (list, tuple)):
-                    _lines = list(_value)
-                    break
-        print(f"  # {_entry['name']} library")
-        for _line in _lines:
-            print(f"    {_line}")
-        print()
+    print("المكتبات المثبتة:")
+    print("  " + "، ".join(entry['name'] for entry in ENTRIES))
+    print("  تفاصيل كل مكتبة: عمار مساعدة مكتبات")
+    print("  تحميل مكتبة:     عمار مكتبة تحميل <اسم>")
+    print()
     print("Examples:")
     print("  python apl.py hello.apl")
     print("  python apl.py -c 'اطبع \"أهلاً بالعالم\"'")
@@ -1458,7 +1470,7 @@ def legacy_main():
 
 
 def main():
-    from core.runner.cli import main as cli_main
+    from core.cli import main as cli_main
     return cli_main()
 
 

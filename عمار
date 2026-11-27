@@ -1,0 +1,4 @@
+#!/bin/sh
+# عمار - APL launcher from source
+here=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+exec python3 "$here/apl.py" "$@"
