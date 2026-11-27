@@ -1,0 +1,54 @@
+{
+  "name": "apl-ammar",
+  "displayName": "APL - لغة عمار البرمجية",
+  "description": "تلوين واقتراحات للغة APL العربية (عمار)",
+  "version": "1.0.0",
+  "publisher": "AmmarBasha2011",
+  "license": "PSF-2.0",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "keywords": [
+    "apl",
+    "arabic",
+    "عمار",
+    "arabic programming language"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AmmarBasha2011/APL"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "apl",
+        "aliases": [
+          "APL",
+          "عمار",
+          "Ammar Programming Language"
+        ],
+        "extensions": [
+          ".apl"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "apl",
+        "scopeName": "source.apl",
+        "path": "./syntaxes/apl.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "apl",
+        "path": "./snippets/apl.json"
+      }
+    ]
+  }
+}

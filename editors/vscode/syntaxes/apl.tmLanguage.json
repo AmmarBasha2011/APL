@@ -1,0 +1,183 @@
+{
+  "name": "APL",
+  "scopeName": "source.apl",
+  "fileTypes": [
+    "apl"
+  ],
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#declarations"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#constants"
+    },
+    {
+      "include": "#types"
+    },
+    {
+      "include": "#builtins"
+    },
+    {
+      "include": "#methods"
+    },
+    {
+      "include": "#operators"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.apl",
+          "match": "#.*$"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.triple.apl",
+          "begin": "\"\"\"",
+          "end": "\"\"\"",
+          "patterns": [
+            {
+              "include": "#interpolation"
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.double.apl",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "include": "#interpolation"
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.apl",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "include": "#interpolation"
+            }
+          ]
+        }
+      ]
+    },
+    "interpolation": {
+      "patterns": [
+        {
+          "name": "meta.interpolation.apl",
+          "match": "\\\\{[^{}]+\\\\}"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.apl",
+          "match": "(?<![\\\\w\\\\u0600-\\\\u06FF])\\\\d+(\\\\.\\\\d+)?([eE][-+]?\\\\d+)?"
+        }
+      ]
+    },
+    "declarations": {
+      "patterns": [
+        {
+          "name": "storage.type.function.apl",
+          "match": "(?<![\\\\w\\\\u0600-\\\\u06FF])(دالة_إنشاء|دالة)(?=\\\\s*[\\\\w\\\\u0600-\\\\u06FF_(])"
+        },
+        {
+          "name": "entity.name.function.apl",
+          "match": "(?<=دالة\\\\s)[\\\\p{L}\\\\p{N}_]+"
+        },
+        {
+          "name": "storage.type.class.apl",
+          "match": "(?<![\\\\w\\\\u0600-\\\\u06FF])(صنف|قاعدة)(?=\\\\s)"
+        },
+        {
+          "name": "entity.name.type.class.apl",
+          "match": "(?<=صنف\\\\s)[\\\\p{L}\\\\p{N}_]+"
+        },
+        {
+          "name": "keyword.control.import.apl",
+          "match": "(?<![\\\\w\\\\u0600-\\\\u06FF])استورد(?![\\\\w\\\\u0600-\\\\u06FF])"
+        },
+        {
+          "name": "variable.other.apl",
+          "match": "(?<![\\\\w\\\\u0600-\\\\u06FF])المتغير(?=\\\\s)"
+        },
+        {
+          "name": "keyword.other.self.apl",
+          "match": "(?<![\\\\w\\\\u0600-\\\\u06FF])ذات(?![\\\\w\\\\u0600-\\\\u06FF])"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.apl",
+          "match": "(?<![\\\\w\\\\u0600-\\\\u06FF])(لو|والا_لو|والا|طالما|لكل|ارجع|حاول|امسك|إمسك|أخيراً|أخيرا|توقف|اكمل|قيمة|حالة|افتراضي|مع|اخرج|تمرير|أبدا|حذف|تأكد|مولد|ولد|خاص|عام)(?![\\\\w\\\\u0600-\\\\u06FF])"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.apl",
+          "match": "(?<![\\\\w\\\\u0600-\\\\u06FF])(صواب|خطأ|لا_شيء|ط|ه|تاو|لانهائي_موجب)(?![\\\\w\\\\u0600-\\\\u06FF])"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "support.type.apl",
+          "match": "(?<![\\\\w\\\\u0600-\\\\u06FF])(صحيح|نص|عشري|منطق|قائمة|مجموعة|مصفوفة|قاموس|بايت)(?=\\\\s*\\\\()"
+        }
+      ]
+    },
+    "builtins": {
+      "patterns": [
+        {
+          "name": "support.function.builtin.apl",
+          "match": "(?<![\\\\w\\\\u0600-\\\\u06FF])(اطبع|اطبع_بدون|نطاق|طول|نوع|نص|عدد|اقرأ|اكتب|ادخل|افتح|اغلق|طلب|رسالة)(?=\\\\s*\\\\()"
+        }
+      ]
+    },
+    "methods": {
+      "patterns": [
+        {
+          "name": "support.function.method.apl",
+          "match": "\\\\.(تقسيم|أضف|ضم|عكس|فرز|حذف|نسخ|عد|بحث|أزل|وسع|أدخل|استبدال|علوي|سفلي|بداية|نهاية|تقليم|اتحاد|تقاطع|فرق)(?=\\\\s*\\\\()"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.word.apl",
+          "match": "(?<![\\\\w\\\\u0600-\\\\u06FF])(و|أو|ليس|مثل|في)(?![\\\\w\\\\u0600-\\\\u06FF])"
+        },
+        {
+          "name": "keyword.operator.apl",
+          "match": "(==|!=|<=|>=|\\\\+\\\\+|--|\\\\+=|-=|\\\\*=|/=|\\\\*\\\\*|//|=>|[-+*/%<>=])"
+        }
+      ]
+    }
+  }
+}
