@@ -203,13 +203,16 @@ def transpile_line(line: str) -> str:
         return f"{indent}def {name}({params}{rest}):"
 
     # Block-level conditional keywords (before generic inline substitution)
-    # else / else-if (block level)
-    if stripped == "والا" or stripped.startswith("والا:") or stripped.startswith("والا "):
+    # else-if is checked before plain else: "والا لو شرط" starts with "والا ",
+    # so the else branch below would swallow it and emit a bare "else".
+    # "وإلا" (with hamza) is the same keyword as "والا"; people type both.
+    if stripped.startswith(("والا_لو", "والا لو", "وإلا_لو", "وإلا لو")):
+        cond = stripped.split("لو", 1)[1].strip().rstrip(":").strip()
+        return f"{indent}elif {_inline_replace(cond)}:"
+    if stripped in ("والا", "وإلا") or stripped.startswith(
+            ("والا:", "والا ", "وإلا:", "وإلا ")):
         rest = stripped[4:].strip()
         return f"{indent}else{':' if not rest or rest == ':' else rest}"
-    if stripped.startswith("والا_لو") or stripped.startswith("والا لو"):
-        cond = stripped.split("لو", 1)[1].strip()
-        return f"{indent}elif {_inline_replace(cond)}"
 
     if stripped.startswith("س إذا"):
         rest = stripped.split("شرط", 1)[1].strip() if "شرط" in stripped else stripped[4:].strip()
