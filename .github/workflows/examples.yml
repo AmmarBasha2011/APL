@@ -30,7 +30,7 @@ jobs:
           path: examples-src
 
       - name: كل الأمثلة في المشغّل
-        run: python tools/verify_examples.py --dir examples-src/examples --fast
+        run: python tools/verify_examples.py --dir examples-src/examples --fast --baseline tools/example_baseline.json
 
       - name: عيّنة موزّعة في المشغّل والملهى
-        run: python tools/verify_examples.py --dir examples-src/examples --sample 30
+        run: python tools/verify_examples.py --dir examples-src/examples --sample 30 --baseline tools/example_baseline.json

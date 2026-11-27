@@ -16,6 +16,12 @@ it, so the list can be worked through instead of guessed at.
     python tools/verify_examples.py --dir . --only 12-  # examples 12 and up
     python tools/verify_examples.py --dir . --fast     # thousands of examples, seconds
     python tools/verify_examples.py --dir . --sample 30  # عيّنة موزّعة على المجلد
+    python tools/verify_examples.py --dir . --baseline tools/example_baseline.json
+
+An example that needs an uninstalled library, a keyboard or the network cannot
+pass here whatever the language does: it is reported as محتاج مكتبة / إدخال /
+شبكة and does not count as broken (--strict counts it anyway). Examples listed
+in a baseline file are known-broken and tracked; anything not listed is new.
 
 --fast runs the whole folder inside one interpreter with a per-program alarm,
 which is the same compile-and-execute path without a process per example: the
@@ -88,8 +94,21 @@ def vocabulary():
     # Point this at a folder of <name>_funcs.py files (a checkout of the
     # library repos) to get "this example needs apl-<name>" instead of a bare
     # error. Without it, every failure is still reported, just not classified.
-    home = Path(os.environ.get("APL_LIBRARY_SOURCES", ""))
-    if not home.is_dir():
+    sources = os.environ.get("APL_LIBRARY_SOURCES", "")
+    # Path("") is ".", so an unset variable has to be checked before is_dir().
+    home = Path(sources) if sources else None
+    if home is None or not home.is_dir():
+        # No library checkout to read: fall back to the word map the language
+        # ships (data/library_words.json, built from the published libraries),
+        # so classification works in CI and on a plain clone too.
+        try:
+            sys.path.insert(0, str(ROOT))
+            from core.library_words import table
+            for word, library in table().items():
+                if isinstance(word, str) and isinstance(library, str):
+                    VOCABULARY.setdefault(word, library)
+        except Exception:
+            pass
         return VOCABULARY
     for path in sorted(home.glob("*_funcs.py")):
         library = path.stem[:-len("_funcs")]
@@ -117,16 +136,35 @@ def vocabulary():
     return VOCABULARY
 
 
-WORD_IN_ERROR = re.compile(r"'([^']*[\u0600-\u06FF][^']*)'")
+WORD_IN_ERROR = re.compile(r"['\"]([^'\"]*[\u0600-\u06FF][^'\"]*)['\"]")
+# The language names the library in its own error: الكلمة "x" من مكتبة apl-y.
+LIBRARY_HINT = re.compile(r"مكتبة apl-([A-Za-z0-9_.\-]+)")
+INPUT_ERROR = re.compile(r"EOFError|EOF when reading")
+NETWORK_ERROR = re.compile(r"ConnectionError|URLError|socket\.|Name or service not known")
 
 
 def needs_library(detail: str):
     """The library an example is missing, when the error names one of its words."""
+    named = LIBRARY_HINT.search(detail)
+    if named:
+        return named.group(1).rstrip(".")
     words = vocabulary()
     for candidate in WORD_IN_ERROR.findall(detail):
         if candidate in words:
             return words[candidate]
     return None
+
+
+def classify(detail: str):
+    """Why a failure is not the example's own bug, when that is the case."""
+    library = needs_library(detail)
+    if library:
+        return "library", library
+    if INPUT_ERROR.search(detail):
+        return "input", ""
+    if NETWORK_ERROR.search(detail):
+        return "network", ""
+    return None, ""
 
 
 def first_problem_line(text: str) -> str:
@@ -190,6 +228,10 @@ import contextlib, io, json, signal, sys
 sys.path.insert(0, {root!r})
 from core.runner.execution import Compilation, execute
 
+# Results go to a file, not stdout: the runtime wraps printed lines in RTL marks
+# and a program may print anything, so stdout cannot be parsed back.
+results = open({results!r}, "w", encoding="utf-8")
+
 class _Timeout(Exception):
     pass
 
@@ -212,7 +254,8 @@ for path in {paths!r}:
         kind, detail = "error", type(error).__name__ + ": " + str(error).splitlines()[0][:200]
     finally:
         signal.setitimer(signal.ITIMER_REAL, 0)
-    print(json.dumps({{"file": path, "kind": kind, "detail": detail}}, ensure_ascii=False), flush=True)
+    results.write(json.dumps({{"file": path, "kind": kind, "detail": detail}}, ensure_ascii=False) + chr(10))
+    results.flush()
 '''
 
 
@@ -223,13 +266,20 @@ def run_fast(programs, timeout: float):
     `عمار` process for each one costs far more than running them: this is the
     same compile-and-execute path the command uses, without the startup.
     """
-    driver = Path(tempfile.mkdtemp(prefix="apl-fast-")) / "driver.py"
+    work = Path(tempfile.mkdtemp(prefix="apl-fast-"))
+    driver = work / "driver.py"
+    results_file = work / "results.jsonl"
     driver.write_text(FAST_DRIVER.format(root=str(ROOT), paths=[str(p) for p in programs],
-                                         timeout=timeout), encoding="utf-8")
+                                         timeout=timeout, results=str(results_file)),
+                      encoding="utf-8")
     result = subprocess.run([sys.executable, str(driver)], capture_output=True, text=True,
                             encoding="utf-8", stdin=subprocess.DEVNULL)
     outcomes = {}
-    for line in result.stdout.splitlines():
+    try:
+        text = results_file.read_text(encoding="utf-8")
+    except OSError:
+        text = ""
+    for line in text.splitlines():
         line = line.strip()
         if not line.startswith("{"):
             continue
@@ -276,11 +326,26 @@ def main(argv=None) -> int:
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--sample", type=int, default=None,
                         help="عدد الأمثلة في عيّنة موزّعة على المجلد كله")
+    parser.add_argument("--strict", action="store_true",
+                        help="عدّ الأمثلة اللي محتاجة مكتبة أو إدخال أو شبكة فاشلة كمان")
+    parser.add_argument("--baseline", default=None,
+                        help="ملف فيه أسماء أمثلة معروفة إنها مكسورة، مش بتفشّل التشغيل")
     parser.add_argument("--json", action="store_true")
     parser.add_argument("--no-playground", action="store_true")
     parser.add_argument("--fast", action="store_true",
                         help="run the whole folder in one interpreter (no per-example process)")
     args = parser.parse_args(argv)
+
+    baseline = []
+    if args.baseline:
+        try:
+            data = json.loads(Path(args.baseline).read_text(encoding="utf-8"))
+        except (OSError, ValueError) as error:
+            print(f"مش قادر أقرأ الأساس {args.baseline}: {error}", file=sys.stderr)
+            return 1
+        if isinstance(data, dict):
+            data = list(data)
+        baseline = [name for name in data if isinstance(name, str)]
 
     folder = Path(args.dir)
     programs = sorted(folder.glob("*.apl"))
@@ -304,9 +369,11 @@ def main(argv=None) -> int:
                     "ok": False, "stage": "run", "detail": "مفيش نتيجة من المشغّل"}
                 record = {"example": program.name, "interpreter": interpreter}
                 if not interpreter["ok"]:
-                    library = needs_library(interpreter.get("detail") or "")
-                    if library:
-                        interpreter["needs_library"] = library
+                    kind, extra = classify(interpreter.get("detail") or "")
+                    if kind == "library":
+                        interpreter["needs_library"] = extra
+                    elif kind:
+                        interpreter["needs"] = kind
                 results.append(record)
                 if not args.json:
                     print(("ok  " if interpreter["ok"] else "FAIL") + " " + program.name)
@@ -314,7 +381,9 @@ def main(argv=None) -> int:
                         print(f"     {interpreter['stage']}: {interpreter['detail']}")
                         if interpreter.get("needs_library"):
                             print(f"     محتاج مكتبة: apl-{interpreter['needs_library']}")
-            return report(results, args.json)
+                        elif interpreter.get("needs"):
+                            print(f"     محتاج: {interpreter['needs']}")
+            return report(results, args.json, args.strict, baseline)
 
     work = Path(tempfile.mkdtemp(prefix="apl-verify-"))
     try:
@@ -331,9 +400,11 @@ def main(argv=None) -> int:
             interpreter = run_interpreter(program, args.timeout)
             record["interpreter"] = interpreter
             if not interpreter["ok"]:
-                library = needs_library(interpreter.get("raw") or interpreter["detail"])
-                if library:
-                    interpreter["needs_library"] = library
+                kind, extra = classify(interpreter.get("raw") or interpreter["detail"])
+                if kind == "library":
+                    interpreter["needs_library"] = extra
+                elif kind:
+                    interpreter["needs"] = kind
             if not args.no_playground:
                 record["playground"] = run_playground(program, work, args.timeout)
             results.append(record)
@@ -346,20 +417,53 @@ def main(argv=None) -> int:
                         print(f"     {stage}/{outcome['stage']}: {outcome['detail']}")
                         if outcome.get("needs_library"):
                             print(f"     محتاج مكتبة: apl-{outcome['needs_library']}")
+                        elif outcome.get("needs"):
+                            print(f"     محتاج: {outcome['needs']}")
     finally:
         shutil.rmtree(work, ignore_errors=True)
 
-    return report(results, args.json)
+    return report(results, args.json, args.strict, baseline)
 
 
-def report(results, as_json: bool) -> int:
-    broken = [r for r in results if not r["interpreter"]["ok"]
-              or (r.get("playground") and not r["playground"]["ok"])]
+def report(results, as_json: bool, strict: bool = False, baseline=None) -> int:
+    known = set(baseline or ())
+    broken, waiting, tracked, fixed = [], [], [], []
+    for record in results:
+        stages = [record[name] for name in ("interpreter", "playground")
+                  if record.get(name) and not record[name]["ok"]]
+        if not stages:
+            if record["example"] in known:
+                fixed.append(record["example"])
+            continue
+        why = next((s.get("needs") or ("library" if s.get("needs_library") else None)
+                    for s in stages if s.get("needs") or s.get("needs_library")), None)
+        if why and not strict:
+            waiting.append((record["example"], why))
+        elif record["example"] in known:
+            tracked.append(record["example"])
+        else:
+            broken.append(record)
     if as_json:
-        print(json.dumps({"total": len(results), "broken": broken}, ensure_ascii=False, indent=2))
+        print(json.dumps({"total": len(results), "broken": broken,
+                          "needs": [{"example": name, "needs": why} for name, why in waiting],
+                          "known_broken": tracked, "now_working": fixed},
+                         ensure_ascii=False, indent=2))
     else:
         print()
-        print(f"{len(results) - len(broken)}/{len(results)} سليم")
+        print(f"{len(results) - len(broken) - len(waiting) - len(tracked)}/{len(results)} سليم")
+        if waiting:
+            kinds = {}
+            for name, why in waiting:
+                kinds.setdefault(why, []).append(name)
+            for why, names in sorted(kinds.items()):
+                label = {"library": "محتاج مكتبة", "input": "محتاج إدخال",
+                         "network": "محتاج شبكة"}.get(why, why)
+                print(f"{label}: {len(names)} — " + "، ".join(names[:10])
+                      + (" …" if len(names) > 10 else ""))
+        if tracked:
+            print(f"معروف إنه مكسور (في الأساس): {len(tracked)}")
+        if fixed:
+            print("بقى شغال، شيله من الأساس: " + "، ".join(fixed[:10]))
         if broken:
             print("محتاج إصلاح: " + "، ".join(r["example"] for r in broken[:40])
                   + (" …" if len(broken) > 40 else ""))
