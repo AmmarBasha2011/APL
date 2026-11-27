@@ -279,8 +279,8 @@ def _read_package(folder):
     return meta
 
 
-def _install_from_folder(source, name_hint=None):
-    """Copy one library folder into the library home and load it once."""
+def _install_from_folder(source, name_hint=None, origin=None):
+    """Copy one library folder into the library home, without running it."""
     import shutil
     from core.libraries import registry
     source = Path(source)
@@ -313,12 +313,14 @@ def _install_from_folder(source, name_hint=None):
         print('  محتاجة من Python: ' + '، '.join(requires))
         print('  لو مش متسطبة: pip install ' + ' '.join(
             requirement.split('>')[0].split('=')[0] for requirement in requires))
-    entry_meta = next((item for item in registry.ENTRIES if item['name'] == name), None)
-    if entry_meta is not None:
-        try:
-            registry.module(entry_meta)
-        except ImportError as error:
-            print(f'  تنبيه: المكتبة اتثبتت بس حزمة Python ناقصة ({error}).')
+    if origin:
+        print(f'  المصدر: {origin}')
+    requires = meta.get('requires') or []
+    if requires:
+        print('  تنبيه: المكتبة دي كود بيشتغل بصلاحياتك وقت الاستخدام، '
+              'زي أي برنامج بتشغله. راجع كودها لو جاية من مصدر مش معروف.')
+    else:
+        print('  تنبيه: المكتبة دي كود بيشتغل بصلاحياتك وقت الاستخدام.')
     return 0
 
 
@@ -333,6 +335,7 @@ def _library_install(spec):
     if source is None:
         return _error(f'مش عارف أجيب مكتبة من: {spec}')
     owner, repo = source
+    origin = f'https://github.com/{owner}/{repo}'
     try:
         data = _download_tarball(owner, repo)
     except RuntimeError as error:
@@ -344,7 +347,7 @@ def _library_install(spec):
     try:
         folder = _unpack(data, workdir)
         hint = repo[len(DEFAULT_PREFIX):] if repo.startswith(DEFAULT_PREFIX) else repo
-        return _install_from_folder(folder, hint)
+        return _install_from_folder(folder, hint, origin)
     except ValueError as error:
         return _error(str(error))
     finally:
