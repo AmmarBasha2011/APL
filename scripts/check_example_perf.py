@@ -8,6 +8,11 @@ check_example_perf.py — حارس أداء الأمثلة.
   - الزمن الكلي تجاوز 30 دقيقة.
 
 يعرض أبطأ 10 أمثلة في النهاية.
+
+الوضع التزايدي: مع --base REF (يُستعمل في الـ pull request) يشغّل فقط الأمثلة
+الجديدة أو المعدّلة. ولو تغيّر أي ملف خارج examples/ و README.md و docs/ و website/
+(كود أو مكتبات أو متطلبات أو سكربتات) أو فشل حساب الفرق يشغّل كل الأمثلة.
+على push إلى main وفي الجدولة الليلية يُشغَّل كل شيء (بدون --base).
 """
 
 import os
@@ -23,8 +28,37 @@ MAX_ONE = 30.0        # ثانية لكل مثال
 MAX_TOTAL = 30 * 60   # 30 دقيقة للكل
 
 
+SAFE_PREFIXES = ("examples/", "docs/", "website/")
+SAFE_FILES = ("README.md",)
+
+
+def select_files(base):
+    """أسماء الأمثلة المطلوب فحصها، أو None لو لازم الفحص الكامل."""
+    r = subprocess.run(
+        ["git", "diff", "--name-only", "--diff-filter=d", base, "HEAD"],
+        capture_output=True, text=True, cwd=ROOT,
+    )
+    if r.returncode != 0:
+        print("تعذّر حساب الفرق، فحص كامل.")
+        return None
+    changed = [c for c in r.stdout.split("\n") if c.strip()]
+    for c in changed:
+        if not (c.startswith(SAFE_PREFIXES) or c in SAFE_FILES):
+            print(f"تغيّر ملف غير مثال ({c})، فحص كامل.")
+            return None
+    return sorted(
+        os.path.basename(c) for c in changed
+        if c.startswith("examples/") and c.endswith(".apl")
+    )
+
+
 def main():
     files = sorted(f for f in os.listdir(EXAMPLES) if f.endswith(".apl"))
+    if "--base" in sys.argv:
+        picked = select_files(sys.argv[sys.argv.index("--base") + 1])
+        if picked is not None:
+            files = [f for f in picked if os.path.exists(os.path.join(EXAMPLES, f))]
+            print(f"فحص تزايدي: {len(files)} مثال جديد أو معدّل.")
     start = time.monotonic()
     timings = []
     failures = 0
