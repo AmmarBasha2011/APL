@@ -1,5 +1,5 @@
 import sys, os, io
-from core.apl_runner import regex_cache as re
+from core.runner import regex_cache as re
 
 # Install lazy library proxies BEFORE anything imports a library module. This is
 # what removes the ~41 unconditional imports (and their ~1,956 regex compiles)
@@ -7,9 +7,9 @@ from core.apl_runner import regex_cache as re
 from core.libraries import lazy as _apl_lazy
 _apl_lazy.install()
 
-from core.apl_runner import _inline_replace
-from core.apl_runner.transpiler import transpile_line
-from core.apl_runner.patterns import _UDF_NAMES
+from core.runner import _inline_replace
+from core.runner.transpiler import transpile_line
+from core.runner.patterns import _UDF_NAMES
 
 def _build_reserved_keys():
     """Deprecated no-op.
@@ -88,9 +88,9 @@ def transpile(source: str) -> str:
 
 
 def _transpile(source: str) -> str:
-    from core.apl_runner.source import protect, restore
+    from core.runner.source import protect, restore
     source, _literals, _origins = protect(source)
-    from core.apl_runner import inline_replacer as _ir
+    from core.runner import inline_replacer as _ir
     _ir.USER_NAMES = _collect_user_names(source)
     # Pre-scan for user-defined function names so their call sites are protected
     # before any library pattern runs.
@@ -171,7 +171,7 @@ def _transpile(source: str) -> str:
     lines = source.split("\n")
     result = []
     _class_indent = None      # indent of the innermost open class body
-    import core.apl_runner.transpiler as _tp
+    import core.runner.transpiler as _tp
     _tp._IN_MATCH = False
     _ir.USER_ATTRIBUTES = set(re.findall(r"ذات\.([^\W\d]\w*)\s*=(?!=)", source))
     _global_names = set(_ir.USER_NAMES)
@@ -263,7 +263,7 @@ def _transpile(source: str) -> str:
     # Constant folding on the generated Python: pure-literal arithmetic becomes a
     # literal, so e.g. 2 ** 100 costs nothing at run time.
     if _APL_FOLD:
-        from core.apl_runner.constfold import fold_code
+        from core.runner.constfold import fold_code
         code = fold_code(code)
 
     code = restore(code, _literals)
@@ -1215,7 +1215,7 @@ def _apl_http_json(response):
 
 
 def run_file(filepath: str):
-    from core.apl_runner.execution import execute_file
+    from core.runner.execution import execute_file
     execute_file(filepath)
 
 
@@ -1317,153 +1317,23 @@ def print_help():
     
     print()
     print("Libraries:")
-    print("  # math library (50+ functions)")
-    for line in _library_modules['math'].MATH_HELP:
-        print(f"    {line}")
-    print()
-    print("  # random library (20+ functions)")
-    for line in _library_modules['random'].RANDOM_HELP:
-        print(f"    {line}")
-    print()
-    print("  # time/datetime library (20+ functions)")
-    for line in _library_modules['time'].TIME_HELP:
-        print(f"    {line}")
-    print()
-    print("  # statistics library (15+ functions)")
-    for line in _library_modules['statistics'].STATISTICS_HELP:
-        print(f"    {line}")
-    print()
-    print("  # os/path library (30+ functions)")
-    for line in _library_modules['os'].OS_HELP:
-        print(f"    {line}")
-    print()
-    print("  # re library (10+ functions)")
-    for line in _library_modules['re'].RE_HELP:
-        print(f"    {line}")
-    print()
-    print("  # collections library (10+ functions)")
-    for line in _library_modules['collections'].COLLECTIONS_HELP:
-        print(f"    {line}")
-    print()
-    print("  # itertools library (20+ functions)")
-    for line in _library_modules['itertools'].ITERTOOLS_HELP:
-        print(f"    {line}")
-    print()
-    print("  # json library (4+ functions)")
-    for line in _library_modules['json'].JSON_HELP:
-        print(f"    {line}")
-    print()
-    print("  # hashlib library (5+ functions)")
-    for line in _library_modules['hashlib'].HASHLIB_HELP:
-        print(f"    {line}")
-    print()
-    print("  # flask library (50+ functions)")
-    for line in _library_modules['flask'].FLASK_HELP:
-        print(f"    {line}")
-    print()
-    print("  # fastapi library (100+ functions)")
-    for line in _library_modules['fastapi'].FASTAPI_HELP:
-        print(f"    {line}")
-    print()
-    print("  # requests library (150+ functions)")
-    for line in _library_modules['requests'].REQUESTS_HELP:
-        print(f"    {line}")
-    print()
-    print("  # sqlite3 library (20+ functions)")
-    for line in _library_modules['sqlite3'].SQLITE3_HELP:
-        print(f"    {line}")
-    print()
-    print("  # asyncio library (50+ functions)")
-    for line in _library_modules['asyncio'].ASYNCIO_HELP:
-        print(f"    {line}")
-    print()
-    print("  # threading library (20+ functions)")
-    for line in _library_modules['threading'].THREADING_HELP:
-        print(f"    {line}")
-    print()
-    print("  # unittest library (40+ functions)")
-    for line in _library_modules['unittest'].UNITTEST_HELP:
-        print(f"    {line}")
-    print()
-    print("  # csv library (10+ functions)")
-    for line in _library_modules['csv'].CSV_HELP:
-        print(f"    {line}")
-    print()
-    print("  # logging library (30+ functions)")
-    for line in _library_modules['logging'].LOGGING_HELP:
-        print(f"    {line}")
-    print()
-    print("  # argparse library (30+ functions)")
-    for line in _library_modules['argparse'].ARGPARSE_HELP:
-        print(f"    {line}")
-    print()
-    print("  # subprocess library (20+ functions)")
-    for line in _library_modules['subprocess'].SUBPROCESS_HELP:
-        print(f"    {line}")
-    print()
-    print("  # configparser library (20+ functions)")
-    for line in _library_modules['configparser'].CONFIGPARSER_HELP:
-        print(f"    {line}")
-    print()
-    print("  # dataclasses library (30+ functions)")
-    for line in _library_modules['dataclasses'].DATACLASSES_HELP:
-        print(f"    {line}")
-    print()
-    print("  # advanced library (100+ functions)")
-    for line in _library_modules['advanced'].ADVANCED_HELP:
-        print(f"    {line}")
-    print()
-    print("  # xml library (xml.etree.ElementTree)")
-    for line in _library_modules['xml'].XML_HELP:
-        print(f"    {line}")
-    print()
-    print("  # archive library (zipfile, tarfile, gzip, bz2, lzma)")
-    for line in _library_modules['archive'].ARCHIVE_HELP:
-        print(f"    {line}")
-    print()
-    print("  # net library (socket, ssl, http, email, smtp, imap, ftp)")
-    for line in _library_modules['net'].NET_HELP:
-        print(f"    {line}")
-    print()
-    print("  # devtools library (inspect, ast, dis, pdb, doctest, timeit, ...)")
-    for line in _library_modules['devtools'].DEVTOOLS_HELP:
-        print(f"    {line}")
-    print()
-    print("  # web library (http, urllib, wsgiref, email, mailbox, html)")
-    for line in _library_modules['web'].WEB_HELP:
-        print(f"    {line}")
-    print()
-    print("  # datafiles library (io, zipfile, pickle, xml, os.path)")
-    for line in _library_modules['datafiles'].DF_HELP:
-        print(f"    {line}")
-    print()
-    print("  # syslib library (platform, signal, ctypes, unittest, logging)")
-    for line in _library_modules['syslib'].SYS_HELP:
-        print(f"    {line}")
-    print()
-    print("  # numpy library")
-    for line in _library_modules['numpy'].NUM_HELP:
-        print(f"    {line}")
-    print()
-    print("  # scipy library")
-    for line in _library_modules['scipy'].SCI_HELP:
-        print(f"    {line}")
-    print()
-    print("  # telegram library")
-    for line in _library_modules['telegram'].TG_HELP:
-        print(f"    {line}")
-    print()
-    print("  # redis library")
-    for line in _library_modules['redis'].RD_HELP:
-        print(f"    {line}")
-    print()
-    print("  # celery library")
-    for line in _library_modules['celery'].CEL_HELP:
-        print(f"    {line}")
-    print()
+    print("Libraries:")
+    for _entry in ENTRIES:
+        _mod = _library_modules[_entry['name']]
+        _lines = []
+        for _attr in dir(_mod):
+            if _attr.endswith('_HELP'):
+                _value = getattr(_mod, _attr)
+                if isinstance(_value, (list, tuple)):
+                    _lines = list(_value)
+                    break
+        print(f"  # {_entry['name']} library")
+        for _line in _lines:
+            print(f"    {_line}")
+        print()
     print("Examples:")
-    print("  python apl.py examples/01-calculator.apl")
-    print("  python apl.py help")
+    print("  python apl.py hello.apl")
+    print("  python apl.py -c 'اطبع \"أهلاً بالعالم\"'")
     print("  python apl.py repl")
 
 
@@ -1480,7 +1350,7 @@ def run_repl():
     # lines (and the runtime prologue is executed only once).
     _namespace = {"__name__": "__console__"}
     exec(_RUNTIME, _namespace)
-    from core.apl_runner.interactive import configure, evaluate
+    from core.runner.interactive import configure, evaluate
     configure(_namespace)
 
     while True:
@@ -1541,7 +1411,7 @@ def legacy_main():
     command = sys.argv[1].lower()
     
     if command in ('--clear-cache', 'clear-cache'):
-        from core.apl_runner import cache as _c
+        from core.runner import cache as _c
         n = _c.clear()
         print(f"\u202Bتم حذف {n} ملف ترجمة مخزّنة\u202C")
         return
@@ -1588,7 +1458,7 @@ def legacy_main():
 
 
 def main():
-    from core.apl_runner.cli import main as cli_main
+    from core.runner.cli import main as cli_main
     return cli_main()
 
 

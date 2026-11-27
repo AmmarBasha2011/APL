@@ -3,8 +3,8 @@ APL - Transpile Dispatch
 """
 
 import re
-from core.apl_runner.patterns import _TYPE_NAMES, _UDF_NAMES
-from core.apl_runner.inline_replacer import _inline_replace, decorator_target
+from core.runner.patterns import _TYPE_NAMES, _UDF_NAMES
+from core.runner.inline_replacer import _inline_replace, decorator_target
 
 # Arabic decorator names -> Python decorators
 # Bare "@اسم" (no call parens) on a function is a pass-through decorator.
@@ -385,7 +385,7 @@ def transpile_line(line: str) -> str:
 
     # "حالة <expr>:" opens a match; inside a match body the same spelling is
     # used for a case. _IN_MATCH is set by the line loop in main.transpile.
-    from core.apl_runner import transpiler as _self_mod
+    from core.runner import transpiler as _self_mod
     if _self_mod._IN_MATCH and re.match(r"^حالة\s+.+:\s*$", stripped):
         _pat = stripped[len("حالة"):].strip().rstrip(":").strip()
         return f"{indent}case {_inline_replace(_pat)}:"

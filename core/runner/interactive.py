@@ -30,7 +30,7 @@ def configure(namespace):
 
 
 def evaluate(source, namespace):
-    from core.apl_runner.main import transpile
+    from core.runner.main import transpile
     tree = ast.parse(transpile(source), filename='<repl>', mode='exec')
     expression = tree.body.pop() if tree.body and isinstance(tree.body[-1], ast.Expr) else None
     exec(compile(tree, '<repl>', 'exec'), namespace)

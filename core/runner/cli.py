@@ -5,8 +5,8 @@ import sys
 
 
 def main(argv=None):
-    from core.apl_runner.main import print_help, run_repl, __version__, transpile
-    from core.apl_runner.execution import Compilation, diagnostic, execute, execute_file
+    from core.runner.main import print_help, run_repl, __version__, transpile
+    from core.runner.execution import Compilation, diagnostic, execute, execute_file
     argv = list(sys.argv[1:] if argv is None else argv)
     if not argv or argv[0] in ('help', '--help', '-h', '-?'):
         print('apl run FILE [args...] | check FILE | transpile FILE | repl | --version')
@@ -16,7 +16,7 @@ def main(argv=None):
         print(f'APL v{__version__} - Ammar Programming Language')
         return 0
     if argv[0] in ('clear-cache', '--clear-cache'):
-        from core.apl_runner.cache import clear
+        from core.runner.cache import clear
         print(f'تم حذف {clear()} ملف ترجمة مخزنة')
         return 0
     if argv[0] in ('repl', 'interactive', 'shell'):
@@ -56,6 +56,6 @@ def main(argv=None):
     if command == 'check':
         print(f'OK: {options.file}')
     else:
-        from core.apl_runner.main import _RUNTIME
+        from core.runner.main import _RUNTIME
         print(_RUNTIME + '\n' + compilation.python)
     return 0

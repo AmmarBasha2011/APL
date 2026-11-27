@@ -8,16 +8,16 @@ import sys
 import traceback
 from contextlib import contextmanager
 
-from core.apl_runner.source import source_line
+from core.runner.source import source_line
 
 
 class Compilation:
     def __init__(self, source, filename):
-        from core.apl_runner.main import transpile
+        from core.runner.main import transpile
         self.source, self.filename = source, filename
         self.python = ''
         try:
-            from core.apl_runner import cache
+            from core.runner import cache
             path = Path(filename)
             if path.is_file():
                 self.python = cache.load_cached(path, source) or ''
@@ -39,7 +39,7 @@ class Compilation:
 
 
 def diagnostic(error, compilation=None, source='', filename='<apl>'):
-    from core.apl_runner.main import _get_error_ar
+    from core.runner.main import _get_error_ar
     line, column = 1, 1
     if compilation:
         source, filename = compilation.source, compilation.filename
@@ -67,7 +67,7 @@ def diagnostic(error, compilation=None, source='', filename='<apl>'):
 
 
 def execute(compilation, namespace):
-    from core.apl_runner.main import _RUNTIME
+    from core.runner.main import _RUNTIME
     exec(compile(_RUNTIME, '<apl-runtime>', 'exec'), namespace)
     # Keep original source for traceback/debug consumers, generated code for maps.
     linecache.cache[compilation.filename] = (len(compilation.source), None,

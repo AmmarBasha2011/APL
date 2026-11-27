@@ -7,7 +7,7 @@ import sys, os
 # Add script directory to path so core/ can be found
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from core.apl_runner import main
+from core.runner import main
 
 if __name__ == "__main__":
     try:
