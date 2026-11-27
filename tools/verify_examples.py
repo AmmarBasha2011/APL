@@ -14,6 +14,12 @@ it, so the list can be worked through instead of guessed at.
     python tools/verify_examples.py --dir /path/to/examples
     python tools/verify_examples.py --dir . --json > report.json
     python tools/verify_examples.py --dir . --only 12-  # examples 12 and up
+    python tools/verify_examples.py --dir . --fast     # thousands of examples, seconds
+
+--fast runs the whole folder inside one interpreter with a per-program alarm,
+which is the same compile-and-execute path without a process per example: the
+4105-example repository takes about 45 seconds instead of many minutes. It
+checks the interpreter only; the playground run still needs the normal mode.
 """
 from __future__ import annotations
 
@@ -22,6 +28,7 @@ import json
 import os
 import re
 import shutil
+import signal
 import subprocess
 import sys
 import tempfile
@@ -177,6 +184,68 @@ def run_playground(path: Path, work: Path, timeout: float):
     return {"ok": True, "output": text}
 
 
+FAST_DRIVER = '''
+import contextlib, io, json, signal, sys
+sys.path.insert(0, {root!r})
+from core.runner.execution import Compilation, execute
+
+class _Timeout(Exception):
+    pass
+
+def _alarm(signum, frame):
+    raise _Timeout()
+
+signal.signal(signal.SIGALRM, _alarm)
+sys.stdin = open("/dev/null", encoding="utf-8")
+for path in {paths!r}:
+    source = open(path, encoding="utf-8").read()
+    buffer = io.StringIO()
+    kind, detail = "ok", ""
+    signal.setitimer(signal.ITIMER_REAL, {timeout})
+    try:
+        with contextlib.redirect_stdout(buffer):
+            execute(Compilation(source, path), {{"__name__": "__main__"}})
+    except _Timeout:
+        kind, detail = "timeout", "عدّى {timeout} ثانية"
+    except BaseException as error:
+        kind, detail = "error", type(error).__name__ + ": " + str(error).splitlines()[0][:200]
+    finally:
+        signal.setitimer(signal.ITIMER_REAL, 0)
+    print(json.dumps({{"file": path, "kind": kind, "detail": detail}}, ensure_ascii=False), flush=True)
+'''
+
+
+def run_fast(programs, timeout: float):
+    """Run every program in one interpreter, in-process, with a per-program alarm.
+
+    A whole examples repository is thousands of programs, and starting a fresh
+    `عمار` process for each one costs far more than running them: this is the
+    same compile-and-execute path the command uses, without the startup.
+    """
+    driver = Path(tempfile.mkdtemp(prefix="apl-fast-")) / "driver.py"
+    driver.write_text(FAST_DRIVER.format(root=str(ROOT), paths=[str(p) for p in programs],
+                                         timeout=timeout), encoding="utf-8")
+    result = subprocess.run([sys.executable, str(driver)], capture_output=True, text=True,
+                            encoding="utf-8", stdin=subprocess.DEVNULL)
+    outcomes = {}
+    for line in result.stdout.splitlines():
+        line = line.strip()
+        if not line.startswith("{"):
+            continue
+        try:
+            item = json.loads(line)
+        except ValueError:
+            continue
+        if item.get("kind") == "ok":
+            outcomes[item["file"]] = {"ok": True, "output": ""}
+        else:
+            outcomes[item["file"]] = {"ok": False, "stage": item.get("kind") or "run",
+                                      "detail": item.get("detail") or ""}
+    if not outcomes:
+        print(result.stderr[-400:], file=sys.stderr)
+    return outcomes
+
+
 def wanted(name: str, only) -> bool:
     if not only:
         return True
@@ -193,6 +262,8 @@ def main(argv=None) -> int:
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--json", action="store_true")
     parser.add_argument("--no-playground", action="store_true")
+    parser.add_argument("--fast", action="store_true",
+                        help="run the whole folder in one interpreter (no per-example process)")
     args = parser.parse_args(argv)
 
     folder = Path(args.dir)
@@ -200,6 +271,32 @@ def main(argv=None) -> int:
     if not programs:
         print(f"مفيش أمثلة في {folder}")
         return 1
+
+    if args.fast:
+        if not hasattr(signal, "SIGALRM"):
+            print("--fast محتاج لينكس أو ماك؛ هنشتغل بالطريقة العادية.", file=sys.stderr)
+        else:
+            chosen = [p for p in programs if wanted(p.name, args.only)]
+            if args.limit is not None:
+                chosen = chosen[: args.limit]
+            outcomes = run_fast(chosen, args.timeout)
+            results = []
+            for program in chosen:
+                interpreter = outcomes.get(str(program)) or {
+                    "ok": False, "stage": "run", "detail": "مفيش نتيجة من المشغّل"}
+                record = {"example": program.name, "interpreter": interpreter}
+                if not interpreter["ok"]:
+                    library = needs_library(interpreter.get("detail") or "")
+                    if library:
+                        interpreter["needs_library"] = library
+                results.append(record)
+                if not args.json:
+                    print(("ok  " if interpreter["ok"] else "FAIL") + " " + program.name)
+                    if not interpreter["ok"]:
+                        print(f"     {interpreter['stage']}: {interpreter['detail']}")
+                        if interpreter.get("needs_library"):
+                            print(f"     محتاج مكتبة: apl-{interpreter['needs_library']}")
+            return report(results, args.json)
 
     work = Path(tempfile.mkdtemp(prefix="apl-verify-"))
     try:
@@ -234,9 +331,13 @@ def main(argv=None) -> int:
     finally:
         shutil.rmtree(work, ignore_errors=True)
 
+    return report(results, args.json)
+
+
+def report(results, as_json: bool) -> int:
     broken = [r for r in results if not r["interpreter"]["ok"]
               or (r.get("playground") and not r["playground"]["ok"])]
-    if args.json:
+    if as_json:
         print(json.dumps({"total": len(results), "broken": broken}, ensure_ascii=False, indent=2))
     else:
         print()
