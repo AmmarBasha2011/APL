@@ -1,0 +1,36 @@
+name: الأمثلة
+
+# كل مثال في مستودع APL-Examples لازم يشتغل. ده اللي بيخلي الوعد ده متحقّق
+# بعد كل تغيير في اللغة، مش مرة واحدة وقت ما الأمثلة اتكتبت.
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  examples:
+    name: كل الأمثلة
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: تنزيل مستودع الأمثلة
+        uses: actions/checkout@v4
+        with:
+          repository: AmmarBasha2011/APL-Examples
+          path: examples-src
+
+      - name: كل الأمثلة في المشغّل
+        run: python tools/verify_examples.py --dir examples-src/examples --fast
+
+      - name: عيّنة موزّعة في المشغّل والملهى
+        run: python tools/verify_examples.py --dir examples-src/examples --sample 30
