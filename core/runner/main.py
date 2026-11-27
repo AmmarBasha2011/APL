@@ -103,13 +103,15 @@ def _arabic_digits(source: str) -> str:
 def _transpile(source: str) -> str:
     # "استورد "ملف.apl"" pulls another APL file into this program. It has to be
     # rewritten before literals are protected, because the path is a literal.
+    # A trailing comment is allowed: without it the line fell through to
+    # "import "ملف.apl"", which Python rejected as invalid syntax.
     source = re.sub(
-        r"(?m)^([ \t]*)استورد[ \t]+[\"']([^\"']+\.apl)[\"'][ \t]*$",
+        r"(?m)^([ \t]*)استورد[ \t]+[\"']([^\"']+\.apl)[\"'][ \t]*(?:#.*)?$",
         r'\1_apl_import_file("\2", globals())',
         source,
     )
     source = re.sub(
-        r"(?m)^([ \t]*)استورد[ \t]+([^\s\"']+\.apl)[ \t]*$",
+        r"(?m)^([ \t]*)استورد[ \t]+([^\s\"']+\.apl)[ \t]*(?:#.*)?$",
         r'\1_apl_import_file("\2", globals())',
         source,
     )
