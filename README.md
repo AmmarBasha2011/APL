@@ -23,7 +23,7 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 
 - **كلمات مفتاحية عربية** — `اطبع`، `لو`، `دالة`، `صنف`، والمزيد
 - **مكتبات بالعربي** — 106 مكتبة مترجمة بالكامل (من `math` و `requests` إلى `datetime` و `decimal` و `xml` و `archive` و `net`)
-- **4249 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
+- **4449 مثال جاهزاً** — في `examples/`، كلها مختبرة وتعمل
 - **رسائل أخطاء بالعربي** — كل أخطاء Python مترجمة للعربية
 - **تحويل تلقائي للمستورداات** — يستورد المكتبات المطلوبة تلقائياً
 - **بدون dependencies** — فقط Python 3.14+
@@ -279,9 +279,9 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
    اطبع رقم
 ```
 
-## الأمثلة الجاهزة (4249 مثال)
+## الأمثلة الجاهزة (4449 مثال)
 
-مجلد `examples/` يحتوي على **4249 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
+مجلد `examples/` يحتوي على **4449 برنامج حقيقياً** مكتوباً بالكامل بالعربي، وجميعها مختبرة وتعمل بلا أخطاء.
 
 | # | الملف | الوصف |
 |--:|-------|-------|
@@ -4534,6 +4534,206 @@ python apl.py examples/02-sales-report.apl # تشغيل مثال جاهز
 | 4247 | [`4247-join-first-31-chars-with-dots.apl`](examples/4247-join-first-31-chars-with-dots.apl) | نقطع ونربط |
 | 4248 | [`4248-join-first-32-chars-with-dots.apl`](examples/4248-join-first-32-chars-with-dots.apl) | نقطع ونربط |
 | 4249 | [`4249-join-first-33-chars-with-dots.apl`](examples/4249-join-first-33-chars-with-dots.apl) | نقطع ونربط |
+| 4250 | [`4250-sum-multiples-of-60-below-limit-v2.apl`](examples/4250-sum-multiples-of-60-below-limit-v2.apl) | نجمع مضاعفات 60 الأصغر من ن |
+| 4251 | [`4251-sum-multiples-of-61-below-limit-v2.apl`](examples/4251-sum-multiples-of-61-below-limit-v2.apl) | نجمع مضاعفات 61 الأصغر من ن |
+| 4252 | [`4252-sum-multiples-of-62-below-limit-v2.apl`](examples/4252-sum-multiples-of-62-below-limit-v2.apl) | نجمع مضاعفات 62 الأصغر من ن |
+| 4253 | [`4253-sum-multiples-of-63-below-limit-v2.apl`](examples/4253-sum-multiples-of-63-below-limit-v2.apl) | نجمع مضاعفات 63 الأصغر من ن |
+| 4254 | [`4254-sum-multiples-of-64-below-limit-v2.apl`](examples/4254-sum-multiples-of-64-below-limit-v2.apl) | نجمع مضاعفات 64 الأصغر من ن |
+| 4255 | [`4255-count-multiples-of-60-up-to-limit.apl`](examples/4255-count-multiples-of-60-up-to-limit.apl) | نعد المضاعفات من 1 إلى ن |
+| 4256 | [`4256-count-multiples-of-61-up-to-limit.apl`](examples/4256-count-multiples-of-61-up-to-limit.apl) | نعد المضاعفات من 1 إلى ن |
+| 4257 | [`4257-count-multiples-of-62-up-to-limit.apl`](examples/4257-count-multiples-of-62-up-to-limit.apl) | نعد المضاعفات من 1 إلى ن |
+| 4258 | [`4258-count-multiples-of-63-up-to-limit.apl`](examples/4258-count-multiples-of-63-up-to-limit.apl) | نعد المضاعفات من 1 إلى ن |
+| 4259 | [`4259-count-multiples-of-64-up-to-limit.apl`](examples/4259-count-multiples-of-64-up-to-limit.apl) | نعد المضاعفات من 1 إلى ن |
+| 4260 | [`4260-list-multiply-each-by-60.apl`](examples/4260-list-multiply-each-by-60.apl) | نبني قائمة جديدة |
+| 4261 | [`4261-list-multiply-each-by-61.apl`](examples/4261-list-multiply-each-by-61.apl) | نبني قائمة جديدة |
+| 4262 | [`4262-list-multiply-each-by-62.apl`](examples/4262-list-multiply-each-by-62.apl) | نبني قائمة جديدة |
+| 4263 | [`4263-list-multiply-each-by-63.apl`](examples/4263-list-multiply-each-by-63.apl) | نبني قائمة جديدة |
+| 4264 | [`4264-list-multiply-each-by-64.apl`](examples/4264-list-multiply-each-by-64.apl) | نبني قائمة جديدة |
+| 4265 | [`4265-list-add-60-to-each-item.apl`](examples/4265-list-add-60-to-each-item.apl) | نزيد كل عنصر |
+| 4266 | [`4266-list-add-61-to-each-item.apl`](examples/4266-list-add-61-to-each-item.apl) | نزيد كل عنصر |
+| 4267 | [`4267-list-add-62-to-each-item.apl`](examples/4267-list-add-62-to-each-item.apl) | نزيد كل عنصر |
+| 4268 | [`4268-list-add-63-to-each-item.apl`](examples/4268-list-add-63-to-each-item.apl) | نزيد كل عنصر |
+| 4269 | [`4269-list-add-64-to-each-item.apl`](examples/4269-list-add-64-to-each-item.apl) | نزيد كل عنصر |
+| 4270 | [`4270-list-count-greater-than-60.apl`](examples/4270-list-count-greater-than-60.apl) | نعد الأكبر |
+| 4271 | [`4271-list-count-greater-than-61.apl`](examples/4271-list-count-greater-than-61.apl) | نعد الأكبر |
+| 4272 | [`4272-list-count-greater-than-62.apl`](examples/4272-list-count-greater-than-62.apl) | نعد الأكبر |
+| 4273 | [`4273-list-count-greater-than-63.apl`](examples/4273-list-count-greater-than-63.apl) | نعد الأكبر |
+| 4274 | [`4274-list-count-greater-than-64.apl`](examples/4274-list-count-greater-than-64.apl) | نعد الأكبر |
+| 4275 | [`4275-list-keep-divisible-by-60.apl`](examples/4275-list-keep-divisible-by-60.apl) | نصفي القائمة |
+| 4276 | [`4276-list-keep-divisible-by-61.apl`](examples/4276-list-keep-divisible-by-61.apl) | نصفي القائمة |
+| 4277 | [`4277-list-keep-divisible-by-62.apl`](examples/4277-list-keep-divisible-by-62.apl) | نصفي القائمة |
+| 4278 | [`4278-list-keep-divisible-by-63.apl`](examples/4278-list-keep-divisible-by-63.apl) | نصفي القائمة |
+| 4279 | [`4279-list-keep-divisible-by-64.apl`](examples/4279-list-keep-divisible-by-64.apl) | نصفي القائمة |
+| 4280 | [`4280-digit-sum-of-60-to-the-power-n.apl`](examples/4280-digit-sum-of-60-to-the-power-n.apl) | نحسب القوة ثم نجمع الأرقام |
+| 4281 | [`4281-digit-sum-of-61-to-the-power-n.apl`](examples/4281-digit-sum-of-61-to-the-power-n.apl) | نحسب القوة ثم نجمع الأرقام |
+| 4282 | [`4282-digit-sum-of-62-to-the-power-n.apl`](examples/4282-digit-sum-of-62-to-the-power-n.apl) | نحسب القوة ثم نجمع الأرقام |
+| 4283 | [`4283-digit-sum-of-63-to-the-power-n.apl`](examples/4283-digit-sum-of-63-to-the-power-n.apl) | نحسب القوة ثم نجمع الأرقام |
+| 4284 | [`4284-digit-sum-of-64-to-the-power-n.apl`](examples/4284-digit-sum-of-64-to-the-power-n.apl) | نحسب القوة ثم نجمع الأرقام |
+| 4285 | [`4285-sum-of-remainders-mod-60-up-to-n.apl`](examples/4285-sum-of-remainders-mod-60-up-to-n.apl) | نجمع ي % 60 |
+| 4286 | [`4286-sum-of-remainders-mod-61-up-to-n.apl`](examples/4286-sum-of-remainders-mod-61-up-to-n.apl) | نجمع ي % 61 |
+| 4287 | [`4287-sum-of-remainders-mod-62-up-to-n.apl`](examples/4287-sum-of-remainders-mod-62-up-to-n.apl) | نجمع ي % 62 |
+| 4288 | [`4288-sum-of-remainders-mod-63-up-to-n.apl`](examples/4288-sum-of-remainders-mod-63-up-to-n.apl) | نجمع ي % 63 |
+| 4289 | [`4289-sum-of-remainders-mod-64-up-to-n.apl`](examples/4289-sum-of-remainders-mod-64-up-to-n.apl) | نجمع ي % 64 |
+| 4290 | [`4290-count-numbers-below-hundred-with-digit-sum-60.apl`](examples/4290-count-numbers-below-hundred-with-digit-sum-60.apl) | نعد الأعداد |
+| 4291 | [`4291-count-numbers-below-hundred-with-digit-sum-61.apl`](examples/4291-count-numbers-below-hundred-with-digit-sum-61.apl) | نعد الأعداد |
+| 4292 | [`4292-count-numbers-below-hundred-with-digit-sum-62.apl`](examples/4292-count-numbers-below-hundred-with-digit-sum-62.apl) | نعد الأعداد |
+| 4293 | [`4293-count-numbers-below-hundred-with-digit-sum-63.apl`](examples/4293-count-numbers-below-hundred-with-digit-sum-63.apl) | نعد الأعداد |
+| 4294 | [`4294-count-numbers-below-hundred-with-digit-sum-64.apl`](examples/4294-count-numbers-below-hundred-with-digit-sum-64.apl) | نعد الأعداد |
+| 4295 | [`4295-list-take-every-60th-item.apl`](examples/4295-list-take-every-60th-item.apl) | شريحة بخطوة |
+| 4296 | [`4296-list-take-every-61th-item.apl`](examples/4296-list-take-every-61th-item.apl) | شريحة بخطوة |
+| 4297 | [`4297-list-take-every-62th-item.apl`](examples/4297-list-take-every-62th-item.apl) | شريحة بخطوة |
+| 4298 | [`4298-list-take-every-63th-item.apl`](examples/4298-list-take-every-63th-item.apl) | شريحة بخطوة |
+| 4299 | [`4299-list-take-every-64th-item.apl`](examples/4299-list-take-every-64th-item.apl) | شريحة بخطوة |
+| 4300 | [`4300-list-rotate-left-by-60.apl`](examples/4300-list-rotate-left-by-60.apl) | نقص ونلصق |
+| 4301 | [`4301-list-rotate-left-by-61.apl`](examples/4301-list-rotate-left-by-61.apl) | نقص ونلصق |
+| 4302 | [`4302-list-rotate-left-by-62.apl`](examples/4302-list-rotate-left-by-62.apl) | نقص ونلصق |
+| 4303 | [`4303-list-rotate-left-by-63.apl`](examples/4303-list-rotate-left-by-63.apl) | نقص ونلصق |
+| 4304 | [`4304-list-rotate-left-by-64.apl`](examples/4304-list-rotate-left-by-64.apl) | نقص ونلصق |
+| 4305 | [`4305-nth-term-arithmetic-sequence-step-60.apl`](examples/4305-nth-term-arithmetic-sequence-step-60.apl) | أ + (ن-1)*60 |
+| 4306 | [`4306-nth-term-arithmetic-sequence-step-61.apl`](examples/4306-nth-term-arithmetic-sequence-step-61.apl) | أ + (ن-1)*61 |
+| 4307 | [`4307-nth-term-arithmetic-sequence-step-62.apl`](examples/4307-nth-term-arithmetic-sequence-step-62.apl) | أ + (ن-1)*62 |
+| 4308 | [`4308-nth-term-arithmetic-sequence-step-63.apl`](examples/4308-nth-term-arithmetic-sequence-step-63.apl) | أ + (ن-1)*63 |
+| 4309 | [`4309-nth-term-arithmetic-sequence-step-64.apl`](examples/4309-nth-term-arithmetic-sequence-step-64.apl) | أ + (ن-1)*64 |
+| 4310 | [`4310-sum-of-powers-of-60-up-to-n.apl`](examples/4310-sum-of-powers-of-60-up-to-n.apl) | نجمع 60^ي |
+| 4311 | [`4311-sum-of-powers-of-61-up-to-n.apl`](examples/4311-sum-of-powers-of-61-up-to-n.apl) | نجمع 61^ي |
+| 4312 | [`4312-sum-of-powers-of-62-up-to-n.apl`](examples/4312-sum-of-powers-of-62-up-to-n.apl) | نجمع 62^ي |
+| 4313 | [`4313-sum-of-powers-of-63-up-to-n.apl`](examples/4313-sum-of-powers-of-63-up-to-n.apl) | نجمع 63^ي |
+| 4314 | [`4314-sum-of-powers-of-64-up-to-n.apl`](examples/4314-sum-of-powers-of-64-up-to-n.apl) | نجمع 64^ي |
+| 4315 | [`4315-clamp-list-values-to-max-60.apl`](examples/4315-clamp-list-values-to-max-60.apl) | نقص ما يزيد |
+| 4316 | [`4316-clamp-list-values-to-max-61.apl`](examples/4316-clamp-list-values-to-max-61.apl) | نقص ما يزيد |
+| 4317 | [`4317-clamp-list-values-to-max-62.apl`](examples/4317-clamp-list-values-to-max-62.apl) | نقص ما يزيد |
+| 4318 | [`4318-clamp-list-values-to-max-63.apl`](examples/4318-clamp-list-values-to-max-63.apl) | نقص ما يزيد |
+| 4319 | [`4319-clamp-list-values-to-max-64.apl`](examples/4319-clamp-list-values-to-max-64.apl) | نقص ما يزيد |
+| 4320 | [`4320-repeat-text-60-times-with-dash.apl`](examples/4320-repeat-text-60-times-with-dash.apl) | نكرر ونفصل |
+| 4321 | [`4321-repeat-text-61-times-with-dash.apl`](examples/4321-repeat-text-61-times-with-dash.apl) | نكرر ونفصل |
+| 4322 | [`4322-repeat-text-62-times-with-dash.apl`](examples/4322-repeat-text-62-times-with-dash.apl) | نكرر ونفصل |
+| 4323 | [`4323-repeat-text-63-times-with-dash.apl`](examples/4323-repeat-text-63-times-with-dash.apl) | نكرر ونفصل |
+| 4324 | [`4324-repeat-text-64-times-with-dash.apl`](examples/4324-repeat-text-64-times-with-dash.apl) | نكرر ونفصل |
+| 4325 | [`4325-pad-number-with-zeros-to-width-60.apl`](examples/4325-pad-number-with-zeros-to-width-60.apl) | zfill |
+| 4326 | [`4326-pad-number-with-zeros-to-width-61.apl`](examples/4326-pad-number-with-zeros-to-width-61.apl) | zfill |
+| 4327 | [`4327-pad-number-with-zeros-to-width-62.apl`](examples/4327-pad-number-with-zeros-to-width-62.apl) | zfill |
+| 4328 | [`4328-pad-number-with-zeros-to-width-63.apl`](examples/4328-pad-number-with-zeros-to-width-63.apl) | zfill |
+| 4329 | [`4329-pad-number-with-zeros-to-width-64.apl`](examples/4329-pad-number-with-zeros-to-width-64.apl) | zfill |
+| 4330 | [`4330-truncate-text-to-first-60-chars.apl`](examples/4330-truncate-text-to-first-60-chars.apl) | شريحة |
+| 4331 | [`4331-truncate-text-to-first-61-chars.apl`](examples/4331-truncate-text-to-first-61-chars.apl) | شريحة |
+| 4332 | [`4332-truncate-text-to-first-62-chars.apl`](examples/4332-truncate-text-to-first-62-chars.apl) | شريحة |
+| 4333 | [`4333-truncate-text-to-first-63-chars.apl`](examples/4333-truncate-text-to-first-63-chars.apl) | شريحة |
+| 4334 | [`4334-truncate-text-to-first-64-chars.apl`](examples/4334-truncate-text-to-first-64-chars.apl) | شريحة |
+| 4335 | [`4335-sum-of-integers-from-45-to-n.apl`](examples/4335-sum-of-integers-from-45-to-n.apl) | نجمع بحلقة |
+| 4336 | [`4336-sum-of-integers-from-46-to-n.apl`](examples/4336-sum-of-integers-from-46-to-n.apl) | نجمع بحلقة |
+| 4337 | [`4337-sum-of-integers-from-47-to-n.apl`](examples/4337-sum-of-integers-from-47-to-n.apl) | نجمع بحلقة |
+| 4338 | [`4338-sum-of-integers-from-48-to-n.apl`](examples/4338-sum-of-integers-from-48-to-n.apl) | نجمع بحلقة |
+| 4339 | [`4339-sum-of-integers-from-49-to-n.apl`](examples/4339-sum-of-integers-from-49-to-n.apl) | نجمع بحلقة |
+| 4340 | [`4340-count-numbers-with-exactly-45-divisors-below-limit.apl`](examples/4340-count-numbers-with-exactly-45-divisors-below-limit.apl) | نعد القواسم لكل عدد |
+| 4341 | [`4341-count-numbers-with-exactly-46-divisors-below-limit.apl`](examples/4341-count-numbers-with-exactly-46-divisors-below-limit.apl) | نعد القواسم لكل عدد |
+| 4342 | [`4342-count-numbers-with-exactly-47-divisors-below-limit.apl`](examples/4342-count-numbers-with-exactly-47-divisors-below-limit.apl) | نعد القواسم لكل عدد |
+| 4343 | [`4343-count-numbers-with-exactly-48-divisors-below-limit.apl`](examples/4343-count-numbers-with-exactly-48-divisors-below-limit.apl) | نعد القواسم لكل عدد |
+| 4344 | [`4344-count-numbers-with-exactly-49-divisors-below-limit.apl`](examples/4344-count-numbers-with-exactly-49-divisors-below-limit.apl) | نعد القواسم لكل عدد |
+| 4345 | [`4345-list-count-items-with-remainder-one-mod-45.apl`](examples/4345-list-count-items-with-remainder-one-mod-45.apl) | نعد |
+| 4346 | [`4346-list-count-items-with-remainder-one-mod-46.apl`](examples/4346-list-count-items-with-remainder-one-mod-46.apl) | نعد |
+| 4347 | [`4347-list-count-items-with-remainder-one-mod-47.apl`](examples/4347-list-count-items-with-remainder-one-mod-47.apl) | نعد |
+| 4348 | [`4348-list-count-items-with-remainder-one-mod-48.apl`](examples/4348-list-count-items-with-remainder-one-mod-48.apl) | نعد |
+| 4349 | [`4349-list-count-items-with-remainder-one-mod-49.apl`](examples/4349-list-count-items-with-remainder-one-mod-49.apl) | نعد |
+| 4350 | [`4350-price-after-45-percent-discount-integer.apl`](examples/4350-price-after-45-percent-discount-integer.apl) | نطرح الخصم |
+| 4351 | [`4351-price-after-46-percent-discount-integer.apl`](examples/4351-price-after-46-percent-discount-integer.apl) | نطرح الخصم |
+| 4352 | [`4352-price-after-47-percent-discount-integer.apl`](examples/4352-price-after-47-percent-discount-integer.apl) | نطرح الخصم |
+| 4353 | [`4353-price-after-48-percent-discount-integer.apl`](examples/4353-price-after-48-percent-discount-integer.apl) | نطرح الخصم |
+| 4354 | [`4354-price-after-49-percent-discount-integer.apl`](examples/4354-price-after-49-percent-discount-integer.apl) | نطرح الخصم |
+| 4355 | [`4355-price-with-45-percent-tax-integer.apl`](examples/4355-price-with-45-percent-tax-integer.apl) | نضيف الضريبة |
+| 4356 | [`4356-price-with-46-percent-tax-integer.apl`](examples/4356-price-with-46-percent-tax-integer.apl) | نضيف الضريبة |
+| 4357 | [`4357-price-with-47-percent-tax-integer.apl`](examples/4357-price-with-47-percent-tax-integer.apl) | نضيف الضريبة |
+| 4358 | [`4358-price-with-48-percent-tax-integer.apl`](examples/4358-price-with-48-percent-tax-integer.apl) | نضيف الضريبة |
+| 4359 | [`4359-price-with-49-percent-tax-integer.apl`](examples/4359-price-with-49-percent-tax-integer.apl) | نضيف الضريبة |
+| 4360 | [`4360-split-bill-among-45-people-ceiling.apl`](examples/4360-split-bill-among-45-people-ceiling.apl) | نقرب لأعلى |
+| 4361 | [`4361-split-bill-among-46-people-ceiling.apl`](examples/4361-split-bill-among-46-people-ceiling.apl) | نقرب لأعلى |
+| 4362 | [`4362-split-bill-among-47-people-ceiling.apl`](examples/4362-split-bill-among-47-people-ceiling.apl) | نقرب لأعلى |
+| 4363 | [`4363-split-bill-among-48-people-ceiling.apl`](examples/4363-split-bill-among-48-people-ceiling.apl) | نقرب لأعلى |
+| 4364 | [`4364-split-bill-among-49-people-ceiling.apl`](examples/4364-split-bill-among-49-people-ceiling.apl) | نقرب لأعلى |
+| 4365 | [`4365-minutes-to-hours-and-minutes-base-45.apl`](examples/4365-minutes-to-hours-and-minutes-base-45.apl) | نقسم على 45 |
+| 4366 | [`4366-minutes-to-hours-and-minutes-base-46.apl`](examples/4366-minutes-to-hours-and-minutes-base-46.apl) | نقسم على 46 |
+| 4367 | [`4367-minutes-to-hours-and-minutes-base-47.apl`](examples/4367-minutes-to-hours-and-minutes-base-47.apl) | نقسم على 47 |
+| 4368 | [`4368-minutes-to-hours-and-minutes-base-48.apl`](examples/4368-minutes-to-hours-and-minutes-base-48.apl) | نقسم على 48 |
+| 4369 | [`4369-minutes-to-hours-and-minutes-base-49.apl`](examples/4369-minutes-to-hours-and-minutes-base-49.apl) | نقسم على 49 |
+| 4370 | [`4370-count-words-with-length-at-least-45.apl`](examples/4370-count-words-with-length-at-least-45.apl) | نعد الكلمات |
+| 4371 | [`4371-count-words-with-length-at-least-46.apl`](examples/4371-count-words-with-length-at-least-46.apl) | نعد الكلمات |
+| 4372 | [`4372-count-words-with-length-at-least-47.apl`](examples/4372-count-words-with-length-at-least-47.apl) | نعد الكلمات |
+| 4373 | [`4373-count-words-with-length-at-least-48.apl`](examples/4373-count-words-with-length-at-least-48.apl) | نعد الكلمات |
+| 4374 | [`4374-count-words-with-length-at-least-49.apl`](examples/4374-count-words-with-length-at-least-49.apl) | نعد الكلمات |
+| 4375 | [`4375-square-of-radius-times-97-area-approx.apl`](examples/4375-square-of-radius-times-97-area-approx.apl) | المساحة ≈ 97×نق²/7 |
+| 4376 | [`4376-square-of-radius-times-101-area-approx.apl`](examples/4376-square-of-radius-times-101-area-approx.apl) | المساحة ≈ 101×نق²/7 |
+| 4377 | [`4377-square-of-radius-times-103-area-approx.apl`](examples/4377-square-of-radius-times-103-area-approx.apl) | المساحة ≈ 103×نق²/7 |
+| 4378 | [`4378-rectangle-area-scaled-by-26.apl`](examples/4378-rectangle-area-scaled-by-26.apl) | نكبر الضلعين |
+| 4379 | [`4379-rectangle-area-scaled-by-27.apl`](examples/4379-rectangle-area-scaled-by-27.apl) | نكبر الضلعين |
+| 4380 | [`4380-rectangle-area-scaled-by-28.apl`](examples/4380-rectangle-area-scaled-by-28.apl) | نكبر الضلعين |
+| 4381 | [`4381-interior-angle-sum-of-polygon-plus-31.apl`](examples/4381-interior-angle-sum-of-polygon-plus-31.apl) | (ن-2)*180 |
+| 4382 | [`4382-interior-angle-sum-of-polygon-plus-32.apl`](examples/4382-interior-angle-sum-of-polygon-plus-32.apl) | (ن-2)*180 |
+| 4383 | [`4383-interior-angle-sum-of-polygon-plus-33.apl`](examples/4383-interior-angle-sum-of-polygon-plus-33.apl) | (ن-2)*180 |
+| 4384 | [`4384-interior-angle-sum-of-polygon-plus-34.apl`](examples/4384-interior-angle-sum-of-polygon-plus-34.apl) | (ن-2)*180 |
+| 4385 | [`4385-sum-of-ord-values-offset-25.apl`](examples/4385-sum-of-ord-values-offset-25.apl) | نجمع ord+25 |
+| 4386 | [`4386-sum-of-ord-values-offset-26.apl`](examples/4386-sum-of-ord-values-offset-26.apl) | نجمع ord+26 |
+| 4387 | [`4387-sum-of-ord-values-offset-27.apl`](examples/4387-sum-of-ord-values-offset-27.apl) | نجمع ord+27 |
+| 4388 | [`4388-multiplication-table-row-of-32.apl`](examples/4388-multiplication-table-row-of-32.apl) | من 1 إلى ن |
+| 4389 | [`4389-multiplication-table-row-of-33.apl`](examples/4389-multiplication-table-row-of-33.apl) | من 1 إلى ن |
+| 4390 | [`4390-multiplication-table-row-of-34.apl`](examples/4390-multiplication-table-row-of-34.apl) | من 1 إلى ن |
+| 4391 | [`4391-sum-of-squares-from-25-to-n.apl`](examples/4391-sum-of-squares-from-25-to-n.apl) | نجمع المربعات |
+| 4392 | [`4392-sum-of-squares-from-26-to-n.apl`](examples/4392-sum-of-squares-from-26-to-n.apl) | نجمع المربعات |
+| 4393 | [`4393-sum-of-squares-from-27-to-n.apl`](examples/4393-sum-of-squares-from-27-to-n.apl) | نجمع المربعات |
+| 4394 | [`4394-list-count-items-below-34.apl`](examples/4394-list-count-items-below-34.apl) | نعد الأصغر |
+| 4395 | [`4395-list-count-items-below-35.apl`](examples/4395-list-count-items-below-35.apl) | نعد الأصغر |
+| 4396 | [`4396-list-count-items-below-36.apl`](examples/4396-list-count-items-below-36.apl) | نعد الأصغر |
+| 4397 | [`4397-list-count-items-below-37.apl`](examples/4397-list-count-items-below-37.apl) | نعد الأصغر |
+| 4398 | [`4398-list-count-items-below-38.apl`](examples/4398-list-count-items-below-38.apl) | نعد الأصغر |
+| 4399 | [`4399-list-count-items-below-39.apl`](examples/4399-list-count-items-below-39.apl) | نعد الأصغر |
+| 4400 | [`4400-list-count-items-below-40.apl`](examples/4400-list-count-items-below-40.apl) | نعد الأصغر |
+| 4401 | [`4401-list-sum-of-items-above-34.apl`](examples/4401-list-sum-of-items-above-34.apl) | نجمع الأكبر |
+| 4402 | [`4402-list-sum-of-items-above-35.apl`](examples/4402-list-sum-of-items-above-35.apl) | نجمع الأكبر |
+| 4403 | [`4403-list-sum-of-items-above-36.apl`](examples/4403-list-sum-of-items-above-36.apl) | نجمع الأكبر |
+| 4404 | [`4404-list-sum-of-items-above-37.apl`](examples/4404-list-sum-of-items-above-37.apl) | نجمع الأكبر |
+| 4405 | [`4405-list-sum-of-items-above-38.apl`](examples/4405-list-sum-of-items-above-38.apl) | نجمع الأكبر |
+| 4406 | [`4406-list-sum-of-items-above-39.apl`](examples/4406-list-sum-of-items-above-39.apl) | نجمع الأكبر |
+| 4407 | [`4407-list-sum-of-items-above-40.apl`](examples/4407-list-sum-of-items-above-40.apl) | نجمع الأكبر |
+| 4408 | [`4408-list-sum-of-first-34-items.apl`](examples/4408-list-sum-of-first-34-items.apl) | شريحة ثم مجموع |
+| 4409 | [`4409-list-sum-of-first-35-items.apl`](examples/4409-list-sum-of-first-35-items.apl) | شريحة ثم مجموع |
+| 4410 | [`4410-list-sum-of-first-36-items.apl`](examples/4410-list-sum-of-first-36-items.apl) | شريحة ثم مجموع |
+| 4411 | [`4411-list-sum-of-first-37-items.apl`](examples/4411-list-sum-of-first-37-items.apl) | شريحة ثم مجموع |
+| 4412 | [`4412-list-sum-of-first-38-items.apl`](examples/4412-list-sum-of-first-38-items.apl) | شريحة ثم مجموع |
+| 4413 | [`4413-list-sum-of-first-39-items.apl`](examples/4413-list-sum-of-first-39-items.apl) | شريحة ثم مجموع |
+| 4414 | [`4414-list-sum-of-first-40-items.apl`](examples/4414-list-sum-of-first-40-items.apl) | شريحة ثم مجموع |
+| 4415 | [`4415-list-sum-of-last-34-items.apl`](examples/4415-list-sum-of-last-34-items.apl) | شريحة سالبة |
+| 4416 | [`4416-list-sum-of-last-35-items.apl`](examples/4416-list-sum-of-last-35-items.apl) | شريحة سالبة |
+| 4417 | [`4417-list-sum-of-last-36-items.apl`](examples/4417-list-sum-of-last-36-items.apl) | شريحة سالبة |
+| 4418 | [`4418-list-sum-of-last-37-items.apl`](examples/4418-list-sum-of-last-37-items.apl) | شريحة سالبة |
+| 4419 | [`4419-list-sum-of-last-38-items.apl`](examples/4419-list-sum-of-last-38-items.apl) | شريحة سالبة |
+| 4420 | [`4420-list-sum-of-last-39-items.apl`](examples/4420-list-sum-of-last-39-items.apl) | شريحة سالبة |
+| 4421 | [`4421-list-sum-of-last-40-items.apl`](examples/4421-list-sum-of-last-40-items.apl) | شريحة سالبة |
+| 4422 | [`4422-nth-power-of-34-by-loop.apl`](examples/4422-nth-power-of-34-by-loop.apl) | نضرب ن مرات |
+| 4423 | [`4423-nth-power-of-35-by-loop.apl`](examples/4423-nth-power-of-35-by-loop.apl) | نضرب ن مرات |
+| 4424 | [`4424-nth-power-of-36-by-loop.apl`](examples/4424-nth-power-of-36-by-loop.apl) | نضرب ن مرات |
+| 4425 | [`4425-nth-power-of-37-by-loop.apl`](examples/4425-nth-power-of-37-by-loop.apl) | نضرب ن مرات |
+| 4426 | [`4426-nth-power-of-38-by-loop.apl`](examples/4426-nth-power-of-38-by-loop.apl) | نضرب ن مرات |
+| 4427 | [`4427-nth-power-of-39-by-loop.apl`](examples/4427-nth-power-of-39-by-loop.apl) | نضرب ن مرات |
+| 4428 | [`4428-nth-power-of-40-by-loop.apl`](examples/4428-nth-power-of-40-by-loop.apl) | نضرب ن مرات |
+| 4429 | [`4429-last-digit-of-n-times-34.apl`](examples/4429-last-digit-of-n-times-34.apl) | باقي القسمة على 10 |
+| 4430 | [`4430-last-digit-of-n-times-35.apl`](examples/4430-last-digit-of-n-times-35.apl) | باقي القسمة على 10 |
+| 4431 | [`4431-last-digit-of-n-times-36.apl`](examples/4431-last-digit-of-n-times-36.apl) | باقي القسمة على 10 |
+| 4432 | [`4432-last-digit-of-n-times-37.apl`](examples/4432-last-digit-of-n-times-37.apl) | باقي القسمة على 10 |
+| 4433 | [`4433-last-digit-of-n-times-38.apl`](examples/4433-last-digit-of-n-times-38.apl) | باقي القسمة على 10 |
+| 4434 | [`4434-last-digit-of-n-times-39.apl`](examples/4434-last-digit-of-n-times-39.apl) | باقي القسمة على 10 |
+| 4435 | [`4435-last-digit-of-n-times-40.apl`](examples/4435-last-digit-of-n-times-40.apl) | باقي القسمة على 10 |
+| 4436 | [`4436-count-digit-4-occurrences-up-to-n-v34.apl`](examples/4436-count-digit-4-occurrences-up-to-n-v34.apl) | نعد في كل عدد |
+| 4437 | [`4437-count-digit-5-occurrences-up-to-n-v35.apl`](examples/4437-count-digit-5-occurrences-up-to-n-v35.apl) | نعد في كل عدد |
+| 4438 | [`4438-count-digit-6-occurrences-up-to-n-v36.apl`](examples/4438-count-digit-6-occurrences-up-to-n-v36.apl) | نعد في كل عدد |
+| 4439 | [`4439-count-digit-7-occurrences-up-to-n-v37.apl`](examples/4439-count-digit-7-occurrences-up-to-n-v37.apl) | نعد في كل عدد |
+| 4440 | [`4440-count-digit-8-occurrences-up-to-n-v38.apl`](examples/4440-count-digit-8-occurrences-up-to-n-v38.apl) | نعد في كل عدد |
+| 4441 | [`4441-count-digit-9-occurrences-up-to-n-v39.apl`](examples/4441-count-digit-9-occurrences-up-to-n-v39.apl) | نعد في كل عدد |
+| 4442 | [`4442-count-digit-0-occurrences-up-to-n-v40.apl`](examples/4442-count-digit-0-occurrences-up-to-n-v40.apl) | نعد في كل عدد |
+| 4443 | [`4443-join-first-34-chars-with-dots.apl`](examples/4443-join-first-34-chars-with-dots.apl) | نقطع ونربط |
+| 4444 | [`4444-join-first-35-chars-with-dots.apl`](examples/4444-join-first-35-chars-with-dots.apl) | نقطع ونربط |
+| 4445 | [`4445-join-first-36-chars-with-dots.apl`](examples/4445-join-first-36-chars-with-dots.apl) | نقطع ونربط |
+| 4446 | [`4446-join-first-37-chars-with-dots.apl`](examples/4446-join-first-37-chars-with-dots.apl) | نقطع ونربط |
+| 4447 | [`4447-join-first-38-chars-with-dots.apl`](examples/4447-join-first-38-chars-with-dots.apl) | نقطع ونربط |
+| 4448 | [`4448-join-first-39-chars-with-dots.apl`](examples/4448-join-first-39-chars-with-dots.apl) | نقطع ونربط |
+| 4449 | [`4449-join-first-40-chars-with-dots.apl`](examples/4449-join-first-40-chars-with-dots.apl) | نقطع ونربط |
 
 ### تشغيل أي مثال
 
@@ -4634,7 +4834,7 @@ For inquiries: Ammar Al-Khateeb — inex.own@gmail.com
 
 ---
 
-**الإصدار:** APL v1.13 — 231,743 عنصراً عربياً — 106 مكتبة — 4249 مثال
+**الإصدار:** APL v1.13 — 231,743 عنصراً عربياً — 106 مكتبة — 4449 مثال
 
 ## Language platform tools
 
