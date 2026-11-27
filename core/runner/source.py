@@ -67,7 +67,7 @@ def protect(source):
 def restore(code, values):
     for key, literal in values.items():
         if re.match(r"(?i)^f[\"']", literal):
-            from core.apl_runner.inline_replacer import _inline_replace
+            from core.runner.inline_replacer import _inline_replace
             literal = _inline_replace(literal)
         code = code.replace('# ' + key, literal) if literal.startswith('#') else code.replace(key, literal)
     return code

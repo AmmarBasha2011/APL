@@ -16,9 +16,6 @@ env/
 Thumbs.db
 *.log
 
-# Locally generated benchmark reports
-benchmarks/*-results.json
-
 # ملفات قواعد البيانات الناتجة عن تشغيل الأمثلة
 *.db
 

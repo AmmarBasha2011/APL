@@ -33,7 +33,7 @@ def _engine_fingerprint() -> str:
     """SHA-256 over every engine source file that affects translation."""
     h = hashlib.sha256()
     for rel in sorted(str(p.relative_to(_SRC_ROOT))
-                      for p in (_SRC_ROOT / "core/apl_runner").glob("*.py")):
+                      for p in (_SRC_ROOT / "core/runner").glob("*.py")):
         p = _SRC_ROOT / rel
         try:
             h.update(rel.encode("utf-8"))

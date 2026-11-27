@@ -1,0 +1,744 @@
+[
+ {
+  "name": "math",
+  "module": "math_funcs",
+  "bundled": true,
+  "size_kb": 4,
+  "title": "APL - Math Library Functions"
+ },
+ {
+  "name": "random",
+  "module": "random_funcs",
+  "bundled": true,
+  "size_kb": 2,
+  "title": "APL - Random Library Functions"
+ },
+ {
+  "name": "time",
+  "module": "time_funcs",
+  "bundled": true,
+  "size_kb": 3,
+  "title": "APL - Time & DateTime Library Functions"
+ },
+ {
+  "name": "statistics",
+  "module": "statistics_funcs",
+  "bundled": true,
+  "size_kb": 2,
+  "title": "APL - Statistics Library Functions"
+ },
+ {
+  "name": "os",
+  "module": "os_funcs",
+  "bundled": true,
+  "size_kb": 3,
+  "title": "APL - OS & Path Library Functions"
+ },
+ {
+  "name": "re",
+  "module": "re_funcs",
+  "bundled": true,
+  "size_kb": 2,
+  "title": "APL - Regular Expression Library Functions"
+ },
+ {
+  "name": "collections",
+  "module": "collections_funcs",
+  "bundled": true,
+  "size_kb": 1,
+  "title": "APL - Collections Library Functions"
+ },
+ {
+  "name": "itertools",
+  "module": "itertools_funcs",
+  "bundled": true,
+  "size_kb": 2,
+  "title": "APL - Itertools Library Functions"
+ },
+ {
+  "name": "json",
+  "module": "json_funcs",
+  "bundled": true,
+  "size_kb": 1,
+  "title": "APL - JSON Library Functions"
+ },
+ {
+  "name": "hashlib",
+  "module": "hashlib_funcs",
+  "bundled": true,
+  "size_kb": 1,
+  "title": "APL - Hashlib Library Functions"
+ },
+ {
+  "name": "flask",
+  "module": "flask_funcs",
+  "bundled": false,
+  "size_kb": 5,
+  "title": "APL - Flask Web Framework Library"
+ },
+ {
+  "name": "fastapi",
+  "module": "fastapi_funcs",
+  "bundled": false,
+  "size_kb": 26,
+  "title": "APL - FastAPI Web Framework Library"
+ },
+ {
+  "name": "requests",
+  "module": "requests_funcs",
+  "bundled": false,
+  "size_kb": 11,
+  "title": "APL - Requests HTTP Library"
+ },
+ {
+  "name": "sqlite3",
+  "module": "sqlite3_funcs",
+  "bundled": true,
+  "size_kb": 2,
+  "title": "APL - SQLite3 Database Library"
+ },
+ {
+  "name": "asyncio",
+  "module": "asyncio_funcs",
+  "bundled": true,
+  "size_kb": 7,
+  "title": "APL - Asyncio Library"
+ },
+ {
+  "name": "threading",
+  "module": "threading_funcs",
+  "bundled": true,
+  "size_kb": 2,
+  "title": "APL - Threading Library"
+ },
+ {
+  "name": "unittest",
+  "module": "unittest_funcs",
+  "bundled": true,
+  "size_kb": 5,
+  "title": "APL - UnitTest Library"
+ },
+ {
+  "name": "csv",
+  "module": "csv_funcs",
+  "bundled": true,
+  "size_kb": 1,
+  "title": "APL - CSV Library"
+ },
+ {
+  "name": "logging",
+  "module": "logging_funcs",
+  "bundled": true,
+  "size_kb": 5,
+  "title": "APL - Logging Library"
+ },
+ {
+  "name": "argparse",
+  "module": "argparse_funcs",
+  "bundled": true,
+  "size_kb": 8,
+  "title": "APL - Argparse Library"
+ },
+ {
+  "name": "subprocess",
+  "module": "subprocess_funcs",
+  "bundled": true,
+  "size_kb": 5,
+  "title": "APL - Subprocess Library"
+ },
+ {
+  "name": "configparser",
+  "module": "configparser_funcs",
+  "bundled": true,
+  "size_kb": 4,
+  "title": "APL - ConfigParser Library"
+ },
+ {
+  "name": "dataclasses",
+  "module": "dataclasses_funcs",
+  "bundled": true,
+  "size_kb": 4,
+  "title": "APL - Dataclasses & Enum Library"
+ },
+ {
+  "name": "advanced",
+  "module": "advanced_funcs",
+  "bundled": true,
+  "size_kb": 7,
+  "title": "APL - Advanced Python Features Library"
+ },
+ {
+  "name": "datetime",
+  "module": "datetime_funcs",
+  "bundled": true,
+  "size_kb": 2,
+  "title": "APL - datetime Library Functions"
+ },
+ {
+  "name": "pathlib",
+  "module": "pathlib_funcs",
+  "bundled": true,
+  "size_kb": 2,
+  "title": "APL - pathlib Library Functions"
+ },
+ {
+  "name": "shutil",
+  "module": "shutil_funcs",
+  "bundled": true,
+  "size_kb": 1,
+  "title": "APL - shutil Library Functions"
+ },
+ {
+  "name": "textwrap",
+  "module": "textwrap_funcs",
+  "bundled": true,
+  "size_kb": 1,
+  "title": "APL - textwrap Library Functions"
+ },
+ {
+  "name": "uuid",
+  "module": "uuid_funcs",
+  "bundled": true,
+  "size_kb": 1,
+  "title": "APL - uuid Library Functions"
+ },
+ {
+  "name": "base64",
+  "module": "base64_funcs",
+  "bundled": true,
+  "size_kb": 1,
+  "title": "APL - base64 Library Functions"
+ },
+ {
+  "name": "urllib",
+  "module": "urllib_funcs",
+  "bundled": true,
+  "size_kb": 1,
+  "title": "APL - urllib Library Functions"
+ },
+ {
+  "name": "functools",
+  "module": "functools_funcs",
+  "bundled": true,
+  "size_kb": 0,
+  "title": "APL - functools Library Functions"
+ },
+ {
+  "name": "decimal",
+  "module": "decimal_funcs",
+  "bundled": true,
+  "size_kb": 2,
+  "title": "APL - decimal Library Functions"
+ },
+ {
+  "name": "fractions",
+  "module": "fractions_funcs",
+  "bundled": true,
+  "size_kb": 1,
+  "title": "APL - fractions Library Functions"
+ },
+ {
+  "name": "string",
+  "module": "string_funcs",
+  "bundled": true,
+  "size_kb": 1,
+  "title": "APL - string Library Functions"
+ },
+ {
+  "name": "secrets",
+  "module": "secrets_funcs",
+  "bundled": true,
+  "size_kb": 1,
+  "title": "APL - secrets Library Functions"
+ },
+ {
+  "name": "zoneinfo",
+  "module": "zoneinfo_funcs",
+  "bundled": true,
+  "size_kb": 1,
+  "title": "APL - zoneinfo Library Functions"
+ },
+ {
+  "name": "getpass",
+  "module": "getpass_funcs",
+  "bundled": true,
+  "size_kb": 0,
+  "title": "APL - getpass Library Functions"
+ },
+ {
+  "name": "operator",
+  "module": "operator_funcs",
+  "bundled": true,
+  "size_kb": 1,
+  "title": "APL - operator Library Functions"
+ },
+ {
+  "name": "pprint",
+  "module": "pprint_funcs",
+  "bundled": true,
+  "size_kb": 0,
+  "title": "APL - pprint Library Functions"
+ },
+ {
+  "name": "enum",
+  "module": "enum_funcs",
+  "bundled": true,
+  "size_kb": 1,
+  "title": "APL - enum Library Functions"
+ },
+ {
+  "name": "xml",
+  "module": "xml_funcs",
+  "bundled": true,
+  "size_kb": 9,
+  "title": "APL - XML Library Functions"
+ },
+ {
+  "name": "archive",
+  "module": "archive_funcs",
+  "bundled": true,
+  "size_kb": 9,
+  "title": "APL - Archive & Compression Library"
+ },
+ {
+  "name": "net",
+  "module": "net_funcs",
+  "bundled": true,
+  "size_kb": 56,
+  "title": "APL — مكتبة الشبكة والبريد (net)"
+ },
+ {
+  "name": "devtools",
+  "module": "devtools_funcs",
+  "bundled": true,
+  "size_kb": 57,
+  "title": "APL — مكتبة أدوات المطوّر (devtools)"
+ },
+ {
+  "name": "web",
+  "module": "web_funcs",
+  "bundled": true,
+  "size_kb": 178,
+  "title": "APL — مكتبة الويب والبريد (web)"
+ },
+ {
+  "name": "datafiles",
+  "module": "datafiles_funcs",
+  "bundled": true,
+  "size_kb": 158,
+  "title": "APL — مكتبة البيانات والملفات (datafiles)"
+ },
+ {
+  "name": "syslib",
+  "module": "syslib_funcs",
+  "bundled": true,
+  "size_kb": 243,
+  "title": "APL — مكتبة النظام والتشغيل والتشخيص (syslib)"
+ },
+ {
+  "name": "stdlib_ext",
+  "module": "stdlib_ext_funcs",
+  "bundled": true,
+  "size_kb": 441,
+  "title": "مولّد تلقائياً — مكتبة stdlib_ext لـ APL."
+ },
+ {
+  "name": "aiohttp",
+  "module": "aiohttp_funcs",
+  "bundled": false,
+  "size_kb": 121,
+  "title": "مولّد تلقائياً — مكتبة aiohttp لـ APL."
+ },
+ {
+  "name": "acp",
+  "module": "acp_funcs",
+  "bundled": true,
+  "size_kb": 35,
+  "title": "مولّد تلقائياً — مكتبة acp لـ APL."
+ },
+ {
+  "name": "cdp_use",
+  "module": "cdp_use_funcs",
+  "bundled": false,
+  "size_kb": 117,
+  "title": "مولّد تلقائياً — مكتبة cdp_use لـ APL."
+ },
+ {
+  "name": "idlelib",
+  "module": "idlelib_funcs",
+  "bundled": true,
+  "size_kb": 54,
+  "title": "مولّد تلقائياً — مكتبة idlelib لـ APL."
+ },
+ {
+  "name": "utiltools",
+  "module": "utiltools_funcs",
+  "bundled": false,
+  "size_kb": 106,
+  "title": "مولّد تلقائياً — مكتبة utiltools لـ APL."
+ },
+ {
+  "name": "textdata",
+  "module": "textdata_funcs",
+  "bundled": false,
+  "size_kb": 111,
+  "title": "مولّد تلقائياً — مكتبة textdata لـ APL."
+ },
+ {
+  "name": "secauth",
+  "module": "secauth_funcs",
+  "bundled": false,
+  "size_kb": 132,
+  "title": "مولّد تلقائياً — مكتبة secauth لـ APL."
+ },
+ {
+  "name": "webserver",
+  "module": "webserver_funcs",
+  "bundled": false,
+  "size_kb": 136,
+  "title": "مولّد تلقائياً — مكتبة webserver لـ APL."
+ },
+ {
+  "name": "weblibs",
+  "module": "weblibs_funcs",
+  "bundled": false,
+  "size_kb": 122,
+  "title": "مولّد تلقائياً — مكتبة weblibs لـ APL."
+ },
+ {
+  "name": "numpy",
+  "module": "numpy_funcs",
+  "bundled": false,
+  "size_kb": 127,
+  "title": "مولّد تلقائياً — مكتبة numpy لـ APL."
+ },
+ {
+  "name": "scipy",
+  "module": "scipy_funcs",
+  "bundled": false,
+  "size_kb": 254,
+  "title": "مولّد تلقائياً — مكتبة scipy لـ APL."
+ },
+ {
+  "name": "telegram",
+  "module": "telegram_funcs",
+  "bundled": false,
+  "size_kb": 354,
+  "title": "مولّد تلقائياً — مكتبة telegram لـ APL."
+ },
+ {
+  "name": "redis",
+  "module": "redis_funcs",
+  "bundled": false,
+  "size_kb": 209,
+  "title": "مولّد تلقائياً — مكتبة redis لـ APL."
+ },
+ {
+  "name": "celery",
+  "module": "celery_funcs",
+  "bundled": false,
+  "size_kb": 234,
+  "title": "مولّد تلقائياً — مكتبة celery لـ APL."
+ },
+ {
+  "name": "numdeep",
+  "module": "numdeep_funcs",
+  "bundled": false,
+  "size_kb": 60,
+  "title": "مولّد تلقائياً — مكتبة numdeep لـ APL."
+ },
+ {
+  "name": "botdeep",
+  "module": "botdeep_funcs",
+  "bundled": false,
+  "size_kb": 76,
+  "title": "مولّد تلقائياً — مكتبة botdeep لـ APL."
+ },
+ {
+  "name": "taskdeep",
+  "module": "taskdeep_funcs",
+  "bundled": false,
+  "size_kb": 251,
+  "title": "مولّد تلقائياً — مكتبة taskdeep لـ APL."
+ },
+ {
+  "name": "storedeep",
+  "module": "storedeep_funcs",
+  "bundled": false,
+  "size_kb": 126,
+  "title": "مولّد تلقائياً — مكتبة storedeep لـ APL."
+ },
+ {
+  "name": "pygdeep",
+  "module": "pygdeep_funcs",
+  "bundled": false,
+  "size_kb": 745,
+  "title": "مولّد تلقائياً — مكتبة pygdeep لـ APL."
+ },
+ {
+  "name": "webdeep",
+  "module": "webdeep_funcs",
+  "bundled": false,
+  "size_kb": 144,
+  "title": "مولّد تلقائياً — مكتبة webdeep لـ APL."
+ },
+ {
+  "name": "datadeep",
+  "module": "datadeep_funcs",
+  "bundled": false,
+  "size_kb": 193,
+  "title": "مولّد تلقائياً — مكتبة datadeep لـ APL."
+ },
+ {
+  "name": "mediadeep",
+  "module": "mediadeep_funcs",
+  "bundled": false,
+  "size_kb": 264,
+  "title": "مولّد تلقائياً — مكتبة mediadeep لـ APL."
+ },
+ {
+  "name": "secdeep",
+  "module": "secdeep_funcs",
+  "bundled": false,
+  "size_kb": 219,
+  "title": "مولّد تلقائياً — مكتبة secdeep لـ APL."
+ },
+ {
+  "name": "utildeep",
+  "module": "utildeep_funcs",
+  "bundled": false,
+  "size_kb": 35,
+  "title": "مولّد تلقائياً — مكتبة utildeep لـ APL."
+ },
+ {
+  "name": "stdfull",
+  "module": "stdfull_funcs",
+  "bundled": true,
+  "size_kb": 293,
+  "title": "مولّد تلقائياً — مكتبة stdfull لـ APL."
+ },
+ {
+  "name": "sympy_ext",
+  "module": "sympy_ext_funcs",
+  "bundled": false,
+  "size_kb": 1962,
+  "title": "مولّد تلقائياً — مكتبة sympy_ext لـ APL."
+ },
+ {
+  "name": "plotly_ext",
+  "module": "plotly_ext_funcs",
+  "bundled": false,
+  "size_kb": 1374,
+  "title": "مولّد تلقائياً — مكتبة plotly_ext لـ APL."
+ },
+ {
+  "name": "sqlalchemy_ext",
+  "module": "sqlalchemy_ext_funcs",
+  "bundled": false,
+  "size_kb": 1045,
+  "title": "مولّد تلقائياً — مكتبة sqlalchemy_ext لـ APL."
+ },
+ {
+  "name": "twisted_ext",
+  "module": "twisted_ext_funcs",
+  "bundled": false,
+  "size_kb": 820,
+  "title": "مولّد تلقائياً — مكتبة twisted_ext لـ APL."
+ },
+ {
+  "name": "astropy_ext",
+  "module": "astropy_ext_funcs",
+  "bundled": false,
+  "size_kb": 665,
+  "title": "مولّد تلقائياً — مكتبة astropy_ext لـ APL."
+ },
+ {
+  "name": "statsmodels_ext",
+  "module": "statsmodels_ext_funcs",
+  "bundled": false,
+  "size_kb": 619,
+  "title": "مولّد تلقائياً — مكتبة statsmodels_ext لـ APL."
+ },
+ {
+  "name": "bokeh_ext",
+  "module": "bokeh_ext_funcs",
+  "bundled": false,
+  "size_kb": 437,
+  "title": "مولّد تلقائياً — مكتبة bokeh_ext لـ APL."
+ },
+ {
+  "name": "sphinx_ext",
+  "module": "sphinx_ext_funcs",
+  "bundled": false,
+  "size_kb": 517,
+  "title": "مولّد تلقائياً — مكتبة sphinx_ext لـ APL."
+ },
+ {
+  "name": "nltk_ext",
+  "module": "nltk_ext_funcs",
+  "bundled": false,
+  "size_kb": 404,
+  "title": "مولّد تلقائياً — مكتبة nltk_ext لـ APL."
+ },
+ {
+  "name": "openpyxl_ext",
+  "module": "openpyxl_ext_funcs",
+  "bundled": false,
+  "size_kb": 450,
+  "title": "مولّد تلقائياً — مكتبة openpyxl_ext لـ APL."
+ },
+ {
+  "name": "pandas_ext",
+  "module": "pandas_ext_funcs",
+  "bundled": false,
+  "size_kb": 411,
+  "title": "مولّد تلقائياً — مكتبة pandas_ext لـ APL."
+ },
+ {
+  "name": "crypto_ext",
+  "module": "crypto_ext_funcs",
+  "bundled": false,
+  "size_kb": 68,
+  "title": "مولّد تلقائياً — مكتبة crypto_ext لـ APL."
+ },
+ {
+  "name": "matplotlib_ext",
+  "module": "matplotlib_ext_funcs",
+  "bundled": false,
+  "size_kb": 414,
+  "title": "مولّد تلقائياً — مكتبة matplotlib_ext لـ APL."
+ },
+ {
+  "name": "docutils_ext",
+  "module": "docutils_ext_funcs",
+  "bundled": false,
+  "size_kb": 391,
+  "title": "مولّد تلقائياً — مكتبة docutils_ext لـ APL."
+ },
+ {
+  "name": "cv2_ext",
+  "module": "cv2_ext_funcs",
+  "bundled": false,
+  "size_kb": 252,
+  "title": "مولّد تلقائياً — مكتبة cv2_ext لـ APL."
+ },
+ {
+  "name": "pkgs_ext1",
+  "module": "pkgs_ext1_funcs",
+  "bundled": false,
+  "size_kb": 2041,
+  "title": "مولّد تلقائياً — مكتبة pkgs_ext1 لـ APL."
+ },
+ {
+  "name": "pkgs_ext2",
+  "module": "pkgs_ext2_funcs",
+  "bundled": false,
+  "size_kb": 1793,
+  "title": "مولّد تلقائياً — مكتبة pkgs_ext2 لـ APL."
+ },
+ {
+  "name": "more_itertools",
+  "module": "more_itertools_funcs",
+  "bundled": false,
+  "size_kb": 18,
+  "title": "مولّد تلقائياً — مكتبة more_itertools لـ APL."
+ },
+ {
+  "name": "humanize",
+  "module": "humanize_funcs",
+  "bundled": false,
+  "size_kb": 3,
+  "title": "مولّد تلقائياً — مكتبة humanize لـ APL."
+ },
+ {
+  "name": "tenacity",
+  "module": "tenacity_funcs",
+  "bundled": false,
+  "size_kb": 8,
+  "title": "مولّد تلقائياً — مكتبة tenacity لـ APL."
+ },
+ {
+  "name": "cachetools",
+  "module": "cachetools_funcs",
+  "bundled": false,
+  "size_kb": 4,
+  "title": "مولّد تلقائياً — مكتبة cachetools لـ APL."
+ },
+ {
+  "name": "sortedcontainers",
+  "module": "sortedcontainers_funcs",
+  "bundled": false,
+  "size_kb": 10,
+  "title": "مولّد تلقائياً — مكتبة sortedcontainers لـ APL."
+ },
+ {
+  "name": "mypy",
+  "module": "mypy_funcs",
+  "bundled": false,
+  "size_kb": 761,
+  "title": "مولّد تلقائياً — مكتبة mypy لـ APL."
+ },
+ {
+  "name": "polars",
+  "module": "polars_funcs",
+  "bundled": false,
+  "size_kb": 212,
+  "title": "مولّد تلقائياً — مكتبة polars لـ APL."
+ },
+ {
+  "name": "faker",
+  "module": "faker_funcs",
+  "bundled": false,
+  "size_kb": 323,
+  "title": "مولّد تلقائياً — مكتبة faker لـ APL."
+ },
+ {
+  "name": "openai",
+  "module": "openai_funcs",
+  "bundled": false,
+  "size_kb": 1152,
+  "title": "مولّد تلقائياً — مكتبة openai لـ APL."
+ },
+ {
+  "name": "black",
+  "module": "black_funcs",
+  "bundled": false,
+  "size_kb": 37,
+  "title": "مولّد تلقائياً — مكتبة black لـ APL."
+ },
+ {
+  "name": "spacy",
+  "module": "spacy_funcs",
+  "bundled": false,
+  "size_kb": 314,
+  "title": "مولّد تلقائياً — مكتبة spacy لـ APL."
+ },
+ {
+  "name": "optuna",
+  "module": "optuna_funcs",
+  "bundled": false,
+  "size_kb": 16,
+  "title": "مولّد تلقائياً — مكتبة optuna لـ APL."
+ },
+ {
+  "name": "textual",
+  "module": "textual_funcs",
+  "bundled": false,
+  "size_kb": 136,
+  "title": "مولّد تلقائياً — مكتبة textual لـ APL."
+ },
+ {
+  "name": "xgboost",
+  "module": "xgboost_funcs",
+  "bundled": false,
+  "size_kb": 26,
+  "title": "مولّد تلقائياً — مكتبة xgboost لـ APL."
+ },
+ {
+  "name": "lightgbm",
+  "module": "lightgbm_funcs",
+  "bundled": false,
+  "size_kb": 19,
+  "title": "مولّد تلقائياً — مكتبة lightgbm لـ APL."
+ }
+]

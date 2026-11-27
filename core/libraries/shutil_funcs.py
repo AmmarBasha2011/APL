@@ -1,0 +1,34 @@
+"""
+APL - shutil Library Functions
+Transpiles Arabic keywords to Python shutil module
+"""
+
+SHUTIL_FUNCS = {
+    "انسخ_ملف": "shutil.copy",
+    "انسخ_شجرة": "shutil.copytree",
+    "انقل_ملف": "shutil.move",
+    "احذف_شجرة": "shutil.rmtree",
+    "نسخ_محتوى": "shutil.copyfile",
+    "الحجم_البشري": "shutil.disk_usage",
+    "أمر_النظام": "shutil.which",
+    "انسخ_البيانات": "shutil.copyfileobj",
+}
+
+SHUTIL_PATTERN = r"(?<![\w.\u0600-\u06FF])(" + "|".join(sorted(SHUTIL_FUNCS.keys(), key=len, reverse=True)) + r")\s*\("
+
+# Help text for CLI
+SHUTIL_HELP = [
+    "# shutil - نسخ ونقل وحذف الملفات والمجلدات",
+    "انسخ_ملف(من, إلى)              - نسخ ملف",
+    "انسخ_ملف_كامل(من, إلى)        - نسخ مع الأذونات والأوقات",
+    "انسخ_شجرة(من, إلى)             - نسخ مجلد كامل بمحتوياته",
+    "انقل_ملف(من, إلى)              - نقل أو إعادة تسمية",
+    "احذف_شجرة(مجلد)                - حذف مجلد ومحتوياته",
+    "الحجم_البشري(مسار)             - مساحة القرص",
+    "ابحث_في_المسار('python')       - أين يوجد البرنامج؟",
+]
+
+# Import detection
+IMPORT_NAME = "shutil"
+IMPORT_CHECK = r"shutil\."
+IMPORT_STATEMENT = "import shutil"

@@ -3,8 +3,8 @@ APL - Inline Replacer
 Handles all inline text replacements during transpilation
 """
 
-from core.apl_runner import regex_cache as re
-from core.apl_runner.patterns import (
+from core.runner import regex_cache as re
+from core.runner.patterns import (
     TYPE_ALIASES, _TYPE_PATTERN, _INLINE_FUNCS, _INLINE_FUNC_PATTERN,
     _METHOD_ALIASES, _METHOD_PATTERN, _TYPE_NAMES, _CONSTANTS, _CONSTANT_PATTERN,
     _LOGICAL_PATTERNS, _KW_ALIASES, _IO_ALIASES, _IO_PATTERN, _UDF_NAMES
@@ -16,7 +16,37 @@ from core.libraries.argparse_funcs import ARGPARSE_KWARGS
 from core.libraries.archive_funcs import ARCHIVE_KWARGS
 from core.libraries.net_funcs import NET_KWARGS
 from core.libraries.registry import ENTRIES, module, substitute_all
-_library_modules = {entry['name']: module(entry) for entry in ENTRIES}
+
+
+class _MissingLibrary:
+    """Stand-in for a library that is not installed: it never matches."""
+
+    def __init__(self, name):
+        self.name = name
+
+    def __getattr__(self, item):
+        if item.endswith('_HELP'):
+            return []
+        if item.endswith(('_PATTERN', '_METHOD_PATTERN', '_PROP_PATTERN',
+                          '_CONSTANT_PATTERN', '_METHODS', '_PROPS')):
+            return _NEVER_MATCH
+        return {}
+
+
+#: Pattern that matches nothing, so an absent library stays silent.
+_NEVER_MATCH = re.compile(r'(?!)')
+
+
+class _LibraryMap(dict):
+    """Library modules by name; a missing library yields a no-op stand-in."""
+
+    def __missing__(self, name):
+        stub = _MissingLibrary(name)
+        self[name] = stub
+        return stub
+
+
+_library_modules = _LibraryMap({entry['name']: module(entry) for entry in ENTRIES})
 globals().update({entry['module']: _library_modules[entry['name']] for entry in ENTRIES})
 
 # Arabic names usable both as methods (.علوي) and standalone (علوي("x"))
@@ -70,7 +100,7 @@ def _inline_replace(text: str) -> str:
     # Fast gate: with no Arabic letter before a "(", "." or "," none of the ~66
     # library patterns can match, so skip the whole chain. Most real lines
     # (assignments, literals, pure-Latin code) exit here.
-    from core.apl_runner.fastpath import needs_scan
+    from core.runner.fastpath import needs_scan
     if not needs_scan(text):
         return text
 
