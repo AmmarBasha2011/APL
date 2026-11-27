@@ -997,11 +997,26 @@ def _lint(source: str, path: str) -> list:
     return notes
 
 
+#: How many examples a list prints before it summarizes the rest.
+LIST_LIMIT = 40
+
+
+def _search_examples(items, word):
+    """Examples whose number, name, file or summary contains the word."""
+    needle = str(word).strip().lower()
+    if not needle:
+        return []
+    return [item for item in items
+            if needle in ' '.join(str(item.get(key) or '') for key in
+                                  ('number', 'name', 'file', 'summary')).lower()]
+
+
 def _example_usage():
     print('الاستخدام: عمار مثال [حمل|جرب|قائمة] [الرقم أو الاسم]')
     print('  عمار مثال حمل <رقم/اسم>   تنزيل مثال في المجلد الحالي')
     print('  عمار مثال جرب <رقم/اسم>   تنزيل المثال وتشغيله')
-    print('  عمار مثال قائمة           كل الأمثلة')
+    print('  عمار مثال قائمة           أول 40 مثال (وزيادة --الكل للكل)')
+    print('  عمار مثال بحث <كلمة>      الأمثلة اللي اسمها أو وصفها فيه الكلمة')
     print(f'الأمثلة كلها في: https://github.com/{EXAMPLES_REPO}')
     return 0
 
@@ -1014,16 +1029,40 @@ def _example(rest):
     action = rest[0]
     aliases = {'حمل': 'get', 'نزل': 'get', 'تحميل': 'get', 'get': 'get', 'download': 'get',
                'جرب': 'try', 'شغل': 'try', 'شغّل': 'try', 'try': 'try', 'run': 'try',
-               'قائمة': 'list', 'list': 'list'}
+               'قائمة': 'list', 'list': 'list',
+               'بحث': 'search', 'ابحث': 'search', 'دوّر': 'search', 'search': 'search',
+               'find': 'search'}
     action = aliases.get(action, action)
     try:
         items = _examples_index()
     except RuntimeError as error:
         return _error(str(error))
     if action == 'list':
-        print(f'الأمثلة ({len(items)}):')
-        for item in items:
+        # The repository is thousands of examples now, so the list is a page,
+        # not a wall: everything is still one flag away.
+        everything = any(word in ('--الكل', '--all') for word in rest[1:])
+        shown = items if everything else items[:LIST_LIMIT]
+        print(f'الأمثلة ({len(items)}):' if everything
+              else f'الأمثلة ({len(items)})، أول {len(shown)}:')
+        for item in shown:
             print(f'  {item["number"]}. {item["name"]} — {item["summary"]}')
+        if len(shown) < len(items):
+            print(f'  … وفيه {len(items) - len(shown)} كمان. '
+                  'شوفهم كلهم بـ: عمار مثال قائمة --الكل')
+            print('  أو دوّر على حاجة معيّنة بـ: عمار مثال بحث <كلمة>')
+        return 0
+    if action == 'search':
+        if len(rest) < 2:
+            return _error('اكتب الكلمة اللي بتدوّر عليها. مثال: عمار مثال بحث مصفوفة')
+        found = _search_examples(items, rest[1])
+        if not found:
+            return _error(f'مفيش مثال فيه: {rest[1]}')
+        print(f'أمثلة فيها "{rest[1]}" ({len(found)}):')
+        for item in found[:LIST_LIMIT]:
+            print(f'  {item["number"]}. {item["name"]} — {item["summary"]}')
+        if len(found) > LIST_LIMIT:
+            print(f'  … وفيه {len(found) - LIST_LIMIT} كمان، جرّب كلمة أدق.')
+        print('شغّل واحد بـ: عمار مثال جرب <الرقم>')
         return 0
     if action not in ('get', 'try'):
         return _example_usage()
