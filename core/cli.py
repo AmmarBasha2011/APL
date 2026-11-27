@@ -9,6 +9,10 @@
     عمار مساعدة               المساعدة الكاملة
     عمار مسح-الكاش            حذف الترجمات المخزنة
 
+المشاريع:
+    عمار مشروع جديد <اسم>     مجلد مشروع جديد جاهز للتشغيل
+    عمار مشروع تشغيل          تشغيل المشروع اللي في المجلد الحالي
+
 المكتبات:
     عمار مكتبة تحميل <اسم>    تحميل مكتبة إلى مجلد المكتبات
     عمار مكتبة قائمة          المكتبات المثبتة
@@ -46,12 +50,21 @@ ALIASES = {
     'مسار': 'path', 'المسار': 'path', 'path': 'path',
     'بناء': 'build', 'ابن': 'build', 'ابنِ': 'build', 'حزّم': 'build',
     'build': 'build', 'exe': 'build',
+    'مشروع': 'project', 'مشاريع': 'project', 'project': 'project',
     'تتبع': 'trace', 'تتبّع': 'trace', 'trace': 'trace',
     'مصحح': 'debug', 'مصحّح': 'debug', 'debug': 'debug',
     # English spellings
     'run': 'run', 'check': 'check', 'transpile': 'transpile', 'repl': 'repl',
     'version': 'version', 'help': 'help', 'clear-cache': 'clear-cache',
-    'library': 'library', 'example': 'example',
+    'library': 'library', 'example': 'example', 'project': 'project',
+}
+
+#: Sub-commands of `عمار مشروع`.
+PROJECT_ALIASES = {
+    'جديد': 'new', 'إنشاء': 'new', 'انشاء': 'new', 'اعمل': 'new',
+    'تشغيل': 'run', 'شغل': 'run', 'نفذ': 'run',
+    'new': 'new', 'init': 'new', 'create': 'new',
+    'run': 'run', 'start': 'run',
 }
 
 #: Sub-commands of `عمار مكتبة`.
@@ -212,6 +225,127 @@ def _execute_code(rest):
 # --------------------------------------------------------------------------
 # المكتبات
 # --------------------------------------------------------------------------
+
+PROJECT_FILE = 'apl-project.json'
+
+#: The starting program of `عمار مشروع جديد`.
+PROJECT_PROGRAM = """# برنامج APL جديد
+# شغّله بـ: عمار شغل main.apl
+
+اطبع("أهلاً بالعالم!")
+"""
+
+PROJECT_README = """# {name}
+
+مشروع {lang} مبني على لغة APL.
+
+## التشغيل
+
+```
+عمار مشروع تشغيل      # من جوه المجلد ده
+عمار شغل main.apl     # أو بالملف مباشرة
+عمار فحص main.apl     # فحص الصياغة وتنبيهات التنسيق
+```
+
+## المكتبات
+
+المكتبات بتتسطب مرة واحدة للجهاز كله (زي Python)، وبتتسجل في
+`~/.apl/lock.json`:
+
+```
+عمار مكتبة تحميل <اسم>            # تثبيت
+عمار مكتبة قفل                    # إيه المثبت وإصداره
+عمار مكتبة استعادة                # رجّع نفس الإصدارات
+```
+
+المكتبات اللي المشروع ده محتاجها بتتكتب في `apl-project.json` تحت `libraries`.
+"""
+
+PROJECT_GITIGNORE = """__pycache__/
+*.pyc
+dist/
+build/
+.apl-cache/
+"""
+
+
+def _project_usage():
+    print('الاستخدام: عمار مشروع [جديد|تشغيل]')
+    print('  عمار مشروع جديد <اسم>   اعمل مجلد مشروع فيه main.apl و README')
+    print('  عمار مشروع تشغيل        شغّل المشروع اللي في المجلد الحالي')
+    return 0
+
+
+def _project_new(name):
+    """عمار مشروع جديد <اسم> - a folder that runs with one command."""
+    import json
+    name = name.strip().rstrip('/')
+    if not name or name in ('.', '..'):
+        return _error('حدد اسم المشروع. مثال: عمار مشروع جديد تجريبي')
+    folder = Path(name)
+    if folder.exists() and any(folder.iterdir()):
+        return _error(f'المجلد {folder} موجود وفيه ملفات. اختار اسم تاني.')
+    folder.mkdir(parents=True, exist_ok=True)
+    (folder / 'main.apl').write_text(PROJECT_PROGRAM, encoding='utf-8')
+    (folder / 'README.md').write_text(
+        PROJECT_README.format(name=name, lang='APL'), encoding='utf-8')
+    (folder / '.gitignore').write_text(PROJECT_GITIGNORE, encoding='utf-8')
+    config = {
+        'name': name,
+        'version': '0.1.0',
+        'entry': 'main.apl',
+        'libraries': [],
+    }
+    (folder / PROJECT_FILE).write_text(
+        json.dumps(config, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    print(f'تم عمل مشروع {name} في {folder.resolve()}')
+    print('  main.apl         البرنامج')
+    print(f'  {PROJECT_FILE}   اسم المشروع والملف اللي بيتشغل')
+    print('  README.md        طريقة التشغيل')
+    print('  .gitignore')
+    print()
+    print(f'ابدأ بـ: cd {folder} ثم عمار مشروع تشغيل')
+    return 0
+
+
+def _project_run():
+    """عمار مشروع تشغيل - run the entry file of the project in this folder."""
+    import json
+    path = Path(PROJECT_FILE)
+    if not path.is_file():
+        return _error(f'مفيش {PROJECT_FILE} هنا. اعمل مشروع: عمار مشروع جديد <اسم>')
+    try:
+        config = json.loads(path.read_text(encoding='utf-8'))
+    except ValueError as error:
+        return _error(f'{PROJECT_FILE} مش JSON سليم: {error}')
+    entry = config.get('entry') or 'main.apl'
+    if not Path(entry).is_file():
+        return _error(f'الملف {entry} المذكور في {PROJECT_FILE} مش موجود.')
+    libraries = [item for item in (config.get('libraries') or []) if isinstance(item, str)]
+    if libraries:
+        from core.libraries.registry import ENTRIES
+        installed = {item['name'] for item in ENTRIES}
+        missing = [item for item in libraries if item not in installed]
+        if missing:
+            print('محتاج مكتبات مش متسطبة: ' + '، '.join(missing))
+            print('سطّبها بـ: ' + ' ثم '.join(
+                f'عمار مكتبة تحميل {item}' for item in missing))
+    return _run([entry])
+
+
+def _project(rest):
+    if not rest:
+        return _project_run()
+    action = PROJECT_ALIASES.get(rest[0]) or PROJECT_ALIASES.get(rest[0].lower())
+    args = rest[1:]
+    if action == 'new':
+        if not args:
+            return _error('حدد اسم المشروع. مثال: عمار مشروع جديد تجريبي')
+        return _project_new(args[0])
+    if action == 'run':
+        return _project_run()
+    return _project_usage()
+
 
 def _library_usage():
     print('الاستخدام: عمار مكتبة [تحميل|قائمة|بحث|حذف]')
@@ -1034,6 +1168,8 @@ def main(argv=None):
         return 0
     if command == 'library':
         return _library(argv)
+    if command == 'project':
+        return _project(argv)
     if command == 'example':
         return _example(argv)
     if command == 'format':
