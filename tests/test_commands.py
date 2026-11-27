@@ -84,6 +84,10 @@ def main() -> int:
     expect("عمار مكتبة تحميل asks for a name", ["مكتبة", "تحميل"], "حدد اسم المكتبة", code=1)
     expect("عمار مسار explains the PATH setup", ["مسار"], "PATH")
     expect("عمار طرفية answers a line", ["طرفية"], "5", stdin="اطبع(2 + 3)\n")
+    expect("عمار طرفية greets in Arabic", ["طرفية"], "الطرفية التفاعلية", stdin="")
+    expect("عمار طرفية quits on an Arabic word", ["طرفية"], "مع السلامة", stdin="خروج\n")
+    expect("عمار طرفية runs a multi-line block", ["طرفية"], "16",
+           stdin="دالة مربع(س):\n    ارجع س * س\n\nاطبع(مربع(4))\n")
     expect("an unknown command is refused", ["ززز"], "أمر غير معروف", code=1)
 
     print()

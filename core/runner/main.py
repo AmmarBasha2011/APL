@@ -1490,8 +1490,9 @@ __version__ = "1.13"
 
 def run_repl():
     """Run interactive REPL"""
-    print("APL - Ammar Programming Language")
-    print("Interactive REPL (type 'exit' or Ctrl+C to quit)")
+    print("APL - لغة عمار البرمجية")
+    print("الطرفية التفاعلية — اكتب خروج (أو Ctrl+D) للخروج")
+    print("سطر بينتهي بـ ':' بيكمّل على أسطر لحد سطر فاضي.")
     print()
 
     # One shared namespace for the whole session, so variables survive between
@@ -1508,11 +1509,11 @@ def run_repl():
             print()
             break
         except KeyboardInterrupt:
-            print("\nGoodbye! 👋")
+            print("\nمع السلامة 👋")
             break
 
-        if line.strip().lower() in ('exit', 'اخرج', 'quit', 'خروج'):
-            print("Goodbye! 👋")
+        if line.strip().lower() in ('exit', 'اخرج', 'quit', 'خروج', 'خ'):
+            print("مع السلامة 👋")
             break
         if not line.strip():
             continue
@@ -1541,7 +1542,7 @@ def run_repl():
             # Transpile and execute in the session namespace
             evaluate(line, _namespace)
         except KeyboardInterrupt:
-            print("\nGoodbye! 👋")
+            print("\nمع السلامة 👋")
             break
         except Exception as e:
             msg = _get_error_ar(e)
