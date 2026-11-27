@@ -6,6 +6,8 @@ on:
   push:
     branches: [main]
   pull_request:
+  schedule:
+    - cron: "17 2 * * *"   # فحص كامل ليلي كشبكة أمان
 
 jobs:
   sizes:
@@ -20,9 +22,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v7
         with:
           python-version: "3.14"
           cache: pip
       - run: pip install -r requirements.txt
-      - run: python scripts/check_example_perf.py
+      # على PR: الأمثلة الجديدة/المعدّلة فقط (كامل لو الكود أو المكتبات اتغيّرت).
+      # على push إلى main وفي الجدولة الليلية: كل الأمثلة.
+      - name: فحص الأداء
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            python scripts/check_example_perf.py --base "origin/${{ github.base_ref }}"
+          else
+            python scripts/check_example_perf.py
+          fi
