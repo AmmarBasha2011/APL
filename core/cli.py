@@ -88,6 +88,14 @@ def _configure_console():
             stream.reconfigure(encoding='utf-8', errors='replace')
         except (AttributeError, ValueError):
             pass
+    # Piped input is UTF-8 everywhere, but a Windows pipe is decoded with the
+    # ANSI code page, so an Arabic command (`م` in the stepper, a typed answer
+    # to `ادخل`) arrived garbled and was rejected as unknown.
+    try:
+        if not sys.stdin.isatty():
+            sys.stdin.reconfigure(encoding='utf-8', errors='replace')
+    except (AttributeError, ValueError, OSError):
+        pass
     if sys.platform == 'win32':
         try:
             import ctypes
