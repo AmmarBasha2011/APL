@@ -115,13 +115,15 @@
 
 const PYODIDE_VERSION = "0.26.4";
 const MANIFEST_URL = "manifest.json";
-// First the copy next to this page (GitHub Pages serves the repo), then the
-// canonical raw files, so the page also works when it is opened from a file or
-// hosted somewhere else.
+// The page lives in playground/, so the interpreter's files sit one level up.
+// First that copy (GitHub Pages serves the whole repo), then the canonical raw
+// files, so the page also works when it is opened from a file or hosted
+// somewhere else.
 const SOURCE_BASES = [
-  new URL("./", location.href).href,
+  new URL("../", location.href).href,
   "https://raw.githubusercontent.com/AmmarBasha2011/APL/main/",
 ];
+const PROBE = "core/__init__.py";
 const EXAMPLES_INDEX = "https://raw.githubusercontent.com/AmmarBasha2011/APL-Examples/main/index.json";
 const EXAMPLES_BASE = "https://raw.githubusercontent.com/AmmarBasha2011/APL-Examples/main/";
 const STORAGE_KEY = "apl.playground.source";
@@ -158,14 +160,14 @@ async function loadSources(pyodide, manifest) {
   let base = null;
   for (const candidate of SOURCE_BASES) {
     try {
-      await fetchText(new URL(MANIFEST_URL, candidate).href);
+      await fetchText(new URL(PROBE, candidate).href);
       base = candidate;
       break;
     } catch (error) {
       // try the next base
     }
   }
-  if (!base) throw new Error("مش لاقي ملفات المفسّر");
+  if (!base) throw new Error("مش لاقي ملفات المفسّر في " + SOURCE_BASES.join(" أو "));
   const files = await Promise.all(manifest.files.map(async (entry) => {
     const text = await fetchText(new URL(entry.path, base).href);
     return [entry.path, text];

@@ -63,6 +63,16 @@ def main() -> int:
     check("it reads the generated manifest", "manifest.json" in page)
     check("it falls back to the raw sources when the page is hosted elsewhere",
           "raw.githubusercontent.com/AmmarBasha2011/APL/main/" in page)
+    # The page is served from playground/, so the sources are one level up. A
+    # base of "./" silently 404s on every module: that was a real bug, and this
+    # check is what makes it visible without a browser.
+    check("it looks for the sources one level above the page, not beside it",
+          'new URL("../", location.href).href' in page
+          and 'new URL("./", location.href)' not in page,
+          "the page must resolve the interpreter from ../, the repository root")
+    check("it probes a file that really exists before trusting a base",
+          'const PROBE = "core/__init__.py"' in page
+          and (ROOT / "core" / "__init__.py").is_file())
 
     check("manifest.json exists", MANIFEST.is_file())
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.is_file() else {"files": []}
