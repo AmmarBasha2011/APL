@@ -63,6 +63,19 @@ def diagnostic(error, compilation=None, source='', filename='<apl>'):
         matches = difflib.get_close_matches(error.name, names, n=1, cutoff=.65)
         if matches:
             text += '\nهل تقصد: ' + matches[0] + '؟'
+    # A word that belongs to a library says which one, so the fix is an install
+    # rather than a rewrite. The language itself ships no vocabulary.
+    from core.library_words import hint as _library_hint
+    missing = None
+    if isinstance(error, NameError) and error.name:
+        missing = _library_hint(error.name)
+    elif isinstance(error, AttributeError):
+        import re
+        match = re.search(r"has no attribute '([^']+)'", str(error))
+        if match:
+            missing = _library_hint(match.group(1))
+    if missing:
+        text += '\n' + missing
     return text
 
 

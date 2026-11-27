@@ -88,6 +88,7 @@ def main(argv: list[str]) -> int:
         ("debugger", "test_debugger.py"),
         ("lockfile", "test_lockfile.py"),
         ("مشروع", "test_project.py"),
+        ("library words", "test_library_words.py"),
     )
     for label, script in extras:
         path = Path(__file__).resolve().parent / script

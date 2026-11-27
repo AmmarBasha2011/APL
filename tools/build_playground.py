@@ -19,10 +19,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 MANIFEST = ROOT / "playground" / "manifest.json"
 SOURCES = ROOT / "core"
+# Data the interpreter reads at run time. The browser gets the same file, so an
+# error there can name the library a missing word belongs to, exactly as the
+# command line does.
+EXTRA = (ROOT / "data" / "library_words.json",)
 
 
 def source_files() -> list[Path]:
-    return sorted(path for path in SOURCES.rglob("*.py") if "__pycache__" not in path.parts)
+    modules = [path for path in SOURCES.rglob("*.py") if "__pycache__" not in path.parts]
+    return sorted(modules + [path for path in EXTRA if path.is_file()])
 
 
 def build() -> dict:
