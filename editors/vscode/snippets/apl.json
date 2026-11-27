@@ -1,1 +1,0 @@
-{"Function":{"prefix":"دالة","body":["دالة ${1:اسم}(${2:وسائط}):","    ${3:ارجع لاشيء}"],"description":"APL function"},"Condition":{"prefix":"لو","body":["لو ${1:شرط}:","    ${2:اطبع \"نعم\"}"],"description":"APL condition"},"Loop":{"prefix":"لكل","body":["لكل ${1:عنصر} في ${2:عناصر}:","    ${3:اطبع عنصر}"],"description":"APL loop"}}
