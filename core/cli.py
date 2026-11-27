@@ -498,7 +498,13 @@ def _pip_command():
     import shlex
     override = os.environ.get('APL_PIP_CMD', '').strip()
     if override:
-        return shlex.split(override)
+        # A Windows path keeps its backslashes: POSIX splitting would eat them
+        # and pip would never start ("cannot find the file specified").
+        parts = shlex.split(override, posix=(os.name != 'nt'))
+        if os.name == 'nt':
+            parts = [part[1:-1] if len(part) > 1 and part[0] == part[-1]
+                     and part[0] in '"\'' else part for part in parts]
+        return parts
     return [sys.executable, '-m', 'pip', 'install']
 
 
