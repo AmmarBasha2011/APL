@@ -78,14 +78,21 @@ def main(argv: list[str]) -> int:
     print()
     print(f"{len(programs) - failures}/{len(programs)} passed")
 
-    # The language server is a separate process speaking LSP; its own script
-    # drives the protocol, so the suite only has to run it.
-    lsp = Path(__file__).resolve().parent / "test_lsp.py"
-    if lsp.is_file():
-        result = subprocess.run([sys.executable, str(lsp)], capture_output=True,
+    # Parts of the project are checked by their own scripts: the language
+    # server (a separate process speaking LSP) and the browser playground
+    # (a page with a Python half no Python tool would otherwise run).
+    extras = (
+        ("language server", "test_lsp.py"),
+        ("playground", "test_playground.py"),
+    )
+    for label, script in extras:
+        path = Path(__file__).resolve().parent / script
+        if not path.is_file():
+            continue
+        result = subprocess.run([sys.executable, str(path)], capture_output=True,
                                 text=True, encoding="utf-8", cwd=str(ROOT))
         ok = result.returncode == 0
-        print(("PASS  " if ok else "FAIL  ") + "language server")
+        print(("PASS  " if ok else "FAIL  ") + label)
         if not ok:
             failures += 1
             print(clean(result.stdout) + "\n" + clean(result.stderr))

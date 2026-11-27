@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "path": "core/__init__.py",
+      "bytes": 0
+    },
+    {
+      "path": "core/cli.py",
+      "bytes": 31085
+    },
+    {
+      "path": "core/libraries/__init__.py",
+      "bytes": 1085
+    },
+    {
+      "path": "core/libraries/lazy.py",
+      "bytes": 3184
+    },
+    {
+      "path": "core/libraries/registry.py",
+      "bytes": 11529
+    },
+    {
+      "path": "core/runner/__init__.py",
+      "bytes": 496
+    },
+    {
+      "path": "core/runner/cache.py",
+      "bytes": 5186
+    },
+    {
+      "path": "core/runner/constfold.py",
+      "bytes": 6098
+    },
+    {
+      "path": "core/runner/execution.py",
+      "bytes": 5730
+    },
+    {
+      "path": "core/runner/fastpath.py",
+      "bytes": 1280
+    },
+    {
+      "path": "core/runner/inline_replacer.py",
+      "bytes": 23873
+    },
+    {
+      "path": "core/runner/interactive.py",
+      "bytes": 1352
+    },
+    {
+      "path": "core/runner/main.py",
+      "bytes": 62703
+    },
+    {
+      "path": "core/runner/patterns.py",
+      "bytes": 15248
+    },
+    {
+      "path": "core/runner/regex_cache.py",
+      "bytes": 892
+    },
+    {
+      "path": "core/runner/source.py",
+      "bytes": 3643
+    },
+    {
+      "path": "core/runner/transpiler.py",
+      "bytes": 20596
+    }
+  ],
+  "total_bytes": 193980,
+  "sha256": "c0af21642f428557fde11c889956aa5d0dfe7e043db4295b2c364ecf831e9015"
+}
