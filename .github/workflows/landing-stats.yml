@@ -1,0 +1,45 @@
+name: Landing stats
+
+# بعد كل دمج على main: حدّث أرقام صفحة الهبوط (المكتبات والأمثلة والرقائق)
+# على فرع gh-pages حتى تبقى https://ammarbasha2011.github.io/APL/ محدثة.
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: landing-stats
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          path: main
+      - uses: actions/checkout@v7
+        with:
+          ref: gh-pages
+          path: site
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.14"
+      - name: تحديث stats.json والأرقام الثابتة
+        run: python main/scripts/update_landing_stats.py main site
+      - name: دفع التغييرات إلى gh-pages
+        working-directory: site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stats.json index.html
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "Update landing stats"
+            git pull --rebase origin gh-pages
+            git push origin gh-pages
+          fi
