@@ -77,6 +77,18 @@ def main(argv: list[str]) -> int:
             print("      " + clean(program.with_suffix(".out").read_text(encoding="utf-8")))
     print()
     print(f"{len(programs) - failures}/{len(programs)} passed")
+
+    # The language server is a separate process speaking LSP; its own script
+    # drives the protocol, so the suite only has to run it.
+    lsp = Path(__file__).resolve().parent / "test_lsp.py"
+    if lsp.is_file():
+        result = subprocess.run([sys.executable, str(lsp)], capture_output=True,
+                                text=True, encoding="utf-8", cwd=str(ROOT))
+        ok = result.returncode == 0
+        print(("PASS  " if ok else "FAIL  ") + "language server")
+        if not ok:
+            failures += 1
+            print(clean(result.stdout) + "\n" + clean(result.stderr))
     return 1 if failures else 0
 
 
