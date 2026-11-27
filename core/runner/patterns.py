@@ -74,6 +74,8 @@ _KW_ALIASES = {
 
 # I/O aliases - إدخال/إخراج
 _IO_ALIASES = {
+    "ادخل": "_apl_input",
+    "اقرأ_سطر": "_apl_input",
     "اقرأ": "_apl_read",
     "اكتب": "_apl_write",
     "اغلق": "_apl_close",
