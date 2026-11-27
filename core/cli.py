@@ -62,6 +62,28 @@ DEFAULT_SOURCE = ('https://raw.githubusercontent.com/AmmarBasha2011/APL'
 LIBRARY_SOURCE = os.environ.get('APL_LIBRARY_SOURCE', DEFAULT_SOURCE)
 
 
+def _configure_console():
+    """Arabic output on every platform, console or pipe.
+
+    On Windows the default stream encoding is the ANSI code page, which cannot
+    represent Arabic at all: printing the library list to a pipe raised
+    UnicodeEncodeError. UTF-8 plus the 65001 code page fixes both the console
+    and a redirect.
+    """
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding='utf-8', errors='replace')
+        except (AttributeError, ValueError):
+            pass
+    if sys.platform == 'win32':
+        try:
+            import ctypes
+            ctypes.windll.kernel32.SetConsoleOutputCP(65001)
+            ctypes.windll.kernel32.SetConsoleCP(65001)
+        except Exception:
+            pass
+
+
 def _command(word):
     """Resolve a typed word to a command name, or None."""
     return ALIASES.get(word) or ALIASES.get(word.lower())
@@ -283,6 +305,7 @@ def _library(rest):
 
 def main(argv=None):
     """نقطة الدخول: يقرأ الأمر وينفذه ويرجع رمز الخروج."""
+    _configure_console()
     argv = list(sys.argv[1:] if argv is None else argv)
     if not argv:
         from core.runner.main import print_help
