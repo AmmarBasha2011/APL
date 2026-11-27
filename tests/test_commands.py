@@ -44,7 +44,14 @@ def main() -> int:
     (work / "hello.apl").write_text('المتغير س = 5\nاطبع("أهلاً")\nاطبع(س * 2)\n', encoding="utf-8")
     (work / "broken.apl").write_text("لو س = 5:\n    اطبع(س)\n", encoding="utf-8")
     (work / "messy.apl").write_text("المتغير   س=5\nاطبع(  س )\n", encoding="utf-8")
-    env = dict(os.environ, APL_NO_CACHE="1", PYTHONIOENCODING="utf-8")
+    # The checks must not depend on what this machine happens to have
+    # installed: an empty library folder makes every run identical (the
+    # Windows runner caught this when مساعدة مكتبات printed a different
+    # sentence there than on a developer machine with libraries).
+    libraries = work / "libraries"
+    libraries.mkdir()
+    env = dict(os.environ, APL_NO_CACHE="1", PYTHONIOENCODING="utf-8",
+               APL_LIBRARIES=str(libraries))
 
     def run(args, stdin=""):
         result = subprocess.run([sys.executable, str(APL), *args], cwd=str(work),
@@ -65,7 +72,7 @@ def main() -> int:
     expect("عمار -c runs code", ["-c", "اطبع(2 + 3)"], "5")
     expect("عمار نسخة prints the version", ["نسخة"], "APL v")
     expect("عمار مساعدة prints usage", ["مساعدة"], "الاستخدام")
-    expect("عمار مساعدة مكتبات prints the libraries help", ["مساعدة", "مكتبات"], "مكتبة")
+    expect("عمار مساعدة مكتبات prints the libraries help", ["مساعدة", "مكتبات"], "مكتبات")
     expect("عمار مسح-الكاش reports what it cleared", ["مسح-الكاش"], "ملف")
     expect("عمار تنسيق formats a program", ["تنسيق", "messy.apl"], "اطبع")
     expect("عمار تتبع shows the lines it runs", ["تتبع", "hello.apl"], ":")
