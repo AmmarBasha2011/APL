@@ -342,7 +342,11 @@ def transpile_line(line: str) -> str:
                 r"^(?:مثل|كـ|اسـ|as)\s+([\w\u0600-\u06FF]+)\s*:?$", rest
             )
             if m:
-                return f"{indent}except Exception as {m.group(1)}:"
+                # Bind the caught error to a wrapper whose text is Arabic, so
+                # `اطبع خطأ` reads as a sentence and not as Python's wording.
+                name = m.group(1)
+                return (f"{indent}except Exception as _apl_caught:\n"
+                        f"{indent}    {name} = _apl_exception(_apl_caught)")
             rest = _inline_replace(rest)
             if not rest or rest == ":":
                 return f"{indent}except:"

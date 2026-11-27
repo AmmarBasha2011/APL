@@ -87,7 +87,9 @@ class APLLoader(importlib.abc.Loader):
         compilation = Compilation(source, str(self.path))
         module.__file__ = str(self.path)
         try:
-            execute(compilation, module.__dict__)
+            # The runtime is already installed by the importing program; running
+            # it again here would wrap builtins.print a second time.
+            exec(compilation.code, module.__dict__)
         except Exception as error:
             # Preserve the failing module's source context through caller frames.
             error.add_note(diagnostic(error, compilation))

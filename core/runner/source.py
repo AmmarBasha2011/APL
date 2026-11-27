@@ -5,6 +5,22 @@ import uuid
 MARKER = re.compile(r"^\s*# apl-source:(\d+)\s*$")
 
 
+# A plain string that contains "{name}" is a formatted string: the user wrote
+# "أهلاً {الاسم}" and expects the value, not the braces.
+_INTERPOLATION = re.compile(r"(?<!\{)\{([^\W\d]\w*)\}(?!\})", re.UNICODE)
+
+
+def _wants_interpolation(literal_prefix, literal):
+    """True when a plain literal holds a {identifier} placeholder."""
+    if literal_prefix or len(literal) < 3:
+        return False
+    quote = literal[0]
+    if quote not in "\"'":
+        return False
+    body = literal[1:-1] if len(literal) > 1 else ''
+    return bool(_INTERPOLATION.search(body))
+
+
 def protect(source):
     """Hide literals/comments before any keyword or library substitution.
 
@@ -51,6 +67,8 @@ def protect(source):
                 out = [joined]
             key = prefix + str(len(values)) + '_END_'
             literal = source[i:j]
+            if _wants_interpolation(literal_prefix, literal):
+                literal_prefix = 'f'
             values[key] = literal_prefix + literal
             out.append(key)
             line += literal.count('\n')

@@ -311,6 +311,10 @@ def main(argv=None):
     _configure_console()
     argv = list(sys.argv[1:] if argv is None else argv)
     if not argv:
+        if sys.stdin.isatty():
+            from core.runner.main import run_repl
+            run_repl()
+            return 0
         from core.runner.main import print_help
         print_help()
         return 0

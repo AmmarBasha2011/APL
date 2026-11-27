@@ -88,6 +88,18 @@ def transpile(source: str) -> str:
 
 
 def _transpile(source: str) -> str:
+    # "استورد "ملف.apl"" pulls another APL file into this program. It has to be
+    # rewritten before literals are protected, because the path is a literal.
+    source = re.sub(
+        r"(?m)^([ \t]*)استورد[ \t]+[\"']([^\"']+\.apl)[\"'][ \t]*$",
+        r'\1_apl_import_file("\2", globals())',
+        source,
+    )
+    source = re.sub(
+        r"(?m)^([ \t]*)استورد[ \t]+([^\s\"']+\.apl)[ \t]*$",
+        r'\1_apl_import_file("\2", globals())',
+        source,
+    )
     from core.runner.source import protect, restore
     source, _literals, _origins = protect(source)
     from core.runner import inline_replacer as _ir
@@ -272,6 +284,45 @@ def _transpile(source: str) -> str:
     return "\n".join(imports_for(code)) + "\n" + code
 
 
+_AR_MESSAGES = (
+    (r"^division by zero$", "قسمة على صفر"),
+    (r"^integer division or modulo by zero$", "قسمة على صفر"),
+    (r"^list index out of range$", "الفهرس خارج حدود القائمة"),
+    (r"^tuple index out of range$", "الفهرس خارج حدود المجموعة"),
+    (r"^string index out of range$", "الفهرس خارج حدود النص"),
+    (r"^'([^']+)' object is not subscriptable$", r"'\1' مش ممكن يتفهرس بالأقواس"),
+    (r"^'([^']+)' object is not iterable$", r"'\1' مش ممكن نلف عليه"),
+    (r"^'([^']+)' object is not callable$", r"'\1' مش دالة"),
+    (r"^'([^']+)' object has no attribute '([^']+)'$",
+     r"'\1' ماعندوش الخاصية '\2'"),
+    (r"^name '([^']+)' is not defined$", r"الاسم '\1' مش معرّف"),
+    (r"^unsupported operand type\(s\) for (.+?): '([^']+)' and '([^']+)'$",
+     r"عملية \1 مش مسموحة بين '\2' و'\3'"),
+    (r'^can only concatenate str \(not "(.+?)"\) to str$',
+     r"مش ممكن نجمع نص مع \1"),
+    (r"^invalid literal for int\(\) with base 10: '(.+)'$", r"'\1' مش رقم صحيح"),
+    (r"^could not convert string to float: '(.+)'$", r"'\1' مش رقم"),
+    (r"^math domain error$", "القيمة خارج نطاق العملية الرياضية"),
+    (r"^\[Errno 2\] No such file or directory: '(.+)'$", r"الملف مش موجود: '\1'"),
+    (r"^\[Errno 13\] Permission denied: '(.+)'$", r"مفيش صلاحية للوصول: '\1'"),
+    (r"^not enough values to unpack.*$", "عدد القيم أقل من المطلوب"),
+    (r"^too many values to unpack.*$", "عدد القيم أكبر من المطلوب"),
+    (r"^maximum recursion depth exceeded.*$", "الاستدعاء المتكرر أعمق من المسموح"),
+    (r"^object of type '(.+?)' has no len\(\)$", r"'\1' ماعندهاش طول"),
+    (r"^empty separator$", "الفاصل فاضي"),
+)
+
+
+def _ar_message(error):
+    # ترجم أشهر رسائل بايثون، وغير المعروف يفضل زي ما هو
+    import re as _re
+    text = error.args[0] if error.args and isinstance(error.args[0], str) else str(error)
+    for pattern, replacement in _AR_MESSAGES:
+        if _re.match(pattern, text):
+            return _re.sub(pattern, replacement, text)
+    return text
+
+
 _RUNTIME = """
 import sys
 import builtins
@@ -286,7 +337,7 @@ import getpass
 import operator
 import pprint
 
-_apl_orig_print = builtins.print
+_apl_orig_print = getattr(builtins.print, '_apl_orig', builtins.print)
 
 def _apl_passthrough_decorator(func):
     # Bare Arabic decorator with no call parentheses: returns func unchanged.
@@ -427,7 +478,60 @@ def _apl_print(*args, **kwargs):
     else:
         _apl_orig_print(*args, **kwargs)
 
+_apl_print._apl_orig = _apl_orig_print
 builtins.print = _apl_print
+
+def _apl_input(prompt=""):
+    # اقرأ سطر واحد من المستخدم
+    try:
+        return builtins.input(prompt)
+    except EOFError:
+        return ""
+
+
+def _apl_import_file(path, target=None):
+    # شغّل ملف APL تاني جوه نفس النطاق
+    import pathlib
+    candidate = pathlib.Path(path)
+    if not candidate.is_absolute() and target is not None:
+        base = pathlib.Path(target.get("__file__") or ".").parent
+        if (base / candidate).is_file():
+            candidate = base / candidate
+    if not candidate.is_file():
+        raise FileNotFoundError(path)
+    from core.runner.execution import Compilation
+    namespace = target if target is not None else {}
+    namespace.setdefault("__name__", candidate.stem)
+    namespace["__file__"] = str(candidate)
+    compilation = Compilation(candidate.read_text(encoding="utf-8"), str(candidate))
+    exec(compilation.code, namespace)
+    return namespace
+
+
+def _apl_ar_message(error):
+    from core.runner.main import _ar_message as _translate
+    return _translate(error)
+
+
+class _apl_error(Exception):
+    # The object bound by "امسك مثل خطأ:". It is a real exception (so re-raising
+    # works) whose message is the Arabic text of the error it wraps.
+    def __init__(self, error):
+        self.original = error
+        super().__init__(_apl_ar_message(error))
+
+    def __getattr__(self, name):
+        return getattr(self.__dict__.get("original"), name)
+
+
+def _apl_exception(error):
+    return _apl_error(error)
+
+
+def _apl_error_text(error):
+    # رسالة(خطأ) - النص العربي للخطأ الممسوك
+    return _apl_ar_message(error)
+
 
 _ERROR_AR = {
     "SyntaxError": "خطأ في الصياغة",
@@ -460,7 +564,7 @@ def _apl_excepthook(typ, val, tb):
     name = _ERROR_AR.get(typ.__name__, typ.__name__)
     import traceback
     traceback.print_exception(typ, val, tb)
-    sys.stderr.write(f"\\u202B{name}: {val}\\u202C\\n")
+    sys.stderr.write(f"\\u202B{name}: {_apl_ar_message(val)}\\u202C\\n")
 sys.excepthook = _apl_excepthook
 
 def _apl_enum(name, spec, base=None):
@@ -1241,7 +1345,7 @@ def _get_error_ar(e: Exception) -> str:
         "ModuleNotFoundError": "خطأ: الوحدة غير موجودة",
         "OverflowError": "خطأ: تجاوز السعة",
     }.get(name, name)
-    return f"{ar_name}: {e}"
+    return f"{ar_name}: {_ar_message(e)}"
 
 
 def transpile_to_code(source: str) -> str:
@@ -1296,6 +1400,16 @@ def print_help():
     print("Environment switches:")
     print("  APL_NO_CACHE=1   Disable the transpilation cache")
     print("  APL_NO_FOLD=1    Disable constant folding")
+    print()
+    print("ميزات اللغة:")
+    print("  حاول: / امسك مثل خطأ: / أخيراً:   معالجة الأخطاء")
+    print("  صنف اسم: + دالة_إنشاء(ذات, ...)   الأصناف والكائنات")
+    print("  استورد \"ملف.apl\"                   استيراد ملف APL تاني")
+    print("  اقرأ/اكتب/ادخل                    ملفات وإدخال من المستخدم")
+    print("  (س) => س * 2                       دوال مختصرة")
+    print("  [ع * 2 لكل ع في قائمة]             فهم القوائم")
+    print("  \"أهلاً {الاسم}\"                      نص منسّق بالقيم")
+    print("  عمار لوحده                         موجّه تفاعلي")
     print()
     print("Language keywords:")
     lang_cmds = [
