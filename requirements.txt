@@ -129,3 +129,8 @@ polars==2.2.0
 Faker==40.63.0
 openai==2.54.0
 black==26.10.1
+spacy==3.8.18
+optuna==5.1.0
+textual==8.2.8
+xgboost==3.4.1
+lightgbm==4.7.0

@@ -1,0 +1,202 @@
+"""مولّد تلقائياً — مكتبة lightgbm لـ APL.
+
+التعزيز التدرجي الخفيف.
+
+كل الأسماء وُلّدت آلياً من معرّفات الحزمة الحقيقية lightgbm، وتُرجم كل اسم إلى مسار
+Python كامل. كل عنصر يشير إلى كائن Python حقيقي فريد لا تغطّيه مكتبة أخرى،
+والأسماء فريدة عبر كل مكتبات APL ونواة اللغة.
+"""
+
+import re
+
+LIGHTGBM_FUNCS = {
+    "لايت_جي_بي_إم_باسيك_LGBM_ديبريكاتيون_وارنينج": "lightgbm.basic.LGBMDeprecationWarning",
+    "لايت_جي_بي_إم_باسيك_بوستير": "lightgbm.basic.Booster",
+    "لايت_جي_بي_إم_باسيك_بوستير_أضف_فاليد": "lightgbm.basic.Booster.add_valid",
+    "لايت_جي_بي_إم_باسيك_بوستير_بريديكت": "lightgbm.basic.Booster.predict",
+    "لايت_جي_بي_إم_باسيك_بوستير_تريس_إلى_داتافرام": "lightgbm.basic.Booster.trees_to_dataframe",
+    "لايت_جي_بي_إم_باسيك_بوستير_جلب_قسّم_قيمة_هيستوجرام": "lightgbm.basic.Booster.get_split_value_histogram",
+    "لايت_جي_بي_إم_باسيك_بوستير_جلب_ليف_اوتبوت": "lightgbm.basic.Booster.get_leaf_output",
+    "لايت_جي_بي_إم_باسيك_بوستير_حدّث": "lightgbm.basic.Booster.update",
+    "لايت_جي_بي_إم_باسيك_بوستير_رولباك_واحد_تكرار": "lightgbm.basic.Booster.rollback_one_iter",
+    "لايت_جي_بي_إم_باسيك_بوستير_ريسيت_باراميتير": "lightgbm.basic.Booster.reset_parameter",
+    "لايت_جي_بي_إم_باسيك_بوستير_ريفيت": "lightgbm.basic.Booster.refit",
+    "لايت_جي_بي_إم_باسيك_بوستير_ساف_موديل": "lightgbm.basic.Booster.save_model",
+    "لايت_جي_بي_إم_باسيك_بوستير_شوفل_موديلس": "lightgbm.basic.Booster.shuffle_models",
+    "لايت_جي_بي_إم_باسيك_بوستير_ضبط_ترين_بيانات_اسم": "lightgbm.basic.Booster.set_train_data_name",
+    "لايت_جي_بي_إم_باسيك_بوستير_ضبط_ليف_اوتبوت": "lightgbm.basic.Booster.set_leaf_output",
+    "لايت_جي_بي_إم_باسيك_بوستير_ضبط_نيتورك": "lightgbm.basic.Booster.set_network",
+    "لايت_جي_بي_إم_باسيك_بوستير_فري_داتاسيت": "lightgbm.basic.Booster.free_dataset",
+    "لايت_جي_بي_إم_باسيك_بوستير_فري_نيتورك": "lightgbm.basic.Booster.free_network",
+    "لايت_جي_بي_إم_باسيك_بوستير_فرّغ_موديل": "lightgbm.basic.Booster.dump_model",
+    "لايت_جي_بي_إم_باسيك_بوستير_فيتور_اسم": "lightgbm.basic.Booster.feature_name",
+    "لايت_جي_بي_إم_باسيك_بوستير_فيتور_يمبورتانك": "lightgbm.basic.Booster.feature_importance",
+    "لايت_جي_بي_إم_باسيك_بوستير_كورينت_يتيراتيون": "lightgbm.basic.Booster.current_iteration",
+    "لايت_جي_بي_إم_باسيك_بوستير_لوير_باوند": "lightgbm.basic.Booster.lower_bound",
+    "لايت_جي_بي_إم_باسيك_بوستير_موديل_إلى_نص": "lightgbm.basic.Booster.model_to_string",
+    "لايت_جي_بي_إم_باسيك_بوستير_موديل_فروم_نص": "lightgbm.basic.Booster.model_from_string",
+    "لايت_جي_بي_إم_باسيك_بوستير_نوم_تريس": "lightgbm.basic.Booster.num_trees",
+    "لايت_جي_بي_إم_باسيك_بوستير_نوم_فيتور": "lightgbm.basic.Booster.num_feature",
+    "لايت_جي_بي_إم_باسيك_بوستير_نوم_موديل_بير_يتيراتيون": "lightgbm.basic.Booster.num_model_per_iteration",
+    "لايت_جي_بي_إم_باسيك_بوستير_وبير_باوند": "lightgbm.basic.Booster.upper_bound",
+    "لايت_جي_بي_إم_باسيك_بوستير_يفال": "lightgbm.basic.Booster.eval",
+    "لايت_جي_بي_إم_باسيك_بوستير_يفال_ترين": "lightgbm.basic.Booster.eval_train",
+    "لايت_جي_بي_إم_باسيك_بوستير_يفال_فاليد": "lightgbm.basic.Booster.eval_valid",
+    "لايت_جي_بي_إم_باسيك_تسلسل": "lightgbm.basic.Sequence",
+    "لايت_جي_بي_إم_باسيك_داتاسيت": "lightgbm.basic.Dataset",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_أضف_فيتوريس_فروم": "lightgbm.basic.Dataset.add_features_from",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_إنشاء_فاليد": "lightgbm.basic.Dataset.create_valid",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_جلب_بارامس": "lightgbm.basic.Dataset.get_params",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_جلب_بوسيتيون": "lightgbm.basic.Dataset.get_position",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_جلب_بيانات": "lightgbm.basic.Dataset.get_data",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_جلب_جمّع": "lightgbm.basic.Dataset.get_group",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_جلب_ريف_سلسلة": "lightgbm.basic.Dataset.get_ref_chain",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_جلب_فيتور_اسم": "lightgbm.basic.Dataset.get_feature_name",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_جلب_فيلد": "lightgbm.basic.Dataset.get_field",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_جلب_لابيل": "lightgbm.basic.Dataset.get_label",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_جلب_ويغت": "lightgbm.basic.Dataset.get_weight",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_جلب_ينيت_سكور": "lightgbm.basic.Dataset.get_init_score",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_ساف_بيناري": "lightgbm.basic.Dataset.save_binary",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_سوبسيت": "lightgbm.basic.Dataset.subset",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_ضبط_بوسيتيون": "lightgbm.basic.Dataset.set_position",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_ضبط_جمّع": "lightgbm.basic.Dataset.set_group",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_ضبط_ريفيرينك": "lightgbm.basic.Dataset.set_reference",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_ضبط_فيتور_اسم": "lightgbm.basic.Dataset.set_feature_name",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_ضبط_فيلد": "lightgbm.basic.Dataset.set_field",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_ضبط_كاتيجوريكال_فيتور": "lightgbm.basic.Dataset.set_categorical_feature",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_ضبط_لابيل": "lightgbm.basic.Dataset.set_label",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_ضبط_ويغت": "lightgbm.basic.Dataset.set_weight",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_ضبط_ينيت_سكور": "lightgbm.basic.Dataset.set_init_score",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_فيتور_نوم_بين": "lightgbm.basic.Dataset.feature_num_bin",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_كونستروكت": "lightgbm.basic.Dataset.construct",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_نوم_بيانات": "lightgbm.basic.Dataset.num_data",
+    "لايت_جي_بي_إم_باسيك_داتاسيت_نوم_فيتور": "lightgbm.basic.Dataset.num_feature",
+    "لايت_جي_بي_إم_باسيك_ريجيستير_لوجير": "lightgbm.basic.register_logger",
+    "لايت_جي_بي_إم_باسيك_ليغت_GBM_خطأ": "lightgbm.basic.LightGBMError",
+    "لايت_جي_بي_إم_باسيك_يفال_نتيجة": "lightgbm.basic.EvalResult",
+    "لايت_جي_بي_إم_باسيك_يفال_نتيجة_هل_كف_نتيجة": "lightgbm.basic.EvalResult.is_cv_result",
+    "لايت_جي_بي_إم_بلوتينج_إنشاء_تري_ديجراف": "lightgbm.plotting.create_tree_digraph",
+    "لايت_جي_بي_إم_بلوتينج_بلوت_تري": "lightgbm.plotting.plot_tree",
+    "لايت_جي_بي_إم_بلوتينج_بلوت_قسّم_قيمة_هيستوجرام": "lightgbm.plotting.plot_split_value_histogram",
+    "لايت_جي_بي_إم_بلوتينج_بلوت_متري": "lightgbm.plotting.plot_metric",
+    "لايت_جي_بي_إم_بلوتينج_بلوت_يمبورتانك": "lightgbm.plotting.plot_importance",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_رانكير": "lightgbm.dask.DaskLGBMRanker",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_رانكير_إلى_لوكال": "lightgbm.dask.DaskLGBMRanker.to_local",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_رانكير_بريديكت": "lightgbm.dask.DaskLGBMRanker.predict",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_رانكير_ضبط_بريديكت_ريكويست": "lightgbm.dask.DaskLGBMRanker.set_predict_request",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_رانكير_ضبط_فيت_ريكويست": "lightgbm.dask.DaskLGBMRanker.set_fit_request",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_رانكير_فيت": "lightgbm.dask.DaskLGBMRanker.fit",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_ريجريسور": "lightgbm.dask.DaskLGBMRegressor",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_ريجريسور_إلى_لوكال": "lightgbm.dask.DaskLGBMRegressor.to_local",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_ريجريسور_بريديكت": "lightgbm.dask.DaskLGBMRegressor.predict",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_ريجريسور_ضبط_بريديكت_ريكويست": "lightgbm.dask.DaskLGBMRegressor.set_predict_request",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_ريجريسور_ضبط_سكور_ريكويست": "lightgbm.dask.DaskLGBMRegressor.set_score_request",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_ريجريسور_ضبط_فيت_ريكويست": "lightgbm.dask.DaskLGBMRegressor.set_fit_request",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_ريجريسور_فيت": "lightgbm.dask.DaskLGBMRegressor.fit",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_كلاسيفير": "lightgbm.dask.DaskLGBMClassifier",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_كلاسيفير_إلى_لوكال": "lightgbm.dask.DaskLGBMClassifier.to_local",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_كلاسيفير_بريديكت": "lightgbm.dask.DaskLGBMClassifier.predict",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_كلاسيفير_بريديكت_بروبا": "lightgbm.dask.DaskLGBMClassifier.predict_proba",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_كلاسيفير_ضبط_بريديكت_بروبا_ريكويست": "lightgbm.dask.DaskLGBMClassifier.set_predict_proba_request",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_كلاسيفير_ضبط_بريديكت_ريكويست": "lightgbm.dask.DaskLGBMClassifier.set_predict_request",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_كلاسيفير_ضبط_ديسيسيون_فونكتيون_ريكويست": "lightgbm.dask.DaskLGBMClassifier.set_decision_function_request",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_كلاسيفير_ضبط_سكور_ريكويست": "lightgbm.dask.DaskLGBMClassifier.set_score_request",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_كلاسيفير_ضبط_فيت_ريكويست": "lightgbm.dask.DaskLGBMClassifier.set_fit_request",
+    "لايت_جي_بي_إم_داسك_داسك_LGBM_كلاسيفير_فيت": "lightgbm.dask.DaskLGBMClassifier.fit",
+    "لايت_جي_بي_إم_رد_نداء_رد_نداء_ينف": "lightgbm.callback.CallbackEnv",
+    "لايت_جي_بي_إم_رد_نداء_ريسيت_باراميتير": "lightgbm.callback.reset_parameter",
+    "لايت_جي_بي_إم_رد_نداء_ريكورد_يفالواتيون": "lightgbm.callback.record_evaluation",
+    "لايت_جي_بي_إم_رد_نداء_سجل_يفالواتيون": "lightgbm.callback.log_evaluation",
+    "لايت_جي_بي_إم_رد_نداء_يرلي_إيقاف_استثناء": "lightgbm.callback.EarlyStopException",
+    "لايت_جي_بي_إم_رد_نداء_يرلي_ستوبينج": "lightgbm.callback.early_stopping",
+    "لايت_جي_بي_إم_سكليرن_LGBM_رانكير": "lightgbm.sklearn.LGBMRanker",
+    "لايت_جي_بي_إم_سكليرن_LGBM_رانكير_ضبط_بريديكت_ريكويست": "lightgbm.sklearn.LGBMRanker.set_predict_request",
+    "لايت_جي_بي_إم_سكليرن_LGBM_رانكير_ضبط_فيت_ريكويست": "lightgbm.sklearn.LGBMRanker.set_fit_request",
+    "لايت_جي_بي_إم_سكليرن_LGBM_رانكير_فيت": "lightgbm.sklearn.LGBMRanker.fit",
+    "لايت_جي_بي_إم_سكليرن_LGBM_ريجريسور": "lightgbm.sklearn.LGBMRegressor",
+    "لايت_جي_بي_إم_سكليرن_LGBM_ريجريسور_ضبط_بريديكت_ريكويست": "lightgbm.sklearn.LGBMRegressor.set_predict_request",
+    "لايت_جي_بي_إم_سكليرن_LGBM_ريجريسور_ضبط_سكور_ريكويست": "lightgbm.sklearn.LGBMRegressor.set_score_request",
+    "لايت_جي_بي_إم_سكليرن_LGBM_ريجريسور_ضبط_فيت_ريكويست": "lightgbm.sklearn.LGBMRegressor.set_fit_request",
+    "لايت_جي_بي_إم_سكليرن_LGBM_ريجريسور_فيت": "lightgbm.sklearn.LGBMRegressor.fit",
+    "لايت_جي_بي_إم_سكليرن_LGBM_كلاسيفير": "lightgbm.sklearn.LGBMClassifier",
+    "لايت_جي_بي_إم_سكليرن_LGBM_كلاسيفير_بريديكت": "lightgbm.sklearn.LGBMClassifier.predict",
+    "لايت_جي_بي_إم_سكليرن_LGBM_كلاسيفير_بريديكت_بروبا": "lightgbm.sklearn.LGBMClassifier.predict_proba",
+    "لايت_جي_بي_إم_سكليرن_LGBM_كلاسيفير_ديسيسيون_فونكتيون": "lightgbm.sklearn.LGBMClassifier.decision_function",
+    "لايت_جي_بي_إم_سكليرن_LGBM_كلاسيفير_ضبط_بريديكت_بروبا_ريكويست": "lightgbm.sklearn.LGBMClassifier.set_predict_proba_request",
+    "لايت_جي_بي_إم_سكليرن_LGBM_كلاسيفير_ضبط_بريديكت_ريكويست": "lightgbm.sklearn.LGBMClassifier.set_predict_request",
+    "لايت_جي_بي_إم_سكليرن_LGBM_كلاسيفير_ضبط_ديسيسيون_فونكتيون_ريكويست": "lightgbm.sklearn.LGBMClassifier.set_decision_function_request",
+    "لايت_جي_بي_إم_سكليرن_LGBM_كلاسيفير_ضبط_سكور_ريكويست": "lightgbm.sklearn.LGBMClassifier.set_score_request",
+    "لايت_جي_بي_إم_سكليرن_LGBM_كلاسيفير_ضبط_فيت_ريكويست": "lightgbm.sklearn.LGBMClassifier.set_fit_request",
+    "لايت_جي_بي_إم_سكليرن_LGBM_كلاسيفير_فيت": "lightgbm.sklearn.LGBMClassifier.fit",
+    "لايت_جي_بي_إم_سكليرن_LGBM_موديل": "lightgbm.sklearn.LGBMModel",
+    "لايت_جي_بي_إم_سكليرن_LGBM_موديل_بريديكت": "lightgbm.sklearn.LGBMModel.predict",
+    "لايت_جي_بي_إم_سكليرن_LGBM_موديل_جلب_بارامس": "lightgbm.sklearn.LGBMModel.get_params",
+    "لايت_جي_بي_إم_سكليرن_LGBM_موديل_ضبط_بارامس": "lightgbm.sklearn.LGBMModel.set_params",
+    "لايت_جي_بي_إم_سكليرن_LGBM_موديل_ضبط_بريديكت_ريكويست": "lightgbm.sklearn.LGBMModel.set_predict_request",
+    "لايت_جي_بي_إم_سكليرن_LGBM_موديل_ضبط_فيت_ريكويست": "lightgbm.sklearn.LGBMModel.set_fit_request",
+    "لايت_جي_بي_إم_سكليرن_LGBM_موديل_فيت": "lightgbm.sklearn.LGBMModel.fit",
+    "لايت_جي_بي_إم_ينجين_CV_بوستير": "lightgbm.engine.CVBooster",
+    "لايت_جي_بي_إم_ينجين_CV_بوستير_ساف_موديل": "lightgbm.engine.CVBooster.save_model",
+    "لايت_جي_بي_إم_ينجين_CV_بوستير_موديل_إلى_نص": "lightgbm.engine.CVBooster.model_to_string",
+    "لايت_جي_بي_إم_ينجين_CV_بوستير_موديل_فروم_نص": "lightgbm.engine.CVBooster.model_from_string",
+    "لايت_جي_بي_إم_ينجين_ترين": "lightgbm.engine.train",
+    "لايت_جي_بي_إم_ينجين_كف": "lightgbm.engine.cv",
+}
+
+LIGHTGBM_CONSTS = {
+    "لايت_جي_بي_إم_باسيك_SEEK_END": "lightgbm.basic.SEEK_END",
+    "لايت_جي_بي_إم_باسيك_TYPE_تشيكينج": "lightgbm.basic.TYPE_CHECKING",
+    "لايت_جي_بي_إم_باسيك_ZERO_ثريشولد": "lightgbm.basic.ZERO_THRESHOLD",
+    "لايت_جي_بي_إم_باسيك_بانداس_ينستاليد": "lightgbm.basic.PANDAS_INSTALLED",
+    "لايت_جي_بي_إم_بلوتينج_TYPE_تشيكينج": "lightgbm.plotting.TYPE_CHECKING",
+    "لايت_جي_بي_إم_داسك_TYPE_تشيكينج": "lightgbm.dask.TYPE_CHECKING",
+    "لايت_جي_بي_إم_داسك_بانداس_ينستاليد": "lightgbm.dask.PANDAS_INSTALLED",
+    "لايت_جي_بي_إم_داسك_سكليرن_ينستاليد": "lightgbm.dask.SKLEARN_INSTALLED",
+    "لايت_جي_بي_إم_رد_نداء_TYPE_تشيكينج": "lightgbm.callback.TYPE_CHECKING",
+    "لايت_جي_بي_إم_سكليرن_TYPE_تشيكينج": "lightgbm.sklearn.TYPE_CHECKING",
+    "لايت_جي_بي_إم_سكليرن_سكليرن_CHECK_عينة_ويغت_HAS_ALLOW_ZERO_ويغتس_ARG": "lightgbm.sklearn.SKLEARN_CHECK_SAMPLE_WEIGHT_HAS_ALLOW_ZERO_WEIGHTS_ARG",
+    "لايت_جي_بي_إم_سكليرن_سكليرن_ينستاليد": "lightgbm.sklearn.SKLEARN_INSTALLED",
+    "لايت_جي_بي_إم_كومبات_TYPE_تشيكينج": "lightgbm.compat.TYPE_CHECKING",
+    "لايت_جي_بي_إم_كومبات_بانداس_ينستاليد": "lightgbm.compat.PANDAS_INSTALLED",
+    "لايت_جي_بي_إم_كومبات_سكليرن_CHECK_عينة_ويغت_HAS_ALLOW_ZERO_ويغتس_ARG": "lightgbm.compat.SKLEARN_CHECK_SAMPLE_WEIGHT_HAS_ALLOW_ZERO_WEIGHTS_ARG",
+    "لايت_جي_بي_إم_كومبات_سكليرن_ينستاليد": "lightgbm.compat.SKLEARN_INSTALLED",
+    "لايت_جي_بي_إم_ينجين_سكليرن_ينستاليد": "lightgbm.engine.SKLEARN_INSTALLED",
+}
+
+IMPORT_MODULES = ['lightgbm', 'lightgbm.basic', 'lightgbm.callback', 'lightgbm.compat', 'lightgbm.dask', 'lightgbm.engine', 'lightgbm.plotting', 'lightgbm.sklearn']
+IMPORT_CHECK = r"(?<![\w.])(?:lightgbm)\."
+IMPORT_STATEMENT = "import " + ", ".join(IMPORT_MODULES)
+
+LIGHTGBM_HELP = [
+    "# lightgbm - التعزيز التدرجي الخفيف",
+]
+
+_LIGHTGBM_TOKEN = re.compile(
+    r"(?P<dot>\.)?"
+    r"(?P<word>(?!\d)[\w\u064B-\u065F\u0670]+)"
+    r"(?P<open>\s*\()?"
+)
+
+USER_NAMES = set()
+
+
+def _lightgbm_replace(match):
+    dot = match.group("dot")
+    word = match.group("word")
+    open_paren = match.group("open")
+    if word in USER_NAMES:
+        return match.group(0)
+    if dot:
+        return match.group(0)
+    if word in LIGHTGBM_CONSTS:
+        return LIGHTGBM_CONSTS[word]
+    if word in LIGHTGBM_FUNCS:
+        return LIGHTGBM_FUNCS[word] + (open_paren or "")
+    return match.group(0)
+
+
+def LIGHTGBM_SUBSTITUTE(text):
+    """يترجم كلمات المكتبة في نص واحد ويُرجع المترجم."""
+    if not text:
+        return text
+    return _LIGHTGBM_TOKEN.sub(_lightgbm_replace, text)
