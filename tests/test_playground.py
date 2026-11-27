@@ -126,6 +126,22 @@ def main() -> int:
 
         empty = run("# كومنت بس\n")
         check("a program that prints nothing returns empty text", empty.strip() == "", repr(empty))
+
+        # A browser has no stdin, no files and no installed libraries. Programs
+        # that need them must say so, not show a raw traceback.
+        hint = namespace.get("apl_hint")
+        check("the bootstrap defines apl_hint", callable(hint))
+        if callable(hint):
+            waiting = hint('اسم = ادخل("اسمك: ")\n', "")
+            check("a program waiting for input is explained", "إدخال" in waiting, repr(waiting))
+            files = hint('محتوى = اقرأ("ملف.txt")\n', "")
+            check("a program using files is explained", "ملفات" in files, repr(files))
+            library = hint("اطبع(1)\n", "ModuleNotFoundError: No module named 'tabulate'")
+            check("a missing library is named as the reason", "مكتبة" in library, repr(library))
+            check("a working program gets no hint", hint(good, "أهلاً") == "",
+                  repr(hint(good, "أهلاً")))
+        check("the page shows the hint after a run",
+              "apl_hint(apl_source_text, apl_output_text)" in page)
     finally:
         shutil.rmtree(work, ignore_errors=True)
 

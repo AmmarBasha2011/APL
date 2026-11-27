@@ -181,8 +181,26 @@ async function loadSources(pyodide, manifest) {
 }
 
 const BOOTSTRAP = `
-import io, sys
+import io, re, sys
 sys.path.insert(0, "/apl")
+
+# A browser has no stdin, no files and no installed libraries, so some programs
+# cannot work here. Say which one it is instead of showing a raw traceback.
+_HINT_STDIN = re.compile(r"(?:^|[^\\w])(?:ادخل|input)\\s*\\(")
+_HINT_FILES = re.compile(r"(?:^|[^\\w])(?:اقرأ|اكتب|open|فتح)\\s*\\(")
+
+def apl_hint(source, output):
+    """Why this program cannot run in the browser, in one Arabic line, or ''."""
+    if _HINT_STDIN.search(source) or "EOFError" in output:
+        return ("المثال ده مستني إدخال منك (ادخل)، والمتصفح مابيديش إدخال. "
+                "شغّله على جهازك: عمار مثال جرب <رقم>")
+    if _HINT_FILES.search(source):
+        return ("المثال ده بيقرأ أو بيكتب ملفات، والمتصفح مابيديش ملفات. "
+                "شغّله على جهازك: عمار مثال جرب <رقم>")
+    if "ModuleNotFoundError" in output or "ImportError" in output:
+        return ("المثال ده محتاج مكتبة مش متسطبة في المتصفح. "
+                "سطّبها على جهازك بـ: عمار مكتبة تحميل <الاسم>")
+    return ""
 
 def apl_run(source):
     from core.runner.execution import Compilation, execute, diagnostic
@@ -234,9 +252,12 @@ function run() {
   setTimeout(() => {
     try {
       runner.globals.set("apl_source_text", source);
-      const text = runner.runPython("apl_run(apl_source_text)");
-      const looksLikeError = /\bAPL-[A-Za-z]+Error\b|خطأ في الصياغة/.test(text || "");
-      show(text || "", looksLikeError);
+      let text = runner.runPython("apl_run(apl_source_text)") || "";
+      runner.globals.set("apl_output_text", text);
+      const hint = runner.runPython("apl_hint(apl_source_text, apl_output_text)");
+      if (hint) text = text ? text + "\n\n" + hint : hint;
+      const looksLikeError = /\bAPL-[A-Za-z]+Error\b|خطأ في الصياغة/.test(text);
+      show(text, looksLikeError);
       setStatus(looksLikeError ? "فيه خطأ" : "خلص", looksLikeError ? "bad" : "");
     } catch (error) {
       show(String(error), true);
@@ -270,7 +291,14 @@ examples.addEventListener("change", async () => {
   try {
     sourceBox.value = await fetchText(EXAMPLES_BASE + "examples/" + file);
     localStorage.setItem(STORAGE_KEY, sourceBox.value);
-    setStatus("المثال جاهز، اضغط تشغيل", "");
+    runner.globals.set("apl_source_text", sourceBox.value);
+    const hint = runner.runPython("apl_hint(apl_source_text, '')");
+    if (hint) {
+      setStatus(hint, "");
+      examples.title = hint;
+    } else {
+      setStatus("المثال جاهز، اضغط تشغيل", "");
+    }
   } catch (error) {
     setStatus("المثال مانزلش", "bad");
   }
