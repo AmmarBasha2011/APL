@@ -80,8 +80,12 @@ def main() -> int:
     on_disk = {path.relative_to(ROOT).as_posix()
                for path in (ROOT / "core").rglob("*.py")
                if "__pycache__" not in path.parts}
-    check("the manifest lists exactly the interpreter's modules", listed == on_disk,
-          f"missing={sorted(on_disk - listed)} extra={sorted(listed - on_disk)}")
+    modules = {path for path in listed if path.startswith("core/")}
+    check("the manifest lists exactly the interpreter's modules", modules == on_disk,
+          f"missing={sorted(on_disk - modules)} extra={sorted(modules - on_disk)}")
+    check("the manifest carries the library word map",
+          "data/library_words.json" in listed
+          and (ROOT / "data" / "library_words.json").is_file())
     check("the manifest lists the transpiler and the runtime",
           "core/runner/main.py" in listed and "core/runner/transpiler.py" in listed)
 

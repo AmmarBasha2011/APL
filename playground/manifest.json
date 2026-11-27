@@ -22,6 +22,10 @@
       "bytes": 11529
     },
     {
+      "path": "core/library_words.py",
+      "bytes": 1574
+    },
+    {
       "path": "core/runner/__init__.py",
       "bytes": 496
     },
@@ -39,7 +43,7 @@
     },
     {
       "path": "core/runner/execution.py",
-      "bytes": 5730
+      "bytes": 6300
     },
     {
       "path": "core/runner/fastpath.py",
@@ -72,8 +76,12 @@
     {
       "path": "core/runner/transpiler.py",
       "bytes": 20596
+    },
+    {
+      "path": "data/library_words.json",
+      "bytes": 51477
     }
   ],
-  "total_bytes": 216066,
-  "sha256": "5908ea674e573405450368ab6b3e078c39a3ea2a66cce1d2c9e930cfcd2675bb"
+  "total_bytes": 269687,
+  "sha256": "959f82b1507aa0682476cb34c5dd5d4b4fb31f391e1a81541cfe182d96828feb"
 }
