@@ -21,6 +21,9 @@
     عمار مكتبة قفل            إصدارات المكتبات المثبتة (lockfile)
     عمار مكتبة استعادة        تنزيل المكتبات المسجّلة في القفل بإصداراتها
 
+التثبيت مابيسطّبش حزم Python لوحده. لو عايز تسطّبها مع المكتبة استخدم
+--مع-الاعتمادات، وهيقولك بالظبط إيه اللي هيتسطّب قبل ما يبدأ.
+
 الأسماء الإنجليزية (run, check, transpile, repl, version, help,
 clear-cache, library) تعمل بنفس الطريقة.
 """
@@ -357,6 +360,7 @@ def _library_usage():
     print('  عمار مكتبة حذف <اسم>              حذف مكتبة مثبتة')
     print('  عمار مكتبة قفل                    إصدارات المكتبات المثبتة')
     print('  عمار مكتبة استعادة                تنزيل المكتبات المسجّلة في القفل')
+    print('  عمار مكتبة تحميل <اسم> --مع-الاعتمادات  تسطّب حزم Python المطلوبة كمان')
     return 0
 
 
@@ -486,7 +490,43 @@ def _split_version(spec):
     return spec.strip(), None
 
 
-def _install_from_folder(source, name_hint=None, origin=None):
+def _pip_command():
+    """The command used to install a library's Python packages.
+
+    APL_PIP_CMD overrides it, for a virtualenv's pip, uv, or a test stub.
+    """
+    import shlex
+    override = os.environ.get('APL_PIP_CMD', '').strip()
+    if override:
+        return shlex.split(override)
+    return [sys.executable, '-m', 'pip', 'install']
+
+
+def _install_python_deps(requires):
+    """Install a library's Python packages; True when they are in place."""
+    import subprocess
+    requires = [item for item in requires if isinstance(item, str) and item.strip()]
+    if not requires:
+        return True
+    print('  بنسطّب حزم Python: ' + '، '.join(requires))
+    try:
+        result = subprocess.run(_pip_command() + requires, capture_output=True,
+                                text=True, encoding='utf-8', errors='replace')
+    except OSError as error:
+        print(f'  تعذر تشغيل pip: {error}', file=sys.stderr)
+        print('  سطّبها بنفسك: pip install ' + ' '.join(requires), file=sys.stderr)
+        return False
+    if result.returncode != 0:
+        print('  فشل تثبيت حزم Python. المكتبة اتسطبت، بس محتاجة الحزم دي. '
+              'جرّب: pip install ' + ' '.join(requires), file=sys.stderr)
+        for line in (result.stderr or result.stdout or '').strip().splitlines()[-3:]:
+            print('  ' + line, file=sys.stderr)
+        return False
+    print('  تم تثبيت حزم Python.')
+    return True
+
+
+def _install_from_folder(source, name_hint=None, origin=None, deps=False):
     """Copy one library folder into the library home, without running it."""
     import shutil
     from core.libraries import registry
@@ -524,8 +564,14 @@ def _install_from_folder(source, name_hint=None, origin=None):
     requires = meta.get('requires') or []
     if requires:
         print('  محتاجة من Python: ' + '، '.join(requires))
-        print('  لو مش متسطبة: pip install ' + ' '.join(
-            requirement.split('>')[0].split('=')[0] for requirement in requires))
+        if deps:
+            _install_python_deps(requires)
+        else:
+            # Installing packages is the user's decision, not a side effect of
+            # installing a library: say the command, or offer the flag.
+            print('  لو مش متسطبة: pip install ' + ' '.join(
+                requirement.split('>')[0].split('=')[0] for requirement in requires))
+            print('  أو نزّلها مع المكتبة بـ: عمار مكتبة تحميل <الاسم> --مع-الاعتمادات')
     libraries = [name for name in (meta.get('libraries') or []) if isinstance(name, str)]
     if libraries:
         from core.libraries.registry import ENTRIES
@@ -548,13 +594,13 @@ def _install_from_folder(source, name_hint=None, origin=None):
     return 0
 
 
-def _library_install(spec):
+def _library_install(spec, deps=False):
     """عمار مكتبة تحميل <اسم|مالك/ريبو|رابط|مسار>"""
     import shutil
     import tempfile
     local = Path(spec).expanduser()
     if local.is_dir():
-        return _install_from_folder(local)
+        return _install_from_folder(local, deps=deps)
     # A plain name: the shipped index says which repo it is, by library name or
     # by the real Python package it wraps.
     spec, version = _split_version(spec)
@@ -588,7 +634,7 @@ def _library_install(spec):
     try:
         folder = _unpack(data, workdir)
         hint = repo[len(DEFAULT_PREFIX):] if repo.startswith(DEFAULT_PREFIX) else repo
-        return _install_from_folder(folder, hint, origin)
+        return _install_from_folder(folder, hint, origin, deps=deps)
     except ValueError as error:
         return _error(str(error))
     finally:
@@ -1100,10 +1146,20 @@ def _library(rest):
     action = LIBRARY_ALIASES.get(rest[0]) or LIBRARY_ALIASES.get(rest[0].lower())
     args = rest[1:]
     if action in ('install', 'remove', 'search'):
-        if not args:
+        deps = False
+        plain = []
+        for item in args:
+            if item in ('--مع-الاعتمادات', '--with-deps', '--تبعيات'):
+                deps = True
+            elif item in ('--بدون-تبعيات', '--no-deps'):
+                deps = False
+            elif not item.startswith('-'):
+                plain.append(item)
+        if not plain:
             return _error(f'حدد اسم المكتبة. مثال: عمار مكتبة {rest[0]} numpy')
-        return {'install': _library_install, 'remove': _library_remove,
-                'search': _library_search}[action](args[0])
+        if action == 'install':
+            return _library_install(plain[0], deps=deps)
+        return {'remove': _library_remove, 'search': _library_search}[action](plain[0])
     if action in ('list', 'list-all'):
         return _library_list(action == 'list-all')
     if action == 'lock':
