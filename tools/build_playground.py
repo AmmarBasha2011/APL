@@ -30,7 +30,10 @@ def build() -> dict:
     digest = hashlib.sha256()
     for path in source_files():
         relative = path.relative_to(ROOT).as_posix()
-        data = path.read_bytes()
+        # Line endings must not change the manifest: git checks the same file
+        # out with CRLF on Windows and LF everywhere else, and a manifest that
+        # differs per platform fails the Windows job for no real reason.
+        data = path.read_bytes().replace(b"\r\n", b"\n")
         digest.update(relative.encode("utf-8"))
         digest.update(data)
         files.append({"path": relative, "bytes": len(data)})

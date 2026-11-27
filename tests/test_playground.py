@@ -88,6 +88,9 @@ def main() -> int:
     fresh = subprocess.run([sys.executable, str(ROOT / "tools" / "build_playground.py"), "--check"],
                            capture_output=True, text=True, encoding="utf-8")
     check("the manifest is not stale", fresh.returncode == 0, fresh.stdout + fresh.stderr)
+    check("the manifest ignores CRLF vs LF line endings",
+          b"\\r\\n" in (ROOT / "tools" / "build_playground.py").read_bytes(),
+          "build_playground.py must normalise line endings, or Windows fails the check")
 
     code = bootstrap_source(page)
     check("the page carries its Python bootstrap", "def apl_run" in code)
