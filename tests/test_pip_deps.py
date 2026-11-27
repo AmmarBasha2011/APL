@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import os
+import shlex
 import shutil
 import subprocess
 import sys
@@ -69,7 +70,13 @@ def main() -> int:
                                 capture_output=True, text=True, encoding="utf-8", env=env)
         return result, clean(result.stdout + result.stderr)
 
-    stub_command = f"{sys.executable} {stub} {record}"
+    def command(*parts):
+        # A Windows path needs its quotes kept, a POSIX one needs shell quoting.
+        if os.name == "nt":
+            return subprocess.list2cmdline([str(part) for part in parts])
+        return " ".join(shlex.quote(str(part)) for part in parts)
+
+    stub_command = command(sys.executable, stub, record)
 
     result, text = install(pip_command=stub_command)
     check("a plain install succeeds", result.returncode == 0, text)
@@ -86,7 +93,7 @@ def main() -> int:
     check("it says what it is about to install", "بنسطّب حزم Python" in text, text)
 
     shutil.rmtree(work / "home", ignore_errors=True)
-    result, text = install("--مع-الاعتمادات", pip_command=f"{sys.executable} {failing}")
+    result, text = install("--مع-الاعتمادات", pip_command=command(sys.executable, failing))
     check("a failed pip run keeps the library", result.returncode == 0
           and (work / "home" / "demo" / "apl-library.json").is_file(), text)
     check("a failed pip run says what to do", "فشل تثبيت حزم Python" in text, text)
