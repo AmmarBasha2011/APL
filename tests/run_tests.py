@@ -86,6 +86,7 @@ def main(argv: list[str]) -> int:
         ("playground", "test_playground.py"),
         ("عمار بناء", "test_build.py"),
         ("debugger", "test_debugger.py"),
+        ("lockfile", "test_lockfile.py"),
     )
     for label, script in extras:
         path = Path(__file__).resolve().parent / script

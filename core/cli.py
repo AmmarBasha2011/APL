@@ -14,6 +14,8 @@
     عمار مكتبة قائمة          المكتبات المثبتة
     عمار مكتبة بحث <كلمة>     البحث في مكتبات APL
     عمار مكتبة حذف <اسم>      حذف مكتبة محمّلة
+    عمار مكتبة قفل            إصدارات المكتبات المثبتة (lockfile)
+    عمار مكتبة استعادة        تنزيل المكتبات المسجّلة في القفل بإصداراتها
 
 الأسماء الإنجليزية (run, check, transpile, repl, version, help,
 clear-cache, library) تعمل بنفس الطريقة.
@@ -59,9 +61,12 @@ LIBRARY_ALIASES = {
     'الكل': 'list-all', 'متاح': 'list-all',
     'بحث': 'search', 'ابحث': 'search',
     'حذف': 'remove', 'إزالة': 'remove', 'ازالة': 'remove', 'امسح': 'remove',
+    'قفل': 'lock', 'القفل': 'lock', 'إصدارات': 'lock',
+    'استعادة': 'sync', 'زامن': 'sync', 'زامِن': 'sync',
     'install': 'install', 'download': 'install', 'add': 'install',
     'list': 'list', 'all': 'list-all', 'search': 'search', 'find': 'search',
     'remove': 'remove', 'uninstall': 'remove',
+    'lock': 'lock', 'lockfile': 'lock', 'sync': 'sync', 'restore': 'sync',
 }
 
 #: Where `عمار مكتبة تحميل` fetches a library from.
@@ -208,6 +213,8 @@ def _library_usage():
     print('  عمار مكتبة قائمة                  المكتبات المثبتة')
     print('  عمار مكتبة بحث <كلمة>             البحث في المثبتة وعلى GitHub')
     print('  عمار مكتبة حذف <اسم>              حذف مكتبة مثبتة')
+    print('  عمار مكتبة قفل                    إصدارات المكتبات المثبتة')
+    print('  عمار مكتبة استعادة                تنزيل المكتبات المسجّلة في القفل')
     return 0
 
 
@@ -246,11 +253,11 @@ def _split_source(spec):
     return DEFAULT_OWNER, text if text.startswith(DEFAULT_PREFIX) else DEFAULT_PREFIX + text
 
 
-def _download_tarball(owner, repo):
+def _download_tarball(owner, repo, refs=None):
     """Fetch a repository tarball; returns bytes, or None when not found."""
     import urllib.error
     import urllib.request
-    for ref in ('HEAD', 'refs/heads/main', 'refs/heads/master'):
+    for ref in (refs or ('HEAD', 'refs/heads/main', 'refs/heads/master')):
         url = f'https://codeload.github.com/{owner}/{repo}/tar.gz/{ref}'
         request = urllib.request.Request(url, headers={'User-Agent': 'APL-package-manager'})
         try:
@@ -296,6 +303,47 @@ def _read_package(folder):
     return meta
 
 
+def _lock_path():
+    """The lockfile: exactly what is installed, from where, at which version."""
+    return Path.home() / '.apl' / 'lock.json'
+
+
+def _read_lock():
+    import json
+    try:
+        data = json.loads(_lock_path().read_text(encoding='utf-8'))
+    except (OSError, ValueError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def _write_lock(name, entry):
+    import json
+    data = _read_lock()
+    if entry is None:
+        data.pop(name, None)
+    else:
+        data[name] = entry
+    path = _lock_path()
+    try:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(data, ensure_ascii=False, indent=2, sort_keys=True) + '\n',
+                        encoding='utf-8')
+    except OSError:
+        pass
+
+
+def _split_version(spec):
+    """`numpy@1.0.0` and `numpy==1.0.0` both pin a version."""
+    for marker in ('==', '@'):
+        if marker in spec:
+            name, _, version = spec.partition(marker)
+            name, version = name.strip(), version.strip()
+            if name and version:
+                return name, version
+    return spec.strip(), None
+
+
 def _install_from_folder(source, name_hint=None, origin=None):
     """Copy one library folder into the library home, without running it."""
     import shutil
@@ -321,6 +369,12 @@ def _install_from_folder(source, name_hint=None, origin=None):
     shutil.copytree(source, target, ignore=shutil.ignore_patterns('.git', '__pycache__'))
     registry.refresh()
     version = meta.get('version') or '؟'
+    _write_lock(name, {
+        'version': meta.get('version'),
+        'source': origin or str(source),
+        'requires': meta.get('requires') or [],
+        'libraries': meta.get('libraries') or [],
+    })
     print(f'تم تثبيت مكتبة {name} ({version}) في {target}')
     title = meta.get('title')
     if title:
@@ -361,6 +415,7 @@ def _library_install(spec):
         return _install_from_folder(local)
     # A plain name: the shipped index says which repo it is, by library name or
     # by the real Python package it wraps.
+    spec, version = _split_version(spec)
     if '/' not in spec and not spec.lower().startswith('http'):
         item = _index_match(spec.strip())
         if item and item.get('repo'):
@@ -372,11 +427,19 @@ def _library_install(spec):
         return _error(f'مش عارف أجيب مكتبة من: {spec}')
     owner, repo = source
     origin = f'https://github.com/{owner}/{repo}'
+    refs = None
+    if version:
+        # codeload wants the tag name itself, not refs/tags/... (a branch ref
+        # works either way, a tag ref does not).
+        refs = (f'v{version}', version)
     try:
-        data = _download_tarball(owner, repo)
+        data = _download_tarball(owner, repo, refs)
     except RuntimeError as error:
         return _error(f'تعذر الاتصال بـ GitHub: {error}')
     if data is None:
+        if version:
+            return _error(f'مفيش إصدار {version} في {owner}/{repo}. '
+                          'الإصدارات بتكون tags زي v1.0.0.')
         return _error(f'مفيش ريبو اسمه {owner}/{repo} على GitHub. '
                       'اتأكد من الاسم، أو استخدم مالك/ريبو.')
     workdir = Path(tempfile.mkdtemp(prefix='apl-lib-'))
@@ -483,11 +546,81 @@ def _library_search(word):
     return 0
 
 
+def _library_lock():
+    """عمار مكتبة قفل - what is installed, from where, at which version."""
+    data = _read_lock()
+    if not data:
+        print('مفيش قفل لسه. القفل بيتكتب لوحده أول ما تنزّل مكتبة.')
+        print(f'مكانه: {_lock_path()}')
+        return 0
+    from core.libraries import registry
+    registry.refresh()
+    home = _library_folder()
+    installed = {entry['name']: entry for entry in registry.ENTRIES
+                 if (home / entry['name']).is_dir()}
+    print(f'قفل المكتبات ({len(data)}):')
+    for name in sorted(data):
+        entry = data[name] or {}
+        version = entry.get('version') or 'أحدث نسخة'
+        line = f'  {name} {version}'
+        if name not in installed:
+            line += ' (مش مثبتة دلوقتي)'
+        source = entry.get('source')
+        if source:
+            line += f' — {source}'
+        print(line)
+        requires = entry.get('requires') or []
+        if requires:
+            print('    محتاجة من Python: ' + '، '.join(requires))
+    print(f'مكان القفل: {_lock_path()}')
+    print('رجّع كل حاجة زي ما هي بـ: عمار مكتبة استعادة')
+    return 0
+
+
+def _library_sync():
+    """عمار مكتبة استعادة - reinstall everything in the lock at its version.
+
+    The lockfile is what makes an install repeatable: another machine, or the
+    same machine after a library folder is gone, gets the same versions back.
+    """
+    data = _read_lock()
+    if not data:
+        print('مفيش قفل. نزّل مكتبة الأول، وبعدها القفل هيتكتب لوحده.')
+        return 0
+    from core.libraries import registry
+    registry.refresh()
+    home = _library_folder()
+    installed = {entry['name']: entry for entry in registry.ENTRIES
+                 if (home / entry['name']).is_dir()}
+    status = 0
+    done, ok, skipped = 0, 0, 0
+    for name in sorted(data):
+        entry = data[name] or {}
+        version = entry.get('version')
+        have = installed.get(name)
+        if have and (not version or have.get('version') == version):
+            print(f'  {name} {version or ""} — متسطبة بالفعل')
+            skipped += 1
+            continue
+        spec = f'{name}@{version}' if version else name
+        print(f'  بننزّل {spec}…')
+        code = _library_install(spec)
+        done += 1
+        if code == 0:
+            ok += 1
+        else:
+            status = 1
+    print(f'خلصنا: {ok} نزلت، {skipped} كانت موجودة'
+          + (f'، {done - ok} فشلت' if done - ok else ''))
+    return status
+
+
 def _library_remove(name):
     import shutil
     from core.libraries import registry
     home = _library_folder()
     folder = home / name
+    _write_lock(name, None)
     if folder.is_dir():
         shutil.rmtree(folder)
     else:
@@ -831,6 +964,10 @@ def _library(rest):
                 'search': _library_search}[action](args[0])
     if action in ('list', 'list-all'):
         return _library_list(action == 'list-all')
+    if action == 'lock':
+        return _library_lock()
+    if action == 'sync':
+        return _library_sync()
     return _library_usage()
 
 
