@@ -25,6 +25,7 @@ clear-cache, library) تعمل بنفس الطريقة.
 
 import difflib
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -39,6 +40,8 @@ ALIASES = {
     'مسح-الكاش': 'clear-cache', 'نظف': 'clear-cache',
     'مكتبة': 'library', 'مكتبات': 'library',
     'مثال': 'example', 'أمثلة': 'example', 'امثلة': 'example',
+    'تنسيق': 'format', 'نسّق': 'format', 'format': 'format',
+    'مسار': 'path', 'المسار': 'path', 'path': 'path',
     # English spellings
     'run': 'run', 'check': 'check', 'transpile': 'transpile', 'repl': 'repl',
     'version': 'version', 'help': 'help', 'clear-cache': 'clear-cache',
@@ -144,9 +147,18 @@ def _check(rest):
     try:
         source, _ = _compile(file)
     except Exception as error:
+        try:
+            text = Path(file).read_text(encoding='utf-8')
+        except OSError:
+            text = ''
+        for note in _lint(text, file):
+            print(f'  تنبيه: {note}', file=sys.stderr)
         print(diagnostic(error, None, source, file), file=sys.stderr)
         return 1
+    notes = _lint(source, file)
     print(f'سليم: {file}')
+    for note in notes:
+        print(f'  تنبيه: {note}')
     return 0
 
 
@@ -376,8 +388,18 @@ def _library_list(show_all):
     return 0
 
 
+def _library_index():
+    """The list of published libraries that ships with APL."""
+    import json
+    path = Path(__file__).resolve().parent.parent / 'data' / 'libraries.json'
+    try:
+        return json.loads(path.read_text(encoding='utf-8'))
+    except (OSError, ValueError):
+        return []
+
+
 def _library_search(word):
-    """Search installed packages, then the public GitHub organisation."""
+    """Search the shipped index and the installed packages, then GitHub."""
     import json
     import urllib.error
     import urllib.request
@@ -389,6 +411,14 @@ def _library_search(word):
         print(f'مثبتة عندك ({len(hits)}):')
         for entry in hits:
             print(f'  {entry["name"]} — {entry.get("title") or ""}')
+    catalogue = [item for item in _library_index()
+                 if needle in ' '.join((item.get('name', ''), item.get('title', ''))).lower()]
+    if catalogue:
+        print(f'متاحة للتحميل ({len(catalogue)}):')
+        for item in catalogue:
+            print(f'  {item["name"]} — {item["repo"]}')
+        print('نزّل واحدة بـ: عمار مكتبة تحميل <الاسم>')
+        return 0
     url = ('https://api.github.com/search/repositories?q=' + word
            + f'+user:{DEFAULT_OWNER}+in:name&per_page=10')
     request = urllib.request.Request(url, headers={'User-Agent': 'APL-package-manager',
@@ -485,6 +515,120 @@ def _match_example(items, wanted):
         if lowered in item.get('name', '').lower() or lowered in item.get('file', '').lower():
             return item
     return None
+
+
+def _path(rest):
+    """Add عمار to PATH, so it runs from any folder."""
+    action = rest[0] if rest else 'عرض'
+    if action in ('عرض', 'show'):
+        print('عشان تشغّل "عمار" من أي مجلد، ضيف مجلد المشروع للـ PATH.')
+        print('ويندوز: عمار مسار ثبت')
+        print('لينكس/ماك: عمار مسار ثبت')
+        return 0
+    if action not in ('ثبت', 'install', 'اضف', 'أضف'):
+        return _error('الاستخدام: عمار مسار [عرض|ثبت]')
+    import os
+    project = Path(__file__).resolve().parent.parent
+    launcher = project / ('عمار.cmd' if os.name == 'nt' else 'عمار')
+    if not launcher.is_file():
+        return _error(f'مفيش ملف تشغيل في {project}')
+    if os.name == 'nt':
+        target = Path(os.environ.get('LOCALAPPDATA', Path.home())) / 'APL'
+        target.mkdir(parents=True, exist_ok=True)
+        wrapper = target / 'عمار.cmd'
+        wrapper.write_text(f'@echo off\r\npython "{launcher}" %*\r\n', encoding='utf-8')
+        try:
+            import winreg
+            with winreg.OpenKey(winreg.HKEY_CURRENT_USER, 'Environment', 0,
+                                winreg.KEY_READ | winreg.KEY_WRITE) as key:
+                current, _ = winreg.QueryValueEx(key, 'Path')
+                parts = [item for item in current.split(';') if item]
+                if str(target) not in parts:
+                    parts.append(str(target))
+                    winreg.SetValueEx(key, 'Path', 0, winreg.REG_EXPAND_SZ, ';'.join(parts))
+                    print(f'تمت إضافة {target} للـ PATH. افتح نافذة جديدة وجرب: عمار نسخة')
+                else:
+                    print(f'{target} موجود في الـ PATH بالفعل.')
+        except OSError as error:
+            return _error(f'تعذر تعديل الـ PATH: {error}')
+        return 0
+    bin_dir = Path.home() / '.local' / 'bin'
+    bin_dir.mkdir(parents=True, exist_ok=True)
+    link = bin_dir / 'عمار'
+    try:
+        if link.exists() or link.is_symlink():
+            link.unlink()
+        # A wrapper, not a symlink: the launcher finds apl.py next to itself, and
+        # a symlink would point it at ~/.local/bin.
+        link.write_text('#!/bin/sh\nexec python3 "' + str(project / 'apl.py') + '" "$@"\n',
+                        encoding='utf-8')
+        link.chmod(0o755)
+    except OSError as error:
+        return _error(f'تعذر إنشاء الملف: {error}')
+    print(f'تم إنشاء {link}')
+    if str(bin_dir) not in os.environ.get('PATH', ''):
+        print(f'ضيف ده لملف ~/.profile:  export PATH="$HOME/.local/bin:$PATH"')
+    print('جرب في تيرمنال جديد: عمار نسخة')
+    return 0
+
+
+def _format_text(source: str) -> str:
+    """Reindent by structure, trim trailing spaces, squeeze blank lines."""
+    lines = source.replace('\r\n', '\n').replace('\t', '    ').split('\n')
+    result = []
+    blanks = 0
+    for line in lines:
+        stripped = line.strip()
+        if not stripped:
+            blanks += 1
+            if blanks <= 1:
+                result.append('')
+            continue
+        blanks = 0
+        depth = (len(line) - len(line.lstrip(' '))) // 4
+        result.append('    ' * depth + stripped)
+    while result and not result[-1]:
+        result.pop()
+    return '\n'.join(result) + '\n'
+
+
+def _format(rest):
+    if not rest:
+        return _error('حدد الملف. مثال: عمار تنسيق برنامج.apl')
+    write = '--كتابة' in rest or '--write' in rest
+    files = [item for item in rest if not item.startswith('--')]
+    if not files:
+        return _error('حدد الملف. مثال: عمار تنسيق برنامج.apl')
+    path = Path(files[0])
+    if not path.is_file():
+        return _error(f'الملف مش موجود: {path}')
+    source = path.read_text(encoding='utf-8')
+    formatted = _format_text(source)
+    if write:
+        if formatted != source:
+            path.write_text(formatted, encoding='utf-8')
+            print(f'تم تنسيق {path}')
+        else:
+            print(f'{path} منسّق أصلاً')
+        return 0
+    sys.stdout.write(formatted)
+    return 0
+
+
+def _lint(source: str, path: str) -> list:
+    """Cheap, honest checks: they never claim the program is correct."""
+    notes = []
+    for number, line in enumerate(source.split('\n'), 1):
+        if '\t' in line:
+            notes.append(f'{path}:{number}: فيه تاب، استخدم مسافات')
+        if line.rstrip() != line:
+            notes.append(f'{path}:{number}: مسافات زيادة في آخر السطر')
+        stripped = line.strip()
+        if stripped.startswith('لو ') and re.search(r'(?<![=!<>])=(?!=)', stripped):
+            notes.append(f'{path}:{number}: "=" جوه شرط، يمكن تقصد "=="')
+        if stripped.startswith('#') and 'TODO' in stripped.upper():
+            notes.append(f'{path}:{number}: TODO لسه موجود')
+    return notes
 
 
 def _example_usage():
@@ -615,6 +759,10 @@ def main(argv=None):
         return _library(argv)
     if command == 'example':
         return _example(argv)
+    if command == 'format':
+        return _format(argv)
+    if command == 'path':
+        return _path(argv)
     return _error(f'أمر غير معروف: {first}')
 
 
