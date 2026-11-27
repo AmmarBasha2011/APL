@@ -16,6 +16,12 @@ import subprocess
 import sys
 from pathlib import Path
 
+# Windows consoles default to a legacy code page; Arabic test names would crash
+# the reporter before it could report anything.
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+
 ROOT = Path(__file__).resolve().parent.parent
 CASES = Path(__file__).resolve().parent / "cases"
 APL = ROOT / "apl.py"
