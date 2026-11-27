@@ -7,7 +7,7 @@
     },
     {
       "path": "core/cli.py",
-      "bytes": 34957
+      "bytes": 37222
     },
     {
       "path": "core/libraries/__init__.py",
@@ -34,6 +34,10 @@
       "bytes": 6098
     },
     {
+      "path": "core/runner/debugger.py",
+      "bytes": 4343
+    },
+    {
       "path": "core/runner/execution.py",
       "bytes": 5730
     },
@@ -51,7 +55,7 @@
     },
     {
       "path": "core/runner/main.py",
-      "bytes": 62989
+      "bytes": 63175
     },
     {
       "path": "core/runner/patterns.py",
@@ -70,6 +74,6 @@
       "bytes": 20596
     }
   ],
-  "total_bytes": 198138,
-  "sha256": "2a7ffac8e6f26a6fc567fb29d0f9cc6416df0b0fceae0e7303892b9dd4d1c066"
+  "total_bytes": 204932,
+  "sha256": "d56300240e06f0fec60facb38acb48a06ac314e13075b4ae8aff206b942e2ce9"
 }

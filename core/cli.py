@@ -44,6 +44,8 @@ ALIASES = {
     'مسار': 'path', 'المسار': 'path', 'path': 'path',
     'بناء': 'build', 'ابن': 'build', 'ابنِ': 'build', 'حزّم': 'build',
     'build': 'build', 'exe': 'build',
+    'تتبع': 'trace', 'تتبّع': 'trace', 'trace': 'trace',
+    'مصحح': 'debug', 'مصحّح': 'debug', 'debug': 'debug',
     # English spellings
     'run': 'run', 'check': 'check', 'transpile': 'transpile', 'repl': 'repl',
     'version': 'version', 'help': 'help', 'clear-cache': 'clear-cache',
@@ -724,6 +726,54 @@ def _example(rest):
     return 0
 
 
+def _debug(rest, interactive):
+    """عمار تتبع ملف.apl / عمار مصحح ملف.apl [--توقف 3,7]"""
+    from core.runner.execution import Compilation
+    from core.runner.main import _RUNTIME
+    from core.runner.debugger import run as trace_run
+    args = [item for item in rest if not item.startswith('-')]
+    breakpoints = []
+    index = 0
+    while index < len(rest):
+        item = rest[index]
+        if item in ('--توقف', '--break') and index + 1 < len(rest):
+            for piece in rest[index + 1].replace('،', ',').split(','):
+                piece = piece.strip()
+                if piece.isdigit():
+                    breakpoints.append(int(piece))
+            index += 2
+            continue
+        index += 1
+    if not args:
+        return _error('حدد الملف. مثال: عمار تتبع برنامج.apl')
+    file = args[0]
+    try:
+        source = Path(file).read_text(encoding='utf-8')
+    except OSError as error:
+        return _error(f'مش قادر أقرا الملف: {error}')
+    try:
+        compilation = Compilation(source, file)
+    except Exception as error:
+        from core.runner.execution import diagnostic
+        print(diagnostic(error, None, source, file), file=sys.stderr)
+        return 1
+    namespace = {'__name__': '__main__'}
+    exec(compile(_RUNTIME, '<apl-runtime>', 'exec'), namespace)
+    # Everything the runtime prologue put there is machinery, not the user's
+    # program, so `متغيرات` shows only what the program itself created.
+    hidden = frozenset(namespace)
+    try:
+        return trace_run(compilation, namespace, interactive=interactive,
+                         breakpoints=breakpoints, source=source, hidden=hidden)
+    except SystemExit:
+        print('اتوقف المصحح.')
+        return 0
+    except Exception as error:
+        from core.runner.execution import diagnostic
+        print(diagnostic(error, compilation, source, file), file=sys.stderr)
+        return 1
+
+
 def _build(rest):
     """عمار بناء [ملف.apl] [--اسم اسم] — ملف تنفيذي مستقل.
 
@@ -847,6 +897,10 @@ def main(argv=None):
         return _path(argv)
     if command == 'build':
         return _build(argv)
+    if command == 'trace':
+        return _debug(argv, interactive=False)
+    if command == 'debug':
+        return _debug(argv, interactive=True)
     return _error(f'أمر غير معروف: {first}')
 
 
