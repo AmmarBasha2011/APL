@@ -1,0 +1,82 @@
+name: بناء الملفات التنفيذية
+
+# يدوي بالكامل: من تبويب Actions اختر "بناء الملفات التنفيذية" ثم Run workflow.
+# ينتج ملف تنفيذي واحد للويندوز (.exe) وواحد للينكس، بدون ماك.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            name: لينكس
+            artifact: APL-linux
+            ext: ""
+          - os: windows-latest
+            name: ويندوز
+            artifact: APL-windows
+            ext: ".exe"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: تثبيت PyInstaller
+        run: python -m pip install --upgrade pip pyinstaller
+
+      - name: بناء الملف التنفيذي
+        shell: bash
+        run: |
+          set -euo pipefail
+          sep=":"
+          if [ "${{ runner.os }}" = "Windows" ]; then sep=";"; fi
+          python -m PyInstaller \
+            --onefile --console --name apl \
+            --paths . \
+            --add-data "core/libraries/registry.json${sep}core/libraries" \
+            --add-data "core/libraries/index.json${sep}core/libraries" \
+            --collect-submodules core.libraries \
+            apl.py
+
+      - name: تجهيز الحزمة
+        shell: bash
+        run: |
+          set -euo pipefail
+          ext="${{ matrix.ext }}"
+          mkdir -p package
+          cp "dist/apl$ext" "package/عمار$ext"
+          cp "dist/apl$ext" "package/apl$ext"
+          {
+            printf 'APL - لغة عمار البرمجية\n\n'
+            printf 'تشغيل برنامج:   عمار شغل برنامج.apl\n'
+            printf 'المساعدة:       عمار مساعدة\n'
+            printf 'المكتبات:       عمار مكتبة قائمة\n'
+          } > "package/اقرأني.txt"
+
+      - name: اختبار الملف التنفيذي
+        shell: bash
+        run: |
+          set -euo pipefail
+          ext="${{ matrix.ext }}"
+          printf 'اطبع "أهلاً من الملف التنفيذي"\n' > hello.apl
+          "./package/apl$ext" نسخة
+          "./package/apl$ext" شغل hello.apl
+          "./package/apl$ext" مكتبة قائمة | head -n 1
+          "./package/apl$ext" فحص hello.apl
+
+      - name: رفع الملفات
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: package/*
+          if-no-files-found: error
