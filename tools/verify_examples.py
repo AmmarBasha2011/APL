@@ -15,6 +15,7 @@ it, so the list can be worked through instead of guessed at.
     python tools/verify_examples.py --dir . --json > report.json
     python tools/verify_examples.py --dir . --only 12-  # examples 12 and up
     python tools/verify_examples.py --dir . --fast     # thousands of examples, seconds
+    python tools/verify_examples.py --dir . --sample 30  # عيّنة موزّعة على المجلد
 
 --fast runs the whole folder inside one interpreter with a per-program alarm,
 which is the same compile-and-execute path without a process per example: the
@@ -246,6 +247,19 @@ def run_fast(programs, timeout: float):
     return outcomes
 
 
+def spread(programs, count):
+    """A spread-out sample: every k-th program, so a run covers the whole folder
+    instead of only its first entries."""
+    if count is None:
+        return list(programs)
+    if count <= 0:
+        return []
+    if count >= len(programs):
+        return list(programs)
+    step = len(programs) / count
+    return [programs[min(int(i * step), len(programs) - 1)] for i in range(count)]
+
+
 def wanted(name: str, only) -> bool:
     if not only:
         return True
@@ -260,6 +274,8 @@ def main(argv=None) -> int:
     parser.add_argument("--timeout", type=float, default=20.0)
     parser.add_argument("--only", type=int, default=None, help="start at this example number")
     parser.add_argument("--limit", type=int, default=None)
+    parser.add_argument("--sample", type=int, default=None,
+                        help="عدد الأمثلة في عيّنة موزّعة على المجلد كله")
     parser.add_argument("--json", action="store_true")
     parser.add_argument("--no-playground", action="store_true")
     parser.add_argument("--fast", action="store_true",
@@ -271,6 +287,8 @@ def main(argv=None) -> int:
     if not programs:
         print(f"مفيش أمثلة في {folder}")
         return 1
+    if args.sample is not None:
+        programs = spread(programs, args.sample)
 
     if args.fast:
         if not hasattr(signal, "SIGALRM"):
