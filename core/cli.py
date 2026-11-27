@@ -38,10 +38,11 @@ ALIASES = {
     'مساعدة': 'help', 'دليل': 'help',
     'مسح-الكاش': 'clear-cache', 'نظف': 'clear-cache',
     'مكتبة': 'library', 'مكتبات': 'library',
+    'مثال': 'example', 'أمثلة': 'example', 'امثلة': 'example',
     # English spellings
     'run': 'run', 'check': 'check', 'transpile': 'transpile', 'repl': 'repl',
     'version': 'version', 'help': 'help', 'clear-cache': 'clear-cache',
-    'library': 'library',
+    'library': 'library', 'example': 'example',
 }
 
 #: Sub-commands of `عمار مكتبة`.
@@ -431,6 +432,117 @@ def _library_remove(name):
     return 0
 
 
+EXAMPLES_REPO = 'AmmarBasha2011/APL-Examples'
+EXAMPLES_BRANCH = 'main'
+
+
+def _examples_index(force=False):
+    """The example list published in APL-Examples, cached for a day."""
+    import json
+    import time
+    import urllib.error
+    import urllib.request
+    cache = _library_folder().parent / 'examples-index.json'
+    if not force and cache.is_file() and time.time() - cache.stat().st_mtime < 86400:
+        try:
+            return json.loads(cache.read_text(encoding='utf-8'))
+        except ValueError:
+            pass
+    url = (f'https://raw.githubusercontent.com/{EXAMPLES_REPO}/{EXAMPLES_BRANCH}/index.json')
+    request = urllib.request.Request(url, headers={'User-Agent': 'APL-examples'})
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            data = json.loads(response.read().decode('utf-8'))
+    except (urllib.error.URLError, OSError, ValueError) as error:
+        if cache.is_file():
+            try:
+                return json.loads(cache.read_text(encoding='utf-8'))
+            except ValueError:
+                pass
+        raise RuntimeError(f'تعذر جلب قائمة الأمثلة: {error}') from error
+    try:
+        cache.parent.mkdir(parents=True, exist_ok=True)
+        cache.write_text(json.dumps(data, ensure_ascii=False), encoding='utf-8')
+    except OSError:
+        pass
+    return data
+
+
+def _match_example(items, wanted):
+    """Find one example by number, exact name, file name or part of the name."""
+    wanted = str(wanted).strip()
+    lowered = wanted.lower()
+    for item in items:
+        if str(item.get('number')) == wanted:
+            return item
+    for item in items:
+        if str(item.get('number')).lstrip('0') == wanted.lstrip('0'):
+            return item
+    for item in items:
+        if item.get('file', '').lower() == lowered or item.get('name', '').lower() == lowered:
+            return item
+    for item in items:
+        if lowered in item.get('name', '').lower() or lowered in item.get('file', '').lower():
+            return item
+    return None
+
+
+def _example_usage():
+    print('الاستخدام: عمار مثال [حمل|جرب|قائمة] [الرقم أو الاسم]')
+    print('  عمار مثال حمل <رقم/اسم>   تنزيل مثال في المجلد الحالي')
+    print('  عمار مثال جرب <رقم/اسم>   تنزيل المثال وتشغيله')
+    print('  عمار مثال قائمة           كل الأمثلة')
+    print(f'الأمثلة كلها في: https://github.com/{EXAMPLES_REPO}')
+    return 0
+
+
+def _example(rest):
+    import urllib.error
+    import urllib.request
+    if not rest:
+        return _example_usage()
+    action = rest[0]
+    aliases = {'حمل': 'get', 'نزل': 'get', 'تحميل': 'get', 'get': 'get', 'download': 'get',
+               'جرب': 'try', 'شغل': 'try', 'شغّل': 'try', 'try': 'try', 'run': 'try',
+               'قائمة': 'list', 'list': 'list'}
+    action = aliases.get(action, action)
+    try:
+        items = _examples_index()
+    except RuntimeError as error:
+        return _error(str(error))
+    if action == 'list':
+        print(f'الأمثلة ({len(items)}):')
+        for item in items:
+            print(f'  {item["number"]}. {item["name"]} — {item["summary"]}')
+        return 0
+    if action not in ('get', 'try'):
+        return _example_usage()
+    if len(rest) < 2:
+        return _error('حدد رقم أو اسم المثال. مثال: عمار مثال حمل 1')
+    item = _match_example(items, rest[1])
+    if item is None:
+        close = [entry['name'] for entry in items if rest[1].lower() in entry['name'].lower()][:3]
+        hint = f' يمكن تقصد: {"، ".join(close)}' if close else ''
+        return _error(f'مفيش مثال بالرقم أو الاسم ده: {rest[1]}.{hint}')
+    url = (f'https://raw.githubusercontent.com/{EXAMPLES_REPO}/{EXAMPLES_BRANCH}/'
+           f'examples/{item["file"]}')
+    request = urllib.request.Request(url, headers={'User-Agent': 'APL-examples'})
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            data = response.read()
+    except (urllib.error.URLError, OSError) as error:
+        return _error(f'تعذر تنزيل المثال: {error}')
+    target = Path(item['file'])
+    target.write_bytes(data)
+    print(f'تم تنزيل المثال {item["number"]}. {item["name"]} في {target}')
+    print(f'  {item["summary"]}')
+    if action == 'try':
+        print('--- التشغيل ---')
+        return _run([str(target)])
+    print(f'شغّله بـ: عمار شغل {target.name}')
+    return 0
+
+
 def _library(rest):
     if not rest:
         return _library_usage()
@@ -501,6 +613,8 @@ def main(argv=None):
         return 0
     if command == 'library':
         return _library(argv)
+    if command == 'example':
+        return _example(argv)
     return _error(f'أمر غير معروف: {first}')
 
 
