@@ -1,532 +1,577 @@
 [
- {
-  "name": "acp",
-  "repo": "AmmarBasha2011/apl-acp",
-  "title": "مكتبة acp للغة APL"
- },
- {
-  "name": "advanced",
-  "repo": "AmmarBasha2011/apl-advanced",
-  "title": "مكتبة advanced للغة APL"
- },
- {
-  "name": "aiohttp",
-  "repo": "AmmarBasha2011/apl-aiohttp",
-  "title": "مكتبة aiohttp للغة APL"
- },
- {
-  "name": "archive",
-  "repo": "AmmarBasha2011/apl-archive",
-  "title": "مكتبة archive للغة APL"
- },
- {
-  "name": "argparse",
-  "repo": "AmmarBasha2011/apl-argparse",
-  "title": "مكتبة argparse للغة APL"
- },
- {
-  "name": "astropy_ext",
-  "repo": "AmmarBasha2011/apl-astropy_ext",
-  "title": "مكتبة astropy_ext للغة APL"
- },
- {
-  "name": "asyncio",
-  "repo": "AmmarBasha2011/apl-asyncio",
-  "title": "مكتبة asyncio للغة APL"
- },
- {
-  "name": "base64",
-  "repo": "AmmarBasha2011/apl-base64",
-  "title": "مكتبة base64 للغة APL"
- },
- {
-  "name": "black",
-  "repo": "AmmarBasha2011/apl-black",
-  "title": "مكتبة black للغة APL"
- },
- {
-  "name": "bokeh_ext",
-  "repo": "AmmarBasha2011/apl-bokeh_ext",
-  "title": "مكتبة bokeh_ext للغة APL"
- },
- {
-  "name": "botdeep",
-  "repo": "AmmarBasha2011/apl-botdeep",
-  "title": "مكتبة botdeep للغة APL"
- },
- {
-  "name": "cachetools",
-  "repo": "AmmarBasha2011/apl-cachetools",
-  "title": "مكتبة cachetools للغة APL"
- },
- {
-  "name": "cdp_use",
-  "repo": "AmmarBasha2011/apl-cdp_use",
-  "title": "مكتبة cdp_use للغة APL"
- },
- {
-  "name": "celery",
-  "repo": "AmmarBasha2011/apl-celery",
-  "title": "مكتبة celery للغة APL"
- },
- {
-  "name": "collections",
-  "repo": "AmmarBasha2011/apl-collections",
-  "title": "مكتبة collections للغة APL"
- },
- {
-  "name": "configparser",
-  "repo": "AmmarBasha2011/apl-configparser",
-  "title": "مكتبة configparser للغة APL"
- },
- {
-  "name": "crypto_ext",
-  "repo": "AmmarBasha2011/apl-crypto_ext",
-  "title": "مكتبة crypto_ext للغة APL"
- },
- {
-  "name": "csv",
-  "repo": "AmmarBasha2011/apl-csv",
-  "title": "مكتبة csv للغة APL"
- },
- {
-  "name": "cv2_ext",
-  "repo": "AmmarBasha2011/apl-cv2_ext",
-  "title": "مكتبة cv2_ext للغة APL"
- },
- {
-  "name": "dataclasses",
-  "repo": "AmmarBasha2011/apl-dataclasses",
-  "title": "مكتبة dataclasses للغة APL"
- },
- {
-  "name": "datadeep",
-  "repo": "AmmarBasha2011/apl-datadeep",
-  "title": "مكتبة datadeep للغة APL"
- },
- {
-  "name": "datafiles",
-  "repo": "AmmarBasha2011/apl-datafiles",
-  "title": "مكتبة datafiles للغة APL"
- },
- {
-  "name": "datetime",
-  "repo": "AmmarBasha2011/apl-datetime",
-  "title": "مكتبة datetime للغة APL"
- },
- {
-  "name": "decimal",
-  "repo": "AmmarBasha2011/apl-decimal",
-  "title": "مكتبة decimal للغة APL"
- },
- {
-  "name": "devtools",
-  "repo": "AmmarBasha2011/apl-devtools",
-  "title": "مكتبة devtools للغة APL"
- },
- {
-  "name": "docutils_ext",
-  "repo": "AmmarBasha2011/apl-docutils_ext",
-  "title": "مكتبة docutils_ext للغة APL"
- },
- {
-  "name": "enum",
-  "repo": "AmmarBasha2011/apl-enum",
-  "title": "مكتبة enum للغة APL"
- },
- {
-  "name": "faker",
-  "repo": "AmmarBasha2011/apl-faker",
-  "title": "مكتبة faker للغة APL"
- },
- {
-  "name": "fastapi",
-  "repo": "AmmarBasha2011/apl-fastapi",
-  "title": "مكتبة fastapi للغة APL"
- },
- {
-  "name": "flask",
-  "repo": "AmmarBasha2011/apl-flask",
-  "title": "مكتبة flask للغة APL"
- },
- {
-  "name": "fractions",
-  "repo": "AmmarBasha2011/apl-fractions",
-  "title": "مكتبة fractions للغة APL"
- },
- {
-  "name": "functools",
-  "repo": "AmmarBasha2011/apl-functools",
-  "title": "مكتبة functools للغة APL"
- },
- {
-  "name": "getpass",
-  "repo": "AmmarBasha2011/apl-getpass",
-  "title": "مكتبة getpass للغة APL"
- },
- {
-  "name": "hashlib",
-  "repo": "AmmarBasha2011/apl-hashlib",
-  "title": "مكتبة hashlib للغة APL"
- },
- {
-  "name": "humanize",
-  "repo": "AmmarBasha2011/apl-humanize",
-  "title": "مكتبة humanize للغة APL"
- },
- {
-  "name": "idlelib",
-  "repo": "AmmarBasha2011/apl-idlelib",
-  "title": "مكتبة idlelib للغة APL"
- },
- {
-  "name": "itertools",
-  "repo": "AmmarBasha2011/apl-itertools",
-  "title": "مكتبة itertools للغة APL"
- },
- {
-  "name": "json",
-  "repo": "AmmarBasha2011/apl-json",
-  "title": "مكتبة json للغة APL"
- },
- {
-  "name": "lightgbm",
-  "repo": "AmmarBasha2011/apl-lightgbm",
-  "title": "مكتبة lightgbm للغة APL"
- },
- {
-  "name": "logging",
-  "repo": "AmmarBasha2011/apl-logging",
-  "title": "مكتبة logging للغة APL"
- },
- {
-  "name": "math",
-  "repo": "AmmarBasha2011/apl-math",
-  "title": "مكتبة math للغة APL"
- },
- {
-  "name": "matplotlib_ext",
-  "repo": "AmmarBasha2011/apl-matplotlib_ext",
-  "title": "مكتبة matplotlib_ext للغة APL"
- },
- {
-  "name": "mediadeep",
-  "repo": "AmmarBasha2011/apl-mediadeep",
-  "title": "مكتبة mediadeep للغة APL"
- },
- {
-  "name": "more_itertools",
-  "repo": "AmmarBasha2011/apl-more_itertools",
-  "title": "مكتبة more_itertools للغة APL"
- },
- {
-  "name": "mypy",
-  "repo": "AmmarBasha2011/apl-mypy",
-  "title": "مكتبة mypy للغة APL"
- },
- {
-  "name": "net",
-  "repo": "AmmarBasha2011/apl-net",
-  "title": "مكتبة net للغة APL"
- },
- {
-  "name": "nltk_ext",
-  "repo": "AmmarBasha2011/apl-nltk_ext",
-  "title": "مكتبة nltk_ext للغة APL"
- },
- {
-  "name": "numdeep",
-  "repo": "AmmarBasha2011/apl-numdeep",
-  "title": "مكتبة numdeep للغة APL"
- },
- {
-  "name": "numpy",
-  "repo": "AmmarBasha2011/apl-numpy",
-  "title": "مكتبة numpy للغة APL"
- },
- {
-  "name": "openai",
-  "repo": "AmmarBasha2011/apl-openai",
-  "title": "مكتبة openai للغة APL"
- },
- {
-  "name": "openpyxl_ext",
-  "repo": "AmmarBasha2011/apl-openpyxl_ext",
-  "title": "مكتبة openpyxl_ext للغة APL"
- },
- {
-  "name": "operator",
-  "repo": "AmmarBasha2011/apl-operator",
-  "title": "مكتبة operator للغة APL"
- },
- {
-  "name": "optuna",
-  "repo": "AmmarBasha2011/apl-optuna",
-  "title": "مكتبة optuna للغة APL"
- },
- {
-  "name": "os",
-  "repo": "AmmarBasha2011/apl-os",
-  "title": "مكتبة os للغة APL"
- },
- {
-  "name": "pandas_ext",
-  "repo": "AmmarBasha2011/apl-pandas_ext",
-  "title": "مكتبة pandas_ext للغة APL"
- },
- {
-  "name": "pathlib",
-  "repo": "AmmarBasha2011/apl-pathlib",
-  "title": "مكتبة pathlib للغة APL"
- },
- {
-  "name": "pkgs_ext1",
-  "repo": "AmmarBasha2011/apl-pkgs_ext1",
-  "title": "مكتبة pkgs_ext1 للغة APL"
- },
- {
-  "name": "pkgs_ext2",
-  "repo": "AmmarBasha2011/apl-pkgs_ext2",
-  "title": "مكتبة pkgs_ext2 للغة APL"
- },
- {
-  "name": "plotly_ext",
-  "repo": "AmmarBasha2011/apl-plotly_ext",
-  "title": "مكتبة plotly_ext للغة APL"
- },
- {
-  "name": "polars",
-  "repo": "AmmarBasha2011/apl-polars",
-  "title": "مكتبة polars للغة APL"
- },
- {
-  "name": "pprint",
-  "repo": "AmmarBasha2011/apl-pprint",
-  "title": "مكتبة pprint للغة APL"
- },
- {
-  "name": "pygdeep",
-  "repo": "AmmarBasha2011/apl-pygdeep",
-  "title": "مكتبة pygdeep للغة APL"
- },
- {
-  "name": "random",
-  "repo": "AmmarBasha2011/apl-random",
-  "title": "مكتبة random للغة APL"
- },
- {
-  "name": "re",
-  "repo": "AmmarBasha2011/apl-re",
-  "title": "مكتبة re للغة APL"
- },
- {
-  "name": "redis",
-  "repo": "AmmarBasha2011/apl-redis",
-  "title": "مكتبة redis للغة APL"
- },
- {
-  "name": "requests",
-  "repo": "AmmarBasha2011/apl-requests",
-  "title": "مكتبة requests للغة APL"
- },
- {
-  "name": "scipy",
-  "repo": "AmmarBasha2011/apl-scipy",
-  "title": "مكتبة scipy للغة APL"
- },
- {
-  "name": "secauth",
-  "repo": "AmmarBasha2011/apl-secauth",
-  "title": "مكتبة secauth للغة APL"
- },
- {
-  "name": "secdeep",
-  "repo": "AmmarBasha2011/apl-secdeep",
-  "title": "مكتبة secdeep للغة APL"
- },
- {
-  "name": "secrets",
-  "repo": "AmmarBasha2011/apl-secrets",
-  "title": "مكتبة secrets للغة APL"
- },
- {
-  "name": "shutil",
-  "repo": "AmmarBasha2011/apl-shutil",
-  "title": "مكتبة shutil للغة APL"
- },
- {
-  "name": "sortedcontainers",
-  "repo": "AmmarBasha2011/apl-sortedcontainers",
-  "title": "مكتبة sortedcontainers للغة APL"
- },
- {
-  "name": "spacy",
-  "repo": "AmmarBasha2011/apl-spacy",
-  "title": "مكتبة spacy للغة APL"
- },
- {
-  "name": "sphinx_ext",
-  "repo": "AmmarBasha2011/apl-sphinx_ext",
-  "title": "مكتبة sphinx_ext للغة APL"
- },
- {
-  "name": "sqlalchemy_ext",
-  "repo": "AmmarBasha2011/apl-sqlalchemy_ext",
-  "title": "مكتبة sqlalchemy_ext للغة APL"
- },
- {
-  "name": "sqlite3",
-  "repo": "AmmarBasha2011/apl-sqlite3",
-  "title": "مكتبة sqlite3 للغة APL"
- },
- {
-  "name": "statistics",
-  "repo": "AmmarBasha2011/apl-statistics",
-  "title": "مكتبة statistics للغة APL"
- },
- {
-  "name": "statsmodels_ext",
-  "repo": "AmmarBasha2011/apl-statsmodels_ext",
-  "title": "مكتبة statsmodels_ext للغة APL"
- },
- {
-  "name": "stdfull",
-  "repo": "AmmarBasha2011/apl-stdfull",
-  "title": "مكتبة stdfull للغة APL"
- },
- {
-  "name": "stdlib_ext",
-  "repo": "AmmarBasha2011/apl-stdlib_ext",
-  "title": "مكتبة stdlib_ext للغة APL"
- },
- {
-  "name": "storedeep",
-  "repo": "AmmarBasha2011/apl-storedeep",
-  "title": "مكتبة storedeep للغة APL"
- },
- {
-  "name": "string",
-  "repo": "AmmarBasha2011/apl-string",
-  "title": "مكتبة string للغة APL"
- },
- {
-  "name": "subprocess",
-  "repo": "AmmarBasha2011/apl-subprocess",
-  "title": "مكتبة subprocess للغة APL"
- },
- {
-  "name": "sympy_ext",
-  "repo": "AmmarBasha2011/apl-sympy_ext",
-  "title": "مكتبة sympy_ext للغة APL"
- },
- {
-  "name": "syslib",
-  "repo": "AmmarBasha2011/apl-syslib",
-  "title": "مكتبة syslib للغة APL"
- },
- {
-  "name": "taskdeep",
-  "repo": "AmmarBasha2011/apl-taskdeep",
-  "title": "مكتبة taskdeep للغة APL"
- },
- {
-  "name": "telegram",
-  "repo": "AmmarBasha2011/apl-telegram",
-  "title": "مكتبة telegram للغة APL"
- },
- {
-  "name": "tenacity",
-  "repo": "AmmarBasha2011/apl-tenacity",
-  "title": "مكتبة tenacity للغة APL"
- },
- {
-  "name": "textdata",
-  "repo": "AmmarBasha2011/apl-textdata",
-  "title": "مكتبة textdata للغة APL"
- },
- {
-  "name": "textual",
-  "repo": "AmmarBasha2011/apl-textual",
-  "title": "مكتبة textual للغة APL"
- },
- {
-  "name": "textwrap",
-  "repo": "AmmarBasha2011/apl-textwrap",
-  "title": "مكتبة textwrap للغة APL"
- },
- {
-  "name": "threading",
-  "repo": "AmmarBasha2011/apl-threading",
-  "title": "مكتبة threading للغة APL"
- },
- {
-  "name": "time",
-  "repo": "AmmarBasha2011/apl-time",
-  "title": "مكتبة time للغة APL"
- },
- {
-  "name": "twisted_ext",
-  "repo": "AmmarBasha2011/apl-twisted_ext",
-  "title": "مكتبة twisted_ext للغة APL"
- },
- {
-  "name": "unittest",
-  "repo": "AmmarBasha2011/apl-unittest",
-  "title": "مكتبة unittest للغة APL"
- },
- {
-  "name": "urllib",
-  "repo": "AmmarBasha2011/apl-urllib",
-  "title": "مكتبة urllib للغة APL"
- },
- {
-  "name": "utildeep",
-  "repo": "AmmarBasha2011/apl-utildeep",
-  "title": "مكتبة utildeep للغة APL"
- },
- {
-  "name": "utiltools",
-  "repo": "AmmarBasha2011/apl-utiltools",
-  "title": "مكتبة utiltools للغة APL"
- },
- {
-  "name": "uuid",
-  "repo": "AmmarBasha2011/apl-uuid",
-  "title": "مكتبة uuid للغة APL"
- },
- {
-  "name": "web",
-  "repo": "AmmarBasha2011/apl-web",
-  "title": "مكتبة web للغة APL"
- },
- {
-  "name": "webdeep",
-  "repo": "AmmarBasha2011/apl-webdeep",
-  "title": "مكتبة webdeep للغة APL"
- },
- {
-  "name": "weblibs",
-  "repo": "AmmarBasha2011/apl-weblibs",
-  "title": "مكتبة weblibs للغة APL"
- },
- {
-  "name": "webserver",
-  "repo": "AmmarBasha2011/apl-webserver",
-  "title": "مكتبة webserver للغة APL"
- },
- {
-  "name": "xgboost",
-  "repo": "AmmarBasha2011/apl-xgboost",
-  "title": "مكتبة xgboost للغة APL"
- },
- {
-  "name": "xml",
-  "repo": "AmmarBasha2011/apl-xml",
-  "title": "مكتبة xml للغة APL"
- },
- {
-  "name": "zoneinfo",
-  "repo": "AmmarBasha2011/apl-zoneinfo",
-  "title": "مكتبة zoneinfo للغة APL"
- }
+  {
+    "name": "acp",
+    "repo": "AmmarBasha2011/apl-acp",
+    "title": "مكتبة acp للغة APL"
+  },
+  {
+    "name": "advanced",
+    "repo": "AmmarBasha2011/apl-advanced",
+    "title": "مكتبة advanced للغة APL"
+  },
+  {
+    "name": "aiohttp",
+    "repo": "AmmarBasha2011/apl-aiohttp",
+    "title": "مكتبة aiohttp للغة APL"
+  },
+  {
+    "name": "archive",
+    "repo": "AmmarBasha2011/apl-archive",
+    "title": "مكتبة archive للغة APL"
+  },
+  {
+    "name": "argparse",
+    "repo": "AmmarBasha2011/apl-argparse",
+    "title": "مكتبة argparse للغة APL"
+  },
+  {
+    "name": "arrow",
+    "repo": "AmmarBasha2011/apl-arrow",
+    "title": "مكتبة arrow — التواريخ والأوقات للغة APL",
+    "package": "arrow",
+    "requires": [
+      "arrow"
+    ]
+  },
+  {
+    "name": "astropy_ext",
+    "repo": "AmmarBasha2011/apl-astropy_ext",
+    "title": "مكتبة astropy_ext للغة APL"
+  },
+  {
+    "name": "asyncio",
+    "repo": "AmmarBasha2011/apl-asyncio",
+    "title": "مكتبة asyncio للغة APL"
+  },
+  {
+    "name": "base64",
+    "repo": "AmmarBasha2011/apl-base64",
+    "title": "مكتبة base64 للغة APL"
+  },
+  {
+    "name": "black",
+    "repo": "AmmarBasha2011/apl-black",
+    "title": "مكتبة black للغة APL"
+  },
+  {
+    "name": "bokeh_ext",
+    "repo": "AmmarBasha2011/apl-bokeh_ext",
+    "title": "مكتبة bokeh_ext للغة APL"
+  },
+  {
+    "name": "botdeep",
+    "repo": "AmmarBasha2011/apl-botdeep",
+    "title": "مكتبة botdeep للغة APL"
+  },
+  {
+    "name": "cachetools",
+    "repo": "AmmarBasha2011/apl-cachetools",
+    "title": "مكتبة cachetools للغة APL"
+  },
+  {
+    "name": "cdp_use",
+    "repo": "AmmarBasha2011/apl-cdp_use",
+    "title": "مكتبة cdp_use للغة APL"
+  },
+  {
+    "name": "celery",
+    "repo": "AmmarBasha2011/apl-celery",
+    "title": "مكتبة celery للغة APL"
+  },
+  {
+    "name": "collections",
+    "repo": "AmmarBasha2011/apl-collections",
+    "title": "مكتبة collections للغة APL"
+  },
+  {
+    "name": "colorama",
+    "repo": "AmmarBasha2011/apl-colorama",
+    "title": "مكتبة colorama — ألوان الطرفية للغة APL",
+    "package": "colorama",
+    "requires": [
+      "colorama"
+    ]
+  },
+  {
+    "name": "configparser",
+    "repo": "AmmarBasha2011/apl-configparser",
+    "title": "مكتبة configparser للغة APL"
+  },
+  {
+    "name": "crypto_ext",
+    "repo": "AmmarBasha2011/apl-crypto_ext",
+    "title": "مكتبة crypto_ext للغة APL"
+  },
+  {
+    "name": "csv",
+    "repo": "AmmarBasha2011/apl-csv",
+    "title": "مكتبة csv للغة APL"
+  },
+  {
+    "name": "cv2_ext",
+    "repo": "AmmarBasha2011/apl-cv2_ext",
+    "title": "مكتبة cv2_ext للغة APL"
+  },
+  {
+    "name": "dataclasses",
+    "repo": "AmmarBasha2011/apl-dataclasses",
+    "title": "مكتبة dataclasses للغة APL"
+  },
+  {
+    "name": "datadeep",
+    "repo": "AmmarBasha2011/apl-datadeep",
+    "title": "مكتبة datadeep للغة APL"
+  },
+  {
+    "name": "datafiles",
+    "repo": "AmmarBasha2011/apl-datafiles",
+    "title": "مكتبة datafiles للغة APL"
+  },
+  {
+    "name": "datetime",
+    "repo": "AmmarBasha2011/apl-datetime",
+    "title": "مكتبة datetime للغة APL"
+  },
+  {
+    "name": "decimal",
+    "repo": "AmmarBasha2011/apl-decimal",
+    "title": "مكتبة decimal للغة APL"
+  },
+  {
+    "name": "devtools",
+    "repo": "AmmarBasha2011/apl-devtools",
+    "title": "مكتبة devtools للغة APL"
+  },
+  {
+    "name": "docutils_ext",
+    "repo": "AmmarBasha2011/apl-docutils_ext",
+    "title": "مكتبة docutils_ext للغة APL"
+  },
+  {
+    "name": "enum",
+    "repo": "AmmarBasha2011/apl-enum",
+    "title": "مكتبة enum للغة APL"
+  },
+  {
+    "name": "faker",
+    "repo": "AmmarBasha2011/apl-faker",
+    "title": "مكتبة faker للغة APL"
+  },
+  {
+    "name": "fastapi",
+    "repo": "AmmarBasha2011/apl-fastapi",
+    "title": "مكتبة fastapi للغة APL"
+  },
+  {
+    "name": "flask",
+    "repo": "AmmarBasha2011/apl-flask",
+    "title": "مكتبة flask للغة APL"
+  },
+  {
+    "name": "fractions",
+    "repo": "AmmarBasha2011/apl-fractions",
+    "title": "مكتبة fractions للغة APL"
+  },
+  {
+    "name": "functools",
+    "repo": "AmmarBasha2011/apl-functools",
+    "title": "مكتبة functools للغة APL"
+  },
+  {
+    "name": "getpass",
+    "repo": "AmmarBasha2011/apl-getpass",
+    "title": "مكتبة getpass للغة APL"
+  },
+  {
+    "name": "hashlib",
+    "repo": "AmmarBasha2011/apl-hashlib",
+    "title": "مكتبة hashlib للغة APL"
+  },
+  {
+    "name": "humanize",
+    "repo": "AmmarBasha2011/apl-humanize",
+    "title": "مكتبة humanize للغة APL"
+  },
+  {
+    "name": "idlelib",
+    "repo": "AmmarBasha2011/apl-idlelib",
+    "title": "مكتبة idlelib للغة APL"
+  },
+  {
+    "name": "itertools",
+    "repo": "AmmarBasha2011/apl-itertools",
+    "title": "مكتبة itertools للغة APL"
+  },
+  {
+    "name": "json",
+    "repo": "AmmarBasha2011/apl-json",
+    "title": "مكتبة json للغة APL"
+  },
+  {
+    "name": "lightgbm",
+    "repo": "AmmarBasha2011/apl-lightgbm",
+    "title": "مكتبة lightgbm للغة APL"
+  },
+  {
+    "name": "logging",
+    "repo": "AmmarBasha2011/apl-logging",
+    "title": "مكتبة logging للغة APL"
+  },
+  {
+    "name": "math",
+    "repo": "AmmarBasha2011/apl-math",
+    "title": "مكتبة math للغة APL"
+  },
+  {
+    "name": "matplotlib_ext",
+    "repo": "AmmarBasha2011/apl-matplotlib_ext",
+    "title": "مكتبة matplotlib_ext للغة APL"
+  },
+  {
+    "name": "mediadeep",
+    "repo": "AmmarBasha2011/apl-mediadeep",
+    "title": "مكتبة mediadeep للغة APL"
+  },
+  {
+    "name": "more_itertools",
+    "repo": "AmmarBasha2011/apl-more_itertools",
+    "title": "مكتبة more_itertools للغة APL"
+  },
+  {
+    "name": "mypy",
+    "repo": "AmmarBasha2011/apl-mypy",
+    "title": "مكتبة mypy للغة APL"
+  },
+  {
+    "name": "net",
+    "repo": "AmmarBasha2011/apl-net",
+    "title": "مكتبة net للغة APL"
+  },
+  {
+    "name": "nltk_ext",
+    "repo": "AmmarBasha2011/apl-nltk_ext",
+    "title": "مكتبة nltk_ext للغة APL"
+  },
+  {
+    "name": "numdeep",
+    "repo": "AmmarBasha2011/apl-numdeep",
+    "title": "مكتبة numdeep للغة APL"
+  },
+  {
+    "name": "numpy",
+    "repo": "AmmarBasha2011/apl-numpy",
+    "title": "مكتبة numpy للغة APL"
+  },
+  {
+    "name": "openai",
+    "repo": "AmmarBasha2011/apl-openai",
+    "title": "مكتبة openai للغة APL"
+  },
+  {
+    "name": "openpyxl_ext",
+    "repo": "AmmarBasha2011/apl-openpyxl_ext",
+    "title": "مكتبة openpyxl_ext للغة APL"
+  },
+  {
+    "name": "operator",
+    "repo": "AmmarBasha2011/apl-operator",
+    "title": "مكتبة operator للغة APL"
+  },
+  {
+    "name": "optuna",
+    "repo": "AmmarBasha2011/apl-optuna",
+    "title": "مكتبة optuna للغة APL"
+  },
+  {
+    "name": "os",
+    "repo": "AmmarBasha2011/apl-os",
+    "title": "مكتبة os للغة APL"
+  },
+  {
+    "name": "pandas_ext",
+    "repo": "AmmarBasha2011/apl-pandas_ext",
+    "title": "مكتبة pandas_ext للغة APL"
+  },
+  {
+    "name": "pathlib",
+    "repo": "AmmarBasha2011/apl-pathlib",
+    "title": "مكتبة pathlib للغة APL"
+  },
+  {
+    "name": "pkgs_ext1",
+    "repo": "AmmarBasha2011/apl-pkgs_ext1",
+    "title": "مكتبة pkgs_ext1 للغة APL"
+  },
+  {
+    "name": "pkgs_ext2",
+    "repo": "AmmarBasha2011/apl-pkgs_ext2",
+    "title": "مكتبة pkgs_ext2 للغة APL"
+  },
+  {
+    "name": "plotly_ext",
+    "repo": "AmmarBasha2011/apl-plotly_ext",
+    "title": "مكتبة plotly_ext للغة APL"
+  },
+  {
+    "name": "polars",
+    "repo": "AmmarBasha2011/apl-polars",
+    "title": "مكتبة polars للغة APL"
+  },
+  {
+    "name": "pprint",
+    "repo": "AmmarBasha2011/apl-pprint",
+    "title": "مكتبة pprint للغة APL"
+  },
+  {
+    "name": "pygdeep",
+    "repo": "AmmarBasha2011/apl-pygdeep",
+    "title": "مكتبة pygdeep للغة APL"
+  },
+  {
+    "name": "random",
+    "repo": "AmmarBasha2011/apl-random",
+    "title": "مكتبة random للغة APL"
+  },
+  {
+    "name": "re",
+    "repo": "AmmarBasha2011/apl-re",
+    "title": "مكتبة re للغة APL"
+  },
+  {
+    "name": "redis",
+    "repo": "AmmarBasha2011/apl-redis",
+    "title": "مكتبة redis للغة APL"
+  },
+  {
+    "name": "requests",
+    "repo": "AmmarBasha2011/apl-requests",
+    "title": "مكتبة requests للغة APL"
+  },
+  {
+    "name": "scipy",
+    "repo": "AmmarBasha2011/apl-scipy",
+    "title": "مكتبة scipy للغة APL"
+  },
+  {
+    "name": "secauth",
+    "repo": "AmmarBasha2011/apl-secauth",
+    "title": "مكتبة secauth للغة APL"
+  },
+  {
+    "name": "secdeep",
+    "repo": "AmmarBasha2011/apl-secdeep",
+    "title": "مكتبة secdeep للغة APL"
+  },
+  {
+    "name": "secrets",
+    "repo": "AmmarBasha2011/apl-secrets",
+    "title": "مكتبة secrets للغة APL"
+  },
+  {
+    "name": "shutil",
+    "repo": "AmmarBasha2011/apl-shutil",
+    "title": "مكتبة shutil للغة APL"
+  },
+  {
+    "name": "sortedcontainers",
+    "repo": "AmmarBasha2011/apl-sortedcontainers",
+    "title": "مكتبة sortedcontainers للغة APL"
+  },
+  {
+    "name": "spacy",
+    "repo": "AmmarBasha2011/apl-spacy",
+    "title": "مكتبة spacy للغة APL"
+  },
+  {
+    "name": "sphinx_ext",
+    "repo": "AmmarBasha2011/apl-sphinx_ext",
+    "title": "مكتبة sphinx_ext للغة APL"
+  },
+  {
+    "name": "sqlalchemy_ext",
+    "repo": "AmmarBasha2011/apl-sqlalchemy_ext",
+    "title": "مكتبة sqlalchemy_ext للغة APL"
+  },
+  {
+    "name": "sqlite3",
+    "repo": "AmmarBasha2011/apl-sqlite3",
+    "title": "مكتبة sqlite3 للغة APL"
+  },
+  {
+    "name": "statistics",
+    "repo": "AmmarBasha2011/apl-statistics",
+    "title": "مكتبة statistics للغة APL"
+  },
+  {
+    "name": "statsmodels_ext",
+    "repo": "AmmarBasha2011/apl-statsmodels_ext",
+    "title": "مكتبة statsmodels_ext للغة APL"
+  },
+  {
+    "name": "stdfull",
+    "repo": "AmmarBasha2011/apl-stdfull",
+    "title": "مكتبة stdfull للغة APL"
+  },
+  {
+    "name": "stdlib_ext",
+    "repo": "AmmarBasha2011/apl-stdlib_ext",
+    "title": "مكتبة stdlib_ext للغة APL"
+  },
+  {
+    "name": "storedeep",
+    "repo": "AmmarBasha2011/apl-storedeep",
+    "title": "مكتبة storedeep للغة APL"
+  },
+  {
+    "name": "string",
+    "repo": "AmmarBasha2011/apl-string",
+    "title": "مكتبة string للغة APL"
+  },
+  {
+    "name": "subprocess",
+    "repo": "AmmarBasha2011/apl-subprocess",
+    "title": "مكتبة subprocess للغة APL"
+  },
+  {
+    "name": "sympy_ext",
+    "repo": "AmmarBasha2011/apl-sympy_ext",
+    "title": "مكتبة sympy_ext للغة APL"
+  },
+  {
+    "name": "syslib",
+    "repo": "AmmarBasha2011/apl-syslib",
+    "title": "مكتبة syslib للغة APL"
+  },
+  {
+    "name": "tabulate",
+    "repo": "AmmarBasha2011/apl-tabulate",
+    "title": "مكتبة tabulate — جداول نصية للغة APL",
+    "package": "tabulate",
+    "requires": [
+      "tabulate"
+    ]
+  },
+  {
+    "name": "taskdeep",
+    "repo": "AmmarBasha2011/apl-taskdeep",
+    "title": "مكتبة taskdeep للغة APL"
+  },
+  {
+    "name": "telegram",
+    "repo": "AmmarBasha2011/apl-telegram",
+    "title": "مكتبة telegram للغة APL"
+  },
+  {
+    "name": "tenacity",
+    "repo": "AmmarBasha2011/apl-tenacity",
+    "title": "مكتبة tenacity للغة APL"
+  },
+  {
+    "name": "textdata",
+    "repo": "AmmarBasha2011/apl-textdata",
+    "title": "مكتبة textdata للغة APL"
+  },
+  {
+    "name": "textdistance",
+    "repo": "AmmarBasha2011/apl-textdistance",
+    "title": "مكتبة textdistance — تشابه النصوص للغة APL",
+    "package": "textdistance",
+    "requires": [
+      "textdistance"
+    ]
+  },
+  {
+    "name": "textual",
+    "repo": "AmmarBasha2011/apl-textual",
+    "title": "مكتبة textual للغة APL"
+  },
+  {
+    "name": "textwrap",
+    "repo": "AmmarBasha2011/apl-textwrap",
+    "title": "مكتبة textwrap للغة APL"
+  },
+  {
+    "name": "threading",
+    "repo": "AmmarBasha2011/apl-threading",
+    "title": "مكتبة threading للغة APL"
+  },
+  {
+    "name": "time",
+    "repo": "AmmarBasha2011/apl-time",
+    "title": "مكتبة time للغة APL"
+  },
+  {
+    "name": "twisted_ext",
+    "repo": "AmmarBasha2011/apl-twisted_ext",
+    "title": "مكتبة twisted_ext للغة APL"
+  },
+  {
+    "name": "unittest",
+    "repo": "AmmarBasha2011/apl-unittest",
+    "title": "مكتبة unittest للغة APL"
+  },
+  {
+    "name": "urllib",
+    "repo": "AmmarBasha2011/apl-urllib",
+    "title": "مكتبة urllib للغة APL"
+  },
+  {
+    "name": "utildeep",
+    "repo": "AmmarBasha2011/apl-utildeep",
+    "title": "مكتبة utildeep للغة APL"
+  },
+  {
+    "name": "utiltools",
+    "repo": "AmmarBasha2011/apl-utiltools",
+    "title": "مكتبة utiltools للغة APL"
+  },
+  {
+    "name": "uuid",
+    "repo": "AmmarBasha2011/apl-uuid",
+    "title": "مكتبة uuid للغة APL"
+  },
+  {
+    "name": "validators",
+    "repo": "AmmarBasha2011/apl-validators",
+    "title": "مكتبة validators — التحقق من البيانات للغة APL",
+    "package": "validators",
+    "requires": [
+      "validators"
+    ]
+  },
+  {
+    "name": "web",
+    "repo": "AmmarBasha2011/apl-web",
+    "title": "مكتبة web للغة APL"
+  },
+  {
+    "name": "webdeep",
+    "repo": "AmmarBasha2011/apl-webdeep",
+    "title": "مكتبة webdeep للغة APL"
+  },
+  {
+    "name": "weblibs",
+    "repo": "AmmarBasha2011/apl-weblibs",
+    "title": "مكتبة weblibs للغة APL"
+  },
+  {
+    "name": "webserver",
+    "repo": "AmmarBasha2011/apl-webserver",
+    "title": "مكتبة webserver للغة APL"
+  },
+  {
+    "name": "xgboost",
+    "repo": "AmmarBasha2011/apl-xgboost",
+    "title": "مكتبة xgboost للغة APL"
+  },
+  {
+    "name": "xml",
+    "repo": "AmmarBasha2011/apl-xml",
+    "title": "مكتبة xml للغة APL"
+  },
+  {
+    "name": "zoneinfo",
+    "repo": "AmmarBasha2011/apl-zoneinfo",
+    "title": "مكتبة zoneinfo للغة APL"
+  }
 ]
