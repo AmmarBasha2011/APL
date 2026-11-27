@@ -34,9 +34,12 @@ RUNTIME_MODULES += ['datetime', 'time', 'os', 'shutil', 'json']
 
 
 def bundled_modules():
-    """Library modules that ship with APL and must be inside the executable."""
-    catalog = json.loads((DATA / 'index.json').read_text(encoding='utf-8'))
-    return [item['module'] for item in catalog if item['bundled']]
+    """Library modules shipped in the tree, if the repository has any."""
+    path = DATA / 'index.json'
+    if not path.is_file():
+        return []
+    catalog = json.loads(path.read_text(encoding='utf-8'))
+    return [item['module'] for item in catalog if item.get('bundled')]
 
 
 def main():
@@ -44,7 +47,8 @@ def main():
     command = [sys.executable, '-m', 'PyInstaller', '--onefile', '--console',
                '--name', 'apl', '--paths', str(ROOT), '--noconfirm']
     for name in ('registry.json', 'index.json'):
-        command += ['--add-data', f'core/libraries/{name}{separator}core/libraries']
+        if (DATA / name).is_file():
+            command += ['--add-data', f'core/libraries/{name}{separator}core/libraries']
     for module in RUNTIME_MODULES:
         command += ['--hidden-import', module]
     for module in bundled_modules():

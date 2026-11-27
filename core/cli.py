@@ -196,6 +196,10 @@ def _library_install(name):
     import urllib.error
     import urllib.request
     from core.libraries import registry
+    if not _catalog_by_name():
+        return _error('مفيش مخزن مكتبات متاح دلوقتي: APL مش بيشحن مكتبات مع نفسه، '
+                      'ومفيش قائمة مكتبات معرّفة. حط ملف المكتبة في '
+                      + str(_library_folder()) + ' أو عرّف APL_LIBRARY_SOURCE.')
     item = _catalog_by_name().get(name)
     if item is None:
         names = sorted(_catalog_by_name())
@@ -236,34 +240,34 @@ def _library_install(name):
 
 
 def _library_list(show_all):
-    from core.libraries.registry import (CATALOG, bundled_modules,
-                                        downloaded_modules)
-    by_module = CATALOG
-    bundled = sorted(item['name'] for item in by_module.values() if item['bundled'])
-    downloaded = sorted(item['name'] for item in by_module.values()
-                        if not item['bundled'] and item['module'] in downloaded_modules())
-    available = sorted(item['name'] for item in by_module.values()
-                       if not item['bundled'] and item['module'] not in downloaded_modules())
-    print(f'مثبتة مع APL ({len(bundled)}): {"، ".join(bundled)}')
-    print(f'محمّلة ({len(downloaded)}): {"، ".join(downloaded) if downloaded else "لا شيء"}')
-    print(f'متاحة للتحميل ({len(available)}) — المجلد: {_library_folder()}')
-    if show_all:
-        print('، '.join(available))
+    from core.libraries.registry import CATALOG, installed_modules
+    installed = set(installed_modules())
+    names = sorted(CATALOG[m]['name'] if m in CATALOG else m for m in installed)
+    available = sorted(item['name'] for m, item in CATALOG.items() if m not in installed)
+    print(f'المكتبات المثبتة ({len(names)}): {"، ".join(names) if names else "لا شيء"}')
+    print(f'مجلد المكتبات: {_library_folder()}')
+    if available:
+        if show_all:
+            print(f'متاحة للتحميل ({len(available)}): {"، ".join(available)}')
+        else:
+            print(f'متاحة للتحميل ({len(available)}) — اعرض الأسماء بـ: عمار مكتبة قائمة الكل')
     else:
-        print('اعرض الأسماء بـ: عمار مكتبة قائمة الكل')
+        print('مفيش مكتبات معرّفة للتحميل.')
     return 0
 
 
 def _library_search(word):
-    from core.libraries.registry import CATALOG, downloaded_modules
+    from core.libraries.registry import CATALOG, installed_modules
+    installed = set(installed_modules())
     hits = []
-    for item in CATALOG.values():
-        haystack = ' '.join((item['name'], item['module'], item.get('title') or ''))
+    for module, item in CATALOG.items():
+        haystack = ' '.join((item['name'], module, item.get('title') or ''))
         if word.lower() in haystack.lower():
-            state = ('مثبتة' if item['bundled'] else
-                     'محمّلة' if item['module'] in downloaded_modules() else 'متاحة')
+            state = 'مثبتة' if module in installed else 'متاحة'
             hits.append(f'  {item["name"]} — {state} — {item.get("title") or ""}')
     if not hits:
+        if not CATALOG:
+            return _error('مفيش قائمة مكتبات معرّفة دلوقتي.')
         return _error(f'مفيش مكتبة فيها: {word}')
     print(f'نتائج البحث عن "{word}" ({len(hits)}):')
     print('\n'.join(hits))
@@ -273,11 +277,10 @@ def _library_search(word):
 def _library_remove(name):
     from core.libraries import registry
     item = _catalog_by_name().get(name)
-    if item is None:
-        return _error(f'مكتبة غير معروفة: {name}')
-    if item['bundled']:
+    if item is not None and item.get('bundled'):
         return _error(f'مكتبة {name} جزء من APL، مش ممكن تتحذف.')
-    target = _library_folder() / (item['module'] + '.py')
+    module = item['module'] if item is not None else name
+    target = _library_folder() / (module + '.py')
     if not target.is_file():
         return _error(f'مكتبة {name} مش محمّلة أصلاً.')
     target.unlink()

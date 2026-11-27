@@ -1248,8 +1248,17 @@ def transpile_to_code(source: str) -> str:
     return transpile(source)
 
 
+def _library_folder_hint():
+    """Where installed libraries live."""
+    from core.libraries.registry import library_home
+    return library_home()
+
+
 def print_library_help():
     """Print the Arabic vocabulary of every installed library."""
+    if not ENTRIES:
+        print("مفيش مكتبات مثبتة، فمفيش كلمات إضافية تعرضها.")
+        return
     for _entry in ENTRIES:
         _mod = _library_modules[_entry['name']]
         _lines = []
@@ -1282,7 +1291,7 @@ def print_help():
     print("  عمار مساعدة                هذه المساعدة")
     print("  عمار مسح-الكاش             حذف الترجمات المخزنة")
     print()
-    print("  python apl.py ملف.apl      نفس الأمر بدون التثبيت")
+    print("  python apl.py ملف.apl      نفس الأمر بدون التثبيت (لو مش مثبت)")
     print()
     print("Environment switches:")
     print("  APL_NO_CACHE=1   Disable the transpilation cache")
@@ -1294,7 +1303,6 @@ def print_help():
         "اطبع / اطبع_بدون     - طباعة",
         "ادخل(...)            - إدخال",
         "لو / الا لو / الا    - شرط",
-        "سإذا شرط والا ص     - شرط ثلاثي",
         "طالما شرط:           - while",
         "لكل x في y:          - for",
         "دالة / ارجع          - function / return",
@@ -1308,25 +1316,14 @@ def print_help():
         "حالة / قيمة / افتراضي - match / case",
         "مع .. مثل            - with .. as",
         "حذف / أبدا           - del / while True",
-        "اخرج(0)              - exit",
-        "نسخ ملف / نقل ملف    - shutil.copy/move",
-        "حجم ملف / قائمة ملفات - os.path.getsize/listdir",
-        "احذف ملف / انشئ مجلد - os.remove/mkdir",
         "استورد / من..استورد   - import",
         "فتح / اقرأ / اكتب / اغلق - ملفات",
         "طلب(url)             - HTTP",
-        "جسون / جسون_تحويل    - JSON",
-        "كل / أي / خريطة / فلترة / تجميع - all/any/map/filter/zip",
-        "انتظر(ثوان) / وقت()  - time.sleep/time.time",
-        "تمثيل / ثنائي / سداسي / ترتيب / رمز - repr/bin/hex/ord/chr",
         "من(س, نوع)           - isinstance",
         "صحيح/نص/عشري/منطق   - int/str/float/bool",
         "قائمة/مجموعة/مصفوفة/قاموس - list/tuple/set/dict",
         "نطاق/طول            - range/len",
-        "نوع/عدد              - type/enumerate",
-        "مطلق/قوة/جذر        - abs/pow/sqrt",
-        "أكبر/أصغر/مقرب      - max/min/round",
-        "مجموع/مفرز          - sum/sorted",
+        "عدد                  - enumerate",
         "ط/ه/تاو/لانهائي_موجب - pi/e/tau/inf",
         ".تقسيم/.أضف/.ضم     - .split/.append/.join",
         ".علوي/.سفلي/.تقليم  - .upper/.lower/.strip",
@@ -1339,15 +1336,18 @@ def print_help():
         print(f"  {cmd}")
     
     print()
-    print("المكتبات المثبتة:")
-    print("  " + "، ".join(entry['name'] for entry in ENTRIES))
-    print("  تفاصيل كل مكتبة: عمار مساعدة مكتبات")
-    print("  تحميل مكتبة:     عمار مكتبة تحميل <اسم>")
+    if ENTRIES:
+        print("المكتبات المثبتة:")
+        print("  " + "، ".join(entry['name'] for entry in ENTRIES))
+        print("  تفاصيل كل مكتبة: عمار مساعدة مكتبات")
+    else:
+        print("المكتبات: مفيش مكتبات مثبتة. اللغة نفسها مش محتاجة أي مكتبة.")
+        print("  مجلد المكتبات: " + str(_library_folder_hint()))
     print()
-    print("Examples:")
-    print("  python apl.py hello.apl")
-    print("  python apl.py -c 'اطبع \"أهلاً بالعالم\"'")
-    print("  python apl.py repl")
+    print("أمثلة:")
+    print("  عمار شغل hello.apl")
+    print("  عمار -c 'اطبع \"أهلاً بالعالم\"'")
+    print("  عمار طرفية")
 
 
 __version__ = "1.13"

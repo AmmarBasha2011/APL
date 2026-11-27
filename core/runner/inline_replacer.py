@@ -9,13 +9,26 @@ from core.runner.patterns import (
     _METHOD_ALIASES, _METHOD_PATTERN, _TYPE_NAMES, _CONSTANTS, _CONSTANT_PATTERN,
     _LOGICAL_PATTERNS, _KW_ALIASES, _IO_ALIASES, _IO_PATTERN, _UDF_NAMES
 )
-from core.libraries.datetime_funcs import DATETIME_KWARGS
-from core.libraries.pathlib_funcs import PATHLIB_KWARGS
-from core.libraries.xml_funcs import XML_KWARGS
-from core.libraries.argparse_funcs import ARGPARSE_KWARGS
-from core.libraries.archive_funcs import ARCHIVE_KWARGS
-from core.libraries.net_funcs import NET_KWARGS
+try:  # APL ships no libraries: these keyword tables are optional.
+    from core.libraries.datetime_funcs import DATETIME_KWARGS
+    from core.libraries.pathlib_funcs import PATHLIB_KWARGS
+    from core.libraries.xml_funcs import XML_KWARGS
+    from core.libraries.argparse_funcs import ARGPARSE_KWARGS
+    from core.libraries.archive_funcs import ARCHIVE_KWARGS
+    from core.libraries.net_funcs import NET_KWARGS
+except ImportError:
+    DATETIME_KWARGS = PATHLIB_KWARGS = XML_KWARGS = {}
+    ARGPARSE_KWARGS = ARCHIVE_KWARGS = NET_KWARGS = {}
 from core.libraries.registry import ENTRIES, module, substitute_all
+
+
+#: Pattern that matches nothing, so an absent library stays silent.
+_NEVER_MATCH = re.compile(r'(?!)')
+
+#: Table with one key that can never appear in a program. The transpiler joins
+#: a table's keys into a pattern, so an empty table would build an empty
+#: alternative that matches every "(" and then fails the lookup with KeyError.
+_NO_MATCH_TABLE = {'_apl_library_missing_': '_apl_library_missing_'}
 
 
 class _MissingLibrary:
@@ -27,14 +40,9 @@ class _MissingLibrary:
     def __getattr__(self, item):
         if item.endswith('_HELP'):
             return []
-        if item.endswith(('_PATTERN', '_METHOD_PATTERN', '_PROP_PATTERN',
-                          '_CONSTANT_PATTERN', '_METHODS', '_PROPS')):
+        if item.endswith('_PATTERN'):
             return _NEVER_MATCH
-        return {}
-
-
-#: Pattern that matches nothing, so an absent library stays silent.
-_NEVER_MATCH = re.compile(r'(?!)')
+        return dict(_NO_MATCH_TABLE)
 
 
 class _LibraryMap(dict):
