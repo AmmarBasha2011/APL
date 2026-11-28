@@ -137,6 +137,7 @@ jobs:
           choco install innosetup -y --no-progress
           mkdir -p package/icons installer
           for d in assets/icons/*/; do n=$(basename "$d"); [ -f "$d/$n.ico" ] && cp "$d/$n.ico" "package/icons/$n.ico"; done
+          export MSYS_NO_PATHCONV=1
           ISCC="/c/Program Files (x86)/Inno Setup 6/ISCC.exe"
           "$ISCC" "/DAppVersion=${{ steps.ver.outputs.version }}" "/DSourceDir=$(cygpath -w "$PWD/package")" "/DOutDir=$(cygpath -w "$PWD/installer")" packaging/apl.iss
           ls -la installer
@@ -187,7 +188,7 @@ jobs:
           done
           python tools/smoke_apps.py /usr/bin/apl
           sudo dpkg -r apl
-          if command -v apl; then echo "apl still on PATH after removal"; exit 1; fi
+          hash -r; if [ -e /usr/bin/apl ] || command -v apl; then echo "apl still on PATH after removal"; exit 1; fi
 
       # ---------- ماك: حزمة .pkg ----------
       - name: حزمة ماك
