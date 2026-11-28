@@ -7,6 +7,11 @@
     عمار طرفية                موجه تفاعلي (REPL)
     عمار نسخة                 رقم الإصدار
     عمار مساعدة               المساعدة الكاملة
+    عمار محطة                 APL Terminal: طرفية عادية بتعرض العربي صح
+    عمار توثيق                APL Docs: التوثيق بدون نت، ومتزامن مع الريبو
+    عمار معرض-المكتبات        APL Libraries: صفحة المكتبات المعتمدة
+    عمار أمثلة                APL Examples: تصفح الأمثلة وانسخها وشغلها
+    عمار قياس                 APL Benchmark: قياس السرعة
     عمار مسح-الكاش [مسار]     حذف الترجمات المخزنة (هنا وفي جذر المشروع، أو في المسار)
 
 المشاريع:
@@ -48,13 +53,17 @@ ALIASES = {
     'مساعدة': 'help', 'دليل': 'help',
     'مسح-الكاش': 'clear-cache', 'نظف': 'clear-cache',
     'مكتبة': 'library', 'مكتبات': 'library',
-    'مثال': 'example', 'أمثلة': 'example', 'امثلة': 'example',
+    'مثال': 'example', 'أمثلة': 'example', 'امثلة': 'example', 'examples': 'example',
     'تنسيق': 'format', 'نسّق': 'format', 'format': 'format',
     'مسار': 'path', 'المسار': 'path', 'path': 'path',
     'بناء': 'build', 'ابن': 'build', 'ابنِ': 'build', 'حزّم': 'build',
     'build': 'build', 'exe': 'build',
     'مشروع': 'project', 'مشاريع': 'project', 'project': 'project',
     'تتبع': 'trace', 'تتبّع': 'trace', 'trace': 'trace',
+    'محطة': 'app-terminal', 'terminal': 'app-terminal',
+    'توثيق': 'app-docs', 'docs': 'app-docs',
+    'معرض-المكتبات': 'app-libraries', 'libraries': 'app-libraries',
+    'قياس': 'app-benchmark', 'benchmark': 'app-benchmark',
     'مصحح': 'debug', 'مصحّح': 'debug', 'debug': 'debug',
     # English spellings
     'run': 'run', 'check': 'check', 'transpile': 'transpile', 'repl': 'repl',
@@ -1334,7 +1343,13 @@ def main(argv=None):
         return _library(argv)
     if command == 'project':
         return _project(argv)
+    if command.startswith('app-'):
+        from core.apps import launch
+        return launch(command[4:], argv)
     if command == 'example':
+        if not argv:
+            from core.apps import launch
+            return launch('examples', argv)
         return _example(argv)
     if command == 'format':
         return _format(argv)

@@ -6,8 +6,36 @@
       "bytes": 0
     },
     {
+      "path": "core/apps/__init__.py",
+      "bytes": 842
+    },
+    {
+      "path": "core/apps/bench.py",
+      "bytes": 4112
+    },
+    {
+      "path": "core/apps/common.py",
+      "bytes": 1259
+    },
+    {
+      "path": "core/apps/docs.py",
+      "bytes": 7014
+    },
+    {
+      "path": "core/apps/examples.py",
+      "bytes": 6414
+    },
+    {
+      "path": "core/apps/terminal.py",
+      "bytes": 6597
+    },
+    {
+      "path": "core/apps/web.py",
+      "bytes": 7467
+    },
+    {
       "path": "core/cli.py",
-      "bytes": 57076
+      "bytes": 58071
     },
     {
       "path": "core/libraries/__init__.py",
@@ -82,6 +110,6 @@
       "bytes": 51477
     }
   ],
-  "total_bytes": 283461,
-  "sha256": "33789137be848703ed876900ff852f028e85a9c69a98351c0129f509c9a0fee5"
+  "total_bytes": 318161,
+  "sha256": "f9b44d2ae2019a6eb14dea22ee5ee230bad129324493a570545044cb50cdec46"
 }

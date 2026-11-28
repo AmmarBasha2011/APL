@@ -4,6 +4,11 @@ name: بناء الملفات التنفيذية
 # ينتج ملف تنفيذي واحد للويندوز (.exe) وواحد للينكس، بدون ماك.
 on:
   workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "لو كتبت وسم (مثل v1.0.0-alpha.1) هيتنشر Release تجريبي (Alpha) بالملفات. سيبه فاضي للبناء بس."
+        required: false
+        default: ""
 
 permissions:
   contents: read
@@ -31,6 +36,12 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: نسخة من التوثيق (للتشغيل بدون نت)
+        uses: actions/checkout@v4
+        with:
+          repository: AmmarBasha2011/APL-Docs
+          path: docs-src
+
       - name: تثبيت أدوات البناء
         run: |
           python -m pip install --upgrade pip pyinstaller tzdata
@@ -46,11 +57,31 @@ jobs:
           mkdir -p package
           cp "dist/apl$ext" "package/عمار$ext"
           cp "dist/apl$ext" "package/apl$ext"
+          mkdir -p package/APL-Docs
+          cp -r docs-src/docs docs-src/README.md package/APL-Docs/
+          # One launcher per tool. English sub-command names keep the files ASCII.
+          for pair in "Terminal:terminal" "REPL:repl" "Libraries:libraries" "Docs:docs" "Examples:examples" "Benchmark:benchmark"; do
+            label="${pair%%:*}"; sub="${pair##*:}"
+            if [ "${{ matrix.artifact }}" = "APL-windows" ]; then
+              printf '@echo off\r\nchcp 65001 >nul\r\n"%%~dp0apl.exe" %s %%*\r\nif errorlevel 1 pause\r\n' "$sub" > "package/APL-$label.cmd"
+            else
+              printf '#!/bin/sh\ncd "$(dirname "$0")"\nexec ./apl %s "$@"\n' "$sub" > "package/APL-$label.sh"
+              chmod +x "package/APL-$label.sh"
+            fi
+          done
           {
             printf 'APL - لغة عمار البرمجية\n\n'
             printf 'تشغيل برنامج:   عمار شغل برنامج.apl\n'
             printf 'المساعدة:       عمار مساعدة\n'
-            printf 'المكتبات:       عمار مكتبة قائمة\n'
+            printf 'المكتبات:       عمار مكتبة قائمة\n\n'
+            printf 'نسخة Alpha: أكيد فيها أخطاء.\n'
+            printf 'البرامج المرافقة (دوس مرتين على الملف):\n'
+            printf '  APL-Terminal   طرفية عادية بتعرض العربي صح\n'
+            printf '  APL-REPL       جرب الأوامر مباشرة\n'
+            printf '  APL-Libraries  المكتبات المعتمدة (في المتصفح)\n'
+            printf '  APL-Docs       التوثيق بدون نت، وبيتزامن مع الريبو لما فيه نت\n'
+            printf '  APL-Examples   تصفح الأمثلة وانسخها وشغلها\n'
+            printf '  APL-Benchmark  قياس سرعة APL\n'
           } > "package/اقرأني.txt"
 
       - name: اختبار الملف التنفيذي
@@ -64,9 +95,48 @@ jobs:
           "./package/apl$ext" مكتبة قائمة | head -n 1
           "./package/apl$ext" فحص hello.apl
 
+      - name: اختبار البرامج المرافقة
+        shell: bash
+        run: |
+          set -euo pipefail
+          ext="${{ matrix.ext }}"
+          python tools/smoke_apps.py "$PWD/package/apl$ext"
+
       - name: رفع الملفات
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact }}
           path: package/*
           if-no-files-found: error
+
+  release:
+    name: نشر Release تجريبي
+    needs: build
+    if: ${{ inputs.release_tag != '' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: ضغط الحزم
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          for d in APL-linux APL-windows; do
+            (cd "artifacts/$d" && zip -qr "../../out/$d-${{ inputs.release_tag }}.zip" .)
+          done
+          (cd out && sha256sum *.zip > SHA256SUMS.txt && cat SHA256SUMS.txt)
+
+      - name: نشر الـ Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ inputs.release_tag }}" out/* \
+            --repo "${{ github.repository }}" \
+            --target "${{ github.sha }}" \
+            --title "APL ${{ inputs.release_tag }} (Alpha)" \
+            --prerelease \
+            --notes "نسخة Alpha: أكيد فيها أخطاء. ويندوز ولينكس (بدون ماك). كل حزمة فيها ملف APL التنفيذي (عمار) ومعاه APL-Terminal وAPL-REPL وAPL-Libraries وAPL-Docs وAPL-Examples وAPL-Benchmark. فك الضغط ودوس مرتين على اللي عايزه."
