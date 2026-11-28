@@ -118,6 +118,8 @@ jobs:
     permissions:
       contents: write
     steps:
+      - uses: actions/checkout@v4
+
       - uses: actions/download-artifact@v4
         with:
           path: artifacts
@@ -126,9 +128,9 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p out
-          for d in APL-linux APL-windows; do
-            (cd "artifacts/$d" && zip -qr "../../out/$d-${{ inputs.release_tag }}.zip" .)
-          done
+          # A checkout is needed for the zip helper only.
+          python3 "$GITHUB_WORKSPACE/tools/make_zip.py" artifacts/APL-linux "out/APL-linux-${{ inputs.release_tag }}.zip" --unix
+          python3 "$GITHUB_WORKSPACE/tools/make_zip.py" artifacts/APL-windows "out/APL-windows-${{ inputs.release_tag }}.zip"
           (cd out && sha256sum *.zip > SHA256SUMS.txt && cat SHA256SUMS.txt)
 
       - name: نشر الـ Release
