@@ -572,6 +572,11 @@ _ERROR_AR = {
     "RecursionError": "خطأ: استدعاء متكرر عميق",
     "ModuleNotFoundError": "خطأ: الوحدة غير موجودة",
     "AssertionError": "خطأ: التأكيد فشل",
+    "JSONDecodeError": "خطأ: نص JSON غير صالح",
+    "UnicodeDecodeError": "خطأ: ترميز النص غير مفهوم",
+    "FileExistsError": "خطأ: الملف موجود بالفعل",
+    "IsADirectoryError": "خطأ: ده مجلد مش ملف",
+    "NotADirectoryError": "خطأ: ده ملف مش مجلد",
     "KeyboardInterrupt": "توقف بواسطة المستخدم",
 }
 
@@ -1360,6 +1365,11 @@ def _get_error_ar(e: Exception) -> str:
         "ConnectionError": "خطأ: فشل الاتصال",
         "ModuleNotFoundError": "خطأ: الوحدة غير موجودة",
         "OverflowError": "خطأ: تجاوز السعة",
+        "JSONDecodeError": "خطأ: نص JSON غير صالح",
+        "UnicodeDecodeError": "خطأ: ترميز النص غير مفهوم",
+        "FileExistsError": "خطأ: الملف موجود بالفعل",
+        "IsADirectoryError": "خطأ: ده مجلد مش ملف",
+        "NotADirectoryError": "خطأ: ده ملف مش مجلد",
     }.get(name, name)
     return f"{ar_name}: {_ar_message(e)}"
 
