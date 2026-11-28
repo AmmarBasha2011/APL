@@ -2,7 +2,7 @@ name: بناء الملفات التنفيذية
 
 # يدوي بالكامل: من تبويب Actions اختر "بناء الملفات التنفيذية" ثم Run workflow.
 # لينكس بيتبني على Ubuntu 22.04 (glibc 2.35) علشان الملف يشتغل على توزيعات أقدم.
-# ينتج ملف تنفيذي واحد للويندوز (.exe) وواحد للينكس، بدون ماك.
+# ينتج ملف تنفيذي للويندوز (.exe) وللينكس ولماك (Apple Silicon وIntel).
 on:
   workflow_dispatch:
     inputs:
@@ -30,6 +30,15 @@ jobs:
             name: ويندوز
             artifact: APL-windows
             ext: ".exe"
+          # ماك: بيتبني ويتجرب في CI بس، ومحدش جربه بإيده، وغير موقّع.
+          - os: macos-latest
+            name: ماك (Apple Silicon)
+            artifact: APL-macos-arm64
+            ext: ""
+          - os: macos-15-intel
+            name: ماك (Intel)
+            artifact: APL-macos-intel
+            ext: ""
     steps:
       - uses: actions/checkout@v4
 
@@ -66,8 +75,10 @@ jobs:
             if [ "${{ matrix.artifact }}" = "APL-windows" ]; then
               printf '@echo off\r\nchcp 65001 >nul\r\n"%%~dp0apl.exe" %s %%*\r\nif errorlevel 1 pause\r\n' "$sub" > "package/APL-$label.cmd"
             else
-              printf '#!/bin/sh\ncd "$(dirname "$0")"\nexec ./apl %s "$@"\n' "$sub" > "package/APL-$label.sh"
-              chmod +x "package/APL-$label.sh"
+              # .command opens in Terminal when double-clicked on a Mac.
+              suffix=sh; case "${{ matrix.artifact }}" in APL-macos*) suffix=command;; esac
+              printf '#!/bin/sh\ncd "$(dirname "$0")"\nexec ./apl %s "$@"\n' "$sub" > "package/APL-$label.$suffix"
+              chmod +x "package/APL-$label.$suffix"
             fi
           done
           {
@@ -76,6 +87,11 @@ jobs:
             printf 'المساعدة:       عمار مساعدة\n'
             printf 'المكتبات:       عمار مكتبة قائمة\n\n'
             printf 'نسخة Alpha: أكيد فيها أخطاء.\n'
+            case "${{ matrix.artifact }}" in APL-macos*)
+              printf 'ماك: النسخة دي اتبنت واتجربت في CI بس، ومحدش جربها بإيده، وهي غير موقّعة.\n'
+              printf 'لو ماك رفض يفتحها: xattr -dr com.apple.quarantine <مجلد الحزمة>\n'
+              printf 'وبعدين دوس على APL-*.command.\n';;
+            esac
             printf 'البرامج المرافقة (دوس مرتين على الملف):\n'
             printf '  APL-Terminal   طرفية عادية بتعرض العربي صح\n'
             printf '  APL-REPL       جرب الأوامر مباشرة\n'
@@ -130,6 +146,8 @@ jobs:
           mkdir -p out
           # A checkout is needed for the zip helper only.
           python3 "$GITHUB_WORKSPACE/tools/make_zip.py" artifacts/APL-linux "out/APL-linux-${{ inputs.release_tag }}.zip" --unix
+          python3 "$GITHUB_WORKSPACE/tools/make_zip.py" artifacts/APL-macos-arm64 "out/APL-macos-arm64-${{ inputs.release_tag }}.zip" --unix
+          python3 "$GITHUB_WORKSPACE/tools/make_zip.py" artifacts/APL-macos-intel "out/APL-macos-intel-${{ inputs.release_tag }}.zip" --unix
           python3 "$GITHUB_WORKSPACE/tools/make_zip.py" artifacts/APL-windows "out/APL-windows-${{ inputs.release_tag }}.zip"
           (cd out && sha256sum *.zip > SHA256SUMS.txt && cat SHA256SUMS.txt)
 
@@ -142,4 +160,4 @@ jobs:
             --target "${{ github.sha }}" \
             --title "APL ${{ inputs.release_tag }} (Alpha)" \
             --prerelease \
-            --notes "نسخة Alpha: أكيد فيها أخطاء. ويندوز ولينكس (بدون ماك). كل حزمة فيها ملف APL التنفيذي (عمار) ومعاه APL-Terminal وAPL-REPL وAPL-Libraries وAPL-Docs وAPL-Examples وAPL-Benchmark. فك الضغط ودوس مرتين على اللي عايزه."
+            --notes "نسخة Alpha: أكيد فيها أخطاء. ويندوز ولينكس وماك. نسخة الماك (Apple Silicon وIntel) اتبنت واتجربت في CI بس، ومحدش جربها بإيده، وهي غير موقّعة. كل حزمة فيها ملف APL التنفيذي (عمار) ومعاه APL-Terminal وAPL-REPL وAPL-Libraries وAPL-Docs وAPL-Examples وAPL-Benchmark. فك الضغط ودوس مرتين على اللي عايزه."
