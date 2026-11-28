@@ -21,8 +21,8 @@
     عمار مكتبة قفل            إصدارات المكتبات المثبتة (lockfile)
     عمار مكتبة استعادة        تنزيل المكتبات المسجّلة في القفل بإصداراتها
 
-التثبيت مابيسطّبش حزم Python لوحده. لو عايز تسطّبها مع المكتبة استخدم
---مع-الاعتمادات، وهيقولك بالظبط إيه اللي هيتسطّب قبل ما يبدأ.
+تثبيت المكتبة بيسطّب حزم Python اللي هي محتاجاها، وبيقولك بالظبط إيه
+اللي هيتسطّب قبل ما يبدأ. لو مش عايز استخدم --بدون-اعتمادات.
 
 الأسماء الإنجليزية (run, check, transpile, repl, version, help,
 clear-cache, library) تعمل بنفس الطريقة.
@@ -360,7 +360,7 @@ def _library_usage():
     print('  عمار مكتبة حذف <اسم>              حذف مكتبة مثبتة')
     print('  عمار مكتبة قفل                    إصدارات المكتبات المثبتة')
     print('  عمار مكتبة استعادة                تنزيل المكتبات المسجّلة في القفل')
-    print('  عمار مكتبة تحميل <اسم> --مع-الاعتمادات  تسطّب حزم Python المطلوبة كمان')
+    print('  عمار مكتبة تحميل <اسم> --بدون-اعتمادات  من غير تسطيب حزم Python')
     return 0
 
 
@@ -508,12 +508,23 @@ def _pip_command():
     return [sys.executable, '-m', 'pip', 'install']
 
 
+_PIP_SPEC = re.compile(
+    r'^[A-Za-z0-9][A-Za-z0-9._-]*(\[[A-Za-z0-9,._-]+\])?'
+    r'((==|>=|<=|~=|!=|>|<)[A-Za-z0-9.*+!_-]+(,(==|>=|<=|~=|!=|>|<)[A-Za-z0-9.*+!_-]+)*)?$')
+
+
 def _install_python_deps(requires):
     """Install a library's Python packages; True when they are in place."""
     import subprocess
-    requires = [item for item in requires if isinstance(item, str) and item.strip()]
+    requires = [item.strip() for item in requires if isinstance(item, str) and item.strip()]
+    # A requirement is data from a manifest: it must be a plain package spec,
+    # never something pip would read as an option or a URL/path to fetch.
+    bad = [item for item in requires if not _PIP_SPEC.match(item)]
+    if bad:
+        print('  مش هسطّب حزم من مواصفات مش عادية: ' + '، '.join(bad), file=sys.stderr)
+        requires = [item for item in requires if item not in bad]
     if not requires:
-        return True
+        return not bad
     print('  بنسطّب حزم Python: ' + '، '.join(requires))
     try:
         result = subprocess.run(_pip_command() + requires, capture_output=True,
@@ -547,7 +558,7 @@ def _is_inside(path, root):
     return resolved != base and base in resolved.parents
 
 
-def _install_from_folder(source, name_hint=None, origin=None, deps=False):
+def _install_from_folder(source, name_hint=None, origin=None, deps=True):
     """Copy one library folder into the library home, without running it."""
     import shutil
     from core.libraries import registry
@@ -609,9 +620,8 @@ def _install_from_folder(source, name_hint=None, origin=None, deps=False):
         else:
             # Installing packages is the user's decision, not a side effect of
             # installing a library: say the command, or offer the flag.
-            print('  لو مش متسطبة: pip install ' + ' '.join(
+            print('  اتخطّى تسطيب الحزم (--بدون-اعتمادات). لو مش متسطبة: pip install ' + ' '.join(
                 requirement.split('>')[0].split('=')[0] for requirement in requires))
-            print('  أو نزّلها مع المكتبة بـ: عمار مكتبة تحميل <الاسم> --مع-الاعتمادات')
     libraries = [name for name in (meta.get('libraries') or []) if isinstance(name, str)]
     if libraries:
         from core.libraries.registry import ENTRIES
@@ -634,7 +644,7 @@ def _install_from_folder(source, name_hint=None, origin=None, deps=False):
     return 0
 
 
-def _library_install(spec, deps=False):
+def _library_install(spec, deps=True):
     """عمار مكتبة تحميل <اسم|مالك/ريبو|رابط|مسار>"""
     import shutil
     import tempfile
@@ -1229,12 +1239,14 @@ def _library(rest):
     action = LIBRARY_ALIASES.get(rest[0]) or LIBRARY_ALIASES.get(rest[0].lower())
     args = rest[1:]
     if action in ('install', 'remove', 'search'):
-        deps = False
+        # An APL library wraps Python packages, so installing the library
+        # installs the packages it names too, unless told not to.
+        deps = True
         plain = []
         for item in args:
             if item in ('--مع-الاعتمادات', '--with-deps', '--تبعيات'):
                 deps = True
-            elif item in ('--بدون-تبعيات', '--no-deps'):
+            elif item in ('--بدون-اعتمادات', '--بدون-تبعيات', '--no-deps'):
                 deps = False
             elif not item.startswith('-'):
                 plain.append(item)
