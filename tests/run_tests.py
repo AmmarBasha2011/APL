@@ -94,6 +94,7 @@ def main(argv: list[str]) -> int:
         ("examples list", "test_examples_list.py"),
         ("verifier sample", "test_verifier.py"),
         ("cache and libraries", "test_cache_libraries.py"),
+        ("clear cache", "test_clear_cache.py"),
     )
     for label, script in extras:
         path = Path(__file__).resolve().parent / script
