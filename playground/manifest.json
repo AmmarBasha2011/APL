@@ -35,7 +35,11 @@
     },
     {
       "path": "core/cli.py",
-      "bytes": 58071
+      "bytes": 58275
+    },
+    {
+      "path": "core/console_bidi.py",
+      "bytes": 7539
     },
     {
       "path": "core/libraries/__init__.py",
@@ -110,6 +114,6 @@
       "bytes": 51477
     }
   ],
-  "total_bytes": 318161,
-  "sha256": "f9b44d2ae2019a6eb14dea22ee5ee230bad129324493a570545044cb50cdec46"
+  "total_bytes": 325904,
+  "sha256": "eaf18e0f17d3c1e047c65e8e390176baa5f14ddcc919976595b6cb1b5bb6a1fe"
 }

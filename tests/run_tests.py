@@ -97,6 +97,7 @@ def main(argv: list[str]) -> int:
         ("clear cache", "test_clear_cache.py"),
         ("install safety", "test_install_safety.py"),
         ("companion apps", "test_apps.py"),
+        ("console arabic", "test_console_bidi.py"),
     )
     for label, script in extras:
         path = Path(__file__).resolve().parent / script

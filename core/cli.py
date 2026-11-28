@@ -128,6 +128,10 @@ def _configure_console():
             ctypes.windll.kernel32.SetConsoleCP(65001)
         except Exception:
             pass
+    # The Windows console draws Arabic reversed and unjoined: lay it out
+    # ourselves when stdout is a console (files and pipes are left alone).
+    from core.console_bidi import install
+    install()
 
 
 def _command(word):
