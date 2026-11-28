@@ -1,0 +1,8 @@
+[
+  {"id": "terminal",  "name": "APL Terminal",  "sub": "terminal",  "comment": "Terminal with proper Arabic", "console": true},
+  {"id": "repl",      "name": "APL REPL",      "sub": "repl",      "comment": "Try APL commands directly", "console": true},
+  {"id": "libraries", "name": "APL Libraries", "sub": "libraries", "comment": "The libraries we maintain", "console": true},
+  {"id": "docs",      "name": "APL Docs",      "sub": "docs",      "comment": "Offline docs, synced when online", "console": true},
+  {"id": "examples",  "name": "APL Examples",  "sub": "examples",  "comment": "Browse, copy and run examples", "console": true},
+  {"id": "benchmark", "name": "APL Benchmark", "sub": "benchmark", "comment": "Speed benchmark", "console": true}
+]

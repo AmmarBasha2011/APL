@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/icons/apl/256.png" alt="APL logo" width="128"></p>
+
 # APL — لغة عمار البرمجية
 
 **الصفحة الرسمية والتحميل: <https://ammarbasha2011.github.io/APL/>**
