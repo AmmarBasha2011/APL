@@ -1,6 +1,7 @@
 name: بناء الملفات التنفيذية
 
 # يدوي بالكامل: من تبويب Actions اختر "بناء الملفات التنفيذية" ثم Run workflow.
+# لينكس بيتبني على Ubuntu 22.04 (glibc 2.35) علشان الملف يشتغل على توزيعات أقدم.
 # ينتج ملف تنفيذي واحد للويندوز (.exe) وواحد للينكس، بدون ماك.
 on:
   workflow_dispatch:
@@ -21,7 +22,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: ubuntu-latest
+          - os: ubuntu-22.04
             name: لينكس
             artifact: APL-linux
             ext: ""
