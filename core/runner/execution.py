@@ -38,6 +38,12 @@ class Compilation:
             raise
 
 
+_IMPORT_NAMES = {
+    'pillow': 'PIL', 'pyyaml': 'yaml', 'beautifulsoup4': 'bs4', 'opencv-python': 'cv2',
+    'scikit-learn': 'sklearn', 'python-dateutil': 'dateutil', 'pycryptodome': 'Crypto',
+}
+
+
 def diagnostic(error, compilation=None, source='', filename='<apl>'):
     from core.runner.main import _get_error_ar
     line, column = 1, 1
@@ -76,6 +82,12 @@ def diagnostic(error, compilation=None, source='', filename='<apl>'):
             missing = _library_hint(match.group(1))
     if missing:
         text += '\n' + missing
+    # Some Python packages are imported under another name than they install
+    # as, and people write the package name.
+    if isinstance(error, ModuleNotFoundError) and error.name:
+        real = _IMPORT_NAMES.get(error.name.lower())
+        if real:
+            text += f'\nالحزمة دي بتتستورد باسم {real}: استورد {real}'
     return text
 
 

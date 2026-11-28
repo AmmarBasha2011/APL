@@ -49,6 +49,23 @@ def _engine_fingerprint() -> str:
         for p in sorted([*lib_dir.glob("*.py"), *lib_dir.glob("*.json")]):
             h.update(p.name.encode("utf-8"))
             h.update(p.read_bytes())
+    # Installed libraries (~/.apl/libraries or APL_LIBRARIES) change the
+    # translation too: a program compiled before a library was installed must
+    # not keep its un-substituted translation afterwards.
+    try:
+        from core.libraries.registry import library_home
+        home = library_home()
+        if home.is_dir():
+            files = [*home.glob("*_funcs.py"), *home.glob("*/apl-library.json"),
+                     *home.glob("*/*.py")]
+            for p in sorted(set(files)):
+                try:
+                    h.update(str(p.relative_to(home)).encode("utf-8"))
+                    h.update(p.read_bytes())
+                except OSError:
+                    pass
+    except Exception:
+        pass
     return h.hexdigest()[:12]
 
 
