@@ -163,11 +163,14 @@ jobs:
           & "$dir\apl.exe" نسخة
           python tools/smoke_apps.py "$dir\apl.exe"
           if ($LASTEXITCODE -ne 0) { throw "installed apps failed" }
+          # leftover app processes lock the exe and would block the uninstall
+          Get-Process -Name apl,عمار -ErrorAction SilentlyContinue | Stop-Process -Force
+          Start-Sleep -Seconds 2
           Start-Process -FilePath "$dir\unins000.exe" -ArgumentList "/VERYSILENT","/SUPPRESSMSGBOXES" -Wait
           # the Inno uninstaller hands off to a temporary copy of itself, so wait for the files to go
           for ($i = 0; $i -lt 60 -and (Test-Path "$dir\apl.exe"); $i++) { Start-Sleep -Seconds 1 }
           Start-Sleep -Seconds 3
-          if (Test-Path "$dir\apl.exe") { throw "uninstall left apl.exe" }
+          if (Test-Path "$dir\apl.exe") { Get-ChildItem $dir | Out-Host; throw "uninstall left apl.exe" }
           $after = [Environment]::GetEnvironmentVariable("Path","User")
           if (($after -split ";") -contains $dir) { throw "uninstall left PATH entry" }
           Write-Host "installer ok"
