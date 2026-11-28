@@ -45,6 +45,7 @@ h1 span{background:linear-gradient(90deg,var(--g1),var(--gold),var(--g1));backgr
 section{padding:70px 0}
 h2{font-size:clamp(1.7rem,3.6vw,2.5rem);margin-bottom:8px}
 .sub{color:var(--muted);margin-bottom:38px}
+.tag{font-size:.9rem;vertical-align:middle;background:var(--gold);color:#241a00;border-radius:99px;padding:2px 12px;font-weight:800}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;perspective:1000px}
 .card{background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:18px;padding:26px;transform-style:preserve-3d;transition:transform .2s ease-out,border-color .3s,box-shadow .3s;will-change:transform}
 .card:hover{border-color:rgba(61,220,151,.5);box-shadow:0 20px 60px rgba(0,0,0,.4)}
@@ -76,7 +77,7 @@ footer a{color:var(--g1);text-decoration:none;margin:0 10px}
 <canvas id="bg"></canvas>
 <header class="wrap"><nav>
   <div class="logo"><i></i> APL</div>
-  <div><a class="l" href="#features">المميزات</a><a class="l" href="#download">التحميل</a><a class="l" href="playground/">الملعب</a><a class="l" href="https://github.com/AmmarBasha2011/APL-Docs">التوثيق</a></div>
+  <div><a class="l" href="#features">المميزات</a><a class="l" href="#apps">البرامج</a><a class="l" href="#download">التحميل</a><a class="l" href="playground/">الملعب</a><a class="l" href="https://github.com/AmmarBasha2011/APL-Docs">التوثيق</a></div>
 </nav></header>
 <main class="wrap">
   <div class="hero">
@@ -107,18 +108,30 @@ footer a{color:var(--g1);text-decoration:none;margin:0 10px}
   </section>
 
   <section id="download">
-    <h2 class="rv">نزّل APL</h2><p class="sub rv" id="dlSub">اختار نظامك.</p>
+    <h2 class="rv">نزّل APL <span class="tag">Alpha</span></h2><p class="sub rv" id="dlSub">اختار نظامك. دي نسخة Alpha، أكيد فيها أخطاء.</p>
     <div class="dl">
-      <div class="os rv" id="os-windows"><div class="big">🪟</div><h3>ويندوز</h3><p>ملف <code>عمار.exe</code> واحد، يشتغل على ويندوز 10 وما فوق.</p><a class="btn" data-os="windows" href="#">نزّل لويندوز</a></div>
-      <div class="os rv" id="os-linux"><div class="big">🐧</div><h3>لينكس</h3><p>ملف تنفيذي واحد لمعظم التوزيعات الحديثة.</p><a class="btn" data-os="linux" href="#">نزّل للينكس</a></div>
+      <div class="os rv" id="os-windows"><div class="big">🪟</div><h3>ويندوز</h3><p>ملف zip فيه <code>عمار.exe</code> والبرامج المرافقة. ويندوز 10 وما فوق.</p><a class="btn" data-os="windows" href="#">نزّل لويندوز</a></div>
+      <div class="os rv" id="os-linux"><div class="big">🐧</div><h3>لينكس</h3><p>ملف zip فيه الملف التنفيذي والبرامج المرافقة. Ubuntu 22.04 أو أحدث، وتوزيعات مشابهة.</p><a class="btn" data-os="linux" href="#">نزّل للينكس</a></div>
       <div class="os rv" id="os-web"><div class="big">🌐</div><h3>من المتصفح</h3><p>ماك أو موبايل؟ استخدم الملعب، بيشتغل في أي متصفح.</p><a class="btn ghost" href="playground/">افتح الملعب</a></div>
+    </div>
+  </section>
+
+  <section id="apps">
+    <h2 class="rv">برامج جاية معاك في الحزمة</h2><p class="sub rv">كل واحد بملف تدوس عليه مرتين.</p>
+    <div class="grid">
+      <div class="card rv"><span class="ic">⌨️</span><h3>APL Terminal</h3><p>طرفية عادية بتقرأ وتكتب العربي صح، من غير ما تدخل على اللغة.</p></div>
+      <div class="card rv"><span class="ic">⚡</span><h3>APL REPL</h3><p>جرب الأوامر مباشرة وشوف النتيجة بسرعة.</p></div>
+      <div class="card rv"><span class="ic">📦</span><h3>APL Libraries</h3><p>المكتبات المعتمدة في المتصفح، واعتمادياتها تتنزل معاها.</p></div>
+      <div class="card rv"><span class="ic">📖</span><h3>APL Docs</h3><p>التوثيق بدون نت. ولما فيه نت بيحمّل الملفات اللي اتغيرت بس.</p></div>
+      <div class="card rv"><span class="ic">🧩</span><h3>APL Examples</h3><p>تصفح الأمثلة، انسخها، وشغّلها من مكانها.</p></div>
+      <div class="card rv"><span class="ic">⏱️</span><h3>APL Benchmark</h3><p>قِس سرعة APL مقارنة بـ Python على جهازك.</p></div>
     </div>
   </section>
 
   <section>
     <h2 class="rv">ابدأ في 3 خطوات</h2><p class="sub rv"></p>
     <div class="steps">
-      <div class="rv">نزّل الملف المناسب لجهازك.</div>
+      <div class="rv">نزّل الـ zip المناسب لجهازك وفكّه.</div>
       <div class="rv">اكتب برنامجك في ملف <code>برنامج.apl</code>.</div>
       <div class="rv">شغّله بالأمر <code>عمار شغل برنامج.apl</code></div>
     </div>
@@ -133,7 +146,9 @@ footer a{color:var(--g1);text-decoration:none;margin:0 10px}
 (function () {
   // Where the builds live. Change here only.
   var REPO = "https://github.com/AmmarBasha2011/APL";
-  var LINKS = { windows: REPO + "/releases/latest", linux: REPO + "/releases/latest" };
+  var TAG = "v1.0.0-alpha.1";
+  var DL = REPO + "/releases/download/" + TAG + "/";
+  var LINKS = { windows: DL + "APL-windows-" + TAG + ".zip", linux: DL + "APL-linux-" + TAG + ".zip" };
   var NAMES = { windows: "ويندوز", linux: "لينكس", mac: "ماك", android: "أندرويد", ios: "iPhone / iPad", other: "جهازك" };
 
   function detect() {
