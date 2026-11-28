@@ -532,6 +532,21 @@ def _install_python_deps(requires):
     return True
 
 
+def _valid_library_name(name):
+    """A library name is one plain identifier: it becomes a folder name."""
+    return (isinstance(name, str) and name.isidentifier() and len(name) <= 64
+            and not name.startswith('__'))
+
+
+def _is_inside(path, root):
+    """True when `path` resolves to somewhere under `root` (not `root` itself)."""
+    try:
+        resolved, base = Path(path).resolve(), Path(root).resolve()
+    except (OSError, RuntimeError):
+        return False
+    return resolved != base and base in resolved.parents
+
+
 def _install_from_folder(source, name_hint=None, origin=None, deps=False):
     """Copy one library folder into the library home, without running it."""
     import shutil
@@ -540,11 +555,24 @@ def _install_from_folder(source, name_hint=None, origin=None, deps=False):
     meta = _read_package(source)
     if meta is None:
         return _error(f'مفيش apl-library.json في {source}، مش مكتبة APL.')
-    name = (meta.get('name') or name_hint or source.name).strip()
+    raw_name = meta.get('name') or name_hint or source.name
+    name = raw_name.strip() if isinstance(raw_name, str) else raw_name
+    if not _valid_library_name(name):
+        return _error(f'اسم المكتبة "{raw_name}" مش مقبول: لازم يكون اسم واحد '
+                      '(حروف وأرقام و_ بس، من غير مسارات أو نقط أو شرطات).')
     entry = meta.get('entry') or f'{name}_funcs.py'
+    if (not isinstance(entry, str) or not entry.endswith('.py')
+            or Path(entry).is_absolute() or '..' in Path(entry).parts):
+        return _error(f'ملف المكتبة "{entry}" مش مقبول: لازم يكون ملف .py جوه '
+                      'مجلد المكتبة نفسه.')
     entry_path = source / entry
+    if not _is_inside(entry_path, source):
+        return _error(f'ملف المكتبة "{entry}" بيطلع بره مجلد المكتبة.')
     if not entry_path.is_file():
         return _error(f'الملف {entry} المذكور في apl-library.json مش موجود في المكتبة.')
+    links = [p for p in source.rglob('*') if p.is_symlink() and '.git' not in p.parts]
+    if links:
+        return _error(f'المكتبة فيها رابط رمزي ({links[0].name})، ومش بنثبّت مكتبات كده.')
     try:
         compile(entry_path.read_text(encoding='utf-8'), str(entry_path), 'exec')
     except SyntaxError as error:
@@ -552,6 +580,12 @@ def _install_from_folder(source, name_hint=None, origin=None, deps=False):
     home = _library_folder()
     home.mkdir(parents=True, exist_ok=True)
     target = home / name
+    # Everything is checked before anything is deleted: the target must be a
+    # real folder directly inside the library home, never a link or the home.
+    if not _is_inside(target, home) or target.resolve().parent != home.resolve():
+        return _error(f'مسار التثبيت لمكتبة "{name}" بيطلع بره مجلد المكتبات.')
+    if target.is_symlink():
+        return _error(f'"{target}" رابط رمزي، مش هنمسحه ولا نكتب فوقه.')
     if target.exists():
         shutil.rmtree(target)
     shutil.copytree(source, target, ignore=shutil.ignore_patterns('.git', '__pycache__'))
@@ -813,7 +847,11 @@ def _library_remove(name):
     import shutil
     from core.libraries import registry
     home = _library_folder()
+    if not _valid_library_name(name):
+        return _error(f'اسم المكتبة "{name}" مش مقبول.')
     folder = home / name
+    if folder.is_symlink() or (folder.exists() and not _is_inside(folder, home)):
+        return _error(f'"{folder}" مش جوه مجلد المكتبات، مش هنمسحه.')
     _write_lock(name, None)
     if folder.is_dir():
         shutil.rmtree(folder)

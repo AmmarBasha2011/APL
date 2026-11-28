@@ -119,7 +119,11 @@ def library_path(entry):
         if not meta:
             continue
         candidate = folder / (meta.get('entry') or (entry['module'] + '.py'))
-        if candidate.is_file():
+        try:
+            inside = folder.resolve() in candidate.resolve().parents
+        except (OSError, RuntimeError):
+            inside = False
+        if inside and candidate.is_file():
             return candidate
     return direct
 
