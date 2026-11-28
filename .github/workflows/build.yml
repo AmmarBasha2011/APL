@@ -164,6 +164,8 @@ jobs:
           python tools/smoke_apps.py "$dir\apl.exe"
           if ($LASTEXITCODE -ne 0) { throw "installed apps failed" }
           Start-Process -FilePath "$dir\unins000.exe" -ArgumentList "/VERYSILENT","/SUPPRESSMSGBOXES" -Wait
+          # the Inno uninstaller hands off to a temporary copy of itself, so wait for the files to go
+          for ($i = 0; $i -lt 60 -and (Test-Path "$dir\apl.exe"); $i++) { Start-Sleep -Seconds 1 }
           Start-Sleep -Seconds 3
           if (Test-Path "$dir\apl.exe") { throw "uninstall left apl.exe" }
           $after = [Environment]::GetEnvironmentVariable("Path","User")
