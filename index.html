@@ -112,9 +112,9 @@ footer a{color:var(--g1);text-decoration:none;margin:0 10px}
   <section id="download">
     <h2 class="rv">نزّل APL <span class="tag">Alpha</span></h2><p class="sub rv" id="dlSub">اختار نظامك. دي نسخة Alpha، أكيد فيها أخطاء.</p>
     <div class="dl">
-      <div class="os rv" id="os-windows"><div class="big">🪟</div><h3>ويندوز</h3><p>ملف zip فيه <code>عمار.exe</code> والبرامج المرافقة. ويندوز 10 وما فوق.</p><a class="btn" data-os="windows" href="#">نزّل لويندوز</a></div>
-      <div class="os rv" id="os-linux"><div class="big">🐧</div><h3>لينكس</h3><p>ملف zip فيه الملف التنفيذي والبرامج المرافقة. Ubuntu 22.04 أو أحدث، وتوزيعات مشابهة.</p><a class="btn" data-os="linux" href="#">نزّل للينكس</a></div>
-      <div class="os rv" id="os-mac"><div class="big">🍎</div><h3>ماك</h3><p>غير موقّعة، واتبنت واتجربت في CI بس ومحدش جربها بإيده. ممكن ماك يحذّرك وقت التشغيل.</p><a class="btn" data-os="mac" href="#">Apple Silicon (M1 وأحدث)</a><br><br><a class="btn ghost" data-os="macIntel" href="#">Intel</a></div>
+      <div class="os rv" id="os-windows"><div class="big">🪟</div><h3>ويندوز</h3><p>مثبّت بيضيف APL للـ PATH وبيعمل أيقونات للبرامج في قائمة ابدأ. ويندوز 10 وما فوق. غير موقّع، فممكن SmartScreen يحذّرك.</p><a class="btn" data-os="windows" href="#">نزّل لويندوز</a></div>
+      <div class="os rv" id="os-linux"><div class="big">🐧</div><h3>لينكس</h3><p>حزمة deb: <code>sudo apt install ./الملف.deb</code>. بتضيف الأمر <code>apl</code> وأيقونات البرامج. Ubuntu 22.04 أو أحدث.</p><a class="btn" data-os="linux" href="#">نزّل للينكس</a></div>
+      <div class="os rv" id="os-mac"><div class="big">🍎</div><h3>ماك</h3><p>مثبّت pkg بيضيف <code>apl</code> للـ PATH وبيحط البرامج في Applications. غير موقّع، واتجرب في CI بس ومحدش جربه بإيده. ممكن ماك يحذّرك.</p><a class="btn" data-os="mac" href="#">Apple Silicon (M1 وأحدث)</a><br><br><a class="btn ghost" data-os="macIntel" href="#">Intel</a></div>
       <div class="os rv" id="os-web"><div class="big">🌐</div><h3>من المتصفح</h3><p>موبايل؟ استخدم الملعب، بيشتغل في أي متصفح.</p><a class="btn ghost" href="playground/">افتح الملعب</a></div>
     </div>
   </section>
@@ -134,7 +134,7 @@ footer a{color:var(--g1);text-decoration:none;margin:0 10px}
   <section>
     <h2 class="rv">ابدأ في 3 خطوات</h2><p class="sub rv"></p>
     <div class="steps">
-      <div class="rv">نزّل الـ zip المناسب لجهازك وفكّه.</div>
+      <div class="rv">نزّل المثبّت المناسب لجهازك وشغّله.</div>
       <div class="rv">اكتب برنامجك في ملف <code>برنامج.apl</code>.</div>
       <div class="rv">شغّله بالأمر <code>عمار شغل برنامج.apl</code></div>
     </div>
@@ -149,10 +149,11 @@ footer a{color:var(--g1);text-decoration:none;margin:0 10px}
 (function () {
   // Where the builds live. Change here only.
   var REPO = "https://github.com/AmmarBasha2011/APL";
-  var TAG = "v1.0.0-alpha.2";
+  var TAG = "v1.0.0-alpha.3";
+  var VER = TAG.slice(1);
   var DL = REPO + "/releases/download/" + TAG + "/";
-  var LINKS = { windows: DL + "APL-windows-" + TAG + ".zip", linux: DL + "APL-linux-" + TAG + ".zip",
-                mac: DL + "APL-macos-arm64-" + TAG + ".zip", macIntel: DL + "APL-macos-intel-" + TAG + ".zip" };
+  var LINKS = { windows: DL + "APL-Setup-" + VER + ".exe", linux: DL + "APL-" + VER + "-linux-amd64.deb",
+                mac: DL + "APL-" + VER + "-macos-arm64.pkg", macIntel: DL + "APL-" + VER + "-macos-intel.pkg" };
   var NAMES = { windows: "ويندوز", linux: "لينكس", mac: "ماك", android: "أندرويد", ios: "iPhone / iPad", other: "جهازك" };
 
   function detect() {
