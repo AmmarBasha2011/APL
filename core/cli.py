@@ -1264,8 +1264,21 @@ def main(argv=None):
             print_help()
         return 0
     if command == 'clear-cache':
-        from core.runner.cache import clear
-        print(f'تم حذف {clear()} ملف ترجمة مخزنة')
+        from core.runner.cache import clear, default_roots, project_root
+        # An optional path (a program or a folder) names where to look; without
+        # one, the current folder and the project root are searched.
+        roots = None
+        if argv:
+            target = Path(argv[0])
+            if target.is_file():
+                target = target.parent
+            if not target.exists():
+                return _error(f'مفيش مسار بالاسم ده: {argv[0]}')
+            roots = [target]
+            found = project_root(target)
+            if found is not None and found != target.resolve():
+                roots.append(found)
+        print(f'تم حذف {clear(roots=roots)} ملف ترجمة مخزنة')
         return 0
     if command == 'library':
         return _library(argv)

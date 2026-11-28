@@ -126,7 +126,32 @@ def store(source_path: Path, source: str, python_code: str) -> None:
         pass
 
 
-def clear(source_path: Path | None = None) -> int:
+def project_root(start: Path | None = None) -> Path | None:
+    """The nearest folder above `start` (default: here) holding apl-project.json."""
+    here = (start or Path.cwd()).resolve()
+    for folder in (here, *here.parents):
+        if (folder / "apl-project.json").is_file():
+            return folder
+    return None
+
+
+def default_roots() -> list:
+    """Where cached translations are looked for: here, and the project root."""
+    roots = [Path.cwd()]
+    root = project_root()
+    if root is not None and root not in roots:
+        roots.append(root)
+    return roots
+
+
+def _cache_dirs(root: Path):
+    root = Path(root)
+    if root.name == CACHE_DIRNAME:
+        yield root
+    yield from root.rglob(CACHE_DIRNAME)
+
+
+def clear(source_path: Path | None = None, roots=None) -> int:
     """Delete cached translations. Returns how many files were removed."""
     removed = 0
     if source_path is not None:
@@ -140,9 +165,11 @@ def clear(source_path: Path | None = None) -> int:
                 pass
         return removed
 
-    for d in Path.cwd().rglob(CACHE_DIRNAME):
-        if not d.is_dir():
+    seen = set()
+    for d in (d for root in (roots or default_roots()) for d in _cache_dirs(root)):
+        if d in seen or not d.is_dir():
             continue
+        seen.add(d)
         for f in d.glob("*.py"):
             # only our generated files, never a real .pyc
             if len(f.name.split(".")) >= 3 and f.name.endswith(".py"):
