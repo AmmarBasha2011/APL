@@ -80,10 +80,31 @@ def main() -> int:
 
     result, text = install(pip_command=stub_command)
     check("a plain install succeeds", result.returncode == 0, text)
-    check("it does not install Python packages", not record.exists(),
+    check("it installs the library's Python packages by default", record.exists()
+          and record.read_text(encoding="utf-8").strip() == "tabulate", text)
+    check("it says what it is installing first", "بنسطّب حزم Python: tabulate" in text, text)
+
+    shutil.rmtree(work / "home", ignore_errors=True)
+    record.unlink(missing_ok=True)
+    result, text = install("--بدون-اعتمادات", pip_command=stub_command)
+    check("--بدون-اعتمادات skips pip", result.returncode == 0 and not record.exists(),
           "pip was called: " + (record.read_text(encoding="utf-8") if record.exists() else ""))
-    check("it names the packages the library needs", "tabulate" in text, text)
-    check("it offers the opt-in flag", "--مع-الاعتمادات" in text, text)
+    check("it still names the packages the library needs", "tabulate" in text, text)
+
+    shutil.rmtree(work / "home", ignore_errors=True)
+    record.unlink(missing_ok=True)
+    (library / "apl-library.json").write_text(json.dumps({
+        "name": "demo", "version": "1.0.0", "entry": "demo_funcs.py",
+        "requires": ["--index-url=http://evil.example", "git+https://evil.example/x.git",
+                     "./local", "good>=1.0"],
+    }), encoding="utf-8")
+    result, text = install(pip_command=stub_command)
+    check("only plain package specs reach pip", record.exists()
+          and record.read_text(encoding="utf-8").strip() == "good>=1.0", text)
+    check("a refused spec is reported", "مش هسطّب" in text, text)
+    (library / "apl-library.json").write_text(json.dumps({
+        "name": "demo", "version": "1.0.0", "entry": "demo_funcs.py", "requires": ["tabulate"],
+    }), encoding="utf-8")
 
     shutil.rmtree(work / "home", ignore_errors=True)
     record.unlink(missing_ok=True)
