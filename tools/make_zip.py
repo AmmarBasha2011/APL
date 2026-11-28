@@ -5,7 +5,7 @@
 
 * Arabic file names are stored as UTF-8 and flagged as such, so Windows
   Explorer and unzip show them correctly.
-* With --unix, the program files (apl, عمار, *.sh) get the executable bit.
+* With --unix, the program files (apl, عمار, *.sh, *.command) get the executable bit.
   Build artifacts lose it on the way through upload/download.
 """
 import stat
@@ -24,7 +24,7 @@ with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as archive:
         info = zipfile.ZipInfo.from_file(path, rel)
         info.compress_type = zipfile.ZIP_DEFLATED
         mode = 0o644
-        if unix and (path.name in EXEC_NAMES or path.suffix == ".sh"):
+        if unix and (path.name in EXEC_NAMES or path.suffix in (".sh", ".command")):
             mode = 0o755
         info.create_system = 3
         info.external_attr = (stat.S_IFREG | mode) << 16
