@@ -29,6 +29,23 @@ _METHOD_ALIASES = {
     "استبدال": "replace", "علوي": "upper", "سفلي": "lower",
     "بداية": "startswith", "نهاية": "endswith", "تقليم": "strip",
     "اتحاد": "union", "تقاطع": "intersection", "فرق": "difference",
+    # Strings
+    "تقليم_يمين": "rstrip", "تقليم_يسار": "lstrip",
+    "ابحث": "find", "ابحث_يمين": "rfind", "تنسيق": "format",
+    "حروف_عنوان": "title", "كبّر_الأول": "capitalize", "بدّل_الحالة": "swapcase",
+    "تقسيم_أسطر": "splitlines", "تقسيم_يمين": "rsplit", "تقسيم_ثلاثي": "partition",
+    "ملء_أصفار": "zfill", "وسّط": "center",
+    "محاذاة_يسار": "ljust", "محاذاة_يمين": "rjust",
+    "هل_رقمي": "isdigit", "هل_حرفي": "isalpha", "هل_حرفي_رقمي": "isalnum",
+    "هل_مسافة": "isspace", "هل_علوي": "isupper", "هل_سفلي": "islower",
+    "ترميز_بايت": "encode", "فك_الترميز": "decode",
+    "إزالة_بادئة": "removeprefix", "إزالة_لاحقة": "removesuffix",
+    # Lists, dictionaries and sets
+    "مسح_الكل": "clear",
+    "المفاتيح": "keys", "القيم": "values", "العناصر": "items",
+    "اجلب": "get", "حدّث_القاموس": "update", "أضف_افتراضي": "setdefault",
+    "فرق_متماثل": "symmetric_difference", "جزء_من": "issubset",
+    "يحوي_كل": "issuperset", "منفصلة": "isdisjoint", "تجاهل_عنصر": "discard",
 }
 _METHOD_PATTERN = re.compile(r"\." + "(" + "|".join(_METHOD_ALIASES.keys()) + r")\s*\(")
 
