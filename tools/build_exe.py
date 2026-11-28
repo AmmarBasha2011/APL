@@ -30,6 +30,8 @@ RUNTIME_MODULES = ['sys', 'builtins', 'pathlib', 'zoneinfo', 'decimal',
                    'fractions', 'string', 'enum', 'secrets', 'getpass',
                    'operator', 'pprint']
 #: The runtime string uses these as well.
+RUNTIME_MODULES += ['core.apps', 'core.apps.web', 'core.apps.common', 'core.apps.terminal',
+                    'core.apps.docs', 'core.apps.examples', 'core.apps.bench']
 RUNTIME_MODULES += ['datetime', 'time', 'os', 'shutil', 'json']
 
 
