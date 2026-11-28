@@ -203,6 +203,15 @@
     "title": "مكتبة itertools للغة APL"
   },
   {
+    "name": "jinja2",
+    "repo": "AmmarBasha2011/apl-jinja2",
+    "title": "مكتبة jinja2 — قوالب النصوص للغة APL",
+    "package": "jinja2",
+    "requires": [
+      "jinja2"
+    ]
+  },
+  {
     "name": "json",
     "repo": "AmmarBasha2011/apl-json",
     "title": "مكتبة json للغة APL"
@@ -246,6 +255,15 @@
     "name": "net",
     "repo": "AmmarBasha2011/apl-net",
     "title": "مكتبة net للغة APL"
+  },
+  {
+    "name": "networkx",
+    "repo": "AmmarBasha2011/apl-networkx",
+    "title": "مكتبة networkx — الرسوم البيانية والشبكات للغة APL",
+    "package": "networkx",
+    "requires": [
+      "networkx"
+    ]
   },
   {
     "name": "nltk_ext",
@@ -298,6 +316,15 @@
     "title": "مكتبة pathlib للغة APL"
   },
   {
+    "name": "pillow",
+    "repo": "AmmarBasha2011/apl-pillow",
+    "title": "مكتبة pillow — معالجة الصور للغة APL",
+    "package": "pillow",
+    "requires": [
+      "pillow"
+    ]
+  },
+  {
     "name": "pkgs_ext1",
     "repo": "AmmarBasha2011/apl-pkgs_ext1",
     "title": "مكتبة pkgs_ext1 للغة APL"
@@ -323,6 +350,15 @@
     "title": "مكتبة pprint للغة APL"
   },
   {
+    "name": "pydantic",
+    "repo": "AmmarBasha2011/apl-pydantic",
+    "title": "مكتبة pydantic — التحقق من البيانات للغة APL",
+    "package": "pydantic",
+    "requires": [
+      "pydantic"
+    ]
+  },
+  {
     "name": "pygdeep",
     "repo": "AmmarBasha2011/apl-pygdeep",
     "title": "مكتبة pygdeep للغة APL"
@@ -346,6 +382,15 @@
     "name": "requests",
     "repo": "AmmarBasha2011/apl-requests",
     "title": "مكتبة requests للغة APL"
+  },
+  {
+    "name": "rich",
+    "repo": "AmmarBasha2011/apl-rich",
+    "title": "مكتبة rich — تنسيق الطرفية والألوان للغة APL",
+    "package": "rich",
+    "requires": [
+      "rich"
+    ]
   },
   {
     "name": "scipy",
