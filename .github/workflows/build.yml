@@ -119,11 +119,102 @@ jobs:
           ext="${{ matrix.ext }}"
           python tools/smoke_apps.py "$PWD/package/apl$ext"
 
-      - name: رفع الملفات
+      - name: رقم الإصدار
+        id: ver
+        shell: bash
+        run: |
+          tag="${{ inputs.release_tag }}"
+          version="${tag#v}"
+          [ -n "$version" ] || version="1.0.0-dev"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      # ---------- ويندوز: مثبّت Inno Setup ----------
+      - name: مثبّت ويندوز
+        if: matrix.artifact == 'APL-windows'
+        shell: bash
+        run: |
+          set -euo pipefail
+          choco install innosetup -y --no-progress
+          mkdir -p package/icons installer
+          for d in assets/icons/*/; do n=$(basename "$d"); [ -f "$d/$n.ico" ] && cp "$d/$n.ico" "package/icons/$n.ico"; done
+          ISCC="/c/Program Files (x86)/Inno Setup 6/ISCC.exe"
+          "$ISCC" "/DAppVersion=${{ steps.ver.outputs.version }}" "/DSourceDir=$(cygpath -w "$PWD/package")" "/DOutDir=$(cygpath -w "$PWD/installer")" packaging/apl.iss
+          ls -la installer
+
+      - name: اختبار مثبّت ويندوز
+        if: matrix.artifact == 'APL-windows'
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          $setup = (Get-ChildItem installer\APL-Setup-*.exe).FullName
+          $dir = "C:\APL-test"
+          Start-Process -FilePath $setup -ArgumentList "/VERYSILENT","/SUPPRESSMSGBOXES","/NORESTART","/DIR=$dir","/TASKS=associate" -Wait
+          foreach ($f in "apl.exe","icons\apl.ico","APL-Docs\README.md") { if (-not (Test-Path "$dir\$f")) { throw "missing $f" } }
+          if (-not (Test-Path "$dir\عمار.exe")) { throw "missing عمار.exe" }
+          $userPath = [Environment]::GetEnvironmentVariable("Path","User")
+          if (($userPath -split ";") -notcontains $dir) { throw "PATH not updated: $userPath" }
+          $menu = Join-Path $env:APPDATA "Microsoft\Windows\Start Menu\Programs\APL"
+          foreach ($n in "Terminal","REPL","Libraries","Docs","Examples","Benchmark") {
+            if (-not (Test-Path "$menu\APL $n.lnk")) { throw "missing shortcut APL $n" }
+            $lnk = (New-Object -ComObject WScript.Shell).CreateShortcut("$menu\APL $n.lnk")
+            if ($lnk.IconLocation -notlike "*icons*") { throw "shortcut APL $n has no icon: $($lnk.IconLocation)" }
+          }
+          & "$dir\apl.exe" نسخة
+          python tools/smoke_apps.py "$dir\apl.exe"
+          if ($LASTEXITCODE -ne 0) { throw "installed apps failed" }
+          Start-Process -FilePath "$dir\unins000.exe" -ArgumentList "/VERYSILENT","/SUPPRESSMSGBOXES" -Wait
+          Start-Sleep -Seconds 3
+          if (Test-Path "$dir\apl.exe") { throw "uninstall left apl.exe" }
+          $after = [Environment]::GetEnvironmentVariable("Path","User")
+          if (($after -split ";") -contains $dir) { throw "uninstall left PATH entry" }
+          Write-Host "installer ok"
+
+      # ---------- لينكس: حزمة .deb ----------
+      - name: حزمة لينكس
+        if: matrix.artifact == 'APL-linux'
+        run: python tools/package_linux.py package "${{ steps.ver.outputs.version }}" installer
+
+      - name: اختبار حزمة لينكس
+        if: matrix.artifact == 'APL-linux'
+        run: |
+          set -euo pipefail
+          sudo dpkg -i installer/*.deb
+          apl نسخة
+          عمار نسخة
+          for n in terminal repl libraries docs examples benchmark; do
+            test -f "/usr/share/applications/apl-$n.desktop"
+            test -f "/usr/share/icons/hicolor/256x256/apps/apl-$n.png"
+          done
+          python tools/smoke_apps.py /usr/bin/apl
+          sudo dpkg -r apl
+          if command -v apl; then echo "apl still on PATH after removal"; exit 1; fi
+
+      # ---------- ماك: حزمة .pkg ----------
+      - name: حزمة ماك
+        if: startsWith(matrix.artifact, 'APL-macos')
+        run: python3 tools/package_macos.py package "${{ steps.ver.outputs.version }}" "${{ matrix.artifact == 'APL-macos-arm64' && 'arm64' || 'intel' }}" installer
+
+      - name: اختبار حزمة ماك
+        if: startsWith(matrix.artifact, 'APL-macos')
+        run: |
+          set -euo pipefail
+          sudo installer -pkg installer/*.pkg -target /
+          /usr/local/bin/apl نسخة
+          /usr/local/bin/عمار نسخة
+          echo "$PATH" | tr ':' '\n' | grep -qx /usr/local/bin
+          for n in Terminal REPL Libraries Docs Examples Benchmark; do
+            app="/Applications/APL/APL $n.app"
+            test -x "$app/Contents/MacOS/launcher"
+            plutil -lint "$app/Contents/Info.plist"
+            ls "$app/Contents/Resources/"*.icns
+          done
+          python3 tools/smoke_apps.py /usr/local/bin/apl
+
+      - name: رفع المثبّتات
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact }}
-          path: package/*
+          path: installer/*
           if-no-files-found: error
 
   release:
@@ -140,16 +231,12 @@ jobs:
         with:
           path: artifacts
 
-      - name: ضغط الحزم
+      - name: تجميع المثبّتات
         run: |
           set -euo pipefail
           mkdir -p out
-          # A checkout is needed for the zip helper only.
-          python3 "$GITHUB_WORKSPACE/tools/make_zip.py" artifacts/APL-linux "out/APL-linux-${{ inputs.release_tag }}.zip" --unix
-          python3 "$GITHUB_WORKSPACE/tools/make_zip.py" artifacts/APL-macos-arm64 "out/APL-macos-arm64-${{ inputs.release_tag }}.zip" --unix
-          python3 "$GITHUB_WORKSPACE/tools/make_zip.py" artifacts/APL-macos-intel "out/APL-macos-intel-${{ inputs.release_tag }}.zip" --unix
-          python3 "$GITHUB_WORKSPACE/tools/make_zip.py" artifacts/APL-windows "out/APL-windows-${{ inputs.release_tag }}.zip"
-          (cd out && sha256sum *.zip > SHA256SUMS.txt && cat SHA256SUMS.txt)
+          cp artifacts/*/* out/
+          (cd out && sha256sum * > SHA256SUMS.txt && cat SHA256SUMS.txt)
 
       - name: نشر الـ Release
         env:
@@ -160,4 +247,4 @@ jobs:
             --target "${{ github.sha }}" \
             --title "APL ${{ inputs.release_tag }} (Alpha)" \
             --prerelease \
-            --notes "نسخة Alpha: أكيد فيها أخطاء. ويندوز ولينكس وماك. نسخة الماك (Apple Silicon وIntel) اتبنت واتجربت في CI بس، ومحدش جربها بإيده، وهي غير موقّعة. كل حزمة فيها ملف APL التنفيذي (عمار) ومعاه APL-Terminal وAPL-REPL وAPL-Libraries وAPL-Docs وAPL-Examples وAPL-Benchmark. فك الضغط ودوس مرتين على اللي عايزه."
+            --notes "نسخة Alpha: أكيد فيها أخطاء. مثبّتات حقيقية: ويندوز (APL-Setup .exe)، لينكس (.deb)، وماك (.pkg لـ Apple Silicon وIntel). كلها بتضيف apl وعمار للـ PATH وبتعمل 6 برامج بأيقونات: Terminal وREPL وLibraries وDocs وExamples وBenchmark. المثبّتات غير موقّعة، واتجربت في CI بس ومحدش جربها بإيده (ويندوز: SmartScreen يطلب Run anyway، ماك: كليك يمين ثم Open)."
